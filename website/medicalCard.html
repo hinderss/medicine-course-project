@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarItems = document.querySelectorAll('.sidebar h5');
+
+            sidebarItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove 'active' class from all items
+                    sidebarItems.forEach(i => i.classList.remove('active'));
+
+                    // Add 'active' class to the clicked item
+                    item.classList.add('active');
+                });
+            });
+        });
+    </script>
+    <title>Medical Card</title>
+</head>
+<header class="medicalCardHeader">
+    <div class="header container row centerH padding100pxW">
+        <a href="#" class="link"><h4 class="thin">Медицинская карта</h4></a>
+        <a href="#" class="link"><h5 class="thin">Записи</h5></a>
+        <a href="#" class="link"><h5 class="thin">Специалисты</h5></a>
+        <a><img src="resources/images/logo.svg" height="40px"></a>
+    </div>
+</header>
+<body class="container">
+    <div class="container centerW row medium marginTop120px">
+        <div class="sidebar">
+            <a href="medicalCard.html#personalData" class="black"><h5 class="active">Персональные данные</h5></a>
+            <a href="medicalCard.html#passportData" class="black"><h5>Удостоверение личности</h5></a>
+            <a href="medicalCard.html#livingAddressData" class="black"><h5>Адрес проживания</h5></a>
+            <a href="medicalCard.html#registrationAddressData" class="black"><h5>Адрес регистрации</h5></a>
+            <a href="medicalCard.html#benefitsAndInsuranceData" class="black"><h5>Льготы и страхования</h5></a>
+            <a href="medicalCard.html#medicalIdinticationsData" class="black"><h5>Медицинские показания</h5></a>
+        </div>
+        <div class="container big centerItemsW mainSection">
+            <div class="container big centerItemsW">
+                <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
+                    <div class="container" id="formDiv">
+                        <h3 class="regular formTitle"  id="personalData">Персональные данные</h3>
+                        <form action="signupPatient.js">
+                            <input type="text" placeholder="Фамилия">
+                            <input type="text" placeholder="Имя">
+                            <input type="text" placeholder="Отчество">
+                            <div class="container row">
+                                <div class="container row">
+                                    <input type="radio" id="male" name="gender" value="male">
+                                    <label for="male" class="button medium">Мужской</label>    
+                                    <input type="radio" id="female" name="gender" value="female">
+                                    <label for="female" class="button medium">Женский</label>    
+                                </div>
+                            </div>
+                            <input type="text" placeholder="Дата рождения: dd.mm.yy">
+                            <input type="text" placeholder="Личный номер паспорта">
+                            <input type="text" placeholder="Семейное положение">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container big centerItemsW">
+                <div class="container centerItemsW">
+                    <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
+                        <div class="container" id="formDiv">
+                            <h3 class="regular formTitle" id="passportData">Удостоверение личности</h3>
+                            <form action="signupPatient.js">
+                                <input type="text" placeholder="Фамилия">
+                                <input type="text" placeholder="Имя">
+                                <input type="text" placeholder="Отчество">
+                                <input type="text" placeholder="Дата рождения: dd.mm.yy">
+                                <input type="text" placeholder="Личный номер паспорта">
+                                <input type="text" placeholder="Семейное положение">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container big centerItemsW">
+                <div class="container centerItemsW">
+                    <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
+                        <div class="container" id="formDiv">
+                            <h3 class="regular formTitle" id="livingAddressData">Адрес проживания</h3>
+                            <form action="signupPatient.js">
+                                <input type="text" placeholder="Фамилия">
+                                <input type="text" placeholder="Имя">
+                                <input type="text" placeholder="Отчество">
+                                <input type="text" placeholder="Дата рождения: dd.mm.yy">
+                                <input type="text" placeholder="Личный номер паспорта">
+                                <input type="text" placeholder="Семейное положение">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container big centerItemsW">
+                <div class="container centerItemsW">
+                    <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
+                        <div class="container" id="formDiv">
+                            <h3 class="regular formTitle" id="registrationAddressData">Адрес регистрации</h3>
+                            <form action="signupPatient.js">
+                                <input type="text" placeholder="Фамилия">
+                                <input type="text" placeholder="Имя">
+                                <input type="text" placeholder="Отчество">
+                                <input type="text" placeholder="Дата рождения: dd.mm.yy">
+                                <input type="text" placeholder="Личный номер паспорта">
+                                <input type="text" placeholder="Семейное положение">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container big centerItemsW">
+                <div class="container centerItemsW">
+                    <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
+                        <div class="container" id="formDiv">
+                            <h3 class="regular formTitle" id="benefitsAndInsuranceData">Льготы и страхования</h3>
+                            <form action="signupPatient.js">
+                                <input type="text" placeholder="Фамилия">
+                                <input type="text" placeholder="Имя">
+                                <input type="text" placeholder="Отчество">
+                                <input type="text" placeholder="Дата рождения: dd.mm.yy">
+                                <input type="text" placeholder="Личный номер паспорта">
+                                <input type="text" placeholder="Семейное положение">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container big centerItemsW">
+                <div class="container centerItemsW">
+                    <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
+                        <div class="container" id="formDiv">
+                            <h3 class="regular formTitle" id="medicalIdinticationsData">Медицинские показания</h3>
+                            <form action="signupPatient.js">
+                                <input type="text" placeholder="Фамилия">
+                                <input type="text" placeholder="Имя">
+                                <input type="text" placeholder="Отчество">
+                                <input type="text" placeholder="Дата рождения: dd.mm.yy">
+                                <input type="text" placeholder="Личный номер паспорта">
+                                <input type="text" placeholder="Семейное положение">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+    
