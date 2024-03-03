@@ -1,0 +1,614 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+
+h1.thin,
+h2.thin,
+h3.thin,
+h4.thin,
+h5.thin,
+h6.thin{
+    font-weight: 100;
+}
+
+.regular{
+  font-weight: 500;
+}
+
+h1{
+  font-size: 85pt;
+}
+
+h2{
+  font-size: 50pt;
+}
+
+h3{
+  font-size: 30pt;
+}
+
+h4{
+  font-size: 20pt;
+}
+
+h5{
+  font-size: 13pt;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  display: flex;
+  height: 100vh; /* Change this to min-height */
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  align-items: center;
+  margin: 0; /* Add this to remove default margin */
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+a{
+    color: #278375;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.black{
+  color: #000;
+  text-decoration: none;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+input{
+    margin-bottom: 3%;
+    border: 1px;
+    background: #FFFFFF78;
+}
+
+.hide {
+  display: none;
+}
+
+/* Style to make labels look like radio buttons */
+input[type="radio"] + label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+input[type="radio"]:checked + label {
+  background-color: #007bff;
+  color: #fff;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 3% 3%;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #339989;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+/*   
+  input[type=submit] {
+    width: 100%;
+    background-color: #278375;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  } */
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container.leftW{
+    height: 100%;
+    display: flex;
+    margin-left: -40%;
+}
+
+.leftW{
+  text-align: left;
+}
+
+.centerH{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.rounded{
+    border-radius: 24px;
+}
+
+.small{
+  width: 33%;
+}
+
+.medium{
+  width: 60%;
+}
+
+.big{
+  width: 80%;
+}
+
+.row{
+  display: flex;
+    flex-direction: column;
+}
+
+.center{
+  justify-content: center;
+  align-items: center;
+}
+
+.centerW{
+  align-content: center;
+}
+
+.centerItemsW{
+  align-items: center;
+}
+
+
+.spacebtw{
+    justify-content: space-between;
+}
+
+
+.container.row{
+  display: flex;
+  flex-direction: row;
+}
+
+.spacebtw{
+  display: flex;
+  justify-content: space-between;
+}
+
+.lightBlueBG{
+    background-color: #FFFFFF78;
+}
+
+.logIn{
+    overflow: hidden;
+}
+
+.login{
+  display: flex;
+  height: 100vh; /* Change this to min-height */
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  align-items: center;
+  margin: 0; /* Add this to remove default margin */
+  font-family: 'Helvetica', Arial, sans-serif;
+    background-image: url("images/login.png");
+    display: flex;
+    flex-direction: column;
+}
+
+.signup {
+  background-image: url("images/signup.png");
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Add this */
+  margin: 0;    /* Add this to remove default margin */
+}
+
+.signup.tinted{
+	background-image: url("images/signupTinted.png");
+}
+
+#welcome{
+    font-size: 80pt;
+    color: #1A5E53;
+}
+
+#signup{
+  font-size: 30pt;
+  font-weight: 600;
+  color: #1A5E53;
+}
+
+.padding25px{
+  padding: 25px;
+}
+
+.padding25pxW{
+  padding: 0px 25px;
+}
+
+
+.padding80px{
+  padding: 80px;
+}
+
+.padding100pxW{
+  padding: 0px 100px;
+}
+
+
+.button{
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    background-color: #339989FC;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.button.wide{
+  width: 100%;
+}
+
+.mint{
+  background-color: #E3F8F3;
+}
+
+.fullHeight{
+  height: 100%;
+}
+
+.fullWidth{
+  width: 100%;
+}
+
+.marginTop20px{
+  margin-top: 20px;
+}
+
+.marginTop80px{
+  margin-top: 80px;
+}
+
+.marginTop120px{
+  margin-top: 120px;
+}
+
+.marginBottom{
+  margin-top: 40px;
+}
+
+#signupTitle{
+  font-size: 30pt;
+  color: #1A5E53;
+}
+
+#loginTitle{
+  font-size: 85pt;
+  color: #278375;
+}
+
+.gray{
+  color: gray;
+}
+
+
+#loginDiv{
+  height: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.create-line-left-right{
+  padding-left: 20px;
+  /* необходим для формирования позиций линий */
+  position: relative;
+  /* весь блок будет занимать ширину по размеру контента в нём */
+  display: inline-block;
+}
+
+.create-line-left-right:before{ 
+  content: " ";
+  background: gray;
+  width: 100px;
+  height: 2px;
+  /* располагаем линию сверху от текста */
+  bottom: 10px;
+  right: 40px;
+  /* включаем абсолютное позиционирование относительно блока с relative */
+  position: absolute;
+}
+
+.create-line-left-right:after{ 
+  content: " ";
+  background: gray;
+  width: 100px;
+  height: 2px;
+  /* размещаем линию снизу и справа*/
+  bottom: 10px;
+  left: 60px;
+  /* включаем абсолютное позиционирование относительно блока с relative */
+  position: absolute;
+}
+
+#margin-top-bottom-20px{
+  margin: 20px;
+}
+
+.round{
+  border-radius: 50%;
+}
+
+.addImage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  overflow: hidden;
+  left: 52%;
+  top: 25%;
+  background-color: #339989FC;
+  height: 320px;
+  width: 320px;
+  color: white;
+  font-size: 15pt;
+}
+
+#formDiv{
+  display: flex;
+  padding: 5px 10px;
+}
+
+#whoYouAre{
+  color: white;
+}
+
+#transparentBtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 70px;
+  color: white;
+  border: 2px solid;
+  border-color: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+#transparentBtn:hover{
+  color: white;
+  border: 2px solid;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.height25{
+  height: 25%;
+}
+
+.marginTop40px{
+  margin-top: 40px;
+}
+
+.medicalCardHeader{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  /* height: 146.07px ; */
+  background-image: url("images/headerMedicalCard.png");
+  z-index: 999;
+}
+
+.link{
+  color: white;
+  cursor: pointer;
+}
+
+.faded{
+  box-shadow:
+    inset 0 -3em 3em -10em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+.formTitle{
+  color: #014C35;
+}
+
+.active {
+  color: #28a745; /* Green color for the active item */
+}
+
+.sidebar{
+  position: fixed;
+  width: 40vh;
+}
+
+.medicalCardProfilePhoto{
+  position: fixed;
+  left: 25vh;
+}
+
+.mainSection{
+  position: relative;
+  left: 30vh;
+  z-index: 1;
+} 
+
+.left{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.right{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.checkbox-custom {
+  opacity: 0;
+  position: absolute;   
+}
+
+.checkbox-custom, .checkbox-custom-label {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.checkbox-custom + .checkbox-custom-label:before {
+  content: '';
+  background: #fff;
+  border-radius: 50%  ;
+  border: 2px solid #ddd;
+  display: inline-block;
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+  padding: 2px;
+  margin-right: 10px;
+  text-align: center;
+  box-sizing: unset;
+}
+
+.checkbox-custom:checked + .checkbox-custom-label:before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 5px;
+  border: solid blue;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  border-radius: 0px;
+  margin: 0px 15px 5px 5px;
+}
+
+.twoInputs input:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.twoInputs input:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.rowReverse{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.marginRight15px{
+  margin-right: 15px;
+}
+
+.inputPreLabel{
+  color: #339989;
+
+  border: 1px solid #339989;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 0;
+  margin: 0;
+  margin-bottom: -9px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 15px;
+}
+
+.twoInputs.inputTopNoRound  input:first-child{
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.twoInputs.inputTopNoRound  input:last-child{
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
