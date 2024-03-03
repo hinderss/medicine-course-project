@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarItems = document.querySelectorAll('.sidebar h5');
+
+            sidebarItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove 'active' class from all items
+                    sidebarItems.forEach(i => i.classList.remove('active'));
+
+                    // Add 'active' class to the clicked item
+                    item.classList.add('active');
+                });
+            });
+        });
+    </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const byAddressButton = document.getElementById('byAddressButton');
+        const registrationAddressSection = document.querySelectorAll('.registrationAddressSection');
+
+        byAddressButton.addEventListener('click', function() {
+            registrationAddressSection.forEach(section => {
+                if(section.style.display=='flex'){
+                    section.style.display = 'none';
+                }else{
+                    section.style.display = 'flex';
+                }
+            });
+        });
+    });
+</script>
+    <title>Medical Card</title>
+</head>
+<header class="medicalCardHeader">
+    <div class="header container row centerH padding100pxW spacebtw">
+        <a href="#" class="link"><h4 class="thin">Медицинская карта</h4></a>
+        <a href="#" class="link"><h5 class="thin">Записи</h5></a>
+        <a href="#" class="link"><h5 class="thin">Специалисты</h5></a>
+        <a href="#"><img src="resources/images/logo.svg" height="40px"></a>
+    </div>
+</header>
+<body class="container">
+    <div class="container centerW row medium marginTop120px">
+        <a href="#" class="medicalCardProfilePhoto"><img src="resources/images/logo.svg" height="80px"></a>
+        <div class="sidebar">
+            <a href="medicalCard.html#personalDataLink" class="black"><h5 class="active">Персональные данные</h5></a>
+            <a href="medicalCard.html#passportDataLink" class="black"><h5>Удостоверение личности</h5></a>
+            <a href="medicalCard.html#livingAddressDataLink" class="black"><h5>Адрес проживания</h5></a>
+            <a href="medicalCard.html#registrationAddressDataLink" class="black"><h5>Адрес регистрации</h5></a>
+            <a href="medicalCard.html#benefitsAndInsuranceDataLink" class="black"><h5>Льготы и страхования</h5></a>
+            <a href="medicalCard.html#medicalIdinticationsDataLink" class="black"><h5>Медицинские показания</h5></a>
+        </div>
+        <div class="container big centerItemsW mainSection">
+            <div class="container big centerItemsW">
+                <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
+                    <div class="container" id="formDiv">
+                        <h3 class="regular formTitle"  id="personalDataLink">Персональные данные</h3>
+                        <form action="signupPatient.js">
+                            <input type="text" placeholder="Фамилия">
+                            <input type="text" placeholder="Имя">
+                            <input type="text" placeholder="Отчество">
+                            <div class="container row">
+                                <div class="container row">
+                                    <input type="radio" id="male" name="gender" value="male" class="hide">
+                                    <label for="male" class="button medium">Мужской</label>    
+                                    <input type="radio" id="female" name="gender" value="female" class="hide">
+                                    <label for="female" class="button medium">Женский</label>    
+                                </div>
+                            </div>
+                            <input type="text" placeholder="Дата рождения: dd.mm.yy">
+                            <input type="text" placeholder="Личный Номер паспорта">
+                            <input type="text" placeholder="Семейное положение"  id="passportDataLink">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container big centerItemsW">
+                <div class="container centerItemsW">
+                    <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
+                        <div class="container" id="formDiv">
+                            <h3 class="regular formTitle">Удостоверение личности</h3>
+                            <form action="signupPatient.js">
+                                <input type="text" placeholder="Документ">
+                                <div class="container row twoInputs">
+                                    <input type="text" placeholder="Серия" class="small">
+                                    <input type="text" placeholder="Номер">
+                                </div>
+                                <input type="text" placeholder="Кем выдан">
+                                <input type="text" placeholder="Дата выдачи: dd.mm.yy"  id="livingAddressDataLink">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container big centerItemsW">
+                <div class="container centerItemsW">
+                    <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
+                        <div class="container" id="formDiv">
+                            <h3 class="regular formTitle">Адрес проживания</h3>
+                            <form action="signupPatient.js">
+                                <div class="container row   ">
+                                    <input type="text" placeholder="Область" class="small marginRight15px">
+                                    <input type="text" placeholder="Населенный пункт" class="big">    
+                                </div>
+                                <div class="container row">
+                                    <input type="text" placeholder="Улица/Переулок/Проезд" class="big marginRight15px">
+                                    <input type="text" placeholder="Дом" class="small">
+                                </div>
+                                <div class="container row">
+                                    <input type="text" placeholder="Корпус" class="small marginRight15px">
+                                    <input type="text" placeholder="Подъезд" class="small marginRight15px">
+                                    <input type="text" placeholder="Квартира" class="small">
+                                </div>
+                                <input type="text" placeholder="Домашний телефон" id="registrationAddressDataLink">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container big centerItemsW">
+                <div class="container centerItemsW">
+                    <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
+                        <div class="container" id="formDiv">
+                            <h3 class="regular formTitle" id="registrationAddressDataLink">Адрес регистрации</h3>
+                            <form action="signupPatient.js">
+                                <div class="container row  registrationAddressSection" style="display: flex;">
+                                    <input type="text" placeholder="Область" class="small marginRight15px">
+                                    <input type="text" placeholder="Населенный пункт" class="big">    
+                                </div>
+                                <div class="container row registrationAddressSection" style="display: flex;">
+                                    <input type="text" placeholder="Улица/Переулок/Проезд" class="big marginRight15px">
+                                    <input type="text" placeholder="Дом" class="small">
+                                </div>
+                                <div class="container row registrationAddressSection" style="display: flex;">
+                                    <input type="text" placeholder="Корпус" class="small marginRight15px">
+                                    <input type="text" placeholder="Подъезд" class="small marginRight15px">
+                                    <input type="text" placeholder="Квартира" class="small">
+                                </div>
+                                <div class="container row left">
+                                    <input type="checkbox" id="registrationAddressEqualLivivngAddress" name="livingAddressBtn" value="registrationAddressEqualLivivngAddress" class="checkbox-custom">
+                                    <label for="registrationAddressEqualLivivngAddress" class="checkbox-custom-label" id="byAddressButton">По адресу проживания</label>
+                                </div> 
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container big centerItemsW">
+                <div class="container centerItemsW">
+                    <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
+                        <div class="container" id="formDiv">
+                            <h3 class="regular formTitle" id="benefitsAndInsuranceDataLink">Льготы и страхования</h3>
+                            <form action="signupPatient.js">
+                                <h5 class="inputPreLabel thin">Страховой полис</h5>
+                                <div class="container row twoInputs inputTopNoRound">
+                                    <input type="text" placeholder="Серия" class="small inputTopNoRound">
+                                    <input type="text" placeholder="Номер">
+                                </div>
+                                <div class="container row twoInputs">
+                                    <input type="text" placeholder="Инвалидность" class="medium">
+                                    <input type="text" placeholder="Группа" class="medium">
+                                </div>
+                                <input type="text" placeholder="Документ на право льнотного обслуживания">
+                                <input type="text" placeholder="Вид оплаты" id="medicalIdinticationsDataLink">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container big centerItemsW">
+                <div class="container centerItemsW">
+                    <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
+                        <div class="container" id="formDiv">
+                            <h3 class="regular formTitle">Медицинские показания</h3>
+                            <form action="signupPatient.js">
+                                <input type="text" placeholder="Аллергический анамнез">
+                                <input type="text" placeholder="Лекарственная непереносимость">
+                                <div class="container row">
+                                    <input type="text" placeholder="Группа крови" class="small marginRight15px">
+                                    <input type="text" placeholder="Резус" class="small marginRight15px">
+                                    <input type="text" placeholder="Принадлежность" class="small">
+                                </div>
+                                <input type="text" placeholder="Реакции на прививки">
+                                <input type="text" placeholder="Переливание крови">
+                                <input type="text" placeholder="Хирургическое вмешательство">
+                                <textarea placeholder="Перенесенные инфекционные заболевания" rows="4"></textarea>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container rowReverse marginTop80px fullWidth">
+                <input type="submit" class="button">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+    
