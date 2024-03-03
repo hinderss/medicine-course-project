@@ -45,22 +45,27 @@ h6.thin{
 
 h1{
   font-size: 85pt;
+  margin: 0;
 }
 
 h2{
   font-size: 50pt;
+  margin: 0;
 }
 
 h3{
   font-size: 30pt;
+  margin: 0;
 }
 
 h4{
   font-size: 20pt;
+  margin: 0;
 }
 
 h5{
   font-size: 13pt;
+  margin: 0;
 }
 
 /* Выставляем основные настройки по-умолчанию для body */
@@ -91,6 +96,11 @@ a{
     color: #278375;
     text-decoration: none;
     cursor: pointer;
+}
+
+
+a:hover{
+  text-decoration: underline;
 }
 
 .black{
@@ -140,8 +150,9 @@ input[type="radio"] + label {
 }
 
 input[type="radio"]:checked + label {
-  background-color: #007bff;
+  background-color: #014C35;
   color: #fff;
+  transition: linear 0.15s;
 }
 
 input, select, textarea {
@@ -195,6 +206,7 @@ input, select, textarea {
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .rounded{
@@ -323,6 +335,15 @@ input, select, textarea {
     cursor: pointer;
 }
 
+
+.button.white{
+    background-color: white;
+    color: #339989FC;
+    border: 1px solid #339989FC;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
 .button.wide{
   width: 100%;
 }
@@ -339,9 +360,24 @@ input, select, textarea {
   width: 100%;
 }
 
+
+.marginTop10px{
+  margin-top: 10px;
+}
+
 .marginTop20px{
   margin-top: 20px;
 }
+
+.marginW30px{
+  margin: 0 30px;
+}
+
+
+.marginTop40px{
+  margin-top: 40px;
+}
+
 
 .marginTop80px{
   margin-top: 80px;
@@ -374,6 +410,39 @@ input, select, textarea {
   height: 70%;
   display: flex;
   justify-content: space-between;
+}
+
+
+.create-line{
+  padding-left: 20px;
+  /* необходим для формирования позиций линий */
+  position: relative;
+  /* весь блок будет занимать ширину по размеру контента в нём */
+  display: inline-block;
+}
+
+.create-line:before{
+  content: " ";
+  background: gray;
+  width: 600px;
+  height: 1px;
+  /* располагаем линию сверху от текста */
+  bottom: 10px;
+  right: 1px;
+  /* включаем абсолютное позиционирование относительно блока с relative */
+  position: absolute;
+}
+
+.create-line:after{ 
+  content: " ";
+  background: gray;
+  width: 600px;
+  height: 1px;
+  left: -1px;
+  /* размещаем линию снизу и справа*/
+  bottom: 10px;
+  /* включаем абсолютное позиционирование относительно блока с relative */
+  position: absolute;
 }
 
 .create-line-left-right{
@@ -460,6 +529,11 @@ input, select, textarea {
   padding: 5px 10px;
 }
 
+#transparentBtn.big{
+  width: 300px;
+  height: 100px;
+}
+
 .height25{
   height: 25%;
 }
@@ -495,7 +569,7 @@ input, select, textarea {
 }
 
 .active {
-  color: #28a745; /* Green color for the active item */
+  color: #339989; /* Green color for the active item */
 }
 
 .sidebar{
@@ -556,7 +630,7 @@ input, select, textarea {
   display: inline-block;
   width: 1px;
   height: 5px;
-  border: solid blue;
+  border: solid #014C35;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
@@ -588,6 +662,10 @@ input, select, textarea {
   margin-right: 15px;
 }
 
+.marginRight70px{
+  margin-right: 70px;
+}
+
 .inputPreLabel{
   color: #339989;
 
@@ -611,4 +689,125 @@ input, select, textarea {
 .twoInputs.inputTopNoRound  input:last-child{
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+}
+
+#indexPage{
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("images/indexPage.png");
+}
+
+#indexPageHeader{
+  display: flex;
+  align-items:center ;
+  height: 50px;
+}
+
+.profile{
+  display: flex;
+  flex-direction: row;
+}
+
+.profileName{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-height: 85px;
+  box-sizing: border-box;
+}
+
+.profileName h5{
+  color: white;
+  display: block;
+  max-height: 85px;
+  font-size: 9pt;
+  box-sizing: border-box;
+  margin: 0 20px;
+}
+
+.logo.white{
+/* svg on an img tag */
+    -webkit-filter: invert(1); /* safari 6.0 - 9.0 */
+            filter: invert(1);
+}
+
+.gptIcon{
+  position: fixed;
+  bottom: 5vh;
+  right: 3vw;
+}
+
+.flex-end{
+  align-items: flex-end;
+}
+
+.diagnosticsButton{
+  display: flex;
+  width: 400px;
+  height: 110px;
+  align-items: center;
+  justify-content: center;
+  font-size: 40pt;
+  color: white;
+  border: 3px solid white;
+  border-radius: 30px;
+}
+
+.diagnosticsButton:hover{
+  border-color:  rgba(255, 255, 255, 0.644);
+  color: rgba(255, 255, 255, 0.644);
+  text-decoration: none;
+  transition: ease-in-out 0.2s;
+}
+
+#doctorCard{
+  width: 300px;
+}
+
+.aboutDoctor{
+  margin: 5px 0;
+}
+
+.contactsCard{
+  padding-left: 50px;
+}
+
+.contactsCard:first-child{
+  padding-left: 0;
+}
+
+.contactsCardData{
+  display: flex;
+  flex-direction: column;
+  max-height: 70px;
+  margin-left: 10px;
+}
+
+.contactsCardData h5{
+ font-weight: 100;
+ color: grey;
+}
+
+.contactsCardData h5:last-child{
+  color: #339989;
+}
+
+.footerItem{
+  width: 200px;
+  box-sizing: border-box;
+}
+
+.footerItem h4{
+  margin-bottom: 20px;
+}
+
+.footerItem a{
+  margin-bottom: 10px;
+  color: gray;
+}
+
+.container.calendar{
+  min-height: 700px;
+  width: 100%;
+  background-color: lightgray;
 }
