@@ -186,6 +186,10 @@ input, select, textarea {
   }
 }
 
+#firstTime{
+  margin-top: 15px;
+}
+
 .container{
     width: 100%;
     display: flex;
@@ -575,6 +579,10 @@ input, select, textarea {
 .sidebar{
   position: fixed;
   width: 40vh;
+}
+
+.sidebar a h5{
+  margin: 20px 0px;
 }
 
 .medicalCardProfilePhoto{
