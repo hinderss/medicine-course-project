@@ -495,13 +495,13 @@ input, select, textarea {
   align-items: center;
   position: absolute;
   overflow: hidden;
-  left: 52%;
   top: 25%;
   background-color: #339989FC;
   height: 320px;
   width: 320px;
   color: white;
   font-size: 15pt;
+  left: calc(60% - 160px);
 }
 
 #formDiv{
@@ -586,8 +586,19 @@ input, select, textarea {
 }
 
 .medicalCardProfilePhoto{
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
   position: fixed;
   left: 25vh;
+}
+
+.headerProfilePhoto{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .mainSection{
@@ -794,6 +805,10 @@ input, select, textarea {
 .contactsCardData h5{
  font-weight: 100;
  color: grey;
+}
+
+#doctorCardData{
+  padding-bottom: 30px;
 }
 
 .contactsCardData h5:last-child{
