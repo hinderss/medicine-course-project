@@ -1,17 +1,22 @@
 {% extends "base.html" %}
 {% block title %}Главная{% endblock %}
 {% block content %}
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="r{{ url_for('static', filename='style.css') }}">
     <link href="static/calendar/vanilla-calendar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.0.9/dist/css/splide.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.0.9/dist/js/splide.min.js"></script>
     <script src="static/calendar/vanilla-calendar.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         window.addEventListener('scroll', function () {
             var gptIcon = document.getElementById('gptIcon');
             var scrollPosition = window.scrollY;
-    
+
             // Use className instead of class
             // Also, set the correct classList values
             if (scrollPosition > 70) {
@@ -27,7 +32,27 @@
             calendar.init();
         });
     </script>
-    
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Splide('#splide-container', {
+        type       : 'carousel',
+        perPage    : 1,
+        pagination : false,
+        focus      : 'center',
+        breakpoints: {
+          600: {
+            perPage: 1,
+          },
+          800: {
+            perPage: 1,
+          },
+        },
+      }).mount();
+    });
+  </script>
+
+
+
     <title>Index</title>
 </head>
 <body class="container">
@@ -41,7 +66,7 @@
             <a href="#" class="link"><h4 class="thin">Записи</h4></a>
             <a href="#" class="link"><h4 class="thin">Специалисты</h4></a>
             {% if name and surname %}
-            <a href="#profile"> 
+            <a href="#profile">
                 <div class="profile">
                     <div class="profileName">
                         <h5>{{ name }}</h5>
@@ -53,7 +78,6 @@
             {% else %}
             <a href="/login" class="link"><h4 class="thin">Войти</h4></a><!-- Выводим кнопку "Войти" -->
             {% endif %}
-            <a href="#"><img src="static/images/chat.png" id="gptIcon" class="gptIcon logo white" height="40px"></a>
 </div>
         <div class="container fullHeight centerH flex-end padding100pxW">
             <a class="diagnosticsButton">Диагностика</a>
@@ -61,57 +85,189 @@
     </div>
     <div class="container indexDoctors padding100pxW">
         <h3 class="regular marginTop40px" style="text-decoration: underline;">Лучшие врачи</h3>
+
         <div class="container slider marginTop80px row center">
-            <div class="container small centerItemsW faded marginRight70px" id="doctorCard">
-                <img src="static/images/profileLogo.svg" width="400px">
-                <div class="container medium"  id="doctorCardData">
-                    <h5 class="aboutDoctor thin">position</h5>
-                    <h4 class="aboutDoctor">Oleg</h4>
-                    <h4 class="aboutDoctor">Nicheporenko</h4>
-                    <h5 class="aboutDoctor thin">section</h5>
+            <div class="splide" id="splide-container">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="container small centerItemsW marginRight70px" id="doctorCard">
+                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                                <div class="container medium faded"  id="doctorCardData">
+                                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
+                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="container small centerItemsW marginRight70px" id="doctorCard">
+                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                                <div class="container medium faded"  id="doctorCardData">
+                                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
+                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="container small centerItemsW marginRight70px" id="doctorCard">
+                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                                <div class="container medium faded"  id="doctorCardData">
+                                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
+                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="container small centerItemsW marginRight70px" id="doctorCard">
+                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                                <div class="container medium faded"  id="doctorCardData">
+                                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
+                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="container small centerItemsW marginRight70px" id="doctorCard">
+                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                                <div class="container medium faded"  id="doctorCardData">
+                                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
+                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
+                                </div>
+                            </div>
+                        </li>
+                                                <li class="splide__slide">
+                            <div class="container small centerItemsW marginRight70px" id="doctorCard">
+                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                                <div class="container medium faded"  id="doctorCardData">
+                                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
+                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="container small centerItemsW faded marginRight70px" id="doctorCard">
-                <img src="static/images/profileLogo.svg" width="400px">
-                <div class="container medium"  id="doctorCardData">
-                    <h5 class="aboutDoctor thin">position</h5>
-                    <h4 class="aboutDoctor">Oleg</h4>
-                    <h4 class="aboutDoctor">Nicheporenko</h4>
-                    <h5 class="aboutDoctor thin">section</h5>
-                </div>
-            </div>
-
-            <div class="container small centerItemsW faded marginRight70px" id="doctorCard">
-                <img src="static/images/profileLogo.svg" width="400px">
-                <div class="container medium"  id="doctorCardData">
-                    <h5 class="aboutDoctor thin">position</h5>
-                    <h4 class="aboutDoctor">Oleg</h4>
-                    <h4 class="aboutDoctor">Nicheporenko</h4>
-                    <h5 class="aboutDoctor thin">section</h5>
-                </div>
-            </div>
-
-            <div class="container small centerItemsW faded" id="doctorCard">
-                <img src="static/images/profileLogo.svg" width="400px">
-                <div class="container medium"  id="doctorCardData">
-                    <h5 class="aboutDoctor thin">position</h5>
-                    <h4 class="aboutDoctor">Oleg</h4>
-                    <h4 class="aboutDoctor">Nicheporenko</h4>
-                    <h5 class="aboutDoctor thin">section</h5>
-                </div>
-            </div>
-
         </div>
 
         <div class="container center marginTop40px">
-            <a class="button">Все доктора: </a>
+            <a class="button" id="allDoctorsBtn">Все доктора: </a>
         </div>
     </div>
     <div class="container calendar marginTop40px center">
         <div id="calendar"></div>
     </div>
+    <div class="chat-container">
+        <button class="fixedButton"><img src="static/images/chat.png" id="gptIcon" class="gptIcon logo white" height="40px"></button>
+        <div class="chat">
+            <div class="chat-title">
+                <figure class="avatar">
+                    <img src="static/images/chatAvatar.jpg" />
+                </figure>
+                <div>
+                    <h1>Medical Assistant</h1>
+                    <h2>AI chat</h2>
+                </div>
+                <button class="fixedButton" id="closeChatBtn" class="closeChatBtnImg"><img src="static/images/close.svg" class="logo white"></button>
+            </div>
+            <div class="messages">
+                <div class="messages-content"></div>
+            </div>
+            <div class="message-box">
+                <textarea type="text" name="chat_input" class="message-input" placeholder="Type message..." style="overflow: hidden;"></textarea>
+                <button type="submit" name="chat_send" class="message-submit"><img src="static/images/chatSendMessagePhoto.png"></button>
+            </div>
+        </div>
+    </div>
 
+    <script>
+            $(document).ready(function() {
+                $('#gptIcon').on('click', function() {
+                    $('.chat').css('display', 'flex');
+                    $('#gptIcon').css('display', 'none');
+                });
+
+                $('#closeChatBtn').on('click', function() {
+                    $('.chat').css('display', 'none');
+                    $('#gptIcon').css('display', 'block');
+                });
+            });
+
+        var $messages = $('.messages-content'),
+            i = 0;
+
+        function setDate() {
+            var d = new Date();
+            $('<div class="timestamp">' + d.getHours() + ':' + d.getMinutes() + '</div>').appendTo($('.message:last'));
+        }
+
+        function insertMessage(msg) {
+            if ($.trim(msg) == '') {
+                return false;
+            }
+            $('<div class="message message-personal">' + msg + '</div>').appendTo($messages).addClass('new');
+            setDate();
+            $('.message-input').val(null);
+            scrollChat(); // Прокручиваем при каждом сообщении
+            setTimeout(function() {
+                fakeMessage();
+            }, 1000 + (Math.random() * 20) * 20);
+        }
+
+        $('.message-submit').click(function() {
+            insertMessage($('.message-input').val());
+        });
+
+        $(window).on('keydown', function(e) {
+            if (e.which == 13) {
+                insertMessage($('.message-input').val());
+                return false;
+            }
+        });
+
+        var Fake = [
+            'Hi there, I\'m AI Chat and you?',
+            'Nice to meet you',
+            'How are you?',
+            'It\'s an example of an answer. I can\'t understand you',
+            'Still can\'t',
+            ':)'
+        ];
+
+        function fakeMessage() {
+            if ($('.message-input').val() !== '') {
+                return false;
+            }
+            $('<div class="message new">' + Fake[i] + '</div>').appendTo($messages).addClass('new');
+            setDate();
+            i++;
+            scrollChat(); // Прокручиваем при каждом сообщении
+        }
+
+        function scrollChat() {
+            var height = $messages[0].scrollHeight;
+            $messages.stop().animate({ scrollTop: height }, 'slow');
+        }
+
+        // Initial fake message
+        $(window).on('load', function() {
+            setTimeout(function() {
+                fakeMessage();
+                scrollChat();
+            }, 100);
+        });
+    </script>
 </body>
 <footer class="container medium center marginTop120px">
     <div class="container">
@@ -155,30 +311,30 @@
             <a href="#" class="thin">Онлайн чат</a>
             <a href="#" class="thin">Диагностика</a>
             <a href="#" class="thin">Записи</a>
-            <a href="/mediacl_card" class="thin">Медицинская карта</a>
-        </div>
-            
-        <div class="container footerItem">
-            <h4>Специалисты</h4>
-            <a href="#" class="thin">Лучшие врачи</a>
-            <a href="#" class="thin">Online Chat</a>
-            <a href="#" class="thin">Whatsapp</a>
-            <a href="#" class="thin">Telegram</a>
-            <a href="#" class="thin">Ticketing</a>
-        </div>
-        
-        <div class="container footerItem">
-            <h4>О нас</h4>
-            <a href="#"  class="thin">Account</a>
-            <a href="#"  class="thin">Manage Deliveries</a>
-            <a href="#"  class="thin">Orders</a>
-            <a href="#"  class="thin">Payments</a>
-            <a href="#"  class="thin">Returns</a>
+            <a href="/mediacal_card" class="thin">Медицинская карта</a>
         </div>
 
         <div class="container footerItem">
-            <h4>Связаться с нами</h4>
-            <a href="#"  class="thin">Телефон</h5>
+            <h4>Специалисты</h4>
+            <div class="container grid">
+                <h5 class="thin">Иванова Анна</h5>
+                <h5 class="thin">Петров Сергей</h5>
+                <h5 class="thin">Смирнова Ольга</h5>
+                <h5 class="thin">Волков Дмитрий</h5>
+                <h5 class="thin">Кузнецова Екатерина</h5>
+                <h5 class="thin">Соколов Александр</h5>
+                <h5 class="thin">Попова Мария</h5>
+                <h5 class="thin">Лебедев Артем</h5>
+                <h5 class="thin">Козлова Елена</h5>
+                <h5 class="thin">Новиков Иван</h5>
+                <h5 class="thin">Морозова Анастасия</h5>
+                <h5 class="thin">Павлов Андрей</h5>
+            </div>
+        </div>
+
+        <div class="container footerItem">
+            <h4>Контакты</h4>
+            <a href="#"  class="thin">Телефон</a>
             <a href="#"  class="thin">Mail</a>
             <a href="#"  class="thin">Адрес</a>
             <a href="#"  class="thin">Факс</a>
@@ -186,7 +342,7 @@
     </div>
 
     <div class="create-line marginTop80px"></div>
-    <div class="container row spacebtw marginTop10px" style="margin-bottom: 70px;">
+    <div class="container row spacebtw marginTop10px" style="margin-bottom: 30px;">
         <div class="container row">
             <!-- <a href="#" class="marginW30px">Услуги</a>
             <a href="#" class="marginW30px">Специалисты</a>
