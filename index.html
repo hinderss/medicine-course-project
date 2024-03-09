@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/style.css">
-    <!-- Add Slick Carousel CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <!-- Add Slick Carousel theme CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <link href="static/calendar/vanilla-calendar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.0.9/dist/css/splide.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.0.9/dist/js/splide.min.js"></script>
     <script src="static/calendar/vanilla-calendar.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
@@ -31,6 +30,26 @@
             calendar.init();
         });
     </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Splide('#splide-container', {
+        type       : 'carousel',
+        perPage    : 1,
+        pagination : false,
+        focus      : 'center',
+        breakpoints: {
+          600: {
+            perPage: 1,
+          },
+          800: {
+            perPage: 1,
+          },
+        },
+      }).mount();
+    });
+  </script>
+  
+
     
     <title>Index</title>
 </head>
@@ -41,7 +60,7 @@
                 <img src="static/images/logo.svg" width="40px" class="marginW30px">
                 <a href="#"  class="link"><h4 class="thin">Logoipsum</h4></a>
             </div>
-            <a href="#" class="link"><h4 class="thin">Медицинская карта</h4></a>
+            <a href="medicalCard.html" class="link"><h4 class="thin">Медицинская карта</h4></a>
             <a href="#" class="link"><h4 class="thin">Записи</h4></a>
             <a href="#" class="link"><h4 class="thin">Специалисты</h4></a>
             <a href="#profile">
@@ -60,45 +79,80 @@
     </div>
     <div class="container indexDoctors padding100pxW">
         <h3 class="regular marginTop40px" style="text-decoration: underline;">Лучшие врачи</h3>
+
         <div class="container slider marginTop80px row center">
-
-            <div class="container small centerItemsW marginRight70px" id="doctorCard">
-                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
-                <div class="container medium faded"  id="doctorCardData">
-                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
-                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
-                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
+            <div class="splide" id="splide-container">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="container small centerItemsW marginRight70px" id="doctorCard">
+                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                                <div class="container medium faded"  id="doctorCardData">
+                                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
+                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="container small centerItemsW marginRight70px" id="doctorCard">
+                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                                <div class="container medium faded"  id="doctorCardData">
+                                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
+                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="container small centerItemsW marginRight70px" id="doctorCard">
+                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                                <div class="container medium faded"  id="doctorCardData">
+                                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
+                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="container small centerItemsW marginRight70px" id="doctorCard">
+                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                                <div class="container medium faded"  id="doctorCardData">
+                                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
+                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="container small centerItemsW marginRight70px" id="doctorCard">
+                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                                <div class="container medium faded"  id="doctorCardData">
+                                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
+                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
+                                </div>
+                            </div>
+                        </li>
+                                                <li class="splide__slide">
+                            <div class="container small centerItemsW marginRight70px" id="doctorCard">
+                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                                <div class="container medium faded"  id="doctorCardData">
+                                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
+                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="container small centerItemsW marginRight70px" id="doctorCard">
-                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
-                <div class="container medium faded"  id="doctorCardData">
-                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
-                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
-                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
-                </div>
-            </div>
-            <div class="container small centerItemsW marginRight70px" id="doctorCard">
-                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
-                <div class="container medium faded"  id="doctorCardData">
-                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
-                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
-                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
-                </div>
-            </div>
-            <div class="container small centerItemsW marginRight70px" id="doctorCard">
-                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
-                <div class="container medium faded"  id="doctorCardData">
-                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
-                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
-                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
-                </div>
-            </div>
-
         </div>
 
         <div class="container center marginTop40px">
@@ -253,27 +307,27 @@
             <a href="#" class="thin">Записи</a>
             <a href="#" class="thin">Медицинская карта</a>
         </div>
-            
-        <div class="container footerItem">
-            <h4>Специалисты</h4>
-            <a href="#" class="thin">Лучшие врачи</a>
-            <a href="#" class="thin">Online Chat</a>
-            <a href="#" class="thin">Whatsapp</a>
-            <a href="#" class="thin">Telegram</a>
-            <a href="#" class="thin">Ticketing</a>
-        </div>
         
         <div class="container footerItem">
-            <h4>О нас</h4>
-            <a href="#"  class="thin">Account</a>
-            <a href="#"  class="thin">Manage Deliveries</a>
-            <a href="#"  class="thin">Orders</a>
-            <a href="#"  class="thin">Payments</a>
-            <a href="#"  class="thin">Returns</a>
+            <h4>Специалисты</h4>
+            <div class="container grid">
+                <h5 class="thin">Юркевич Марианна</h5>
+                <h5 class="thin">Шмыговская дарья</h5>
+                <h5 class="thin">Телица Илья</h5>
+                <h5 class="thin">Немкова Екатерина</h5>
+                <h5 class="thin">Малинецкая Диана</h5>
+                <h5 class="thin">Крупчатников Даниил (Ботан)</h5>
+                <h5 class="thin">Кузьмицкий Никита</h5>
+                <h5 class="thin">Потоцкий Даниил</h5>
+                <h5 class="thin">Юргилевич Евгений</h5>
+                <h5 class="thin">Лупач Прохор</h5>
+                <h5 class="thin">Сылица Матвей</h5>
+                <h5 class="thin">Гринь Никита (ничего не делал)</h5>
+            </div>
         </div>
 
         <div class="container footerItem">
-            <h4>Связаться с нами</h4>
+            <h4>Контакты</h4>
             <a href="#"  class="thin">Телефон</h5>
             <a href="#"  class="thin">Mail</a>
             <a href="#"  class="thin">Адрес</a>
@@ -282,7 +336,7 @@
     </div>
 
     <div class="create-line marginTop80px"></div>
-    <div class="container row spacebtw marginTop10px" style="margin-bottom: 70px;">
+    <div class="container row spacebtw marginTop10px" style="margin-bottom: 30px;">
         <div class="container row">
             <!-- <a href="#" class="marginW30px">Услуги</a>
             <a href="#" class="marginW30px">Специалисты</a>
