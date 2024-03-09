@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% block title %}Главная{% endblock %}
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="resources/style.css">
-    <link href="resources/calendar/vanilla-calendar.min.css" rel="stylesheet">
-    <script src="resources/calendar/vanilla-calendar.min.js" defer></script>
+    <link rel="stylesheet" href="r{{ url_for('static', filename='style.css') }}">
+    <link href="static/calendar/vanilla-calendar.min.css" rel="stylesheet">
+    <script src="static/calendar/vanilla-calendar.min.js" defer></script>
     <script>
         window.addEventListener('scroll', function () {
             var gptIcon = document.getElementById('gptIcon');
@@ -33,22 +34,26 @@
     <div class="container padding100pxW" id="indexPage">
         <div class="container row spacebtw marginTop20px" id="indexPageHeader">
             <div class="container row small">
-                <img src="resources/images/logo.svg" width="40px" class="marginW30px">
-                <a href="#"  class="link"><h4 class="thin">Logoipsum</h4></a>
+                <img src="static/images/logo.svg" width="40px" class="marginW30px">
+                <a href="/index"  class="link"><h4 class="thin">Logoipsum</h4></a>
             </div>
-            <a href="#" class="link"><h4 class="thin">Медицинская карта</h4></a>
+            <a href="/medical_card" class="link"><h4 class="thin">Медицинская карта</h4></a>
             <a href="#" class="link"><h4 class="thin">Записи</h4></a>
             <a href="#" class="link"><h4 class="thin">Специалисты</h4></a>
-            <a href="#profile">
+            {% if name and surname %}
+            <a href="#profile"> 
                 <div class="profile">
                     <div class="profileName">
-                        <h5>Имя</h5>
-                        <h5>Фамилия</h5>
+                        <h5>{{ name }}</h5>
+                        <h5>{{ surname }}</h5>
                     </div>
-                    <img src="resources/images/profileLogo.svg" width="40px" class="logo white">
+                    <img src="static/images/profileLogo.svg" width="40px" class="logo white">
                 </div>
             </a>
-            <a href="#"><img src="resources/images/chat.png" id="gptIcon" class="gptIcon logo white" height="40px"></a>
+            {% else %}
+            <a href="/login" class="link"><h4 class="thin">Войти</h4></a><!-- Выводим кнопку "Войти" -->
+            {% endif %}
+            <a href="#"><img src="static/images/chat.png" id="gptIcon" class="gptIcon logo white" height="40px"></a>
 </div>
         <div class="container fullHeight centerH flex-end padding100pxW">
             <a class="diagnosticsButton">Диагностика</a>
@@ -58,7 +63,7 @@
         <h3 class="regular marginTop40px" style="text-decoration: underline;">Лучшие врачи</h3>
         <div class="container slider marginTop80px row center">
             <div class="container small centerItemsW faded marginRight70px" id="doctorCard">
-                <img src="resources/images/profileLogo.svg" width="400px">
+                <img src="static/images/profileLogo.svg" width="400px">
                 <div class="container medium"  id="doctorCardData">
                     <h5 class="aboutDoctor thin">position</h5>
                     <h4 class="aboutDoctor">Oleg</h4>
@@ -68,7 +73,7 @@
             </div>
 
             <div class="container small centerItemsW faded marginRight70px" id="doctorCard">
-                <img src="resources/images/profileLogo.svg" width="400px">
+                <img src="static/images/profileLogo.svg" width="400px">
                 <div class="container medium"  id="doctorCardData">
                     <h5 class="aboutDoctor thin">position</h5>
                     <h4 class="aboutDoctor">Oleg</h4>
@@ -78,7 +83,7 @@
             </div>
 
             <div class="container small centerItemsW faded marginRight70px" id="doctorCard">
-                <img src="resources/images/profileLogo.svg" width="400px">
+                <img src="static/images/profileLogo.svg" width="400px">
                 <div class="container medium"  id="doctorCardData">
                     <h5 class="aboutDoctor thin">position</h5>
                     <h4 class="aboutDoctor">Oleg</h4>
@@ -88,7 +93,7 @@
             </div>
 
             <div class="container small centerItemsW faded" id="doctorCard">
-                <img src="resources/images/profileLogo.svg" width="400px">
+                <img src="static/images/profileLogo.svg" width="400px">
                 <div class="container medium"  id="doctorCardData">
                     <h5 class="aboutDoctor thin">position</h5>
                     <h4 class="aboutDoctor">Oleg</h4>
@@ -113,28 +118,28 @@
         <h4>Logo</h4>
         <div class="container row spacebtw marginTop20px">
             <div class= "container contactsCard row">
-                <img src="resources/images/phone.png" height="50px">
+                <img src="static/images/phone.png" height="50px">
                 <div class="contactsCardData">
                     <h5>Телефон</h5>
                     <h5>293-86-16</h5>
                 </div>
             </div>
             <div class= "container contactsCard row">
-                <img src="resources/images/mail.png" height="50px">
+                <img src="static/images/mail.png" height="50px">
                 <div class="contactsCardData">
                     <h5>Mail</h5>
                     <h5>medassistant@gmail.com</h5>
                 </div>
             </div>
             <div class= "container contactsCard row">
-                <img src="resources/images/location.png" height="50px">
+                <img src="static/images/location.png" height="50px">
                 <div class="contactsCardData">
                     <h5>Адрес</h5>
                     <h5>г. Минск, ул. Платонова, 39</h5>
                 </div>
             </div>
             <div class= "container contactsCard row">
-                <img src="resources/images/fax.png" height="50px">
+                <img src="static/images/fax.png" height="50px">
                 <div class="contactsCardData">
                     <h5>Факс</h5>
                     <h5>+1-000-0000</h5>
@@ -150,7 +155,7 @@
             <a href="#" class="thin">Онлайн чат</a>
             <a href="#" class="thin">Диагностика</a>
             <a href="#" class="thin">Записи</a>
-            <a href="#" class="thin">Медицинская карта</a>
+            <a href="/mediacl_card" class="thin">Медицинская карта</a>
         </div>
             
         <div class="container footerItem">
@@ -191,5 +196,5 @@
         <div class="small"><h5 style="color: gray;">© 2024, Все права защищены</h5></div>
     </div>
 </footer>
-</html>
+{% endblock %}
     

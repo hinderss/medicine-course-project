@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Регистрация Врача{% endblock %}
+{% block content %}
+<body class="signup fullHeight">
+    <div class="container leftW medium mint padding80px fullHeight">
+        <div class="fullWidth leftW">
+            <h3 id="signupTitle">Регистрация</h3>
+        </div>
+        <div class="container">
+            <div class="container medium marginTop40px lightBlueBG rounded">
+                <div class="container" id="formDiv">
+                    <form id="signupForm" action="/signup_doctor" method="POST" enctype="multipart/form-data">
+                        <input type="text" name="surname" placeholder="Фамилия" value="{{ form_data.get('surname', '') }}">
+                        <input type="text" name="firstname" placeholder="Имя" value="{{ form_data.get('firstname', '') }}">
+                        <input type="text" name="patronymic" placeholder="Отчество" value="{{ form_data.get('patronymic', '') }}">
+                        <input type="text" name="dob" placeholder="Дата рождения: dd.mm.yyyy" value="{{ form_data.get('dob', '') }}">
+                        <input type="text" name="education" placeholder="Образование" value="{{ form_data.get('education', '') }}">
+                        <input type="text" name="workplace" placeholder="Место работы" value="{{ form_data.get('workplace', '') }}">
+                        <input type="text" name="practice_profile" placeholder="Профиль врачебной практики" value="{{ form_data.get('practice_profile', '') }}">
+                        <input type="phone" name="phone" placeholder="Номер телефона" value="{{ form_data.get('phone', '') }}">
+                        <input type="email" name="email" placeholder="Адрес электронной почты" value="{{ form_data.get('email', '') }}">
+                        <input type="password" name="password" placeholder="Пароль">
+                        <input type="file" name="photo" id="fileInput" accept="image/*" style="display: none;">
+                    </form>
+                   </div>
+            </div>
+
+            {% if error and request.method == 'POST' %}
+            <div class="alert alert-danger">
+                {{ error | safe }}
+            </div>
+            {% endif %}
+
+            <div class="container row medium marginTop40px spacebtw">
+                <a href="/signup"><button class="button">Назад</button></a>
+                <input class="button" id="submitBtn" type="submit" value="Зарегистрироваться"></input>
+            </div>
+        </div>
+        <a class="addImage round" id="addImageButton">
+            <h3 class="thin">Добавить фото</h3>
+            <div id="imagePreview"></div>
+        </a>
+    </div>
+    <script>
+        document.getElementById('addImageButton').addEventListener('click', function() {
+            document.getElementById('fileInput').click();
+        });
+    
+        document.getElementById('fileInput').addEventListener('change', function() {
+            var fileInput = document.getElementById('fileInput');
+            var addImageButton = document.getElementById('addImageButton'); 
+    
+            while (addImageButton.firstChild) {
+                addImageButton.removeChild(addImageButton.firstChild);
+            }
+    
+            var file = fileInput.files[0];
+            var image = document.createElement('img');
+            image.src = URL.createObjectURL(file);
+            image.style.width = '100%';
+            image.style.height = '100%';
+            image.style.objectFit = 'cover';
+            addImageButton.appendChild(image);
+        });
+    
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            document.getElementById('signupForm').submit();
+        });
+    </script>
+</body>
+{% endblock %}
