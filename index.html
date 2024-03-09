@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="resources/style.css">
-    <link href="resources/calendar/vanilla-calendar.min.css" rel="stylesheet">
-    <script src="resources/calendar/vanilla-calendar.min.js" defer></script>
+    <link rel="stylesheet" href="static/style.css">
+    <!-- Add Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- Add Slick Carousel theme CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link href="static/calendar/vanilla-calendar.min.css" rel="stylesheet">
+    <script src="static/calendar/vanilla-calendar.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         window.addEventListener('scroll', function () {
             var gptIcon = document.getElementById('gptIcon');
@@ -33,7 +38,7 @@
     <div class="container padding100pxW" id="indexPage">
         <div class="container row spacebtw marginTop20px" id="indexPageHeader">
             <div class="container row small">
-                <img src="resources/images/logo.svg" width="40px" class="marginW30px">
+                <img src="static/images/logo.svg" width="40px" class="marginW30px">
                 <a href="#"  class="link"><h4 class="thin">Logoipsum</h4></a>
             </div>
             <a href="#" class="link"><h4 class="thin">Медицинская карта</h4></a>
@@ -45,10 +50,9 @@
                         <h5>Имя</h5>
                         <h5>Фамилия</h5>
                     </div>
-                    <img src="resources/images/profileLogo.svg" width="40px" class="logo white">
+                    <img src="static/images/profileLogo.svg" width="40px" class="logo white">
                 </div>
             </a>
-            <a href="#"><img src="resources/images/chat.png" id="gptIcon" class="gptIcon logo white" height="40px"></a>
 </div>
         <div class="container fullHeight centerH flex-end padding100pxW">
             <a class="diagnosticsButton">Диагностика</a>
@@ -57,84 +61,181 @@
     <div class="container indexDoctors padding100pxW">
         <h3 class="regular marginTop40px" style="text-decoration: underline;">Лучшие врачи</h3>
         <div class="container slider marginTop80px row center">
-            <div class="container small centerItemsW faded marginRight70px" id="doctorCard">
-                <img src="resources/images/profileLogo.svg" width="400px">
-                <div class="container medium"  id="doctorCardData">
-                    <h5 class="aboutDoctor thin">position</h5>
-                    <h4 class="aboutDoctor">Oleg</h4>
-                    <h4 class="aboutDoctor">Nicheporenko</h4>
-                    <h5 class="aboutDoctor thin">section</h5>
+
+            <div class="container small centerItemsW marginRight70px" id="doctorCard">
+                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                <div class="container medium faded"  id="doctorCardData">
+                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
+                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
                 </div>
             </div>
-
-            <div class="container small centerItemsW faded marginRight70px" id="doctorCard">
-                <img src="resources/images/profileLogo.svg" width="400px">
-                <div class="container medium"  id="doctorCardData">
-                    <h5 class="aboutDoctor thin">position</h5>
-                    <h4 class="aboutDoctor">Oleg</h4>
-                    <h4 class="aboutDoctor">Nicheporenko</h4>
-                    <h5 class="aboutDoctor thin">section</h5>
+            <div class="container small centerItemsW marginRight70px" id="doctorCard">
+                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                <div class="container medium faded"  id="doctorCardData">
+                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
+                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
                 </div>
             </div>
-
-            <div class="container small centerItemsW faded marginRight70px" id="doctorCard">
-                <img src="resources/images/profileLogo.svg" width="400px">
-                <div class="container medium"  id="doctorCardData">
-                    <h5 class="aboutDoctor thin">position</h5>
-                    <h4 class="aboutDoctor">Oleg</h4>
-                    <h4 class="aboutDoctor">Nicheporenko</h4>
-                    <h5 class="aboutDoctor thin">section</h5>
+            <div class="container small centerItemsW marginRight70px" id="doctorCard">
+                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                <div class="container medium faded"  id="doctorCardData">
+                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
+                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
                 </div>
             </div>
-
-            <div class="container small centerItemsW faded" id="doctorCard">
-                <img src="resources/images/profileLogo.svg" width="400px">
-                <div class="container medium"  id="doctorCardData">
-                    <h5 class="aboutDoctor thin">position</h5>
-                    <h4 class="aboutDoctor">Oleg</h4>
-                    <h4 class="aboutDoctor">Nicheporenko</h4>
-                    <h5 class="aboutDoctor thin">section</h5>
+            <div class="container small centerItemsW marginRight70px" id="doctorCard">
+                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                <div class="container medium faded"  id="doctorCardData">
+                    <h5 class="aboutDoctor thin" id="doctorPosition">Норколог</h5>
+                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
                 </div>
             </div>
 
         </div>
 
         <div class="container center marginTop40px">
-            <a class="button">Все доктора: </a>
+            <a class="button" id="allDoctorsBtn">Все доктора: </a>
         </div>
     </div>
     <div class="container calendar marginTop40px center">
         <div id="calendar"></div>
     </div>
+    <div class="chat-container">
+        <button class="fixedButton"><img src="static/images/chat.png" id="gptIcon" class="gptIcon logo white" height="40px"></button>
+        <div class="chat">
+            <div class="chat-title">
+                <figure class="avatar">
+                    <img src="static/images/chatAvatar.jpg" />
+                </figure>
+                <div>
+                    <h1>Medical Assistant</h1>
+                    <h2>AI chat</h2>    
+                </div>
+                <button class="fixedButton" id="closeChatBtn" class="closeChatBtnImg"><img src="static/images/close.svg" class="logo white"></button>
+            </div>
+            <div class="messages">
+                <div class="messages-content"></div>
+            </div>
+            <div class="message-box">
+                <textarea type="text" name="chat_input" class="message-input" placeholder="Type message..." style="overflow: hidden;"></textarea>
+                <button type="submit" name="chat_send" class="message-submit"><img src="static/images/chatSendMessagePhoto.png"></button>
+            </div>
+        </div>
+    </div>
 
+    <script>
+            $(document).ready(function() {
+                $('#gptIcon').on('click', function() {
+                    $('.chat').css('display', 'flex');
+                    $('#gptIcon').css('display', 'none');
+                });
+    
+                $('#closeChatBtn').on('click', function() {
+                    $('.chat').css('display', 'none');
+                    $('#gptIcon').css('display', 'block');
+                });
+            });
+
+        var $messages = $('.messages-content'),
+            i = 0;
+
+        function setDate() {
+            var d = new Date();
+            $('<div class="timestamp">' + d.getHours() + ':' + d.getMinutes() + '</div>').appendTo($('.message:last'));
+        }
+
+        function insertMessage(msg) {
+            if ($.trim(msg) == '') {
+                return false;
+            }
+            $('<div class="message message-personal">' + msg + '</div>').appendTo($messages).addClass('new');
+            setDate();
+            $('.message-input').val(null);
+            scrollChat(); // Прокручиваем при каждом сообщении
+            setTimeout(function() {
+                fakeMessage();
+            }, 1000 + (Math.random() * 20) * 20);
+        }
+
+        $('.message-submit').click(function() {
+            insertMessage($('.message-input').val());
+        });
+
+        $(window).on('keydown', function(e) {
+            if (e.which == 13) {
+                insertMessage($('.message-input').val());
+                return false;
+            }
+        });
+
+        var Fake = [
+            'Hi there, I\'m AI Chat and you?',
+            'Nice to meet you',
+            'How are you?',
+            'It\'s an example of an answer. I can\'t understand you',
+            'Still can\'t',
+            ':)'
+        ];
+
+        function fakeMessage() {
+            if ($('.message-input').val() !== '') {
+                return false;
+            }
+            $('<div class="message new">' + Fake[i] + '</div>').appendTo($messages).addClass('new');
+            setDate();
+            i++;
+            scrollChat(); // Прокручиваем при каждом сообщении
+        }
+
+        function scrollChat() {
+            var height = $messages[0].scrollHeight;
+            $messages.stop().animate({ scrollTop: height }, 'slow');
+        }
+
+        // Initial fake message
+        $(window).on('load', function() {
+            setTimeout(function() {
+                fakeMessage();
+                scrollChat();
+            }, 100);
+        });
+    </script>
 </body>
 <footer class="container medium center marginTop120px">
     <div class="container">
         <h4>Logo</h4>
         <div class="container row spacebtw marginTop20px">
             <div class= "container contactsCard row">
-                <img src="resources/images/phone.png" height="50px">
+                <img src="static/images/phone.png" height="50px">
                 <div class="contactsCardData">
                     <h5>Телефон</h5>
                     <h5>293-86-16</h5>
                 </div>
             </div>
             <div class= "container contactsCard row">
-                <img src="resources/images/mail.png" height="50px">
+                <img src="static/images/mail.png" height="50px">
                 <div class="contactsCardData">
                     <h5>Mail</h5>
                     <h5>medassistant@gmail.com</h5>
                 </div>
             </div>
             <div class= "container contactsCard row">
-                <img src="resources/images/location.png" height="50px">
+                <img src="static/images/location.png" height="50px">
                 <div class="contactsCardData">
                     <h5>Адрес</h5>
                     <h5>г. Минск, ул. Платонова, 39</h5>
                 </div>
             </div>
             <div class= "container contactsCard row">
-                <img src="resources/images/fax.png" height="50px">
+                <img src="static/images/fax.png" height="50px">
                 <div class="contactsCardData">
                     <h5>Факс</h5>
                     <h5>+1-000-0000</h5>

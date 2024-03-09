@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Index</title>
+</head>
+<body> 
+        <div class="chat-container">
+        <button class="fixedButton"><img src="static/images/chat.png" id="gptIcon" class="gptIcon logo" height="40px"></button>
+        <div class="chat">
+            <div class="chat-title">
+                <figure class="avatar">
+                    <img src="static/images/chatAvatar.jpg" />
+                </figure>
+                <div>
+                    <h1>Medical Assistant</h1>
+                    <h2>AI chat</h2>    
+                </div>
+                <button class="fixedButton" id="closeChatBtn" class="closeChatBtnImg"><img src="static/images/close.svg"  class="logo white"></button>
+            </div>
+            <div class="messages">
+                <div class="messages-content"></div>
+            </div>
+            <div class="message-box">
+                <textarea type="text" name="chat_input" class="message-input" placeholder="Type message..." style="overflow: hidden;"></textarea>
+                <button type="submit" name="chat_send" class="message-submit"><img src="static/images/chatSendMessagePhoto.png"></button>
+            </div>
+        </div>
+        </div>
+
+        <script>
+                $(document).ready(function() {
+                    $('#gptIcon').on('click', function() {
+                        $('.chat').css('display', 'flex');
+                        $('#gptIcon').css('display', 'none');
+                    });
+        
+                    $('#closeChatBtn').on('click', function() {
+                        $('.chat').css('display', 'none');
+                        $('#gptIcon').css('display', 'block');
+                    });
+                });
+
+            var $messages = $('.messages-content'),
+                i = 0;
+
+            function setDate() {
+                var d = new Date();
+                $('<div class="timestamp">' + d.getHours() + ':' + d.getMinutes() + '</div>').appendTo($('.message:last'));
+            }
+
+            function insertMessage(msg) {
+                if ($.trim(msg) == '') {
+                    return false;
+                }
+                $('<div class="message message-personal">' + msg + '</div>').appendTo($messages).addClass('new');
+                setDate();
+                $('.message-input').val(null);
+                scrollChat(); // Прокручиваем при каждом сообщении
+                setTimeout(function() {
+                    fakeMessage();
+                }, 1000 + (Math.random() * 20) * 20);
+            }
+
+            $('.message-submit').click(function() {
+                insertMessage($('.message-input').val());
+            });
+
+            $(window).on('keydown', function(e) {
+                if (e.which == 13) {
+                    insertMessage($('.message-input').val());
+                    return false;
+                }
+            });
+
+            var Fake = [
+                'Hi there, I\'m AI Chat and you?',
+                'Nice to meet you',
+                'How are you?',
+                'It\'s an example of an answer. I can\'t understand you',
+                'Still can\'t',
+                ':)'
+            ];
+
+            function fakeMessage() {
+                if ($('.message-input').val() !== '') {
+                    return false;
+                }
+                $('<div class="message new">' + Fake[i] + '</div>').appendTo($messages).addClass('new');
+                setDate();
+                i++;
+                scrollChat(); // Прокручиваем при каждом сообщении
+            }
+
+            function scrollChat() {
+                var height = $messages[0].scrollHeight;
+                $messages.stop().animate({ scrollTop: height }, 'slow');
+            }
+
+            // Initial fake message
+            $(window).on('load', function() {
+                setTimeout(function() {
+                    fakeMessage();
+                    scrollChat();
+                }, 100);
+            });
+        </script>
+</body>
+</html>
