@@ -18,10 +18,12 @@ def index():
     template = 'index.html'
     name = ''
     surname = ''
+    patient = ''
 
     if current_user.is_authenticated:
         if current_user.patient:
             user = current_user.patient
+            patient = 'True'
         elif current_user.doctor:
             user = current_user.doctor
         else:
@@ -30,8 +32,7 @@ def index():
         name = user.firstname
         surname = user.surname
 
-    return render_template(template, name=name, surname=surname)
-
+    return render_template(template, name=name, surname=surname, patient=patient)
 
 
 @app.route('/welcome')
@@ -302,7 +303,7 @@ def signup_doctor():
         form_data.pop('email')
         new_user = User(email, password)
 
-        new_doctor = Doctor(**form_data, user=new_user, photo_path=filename)
+        new_doctor = Doctor(**form_data, doctor=new_user, photo_path=filename)
         db.session.add(new_user)
         db.session.add(new_doctor)
         db.session.commit()
