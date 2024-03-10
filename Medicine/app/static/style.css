@@ -164,17 +164,7 @@ input, select, textarea {
     border-radius: 8px;
     box-sizing: border-box;
   }
-/*   
-  input[type=submit] {
-    width: 100%;
-    background-color: #278375;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  } */
+
 
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
 @media (prefers-reduced-motion: reduce) {
@@ -269,6 +259,10 @@ input, select, textarea {
 
 .logIn{
     overflow: hidden;
+}
+
+.hidden{
+  display: none !important;
 }
 
 .login{
@@ -446,7 +440,7 @@ input, select, textarea {
   position: absolute;
 }
 
-.create-line:after{
+.create-line:after{ 
   content: " ";
   background: gray;
   width: 600px;
@@ -466,7 +460,7 @@ input, select, textarea {
   display: inline-block;
 }
 
-.create-line-left-right:before{
+.create-line-left-right:before{ 
   content: " ";
   background: gray;
   width: 100px;
@@ -478,7 +472,7 @@ input, select, textarea {
   position: absolute;
 }
 
-.create-line-left-right:after{
+.create-line-left-right:after{ 
   content: " ";
   background: gray;
   width: 100px;
@@ -614,7 +608,7 @@ input, select, textarea {
   position: relative;
   left: 30vh;
   z-index: 1;
-}
+} 
 
 .left{
   display: flex;
@@ -628,7 +622,7 @@ input, select, textarea {
 
 .checkbox-custom {
   opacity: 0;
-  position: absolute;
+  position: absolute;   
 }
 
 .checkbox-custom, .checkbox-custom-label {
@@ -753,6 +747,10 @@ input, select, textarea {
   margin: 0 20px;
 }
 
+.white{
+  color: white;
+}
+
 .logo.white{
 /* svg on an img tag */
     -webkit-filter: invert(1); /* safari 6.0 - 9.0 */
@@ -862,34 +860,117 @@ input, select, textarea {
 .container.grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 10px; 
 }
 
 .footerItem{
   width: auto;
+  max-width: 220px;
+  font-size: 10pt;
+  box-sizing: border-box;
+}
+
+.footerItem:last-child{
+  width: auto;
+  max-width: 150px;
   font-size: 10pt;
   box-sizing: border-box;
 }
 
 .footerItem h4{
   margin-bottom: 20px;
+  color: #014C35 !important;
 }
 
 .footerItem a{
   margin-bottom: 10px;
-  color: gray;
+  color: #014C35 !important;
 }
 
 .footerItem h5{
   margin-bottom: 10px;
   font-size: 10pt;
-  color: gray;
+  color: #014C35 !important;
 }
 
-.container.calendar{
-  min-height: 700px;
+.calendarDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between !important;
   width: 100%;
-  background-color: lightgray;
+  padding: 80px 150px;
+  justify-content: center;
+  background: url("images/calendarDivBG.png");
+}
+
+.createAppointmentTimePicker{
+  height: 50px;
+  width: 120px;
+}
+
+.createAppointmentTimePickerContainer{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.createAppointmentTimePicker label, .createAppointmentTimePicker input{
+  display: block;
+  font:
+    1rem 'Fira Sans',
+    sans-serif;
+  margin-left: 70px;
+}
+
+
+#appointementDoctorPhoto{
+  min-width: 100px !important;
+  max-width: 100px !important;
+  height: 100px !important;
+  border-radius: 50%;
+}
+
+.appointementDoctorData{
+  margin-left: 30px;
+}
+
+#createAppointmenDiv{
+  width: 600px;
+  height: 630px;
+}
+
+.vanilla-calendar{
+  box-sizing: border-box;
+  overflow-x: hidden;
+  width: 600px !important;
+  height: 630px !important;
+}
+
+.vanilla-calendar-day__btn{
+  min-height: 90px !important;
+  max-width: 70px !important;
+}
+
+.vanilla-calendar-months__month{
+  height: 150px !important;
+  max-width: 110px !important;
+}
+
+.vanilla-calendar-years__year{
+  height: 150px !important;
+  max-width: 110px !important;
+}
+
+.vanilla-calendar-day__btn.vanilla-calendar-day__btn_selected{
+  background-color: #047857 !important;
+}
+
+.vanilla-calendar-years__year.vanilla-calendar-years__year_selected{
+  background-color: #047857 !important;
+}
+
+.vanilla-calendar-months__month.vanilla-calendar-months__month_selected{
+  background-color: #047857 !important;
 }
 
 /* CHAT */
@@ -1153,7 +1234,7 @@ input, select, textarea {
 /*--------------------
 Bounce
 --------------------*/
-@keyframes bounce {
+@keyframes bounce { 
   0% { transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   4.7% { transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   9.41% { transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
@@ -1166,7 +1247,7 @@ Bounce
   52.15% { transform: matrix3d(0.991, 0, 0, 0, 0, 0.991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   63.26% { transform: matrix3d(1.007, 0, 0, 0, 0, 1.007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   85.49% { transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } 
 }
 
 .chat {
@@ -1223,4 +1304,55 @@ Bounce
 #splide-container {
   height: 500px;
   overflow-y: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+#specialtySelectionSelector::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+#specialtySelectionSelector{
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; 
+  height: 500px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+#doctorList{
+  height: 500px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+#goBackBtn{
+  position: absolute;
+  width: 70px;
+  height: 70px;
+}
+
+#apointementHeader{
+  display: flex;
+  align-items: center;
 }

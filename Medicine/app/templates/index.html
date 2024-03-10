@@ -32,6 +32,25 @@
             calendar.init();
         });
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Добавляем обработчик событий для родительского элемента, используя делегирование
+            document.addEventListener('click', function(event) {
+                // Проверяем, была ли нажата кнопка с классом vanilla-calendar-day__btn
+                if (event.target.classList.contains('vanilla-calendar-day__btn')) {
+                    // Получаем значение data-calendar-day
+                    var selectedDate = event.target.getAttribute('data-calendar-day');
+
+                    // Выводим значение в консоль
+                    // console.log("Выбранная дата:", selectedDate);
+
+                    // Далее, вы можете использовать значение selectedDate и подставить его в нужное место в форме
+                    // Например, для подстановки в поле с именем "date":
+                    document.querySelector('input[name="date"]').value = selectedDate;
+                }
+            });
+        });
+    </script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
       new Splide('#splide-container', {
@@ -101,66 +120,66 @@
                     <ul class="splide__list">
                         <li class="splide__slide">
                             <div class="container small centerItemsW marginRight70px" id="doctorCard">
-                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
                                 <div class="container medium faded"  id="doctorCardData">
                                     <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
                                     <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>
                                     <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
                                 </div>
                             </div>
                         </li>
                         <li class="splide__slide">
                             <div class="container small centerItemsW marginRight70px" id="doctorCard">
-                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
                                 <div class="container medium faded"  id="doctorCardData">
                                     <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
                                     <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>
                                     <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
                                 </div>
                             </div>
                         </li>
                         <li class="splide__slide">
                             <div class="container small centerItemsW marginRight70px" id="doctorCard">
-                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
                                 <div class="container medium faded"  id="doctorCardData">
                                     <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
                                     <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>
                                     <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
                                 </div>
                             </div>
                         </li>
                         <li class="splide__slide">
                             <div class="container small centerItemsW marginRight70px" id="doctorCard">
-                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
                                 <div class="container medium faded"  id="doctorCardData">
                                     <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
                                     <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>
                                     <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
                                 </div>
                             </div>
                         </li>
                         <li class="splide__slide">
                             <div class="container small centerItemsW marginRight70px" id="doctorCard">
-                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
                                 <div class="container medium faded"  id="doctorCardData">
                                     <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
                                     <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>
                                     <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
                                 </div>
                             </div>
                         </li>
                                                 <li class="splide__slide">
                             <div class="container small centerItemsW marginRight70px" id="doctorCard">
-                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto" width="400px">
+                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
                                 <div class="container medium faded"  id="doctorCardData">
                                     <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
                                     <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>
                                     <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
                                 </div>
                             </div>
@@ -174,9 +193,76 @@
             <a class="button" id="allDoctorsBtn">Все врачи</a>
         </div>
     </div>
-    <div class="container calendar marginTop40px center">
+
+
+    
+    <div class="container big calendarDiv marginTop40px">
         <div id="calendar"></div>
-    </div>
+        <div id="createAppointmenDiv" action="/createAppointment" method="POST" class="container small">
+            <div class="container row" id="apointementHeader">
+                <img src="../static/images/backBtn.png" class="logo white hidden" onclick="goBack()" id="goBackBtn">
+                <h2 class="container center white">Записаться</h2>
+            </div>
+        
+            <!-- Выбор направления врача -->
+            <div class="container center column spacebtw" id="specialtySelection">
+                <h4 class="white">Выберите направление врача</h4>
+                <div id="specialtySelectionSelector">
+                    <button class="button" type="button" onclick="selectSpecialty('narcology')">Нарколог</button>
+                    <button class="button" type="button" onclick="selectSpecialty('urologist')">Уролог</button>
+                    <button class="button" type="button" onclick="selectSpecialty('protologist')">Проктолог</button>
+
+                </div>
+            </div>
+        
+            <!-- Список врачей по выбранному направлению -->
+            <div class="container hidden" id="doctorList">
+                <h4 class="white">Выберите врача</h4>
+                <div id="doctorLinks" class="container">
+                    <!-- Ссылки на врачей будут добавлены динамически с помощью JavaScript -->
+                </div>
+            </div>
+        
+            <form id="createAppointment" action="/createAppointment" method="POST">
+                <input type="text" name="date" class="hidden" required="required">
+                <div class="container row hidden" id="doctorDetails">
+                    <img src="../static/images/doctorCardPhoto.jpg" id="appointementDoctorPhoto">
+                    <div>
+                        <h4 class="appointementDoctorData white thin" id="doctorName">Олегов</h4>
+                        <h4 class="appointementDoctorData white thin" id="doctorSurname">Олег</h4>
+                    </div>
+            
+                    <!-- Выбор времени и дополнительные элементы -->
+                    <div class="container createAppointmentTimePickerContainer hidden" id="timePickerContainer">
+                        <style>
+                            .createAppointmentTimePicker option[value=""] {
+                                display: none;
+                            }
+                        </style>
+            
+                        <select class="createAppointmentTimePicker" id="appt" name="appt" required onchange="addIcon()">
+                            <!-- Добавляем значение по умолчанию -->
+                            <option value="" disabled selected>🕑 --:--</option>
+                            <!-- Вставьте интервал времени с учетом 15-минутного шага -->
+                            <option value="09:00">09:00</option>
+                            <option value="09:15" disabled>09:15 (занято)</option>
+                            <option value="09:30">09:30</option>
+                            <option value="09:45">09:45</option>
+                            <!-- ... (дополните интервалы по аналогии) ... -->
+                            <option value="18:00">18:00</option>
+                        </select>
+                    </div>
+            
+                    <!-- Детали записи -->
+                </div>
+                <textarea class="hidden" name="appointment_details" placeholder="Детали записи" id="appointementTextArea"></textarea>
+                <button type="submit" class="button hidden" id="submitAppointment">Записаться</button>
+            </form>
+        </div>        
+    </div>      
+
+   
+
     <div class="chat-container">
         <button class="fixedButton"><img src="static/images/chat.png" id="gptIcon" class="gptIcon logo white" height="40px"></button>
         <div class="chat">
@@ -277,8 +363,122 @@
             }, 100);
         });
     </script>
+
+    <script>
+        function selectSpecialty(specialty) {
+            // console.log(specialty);
+            // Здесь можно отправить AJAX-запрос для получения списка врачей по выбранному направлению
+            // В примере добавлены фиктивные данные
+            var doctors = {
+                "narcology": [
+                    { name: "Виталий", surname: "Витальев" },
+                    { name: "Олег", surname: "Олегов" },
+                ],
+                "urologist": [
+                    { name: "Александр", surname: "Александров" },
+                    { name: "Никита", surname: "Никитов" },
+                ],
+                "protologist": [
+                    { name: "Александр", surname: "Александрович" },
+                ]
+            };
+    
+            // Заполняем список врачей
+            var doctorLinks = $("#doctorLinks");
+            doctorLinks.empty();
+    
+            doctors[specialty].forEach(function (doctor) {
+                var doctorLink = $("<a>", {
+                    id: specialty, // Use the specialty as the ID
+                    class: "marginTop20px",
+                    click: function () {
+                        showDoctorDetails(doctor);
+                    }
+                });
+    
+                // Create the container with image, name, and surname
+                var container = $("<div>", {
+                    class: "container row"
+                });
+    
+                container.append($("<img>", {
+                    src: "../static/images/doctorCardPhoto.jpg",
+                    id: "appointementDoctorPhoto"
+                }));
+    
+                var detailsContainer = $("<div>");
+                detailsContainer.append($("<h4>", {
+                    class: "appointementDoctorData white thin",
+                    id: "doctorName",
+                    text: doctor.name
+                }));
+                detailsContainer.append($("<h4>", {
+                    class: "appointementDoctorData white thin",
+                    id: "doctorSurname",
+                    text: doctor.surname
+                }));
+    
+                container.append(detailsContainer);
+                doctorLink.append(container);
+                doctorLinks.append(doctorLink);
+            });
+    
+            // Переключаем видимость элементов
+            $("#specialtySelection").addClass("hidden");
+            $("#doctorList").removeClass("hidden");
+            $("#goBackBtn").removeClass("hidden");
+        }
+    
+        function showDoctorDetails(doctor) {
+            // Здесь вы можете добавить код для отображения подробной информации о враче
+            // console.log("Selected doctor:", doctor);
+    
+            // Пример: Показать детали выбранного врача
+            $("#doctorDetails").removeClass("hidden");
+            $("#doctorName").text("Имя: " + doctor.name);
+            $("#doctorSurname").text("Фамилия: " + doctor.surname);
+    
+            // Дополнительный код для отображения деталей врача
+    
+            // Скрываем список врачей
+            $("#doctorList").addClass("hidden");
+            $("#timePickerContainer").removeClass("hidden");
+            $("#appointementTextArea").removeClass("hidden");
+            $("#submitAppointment").removeClass("hidden");
+            $("#goBackBtn").removeClass("hidden");
+        }
+    
+        function goBack() {
+            // Здесь вы можете добавить код для возврата к выбору врача или специальности
+            // В данном примере просто скрываем подробные детали врача
+            $("#specialtySelection").removeClass("hidden");
+            $("#doctorDetails").addClass("hidden");
+            $("#doctorList").addClass("hidden");
+            $("#timePickerContainer").addClass("hidden");
+            $("#submitAppointment").addClass("hidden");
+            $("#appointementTextArea").addClass("hidden");
+            $("#goBackBtn").addClass("hidden");
+        }
+    </script>
+            
+    <script>
+        // Пример массива с занятыми временными интервалами
+        var busyTimes = ["09:15", "10:30", "14:45"];
+    
+        // Получаем элемент select
+        var select = document.getElementById('appt');
+    
+        // Устанавливаем обработчик события change
+        select.addEventListener('change', function () {
+            // Проверяем, выбрано ли занятое время
+            if (busyTimes.includes(select.value)) {
+                alert('Это время уже занято. Пожалуйста, выберите другое время.');
+                select.value = ''; // Сбрасываем выбранное значение
+            }
+        });
+    </script>
 </body>
-<footer class="container medium center marginTop120px">
+<footer class="container medium center marginTop80px">
     <div class="container">
         <h4>Logo</h4>
         <div class="container row spacebtw marginTop20px">
@@ -317,36 +517,29 @@
 
         <div class="container footerItem">
             <h4>Услуги</h4>
-            <a href="#" class="thin">Онлайн чат</a>
-            <a href="#" class="thin">Диагностика</a>
-            <a href="#" class="thin">Записи</a>
-            <a href="/medical_card" class="thin">Медицинская карта</a>
-        </div>
-
-        <div class="container footerItem">
-            <h4>Специалисты</h4>
-            <div class="container grid">
-                <h5 class="thin">Иванова Анна</h5>
-                <h5 class="thin">Петров Сергей</h5>
-                <h5 class="thin">Смирнова Ольга</h5>
-                <h5 class="thin">Волков Дмитрий</h5>
-                <h5 class="thin">Кузнецова Екатерина</h5>
-                <h5 class="thin">Соколов Александр</h5>
-                <h5 class="thin">Попова Мария</h5>
-                <h5 class="thin">Лебедев Артем</h5>
-                <h5 class="thin">Козлова Елена</h5>
-                <h5 class="thin">Новиков Иван</h5>
-                <h5 class="thin">Морозова Анастасия</h5>
-                <h5 class="thin">Павлов Андрей</h5>
+            <div class="container footerItemData">
+                <a href="#" class="thin">Онлайн чат</a>
+                <a href="#" class="thin">Диагностика</a>
+                <a href="#" class="thin">Записи</a>
+                <a href="/medical_card" class="thin">Медицинская карта</a>
             </div>
         </div>
 
         <div class="container footerItem">
-            <h4>Контакты</h4>
-            <a href="#"  class="thin">Телефон</a>
-            <a href="#"  class="thin">Mail</a>
-            <a href="#"  class="thin">Адрес</a>
-            <a href="#"  class="thin">Факс</a>
+            <h4>Колл-центр</h4>
+            <h5>пн-пт 8:00-22:00</h5>
+            <h5>сб-вс 9:00-20:00</h5>
+            <a href="tel:29-321-68-71"  class="thin">a1: 29-321-68-71</a>
+            <a href="tel:33-321-68-71"  class="thin">life: 33-321-68-71</a>
+            <a href="tel:25-321-68-71"  class="thin">mts: 25-321-68-71</a>
+        </div>
+
+        <div class="container footerItem ">
+            <h4>Коммерческие предложения</h4>
+            <div class="container footerItemData">
+                <a href="tel:321-68-71"  class="thin">тел: 321-68-71</a>
+                <a href="#"  class="thin">email: medassistant@offers.com</a>
+            </div>
         </div>
     </div>
 
