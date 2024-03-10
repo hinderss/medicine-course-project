@@ -45,6 +45,7 @@
             perPage: 1,
           },
         },
+        drag: false,
       }).mount();
     });
   </script>
@@ -78,7 +79,7 @@
         </div>
     </div>
     <div class="container indexDoctors padding100pxW">
-        <h3 class="regular marginTop40px" style="text-decoration: underline;">Лучшие врачи</h3>
+        <h3 class="regular marginTop40px" style="text-decoration: underline;">Наши врачи</h3>
 
         <div class="container slider marginTop80px row center">
             <div class="splide" id="splide-container">
@@ -155,8 +156,8 @@
             </div>
         </div>
 
-        <div class="container center marginTop40px">
-            <a class="button" id="allDoctorsBtn">Все доктора: </a>
+        <div class="container center" id="allDoctorsDiv">
+            <a class="button" id="allDoctorsBtn">Все врачи</a>
         </div>
     </div>
     <div class="container calendar marginTop40px center">

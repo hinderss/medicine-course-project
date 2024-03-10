@@ -332,13 +332,22 @@ input, select, textarea {
     height: 50px;
     background-color: #339989FC;
     color: white;
-    padding: 14px 20px;
     margin: 8px 0px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    border: 5px solid #339989FC;
+    padding: 10px 20px;
+    font-weight: 500;
 }
 
+.button:hover{
+  border-color:  #339989FC;
+  background-color: transparent;
+  color: #1A5E49;
+  text-decoration: none;
+  transition: ease-in-out 0.15;
+}
 
 .button.white{
     background-color: white;
@@ -784,6 +793,16 @@ input, select, textarea {
   width: 300px;
 }
 
+#doctorName{
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+#doctorSurname{
+  margin-top: 2px;
+  padding-top: 0;
+}
+
 #doctorCardPhoto{
   z-index: 2;
   position: relative;
@@ -804,9 +823,13 @@ input, select, textarea {
   box-sizing: border-box;
   overflow: hidden;
   top: -100px;
-  padding: 80px 20px 20px 20px;
+  padding: 90px 20px 20px 20px;
   width: 70%;
-  height: 300px;
+  height: 270px;
+}
+
+#doctorCardData h4{
+  line-height: normal;
 }
 
 .contactsCard{
@@ -1189,4 +1212,15 @@ Bounce
   width: 100%; /* Ensure each slide takes the full width */
   width: calc(16%);
   box-sizing: border-box;
+}
+
+
+.slider{
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+#splide-container {
+  height: 500px;
+  overflow-y: hidden;
 }
