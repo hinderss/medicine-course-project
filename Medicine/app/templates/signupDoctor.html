@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block title %}Регистрация Врача{% endblock %}
 {% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body class="signup fullHeight">
     <div class="container leftW medium mint padding80px fullHeight">
         <div class="fullWidth leftW">
@@ -25,6 +29,11 @@
                    </div>
             </div>
 
+            <a class="addImage round" id="addImageButton">
+                <h3 class="thin">Добавить фото</h3>
+                <div id="imagePreview"></div>
+            </a>
+
             {% if error and request.method == 'POST' %}
             <div class="alert alert-danger">
                 {{ error | safe }}
@@ -36,10 +45,6 @@
                 <input class="button" id="submitBtn" type="submit" value="Зарегистрироваться"></input>
             </div>
         </div>
-        <a class="addImage round" id="addImageButton">
-            <h3 class="thin">Добавить фото</h3>
-            <div id="imagePreview"></div>
-        </a>
     </div>
     <script>
         document.getElementById('addImageButton').addEventListener('click', function() {
