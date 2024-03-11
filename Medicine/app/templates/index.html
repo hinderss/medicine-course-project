@@ -78,7 +78,7 @@
 <body class="container">
     <div class="container padding100pxW" id="indexPage">
         <div class="container row spacebtw marginTop20px" id="indexPageHeader">
-            <div class="container row small">
+            <div class="container row small" id="headerLogo">
                 <img src="static/images/logo.svg" width="40px" class="marginW30px">
                 <a href="/index"  class="link"><h4 class="thin">Logoipsum</h4></a>
             </div>
@@ -107,11 +107,11 @@
             {% endif %}
 
 </div>
-        <div class="container fullHeight centerH flex-end padding100pxW">
+        <div class="container fullHeight centerH flex-end padding100pxW" id="diagnosticsButtonDiv">
             <a class="diagnosticsButton">Диагностика</a>
         </div>
     </div>
-    <div class="container indexDoctors padding100pxW">
+    <div class="container padding100pxW indexDoctors">
         <h3 class="regular marginTop40px" style="text-decoration: underline;">Наши врачи</h3>
 
         <div class="container slider marginTop80px row center">
@@ -481,7 +481,7 @@
 <footer class="container medium center marginTop80px">
     <div class="container">
         <h4>Logo</h4>
-        <div class="container row spacebtw marginTop20px">
+        <div class="container row spacebtw marginTop20px" id="contacts">
             <div class= "container contactsCard row">
                 <img src="static/images/phone.png" height="50px">
                 <div class="contactsCardData">
@@ -513,7 +513,7 @@
         </div>
     </div>
 
-    <div class="container row spacebtw marginTop40px">
+    <div class="container row spacebtw marginTop40px" id="footerItems">
 
         <div class="container footerItem">
             <h4>Услуги</h4>

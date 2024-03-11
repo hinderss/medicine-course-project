@@ -73,6 +73,8 @@ body {
   display: flex;
   height: 100vh; /* Change this to min-height */
   scroll-behavior: smooth;
+  box-sizing: border-box !important;
+  overflow-x: hidden;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   align-items: center;
@@ -275,12 +277,16 @@ input, select, textarea {
   margin: 0; /* Add this to remove default margin */
   font-family: 'Helvetica', Arial, sans-serif;
     background-image: url("images/login.png");
+    background-size: cover;
+
     display: flex;
     flex-direction: column;
 }
 
 .signup {
   background-image: url("images/signup.png");
+  background-size: cover;
+
   display: flex;
   flex-direction: column;
   height: 100vh; /* Add this */
@@ -289,6 +295,8 @@ input, select, textarea {
 
 .signup.tinted{
 	background-image: url("images/signupTinted.png");
+  background-size: cover;
+
 }
 
 #welcome{
@@ -514,14 +522,20 @@ input, select, textarea {
 
 #whoYouAre{
   color: white;
+  font-size: 47pt;
+}
+
+#signupChooseWhoYouAre{
+  margin-top: 80px;
+  padding: 0 70px;
 }
 
 #transparentBtn{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px;
-  height: 70px;
+  width: 340px;
+  height: 90px;
   color: white;
   border: 2px solid;
   border-color: rgba(255, 255, 255, 0.4);
@@ -556,6 +570,8 @@ input, select, textarea {
   height: 70px;
   /* height: 146.07px ; */
   background-image: url("images/headerMedicalCard.png");
+  background-size: cover;
+
   z-index: 999;
 }
 
@@ -717,6 +733,7 @@ input, select, textarea {
   width: 100%;
   min-height: 100vh;
   background-image: url("images/indexPage.png");
+  background-size: cover;
 }
 
 #indexPageHeader{
@@ -901,6 +918,8 @@ input, select, textarea {
   padding: 80px 150px;
   justify-content: center;
   background: url("images/calendarDivBG.png");
+  background-size: cover;
+
 }
 
 .createAppointmentTimePicker{
@@ -1352,7 +1371,58 @@ Bounce
   height: 70px;
 }
 
+#goBackFixedBtn{
+  position: fixed;
+  top: 5vh;
+  left: 5vh;
+  width: 70px;
+  height: 70px;
+}
+
 #apointementHeader{
   display: flex;
   align-items: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .calendarDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #diagnosticsButtonDiv{
+    align-items: center;
+  }
+
+  .diagnosticsButton{
+
+    width: 350px;
+    padding: 0px;
+  }
+
+  #contacts{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; 
+  }
+  
+  #footerItems{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; 
+  }
+
+  #indexPage{
+    padding: auto;
+  }
+
+  #headerLogo{
+    display: none;
+  }
+
+  .indexDoctors{
+    padding: 0px 10px !important;
+  }
 }

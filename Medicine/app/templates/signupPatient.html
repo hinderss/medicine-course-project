@@ -10,8 +10,8 @@
             <div class="container medium marginTop40px lightBlueBG rounded">
                 <div class="container" id="formDiv">
                     <form id="signupForm" action="/signup_patient" method="POST" enctype="multipart/form-data">
-                        <input type="text" name="surname" placeholder="Фамилия" value="{{ form_data.get('surname', '') }}">
                         <input type="text" name="firstname" placeholder="Имя" value="{{ form_data.get('firstname', '') }}">
+                        <input type="text" name="surname" placeholder="Фамилия" value="{{ form_data.get('surname', '') }}">
                         <input type="text" name="dob" placeholder="Дата рождения: dd.mm.yyyy" value="{{ form_data.get('dob', '') }}">
                         <input type="text" name="region" placeholder="Регион: BY/RU/KZ" value="{{ form_data.get('region', '') }}">
                         <input type="phone" name="phone" placeholder="Номер телефона" value="{{ form_data.get('phone', '') }}">
