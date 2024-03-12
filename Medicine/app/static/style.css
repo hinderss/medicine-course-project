@@ -822,8 +822,10 @@ input, select, textarea {
   z-index: 2;
   position: relative;
   top: -20px;
-  width: 250px;
-  height: 250px;
+  min-width: 250px !important;
+  min-height: 250px !important;
+  width: 250px !important;
+  height: 250px !important;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -955,6 +957,7 @@ input, select, textarea {
 }
 
 #createAppointmenDiv{
+margin-left:20px;
   width: 600px;
   height: 630px;
 }
@@ -1488,7 +1491,7 @@ Bounce
 
   #signupForm{
     width: 94%;
-    padding-left: 3%;
+    margin-left: 3%;
   }
 
   .medicalCardSidebar{
@@ -1520,8 +1523,9 @@ Bounce
     font-size: 9pt;
   }
 
-  #addImageButton{
+  #addImageButton {
     position: relative;
+    top: 2vh;
     left: 3vw;
   }
 
@@ -1622,9 +1626,33 @@ Bounce
     font-size: 10pt;
   }
 
+  #goBackBtn{
+    position: relative;
+  }
+
   #createAppointmenDiv{
-    padding: 0 20px;
-    max-width: 100vw;
+      padding: 0 20px;
+      display: flex;
+      width: 100vw !important;
+  }
+
+  #doctorDetails {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Две колонки: первая для фотографии, вторая для имени и фамилии */
+    column-gap: 20px; /* Расстояние между колонками */
+    align-items: center; /* Выравнивание элементов по центру по вертикали */
+  }
+
+  #appointementDoctorPhoto {
+      max-width: 100px; /* Ширина фотографии (можно настроить по вашему вкусу) */
+  }
+
+  .createAppointmentTimePicker{
+    width: 100px !important;
+  }
+
+  #createAppointmenDiv h2{
+    font-size: 30pt;
   }
 
   .splide__list {
@@ -1632,5 +1660,26 @@ Bounce
     left: 0%;
     display: flex;
     transition: transform 0.5s ease-in-out;
+  }
+
+  #signupDiv{
+    height: max-content;
+  }
+
+  #headerMedicalCardAppointment{
+    display: none;
+  }
+
+  
+  #headerMedicalCardAppointment{
+    display: none;
+  }
+  
+  #headerMedicalCardSpecialists{
+    display: none;
+  }
+
+  .medicalCardProfilePhoto{
+    display: none;
   }
 }

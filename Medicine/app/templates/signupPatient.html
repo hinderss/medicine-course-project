@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class="signup">
-    <div class="container leftW medium mint padding80px fullHeight">
+    <div class="container leftW medium mint padding80px fullHeight"  id="signupDiv">
         <div class="fullWidth leftW">
             <h3 id="signupTitle">Регистрация</h3>
         </div>
@@ -25,6 +25,11 @@
                     </form>
                    </div>
             </div>
+
+            <a class="addImage round" id="addImageButton">
+                <h3 class="thin">Добавить фото</h3>
+                <div id="imagePreview"></div>
+            </a>
             
             {% if error and request.method == 'POST' %}
             <div class="alert alert-danger">
@@ -37,10 +42,6 @@
                 <input class="button" id="submitBtn" type="submit" value="Зарегистрироваться"></input>
             </div>
         </div>
-        <a class="addImage round" id="addImageButton">
-            <h3 class="thin">Добавить фото</h3>
-            <div id="imagePreview"></div>
-        </a>
     </div>
     <script>
         document.getElementById('addImageButton').addEventListener('click', function() {

@@ -124,7 +124,7 @@
                                 <div class="container medium faded"  id="doctorCardData">
                                     <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
                                     <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>
                                     <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
                                 </div>
                             </div>
@@ -135,7 +135,7 @@
                                 <div class="container medium faded"  id="doctorCardData">
                                     <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
                                     <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>
                                     <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
                                 </div>
                             </div>
@@ -146,7 +146,7 @@
                                 <div class="container medium faded"  id="doctorCardData">
                                     <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
                                     <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>
                                     <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
                                 </div>
                             </div>
@@ -157,7 +157,7 @@
                                 <div class="container medium faded"  id="doctorCardData">
                                     <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
                                     <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>
                                     <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
                                 </div>
                             </div>
@@ -168,7 +168,7 @@
                                 <div class="container medium faded"  id="doctorCardData">
                                     <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
                                     <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>
                                     <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
                                 </div>
                             </div>
@@ -179,7 +179,7 @@
                                 <div class="container medium faded"  id="doctorCardData">
                                     <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
                                     <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                                    <h4 class="aboutDoctor" id="doctorSurname">Ничипоренко</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>
                                     <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
                                 </div>
                             </div>
@@ -195,7 +195,7 @@
     </div>
 
 
-    
+
     <div class="container big calendarDiv marginTop40px">
         <div id="calendar"></div>
         <div id="createAppointmenDiv" action="/createAppointment" method="POST" class="container small">
@@ -203,7 +203,7 @@
                 <img src="../static/images/backBtn.png" class="logo white hidden" onclick="goBack()" id="goBackBtn">
                 <h2 class="container center white">Записаться</h2>
             </div>
-        
+
             <!-- Выбор направления врача -->
             <div class="container center column spacebtw" id="specialtySelection">
                 <h4 class="white">Выберите направление врача</h4>
@@ -214,7 +214,7 @@
 
                 </div>
             </div>
-        
+
             <!-- Список врачей по выбранному направлению -->
             <div class="container hidden" id="doctorList">
                 <h4 class="white">Выберите врача</h4>
@@ -222,16 +222,16 @@
                     <!-- Ссылки на врачей будут добавлены динамически с помощью JavaScript -->
                 </div>
             </div>
-        
+
             <form id="createAppointment" action="/createAppointment" method="POST">
                 <input type="text" name="date" class="hidden" required="required">
                 <div class="container row hidden" id="doctorDetails">
                     <img src="../static/images/doctorCardPhoto.jpg" id="appointementDoctorPhoto">
                     <div>
-                        <h4 class="appointementDoctorData white thin" id="doctorName">Ничипоренко</h4>
+                        <h4 class="appointementDoctorData white thin" id="doctorName">Олегов</h4>
                         <h4 class="appointementDoctorData white thin" id="doctorSurname">Олег</h4>
                     </div>
-            
+
                     <!-- Выбор времени и дополнительные элементы -->
                     <div class="container createAppointmentTimePickerContainer hidden" id="timePickerContainer">
                         <style>
@@ -239,7 +239,7 @@
                                 display: none;
                             }
                         </style>
-            
+
                         <select class="createAppointmentTimePicker" id="appt" name="appt" required onchange="addIcon()">
                             <!-- Добавляем значение по умолчанию -->
                             <option value="" disabled selected>🕑 --:--</option>
@@ -252,16 +252,16 @@
                             <option value="18:00">18:00</option>
                         </select>
                     </div>
-            
+
                     <!-- Детали записи -->
                 </div>
                 <textarea class="hidden" name="appointment_details" placeholder="Детали записи" id="appointementTextArea"></textarea>
                 <button type="submit" class="button hidden" id="submitAppointment">Записаться</button>
             </form>
-        </div>        
-    </div>      
+        </div>
+    </div>
 
-   
+
 
     <div class="chat-container">
         <button class="fixedButton"><img src="static/images/chat.png" id="gptIcon" class="gptIcon logo white" height="40px"></button>
@@ -371,15 +371,15 @@
             // В примере добавлены фиктивные данные
             var doctors = {
                 "narcology": [
-                    { name: "Виталя", surname: "Шароеб" },
-                    { name: "Ничипоренко", surname: "Олег" },
+                    { name: "Виталий", surname: "Витальев" },
+                    { name: "Олег", surname: "Олегов" },
                 ],
                 "urologist": [
-                    { name: "Саня", surname: "Загеев" },
-                    { name: "Никита", surname: "Карманный бильярд" },
+                    { name: "Александр", surname: "Александров" },
+                    { name: "Никита", surname: "Никитов" },
                 ],
                 "protologist": [
-                    { name: "Саня", surname: "Шахтолаз" },
+                    { name: "Александр", surname: "Александрович" },
                 ]
             };
     
