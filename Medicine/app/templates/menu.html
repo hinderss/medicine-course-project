@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Меню{% endblock %}
+{% block content %}
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ name }} {{ surname }}</title>
+</head>
+<body>
+      {% if patient.photo_path %}
+      <img src="{{ url_for('uploaded_file', filename=patient.photo_path) }}" class="medicalCardProfilePhoto">
+      {% else %}
+      <img src="static/images/logo.svg" >
+      {% endif %}
+  <main>
+    <section class="profile">
+      <h2>{{ name }} {{ surname }}</h2>
+    </section>
+      <a href="mailto:chockounicorn05@gmail.com">{{ email }}</a>
+    <section class="services">
+        <a href="#">Наши специалисты</a><br>
+        <a href="#">Календарь</a><br>
+        <a href="/appointments">Записи</a><br>
+        <a href="/medical_card">Медицинская карта</a><br>
+        <a href="#">Методы оплаты</a><br>
+        <a href="#">Поддержка</a><br>
+        <a href="/logout">Выйти</a><br>
+    </section>
+  </main>
+</body>
+</html>
+{% endblock %}

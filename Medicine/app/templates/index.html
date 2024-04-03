@@ -30,6 +30,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             const calendar = new VanillaCalendar('#calendar');
             calendar.init();
+            document.getElementById("specialtySelection").classList.add("hidden");
         });
     </script>
     <script>
@@ -47,6 +48,8 @@
                     // Далее, вы можете использовать значение selectedDate и подставить его в нужное место в форме
                     // Например, для подстановки в поле с именем "date":
                     document.querySelector('input[name="date"]').value = selectedDate;
+                    goBack();
+                    document.getElementById("specialtySelection").classList.remove("hidden");
                 }
             });
         });
@@ -91,7 +94,7 @@
             <a href="#" class="link"><h4 class="thin">Специалисты</h4></a>
 
             {% if name and surname %}
-            <a href="#profile">
+            <a href="/menu">
                 <div class="profile">
                     <div class="profileName">
                         <h5>{{ name }}</h5>
@@ -208,9 +211,11 @@
             <div class="container center column spacebtw" id="specialtySelection">
                 <h4 class="white">Выберите направление врача</h4>
                 <div id="specialtySelectionSelector">
+                    <!--
                     <button class="button" type="button" onclick="selectSpecialty('narcology')">Нарколог</button>
                     <button class="button" type="button" onclick="selectSpecialty('urologist')">Уролог</button>
                     <button class="button" type="button" onclick="selectSpecialty('protologist')">Проктолог</button>
+                    -->
 
                 </div>
             </div>
@@ -224,12 +229,14 @@
             </div>
 
             <form id="createAppointment" action="/createAppointment" method="POST">
-                <input type="text" name="date" class="hidden" required="required">
+                <input type="text" name="date" class="hidden" required="required" onchange="goBack()">
                 <div class="container row hidden" id="doctorDetails">
-                    <img src="../static/images/doctorCardPhoto.jpg" id="appointementDoctorPhoto">
+                    <div id="appointementDoctorPhotoApp">
+                        <img src="../static/images/doctorCardPhoto.jpg">
+                    </div>
                     <div>
-                        <h4 class="appointementDoctorData white thin" id="doctorName">Олегов</h4>
-                        <h4 class="appointementDoctorData white thin" id="doctorSurname">Олег</h4>
+                        <h4 class="appointementDoctorData white thin" id="doctorFirstnameAppointement">Имя</h4>
+                        <h4 class="appointementDoctorData white thin" id="doctorSurnameAppointement">Фамилия</h4>
                     </div>
 
                     <!-- Выбор времени и дополнительные элементы -->
@@ -365,89 +372,178 @@
     </script>
 
     <script>
-        function selectSpecialty(specialty) {
-            // console.log(specialty);
-            // Здесь можно отправить AJAX-запрос для получения списка врачей по выбранному направлению
-            // В примере добавлены фиктивные данные
-            var doctors = {
-                "narcology": [
-                    { name: "Виталий", surname: "Витальев" },
-                    { name: "Олег", surname: "Олегов" },
-                ],
-                "urologist": [
-                    { name: "Александр", surname: "Александров" },
-                    { name: "Никита", surname: "Никитов" },
-                ],
-                "protologist": [
-                    { name: "Александр", surname: "Александрович" },
-                ]
+        document.addEventListener("DOMContentLoaded", function() {
+            // Создаем новый объект XMLHttpRequest
+            var xhr = new XMLHttpRequest();
+
+            // Открываем новый запрос GET к указанному URL-адресу
+            xhr.open("GET", "/practice_profiles", true);
+
+            // Отправляем запрос
+            xhr.send();
+
+            // Устанавливаем обработчик события "load" для запроса
+            xhr.onload = function() {
+                // Парсим полученный ответ в формате JSON
+                var specialties = JSON.parse(xhr.responseText);
+
+                // Получаем элемент specialtySelectionSelector
+                var specialtySelection = document.getElementById("specialtySelectionSelector");
+
+                // Перебираем каждую специальность и создаем кнопку для нее
+                specialties.practice_profiles.forEach(function(specialty) {
+                    var button = document.createElement("button");
+                    button.classList.add("button");
+                    button.setAttribute("type", "button");
+                    button.setAttribute("onclick", "selectSpecialty('" + specialty + "')");
+                    button.textContent = specialty;
+                    specialtySelection.appendChild(button);
+                });
             };
-    
-            // Заполняем список врачей
-            var doctorLinks = $("#doctorLinks");
-            doctorLinks.empty();
-    
-            doctors[specialty].forEach(function (doctor) {
-                var doctorLink = $("<a>", {
-                    id: specialty, // Use the specialty as the ID
-                    class: "marginTop20px",
-                    click: function () {
-                        showDoctorDetails(doctor);
-                    }
-                });
-    
-                // Create the container with image, name, and surname
-                var container = $("<div>", {
-                    class: "container row"
-                });
-    
-                container.append($("<img>", {
-                    src: "../static/images/doctorCardPhoto.jpg",
-                    id: "appointementDoctorPhoto"
-                }));
-    
-                var detailsContainer = $("<div>");
-                detailsContainer.append($("<h4>", {
-                    class: "appointementDoctorData white thin",
-                    id: "doctorName",
-                    text: doctor.name
-                }));
-                detailsContainer.append($("<h4>", {
-                    class: "appointementDoctorData white thin",
-                    id: "doctorSurname",
-                    text: doctor.surname
-                }));
-    
-                container.append(detailsContainer);
-                doctorLink.append(container);
-                doctorLinks.append(doctorLink);
-            });
-    
-            // Переключаем видимость элементов
-            $("#specialtySelection").addClass("hidden");
-            $("#doctorList").removeClass("hidden");
-            $("#goBackBtn").removeClass("hidden");
+        });
+    </script>
+
+    <script>
+        function selectSpecialty(specialty) {
+            // Отправляем AJAX-запрос для получения списка врачей по выбранному направлению
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/doctors?specialty=" + specialty, true);
+            xhr.send();
+
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    var doctors = JSON.parse(xhr.responseText);
+
+                    // Заполняем список врачей
+                    var doctorLinks = $("#doctorLinks");
+                    doctorLinks.empty();
+
+                    doctors.forEach(function (doctor) {
+                        var doctorLink = $("<a>", {
+                            id: specialty, // Use the specialty as the ID
+                            class: "marginTop20px",
+                            click: function () {
+                                showDoctorDetails(doctor);
+                            }
+                        });
+
+                        // Создаем контейнер с изображением, именем и фамилией
+                        var container = $("<div>", {
+                            class: "container row"
+                        });
+
+                        container.append($("<img>", {
+                            src: "/uploads/" + doctor.photo_path,
+                            id: "appointementDoctorPhoto"
+                        }));
+
+                        var detailsContainer = $("<div>");
+                        detailsContainer.append($("<h4>", {
+                            class: "appointementDoctorData white thin",
+                            id: "doctorName",
+                            text: doctor.firstname
+                        }));
+                        detailsContainer.append($("<h4>", {
+                            class: "appointementDoctorData white thin",
+                            id: "doctorSurname",
+                            text: doctor.surname
+                        }));
+
+                        container.append(detailsContainer);
+                        doctorLink.append(container);
+                        doctorLinks.append(doctorLink);
+                    });
+
+                    // Переключаем видимость элементов
+                    $("#specialtySelection").addClass("hidden");
+                    $("#doctorList").removeClass("hidden");
+                    $("#goBackBtn").removeClass("hidden");
+                } else {
+                    console.error("Ошибка при получении списка врачей");
+                }
+            };
         }
-    
+
         function showDoctorDetails(doctor) {
-            // Здесь вы можете добавить код для отображения подробной информации о враче
-            // console.log("Selected doctor:", doctor);
-    
-            // Пример: Показать детали выбранного врача
-            $("#doctorDetails").removeClass("hidden");
-            $("#doctorName").text("Имя: " + doctor.name);
-            $("#doctorSurname").text("Фамилия: " + doctor.surname);
-    
+            // Показываем подробную информацию о враче
+            document.getElementById("doctorDetails").classList.remove("hidden");
+            document.getElementById("doctorFirstnameAppointement").textContent = doctor.firstname;
+            document.getElementById("doctorSurnameAppointement").textContent = doctor.surname;
+            console.log(doctor.photo_path);
+            
+            // Создаем элемент изображения
+            var img = document.createElement("img");
+            img.src = "/uploads/" + doctor.photo_path;
+            img.id = "appointementDoctorPhoto";
+
+            // Очищаем содержимое контейнера перед добавлением нового изображения
+            document.getElementById("appointementDoctorPhotoApp").innerHTML = '';
+            
+            // Добавляем изображение в контейнер
+            document.getElementById("appointementDoctorPhotoApp").appendChild(img);
+
             // Дополнительный код для отображения деталей врача
-    
+
             // Скрываем список врачей
-            $("#doctorList").addClass("hidden");
-            $("#timePickerContainer").removeClass("hidden");
-            $("#appointementTextArea").removeClass("hidden");
-            $("#submitAppointment").removeClass("hidden");
-            $("#goBackBtn").removeClass("hidden");
+            document.getElementById("doctorList").classList.add("hidden");
+            document.getElementById("timePickerContainer").classList.remove("hidden");
+            document.getElementById("appointementTextArea").classList.remove("hidden");
+            document.getElementById("submitAppointment").classList.remove("hidden");
+            document.getElementById("goBackBtn").classList.remove("hidden");
+
+            var form = document.getElementById('createAppointment');
+            var dateInput = form.querySelector('input[name="date"]');
+            console.log(form);
+            console.log(dateInput);
+            console.log(dateInput.value);
+
+            // Делаем запрос для получения списка занятого времени
+            fetch('/appointments/get_doctor_time?doctor_id=' + doctor.id + '&date=' + dateInput.value)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Обрабатываем полученные данные
+                    console.log(data);
+
+                    // Получаем ссылку на элемент <select> по его идентификатору
+                    var selectElement = document.getElementById('appt');
+                    selectElement.innerHTML = '';
+                    selectElement.disabled = true;
+
+                    // Получаем данные о назначениях
+                    var appointmentsData = data;
+
+                    var doctorId = document.createElement('input');
+                    doctorId.classList.add("hidden");
+                    doctorId.name = 'doctor_id'
+                    doctorId.value = doctor.id;
+                    form.appendChild(doctorId);
+                    
+                    // Извлекаем из данных время назначения и добавляем в <select>
+                    appointmentsData.appointments.forEach(function(appointment) {
+                        var appointmentDateTime = new Date(appointment.appointment_date_time);
+                        var appointmentTime = appointmentDateTime.getUTCHours().toString().padStart(2, '0') + ':' + appointmentDateTime.getUTCMinutes().toString().padStart(2, '0');
+                        selectElement.disabled = false;
+                        // Создаем новый элемент <option>
+                        var optionElement = document.createElement('option');
+                        optionElement.value = appointmentTime + ':00';
+                        console.log(optionElement.value);
+                        optionElement.textContent = appointmentTime;
+                        // optionElement.disabled = true; // Предполагается, что это время уже занято
+                        // Добавляем новый элемент <option> в <select>
+                        selectElement.appendChild(optionElement);
+                    });
+                    // Возможно, здесь вы захотите что-то сделать с полученным списком времени
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
         }
-    
+
         function goBack() {
             // Здесь вы можете добавить код для возврата к выбору врача или специальности
             // В данном примере просто скрываем подробные детали врача
@@ -460,8 +556,39 @@
             $("#goBackBtn").addClass("hidden");
         }
     </script>
-            
+
     <script>
+        document.getElementById("createAppointment").addEventListener("submit", function(event){
+            event.preventDefault(); // Предотвращаем отправку формы
+        
+            // Отправляем запрос на сервер
+            var formData = new FormData(this);
+            fetch('/createAppointment', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Вы успешно записаны на прием!'); // Показываем сообщение об успехе
+                    goBack();
+                } else if (response.status === 401) {
+                    // Если получен статус 401, перенаправляем на страницу входа
+                    window.location.href = '/login';
+                } else {
+                    response.text().then(errorMessage => {
+                        alert('Произошла ошибка при записи на прием: ' + errorMessage); // Показываем сообщение об ошибке
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Произошла ошибка:', error);
+            });
+        });
+    </script>
+
+
+            
+     <!-- <script>
         // Пример массива с занятыми временными интервалами
         var busyTimes = ["09:15", "10:30", "14:45"];
     
@@ -476,7 +603,7 @@
                 select.value = ''; // Сбрасываем выбранное значение
             }
         });
-    </script>
+    </script> -->
 </body>
 <footer class="container medium center marginTop80px">
     <div class="container">

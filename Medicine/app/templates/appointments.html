@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Мои Записи{% endblock %}
+{% block content %}
+<div>
+    <h1>Мои записи</h1>
+    <ul>
+        {% for appointment in appointments %}
+            <li>{{ appointment }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

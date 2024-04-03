@@ -1,14 +1,15 @@
 import os
 from datetime import datetime
 
+from sqlalchemy import cast, Date
 from werkzeug.utils import secure_filename
 
 from app.validator import Validator
-from flask import render_template, redirect, url_for, flash, request, send_from_directory
+from flask import render_template, redirect, url_for, flash, request, send_from_directory, jsonify, abort
 from flask_login import login_user, login_required, logout_user, current_user
 from app import app, db, login_manager
 # from app.forms import LoginForm, RegistrationForm, DoctorRegistrationForm
-from app.models import User, Doctor, Patient, MedicalCard
+from app.models import User, Doctor, Patient, MedicalCard, Appointment
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
@@ -184,12 +185,231 @@ def medical_card():
         return redirect(url_for('index'))
 
     return render_template(template, patient=patient, error=error, form_data=form_data)
-        
+
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     print(filename)
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+
+
+@app.route('/doctors', methods=['GET'])
+def get_doctors_by_specialty():
+    specialty = request.args.get('specialty')
+
+    if not specialty:
+        return jsonify({'error': 'Специальность не указана'}), 400
+
+    # Получаем список врачей по выбранной специальности
+    doctors = Doctor.query.filter_by(practice_profile=specialty).all()
+
+    # Преобразуем объекты Doctor в словари для сериализации в JSON
+    doctors_list = []
+    for doctor in doctors:
+        doctor_dict = {
+            'id': doctor.id,
+            'surname': doctor.surname,
+            'firstname': doctor.firstname,
+            'patronymic': doctor.patronymic,
+            'dob': doctor.dob.isoformat() if doctor.dob else None,
+            'education': doctor.education,
+            'workplace': doctor.workplace,
+            'phone': doctor.phone,
+            'photo_path': doctor.photo_path
+        }
+        doctors_list.append(doctor_dict)
+
+    return jsonify(doctors_list)
+
+
+# Маршрут для получения списка всех доступных в базе данных practice_profile
+@app.route('/practice_profiles', methods=['GET'])
+def get_practice_profiles():
+    # Получаем список всех уникальных значений practice_profile из таблицы Doctor
+    practice_profiles = Doctor.query.with_entities(Doctor.practice_profile).distinct().all()
+
+    # Преобразуем список кортежей в список строк
+    practice_profiles = [profile[0] for profile in practice_profiles]
+
+    # Возвращаем список в формате JSON
+    return jsonify({'practice_profiles': practice_profiles})
+
+
+@app.route('/appointments/get_doctor_time')
+def get_doctor_appointments():
+    doctor_id = request.args.get('doctor_id')
+    date_str = request.args.get('date')  # Получаем дату в формате строки
+    if doctor_id and date_str:
+        doctor = Doctor.query.get(doctor_id)
+        if doctor:
+            # Преобразуем строку даты в объект datetime
+            date = datetime.strptime(date_str, '%Y-%m-%d')
+            print(date)
+            print(cast(Appointment.appointment_date_time, Date))
+            print(Appointment.appointment_date_time)
+            # Фильтруем записи для указанного врача и даты
+            appointments = Appointment.query.filter_by(doctor_id=doctor_id) \
+                .filter(db.func.date(Appointment.appointment_date_time) == date.date()) \
+                .filter(Appointment.patient_id.is_(None)) \
+                .all()
+            print(appointments)
+            appointment_list = []
+            for appointment in appointments:
+                appointment_info = {
+                    'appointment_date_time': appointment.appointment_date_time
+                }
+                appointment_list.append(appointment_info)
+            return jsonify({'appointments': appointment_list})
+        else:
+            return jsonify({'error': 'Doctor not found'}), 404
+    else:
+        return jsonify({'error': 'Doctor ID and date are required'}), 400
+
+
+@app.route('/createAppointment', methods=['GET', 'POST'])
+# @login_required
+def create_appointment():
+    if current_user.is_authenticated:
+        date = request.form.get('date')
+        doctor_id = request.form.get('doctor_id')
+        appt_time = request.form.get('appt')
+        appointment_details = request.form.get('appointment_details')
+
+        try:
+            appmnt_date_time = datetime.strptime(f"{date} {appt_time}", '%Y-%m-%d %H:%M:%S')
+        except:
+            return 'No time selected', 403
+        print(doctor_id)
+        print(appmnt_date_time)
+
+        # Выполнение запроса
+        appointment = Appointment.query.filter_by(appointment_date_time=str(appmnt_date_time),
+                                                  doctor_id=doctor_id).first()
+        print(appointment.patient_id)
+        if appointment:
+            if not appointment.patient_id:
+                if current_user.patient:
+                    # Обновляем поля записи
+                    appointment.patient_id = current_user.patient.id
+                    appointment.appointment_details = appointment_details
+
+                    db.session.commit()
+
+                    return 'Appointment successfully updated!', 200
+                else:
+                    return 'User not authorized as patient to update this appointment.', 403
+            else:
+                return 'Time already selected. Try again.', 403
+        else:
+            return 'Appointment not found.', 404
+    else:
+        return 'Unauthorized.', 401
+        # if current_user.patient is not None:
+        #     date = request.form.get('date')
+        #     doctor_id = request.form.get('doctor_id')
+        #     patient_id = current_user.patient.id
+        #     appt_time = request.form.get('appt')
+        #     appointment_details = request.form.get('appointment_details')
+        #
+        #     appointment_date_time = datetime.strptime(f"{date} {appt_time}", '%Y-%m-%d %H:%M:%S')
+        #
+        #     appointment = Appointment(
+        #         doctor_id=doctor_id,
+        #         patient_id=patient_id,
+        #         appointment_date_time=appointment_date_time,
+        #         appointment_details=appointment_details
+        #     )
+        #
+        #     db.session.add(appointment)
+        #     db.session.commit()
+        #
+        #     return jsonify({'message': 'Appointment successfully scheduled!'}), 200
+        # elif current_user.doctor is not None:
+        #     return jsonify({'error': 'Doctors cannot create appointments.'}), 403
+        # else:
+        #     return jsonify({'error': 'User not authorized to create appointments.'}), 40
+
+
+@app.route('/updateAppointment/<int:appointment_id>', methods=['PUT'])
+def update_appointment(appointment_id):
+    if current_user.is_authenticated:
+        appointment = Appointment.query.get(appointment_id)
+        if appointment:
+            if current_user.patient and appointment.patient_id == current_user.patient.id:
+                date = request.form.get('date')
+                doctor_id = request.form.get('doctor_id')
+                appt_time = request.form.get('appt')
+                appointment_details = request.form.get('appointment_details')
+
+                appointment_date_time = datetime.strptime(f"{date} {appt_time}", '%Y-%m-%d %H:%M:%S')
+
+                # Обновляем поля записи
+                appointment.doctor_id = doctor_id
+                appointment.appointment_date_time = appointment_date_time
+                appointment.appointment_details = appointment_details
+
+                db.session.commit()
+
+                return jsonify({'message': 'Appointment successfully updated!'}), 200
+            else:
+                return jsonify({'error': 'User not authorized to update this appointment.'}), 403
+        else:
+            return jsonify({'error': 'Appointment not found.'}), 404
+    else:
+        abort(401)  # Unauthorized
+
+
+@app.route('/menu')
+@login_required
+def menu():
+    template = 'menu.html'
+
+    if current_user.patient:
+        user = current_user.patient
+        patient = 'True'
+    else:
+        return 'Doctor', 404
+
+    name = user.firstname
+    surname = user.surname
+    email = current_user.username
+    return render_template(template, patient=user, name=name, surname=surname, email=email)
+
+
+@app.route('/appointments')
+@login_required
+def appointments():
+    if current_user.patient:
+        user = current_user.patient
+        appointments = Appointment.query.filter_by(patient_id=user.id).all()
+        return render_template('appointments.html', appointments=appointments)
+    else:
+        return 'Unauthorized', 403
+# @app.route('/appointments/<int:doctor_id>')
+# def get_doctor_appointments(doctor_id):
+#     doctor = Doctor.query.get(doctor_id)
+#     if doctor:
+#         appointments = Appointment.query.filter_by(doctor_id=doctor_id).all()
+#         appointment_list = []
+#         for appointment in appointments:
+#             appointment_info = {
+#                 'id': appointment.id,
+#                 'appointment_date_time': appointment.appointment_date_time,
+#                 'appointment_details': appointment.appointment_details,
+#                 'patient': {
+#                     'id': appointment.patient.id,
+#                     'surname': appointment.patient.surname,
+#                     'firstname': appointment.patient.firstname,
+#                     'dob': appointment.patient.dob,
+#                     'region': appointment.patient.region,
+#                     'phone': appointment.patient.phone,
+#                     'photo_path': appointment.patient.photo_path
+#                 }
+#             }
+#             appointment_list.append(appointment_info)
+#         return jsonify({'doctor': str(doctor), 'appointments': appointment_list})
+#     else:
+#         return jsonify({'error': 'Doctor not found'}), 404
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -267,7 +487,8 @@ def signup_doctor():
         }
 
         # Проверка на пустые поля
-        if not all([surname, firstname, patronymic, dob_str, education, workplace, practice_profile, phone, email, password]):
+        if not all([surname, firstname, patronymic, dob_str, education, workplace, practice_profile, phone, email,
+                    password]):
             error = 'All fields are required.'
             return render_template(template, error=error, form_data=form_data)
 

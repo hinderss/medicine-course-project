@@ -60,6 +60,22 @@ class Patient(db.Model):
         return f"Patient: {self.surname} {self.firstname} {self.middle_name}, ID: {self.id}"
 
 
+class Appointment(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    doctor_id = db.Column(db.Integer, db.ForeignKey('doctor.id'), nullable=False)
+    patient_id = db.Column(db.Integer, db.ForeignKey('patient.id'), nullable=True)
+    appointment_date_time = db.Column(db.DateTime)
+    appointment_details = db.Column(db.Text, nullable=True)
+
+    doctor = db.relationship('Doctor', backref=db.backref('appointments'))
+    patient = db.relationship('Patient', backref=db.backref('appointments'))
+
+    def __str__(self):
+        return (f"Appointment ID: {self.id}, Doctor: {self.doctor.surname} {self.doctor.firstname}, "
+                f"Patient: {self.patient.surname} {self.patient.firstname}, "
+                f"Date and Time: {self.appointment_date_time}")
+
+
 class Gender(Enum):
     MALE = 'male'
     FEMALE = 'female'
