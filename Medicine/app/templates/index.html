@@ -86,27 +86,42 @@
                 <a href="/index"  class="link"><h4 class="thin">Logoipsum</h4></a>
             </div>
 
-            {% if patient %}
-            <a href="/medical_card" class="link"><h4 class="thin">Медицинская карта</h4></a>
+            {% if current_user.is_authenticated %}
+                {% if current_user.patient %}
+                    <a href="/medical_card" class="link"><h4 class="thin">Медицинская карта</h4></a>
+                    <a href="#" class="link"><h4 class="thin">Записи</h4></a>
+                {% endif %}
             {% endif %}
 
-            <a href="#" class="link"><h4 class="thin">Записи</h4></a>
             <a href="#" class="link"><h4 class="thin">Специалисты</h4></a>
+            
+            {% if current_user.is_authenticated %}
+                {% if name and surname %}
+                    <a href="/menu">
+                        <div class="profile">
+                            <div class="profileName">
+                                <h5>{{ name }}</h5>
+                                <h5>{{ surname }}</h5>
+                            </div>
+                                <!-- {% if current_user.patient.photo_path%}
+                                    <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}">
+                                {% else %}
+                                    <img src="static/images/profileLogo.svg" width="40px" class="logo white">
+                                {% endif %}
 
-            {% if name and surname %}
-            <a href="/menu">
-                <div class="profile">
-                    <div class="profileName">
-                        <h5>{{ name }}</h5>
-                        <h5>{{ surname }}</h5>
-                    </div>
-                    <img src="static/images/profileLogo.svg" width="40px" class="logo white">
-                </div>
-            </a>
-
+                                {% if current_user.doctor.photo_path%}
+                                    <img src="{{ url_for('uploaded_file', filename=current_user.doctor.photo_path) }}">
+                                {% else %}
+                                    <img src="static/images/profileLogo.svg" width="40px" class="logo white">
+                                {% endif %} -->
+                                <img src="static/images/profileLogo.svg" width="40px" class="logo white">
+                        </div>
+                    </a>
+                {% endif %}
+                
             {% else %}
-            <a href="/login" class="link"><h4 class="thin">Войти</h4></a><!-- Выводим кнопку "Войти" -->
-
+            <a href="/login" class="link"><h4 class="thin">Войти</h4></a>
+            
             {% endif %}
 
 </div>

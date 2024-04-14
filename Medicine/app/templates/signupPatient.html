@@ -14,16 +14,34 @@
             <div class="container medium marginTop40px lightBlueBG rounded">
                 <div class="container" id="formDiv">
                     <form id="signupForm" action="/signup_patient" method="POST" enctype="multipart/form-data">
-                        <input type="text" name="firstname" placeholder="Имя" value="{{ form_data.get('firstname', '') }}">
-                        <input type="text" name="surname" placeholder="Фамилия" value="{{ form_data.get('surname', '') }}">
-                        <input type="text" name="dob" placeholder="Дата рождения: dd.mm.yyyy" value="{{ form_data.get('dob', '') }}">
-                        <input type="text" name="region" placeholder="Регион: BY/RU/KZ" value="{{ form_data.get('region', '') }}">
-                        <input type="phone" name="phone" placeholder="Номер телефона" value="{{ form_data.get('phone', '') }}">
-                        <input type="email" name="email" placeholder="Адрес электронной почты" value="{{ form_data.get('email', '') }}">
-                        <input type="password" name="password" placeholder="Пароль">
-                        <input type="file" name="photo" id="fileInput" accept="image/*" style="display: none;">
+                        {{ form.csrf_token }}
+                        {{ form.firstname(class="form-control", placeholder="Имя", value=form.firstname.data or '') }}
+                        {{ form.surname(class="form-control", placeholder="Фамилия", value=form.surname.data or '') }}
+                        {{ form.dob(class="form-control", placeholder="Дата рождения: dd.mm.yyyy", value=form.dob.data or '') }}
+                        {{ form.region(class="form-control", placeholder="Регион: BY/RU/KZ", value=form.region.data or '') }}
+                        {{ form.phone(class="form-control", placeholder="Номер телефона", value=form.phone.data or '') }}
+                        {{ form.email(class="form-control", placeholder="Адрес электронной почты", value=form.email.data or '') }}
+                        {{ form.password(class="form-control", placeholder="Пароль") }}
+                        {{ form.photo(class="form-control", placeholder="Фотография", id="fileInput", accept="image/*", style="display: none;") }}
+
+                        <!-- flash() errors -->
+                        {% for message in get_flashed_messages() %}
+                            <div class="alert alert-danger">
+                                {{ message }}
+                            </div>
+                        {% endfor %}    
+                        
+                        <!-- forms errors -->
+                        {% for field, errors in form.errors.items() %}
+                            {% for error in errors %}
+                                <div class="alert alert-danger">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
                     </form>
-                   </div>
+                </div>
+
             </div>
 
             <a class="addImage round" id="addImageButton">

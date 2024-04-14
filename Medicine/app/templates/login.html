@@ -13,15 +13,20 @@
         <div class="container small padding25px spacebtw lightBlueBG rounded">
             <div class="container center">
                 <form action="/login" class="container" method="POST">
-                    <input type="text" name="username" placeholder="Адрес электронной почты">
-                    <input type="password" name="password" placeholder="Пароль">
-                    <input type="submit" class="button wide" value="Войти">
-                </form>
-                {% if error and request.method == 'POST' %}
-                    <div class="alert alert-danger">
-                        {{ error }}
+                    {{ form.csrf_token }}
+                    <div class="form-group">
+                        {{ form.username(class="form-control", placeholder="Адрес электронной почты") }}
                     </div>
-                {% endif %}
+                    <div class="form-group">
+                        {{ form.password(class="form-control", placeholder="Пароль") }}
+                    </div>
+                    {{ form.submit(class="button wide", value="Войти") }}
+                </form>
+                {% for message in get_flashed_messages() %}
+                    <div class="alert alert-danger">
+                        {{ message }}
+                    </div>
+                {% endfor %}
                 <div class="create-line-left-right marginTop20px">
                     <p class="gray thin">или</p>
                 </div>

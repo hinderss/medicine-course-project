@@ -7,21 +7,26 @@ from flask_login import UserMixin
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    is_active = db.Column(db.Boolean, default=True)
     username = db.Column(db.String(20), unique=True, nullable=False)
-    password = db.Column(db.String(128), nullable=False)
+    password_hash = db.Column(db.String(128), nullable=False)
+    is_active = db.Column(db.Boolean, default=True)
 
     def __init__(self, username, password):
         self.username = username
-        self.set_password(password)
+        self.password = password
 
     def __repr__(self):
         return f"User('{self.username}')"
 
-    def set_password(self, password):
-        self.password = generate_password_hash(password)
+    @property
+    def password(self):
+        raise AttributeError('Password is not a readable attribute')
 
-    def check_password(self, password):
+    @password.setter
+    def password(self, password):
+        self.password_hash = generate_password_hash(password)
+
+    def verify_password(self, password):
         return check_password_hash(self.password_hash, password)
 
 
@@ -38,7 +43,21 @@ class Doctor(db.Model):
     phone = db.Column(db.String(15))
     photo_path = db.Column(db.String(255))  # Added field for storing photo filename
 
-    doctor = db.relationship('User', backref=db.backref('doctor', uselist=False))
+    user = db.relationship('User', backref=db.backref('doctor', uselist=False))
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'surname': self.surname,
+            'firstname': self.firstname,
+            'patronymic': self.patronymic,
+            'dob': self.dob.isoformat() if self.dob else None,
+            'education': self.education,
+            'workplace': self.workplace,
+            'practice_profile': self.practice_profile,
+            'phone': self.phone,
+            'photo_path': self.photo_path
+        }
 
     def __str__(self):
         return f"Doctor: {self.surname} {self.firstname} {self.patronymic}, ID: {self.id}"
