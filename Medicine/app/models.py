@@ -71,9 +71,11 @@ class Appointment(db.Model):
     patient = db.relationship('Patient', backref=db.backref('appointments'))
 
     def __str__(self):
-        return (f"Appointment ID: {self.id}, Doctor: {self.doctor.surname} {self.doctor.firstname}, "
+        return (f"Appointment ID: {self.id}, "
+                f"Doctor: {self.doctor.surname} {self.doctor.firstname}, "
                 f"Patient: {self.patient.surname} {self.patient.firstname}, "
-                f"Date and Time: {self.appointment_date_time}")
+                f"Date and Time: {self.appointment_date_time}, "
+                f"Details: {self.appointment_details}.")
 
 
 class Gender(Enum):
