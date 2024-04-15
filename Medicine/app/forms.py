@@ -1,20 +1,20 @@
 import re
-
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileRequired, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.fields.choices import SelectField, RadioField
 from wtforms.fields.datetime import DateField
 from wtforms.fields.simple import FileField, TextAreaField
-from wtforms.validators import DataRequired, Length, Email, ValidationError
+from wtforms.validators import DataRequired, Length, Email, ValidationError, InputRequired
 
-RE_PHONE = r"^((8|\+374|\+994|\+995|\+375|\+7|\+380|\+38|\+996|\+998|\+993)[\- ]?)?\(?\d{3,5}\)?[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}(([\- ]?\d{1})?[\- ]?\d{1})?$"
+RE_PHONE = (r"^((8|\+374|\+994|\+995|\+375|\+7|\+380|\+38|\+996|\+998|\+993)[\- ]?)?\(?\d{3,5}\)?[\- ]?\d{1}[\- ]"
+            r"?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}(([\- ]?\d{1})?[\- ]?\d{1})?$")
 
 
 class Phone(object):
     def __init__(self, message=None):
         if message is None:
-            message = 'Invalid phone number'
+            message = 'Неправильный номер телефона'
         self.message = message
 
     def __call__(self, form, field):
@@ -24,15 +24,9 @@ class Phone(object):
 
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    submit = SubmitField('Login')
-
-# class RegistrationForm(FlaskForm):
-#     username = StringField('Username', validators=[DataRequired(), Length(min=4, max=20)])
-#     password = PasswordField('Password', validators=[DataRequired(), Length(min=6)])
-#     confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
-#     submit = SubmitField('Sign Up')
+    username = StringField('Электронная почта', validators=[DataRequired()])
+    password = PasswordField('Пароль', validators=[DataRequired()])
+    submit = SubmitField('Войти')
 
 
 class DoctorForm(FlaskForm):
@@ -62,6 +56,7 @@ class DoctorForm(FlaskForm):
     photo = FileField('Фотография', validators=[
         FileRequired(message="Загрузите вашу фотографию"),
         FileAllowed(['jpg', 'jpeg', 'png'], message="Разрешены только файлы с расширениями .jpg, .jpeg, .png")])
+    submit = SubmitField('Зарегистрироваться')
 
 
 class PatientForm(FlaskForm):
@@ -86,6 +81,7 @@ class PatientForm(FlaskForm):
     photo = FileField('Фотография', validators=[
         FileRequired(message="Загрузите вашу фотографию"),
         FileAllowed(['jpg', 'jpeg', 'png'], message="Разрешены только файлы с расширениями .jpg, .jpeg, .png")])
+    submit = SubmitField('Зарегистрироваться')
 
 
 class MedicalCardForm(FlaskForm):
@@ -135,6 +131,15 @@ class MedicalCardForm(FlaskForm):
     blood_transfusion = StringField('Переливание крови')
     surgical_intervention = StringField('Хирургическое вмешательство')
     previous_infectious_diseases = TextAreaField('Перенесенные инфекционные заболевания')
+    submit = SubmitField('Сохранить')
 
 
-
+class AppointmentForm(FlaskForm):
+    date = StringField('Дата', validators=[
+        InputRequired()])
+    doctor_id = StringField('doctor id', validators=[
+        DataRequired()])
+    time = SelectField('Время записи', choices=[], validate_choice=False, validators=[
+        DataRequired()])
+    appointment_details = TextAreaField('Детали записи')
+    submit = SubmitField('Записаться')
