@@ -1,55 +1,11 @@
-import re
-from datetime import datetime
-
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileRequired, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.fields.choices import SelectField, RadioField
 from wtforms.fields.datetime import DateField, TimeField
 from wtforms.fields.simple import FileField, TextAreaField
-from wtforms.validators import DataRequired, Length, Email, ValidationError, InputRequired
-
-RE_PHONE = (r"^((8|\+374|\+994|\+995|\+375|\+7|\+380|\+38|\+996|\+998|\+993)[\- ]?)?\(?\d{3,5}\)?[\- ]?\d{1}[\- ]"
-            r"?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}(([\- ]?\d{1})?[\- ]?\d{1})?$")
-
-
-class Phone(object):
-    def __init__(self, message=None):
-        if message is None:
-            message = 'Неправильный номер телефона'
-        self.message = message
-
-    def __call__(self, form, field):
-        phone_number = field.data
-        if not re.match(RE_PHONE, phone_number):
-            raise ValidationError(self.message)
-
-
-class FutureDateValidator:
-    def __init__(self, message=None):
-        if not message:
-            message = 'Дата должна быть в будущем.'
-        self.message = message
-
-    def __call__(self, form, field):
-        today = datetime.now().date()
-        if field.data < today:
-            raise ValidationError(self.message)
-
-
-class FutureTimeValidator:
-    def __init__(self, message=None):
-        if not message:
-            message = 'Время должно быть в будущем.'
-        self.message = message
-
-    def __call__(self, form, field):
-        selected_date = form.date.data
-        selected_time = field.data
-        selected_datetime = datetime.combine(selected_date, selected_time)
-
-        if selected_datetime <= datetime.now():
-            raise ValidationError(self.message)
+from wtforms.validators import DataRequired, Length, Email, InputRequired
+from app.validators import Phone, FutureDateValidator, FutureTimeValidator, PastDateValidator
 
 
 class LoginForm(FlaskForm):
@@ -66,7 +22,8 @@ class DoctorForm(FlaskForm):
     patronymic = StringField('Отчество', validators=[
         DataRequired(message="Введите ваше отчество")])
     dob = DateField('Дата рождения: dd.mm.yyyy', validators=[
-        DataRequired(message="Введите вашу дату рождения")])
+        DataRequired(message="Введите вашу дату рождения"),
+        PastDateValidator(message="Дата рождения должна быть в прошлом.")])
     education = StringField('Образование', validators=[
         DataRequired(message="Введите ваше образование")])
     workplace = StringField('Место работы', validators=[
@@ -94,7 +51,8 @@ class PatientForm(FlaskForm):
     surname = StringField('Фамилия', validators=[
         DataRequired(message="Введите вашу фамилию")])
     dob = DateField('Дата рождения: dd.mm.yyyy', validators=[
-        DataRequired(message="Введите вашу дату рождения")])
+        DataRequired(message="Введите вашу дату рождения"),
+        PastDateValidator(message="Дата рождения должна быть в прошлом.")])
     CHOICES = [('', 'Выберите регион'), ('BY', 'BY'), ('RU', 'RU'), ('KZ', 'KZ')]
     region = SelectField('Регион', choices=CHOICES, validators=[
         DataRequired(message="Выберите ваш регион")])
@@ -121,7 +79,8 @@ class MedicalCardForm(FlaskForm):
     patronymic = StringField('Отчество')
     gender = RadioField('Пол', choices=[('male', 'Мужской'), ('female', 'Женский')])
     dob = DateField('Дата рождения: dd.mm.yyyy', validators=[
-        DataRequired()])
+        DataRequired(),
+        PastDateValidator(message="Дата рождения должна быть в прошлом.")])
     passport = StringField('Личный Номер паспорта')
     family = StringField('Семейное положение')
     document_type = StringField('Документ')
