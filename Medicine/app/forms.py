@@ -1,9 +1,11 @@
 import re
+from datetime import datetime
+
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileRequired, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.fields.choices import SelectField, RadioField
-from wtforms.fields.datetime import DateField
+from wtforms.fields.datetime import DateField, TimeField
 from wtforms.fields.simple import FileField, TextAreaField
 from wtforms.validators import DataRequired, Length, Email, ValidationError, InputRequired
 
@@ -20,6 +22,33 @@ class Phone(object):
     def __call__(self, form, field):
         phone_number = field.data
         if not re.match(RE_PHONE, phone_number):
+            raise ValidationError(self.message)
+
+
+class FutureDateValidator:
+    def __init__(self, message=None):
+        if not message:
+            message = 'Дата должна быть в будущем.'
+        self.message = message
+
+    def __call__(self, form, field):
+        today = datetime.now().date()
+        if field.data < today:
+            raise ValidationError(self.message)
+
+
+class FutureTimeValidator:
+    def __init__(self, message=None):
+        if not message:
+            message = 'Время должно быть в будущем.'
+        self.message = message
+
+    def __call__(self, form, field):
+        selected_date = form.date.data
+        selected_time = field.data
+        selected_datetime = datetime.combine(selected_date, selected_time)
+
+        if selected_datetime <= datetime.now():
             raise ValidationError(self.message)
 
 
@@ -143,3 +172,13 @@ class AppointmentForm(FlaskForm):
         DataRequired()])
     appointment_details = TextAreaField('Детали записи')
     submit = SubmitField('Записаться')
+
+
+class CreateAppointmentForm(FlaskForm):
+    date = DateField('Дата: dd.mm.yyyy', validators=[
+        DataRequired(),
+        FutureDateValidator()])
+    time = TimeField('Время: ', validators=[
+        DataRequired(),
+        FutureTimeValidator()])
+    submit = SubmitField('Создать окно записи')
