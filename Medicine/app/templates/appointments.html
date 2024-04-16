@@ -1,12 +1,50 @@
 {% extends "base.html" %}
 {% block title %}Мои Записи{% endblock %}
 {% block content %}
-<div>
+<div style="height: inherit;">
     <h1>Мои записи</h1>
-    <ul>
-        {% for appointment in appointments %}
-            <li>{{ appointment }}</li>
-        {% endfor %}
-    </ul>
+    {% for appointment in appointments %}
+    <div style="border: 1px solid black; margin-bottom: 50px;">
+        <div class="container row">
+            <div id="appointementDoctorPhotoApp">
+                <img id="appointementDoctorPhoto" src="{{ url_for('uploaded_file', filename=appointment.doctor.photo_path) }}">
+            </div>
+            <h4>{{ appointment.doctor.firstname }} {{ appointment.doctor.surname }}</h4><br>
+            <div style="margin-left: 50px;">
+                <h4>{{ appointment.appointment_date_time.strftime('%d.%m.%Y') }}</h4>
+                <h4 style="text-align: center">{{ appointment.appointment_date_time.strftime('%H:%M') }}</h4>
+            </div>
+        </div>
+        <textarea style="text-align: center" readonly>{{ appointment.appointment_details }}</textarea>
+        <button class="button" onclick="cancelAppointment('{{ appointment.id }}')">Отменить запись</button>
+    </div>
+    {% endfor %}
 </div>
+
+<script>
+    function cancelAppointment(appointmentId) {
+    var xhr = new XMLHttpRequest();
+    var formData = new FormData();
+    formData.append('appointment_id', appointmentId);
+
+    xhr.open("PUT", "/cancel-appointment", true);
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            alert('Запись успешно отменена!');
+            location.reload();
+        } else {
+            const errors = JSON.parse(xhr.responseText);
+            let errorMessage = '';
+            for (const field in errors) {
+                errorMessage += `${field}: ${errors[field]}\n`;
+            }
+            alert('Произошла ошибка при отмене записи:\n' + errorMessage + 'Возможно стоит попробовать позже.');
+            location.reload();
+        }
+    };
+    xhr.send(formData);
+}
+</script>
+
 {% endblock %}

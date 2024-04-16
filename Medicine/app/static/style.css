@@ -924,18 +924,18 @@ input, select, textarea {
 
 }
 
-.createAppointmentTimePicker{
+.assignAppointmentTimePicker{
   height: 50px;
   width: 120px;
 }
 
-.createAppointmentTimePickerContainer{
+.assignAppointmentTimePickerContainer{
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
 
-.createAppointmentTimePicker label, .createAppointmentTimePicker input{
+.assignAppointmentTimePicker label, .assignAppointmentTimePicker input{
   display: block;
   font:
     1rem 'Fira Sans',
@@ -956,7 +956,7 @@ input, select, textarea {
   margin-left: 30px;
 }
 
-#createAppointmenDiv{
+#createAppointmentDiv{
 margin-left:20px;
   width: 600px;
   height: 630px;
@@ -1630,7 +1630,7 @@ Bounce
     position: relative;
   }
 
-  #createAppointmenDiv{
+  #createAppointmentDiv{
       padding: 0 20px;
       display: flex;
       width: 100vw !important;
@@ -1647,11 +1647,11 @@ Bounce
       max-width: 100px; /* Ширина фотографии (можно настроить по вашему вкусу) */
   }
 
-  .createAppointmentTimePicker{
+  .assignAppointmentTimePicker{
     width: 100px !important;
   }
 
-  #createAppointmenDiv h2{
+  #createAppointmentDiv h2{
     font-size: 30pt;
   }
 

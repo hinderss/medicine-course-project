@@ -31,7 +31,7 @@ def welcome():
     return render_template('welcome.html')
 
 
-@app.route('/medical_card', methods=['GET', 'POST'])
+@app.route('/medical-card', methods=['GET', 'POST'])
 @login_required
 def medical_card():
     template = 'medicalCard.html'
@@ -41,7 +41,7 @@ def medical_card():
 
     patient = current_user.patient
     if not patient:
-        return "You are not authorized to access this page. Enter as patient"
+        return "You are not authorized as patient to access this page."
 
     existing_med_card = MedicalCard.query.filter_by(patient_id=patient.id).first()
     if existing_med_card:
@@ -70,11 +70,10 @@ def medical_card():
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
-    print(filename)
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 
-@app.route('/doctors', methods=['GET'])
+@app.route('/doctors-by-specialty', methods=['GET'])
 def get_doctors_by_specialty():
     specialty = request.args.get('specialty')
 
@@ -86,7 +85,7 @@ def get_doctors_by_specialty():
     return jsonify([doctor.to_dict() for doctor in doctors])
 
 
-@app.route('/practice_profiles', methods=['GET'])
+@app.route('/practice-profiles', methods=['GET'])
 def get_practice_profiles():
     practice_profiles = Doctor.query.with_entities(Doctor.practice_profile).distinct().all()
     practice_profiles = [profile[0] for profile in practice_profiles]
@@ -94,8 +93,8 @@ def get_practice_profiles():
     return jsonify({'practice_profiles': practice_profiles})
 
 
-@app.route('/appointments/get_doctor_time')
-def get_doctor_appointments():
+@app.route('/appointments/available-doctor-time')
+def get_available_doctor_time():
     doctor_id = request.args.get('doctor_id')
     date_str = request.args.get('date')
     if doctor_id and date_str:
@@ -117,9 +116,9 @@ def get_doctor_appointments():
         return jsonify({'error': 'Doctor ID and date are required'}), 400
 
 
-@app.route('/createAppointment', methods=['GET', 'POST'])
+@app.route('/assign-appointment', methods=['GET', 'POST'])
 @login_required
-def create_appointment():
+def assign_appointment():
     form: AppointmentForm = AppointmentForm()
     if form.validate_on_submit():
         date = datetime.strptime(form.date.data, '%Y-%m-%d')
@@ -153,7 +152,7 @@ def menu():
     if current_user.patient:
         return render_template(template)
     else:
-        return 'Doctor', 404
+        return "You are not authorized as patient to access this page.", 403
 
 
 @app.route('/appointments')
@@ -165,7 +164,28 @@ def appointments():
         appointments = Appointment.query.filter_by(patient_id=user.id).all()
         return render_template(template, appointments=appointments)
     else:
-        return 'Unauthorized', 403
+        return "You are not authorized as patient to access this page.", 403
+
+
+@app.route('/cancel-appointment', methods=['PUT'])
+@login_required
+def cancel_appointment():
+    if current_user.patient:
+        appointment_id = request.form.get('appointment_id')
+        appointment = Appointment.query.filter_by(id=appointment_id).first()
+
+        if appointment:
+            if appointment.patient_id == current_user.patient.id:
+                appointment.patient_id = None
+                appointment.appointment_details = None
+                db.session.commit()
+                return jsonify({'message': 'Appointment successfully canceled!'}), 200
+            else:
+                return jsonify({'error': 'You are not allowed to cancel this appointment.'}), 403
+        else:
+            return jsonify({'error': 'Appointment not found.'}), 404
+    else:
+        return jsonify({'error': 'User not authorized as patient to update this appointment.'}), 403
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -197,7 +217,7 @@ def register():
     return render_template('signup.html')
 
 
-@app.route('/signup_doctor', methods=['GET', 'POST'])
+@app.route('/signup-doctor', methods=['GET', 'POST'])
 def signup_doctor():
     template = 'signupDoctor.html'
     form: DoctorForm = DoctorForm()
@@ -233,7 +253,7 @@ def signup_doctor():
     return render_template(template, form=form)
 
 
-@app.route('/signup_patient', methods=['GET', 'POST'])
+@app.route('/signup-patient', methods=['GET', 'POST'])
 def signup_patient():
     template = 'signupPatient.html'
     form: PatientForm = PatientForm()

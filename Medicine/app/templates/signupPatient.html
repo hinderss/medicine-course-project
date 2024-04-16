@@ -13,7 +13,7 @@
         <div class="container">
             <div class="container medium marginTop40px lightBlueBG rounded">
                 <div class="container" id="formDiv">
-                    <form id="signupForm" action="/signup_patient" method="POST" enctype="multipart/form-data">
+                    <form id="signupForm" action="/signup-patient" method="POST" enctype="multipart/form-data">
                         {{ form.csrf_token }}
                         {{ form.firstname(class="form-control", placeholder="Имя", value=form.firstname.data or '') }}
                         {{ form.surname(class="form-control", placeholder="Фамилия", value=form.surname.data or '') }}

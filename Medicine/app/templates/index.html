@@ -87,7 +87,7 @@
 
             {% if current_user.is_authenticated %}
                 {% if current_user.patient %}
-                    <a href="/medical_card" class="link"><h4 class="thin">Медицинская карта</h4></a>
+                    <a href="/medical-card" class="link"><h4 class="thin">Медицинская карта</h4></a>
                     <a href="#" class="link"><h4 class="thin">Записи</h4></a>
                 {% endif %}
             {% endif %}
@@ -215,7 +215,7 @@
 
     <div class="container big calendarDiv marginTop40px">
         <div id="calendar"></div>
-        <div id="createAppointmenDiv" action="/createAppointment" method="POST" class="container small">
+        <div id="createAppointmentDiv" action="/assign-appointment" method="POST" class="container small">
             <div class="container row" id="apointementHeader">
                 <img src="../static/images/backBtn.png" class="logo white hidden" onclick="goBack()" id="goBackBtn">
                 <h2 class="container center white">Записаться</h2>
@@ -242,7 +242,7 @@
                 </div>
             </div>
 
-            <form id="createAppointment" action="/createAppointment" method="POST">
+            <form id="assignAppointment" action="/assign-appointment" method="POST">
 
                 {{ form.csrf_token }}
                 {{ form.date(class="hidden", required="required", onchange="goBack()") }}
@@ -256,14 +256,14 @@
                     </div>
 
                     <!-- Выбор времени и дополнительные элементы -->
-                    <div class="container createAppointmentTimePickerContainer hidden" id="timePickerContainer">
+                    <div class="container assignAppointmentTimePickerContainer hidden" id="timePickerContainer">
                         <style>
-                            .createAppointmentTimePicker option[value=""] {
+                            .assignAppointmentTimePicker option[value=""] {
                                 display: none;
                             }
                         </style>
 
-                        {{ form.time(class="createAppointmentTimePicker", id="appt", required="required", onchange="addIcon()") }}
+                        {{ form.time(class="assignAppointmentTimePicker", id="appt", required="required", onchange="addIcon()") }}
                     </div>
 
                     <!-- Детали записи -->
@@ -383,7 +383,7 @@
             var xhr = new XMLHttpRequest();
 
             // Открываем новый запрос GET к указанному URL-адресу
-            xhr.open("GET", "/practice_profiles", true);
+            xhr.open("GET", "/practice-profiles", true);
 
             // Отправляем запрос
             xhr.send();
@@ -413,7 +413,7 @@
         function selectSpecialty(specialty) {
             // Отправляем AJAX-запрос для получения списка врачей по выбранному направлению
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "/doctors?specialty=" + specialty, true);
+            xhr.open("GET", "/doctors-by-specialty?specialty=" + specialty, true);
             xhr.send();
 
             xhr.onload = function() {
@@ -498,14 +498,14 @@
             document.getElementById("goBackBtn").classList.remove("hidden");
 
             document.getElementById("appointementTextArea").value = "";
-            var form = document.getElementById('createAppointment');
+            var form = document.getElementById('assignAppointment');
             var dateInput = form.querySelector('input[name="date"]');
             console.log(form);
             console.log(dateInput);
             console.log(dateInput.value);
 
             // Делаем запрос для получения списка занятого времени
-            fetch('/appointments/get_doctor_time?doctor_id=' + doctor.id + '&date=' + dateInput.value)
+            fetch('/appointments/available-doctor-time?doctor_id=' + doctor.id + '&date=' + dateInput.value)
                 .then(response => {
                     if (!response.ok) {
                         response.json().then(errors => {
@@ -573,12 +573,12 @@
     </script>
 
     <script>
-        document.getElementById("createAppointment").addEventListener("submit", function(event){
+        document.getElementById("assignAppointment").addEventListener("submit", function(event){
             event.preventDefault(); // Предотвращаем отправку формы
         
             // Отправляем запрос на сервер
             var formData = new FormData(this);
-            fetch('/createAppointment', {
+            fetch('/assign-appointment', {
                 method: 'POST',
                 body: formData
             })
@@ -592,7 +592,7 @@
                         for (const field in errors) {
                             errorMessage += `${field}: ${errors[field]}\n`;
                         }
-                        alert('Произошла ошибка при записи на прием:\n' + errorMessage + '\nВозможно стоит попробовать позже.');
+                        alert('Произошла ошибка при записи на прием:\n' + errorMessage + 'Возможно стоит попробовать позже.');
                         goBack();
                     });
                 }
@@ -665,7 +665,7 @@
                 <a href="#" class="thin">Онлайн чат</a>
                 <a href="#" class="thin">Диагностика</a>
                 <a href="#" class="thin">Записи</a>
-                <a href="/medical_card" class="thin">Медицинская карта</a>
+                <a href="/medical-card" class="thin">Медицинская карта</a>
             </div>
         </div>
 
