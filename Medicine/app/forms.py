@@ -21,7 +21,7 @@ class DoctorForm(FlaskForm):
         DataRequired(message="Введите вашу фамилию")])
     patronymic = StringField('Отчество', validators=[
         DataRequired(message="Введите ваше отчество")])
-    dob = DateField('Дата рождения: dd.mm.yyyy', validators=[
+    dob = DateField('Дата рождения: дд.мм.гггг', validators=[
         DataRequired(message="Введите вашу дату рождения"),
         PastDateValidator(message="Дата рождения должна быть в прошлом.")])
     education = StringField('Образование', validators=[
@@ -50,7 +50,7 @@ class PatientForm(FlaskForm):
         DataRequired(message="Введите ваше имя")])
     surname = StringField('Фамилия', validators=[
         DataRequired(message="Введите вашу фамилию")])
-    dob = DateField('Дата рождения: dd.mm.yyyy', validators=[
+    dob = DateField('Дата рождения: дд.мм.гггг', validators=[
         DataRequired(message="Введите вашу дату рождения"),
         PastDateValidator(message="Дата рождения должна быть в прошлом.")])
     CHOICES = [('', 'Выберите регион'), ('BY', 'BY'), ('RU', 'RU'), ('KZ', 'KZ')]
@@ -78,7 +78,7 @@ class MedicalCardForm(FlaskForm):
         DataRequired()])
     patronymic = StringField('Отчество')
     gender = RadioField('Пол', choices=[('male', 'Мужской'), ('female', 'Женский')])
-    dob = DateField('Дата рождения: dd.mm.yyyy', validators=[
+    dob = DateField('Дата рождения: дд.мм.гггг', validators=[
         DataRequired(),
         PastDateValidator(message="Дата рождения должна быть в прошлом.")])
     passport = StringField('Личный Номер паспорта')
@@ -87,7 +87,7 @@ class MedicalCardForm(FlaskForm):
     document_serial = StringField('Серия документа')
     document_number = StringField('Номер документа')
     document_authority = StringField('Кем выдан')
-    document_issue_date = DateField('Дата выдачи: dd.mm.yyyy')
+    document_issue_date = DateField('Дата выдачи: дд.мм.гггг')
     region = StringField('Область')
     city = StringField('Населенный пункт')
     street = StringField('Улица/Переулок/Проезд')
@@ -134,7 +134,7 @@ class AppointmentForm(FlaskForm):
 
 
 class CreateAppointmentForm(FlaskForm):
-    date = DateField('Дата: dd.mm.yyyy', validators=[
+    date = DateField('Дата: дд.мм.гггг', validators=[
         DataRequired(),
         FutureDateValidator()])
     time = TimeField('Время: ', validators=[

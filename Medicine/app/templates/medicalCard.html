@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="r{{ url_for('static', filename='style.css') }}">
+    <script src="/static/js/date-fields.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -88,7 +88,7 @@
                                     </div>
                                 </div>
 
-                                {{ form.dob(placeholder="Дата рождения: dd.mm.yyyy", value=form.dob.data or '') }}
+                                {{ form.dob(class="date-field", placeholder="Дата рождения: дд.мм.гггг", value=form.dob.data or '') }}
                                 {{ form.passport(placeholder="Личный Номер паспорта", value=form.passport.data or '') }}
                                 {{ form.family(id="passportDataLink", placeholder="Семейное положение", value=form.family.data or '') }}
                         </div>
@@ -106,8 +106,8 @@
                                     {{ form.document_number(placeholder="Номер", value=form.document_number.data or '') }}
                                 </div>
                                 {{ form.document_authority(placeholder="Кем выдан", value=form.document_authority.data or '') }}
-                                {{ form.document_issue_date(id="livingAddressDataLink", placeholder="Дата выдачи: dd.mm.yy", value=form.document_issue_date.data or '') }}
-                                <!-- {{ form.dob(placeholder="Дата рождения: dd.mm.yyyy", value=form.dob.data or '') }} -->
+                                {{ form.document_issue_date(class="date-field", id="livingAddressDataLink", placeholder="Дата выдачи: dd.mm.yy", value=form.document_issue_date.data or '') }}
+                                <!-- {{ form.dob(placeholder="Дата рождения: дд.мм.гггг", value=form.dob.data or '') }} -->
                             </div>
                         </div>
                     </div>

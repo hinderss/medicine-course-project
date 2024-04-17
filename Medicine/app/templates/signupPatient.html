@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/static/js/date-fields.js"></script>
 </head>
 <body class="signup">
     <div class="container leftW medium mint padding80px fullHeight"  id="signupDiv">
@@ -17,7 +18,7 @@
                         {{ form.csrf_token }}
                         {{ form.firstname(class="form-control", placeholder="Имя", value=form.firstname.data or '') }}
                         {{ form.surname(class="form-control", placeholder="Фамилия", value=form.surname.data or '') }}
-                        {{ form.dob(class="form-control", placeholder="Дата рождения: dd.mm.yyyy", value=form.dob.data or '') }}
+                        {{ form.dob(class="date-field", placeholder="Дата рождения: дд.мм.гггг", value=form.dob.data or '') }}
                         {{ form.region(class="form-control", placeholder="Регион: BY/RU/KZ", value=form.region.data or '') }}
                         {{ form.phone(class="form-control", placeholder="Номер телефона", value=form.phone.data or '') }}
                         {{ form.email(class="form-control", placeholder="Адрес электронной почты", value=form.email.data or '') }}
