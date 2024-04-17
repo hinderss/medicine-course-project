@@ -71,7 +71,7 @@ h5{
 /* Выставляем основные настройки по-умолчанию для body */
 body {
   display: flex;
-  height: 100vh; /* Change this to min-height */
+  min-height: 100vh; /* Change this to min-height */
   scroll-behavior: smooth;
   box-sizing: border-box !important;
   overflow-x: hidden;
@@ -403,7 +403,12 @@ input, select, textarea {
 }
 
 .marginBottom{
-  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.marginW10px{
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 #signupTitle{
@@ -572,6 +577,253 @@ input, select, textarea {
   background-image: url("images/headerMedicalCard.png");
   background-size: cover;
 
+  z-index: 999;
+}
+
+#titleBlack{
+  color: black;
+  text-transform: uppercase;
+}
+
+#doctorListHeaderDropdownContainer{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 33%;
+}
+
+
+#doctorListPageDoctors{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px; 
+  row-gap: 80px;
+  padding: 0 100px;
+}
+
+#doctorsCount{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 8%;
+}
+
+#doctorListFilterSubContainer{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#doctorListSortContainer{
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 100px;
+  align-items: center;
+  user-select: none;
+
+  cursor: pointer;
+}
+
+/* Стили для выпадающего списка */
+#doctorListSortContainerDropdown {
+  display: none; /* Скрываем выпадающий список по умолчанию */
+  position: absolute; /* Позиционируем абсолютно */
+  top: 180px; /* Располагаем его над контейнером */
+  left: 385px; /* Выравниваем по левому краю */
+  width: 200px;
+  height: 100px;
+  background-color: white; /* Цвет фона */
+  padding: 10px;
+  border: 1px solid #ccc; /* Граница */
+  z-index: 999;
+  
+  border-radius: 10px; /* Поднимаем над остальными элементами */
+}
+
+#doctorListSortContainerDropdown button{
+  display: flex;
+  color: #000;
+  width: 100%;
+  border-radius: 5px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+
+#doctorListSortContainerDropdown button:hover{
+  background-color: #F5F4FB;
+}
+
+/* Показываем выпадающий список при наведении на заголовок */
+#doctorListSortContainerHeader:hover + #doctorListSortContainerDropdown {
+  display: block;
+}
+
+
+#doctorListFilterContainer{
+  width: 45%;
+}
+
+#doctorListHeaderDropdownContainer{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#doctorListBodyFilterContainer{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.pagination {
+  display: inline-block;
+  margin: 40px 0;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #108476;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+
+#dropdownImg{
+  width: 20px;
+  height: auto;
+}
+
+.menu{
+  display: none;
+  position: fixed;
+  top: 80px;
+  right: 1%;
+  background-color: white;
+  width: 300px;
+  height: 700px;
+  z-index: 999;
+  padding: 20px;
+
+  border-radius: 20px;
+}
+
+#menuProfileDiv{
+    margin: 10px 0;
+  padding: 10px;
+  line-height: 1;
+}
+
+#menuProfileDiv img{
+  margin-right: 15px;
+
+}
+
+.menuItem{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 70px;
+  border-radius: 11px;
+
+
+  margin: 10px 0;
+  padding: 10px;
+  background-color: white;
+}
+
+.menuItem img{
+  margin-right: 15px;
+}
+
+
+.menuItem a{
+  color: #000;
+}
+
+.menuItem.active{
+  background-color: #6941C6;
+  color: white;
+}
+
+.sidebar {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 70px;
+  padding: 20px;
+  left: 0;
+  height: 100%;
+  width: 350px;
+  background-color: white;
+  z-index: 999;
+  /* Add the following properties for scrolling */
+  max-height: calc(100vh - 70px); /* Adjust based on your header height */
+  overflow-y: auto;
+}
+
+.sidebar .active{
+  display: flex;
+}
+
+
+
+.sidebarTitle{
+  font-size: 15pt;
+}
+
+.radioBtn{
+  width: 40px;
+}
+
+.radioBtn + label{
+  border: none !important;
+}
+
+.radioBtn:checked  {
+  background-color: white !important;
+  color: black !important;
+}
+
+.radioBtn:checked + label {
+  background-color: white !important;
+  color: black !important;
+}
+
+#sidebarSearchBtn{
+  background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  margin-top: 10px;
+}
+
+.doctorListHeader{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  background-size: cover;
+
+  border-bottom: 1px black solid;
   z-index: 999;
 }
 
@@ -1388,6 +1640,32 @@ Bounce
   align-items: center;
 }
 
+.search-container {
+  width: 45%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-container input{
+  border:   #7C59CD solid 1px;
+}
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #0b7dda;
+}
+
+
 @media screen and (max-width: 1200px) {
   .calendarDiv{
     display: flex;
@@ -1455,6 +1733,12 @@ Bounce
   /* включаем абсолютное позиционирование относительно блока с relative */
   position: absolute;
 }
+}
+
+
+#doctorListHeaderProfile{
+  display: flex;
+  justify-content: flex-end;
 }
 
 @media screen and (max-width: 1100px) {

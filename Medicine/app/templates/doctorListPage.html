@@ -1,0 +1,416 @@
+{% extends "base.html" %}
+{% block title %}Список врачей{% endblock %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="r{{ url_for('static', filename='style.css') }}">
+
+    <title>Doctor List</title>
+</head>
+<header class="doctorListHeader">
+    <div class="header container row centerH padding100pxW spacebtw">
+        <div class="container row small centerH" id="doctorListHeaderDropdownContainer">
+            <!-- <img src="static/images/dropdown.svg" id="dropdown" class="marginW10px"> -->
+            <h4 class="thin" id="titleBlack">Все специалисты</h4>
+        </div>
+        <div class="container row small center">
+            <img src="static/images/logo.svg" width="40px" class="marginW30px">
+        </div>
+        <div class="container row small" id="doctorListHeaderProfile">
+            <a href="profile">
+                <img src="static/images/profileLogo.svg" width="40px" class="marginW10px">
+            </a>
+            <img src="static/images/menu.png" width="40px" id="menuIcon">
+        </div>
+    </div>  
+</header>
+<body class="container marginTop120px">
+    <div class="sidebar">
+        <div class="container row spacebtw">
+            <h5 class="sidebarTitle">Фильтры</h5>
+            <img src="static/images/closeBtn.svg" width="38px" height="38px" id="closeSidebarBtn">
+        </div>
+
+        <form action="sosibupidorastija">
+            <div class="doctorsSpecialty marginTop20px">
+                <div class="container row spacebtw">
+                    <h5>специализация</h5>
+                    <img src="static/images/dropdown.svg" id="doctorsSpecialtyDropdownImg" class="marginW10px">
+                </div>
+                <div id="doctorsSpecialtyDropdownList"  style="display: block;">
+                    <div class="container row">
+                        <input type="radio" class="radioBtn" name="specialty" value="narcology"/>
+                        <label for="narcology">нарколог</label>
+                    </div>
+
+                    <div class="container row">
+                        <input type="radio" class="radioBtn" name="specialty" value="urolog"/>
+                        <label for="urolog">уролог</label>
+                    </div>
+
+                    <div class="container row">
+                        <input type="radio" class="radioBtn" name="specialty" value="momolog"/>
+                        <label for="momolog">момолог</label>
+                    </div>
+
+                    <div class="container row">
+                        <input type="radio" class="radioBtn" name="specialty" value="ginekolog"/>
+                        <label for="ginekolog">гинеколог</label>
+                    </div>
+                </div>
+            </div>
+            <div class="experience marginTop20px">
+                <div class="container row spacebtw">
+                    <h5>стаж</h5>
+                    <img src="static/images/dropdown.svg" id="experienceDropdownImg" class="marginW10px">
+                </div>
+                <div id="experienceDropdownList"  style="display: block;">
+                    <div class="container row">
+                        <input type="checkbox" class="radioBtn" name="2days" value="2days"/>
+                        <label for="2days">от 2 дней</label>
+                    </div>
+
+                    <div class="container row">
+                        <input type="checkbox" class="radioBtn" name="1week" value="1week"/>
+                        <label for="1week">от 1 недели</label>
+                    </div>
+
+                    <div class="container row">
+                        <input type="checkbox" class="radioBtn" name="1month" value="1month"/>
+                        <label for="1month">от 1 месяца</label>
+                    </div>
+
+                    <div class="container row">
+                        <input type="checkbox" class="radioBtn" name="1year" value="1year"/>
+                        <label for="1year">от 1 года</label>
+                    </div>
+                </div>
+            </div>
+            <div class="prices marginTop20px">
+                <div class="container row spacebtw">
+                    <h5>цены на консультацию</h5>
+                    <img src="static/images/dropdown.svg" id="pricesDropdownImg" class="marginW10px">
+                </div>
+                <div id="pricesDropdownList"  style="display: block;">
+                    <div class="container row">
+                        <input type="checkbox" class="radioBtn" name="narcology" value="narcology"/>
+                        <label for="narcology">до 30 BYN</label>
+                    </div>
+
+                    <div class="container row">
+                        <input type="checkbox" class="radioBtn" name="urolog" value="urolog"/>
+                        <label for="urolog">30 - 50 BYN</label>
+                    </div>
+
+                    <div class="container row">
+                        <input type="checkbox" class="radioBtn" name="momolog" value="momolog"/>
+                        <label for="momolog">50 - 80 BYN</label>
+                    </div>
+
+                    <div class="container row">
+                        <input type="checkbox" class="radioBtn" name="ginekolog" value="ginekolog"/>
+                        <label for="ginekolog">я мажик</label>
+                    </div>
+                </div>
+            </div>
+            <div class="rating marginTop20px">
+                <div class="container row spacebtw">
+                    <h5>рейтинг</h5>
+                    <img src="static/images/dropdown.svg" id="ratingDropdownImg" class="marginW10px">
+                </div>
+                <div id="ratingDropdownList"  style="display: block;">
+                    <div class="container row">
+                        <input type="radio" class="radioBtn" name="rating" value="5star"/>
+                        <label for="5star">☆☆☆☆☆</label>
+                    </div>
+
+                    <div     class="container row">
+                        <input type="radio" class="radioBtn" name="rating" value="4star"/>
+                        <label for="4star">☆☆☆☆</label>
+                    </div>
+
+                    <div class="container row">
+                        <input type="radio" class="radioBtn" name="rating" value="3star"/>
+                        <label for="3star">☆☆☆</label>
+                    </div>
+
+                    <div class="container row">
+                        <input type="radio" class="radioBtn" name="rating" value="2star"/>
+                        <label for="2star">☆☆</label>
+                    </div>
+
+                    <div class="container row">
+                        <input type="radio" class="radioBtn" name="rating" value="1star"/>
+                        <label for="1star">☆</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" id="sidebarSearchBtn">Показать 0 врачей</button>
+        </form>
+
+    </div>
+
+    <div class="menu">
+        <div class="container row" id="menuProfileDiv">
+            <img src="static/images/profileLogo.svg" width="40px">
+            <div>
+                <h4 id="name">Загеев Ален</h4>
+                <h5 id="email">gaj@gmail.com</h5>
+            </div>
+        </div>
+        <div class="menuItem active">
+            <img src="static/images/doctorsList.svg" width="40px">
+            <h5>Наши специалисты</h5>
+        </div>
+        <div class="menuItem">
+            <img src="static/images/appointments.svg" width="40px">
+            <a href="appointments">Записи</a>
+        </div>     
+        <div class="menuItem">
+            <img src="static/images/medicalCard.png" width="40px">
+            <a href="medicalCard">Медицинская карта</a>
+        </div>     
+    </div>
+    <div class="header container row padding100pxW spacebtw">
+        <div class="container row centerH" id="doctorListFilterContainer">
+            <div class="container row small centerH"  id="doctorListFilterSubContainer">
+                <img src="static/images/filter.png" width="40px" class="marginW10px" id="filterIcon">
+                <h5 class="thin" id="titleBlack">Фильтры</h5>
+            </div>
+            <div class="container" id="doctorListSortContainer">
+                <div class="container row" id="doctorListSortContainer">
+                    <h5>По релевантности</h5>
+                    <img src="static/images/dropdown.svg" id="sortDropdownImg" class="marginW10px">
+                </div>
+                <div class="container" id="doctorListSortContainerDropdown">
+                    <button><h5>По рейтингу</h5></button>
+                    <button><h5>По цене</h5></button>
+                    <button><h5>По стажу</h5></button>
+                </div>
+            </div>
+        </div>
+        <div class="container row center" id="doctorsCount"><h5>дохуя врачей</h5></div>
+        <div class="search-container">
+            <form action="/search.pidor">
+              <input type="text" placeholder="Search..." name="search">
+              <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
+            </form>
+          </div>
+    </div>
+
+    <div class="container marginTop80px" id="doctorListPageDoctors">
+        <div class="container small centerItemsW marginRight70px" id="doctorCard">
+            <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
+                <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                <h4 class="aboutDoctor" id="doctorSurname">Олегов Олегович</h4>
+                <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
+        </div>
+        <div class="container small centerItemsW marginRight70px" id="doctorCard">
+            <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
+                <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                <h4 class="aboutDoctor" id="doctorSurname">Олегов Олегович</h4>
+                <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
+        </div>
+        <div class="container small centerItemsW marginRight70px" id="doctorCard">
+            <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
+                <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                <h4 class="aboutDoctor" id="doctorSurname">Олегов Олегович</h4>
+                <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
+        </div>
+        <div class="container small centerItemsW marginRight70px" id="doctorCard">
+            <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
+                <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                <h4 class="aboutDoctor" id="doctorSurname">Олегов Олегович</h4>
+                <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
+        </div>
+
+        <div class="container small centerItemsW marginRight70px" id="doctorCard">
+            <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
+                <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                <h4 class="aboutDoctor" id="doctorSurname">Олегов Олегович</h4>
+                <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
+        </div>
+        <div class="container small centerItemsW marginRight70px" id="doctorCard">
+            <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
+                <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                <h4 class="aboutDoctor" id="doctorSurname">Олегов Олегович</h4>
+                <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
+        </div>
+        <div class="container small centerItemsW marginRight70px" id="doctorCard">
+            <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
+                <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                <h4 class="aboutDoctor" id="doctorSurname">Олегов Олегович</h4>
+                <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
+        </div>
+        <div class="container small centerItemsW marginRight70px" id="doctorCard">
+            <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
+                <h4 class="aboutDoctor" id="doctorName">Олег</h4>
+                <h4 class="aboutDoctor" id="doctorSurname">Олегов Олегович</h4>
+                <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
+        </div>
+    </div>
+
+    <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a class="active" href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">&raquo;</a>
+      </div>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const dropdownBtn = document.getElementById("doctorListSortContainer");
+        const dropdownImg = document.getElementById("sortDropdownImg");
+        const dropdownList = document.getElementById("doctorListSortContainerDropdown");
+
+        dropdownBtn.addEventListener("click", function() {
+            if (dropdownList.style.display === "flex") {
+                dropdownList.style.display = "none";
+                dropdownImg.style.transform = "rotate(0deg)"; // Возвращаем изображение в исходное положение
+            } else {
+                dropdownList.style.display = "flex";
+                dropdownList.style.alignItems = "flex-start";
+                dropdownImg.style.transform =  "rotate(180deg)"; // Поворачиваем изображение
+            }
+        });
+    });
+
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Для специализации врачей
+        const dropdownSpecialityImg = document.getElementById("doctorsSpecialtyDropdownImg");
+        const dropdownSpecialityList = document.getElementById("doctorsSpecialtyDropdownList");
+        const inputSpeciality = document.querySelectorAll("#doctorsSpecialtyDropdownList input[type='radio']");
+
+        dropdownSpecialityImg.addEventListener("click", function() {
+            if (dropdownSpecialityList.style.display === "block") {
+                dropdownSpecialityList.style.display = "none";
+                dropdownSpecialityImg.style.transform = "rotate(180deg)"; // Возвращаем изображение в исходное положение
+                inputSpeciality.forEach(input => {
+                    input.checked = false; // Обнуляем значение input при скрытии dropdown'а
+                });
+            } else {
+                dropdownSpecialityList.style.display = "block";
+                dropdownSpecialityImg.style.transform =  "rotate(0deg)"; // Поворачиваем изображение
+            }
+        });
+
+        // Для опыта
+        const experienceImg = document.getElementById("experienceDropdownImg");
+        const dropdownExpreienceList = document.getElementById("experienceDropdownList");
+        const inputExperience = document.querySelectorAll("#experienceDropdownList input[type='checkbox']");
+
+        experienceImg.addEventListener("click", function() {
+            if (dropdownExpreienceList.style.display === "block") {
+                dropdownExpreienceList.style.display = "none";
+                experienceImg.style.transform = "rotate(180deg)"; // Возвращаем изображение в исходное положение
+                inputExperience.forEach(input => {
+                    input.checked = false; // Обнуляем значение input при скрытии dropdown'а
+                });
+            } else {
+                dropdownExpreienceList.style.display = "block";
+                experienceImg.style.transform =  "rotate(0deg)"; // Поворачиваем изображение
+            }
+        });
+
+        // Для цен
+        const priceImg = document.getElementById("pricesDropdownImg");
+        const dropdownPriceList = document.getElementById("pricesDropdownList");
+        const inputPrices = document.querySelectorAll("#pricesDropdownList input[type='checkbox']");
+
+        priceImg.addEventListener("click", function() {
+            if (dropdownPriceList.style.display === "block") {
+                dropdownPriceList.style.display = "none";
+                priceImg.style.transform = "rotate(180deg)"; // Возвращаем изображение в исходное положение
+                inputPrices.forEach(input => {
+                    input.checked = false; // Обнуляем значение input при скрытии dropdown'а
+                });
+            } else {
+                dropdownPriceList.style.display = "block";
+                priceImg.style.transform =  "rotate(0deg)"; // Поворачиваем изображение
+            }
+        });
+
+        // Для рейтинга
+        const ratingImg = document.getElementById("ratingDropdownImg");
+        const dropdownRatingList = document.getElementById("ratingDropdownList");
+        const inputRating = document.querySelectorAll("#ratingDropdownList input[type='radio']");
+
+        ratingImg.addEventListener("click", function() {
+            if (dropdownRatingList.style.display === "block") {
+                dropdownRatingList.style.display = "none";
+                ratingImg.style.transform = "rotate(180deg)"; // Возвращаем изображение в исходное положение
+                inputRating.forEach(input => {
+                    input.checked = false; // Обнуляем значение input при скрытии dropdown'а
+                });
+            } else {
+                dropdownRatingList.style.display = "block";
+                ratingImg.style.transform =  "rotate(0deg)"; // Поворачиваем изображение
+            }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuBtn = document.querySelector("#menuIcon"); // Получаем изображение меню
+        const menu = document.querySelector(".menu"); // Получаем само меню
+
+        // Показываем или скрываем меню при нажатии на изображение меню
+        menuBtn.addEventListener("click", function() {
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        });
+
+        // Скрываем меню при нажатии вне его области
+        document.addEventListener("click", function(event) {
+            // Проверяем, что клик произошел не на изображении меню и не внутри самого меню
+            if (event.target !== menuBtn && !menu.contains(event.target)) {
+                menu.style.display = "none";
+            }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const closeSidebarBtn = document.querySelector("#closeSidebarBtn");
+        const openSidebarBtn =  document.querySelector("#filterIcon");
+        const sidebar = document.querySelector(".sidebar"); 
+        // Показываем или скрываем меню при нажатии на изображение меню
+        openSidebarBtn.addEventListener("click", function() {
+            if (sidebar.style.display === "flex") {
+                sidebar.style.display = "none";
+            } else {
+                sidebar.style.display = "flex";
+            }
+        });
+
+        // Скрываем меню при нажатии вне его области
+        document.addEventListener("click", function(event) {
+            // Проверяем, что клик произошел не на изображении меню и не внутри самого меню
+            if (event.target !== openSidebarBtn && !sidebar.contains(event.target)) {
+                sidebar.style.display = "none";
+            }
+        });
+
+        closeSidebarBtn.addEventListener("click", function(event) {
+                sidebar.style.display = "none";
+        });
+    });
+</script>
+
+
+{% endblock %}
+    

@@ -35,6 +35,9 @@ def index():
 def welcome():
     return render_template('welcome.html')
 
+@app.route('/doctor_list')
+def doctor_list():
+    return render_template('doctorListPage.html')
 
 @app.route('/medical_card', methods=['GET', 'POST'])
 @login_required
