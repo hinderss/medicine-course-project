@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block title %}Записи{% endblock %}
+{% block content %}
+<div style="height: inherit;">
+    <h1>Записи</h1>
+    <h2>{{ current_user.doctor.firstname }} {{ current_user.doctor.surname }}</h2><br>
+    <h3>{{ current_user.doctor.practice_profile }}</h3><br>
+    {% for appointment in appointments %}
+    <div style="border: 1px solid black; margin-bottom: 50px;">
+        <div class="container row">
+            {% if appointment.patient %}
+                <h4>Пациент:</h4>
+                <div id="appointementDoctorPhotoApp">
+                    <img id="appointementDoctorPhoto" src="{{ url_for('uploaded_file', filename=appointment.patient.photo_path) }}">
+                </div>
+                <h4 style="margin-left: 50px;">{{ appointment.patient.firstname }} {{ appointment.patient.surname }}</h4><br>
+            {% else %}
+                <h4>Запись:</h4>
+            {% endif %}
+            <div style="margin-left: 50px; margin-right: 50px;">
+                <h4>{{ appointment.appointment_date_time.strftime('%d.%m.%Y') }}</h4>
+                <h4 style="text-align: center">{{ appointment.appointment_date_time.strftime('%H:%M') }}</h4>
+            </div>
+        </div>
+        {% if appointment.patient %}
+            <h5 style="text-align: center">{{ appointment.patient.phone }}</h5>
+            <textarea style="text-align: left" readonly>{{ appointment.appointment_details }}</textarea>
+        {% else %}
+            <button class="button" onclick="deleteAppointment('{{ appointment.id }}')">Удалить запись</button>
+        {% endif %}
+    </div>
+    {% endfor %}
+    <div style="border: 1px solid black; margin-bottom: 50px;">
+        <form id="createAppointmentForm" action="/create-appointment" method="POST" enctype="multipart/form-data">
+            <div class="container row">
+                <h4>Окно для записи:</h4>
+                {{ form.csrf_token }}
+                {% if appointments %}
+                    {{ form.date(required="required", value=appointments[-1].appointment_date_time.date() if appointments[-1] else '') }}
+                    {{ form.time(required="required", value=appointments[-1].appointment_date_time.time() if appointments[-1] else '') }}
+                {% else %}
+                    {{ form.date(required="required") }}
+                    {{ form.time(required="required") }}
+                {% endif %}
+            </div>
+            {{ form.submit(class="button", id="submitCreateAppointment") }}
+        </form>
+    </div>
+</div>
+
+<script>
+    function deleteAppointment(appointmentId) {
+    var xhr = new XMLHttpRequest();
+    var formData = new FormData();
+    formData.append('appointment_id', appointmentId);
+
+    xhr.open("DELETE", "/delete-appointment", true);
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            alert('Запись успешно удалена!');
+            location.reload();
+        } else {
+            const errors = JSON.parse(xhr.responseText);
+            let errorMessage = '';
+            for (const field in errors) {
+                errorMessage += `${field}: ${errors[field]}\n`;
+            }
+            alert('Произошла ошибка при удалении записи:\n' + errorMessage + 'Возможно стоит попробовать позже.');
+            location.reload();
+        }
+    };
+    xhr.send(formData);
+}
+</script>
+
+<script>
+    document.getElementById("createAppointmentForm").addEventListener("submit", function(event){
+        event.preventDefault(); // Предотвращаем отправку формы
+    
+        // Отправляем запрос на сервер
+        var formData = new FormData(this);
+        fetch('/create-appointment', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Окно записи успешно создано!'); // Показываем сообщение об успехе
+                location.reload();
+            } else if (response.status === 400) {
+                alert('Произошла ошибка при создании окна записи на прием:\nДата и время должны быть в будущем\nили некорректный формат даты/времени');
+            } else if (response.status === 409) {
+                alert('Произошла ошибка при создании окна записи на прием:\nТакое окно уже существует\nили некорректный формат даты/времени');
+            }
+            else {
+                response.json().then(errors => {
+                    let errorMessage = '';
+                    for (const field in errors) {
+                        errorMessage += `${field}: ${errors[field]}\n`;
+                    }
+                    alert('Произошла ошибка при создании окна записи на прием:\n' + errorMessage + 'Возможно стоит попробовать позже.');
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Произошла ошибка:', error);
+        });
+    });
+</script>
+
+{% endblock %}

@@ -152,15 +152,3 @@ class MedicalCard(db.Model):
 
     def __str__(self):
         return f"{self.surname} {self.firstname} {self.patronymic}"
-
-#
-# class Patient(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-#     last_name = db.Column(db.String(50), nullable=False)
-#     first_name = db.Column(db.String(50), nullable=False)
-#     date_of_birth = db.Column(db.Date)
-#     region = db.Column(db.String(2))
-#     phone_number = db.Column(db.String(15))
-#
-#     user = db.relationship('User', backref=db.backref('patient', uselist=False))

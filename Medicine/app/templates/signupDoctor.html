@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/static/js/date-fields.js"></script>
 </head>
 <body class="signup fullHeight">
     <div class="container leftW medium mint padding80px fullHeight" id="signupDiv">
@@ -13,12 +14,12 @@
         <div class="container">
             <div class="container medium marginTop40px lightBlueBG rounded">
                 <div class="container" id="formDiv">
-                    <form id="signupForm" action="/signup_doctor" method="POST" enctype="multipart/form-data">
+                    <form id="signupForm" action="/signup-doctor" method="POST" enctype="multipart/form-data">
                         {{ form.csrf_token }}
                         {{ form.firstname(class="form-control", placeholder="Имя", value=form.firstname.data or '') }}
                         {{ form.surname(class="form-control", placeholder="Фамилия", value=form.surname.data or '') }}
                         {{ form.patronymic(class="form-control", placeholder="Отчество", value=form.patronymic.data or '') }}
-                        {{ form.dob(class="form-control", placeholder="Дата рождения: dd.mm.yyyy", value=form.dob.data or '') }}
+                        {{ form.dob(class="date-field", placeholder="Дата рождения: дд.мм.гггг", value=form.dob.data or '') }}
                         {{ form.education(class="form-control", placeholder="Образование", value=form.education.data or '') }}
                         {{ form.workplace(class="form-control", placeholder="Место работы", value=form.workplace.data or '') }}
                         {{ form.practice_profile(class="form-control", placeholder="Профиль врачебной практики", value=form.practice_profile.data or '') }}
@@ -62,7 +63,7 @@
 
             <div class="container row medium marginTop40px spacebtw">
                 <a href="/signup"><button class="button">Назад</button></a>
-                <input class="button" id="submitBtn" type="submit" value="Зарегистрироваться"></input>
+                {{ form.submit(class="button", id="submitBtn") }}
             </div>
         </div>
     </div>

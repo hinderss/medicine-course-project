@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="r{{ url_for('static', filename='style.css') }}">
+    <script src="/static/js/date-fields.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -38,13 +38,12 @@
         });
     });
 </script>
-    <title>Medical Card</title>
 </head>
 <header class="medicalCardHeader">
     <div class="header container row centerH padding100pxW spacebtw">
         <a href="#" class="link"><h4 class="thin">Медицинская карта</h4></a>
         <a href="#" class="link" id="headerMedicalCardAppointment"><h5 class="thin">Записи</h5></a>
-        <a href="#" class="link" id="headerMedicalCardSpecialists"><h5 class="thin">Специалисты</h5></a>
+        <a href="/doctor_list" class="link" id="headerMedicalCardSpecialists"><h5 class="thin">Специалисты</h5></a>
         <a href="/"><img src="static/images/logo.svg" class="headerProfilePhoto" height="40px"></a>
     </div>
 </header>
@@ -62,177 +61,171 @@
 
         <div class="medicalCardSidebar">
             <a class="black" onclick="scrollToTop()"><h5 class="active">Персональные данные</h5></a>
-            <a href="/medical_card#passportDataLink" class="black"><h5>Удостоверение личности</h5></a>
-            <a href="/medical_card#livingAddressDataLink" class="black"><h5>Адрес проживания</h5></a>
-            <a href="/medical_card#registrationAddressDataLink" class="black"><h5>Адрес регистрации</h5></a>
-            <a href="/medical_card#benefitsAndInsuranceDataLink" class="black"><h5>Льготы и страхования</h5></a>
-            <a href="/medical_card#medicalIdinticationsDataLink" class="black"><h5>Медицинские показания</h5></a>
+            <a href="/medical-card#passportDataLink" class="black"><h5>Удостоверение личности</h5></a>
+            <a href="/medical-card#livingAddressDataLink" class="black"><h5>Адрес проживания</h5></a>
+            <a href="/medical-card#registrationAddressDataLink" class="black"><h5>Адрес регистрации</h5></a>
+            <a href="/medical-card#benefitsAndInsuranceDataLink" class="black"><h5>Льготы и страхования</h5></a>
+            <a href="/medical-card#medicalIdinticationsDataLink" class="black"><h5>Медицинские показания</h5></a>
         </div>
-        <form id="signupForm" action="/medical_card" method="POST" class="container fullWidth">
-        <div class="container big centerItemsW mainSection">
-            <div class="container big centerItemsW">
-                <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
-                <div id="personalDataLink"></div>
-                    <div class="container" id="formDiv">
-                        <h3 class="regular formTitle">Персональные данные</h3>
-                            {{ form.csrf_token }}
-                            {{ form.surname(placeholder="Фамилия", value=form.surname.data or '') }}
-                            {{ form.firstname(placeholder="Имя", value=form.firstname.data or '') }}
-                            {{ form.patronymic(placeholder="Отчество", value=form.patronymic.data or '') }}
+        <form id="signupForm" action="/medical-card" method="POST" class="container fullWidth">
+            <div class="container big centerItemsW mainSection">
+                <div class="container big centerItemsW">
+                    <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
+                    <div id="personalDataLink"></div>
+                        <div class="container" id="formDiv">
+                            <h3 class="regular formTitle">Персональные данные</h3>
+                                {{ form.csrf_token }}
+                                {{ form.surname(placeholder="Фамилия", value=form.surname.data or '') }}
+                                {{ form.firstname(placeholder="Имя", value=form.firstname.data or '') }}
+                                {{ form.patronymic(placeholder="Отчество", value=form.patronymic.data or '') }}
 
-                            <div class="container row">
                                 <div class="container row">
-                                    <input type="radio" name="gender" id="male" class="hide" value="male" {% if form.data.gender == 'male' %} checked {% endif %}>
-                                    <label for="male" class="button white medium white">Мужской</label>    
-                                    <input type="radio" name="gender" id="female" class="hide" value="female" {% if form.data.gender == 'female' %} checked {% endif %}>
-                                    <label for="female" class="button white medium white">Женский</label>    
+                                    <div class="container row">
+                                        <input type="radio" name="gender" id="male" class="hide" value="male" {% if form.data.gender == 'male' %} checked {% endif %}>
+                                        <label for="male" class="button white medium white">Мужской</label>    
+                                        <input type="radio" name="gender" id="female" class="hide" value="female" {% if form.data.gender == 'female' %} checked {% endif %}>
+                                        <label for="female" class="button white medium white">Женский</label>    
+                                    </div>
+                                </div>
+
+                                {{ form.dob(class="date-field", placeholder="Дата рождения: дд.мм.гггг", value=form.dob.data or '') }}
+                                {{ form.passport(placeholder="Личный Номер паспорта", value=form.passport.data or '') }}
+                                {{ form.family(id="passportDataLink", placeholder="Семейное положение", value=form.family.data or '') }}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container big centerItemsW">
+                    <div class="container centerItemsW">
+                        <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
+                            <div class="container" id="formDiv">
+                                <h3 class="regular formTitle">Удостоверение личности</h3>
+                                {{ form.document_type(placeholder="Документ", value=form.document_type.data or '') }}
+                                <div class="container row twoInputs">
+                                    {{ form.document_serial(class="small", placeholder="Серия", value=form.document_serial.data or '') }}
+                                    {{ form.document_number(placeholder="Номер", value=form.document_number.data or '') }}
+                                </div>
+                                {{ form.document_authority(placeholder="Кем выдан", value=form.document_authority.data or '') }}
+                                {{ form.document_issue_date(class="date-field", id="livingAddressDataLink", placeholder="Дата выдачи: dd.mm.yy", value=form.document_issue_date.data or '') }}
+                                <!-- {{ form.dob(placeholder="Дата рождения: дд.мм.гггг", value=form.dob.data or '') }} -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container big centerItemsW">
+                    <div class="container centerItemsW">
+                        <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
+                            <div class="container" id="formDiv">
+                                <h3 class="regular formTitle">Адрес проживания</h3>
+                                <div class="container row">
+                                    {{ form.region(class="small marginRight15px", placeholder="Область", value=form.region.data or '') }}
+                                    {{ form.city(class="big", placeholder="Населенный пункт", value=form.city.data or '') }}
+                                </div>
+                                <div class="container row">
+                                    {{ form.street(class="big marginRight15px", placeholder="Улица/Переулок/Проезд", value=form.street.data or '') }}
+                                    {{ form.house(class="small", placeholder="Дом", value=form.house.data or '') }}
+                                </div>
+                                <div class="container row">
+                                    {{ form.building(class="small marginRight15px", placeholder="Корпус", value=form.building.data or '') }}
+                                    {{ form.entrance(class="small marginRight15px", placeholder="Подъезд", value=form.entrance.data or '') }}
+                                    {{ form.apartment(class="small", placeholder="Квартира", value=form.apartment.data or '') }}
+                                </div>
+                                {{ form.home_phone(placeholder="Домашний телефон", value=form.home_phone.data or '') }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container big centerItemsW">
+                    <div class="container centerItemsW">
+                        <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
+                            <div class="container" id="formDiv">
+                                <h3 class="regular formTitle" id="registrationAddressDataLink">Адрес регистрации</h3>
+                                <div class="container row registrationAddressSection" style="display: flex;">
+                                    {{ form.registration_region(class="small marginRight15px", placeholder="Область", value=form.registration_region.data or '') }}
+                                    {{ form.registration_city(class="big", placeholder="Населенный пункт", value=form.registration_city.data or '') }}
+                                </div>
+                                <div class="container row registrationAddressSection" style="display: flex;">
+                                    {{ form.registration_street(class="big marginRight15px", placeholder="Улица/Переулок/Проезд", value=form.registration_street.data or '') }}
+                                    {{ form.registration_house(class="small", placeholder="Дом", value=form.registration_house.data or '') }}
+                                </div>
+                                <div class="container row registrationAddressSection" style="display: flex;">
+                                    {{ form.registration_building(class="small marginRight15px", placeholder="Корпус", value=form.registration_building.data or '') }}
+                                    {{ form.registration_entrance(class="small marginRight15px", placeholder="Подъезд", value=form.registration_entrance.data or '') }}
+                                    {{ form.registration_apartment(class="small", placeholder="Квартира", value=form.registration_apartment.data or '') }}
+                                </div>
+                                <div class="container row left">
+                                    <input type="checkbox" name="registration_checkbox" id="registrationAddressEqualLivivngAddress" name="livingAddressBtn" value="registrationAddressEqualLivivngAddress" class="checkbox-custom">
+                                    <label for="registrationAddressEqualLivivngAddress" class="checkbox-custom-label" id="byAddressButton">По адресу проживания</label>
                                 </div>
                             </div>
-
-                            {{ form.dob(placeholder="Дата рождения: dd.mm.yyyy", value=form.dob.data or '') }}
-                            {{ form.passport(placeholder="Личный Номер паспорта", value=form.passport.data or '') }}
-                            {{ form.family(id="passportDataLink", placeholder="Семейное положение", value=form.family.data or '') }}
-                    </div>
-                </div>
-            </div>
-            
-            <div class="container big centerItemsW">
-                <div class="container centerItemsW">
-                    <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
-                        <div class="container" id="formDiv">
-                            <h3 class="regular formTitle">Удостоверение личности</h3>
-                            {{ form.document_type(placeholder="Документ", value=form.document_type.data or '') }}
-                            <div class="container row twoInputs">
-                                {{ form.document_serial(class="small", placeholder="Серия", value=form.document_serial.data or '') }}
-                                {{ form.document_number(placeholder="Номер", value=form.document_number.data or '') }}
-                            </div>
-                            {{ form.document_authority(placeholder="Кем выдан", value=form.document_authority.data or '') }}
-                            {{ form.document_issue_date(id="livingAddressDataLink", placeholder="Дата выдачи: dd.mm.yy", value=form.document_issue_date.data or '') }}
-                            <!-- {{ form.dob(placeholder="Дата рождения: dd.mm.yyyy", value=form.dob.data or '') }} -->
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="container big centerItemsW">
-                <div class="container centerItemsW">
-                    <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
-                        <div class="container" id="formDiv">
-                            <h3 class="regular formTitle">Адрес проживания</h3>
-                            <div class="container row">
-                                {{ form.region(class="small marginRight15px", placeholder="Область", value=form.region.data or '') }}
-                                {{ form.city(class="big", placeholder="Населенный пункт", value=form.city.data or '') }}
-                            </div>
-                            <div class="container row">
-                                {{ form.street(class="big marginRight15px", placeholder="Улица/Переулок/Проезд", value=form.street.data or '') }}
-                                {{ form.house(class="small", placeholder="Дом", value=form.house.data or '') }}
-                            </div>
-                            <div class="container row">
-                                {{ form.building(class="small marginRight15px", placeholder="Корпус", value=form.building.data or '') }}
-                                {{ form.entrance(class="small marginRight15px", placeholder="Подъезд", value=form.entrance.data or '') }}
-                                {{ form.apartment(class="small", placeholder="Квартира", value=form.apartment.data or '') }}
-                            </div>
-                            {{ form.home_phone(placeholder="Домашний телефон", value=form.home_phone.data or '') }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container big centerItemsW">
-                <div class="container centerItemsW">
-                    <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
-                        <div class="container" id="formDiv">
-                            <h3 class="regular formTitle" id="registrationAddressDataLink">Адрес регистрации</h3>
-                            <div class="container row registrationAddressSection" style="display: flex;">
-                                {{ form.registration_region(class="small marginRight15px", placeholder="Область", value=form.registration_region.data or '') }}
-                                {{ form.registration_city(class="big", placeholder="Населенный пункт", value=form.registration_city.data or '') }}
-                            </div>
-                            <div class="container row registrationAddressSection" style="display: flex;">
-                                {{ form.registration_street(class="big marginRight15px", placeholder="Улица/Переулок/Проезд", value=form.registration_street.data or '') }}
-                                {{ form.registration_house(class="small", placeholder="Дом", value=form.registration_house.data or '') }}
-                            </div>
-                            <div class="container row registrationAddressSection" style="display: flex;">
-                                {{ form.registration_building(class="small marginRight15px", placeholder="Корпус", value=form.registration_building.data or '') }}
-                                {{ form.registration_entrance(class="small marginRight15px", placeholder="Подъезд", value=form.registration_entrance.data or '') }}
-                                {{ form.registration_apartment(class="small", placeholder="Квартира", value=form.registration_apartment.data or '') }}
-                            </div>
-                            <div class="container row left">
-                                <input type="checkbox" name="registration_checkbox" id="registrationAddressEqualLivivngAddress" name="livingAddressBtn" value="registrationAddressEqualLivivngAddress" class="checkbox-custom">
-                                <label for="registrationAddressEqualLivivngAddress" class="checkbox-custom-label" id="byAddressButton">По адресу проживания</label>
+                <div class="container big centerItemsW">
+                    <div class="container centerItemsW">
+                        <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
+                            <div class="container" id="formDiv">
+                                <h3 class="regular formTitle">Льготы и страхования</h3>
+                                <h5 class="inputPreLabel thin">Страховой полис</h5>
+                                <div class="container row twoInputs inputTopNoRound">
+                                    {{ form.insurance_serial(class="small inputTopNoRound", placeholder="Серия", value=form.insurance_serial.data or '') }}
+                                    {{ form.insurance_number(placeholder="Номер", value=form.insurance_number.data or '') }}
+                                </div>
+                                <div class="container row twoInputs">
+                                    {{ form.disability(class="medium", placeholder="Инвалидность", value=form.disability.data or '') }}
+                                    {{ form.disability_group(class="medium", placeholder="Группа", value=form.disability_group.data or '') }}
+                                </div>
+                                {{ form.benefit_document(placeholder="Документ на право льготного обслуживания", value=form.benefit_document.data or '') }}
+                                {{ form.payment_type(placeholder="Вид оплаты", value=form.payment_type.data or '') }}
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="container big centerItemsW">
-                <div class="container centerItemsW">
-                    <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
-                        <div class="container" id="formDiv">
-                            <h3 class="regular formTitle">Льготы и страхования</h3>
-                            <h5 class="inputPreLabel thin">Страховой полис</h5>
-                            <div class="container row twoInputs inputTopNoRound">
-                                {{ form.insurance_serial(class="small inputTopNoRound", placeholder="Серия", value=form.insurance_serial.data or '') }}
-                                {{ form.insurance_number(placeholder="Номер", value=form.insurance_number.data or '') }}
+                
+                <div class="container big centerItemsW">
+                    <div class="container centerItemsW">
+                        <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
+                            <div class="container" id="formDiv">
+                                <h3 class="regular formTitle">Медицинские показания</h3>
+                                {{ form.allergic_history(placeholder="Аллергический анамнез", value=form.allergic_history.data or '') }}
+                                {{ form.medication_intolerance(placeholder="Лекарственная непереносимость", value=form.medication_intolerance.data or '') }}
+                                <div class="container row">
+                                    {{ form.blood_group(class="small marginRight15px", placeholder="Группа крови", value=form.blood_group.data or '') }}
+                                    {{ form.rhesus(class="small marginRight15px", placeholder="Резус", value=form.rhesus.data or '') }}
+                                    {{ form.blood_belongs(class="small", placeholder="Принадлежность", value=form.blood_belongs.data or '') }}
+                                </div>
+                                {{ form.vaccine_reactions(placeholder="Реакции на прививки", value=form.vaccine_reactions.data or '') }}
+                                {{ form.blood_transfusion(placeholder="Переливание крови", value=form.blood_transfusion.data or '') }}
+                                {{ form.surgical_intervention(placeholder="Хирургическое вмешательство", value=form.surgical_intervention.data or '') }}
+                                {{ form.previous_infectious_diseases(placeholder="Перенесенные инфекционные заболевания", rows="4", value=form.previous_infectious_diseases.data or '') }}
                             </div>
-                            <div class="container row twoInputs">
-                                {{ form.disability(class="medium", placeholder="Инвалидность", value=form.disability.data or '') }}
-                                {{ form.disability_group(class="medium", placeholder="Группа", value=form.disability_group.data or '') }}
-                            </div>
-                            {{ form.benefit_document(placeholder="Документ на право льготного обслуживания", value=form.benefit_document.data or '') }}
-                            {{ form.payment_type(placeholder="Вид оплаты", value=form.payment_type.data or '') }}
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="container big centerItemsW">
-                <div class="container centerItemsW">
-                    <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
-                        <div class="container" id="formDiv">
-                            <h3 class="regular formTitle">Медицинские показания</h3>
-                            {{ form.allergic_history(placeholder="Аллергический анамнез", value=form.allergic_history.data or '') }}
-                            {{ form.medication_intolerance(placeholder="Лекарственная непереносимость", value=form.medication_intolerance.data or '') }}
-                            <div class="container row">
-                                {{ form.blood_group(class="small marginRight15px", placeholder="Группа крови", value=form.blood_group.data or '') }}
-                                {{ form.rhesus(class="small marginRight15px", placeholder="Резус", value=form.rhesus.data or '') }}
-                                {{ form.blood_belongs(class="small", placeholder="Принадлежность", value=form.blood_belongs.data or '') }}
-                            </div>
-                            {{ form.vaccine_reactions(placeholder="Реакции на прививки", value=form.vaccine_reactions.data or '') }}
-                            {{ form.blood_transfusion(placeholder="Переливание крови", value=form.blood_transfusion.data or '') }}
-                            {{ form.surgical_intervention(placeholder="Хирургическое вмешательство", value=form.surgical_intervention.data or '') }}
-                            {{ form.previous_infectious_diseases(placeholder="Перенесенные инфекционные заболевания", rows="4", value=form.previous_infectious_diseases.data or '') }}
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- {% if error and request.method == 'POST' %}
-            <div class="alert alert-danger">
-                {{ error | safe }}
-            </div>
-            {% endif %} -->
-
-            <!-- flash() errors -->
-            {% for message in get_flashed_messages() %}
-                <div class="alert alert-danger">
-                    {{ message }}
-                </div>
-            {% endfor %}    
-        
-            <!-- forms errors -->
-            {% for field, errors in form.errors.items() %}
-                {% for error in errors %}
+                <!-- flash() errors -->
+                {% for message in get_flashed_messages() %}
                     <div class="alert alert-danger">
-                        {{ error }}
+                        {{ message }}
                     </div>
+                {% endfor %}    
+            
+                <!-- forms errors -->
+                {% for field, errors in form.errors.items() %}
+                    {% for error in errors %}
+                        <div class="alert alert-danger">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
                 {% endfor %}
-            {% endfor %}
 
-            <div class="container rowReverse marginTop80px fullWidth">
-                <input class="button" id="submitBtn" type="submit" value="Сохранить">
+                <div class="container rowReverse marginTop80px fullWidth">
+                    {{ form.submit(class="button", id="submitBtn") }}
+                </div>
             </div>
-        </div>
         </form>
     </div>
 
@@ -332,11 +325,11 @@ function scrollToTop() {
     window.scrollTo(0, 0);
 }
 </script>
-<script>
+<!-- <script>
     document.getElementById('submitBtn').addEventListener('click', function() {
             document.getElementById('signupForm').submit();
         });
-</script>
+</script> -->
 
         <script>
                 $(document).ready(function() {

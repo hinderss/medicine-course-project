@@ -5,7 +5,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="r{{ url_for('static', filename='style.css') }}">
     <link href="static/calendar/vanilla-calendar.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.0.9/dist/css/splide.min.css">
 
@@ -88,12 +87,12 @@
 
             {% if current_user.is_authenticated %}
                 {% if current_user.patient %}
-                    <a href="/medical_card" class="link"><h4 class="thin">Медицинская карта</h4></a>
+                    <a href="/medical-card" class="link"><h4 class="thin">Медицинская карта</h4></a>
                     <a href="#" class="link"><h4 class="thin">Записи</h4></a>
                 {% endif %}
             {% endif %}
 
-            <a href="#" class="link"><h4 class="thin">Специалисты</h4></a>
+            <a href="/doctor_list" class="link"><h4 class="thin">Специалисты</h4></a>
             
             {% if current_user.is_authenticated %}
                 {% if name and surname %}
@@ -216,7 +215,7 @@
 
     <div class="container big calendarDiv marginTop40px">
         <div id="calendar"></div>
-        <div id="createAppointmenDiv" action="/createAppointment" method="POST" class="container small">
+        <div id="createAppointmentDiv" action="/assign-appointment" method="POST" class="container small">
             <div class="container row" id="apointementHeader">
                 <img src="../static/images/backBtn.png" class="logo white hidden" onclick="goBack()" id="goBackBtn">
                 <h2 class="container center white">Записаться</h2>
@@ -243,8 +242,10 @@
                 </div>
             </div>
 
-            <form id="createAppointment" action="/createAppointment" method="POST">
-                <input type="text" name="date" class="hidden" required="required" onchange="goBack()">
+            <form id="assignAppointment" action="/assign-appointment" method="POST">
+
+                {{ form.csrf_token }}
+                {{ form.date(class="hidden", required="required", onchange="goBack()") }}
                 <div class="container row hidden" id="doctorDetails">
                     <div id="appointementDoctorPhotoApp">
                         <img src="../static/images/doctorCardPhoto.jpg">
@@ -255,30 +256,20 @@
                     </div>
 
                     <!-- Выбор времени и дополнительные элементы -->
-                    <div class="container createAppointmentTimePickerContainer hidden" id="timePickerContainer">
+                    <div class="container assignAppointmentTimePickerContainer hidden" id="timePickerContainer">
                         <style>
-                            .createAppointmentTimePicker option[value=""] {
+                            .assignAppointmentTimePicker option[value=""] {
                                 display: none;
                             }
                         </style>
 
-                        <select class="createAppointmentTimePicker" id="appt" name="appt" required onchange="addIcon()">
-                            <!-- Добавляем значение по умолчанию -->
-                            <option value="" disabled selected>🕑 --:--</option>
-                            <!-- Вставьте интервал времени с учетом 15-минутного шага -->
-                            <option value="09:00">09:00</option>
-                            <option value="09:15" disabled>09:15 (занято)</option>
-                            <option value="09:30">09:30</option>
-                            <option value="09:45">09:45</option>
-                            <!-- ... (дополните интервалы по аналогии) ... -->
-                            <option value="18:00">18:00</option>
-                        </select>
+                        {{ form.time(class="assignAppointmentTimePicker", id="appt", required="required", onchange="addIcon()") }}
                     </div>
 
                     <!-- Детали записи -->
                 </div>
-                <textarea class="hidden" name="appointment_details" placeholder="Детали записи" id="appointementTextArea"></textarea>
-                <button type="submit" class="button hidden" id="submitAppointment">Записаться</button>
+                {{ form.appointment_details(class="hidden", placeholder="Детали записи", id="appointementTextArea") }}
+                {{ form.submit(class="button hidden", id="submitAppointment") }}
             </form>
         </div>
     </div>
@@ -392,7 +383,7 @@
             var xhr = new XMLHttpRequest();
 
             // Открываем новый запрос GET к указанному URL-адресу
-            xhr.open("GET", "/practice_profiles", true);
+            xhr.open("GET", "/practice-profiles", true);
 
             // Отправляем запрос
             xhr.send();
@@ -422,7 +413,7 @@
         function selectSpecialty(specialty) {
             // Отправляем AJAX-запрос для получения списка врачей по выбранному направлению
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "/doctors?specialty=" + specialty, true);
+            xhr.open("GET", "/doctors-by-specialty?specialty=" + specialty, true);
             xhr.send();
 
             xhr.onload = function() {
@@ -507,17 +498,25 @@
             document.getElementById("goBackBtn").classList.remove("hidden");
 
             document.getElementById("appointementTextArea").value = "";
-            var form = document.getElementById('createAppointment');
+            var form = document.getElementById('assignAppointment');
             var dateInput = form.querySelector('input[name="date"]');
             console.log(form);
             console.log(dateInput);
             console.log(dateInput.value);
 
             // Делаем запрос для получения списка занятого времени
-            fetch('/appointments/get_doctor_time?doctor_id=' + doctor.id + '&date=' + dateInput.value)
+            fetch('/appointments/available-doctor-time?doctor_id=' + doctor.id + '&date=' + dateInput.value)
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error('Network response was not ok');
+                        response.json().then(errors => {
+                            let errorMessage = '';
+                            for (const field in errors) {
+                                errorMessage += `${field}: ${errors[field]}\n`;
+                            }
+                            alert('Произошла ошибка\n' + errorMessage);
+                            goBack();
+                            throw new Error('Network response was not ok' + errorMessage);
+                        });
                     }
                     return response.json();
                 })
@@ -574,12 +573,12 @@
     </script>
 
     <script>
-        document.getElementById("createAppointment").addEventListener("submit", function(event){
+        document.getElementById("assignAppointment").addEventListener("submit", function(event){
             event.preventDefault(); // Предотвращаем отправку формы
         
             // Отправляем запрос на сервер
             var formData = new FormData(this);
-            fetch('/createAppointment', {
+            fetch('/assign-appointment', {
                 method: 'POST',
                 body: formData
             })
@@ -587,12 +586,14 @@
                 if (response.ok) {
                     alert('Вы успешно записаны на прием!'); // Показываем сообщение об успехе
                     goBack();
-                } else if (response.status === 401) {
-                    // Если получен статус 401, перенаправляем на страницу входа
-                    window.location.href = '/login';
                 } else {
-                    response.text().then(errorMessage => {
-                        alert('Произошла ошибка при записи на прием: ' + errorMessage); // Показываем сообщение об ошибке
+                    response.json().then(errors => {
+                        let errorMessage = '';
+                        for (const field in errors) {
+                            errorMessage += `${field}: ${errors[field]}\n`;
+                        }
+                        alert('Произошла ошибка при записи на прием:\n' + errorMessage + 'Возможно стоит попробовать позже.');
+                        goBack();
                     });
                 }
             })
@@ -664,7 +665,7 @@
                 <a href="#" class="thin">Онлайн чат</a>
                 <a href="#" class="thin">Диагностика</a>
                 <a href="#" class="thin">Записи</a>
-                <a href="/medical_card" class="thin">Медицинская карта</a>
+                <a href="/medical-card" class="thin">Медицинская карта</a>
             </div>
         </div>
 
