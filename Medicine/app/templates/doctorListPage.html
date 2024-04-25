@@ -112,7 +112,7 @@
 
                     <div class="container row">
                         <input type="checkbox" class="radioBtn" name="ginekolog" value="ginekolog"/>
-                        <label for="ginekolog">я мажик</label>
+                        <label for="ginekolog">от 100 BYN</label>
                     </div>
                 </div>
             </div>
@@ -154,12 +154,30 @@
 
     </div>
 
+    {% if current_user.patient or current_user.doctor %}
     <div class="menu">
         <div class="container row" id="menuProfileDiv">
-            <img src="static/images/profileLogo.svg" width="40px">
+            {% if current_user.patient %}
+                {% if current_user.patient.photo_path %}
+                    <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}" width="40px">
+                {% else %}
+                    <img src="static/images/profileLogo.svg" width="40px">
+                {% endif %}
+            {% else %}
+                {% if current_user.doctor.photo_path %}
+                    <img src="{{ url_for('uploaded_file', filename=current_user.doctor.photo_path) }}" width="40px">
+                {% else %}
+                    <img src="static/images/profileLogo.svg" width="40px">
+                {% endif %}
+            {% endif %}
             <div>
-                <h4 id="name">Загеев Ален</h4>
-                <h5 id="email">gaj@gmail.com</h5>
+                <h4 id="name">
+                    {% if current_user.patient %}
+                    <span>{{ current_user.patient.firstname }} {{ current_user.patient.surname }}</span>
+                    {% else %}
+                    <span>{{ current_user.doctor.firstname }} {{ current_user.doctor.surname }}</span>
+                    {% endif %}
+                <h5 id="email">{{ current_user.username }}</h5>
             </div>
         </div>
         <div class="menuItem active">
@@ -175,6 +193,7 @@
             <a href="medicalCard">Медицинская карта</a>
         </div>     
     </div>
+    {% endif %}
     <div class="header container row padding100pxW spacebtw">
         <div class="container row centerH" id="doctorListFilterContainer">
             <div class="container row small centerH"  id="doctorListFilterSubContainer">
@@ -183,17 +202,83 @@
             </div>
             <div class="container" id="doctorListSortContainer">
                 <div class="container row" id="doctorListSortContainer">
-                    <h5>По релевантности</h5>
+                    <h5>
+                        {% if request.args.get('sort_by') == 'rating' %}
+                            <span>По рейтингу</span>
+                        {% elif request.args.get('sort_by') == 'consultation_price' %}
+                            <span>По цене</span>
+                        {% elif request.args.get('sort_by') == 'experience_years' %}
+                            <span>По стажу</span>
+                        {% else %}
+                            <span>По релевантности</span>
+                        {% endif %}
+
+                        {% if request.args.get('order') == 'asc' %}
+                            <span> ▲</span>
+                        {% elif request.args.get('order') == 'desc' %}
+                            <span> ▼</span>
+                        {% endif %}
+                    </h5>
                     <img src="static/images/dropdown.svg" id="sortDropdownImg" class="marginW10px">
                 </div>
                 <div class="container" id="doctorListSortContainerDropdown">
-                    <button><h5>По рейтингу</h5></button>
-                    <button><h5>По цене</h5></button>
-                    <button><h5>По стажу</h5></button>
+                    {% if request.args.get('sort_by') %}
+                    <button onclick="window.location.href = '{{ url_for('doctor_list') }}'">
+                        <h5>По релевантности</h5>
+                    </button>
+                    {% endif %}
+
+                    {% if request.args.get('order') == 'asc' %}
+                        <button onclick="window.location.href = '{{ url_for('doctor_list', sort_by='rating', order='desc') }}'">
+                            <h5>По рейтингу</h5><h5> ▼</h5>
+                        </button>
+                    {% else %}
+                        <button onclick="window.location.href = '{{ url_for('doctor_list', sort_by='rating', order='asc') }}'">
+                            <h5>По рейтингу</h5><h5> ▲</h5>
+                        </button>
+                    {% endif %}
+
+                    {% if request.args.get('order') == 'asc' %}
+                        <button onclick="window.location.href = '{{ url_for('doctor_list', sort_by='consultation_price', order='desc') }}'">
+                            <h5>По цене</h5><h5> ▼</h5>
+                        </button>
+                    {% else %}
+                        <button onclick="window.location.href = '{{ url_for('doctor_list', sort_by='consultation_price', order='asc') }}'">
+                            <h5>По цене</h5><h5> ▲</h5>
+                        </button>
+                    {% endif %}
+
+                    {% if request.args.get('order') == 'asc' %}
+                        <button onclick="window.location.href = '{{ url_for('doctor_list', sort_by='experience_years', order='desc') }}'">
+                            <h5>По стажу</h5><h5> ▼</h5>
+                        </button>
+                    {% else %}
+                        <button onclick="window.location.href = '{{ url_for('doctor_list', sort_by='experience_years', order='asc') }}'">
+                            <h5>По стажу</h5><h5> ▲</h5>
+                        </button>
+                    {% endif %}
                 </div>
+                <!-- Элементы управления для сортировки -->
+                <!-- <div class="sorting">
+                    <a href="{{ url_for('doctor_list', sort_by='rating', order='asc') }}">Sort by Rating ASC</a>
+                    <a href="{{ url_for('doctor_list', sort_by='rating', order='desc') }}">Sort by Rating DESC</a>
+                    <a href="{{ url_for('doctor_list', sort_by='experience_years', order='asc') }}">Sort by Experience ASC</a>
+                    <a href="{{ url_for('doctor_list', sort_by='experience_years', order='desc') }}">Sort by Experience DESC</a>
+                    <a href="{{ url_for('doctor_list', sort_by='consultation_price', order='asc') }}">Sort by Price ASC</a>
+                    <a href="{{ url_for('doctor_list', sort_by='consultation_price', order='desc') }}">Sort by Price DESC</a>
+                </div> -->
+                <!-- <script>
+                    function sortDoctors(sortBy, order) {
+                        // Формируем URL-адрес с параметрами сортировки
+                        var url = "{{ url_for('doctor_list') }}";
+                        url += "?sort_by=" + sortBy + "&order=" + order;
+                        // Перенаправляем пользователя на новый URL-адрес
+                        window.location.href = url;
+                    }
+                </script> -->
             </div>
         </div>
-        <div class="container row center" id="doctorsCount"><h5>дохуя врачей</h5></div>
+        <div class="container row center" id="doctorsCount"><h5>{{ count }} врачей</h5></div>
         <div class="search-container">
             <form action="/search.pidor">
               <input type="text" placeholder="Search..." name="search">
@@ -203,67 +288,33 @@
     </div>
 
     <div class="container marginTop80px" id="doctorListPageDoctors">
+        {% for doctor in doctors.items %}
+        <!-- Вывод информации о докторе -->
         <div class="container small centerItemsW marginRight70px" id="doctorCard">
-            <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
-                <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                <h4 class="aboutDoctor" id="doctorSurname">Олегов Олегович</h4>
-                <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
+            <img src="{{ url_for('uploaded_file', filename=doctor.photo_path) }}" id="doctorCardPhoto">
+                <h4 class="aboutDoctor" id="doctorName">{{ doctor.surname }}</h4>
+                <h4 class="aboutDoctor" id="doctorSurname">{{ doctor.firstname }} {{ doctor.patronymic }}</h4>
+                <h5 class="aboutDoctor thin" id="doctorPosition">{{ doctor.practice_profile }}</h5>
         </div>
-        <div class="container small centerItemsW marginRight70px" id="doctorCard">
-            <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
-                <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                <h4 class="aboutDoctor" id="doctorSurname">Олегов Олегович</h4>
-                <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
-        </div>
-        <div class="container small centerItemsW marginRight70px" id="doctorCard">
-            <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
-                <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                <h4 class="aboutDoctor" id="doctorSurname">Олегов Олегович</h4>
-                <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
-        </div>
-        <div class="container small centerItemsW marginRight70px" id="doctorCard">
-            <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
-                <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                <h4 class="aboutDoctor" id="doctorSurname">Олегов Олегович</h4>
-                <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
-        </div>
-
-        <div class="container small centerItemsW marginRight70px" id="doctorCard">
-            <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
-                <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                <h4 class="aboutDoctor" id="doctorSurname">Олегов Олегович</h4>
-                <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
-        </div>
-        <div class="container small centerItemsW marginRight70px" id="doctorCard">
-            <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
-                <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                <h4 class="aboutDoctor" id="doctorSurname">Олегов Олегович</h4>
-                <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
-        </div>
-        <div class="container small centerItemsW marginRight70px" id="doctorCard">
-            <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
-                <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                <h4 class="aboutDoctor" id="doctorSurname">Олегов Олегович</h4>
-                <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
-        </div>
-        <div class="container small centerItemsW marginRight70px" id="doctorCard">
-            <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
-                <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                <h4 class="aboutDoctor" id="doctorSurname">Олегов Олегович</h4>
-                <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
-        </div>
+        {% endfor %}
     </div>
 
+    <!-- Навигация по страницам -->
     <div class="pagination">
-        <a href="#">&laquo;</a>
-        <a class="active" href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">5</a>
-        <a href="#">6</a>
-        <a href="#">&raquo;</a>
-      </div>
+        <a href="{{ url_for('doctor_list', page=doctors.prev_num, sort_by=request.args.get('sort_by'), order=request.args.get('order')) }}">&laquo;</a>
+        {% for page_num in doctors.iter_pages() %}
+            {% if page_num %}
+                <a {% if page_num == doctors.page %}class="active" {% endif %}
+                    href="{{ url_for('doctor_list', page=page_num, sort_by=request.args.get('sort_by'), order=request.args.get('order')) }}">{{ page_num }}</a>
+            {% else %}
+                <a style="pointer-events: none;
+                cursor: default;
+                color: inherit;
+                text-decoration: none;" class="ellipsis">...</a>
+            {% endif %}
+        {% endfor %}
+        <a href="{{ url_for('doctor_list', page=doctors.next_num, sort_by=request.args.get('sort_by'), order=request.args.get('order')) }}">&raquo;</a>
+    </div>    
 </body>
 
 <script>

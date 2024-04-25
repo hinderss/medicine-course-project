@@ -31,9 +31,45 @@ def welcome():
     return render_template('welcome.html')
 
 
-@app.route('/doctor_list')
+# @app.route('/doctor_list')
+# def doctor_list():
+#     count = Doctor.query.count()
+#     return render_template('doctorListPage.html', count=count)
+
+
+@app.route('/doctor_list', methods=['GET', 'POST'])
 def doctor_list():
-    return render_template('doctorListPage.html')
+    count = Doctor.query.count()
+    # Получаем номер текущей страницы из запроса, либо устанавливаем по умолчанию
+    page = request.args.get('page', 1, type=int)
+
+    # Получаем параметры сортировки из запроса
+    sort_by = request.args.get('sort_by', 'rating')
+    order = request.args.get('order', 'desc')  # по умолчанию сортировка по убыванию
+
+    # Определяем, какое поле использовать для сортировки
+    sort_field = None
+    if sort_by == 'rating':
+        sort_field = Doctor.rating
+    elif sort_by == 'experience_years':
+        sort_field = Doctor.experience_years
+    elif sort_by == 'consultation_price':
+        sort_field = Doctor.consultation_price
+
+    # Применяем сортировку
+    if sort_field:
+        if order == 'asc':
+            doctors = Doctor.query.order_by(sort_field.asc())
+        else:
+            doctors = Doctor.query.order_by(sort_field.desc())
+    else:
+        doctors = Doctor.query
+
+    # Пагинация
+    per_page = 4  # Количество докторов на странице
+    doctors = doctors.paginate(page=page, per_page=per_page)
+
+    return render_template('doctorListPage.html', doctors=doctors, count=count)
 
 
 @app.route('/medical-card', methods=['GET', 'POST'])

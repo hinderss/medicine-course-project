@@ -41,7 +41,10 @@ class Doctor(db.Model):
     workplace = db.Column(db.String(100))
     practice_profile = db.Column(db.String(100))
     phone = db.Column(db.String(15))
-    photo_path = db.Column(db.String(255))  # Added field for storing photo filename
+    photo_path = db.Column(db.String(255))
+    experience_years = db.Column(db.Integer)
+    consultation_price = db.Column(db.Float(precision=2))
+    rating = db.Column(db.Integer, default=5, nullable=False)
 
     user = db.relationship('User', backref=db.backref('doctor', uselist=False))
 
@@ -56,7 +59,10 @@ class Doctor(db.Model):
             'workplace': self.workplace,
             'practice_profile': self.practice_profile,
             'phone': self.phone,
-            'photo_path': self.photo_path
+            'photo_path': self.photo_path,
+            'experience_years': self.experience_years,
+            'consultation_price': self.consultation_price,
+            'rating': self.rating
         }
 
     def __str__(self):
