@@ -16,5 +16,3 @@
 4. Также добавляем болезни в файл вашей предметной области ```kb/ваша_предметная_область/subject_domain_of_ваша_предметная_область.scs``` (например: ```kb/headaches.scs/subject_domain_of_headaches.scs```, где вместо disease, вы добавляете свои болезни)
 
 ![image](https://github.com/MCmandarin/medicine-course-project/assets/115151742/dfd8846b-18fa-4501-ba44-34e3d795fab8)
-
-5. 
