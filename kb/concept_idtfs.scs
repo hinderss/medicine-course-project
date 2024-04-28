@@ -1381,3 +1381,43 @@ concept_disease
 => nrel_main_idtf:
 	[absence of fetid gases]
 	(* <- lang_en;; *);;
+
+	inflammation_of_the_biliary_tract
+=> nrel_main_idtf:
+	[воспаление желчевыводящих путей]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[inflammation of the biliary tract]
+	(* <- lang_en;; *);;
+
+	concept_violation_of_bile_outflow
+=> nrel_main_idtf:
+	[нарушение оттока желчи]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[violation of bile outflow]
+	(* <- lang_en;; *);;
+
+	concept_gastritis
+=> nrel_main_idtf:
+	[гастрит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[gastritis]
+	(* <- lang_en;; *);;
+
+	concept_pancreatitis
+=> nrel_main_idtf:
+	[панкреатит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pancreatitis]
+	(* <- lang_en;; *);;
+
+	inflammation
+=> nrel_main_idtf:
+	[воспаление]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[inflammation]
+	(* <- lang_en;; *);;
