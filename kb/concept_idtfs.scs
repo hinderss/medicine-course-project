@@ -213,6 +213,14 @@ concept_cirrhosis_of_the_liver
 	[connective tissue of the liver]
 	(* <- lang_en;; *);;
 
+	concept_excessive_growth_of_connective_tissue_of_the_liver
+=> nrel_main_idtf:
+	[чрезмерный рост соединительной ткани печени]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[excessive growth of connective tissue of the liver]
+	(* <- lang_en;; *);;
+
 	concept_F4
 => nrel_main_idtf:
 	[стадия 4]
@@ -1284,4 +1292,92 @@ concept_disease
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[reflux]
+	(* <- lang_en;; *);;
+
+	concept_weight_loss
+=> nrel_main_idtf:
+	[потеря веса]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[weight loss]
+	(* <- lang_en;; *);;
+
+	concept_stagnation_of_bile
+=> nrel_main_idtf:
+	[застой желчи]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[stagnation of bile]
+	(* <- lang_en;; *);;
+
+	concept_violation_of_the_metabolism_of_cholesterol_and_bilirubin
+=> nrel_main_idtf:
+	[нарушение процесса обмена холестерина и билирубина]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[violation of the metabolism of cholesterol and bilirubin]
+	(* <- lang_en;; *);;
+
+	concept_redness_of_the_palms_and_feet
+=> nrel_main_idtf:
+	[покраснение ладоней и ног]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[redness of the palms and feet]
+	(* <- lang_en;; *);;
+
+	concept_intestinal_dysfunction
+=> nrel_main_idtf:
+	[дисфункция кишечника]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[intestinal dysfunction]
+	(* <- lang_en;; *);;
+
+	concept_lack_of_fiber
+=> nrel_main_idtf:
+	[недостаток клетчатки]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[lack of fiber]
+	(* <- lang_en;; *);;
+
+	concept_accumulation_of_infiltration
+=> nrel_main_idtf:
+	[накопление инфильтрата]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[accumulation of infiltration]
+	(* <- lang_en;; *);;
+
+	concept_yellowing
+=> nrel_main_idtf:
+	[пожелтение]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[yellowing]
+	(* <- lang_en;; *);;
+
+	concept_lack_of_appetite
+=> nrel_main_idtf:
+	[отсутствие аппетита]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[lack of appetite]
+	(* <- lang_en;; *);;
+
+	concept_belly_enlargement
+=> nrel_main_idtf:
+	[увеличение живота]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[belly enlargement]
+	(* <- lang_en;; *);;
+
+	concept_absence_of_fetid_gases
+=> nrel_main_idtf:
+	[отсутствие зловонных газов]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[absence of fetid gases]
 	(* <- lang_en;; *);;
