@@ -430,3 +430,467 @@ concept_Histoplasma_capsulatum
 	[Histoplasma capsulatum is a fungus that causes histoplasmosis, a respiratory disease. It is found in soil contaminated with bird or bat droppings, particularly in areas with large populations of these animals. Inhalation of fungal spores can lead to mild flu-like symptoms or severe respiratory illness, depending on the extent of exposure and the individual's immune status.]
 	(* <- lang_en;; *);;
 
+concept_radiation
+=> nrel_main_idtf:
+	[радиация]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[radiation]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Радиация — это совокупность излучений, способных ионизировать вещество, тем самым вызывая в нем спонтанный распад атомов.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Radiation is a set of radiations capable of ionizing a substance, thereby causing the spontaneous disintegration of atoms in it.]
+	(* <- lang_en;; *);;
+
+concept_chromosome_22_defect
+=> nrel_main_idtf:
+	[дефект 22 хромосомы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[chromosome 22th defect]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Дефект 22 хромосомы — это хромосомная аномалия, вызывающая врожденный порок развития, общими симптомами которого являются пороки сердца, аномалии неба, дисморфия лица, задержка развития и иммунодефицит. ]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Chromosome 22 defect is a chromosomal abnormality that causes a congenital malformation, the common symptoms of which are heart defects, palatal abnormalities, facial dysmorphia, developmental delay and immunodeficiency.]
+	(* <- lang_en;; *);;
+
+concept_traumatic_brain_injury
+=> nrel_main_idtf:
+	[травматическое повреждение мозга]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[traumatic brain injury]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Травматическое повреждение мозга — это физическое повреждение ткани мозга, которое ведет к временному или постоянному нарушению функции мозга.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Traumatic brain injury is physical damage to brain tissue that leads to temporary or permanent impairment of brain function.]
+	(* <- lang_en;; *);;
+
+concpet_hormonal_changes
+=> nrel_main_idtf:
+	[гормональный сбой]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[hormonal changes]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Гормональный сбой - это эндокринное заболевание, заключающееся в изменении уровня гормонов.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Hormonal imbalance is an endocrine disease that involves changes in hormone levels.]
+	(* <- lang_en;; *);;
+
+concpet_neurofibromatosis
+=> nrel_main_idtf:
+	[нейрофиброматоз]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[neurofibromatosis]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Нейрофиброматоз — это генетическое заболевание, при котором в организме человека появляются множественные опухолевые образования.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Neurofibromatosis is a genetic disease in which multiple tumor formations appear in the human body.]
+	(* <- lang_en;; *);;
+
+concept_genetic_predisposition
+=> nrel_main_idtf:
+	[генетическая предрасположенность]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[genetic predisposition]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Генетическую предрасположенность определяют как изменение генотипа, которое оказывает влияние на фенотип, но может быть скомпенсировано внешними условиями]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Genetic predisposition is defined as a change in the genotype that affects the phenotype, but can be compensated by external conditions]
+	(* <- lang_en;; *);;
+
+concept_meningeal_cells
+=> nrel_main_idtf:
+	[менингиальные клетки]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[meningeal cells]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Менингиальные клетки - это клетки, которые образуют менинги, защитные оболочки, окружающие центральную нервную систему. Они включают в себя несколько типов клеток, таких как менинготиальные клетки арахноидальной мембраны, паутинной мембраны и железистой мембраны. ]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Meningial cells are cells that form the meninges, the protective membranes surrounding the central nervous system. They include several cell types such as meningothial cells of the arachnoid membrane, arachnoid membrane and glandular membrane.]
+	(* <- lang_en;; *);;
+
+concept_meningioma
+=> nrel_main_idtf:
+	[менингиома]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[meningioma]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Менингиома — это вид опухоли головного мозга, развивающейся в мозговых оболочках.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Meningioma is a type of brain tumor that develops in the meninges.]
+	(* <- lang_en;; *);;
+
+concept_primary
+=> nrel_main_idtf:
+	[первичный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[primary]
+	(* <- lang_en;; *);;
+
+concept_chronic
+=> nrel_main_idtf:
+	[хронический]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[chronic]
+	(* <- lang_en;; *);;
+
+concept_sphenoid_bone
+=> nrel_main_idtf:
+	[клиновидная кость]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[sphenoid bone]
+	(* <- lang_en;; *);;
+
+concept_parasellar
+=> nrel_main_idtf:
+	[паразелларный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[parasellar]
+	(* <- lang_en;; *);;
+
+concept_vision_deterioration
+=> nrel_main_idtf:
+	[ухудшение зрения]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[vision deterioration]
+	(* <- lang_en;; *);;
+
+concept_impaired_coordination
+=> nrel_main_idtf:
+	[нарушение координации]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[impaired coordination]
+	(* <- lang_en;; *);;
+
+concept_nausea
+=> nrel_main_idtf:
+	[тошнота]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[nausea]
+	(* <- lang_en;; *);;
+
+concept_headaches
+=> nrel_main_idtf:
+	[головные боли]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Headaches]
+	(* <- lang_en;; *);;
+
+concept_disease
+=> nrel_main_idtf:
+	[заболевание]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Disease]
+	(* <- lang_en;; *);;
+	
+concept_secondary
+=> nrel_main_idtf:
+	[вторичный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Secondary]
+	(* <- lang_en;; *);;
+
+nrel_tumor
+=> nrel_main_idtf:
+	[опухоль]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[tumor]
+	(* <- lang_en;; *);;
+
+
+brain_tumor
+=> nrel_main_idtf:
+	[опухоль мозга]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[brain_tumor]
+	(* <- lang_en;; *);;
+
+concept_pain
+=> nrel_main_idtf:
+	[боль]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Pain]
+	(* <- lang_en;; *);;
+	
+	
+concept_subdural
+=> nrel_main_idtf:
+	[субдуральный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[subdural]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Субдуральный - это термин, используемый для описания состояний или процессов, происходящих под твердой мозговой оболочкой и над мягкой мозговой оболочкой.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Subdural refers to conditions or processes occurring beneath the dura mater and above the arachnoid mater of the brain.]
+	(* <- lang_en;; *);;
+	
+
+concept_subcortical
+=> nrel_main_idtf:
+	[подкорковый]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[subcortical]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Подкорковый - это термин, который относится к чему-либо, находящемуся под корой головного мозга.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Subcortical refers to anything situated beneath the cerebral cortex of the brain.]
+	(* <- lang_en;; *);;
+
+
+concept_intrahemispheric
+=> nrel_main_idtf:
+	[внутригемисферный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[intrahemispheric]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Внутригемисферный - это термин, описывающий что-то, находящееся внутри одного полушария мозга.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Intrahemispheric describes something situated within one hemisphere of the brain.]
+	(* <- lang_en;; *);;
+	
+
+concept_intrathecal
+=> nrel_main_idtf:
+	[интратекальный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[intrathecal]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Интратекальный - это термин, описывающий что-либо, связанное с пространством внутри спинного канала или мозговых желудочков.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Intrathecal describes something related to the space within the spinal canal or the ventricles of the brain.]
+	(* <- lang_en;; *);;
+	
+
+concept_cystic_hydatid_disease
+=> nrel_main_idtf:
+	[кистозный эхинококк]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[cystic hydatid disease]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Кистозный эхинококк - это заболевание, вызванное личинками эхинококка, которые образуют кисты в различных органах, включая печень и легкие.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Cystic hydatid disease is a condition caused by the larvae of the Echinococcus tapeworm, which form cysts in various organs, including the liver and lungs.]
+	(* <- lang_en;; *);;
+
+
+concept_fusobacterium
+=> nrel_main_idtf:
+	[фузобактерия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[fusobacterium]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Фузобактерия - это род бактерий, включающий некоторые виды, ассоциированные с инфекциями, такими как абсцессы, сепсис и другие заболевания.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Fusobacterium is a genus of bacteria, including some species associated with infections such as abscesses, sepsis, and other diseases.]
+	(* <- lang_en;; *);;
+	
+
+cocnept_immunodeficiency_state
+=> nrel_main_idtf:
+	[иммунодефицитные состояния]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[immunodeficiency states]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Иммунодефицитные состояния - это условия, при которых иммунная система ослаблена или недостаточно функционирует, что делает организм более уязвимым для инфекций и других заболеваний.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Immunodeficiency states are conditions in which the immune system is weakened or not functioning properly, making the body more susceptible to infections and other diseases.]
+	(* <- lang_en;; *);;
+	
+
+concept_bacterial_infection
+=> nrel_main_idtf:
+	[бактериальная инфекция]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[bacterial infection]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Бактериальная инфекция - это заболевание, вызванное проникновением и размножением бактерий в организме, что может пр
+
+ивести к различным симптомам и осложнениям.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[A bacterial infection is a disease caused by the invasion and multiplication of bacteria within the body, which can lead to various symptoms and complications.]
+	(* <- lang_en;; *);;
+
+
+concept_staphylococcus
+=> nrel_main_idtf:
+	[стафилококк]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[staphylococcus]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Стафилококк - это грамположительные бактерии, которые могут вызывать различные инфекции у человека, включая кожные инфекции, пневмонию, сепсис и другие заболевания.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Staphylococcus is a group of Gram-positive bacteria that can cause various infections in humans, including skin infections, pneumonia, sepsis, and other diseases.]
+	(* <- lang_en;; *);;
+
+
+concept_pneumococco
+=> nrel_main_idtf:
+	[пневмококк]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pneumococcus]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Пневмококк - это грамположительные бактерии, которые могут вызывать различные инфекции, такие как пневмония, менингит и другие респираторные заболевания.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Pneumococcus is a group of Gram-positive bacteria that can cause various infections such as pneumonia, meningitis, and other respiratory diseases.]
+	(* <- lang_en;; *);;
+
+
+concept_streptococcus
+=> nrel_main_idtf:
+	[стрептококк]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[streptococcus]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Стрептококк - это грамположительные бактерии, которые могут вызывать различные инфекции у человека, включая фарингит, тонзиллит, скарлатину и другие заболевания.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Streptococcus is a group of Gram-positive bacteria that can cause various infections in humans, including pharyngitis, tonsillitis, scarlet fever, and other diseases.]
+	(* <- lang_en;; *);;
+	
+
+concept_brain_abscess
+=> nrel_main_idtf:
+	[абсцесс мозга]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[brain abscess]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Абсцесс мозга - это ограниченное гнойное воспаление в тканях мозга, которое может быть вызвано бактериальной инфекцией, травмой или другими причинами и может представлять серьезную угрозу для здоровья.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[A brain abscess is a localized collection of pus within the brain tissues, which can be caused by bacterial infection, trauma, or other reasons and can pose a serious threat to health.]
+	(* <- lang_en;; *);;
+	
+
+brain_purulent_focal_formation
+=> nrel_main_idtf:
+	[гнойное очаговое образование в мозге]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[brain purulent focal formation]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Гнойное очаговое образование в мозге - это состояние, при котором в тканях мозга образуется очаг воспаления, содержащий гной, который может быть вызван различными причинами, включая инфекции, травмы или другие патологические процессы.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Brain purulent focal formation is a condition where an area of inflammation containing pus forms in the brain tissues, which can be caused by various factors including infections, trauma, or other pathological processes.]
+	(* <- lang_en;; *);;
+
+concept_increased_intracranial_pressure
+=> nrel_main_idtf:
+	[повышенное внутричерепное давление]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[increased intracranial pressure]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Повышенное внутричерепное давление - это состояние, при котором давление внутри черепной коробки становится выше нормы, что может быть вызвано различными причинами, такими как опухоли, травмы, воспаления или другие нарушения. Это состояние может привести к серьезным симптомам и осложнениям, включая головные боли, тошноту, рвоту, изменения зрения и даже судороги или кому.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Increased intracranial pressure is a condition in which the pressure within the cranial cavity becomes higher than normal, which can be caused by various factors such as tumors, trauma, inflammation, or other disorders. This condition can lead to serious symptoms and complications, including headaches, nausea, vomiting, changes in vision, and even seizures or coma.]
+	(* <- lang_en;; *);;
+	
+
+concept_paralysis
+=> nrel_main_idtf:
+	[паралич]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[paralysis]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Паралич - это потеря способности контролировать движение в определенных частях тела из-за повреждения нервов или мышц. Это может быть частичным, когда только одна часть тела затронута, или полным, когда все части тела лишены движения. Причины паралича могут включать травму, инфекцию, инсульт или другие медицинские состояния.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Paralysis is the loss of ability to control movement in certain parts of the body due to damage to nerves or muscles. It can be partial, affecting only one part of the body, or complete, affecting all parts. Causes of paralysis can include injury, infection, stroke, or other medical conditions.]
+	(* <- lang_en;; *);;
+
+
+concept_convulsions
+=> nrel_main_idtf:
+	[судороги]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[convulsions]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Судороги - это непроизвольные, ритмичные сокращения мышц, которые могут проявляться в форме подергиваний или судорог всего тела или его отдельных частей. Они могут быть вызваны различными причинами, включая эпилепсию, высокую температуру, интоксикацию или другие состояния.]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Convulsions are involuntary, rhythmic contractions of muscles that may manifest as jerking or shaking of the entire body or specific parts of it. They can be caused by various reasons, including epilepsy, high fever, intoxication, or other conditions.]
+	(* <- lang_en;; *);;
+
+
+
+
+
+
+
