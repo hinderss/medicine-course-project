@@ -1,0 +1,32 @@
+section_subject_domain_of_diseases
+=> nrel_main_idtf:
+	[Раздел. Предметная область болезней]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Section. Subject domain of diseases]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Раздел базы знаний IMS, описывающий симптомы, болезни и причины их возникновения]
+	(* <- lang_ru;; *);
+
+=> nrel_idtf:
+	[A section of the IMS knowledge base describing the symptoms, diseases and causes of their occurrence]
+	(* <- lang_en;; *);	
+
+
+<= nrel_section_decomposition:
+	{
+		section_subject_domain_of_diseases_of_the_gastrointestinal_tract;
+		section_subject_domain_of_headaches;
+		section_subject_domain_of_inflammatory_diseases_of_muscle_tissues;
+		section_subject_domain_of_respiratory_diseases
+	};
+
+<- atomic_section;
+<- sc_model_of_knowledge_base;;
+
+
+section_subject_domain_of_diseases
+-> rrel_key_sc_element:
+	subject_domain_of_diseases;
+	concept_disease;;

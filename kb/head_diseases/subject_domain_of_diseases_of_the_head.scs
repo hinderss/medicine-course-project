@@ -1,0 +1,25 @@
+subject_domain_of_headaches
+
+=> nrel_main_idtf:
+	[Предметная область болезней головы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Subject domain of diseases of the head]
+	(* <- lang_en;; *);
+
+<- subject_domain;
+<- sc_node_struct;
+<- structure;
+
+<= nrel_private_subject_domain:
+	section_subject_domain_of_headaches;
+
+-> rrel_maximum_studied_object_class:
+	concept_disease;
+
+-> rrel_not_maximum_studied_object_class:
+	concept_meningitis;
+
+-> rrel_explored_relation:
+	nrel_symptoms;
+	nrel_causes_of_occurrence;;
