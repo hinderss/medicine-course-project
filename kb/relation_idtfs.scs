@@ -229,3 +229,75 @@ nrel_stagnation
 => nrel_main_idtf:
 	[absence*]
 	(* <- lang_en;; *);;
+	
+nrel_complications
+=> nrel_main_idtf:
+	[осложнения*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[compliications*]
+	(* <- lang_en;; *);;
+	
+nrel_pain_in_stomach
+=> nrel_main_idtf:
+	[боль в животе*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pain in stomach*]
+	(* <- lang_en;; *);;
+	
+nrel_prevention
+=> nrel_main_idtf:
+	[профилактика*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[prevention*]
+	(* <- lang_en;; *);;
+	
+nrel_causes_of_occurence
+=> nrel_main_idtf:
+	[причины возникновения*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[causes of occurance*]
+	(* <- lang_en;; *);;
+
+nrel_manifestation
+=> nrel_main_idtf:
+	[проявление*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[manifestation*]
+	(* <- lang_en;; *);;
+	
+nrel_symptom
+=> nrel_main_idtf:
+	[симптом*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[symptom*]
+	(* <- lang_en;; *);;
+	
+nrel_reinforcing_factor
+=> nrel_main_idtf:
+	[усиливающий фактор*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[reinforcing factor*]
+	(* <- lang_en;; *);;
+	
+nrel_type
+=> nrel_main_idtf:
+	[тип*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[type*]
+	(* <- lang_en;; *);;
+	
+nrel_eating
+=> nrel_main_idtf:
+	[приём пищи*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[eating*]
+	(* <- lang_en;; *);;
