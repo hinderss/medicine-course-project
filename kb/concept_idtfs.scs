@@ -25,14 +25,6 @@ concept_cholelithiasis
 	[from the composition of the stones]
 	(* <- lang_en;; *);;
 
-	concept_gallstones
-=> nrel_main_idtf:
-	[камни в желчном пузыре]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[gallstones]
-	(* <- lang_en;; *);;
-
 	concept_stones_in_the_hepatic_duct
 => nrel_main_idtf:
 	[камни в печеночном протоке]
@@ -153,14 +145,6 @@ concept_cholelithiasis
 	[painful]
 	(* <- lang_en;; *);;
 
-	concept_gallbladder
-=> nrel_main_idtf:
-	[желчный пузырь]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[gallbladder]
-	(* <- lang_en;; *);;
-
 	concept_hepatic_bile_duct
 => nrel_main_idtf:
 	[печеночный желчный проток]
@@ -211,14 +195,6 @@ concept_cirrhosis_of_the_liver
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[connective tissue of the liver]
-	(* <- lang_en;; *);;
-
-	concept_excessive_growth_of_connective_tissue_of_the_liver
-=> nrel_main_idtf:
-	[чрезмерный рост соединительной ткани печени]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[excessive growth of connective tissue of the liver]
 	(* <- lang_en;; *);;
 
 	concept_F4
@@ -368,14 +344,6 @@ concept_psychosomatic_disorders
 	[large intestine]
 	(* <- lang_en;; *);;
 
-	concept_cholecystitis
-=> nrel_main_idtf:
-	[холецистит]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[cholecystitis]
-	(* <- lang_en;; *);;
-
 	concept_enteritis
 => nrel_main_idtf:
 	[энтерит]
@@ -443,24 +411,10 @@ concept_with_a_complicated_course
 	[with a complicated course]
 	(* <- lang_en;; *);;
 
-	concept_hepatitis
-=> nrel_main_idtf:
-	[гепатит]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[hepatitis]
-	(* <- lang_en;; *);
+concept_hepatitis
 => nrel_idtf:
 	[гепатит - это воспаление печени. Оно может быть вызвано различными причинами, включая вирусы, алкоголь, лекарства и другие токсины. Гепатит может находиться в различных частях печени и иметь разную степень тяжести.]
 	(* <- lang_ru;; *);;
-
-concept_chronic
-=> nrel_main_idtf:
-	[хронический]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[chronic]
-	(* <- lang_en;; *);;
 
 concept_portal_vein
 => nrel_main_idtf:
@@ -468,14 +422,6 @@ concept_portal_vein
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[portal vein]
-	(* <- lang_en;; *);;
-
-concept_digestive_system
-=> nrel_main_idtf:
-	[пищеварительная система]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[digestive system]
 	(* <- lang_en;; *);;
 
 inflammation_of_the_liver
@@ -572,14 +518,6 @@ concept_chemicals
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[mercury]
-	(* <- lang_en;; *);;
-
-concept_alcohol
-=> nrel_main_idtf:
-	[алкоголь]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[alcohol]
 	(* <- lang_en;; *);;
 
 concept_hepatitis_C_virus
@@ -766,14 +704,6 @@ concept_severe_form_of_heart_failure
 	[worms]
 	(* <- lang_en;; *);;
 
-	concept_bacteria
-=> nrel_main_idtf:
-	[бактерии]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[bacteria]
-	(* <- lang_en;; *);;
-
 	concept_nutrition
 => nrel_main_idtf:
 	[питание]
@@ -844,38 +774,6 @@ concept_bloating
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[bloating]
-	(* <- lang_en;; *);;
-
-concept_pain
-=> nrel_main_idtf:
-	[боль]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[pain]
-	(* <- lang_en;; *);;
-
-concept_fever
-=> nrel_main_idtf:
-	[лихорадка]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[fever]
-	(* <- lang_en;; *);;
-
-concept_nausea
-=> nrel_main_idtf:
-	[тошнота]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[nausea]
-	(* <- lang_en;; *);;
-
-concept_weakness
-=> nrel_main_idtf:
-	[слабость]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[weakness]
 	(* <- lang_en;; *);;
 
 concept_hypochondrium
@@ -980,22 +878,6 @@ concept_restless_sleep
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[restless sleep]
-	(* <- lang_en;; *);;
-
-concept_vomiting
-=> nrel_main_idtf:
-	[рвота]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[vomiting]
-	(* <- lang_en;; *);;
-
-concept_fatigue
-=> nrel_main_idtf:
-	[усталость]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[fatigue]
 	(* <- lang_en;; *);;
 
 concept_changing_the_shade_of_physiological_functions
@@ -1150,22 +1032,6 @@ concept_fetid_gases
 	[fetid gases]
 	(* <- lang_en;; *);;
 
-concept_diarrhea
-=> nrel_main_idtf:
-	[диарея]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[diarrhea]
-	(* <- lang_en;; *);;
-
-concept_constipation
-=> nrel_main_idtf:
-	[запор]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[constipation]
-	(* <- lang_en;; *);;
-
 concept_disease
 => nrel_main_idtf:
 	[болезнь]
@@ -1188,14 +1054,6 @@ concept_disease
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[severity]
-	(* <- lang_en;; *);;
-
-	concept_discomfort
-=> nrel_main_idtf:
-	[дискомнфорт]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[discomfort]
 	(* <- lang_en;; *);;
 
 	concept_body
@@ -1262,14 +1120,6 @@ concept_disease
 	[foreign bodies]
 	(* <- lang_en;; *);;
 
-	concept_tumors
-=> nrel_main_idtf:
-	[опухоли]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[tumors]
-	(* <- lang_en;; *);;
-
 	concept_polyps
 => nrel_main_idtf:
 	[полипы]
@@ -1294,95 +1144,535 @@ concept_disease
 	[reflux]
 	(* <- lang_en;; *);;
 
-	concept_weight_loss
+concept_ascariasis
 => nrel_main_idtf:
-	[потеря веса]
+	[аскаридоз]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[weight loss]
+	[ascariasis]
 	(* <- lang_en;; *);;
 
-	concept_stagnation_of_bile
+concept_hepatitis
 => nrel_main_idtf:
-	[застой желчи]
+	[гепатит]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[stagnation of bile]
+	[hepatitis]
 	(* <- lang_en;; *);;
 
-	concept_violation_of_the_metabolism_of_cholesterol_and_bilirubin
+concept_klebsiella
 => nrel_main_idtf:
-	[нарушение процесса обмена холестерина и билирубина]
+	[клебсиелла]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[violation of the metabolism of cholesterol and bilirubin]
+	[klebsiella]
 	(* <- lang_en;; *);;
 
-	concept_redness_of_the_palms_and_feet
+concept_escherichia_coli
 => nrel_main_idtf:
-	[покраснение ладоней и ног]
+	[эшерихия коли]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[redness of the palms and feet]
+	[escherichia_coli]
 	(* <- lang_en;; *);;
 
-	concept_intestinal_dysfunction
+concept_bacterial
 => nrel_main_idtf:
-	[дисфункция кишечника]
+	[бактериальный]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[intestinal dysfunction]
+	[bacterial]
 	(* <- lang_en;; *);;
 
-	concept_lack_of_fiber
+concept_viruses
 => nrel_main_idtf:
-	[недостаток клетчатки]
+	[вирусы]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[lack of fiber]
+	[viruses]
 	(* <- lang_en;; *);;
 
-	concept_accumulation_of_infiltration
+concept_parasitic
 => nrel_main_idtf:
-	[накопление инфильтрата]
+	[паразитический]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[accumulation of infiltration]
+	[parasitic]
 	(* <- lang_en;; *);;
 
-	concept_yellowing
+concept_ischemia
+=> nrel_main_idtf:
+	[ишемия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[ischemia]
+	(* <- lang_en;; *);;
+
+concept_biliary_sludge
+=> nrel_main_idtf:
+	[желчный пузырь]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[biliary sludge]
+	(* <- lang_en;; *);;
+
+concept_injury_to_the_right_upper_abdomen
+=> nrel_main_idtf:
+	[травма правой верхней части живота]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[injury to the right upper abdomen]
+	(* <- lang_en;; *);;
+
+concept_surgical_interventions_in_the_abdominal_area
+=> nrel_main_idtf:
+	[хирургические вмешательства в области брюшной полости]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[surgical interventions in the abdominal area]
+	(* <- lang_en;; *);;
+
+concept_injuries_sustained_in_motor_vehicle_accidents
+=> nrel_main_idtf:
+	[травмы, полученные в результате дорожно-транспортных происшествий]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[injuries sustained in motor vehicle accidents]
+	(* <- lang_en;; *);;
+
+concept_trauma
+=> nrel_main_idtf:
+	[травма]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[trauma]
+	(* <- lang_en;; *);;
+
+concept_tumors_of_the_biliary_tract
+=> nrel_main_idtf:
+	[опухоли желчевыводящих путей]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[tumors of the biliary tract]
+	(* <- lang_en;; *);;
+
+concept_tumors
+=> nrel_main_idtf:
+	[опухоли]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[tumors]
+	(* <- lang_en;; *);;
+
+concept_gallbladder_cancer
+=> nrel_main_idtf:
+	[рак желчного пузыря]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[gallbladder cancer]
+	(* <- lang_en;; *);;
+
+concept_metastases_to_the_gallbladder
+=> nrel_main_idtf:
+	[метастазы в желчный пузырь]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[metastases to the gallbladder]
+	(* <- lang_en;; *);;
+
+concept_inflammatory_disease
+=> nrel_main_idtf:
+	[воспалительное заболевание]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[inflammatory disease]
+	(* <- lang_en;; *);;
+
+concept_crohnes_disease
+=> nrel_main_idtf:
+	[болезнь Крона]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[сrohnes disease]
+	(* <- lang_en;; *);;
+
+concept_parasitic_infections
+=> nrel_main_idtf:
+	[паразитарные инфекции]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[parasitic infections]
+	(* <- lang_en;; *);;
+
+concept_bacterial_infections
+=> nrel_main_idtf:
+	[бактериальные инфекции]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[bacterial infections]
+	(* <- lang_en;; *);;
+
+concept_viral_infections
+=> nrel_main_idtf:
+	[вирусные инфекции]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[viral infections]
+	(* <- lang_en;; *);;
+
+concept_lactase_enzyme_deficiency
+=> nrel_main_idtf:
+	[дефицит фермента лактазы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[lactase enzyme deficiency]
+	(* <- lang_en;; *);;
+
+concept_age_related_decline_in_lactose_tolerance
+=> nrel_main_idtf:
+	[возрастное снижение переносимости лактозы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[age related decline in lactose tolerance]
+	(* <- lang_en;; *);;
+
+concept_diseases
+=> nrel_main_idtf:
+	[болезни]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[diseases]
+	(* <- lang_en;; *);;
+
+concept_primary_lactose_intolerance
+=> nrel_main_idtf:
+	[первичная непереносимость лактозы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[primary lactose intolerance]
+	(* <- lang_en;; *);;
+
+concept_secondary_lactose_intolerance
+=> nrel_main_idtf:
+	[вторичная непереносимость лактозы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[secondary lactose intolerance]
+	(* <- lang_en;; *);;
+
+concept_periodic
+=> nrel_main_idtf:
+	[периодический]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[periodic]
+	(* <- lang_en;; *);;
+
+concept_congenital
+=> nrel_main_idtf:
+	[врождённый]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[congenital]
+	(* <- lang_en;; *);;
+
+concept_bloating
+=> nrel_main_idtf:
+	[вздутие живота]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[bloating]
+	(* <- lang_en;; *);;
+
+concept_flatulence
+=> nrel_main_idtf:
+	[метеоризм]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[flatulence]
+	(* <- lang_en;; *);;
+
+concept_gastrointestinal_symptoms
+=> nrel_main_idtf:
+	[желудочно-кишечные симптомы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[gastrointestinal symptoms]
+	(* <- lang_en;; *);;
+
+concept_discomfort
+=> nrel_main_idtf:
+	[дискомфорт]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[discomfort]
+	(* <- lang_en;; *);;
+
+concept_general_symptoms
+=> nrel_main_idtf:
+	[общие симптомы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[general symptoms]
+	(* <- lang_en;; *);;
+
+concept_use_of_lactase_supplements
+=> nrel_main_idtf:
+	[использование добавок с лактазой]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[use of lactase supplements]
+	(* <- lang_en;; *);;
+
+concept_use_of_lactose_free_products
+=> nrel_main_idtf:
+	[употребление продуктов, не содержащих лактозы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[use of lactose_free products]
+	(* <- lang_en;; *);;
+
+concept_limitation_of_lactose_in_diet
+=> nrel_main_idtf:
+	[ограничение употребления лактозы в рационе]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[limitation of lactose in diet]
+	(* <- lang_en;; *);;
+
+concept_risk_of_osteoporosis
+=> nrel_main_idtf:
+	[риск развития остеопороза]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[risk of osteoporosis]
+	(* <- lang_en;; *);;
+
+concept_development_of_irritable_bowel_syndrome
+=> nrel_main_idtf:
+	[развитие синдрома раздраженного кишечника]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[development of irritable bowel syndrome]
+	(* <- lang_en;; *);;
+
+concept_nutritional_deficiency
+=> nrel_main_idtf:
+	[дефицит питательных веществ]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[nutritional deficiency]
+	(* <- lang_en;; *);;
+
+concept_risk_of_calcium_deficiency
+=> nrel_main_idtf:
+	[риск дефицита кальция]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[risk of calcium deficiency]
+	(* <- lang_en;; *);;
+
+concept_lactose_intolerance
+=> nrel_main_idtf:
+	[непереносимость лактозы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[lactose intolerance]
+	(* <- lang_en;; *);;
+
+concept_abdominal_area
+=> nrel_main_idtf:
+	[область живота]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[abdominal area]
+	(* <- lang_en;; *);;
+
+concept_intestinal_infections
+=> nrel_main_idtf:
+	[кишечные инфекции]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[intestinal infections]
+	(* <- lang_en;; *);;
+
+concept_bacteria
+=> nrel_main_idtf:
+	[бактерия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[bacteria]
+	(* <- lang_en;; *);;
+
+concept_alcohol
+=> nrel_main_idtf:
+	[алкоголь]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[alcohol]
+	(* <- lang_en;; *);;
+
+concept_improper_nutrition
+=> nrel_main_idtf:
+	[неправильное питание]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[improper nutrition]
+	(* <- lang_en;; *);;
+
+concept_rare
+=> nrel_main_idtf:
+	[редкий]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[rare]
+	(* <- lang_en;; *);;
+
+concept_frequent
+=> nrel_main_idtf:
+	[частый]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[frequent]
+	(* <- lang_en;; *);;
+
+concept_constipation
+=> nrel_main_idtf:
+	[запор]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[constipation]
+	(* <- lang_en;; *);;
+
+concept_emotional_stress
+=> nrel_main_idtf:
+	[эмоциональный стресс]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[emotional stress]
+	(* <- lang_en;; *);;
+
+concept_eating
+=> nrel_main_idtf:
+	[приём пищи]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[eating]
+	(* <- lang_en;; *);;
+
+concept_spilled
+=> nrel_main_idtf:
+	[разлитая]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[spilled]
+	(* <- lang_en;; *);;
+
+concept_stabbing
+=> nrel_main_idtf:
+	[колющая]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[stabbing]
+	(* <- lang_en;; *);;
+
+concept_peaky
+=> nrel_main_idtf:
+	[острая]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[peaky]
+	(* <- lang_en;; *);;
+
+concept_attack
+=> nrel_main_idtf:
+	[приступ]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[attack]
+	(* <- lang_en;; *);;
+
+concept_irritable_bowel_syndrome
+=> nrel_main_idtf:
+	[синдром раздраженного кишечника]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[irritable bowel syndrome]
+	(* <- lang_en;; *);;
+
+concept_hormonal_changes
+=> nrel_main_idtf:
+	[гормональные изменения]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[hormonal changes]
+	(* <- lang_en;; *);;
+
+concept_drink_plenty_of_water
+=> nrel_main_idtf:
+	[обильное питьё воды]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[drink plenty of water]
+	(* <- lang_en;; *);;
+
+concept_lack_of_lactase_enzyme
+=> nrel_main_idtf:
+	[недостаток фермента лактазы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[lack of lactase enzyme]
+	(* <- lang_en;; *);;
+
+concept_feces
+=> nrel_main_idtf:
+	[экскременты]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[feces]
+	(* <- lang_en;; *);;
+	
+concept_vomiting
+=> nrel_main_idtf:
+	[рвота]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[vomiting]
+	(* <- lang_en;; *);;
+	
+concept_yellowing
 => nrel_main_idtf:
 	[пожелтение]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[yellowing]
 	(* <- lang_en;; *);;
-
-	concept_lack_of_appetite
+	
+concept_lack_of_fiber
 => nrel_main_idtf:
-	[отсутствие аппетита]
+	[недостаток клетчатки]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[lack of appetite]
+	[lack of fiber]
 	(* <- lang_en;; *);;
-
-	concept_belly_enlargement
+	
+concept_violation_of_the_metabolism_of_cholesterol_and_bilirubin
 => nrel_main_idtf:
-	[увеличение живота]
+	[нарушение обмена холестерина и билирубина]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[belly enlargement]
+	[violation of the metabolism of cholesterol and bilirubin]
 	(* <- lang_en;; *);;
-
-	concept_absence_of_fetid_gases
+	
+concept_stagnation_of_bile
 => nrel_main_idtf:
-	[отсутствие зловонных газов]
+	[застой желчи]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[absence of fetid gases]
+	[stagnation of bile]
 	(* <- lang_en;; *);;
-
-	concept_inflammation_of_the_biliary_tract
+	
+concept_inflammation_of_the_biliary_tract	
 => nrel_main_idtf:
 	[воспаление желчевыводящих путей]
 	(* <- lang_ru;; *);
@@ -1390,34 +1680,83 @@ concept_disease
 	[inflammation of the biliary tract]
 	(* <- lang_en;; *);;
 
-	concept_violation_of_bile_outflow
+concept_violation_of_bile_outflow
 => nrel_main_idtf:
 	[нарушение оттока желчи]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[violation of bile outflow]
 	(* <- lang_en;; *);;
-
-	concept_gastritis
+	
+concept_redness_of_the_palms_and_feet
 => nrel_main_idtf:
-	[гастрит]
+	[покраснение ладоней и стоп]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[gastritis]
+	[redness of the palms and feet]
 	(* <- lang_en;; *);;
-
-	concept_pancreatitis
+	
+concept_weight_loss
 => nrel_main_idtf:
-	[панкреатит]
+	[потеря веса]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[pancreatitis]
+	[weight loss]
+	(* <- lang_en;; *);;
+	
+concept_intestinal_dysfunction
+=> nrel_main_idtf:
+	[дисфункция кишечника]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[intestinal dysfunction]
 	(* <- lang_en;; *);;
 
-	inflammation
+inflammation
 => nrel_main_idtf:
 	[воспаление]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[inflammation]
 	(* <- lang_en;; *);;
+  
+concept_hastritis
+=> nrel_main_idtf:
+	[гастрит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[hastritis]
+	(* <- lang_en;; *);;
+	
+concept_stomach
+=> nrel_main_idtf:
+	[желудок]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[stomach]
+	(* <- lang_en;; *);;
+  
+concept_celiac_disease
+=> nrel_idtf:
+	[Целиакия (или целиакическая болезнь) - это хроническое иммунное заболевание, характеризующееся повреждением слизистой оболочки тонкого кишечника при употреблении глютена, белкового компонента, содержащегося в пшенице, ржи и ячмене. При целиакии иммунная система организма атакует собственные ткани кишечника, что приводит к воспалению и повреждению их стенок, а также к нарушению поглощения питательных веществ.]
+	(* <- lang_ru;; *);;
+
+concept_cholangitis
+=> nrel_idtf:
+	[Холангит - это воспалительное заболевание желчных протоков, которое обычно вызвано блокировкой желчных путей желчными камнями, инфекциями или другими причинами. Это состояние может привести к болям в правом верхнем квадранте живота, желтухе, лихорадке и другим симптомам инфекции.]
+	(* <- lang_ru;; *);;
+
+concept_cholecystitis
+=> nrel_idtf:
+	[Холецистит - это воспаление желчного пузыря, обусловленное обычно блокировкой желчных протоков камнями, инфекциями или другими причинами, что может привести к болям в правом верхнем квадранте живота, тошноте, рвоте и другим симптомам.]
+	(* <- lang_ru;; *);;
+
+concept_lactose_intolerance
+=> nrel_idtf:
+	[Лактозная непереносимость - это состояние, при котором организм не способен полностью расщеплять лактозу, сахар, содержащийся в молочных продуктах. Это происходит из-за недостатка фермента лактазы, который обычно расщепляет лактозу на простые сахара для их усвоения. При непереносимости лактозы нерасщепленный лактоза проходит через кишечник, вызывая различные симптомы, включая вздутие, газообразование, диарею и дискомфорт в животе. Эти симптомы могут возникать через несколько часов после употребления продуктов, содержащих лактозу. Уровень толерантности к лактозе может различаться у разных людей, и некоторые могут переносить небольшие количества лактозы, в то время как у других даже небольшое количество может вызвать сильные симптомы.]
+	(* <- lang_ru;; *);;
+	
+concept_irritable_bowel_syndrome
+=> nrel_idtf:
+	[Синдром раздражённого кишечника — хроническое функциональное расстройство желудочно-кишечного тракта. Причина возникновения синдрома раздражённого кишечника не полностью понятна, но предполагается что влияют факторы, такие как стресс и тревога. Зачастую причиной является Хеликобактер пилори.]
+	(* <- lang_ru;; *);;
