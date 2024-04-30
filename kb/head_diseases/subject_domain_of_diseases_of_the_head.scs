@@ -12,14 +12,10 @@ subject_domain_of_headaches
 <- structure;
 
 <= nrel_private_subject_domain:
-	section_subject_domain_of_headaches;
+	subject_domain_of_diseases;
 
 -> rrel_maximum_studied_object_class:
-	concept_disease;
+	concept_headaches;
 
 -> rrel_not_maximum_studied_object_class:
-	concept_meningitis;
-
--> rrel_explored_relation:
-	nrel_symptoms;
-	nrel_causes_of_occurrence;;
+	concept_meningitis;;

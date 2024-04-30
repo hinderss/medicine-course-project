@@ -11,16 +11,6 @@ subject_domain_of_diseases
 <- sc_node_struct;
 <- structure;
 
-
-=> nrel_private_subject_domain:
-	section_subject_domain_of_diseases_of_the_gastrointestinal_tract;
-	section_subject_domain_of_headaches;
-	section_subject_domain_of_inflammatory_diseases_of_muscle_tissues;
-	section_subject_domain_of_respiratory_diseases;
-
-<= nrel_private_subject_domain:
-	section_subject_domain_of_diseases;
-
 -> rrel_maximum_studied_object_class:
 	concept_disease;
 
