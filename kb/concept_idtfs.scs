@@ -411,11 +411,6 @@ concept_with_a_complicated_course
 	[with a complicated course]
 	(* <- lang_en;; *);;
 
-concept_hepatitis
-=> nrel_idtf:
-	[гепатит - это воспаление печени. Оно может быть вызвано различными причинами, включая вирусы, алкоголь, лекарства и другие токсины. Гепатит может находиться в различных частях печени и иметь разную степень тяжести.]
-	(* <- lang_ru;; *);;
-
 concept_portal_vein
 => nrel_main_idtf:
 	[воротная вена]
@@ -770,7 +765,7 @@ concept_belly
 
 concept_bloating
 => nrel_main_idtf:
-	[вздутие]
+	[вздутие живота]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[bloating]
@@ -1158,7 +1153,10 @@ concept_hepatitis
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[hepatitis]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[гепатит - это воспаление печени. Оно может быть вызвано различными причинами, включая вирусы, алкоголь, лекарства и другие токсины. Гепатит может находиться в различных частях печени и иметь разную степень тяжести.]
+	(* <- lang_ru;; *);;
 
 concept_klebsiella
 => nrel_main_idtf:
@@ -1376,13 +1374,6 @@ concept_congenital
 	[congenital]
 	(* <- lang_en;; *);;
 
-concept_bloating
-=> nrel_main_idtf:
-	[вздутие живота]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[bloating]
-	(* <- lang_en;; *);;
 
 concept_flatulence
 => nrel_main_idtf:
@@ -1478,7 +1469,11 @@ concept_lactose_intolerance
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[lactose intolerance]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Лактозная непереносимость - это состояние, при котором организм не способен полностью расщеплять лактозу, сахар, содержащийся в молочных продуктах. Это происходит из-за недостатка фермента лактазы, который обычно расщепляет лактозу на простые сахара для их усвоения. При непереносимости лактозы нерасщепленный лактоза проходит через кишечник, вызывая различные симптомы, включая вздутие, газообразование, диарею и дискомфорт в животе. Эти симптомы могут возникать через несколько часов после употребления продуктов, содержащих лактозу. Уровень толерантности к лактозе может различаться у разных людей, и некоторые могут переносить небольшие количества лактозы, в то время как у других даже небольшое количество может вызвать сильные симптомы.]
+	(* <- lang_ru;; *);;
+
 
 concept_abdominal_area
 => nrel_main_idtf:
@@ -1598,7 +1593,10 @@ concept_irritable_bowel_syndrome
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[irritable bowel syndrome]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Синдром раздражённого кишечника — хроническое функциональное расстройство желудочно-кишечного тракта. Причина возникновения синдрома раздражённого кишечника не полностью понятна, но предполагается что влияют факторы, такие как стресс и тревога. Зачастую причиной является Хеликобактер пилори.]
+	(* <- lang_ru;; *);;
 
 concept_hormonal_changes
 => nrel_main_idtf:
@@ -1751,12 +1749,602 @@ concept_cholecystitis
 	[Холецистит - это воспаление желчного пузыря, обусловленное обычно блокировкой желчных протоков камнями, инфекциями или другими причинами, что может привести к болям в правом верхнем квадранте живота, тошноте, рвоте и другим симптомам.]
 	(* <- lang_ru;; *);;
 
-concept_lactose_intolerance
-=> nrel_idtf:
-	[Лактозная непереносимость - это состояние, при котором организм не способен полностью расщеплять лактозу, сахар, содержащийся в молочных продуктах. Это происходит из-за недостатка фермента лактазы, который обычно расщепляет лактозу на простые сахара для их усвоения. При непереносимости лактозы нерасщепленный лактоза проходит через кишечник, вызывая различные симптомы, включая вздутие, газообразование, диарею и дискомфорт в животе. Эти симптомы могут возникать через несколько часов после употребления продуктов, содержащих лактозу. Уровень толерантности к лактозе может различаться у разных людей, и некоторые могут переносить небольшие количества лактозы, в то время как у других даже небольшое количество может вызвать сильные симптомы.]
-	(* <- lang_ru;; *);;
-	
-concept_irritable_bowel_syndrome
-=> nrel_idtf:
-	[Синдром раздражённого кишечника — хроническое функциональное расстройство желудочно-кишечного тракта. Причина возникновения синдрома раздражённого кишечника не полностью понятна, но предполагается что влияют факторы, такие как стресс и тревога. Зачастую причиной является Хеликобактер пилори.]
-	(* <- lang_ru;; *);;
+concept_stomach_pain
+=> nrel_main_idtf:
+	[боль в животе]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[stomach pain]
+	(* <- lang_en;; *);;
+
+	concept_pain_in_upper_quadrant
+=> nrel_main_idtf:
+	[боль в подреберье]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pain in upper quadrant]
+	(* <- lang_en;; *);;
+
+	concept_joint_pain
+=> nrel_main_idtf:
+	[боль в суставах]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[joint pain]
+	(* <- lang_en;; *);;
+
+	concept_internal_bleeding
+=> nrel_main_idtf:
+	[внутреннее кровотечение]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[internal bleeding]
+	(* <- lang_en;; *);;
+
+	concept_pain_in_anus
+=> nrel_main_idtf:
+	[боль в заднем проходе]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pain in anus]
+	(* <- lang_en;; *);;
+
+	concept_groin_pain
+=> nrel_main_idtf:
+	[боль в паху]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[groin pain]
+	(* <- lang_en;; *);;
+
+	concept_pain_in_sacrum
+=> nrel_main_idtf:
+	[боль в крестце]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pain in sacrum]
+	(* <- lang_en;; *);;
+
+	concept_pain_in_lower_back
+=> nrel_main_idtf:
+	[боль в пояснице]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pain in lower back]
+	(* <- lang_en;; *);;
+
+	concept_pain_in_lumbar_region
+=> nrel_main_idtf:
+	[боль в поясничной области]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pain in lumbar region]
+	(* <- lang_en;; *);;
+
+	concept_abdominal_discomfort
+=> nrel_main_idtf:
+	[дискомфорт в животе]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[abdominal discomfort]
+	(* <- lang_en;; *);;
+
+	concept_vascular_asterisks_on_body
+=> nrel_main_idtf:
+	[сосудистые звездочки на теле]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[vascular asterisks on body]
+	(* <- lang_en;; *);;
+
+	concept_pain_in_shoulder_blade
+=> nrel_main_idtf:
+	[боль в лопатке]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pain in shoulder blade]
+	(* <- lang_en;; *);;
+
+	concept_bitterness_in_mouth
+=> nrel_main_idtf:
+	[горечь во рту]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[bitterness in mouth]
+	(* <- lang_en;; *);;
+
+	concept_severity_in_upper_quadrant
+=> nrel_main_idtf:
+	[тяжесть в подреберье]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[severity in upper quadrant]
+	(* <- lang_en;; *);;
+
+	concept_discomfort_in_upper_quadrant
+=> nrel_main_idtf:
+	[дискомфорт в подреберье]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[discomfort in upper quadrant]
+	(* <- lang_en;; *);;
+
+	concept_intestinal_polyps
+=> nrel_main_idtf:
+	[кишечные полипы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[intestinal polyps]
+	(* <- lang_en;; *);;
+
+	concept_intestinal_tumors
+=> nrel_main_idtf:
+	[опухоли кишечника]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[intestinal tumors]
+	(* <- lang_en;; *);;
+
+	concept_foreign_bodies_in_intestine
+=> nrel_main_idtf:
+	[инородные тела в кишечнике]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[foreign bodies in intestine]
+	(* <- lang_en;; *);;
+
+	concept_gastritis
+=> nrel_main_idtf:
+	[гастрит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[gastriris]
+	(* <- lang_en;; *);;
+
+concept_nausea  
+=> nrel_main_idtf:
+	[тошнота]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[nausea]
+	(* <- lang_en;; *);;
+
+concept_aftertaste
+=> nrel_main_idtf:
+	[привкус]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[aftertaste]
+	(* <- lang_en;; *);;
+
+concept_bitter
+=> nrel_main_idtf:
+	[горький]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[bitter]
+	(* <- lang_en;; *);;
+
+concept_acidic
+=> nrel_main_idtf:
+	[кислый]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[acidic]
+	(* <- lang_en;; *);;
+
+concept_metal
+=> nrel_main_idtf:
+	[металлический]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[metal]
+	(* <- lang_en;; *);;
+
+concept_pressing
+=> nrel_main_idtf:
+	[давящая]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pressing]
+	(* <- lang_en;; *);;
+
+concept_bursting
+=> nrel_main_idtf:
+	[распирающая]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[bursting]
+	(* <- lang_en;; *);;
+
+concept_pancreas
+=> nrel_main_idtf:
+	[поджелудочная железа]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pancreas]
+	(* <- lang_en;; *);;
+
+Helicobacter_pylori
+=> nrel_main_idtf:
+	[Хеликобактер пилори]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Helicobacter pylori]
+	(* <- lang_en;; *);;
+
+nrel_reason_for_occurrence
+=> nrel_main_idtf:
+	[Причины возникновения*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[reason for occurrence*]
+	(* <- lang_en;; *);;
+
+nrel_type
+=> nrel_main_idtf:
+	[тип*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[type*]
+	(* <- lang_en;; *);;
+
+nrel_inflammation
+=> nrel_main_idtf:
+	[воспаление*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[inflammation*]
+	(* <- lang_en;; *);;
+
+nrel_localization
+=> nrel_main_idtf:
+	[локализация*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[localization*]
+	(* <- lang_en;; *);;
+
+nrel_symptom
+=> nrel_main_idtf:
+	[симптом*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[symptom*]
+	(* <- lang_en;; *);;
+
+concept_pain
+=> nrel_main_idtf:
+	[боль]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pain]
+	(* <- lang_en;; *);;
+
+concept_heartburn
+=> nrel_main_idtf:
+	[изжога]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[heartburn]
+	(* <- lang_en;; *);;
+
+	concept_gastroesophageal_reflux_disease
+=> nrel_main_idtf:
+  [гастроэззофагеальная рефлюксная болезнь ]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[gastroesophageal reflux disease]
+	(* <- lang_en;; *);;
+
+concept_dysphagia
+=> nrel_main_idtf:
+	[дисфагия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[dysphagia]
+	(* <- lang_en;; *);;
+
+concept_regurgitation
+=> nrel_main_idtf:
+	[срыгивание]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[regurgitation]
+	(* <- lang_en;; *);;
+
+concept_lonophagy
+=> nrel_main_idtf:
+	[одинофагия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[lonophagy]
+	(* <- lang_en;; *);;
+
+concept_swallowing
+=> nrel_main_idtf:
+	[глотание]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[swallowing]
+	(* <- lang_en;; *);;
+
+concept_esophagus
+=> nrel_main_idtf:
+	[пищевод]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[esophagus]
+	(* <- lang_en;; *);;
+
+concept_duodenum
+=> nrel_main_idtf:
+	[двенадцатиперстная кишка]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[duodenum]
+	(* <- lang_en;; *);;
+
+concept_throwing_content
+=> nrel_main_idtf:
+	[забрасывание содержимого]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[throwing content]
+	(* <- lang_en;; *);;
+
+concept_dental_decay
+=> nrel_main_idtf:
+	[кариес]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[dental decay]
+	(* <- lang_en;; *);;
+
+concept_cough
+=> nrel_main_idtf:
+	[кашель]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[cough]
+	(* <- lang_en;; *);;
+
+concept_burning_sensation
+=> nrel_main_idtf:
+	[жжение]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[burning sensation]
+	(* <- lang_en;; *);;
+
+concept_tongue
+=> nrel_main_idtf:
+	[язык]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[tongue]
+	(* <- lang_en;; *);;
+
+concept_overweight
+=> nrel_main_idtf:
+	[избыточный вес]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[overweight]
+	(* <- lang_en;; *);;
+
+nrel_complications_of_disease
+=> nrel_main_idtf:
+	[осложнения заболевания*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[complications of disease*]
+	(* <- lang_en;; *);;
+
+concept_sternum_area
+=> nrel_main_idtf:
+	[область грудины]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[sternum area]
+	(* <- lang_en;; *);;
+
+nrel_throwing_in
+=> nrel_main_idtf:
+	[забрасывать в*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[throwing in*]
+	(* <- lang_en;; *);;
+
+concept_burping
+=> nrel_main_idtf:
+	[отрыжка]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[burping]
+	(* <- lang_en;; *);;
+
+concept_peptic_ulcer_of_stomach
+=> nrel_main_idtf:
+	[язвенная болезнь желудка]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[peptic ulcer of stomach]
+	(* <- lang_en;; *);;
+
+concept_defect
+=> nrel_main_idtf:
+	[дефект]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[defect]
+	(* <- lang_en;; *);;
+
+concept_predisposing_factors
+=> nrel_main_idtf:
+	[предрасполагающие факторы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[predisposing factors]
+	(* <- lang_en;; *);;
+
+concept_violation
+=> nrel_main_idtf:
+	[нарушение]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[violation]
+	(* <- lang_en;; *);;
+
+concept_nutrition_mode
+=> nrel_main_idtf:
+	[режим питания]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[nutrition mode]
+	(* <- lang_en;; *);;
+
+concept_sleep_mode
+=> nrel_main_idtf:
+	[ркжим сна]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[sleep mode]
+	(* <- lang_en;; *);;
+
+concept_heredity
+=> nrel_main_idtf:
+	[наследственность]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[heredity]
+	(* <- lang_en;; *);;
+
+concept_size_of_defects
+=> nrel_main_idtf:
+	[размер дефекта]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[size of defects]
+	(* <- lang_en;; *);;
+
+concept_small
+=> nrel_main_idtf:
+	[маленькиЙ]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[small]
+	(* <- lang_en;; *);;
+
+concept_middle
+=> nrel_main_idtf:
+	[средний]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[middle]
+	(* <- lang_en;; *);;
+
+concept_big
+=> nrel_main_idtf:
+	[большой]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[big]
+	(* <- lang_en;; *);;
+
+concept_huge
+=> nrel_main_idtf:
+	[огромные]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[huge]
+	(* <- lang_en;; *);;
+
+concept_amount_of_defects
+=> nrel_main_idtf:
+	[количество дефектов]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[amount of defects]
+	(* <- lang_en;; *);;
+
+concept_simple
+=> nrel_main_idtf:
+	[единичные]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[simple]
+	(* <- lang_en;; *);;
+
+concept_multiple
+=> nrel_main_idtf:
+	[множественные]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[multiple]
+	(* <- lang_en;; *);;
+
+concept_clinical_course
+=> nrel_main_idtf:
+	[клиническое течение]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[clinical course]
+	(* <- lang_en;; *);;
+
+concept_typical
+=> nrel_main_idtf:
+	[типичное]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[typical]
+	(* <- lang_en;; *);;
+
+concept_nature_of_course
+=> nrel_main_idtf:
+	[характер течения]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[nature of course]
+	(* <- lang_en;; *);;
+
+concept_chronic_form
+=> nrel_main_idtf:
+	[хроническая форма]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[chronic form]
+	(* <- lang_en;; *);;
+
+concept_sharp_form
+=> nrel_main_idtf:
+	[острая форма]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[sharp form]
+	(* <- lang_en;; *);;
+
+concept_painkillers
+=> nrel_main_idtf:
+	[обезболивающие препараты]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[painkillers]
+	(* <- lang_en;; *);;
+
+nrel_formation_of_defects
+=> nrel_main_idtf:
+	[образование дефектов*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[formation of defects*]
+	(* <- lang_en;; *);;
+
+concept_classification
+=> nrel_main_idtf:
+	[классификация]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[classification]
+	(* <- lang_en;; *);;
