@@ -12,14 +12,10 @@ subject_domain_of_respiratory_diseases
 <- structure;
 
 <= nrel_private_subject_domain:
-	section_subject_domain_of_respiratory_diseases;
+	subject_domain_of_diseases;
 
 -> rrel_maximum_studied_object_class:
-	concept_disease;
+	concept_respiratory_diseases;
 
 -> rrel_not_maximum_studied_object_class:
-	disease;
-
--> rrel_explored_relation:
-	nrel_symptoms;
-	nrel_causes_of_occurrence;;
+	disease;;

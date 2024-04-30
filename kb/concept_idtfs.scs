@@ -4,10 +4,7 @@ concept_cholelithiasis
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[cholelithiasis]
-	(* <- lang_en;; *);
-=> nrel_idtf:
-	[желчнокаменная болезнь — заболевание гепатобилиарной системы, характеризующееся образованием конкрементов в желчном пузыре, в общем желчном протоке и печеночных желчных протоках.]
-	(* <- lang_ru;; *);;
+	(* <- lang_en;; *);;
 
 	by_localization_of_stones
 => nrel_main_idtf:
@@ -168,10 +165,7 @@ concept_cirrhosis_of_the_liver
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[cirrhosis of the liver]
-	(* <- lang_en;; *);
-=> nrel_idtf:
-	[цирроз печени - это конечная стадия многих заболеваний печени, в результате которого ткани печени замещаются на соединительную ткань и орган перестает выполнять свою функцию.]
-	(* <- lang_ru;; *);;
+	(* <- lang_en;; *);;
 
 	concept_liver
 => nrel_main_idtf:
@@ -259,10 +253,7 @@ concept_psychosomatic_disorders
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[colitis]
-	(* <- lang_en;; *);
-=> nrel_idtf:
-	[колит - заболевание, локализующееся в области толстой кишки. Это воспаление слизистой, которое сопровождается характерными симптомами.]
-	(* <- lang_ru;; *);;
+	(* <- lang_en;; *);;
 
 	concept_primary
 => nrel_main_idtf:
@@ -366,10 +357,7 @@ concept_psychosomatic_disorders
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[diverticulosis]
-	(* <- lang_en;; *);
-=> nrel_idtf:
-	[дивертикулез - это состояние, при котором в просвете кишечника образуются мешочки или выступы, называемые дивертикулами.]
-	(* <- lang_ru;; *);;
+	(* <- lang_en;; *);;
 
 concept_diverticula
 => nrel_main_idtf:
@@ -517,26 +505,26 @@ concept_chemicals
 
 concept_hepatitis_C_virus
 => nrel_main_idtf:
-	[Вирус гепатита С]
+	[вирус гепатита С]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Hepatitis C virus]
+	[hepatitis C virus]
 	(* <- lang_en;; *);;
 
 concept_hepatitis_B_virus
 => nrel_main_idtf:
-	[Вирус гепатита В]
+	[вирус гепатита В]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Hepatitis B virus]
+	[hepatitis B virus]
 	(* <- lang_en;; *);;
 
 concept_hepatitis_D_virus
 => nrel_main_idtf:
-	[Вирус гепатита D]
+	[вирус гепатита D]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Hepatitis D virus]
+	[hepatitis D virus]
 	(* <- lang_en;; *);;
 
 concept_hepatitis_E_virus
@@ -549,10 +537,10 @@ concept_hepatitis_E_virus
 
 concept_hepatitis_A_virus
 => nrel_main_idtf:
-	[Вирус гепатита А]
+	[вирус гепатита А]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Hepatitis A virus]
+	[hepatitis A virus]
 	(* <- lang_en;; *);;
 
 viral_infections
@@ -1153,10 +1141,7 @@ concept_hepatitis
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[hepatitis]
-	(* <- lang_en;; *);
-=> nrel_idtf:
-	[гепатит - это воспаление печени. Оно может быть вызвано различными причинами, включая вирусы, алкоголь, лекарства и другие токсины. Гепатит может находиться в различных частях печени и иметь разную степень тяжести.]
-	(* <- lang_ru;; *);;
+	(* <- lang_en;; *);;
 
 concept_klebsiella
 => nrel_main_idtf:
@@ -1469,10 +1454,7 @@ concept_lactose_intolerance
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[lactose intolerance]
-	(* <- lang_en;; *);
-=> nrel_idtf:
-	[Лактозная непереносимость - это состояние, при котором организм не способен полностью расщеплять лактозу, сахар, содержащийся в молочных продуктах. Это происходит из-за недостатка фермента лактазы, который обычно расщепляет лактозу на простые сахара для их усвоения. При непереносимости лактозы нерасщепленный лактоза проходит через кишечник, вызывая различные симптомы, включая вздутие, газообразование, диарею и дискомфорт в животе. Эти симптомы могут возникать через несколько часов после употребления продуктов, содержащих лактозу. Уровень толерантности к лактозе может различаться у разных людей, и некоторые могут переносить небольшие количества лактозы, в то время как у других даже небольшое количество может вызвать сильные симптомы.]
-	(* <- lang_ru;; *);;
+	(* <- lang_en;; *);;
 
 
 concept_abdominal_area
@@ -1593,10 +1575,7 @@ concept_irritable_bowel_syndrome
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[irritable bowel syndrome]
-	(* <- lang_en;; *);
-=> nrel_idtf:
-	[Синдром раздражённого кишечника — хроническое функциональное расстройство желудочно-кишечного тракта. Причина возникновения синдрома раздражённого кишечника не полностью понятна, но предполагается что влияют факторы, такие как стресс и тревога. Зачастую причиной является Хеликобактер пилори.]
-	(* <- lang_ru;; *);;
+	(* <- lang_en;; *);;
 
 concept_hormonal_changes
 => nrel_main_idtf:
@@ -1733,21 +1712,6 @@ concept_stomach
 => nrel_main_idtf:
 	[stomach]
 	(* <- lang_en;; *);;
-  
-concept_celiac_disease
-=> nrel_idtf:
-	[Целиакия (или целиакическая болезнь) - это хроническое иммунное заболевание, характеризующееся повреждением слизистой оболочки тонкого кишечника при употреблении глютена, белкового компонента, содержащегося в пшенице, ржи и ячмене. При целиакии иммунная система организма атакует собственные ткани кишечника, что приводит к воспалению и повреждению их стенок, а также к нарушению поглощения питательных веществ.]
-	(* <- lang_ru;; *);;
-
-concept_cholangitis
-=> nrel_idtf:
-	[Холангит - это воспалительное заболевание желчных протоков, которое обычно вызвано блокировкой желчных путей желчными камнями, инфекциями или другими причинами. Это состояние может привести к болям в правом верхнем квадранте живота, желтухе, лихорадке и другим симптомам инфекции.]
-	(* <- lang_ru;; *);;
-
-concept_cholecystitis
-=> nrel_idtf:
-	[Холецистит - это воспаление желчного пузыря, обусловленное обычно блокировкой желчных протоков камнями, инфекциями или другими причинами, что может привести к болям в правом верхнем квадранте живота, тошноте, рвоте и другим симптомам.]
-	(* <- lang_ru;; *);;
 
 concept_stomach_pain
 => nrel_main_idtf:
@@ -2347,4 +2311,44 @@ concept_classification
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[classification]
+	(* <- lang_en;; *);;
+
+	concept_disease_of_the_gastrointestinal_tract
+=> nrel_main_idtf:
+	[болезни ЖКТ]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[disease of the gastrointestinal tract]
+	(* <- lang_en;; *);;
+
+	concept_headaches
+=> nrel_main_idtf:
+	[головные боли]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[headaches]
+	(* <- lang_en;; *);;
+
+	concept_diseases_of_muscle_tissues
+=> nrel_main_idtf:
+	[болезни мышечных тканей]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[diseases of muscle tissues]
+	(* <- lang_en;; *);;
+
+	concept_respiratory_diseases
+=> nrel_main_idtf:
+	[болезни дыхательных путей]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[respiratory diseases]
+	(* <- lang_en;; *);;
+
+	inflammation_of_mucous_membranes
+=> nrel_main_idtf:
+	[воспаление слизистой оболочки]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[inflammation of mucous membranes]
 	(* <- lang_en;; *);;
