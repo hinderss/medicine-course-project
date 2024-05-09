@@ -301,3 +301,243 @@ nrel_eating
 => nrel_main_idtf:
 	[eating*]
 	(* <- lang_en;; *);;
+
+nrel_causes_of_occurrence
+=> nrel_main_idtf:
+	[причины возникновения*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[causes of occurrence*]
+	(* <- lang_en;; *);;
+
+nrel_stages
+=> nrel_main_idtf:
+	[стадии*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[stages*]
+	(* <- lang_en;; *);;
+
+nrel_sc_text_translation
+=> nrel_main_idtf:
+	[трансляция sc-текста*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[sc text translation*]
+	(* <- lang_en;; *);;
+
+nrel_neuropsychiatric_diseases
+=> nrel_main_idtf:
+	[нейропсихические болезни*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[neuropsychiatric diseases*]
+	(* <- lang_en;; *);;
+
+nrel_classification
+=> nrel_main_idtf:
+	[классификация*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[classification*]
+	(* <- lang_en;; *);;
+
+nrel_pathological_pathway
+=> nrel_main_idtf:
+	[патологический путь*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pathological pathway*]
+	(* <- lang_en;; *);;
+
+nrel_symptoms
+=> nrel_main_idtf:
+	[симптомы*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[symptoms*]
+	(* <- lang_en;; *);;
+
+rrel_suction_object
+=> rrel_main_idtf:
+	[предмет всасывания']
+	(* <- lang_ru;; *);
+=> rrel_main_idtf:
+	[suction object']
+	(* <- lang_en;; *);;
+
+rrel_key_sc_element
+=> rrel_main_idtf:
+	[ключевой sc-элемент']
+	(* <- lang_ru;; *);
+=> rrel_main_idtf:
+	[key sc element']
+	(* <- lang_en;; *);;
+
+nrel_disease_complications
+=> nrel_main_idtf:
+	[осложнения заболевания*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[disease complications*]
+	(* <- lang_en;; *);;
+
+nrel_autoimmune_diseases
+=> nrel_main_idtf:
+	[аутоимунные патологии*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[autoimmune diseases*]
+	(* <- lang_en;; *);;
+
+nrel_allergic_diseases
+=> nrel_main_idtf:
+	[аллергические заболевания*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[allergic diseases*]
+	(* <- lang_en;; *);;
+
+nrel_types
+=> nrel_main_idtf:
+	[виды*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[types*]
+	(* <- lang_en;; *);;
+
+nrel_weight
+=> nrel_main_idtf:
+	[вес*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[weight*]
+	(* <- lang_en;; *);;
+
+nrel_change
+=> nrel_main_idtf:
+	[изменение*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[change*]
+	(* <- lang_en;; *);;
+
+nrel_time_period
+=> nrel_main_idtf:
+	[временный период*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[time period*]
+	(* <- lang_en;; *);;
+
+nrel_degree_of_severity
+=> nrel_main_idtf:
+	[степень тяжести*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[degree of severity*]
+	(* <- lang_en;; *);;
+
+nrel_spreading
+=> nrel_main_idtf:
+	[распространение*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[spreading*]
+	(* <- lang_en;; *);;
+
+nrel_definition
+=> nrel_main_idtf:
+	[определение*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[definition*]
+	(* <- lang_en;; *);;
+
+nrel_occurrence
+=> nrel_main_idtf:
+	[появление*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[occurrence*]
+	(* <- lang_en;; *);;
+
+nrel_forming
+=> nrel_main_idtf:
+	[формирование*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[forming*]
+	(* <- lang_en;; *);;
+
+nrel_form
+=> nrel_main_idtf:
+	[форма*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[form*]
+	(* <- lang_en;; *);;
+
+nrel_part
+=> nrel_main_idtf:
+	[часть*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[part*]
+	(* <- lang_en;; *);;
+
+nrel_color
+=> nrel_main_idtf:
+	[цвет*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[color*]
+	(* <- lang_en;; *);;
+
+nrel_content
+=> nrel_main_idtf:
+	[содержание*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[content*]
+	(* <- lang_en;; *);;
+
+nrel_development
+=> nrel_main_idtf:
+	[развитие*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[development*]
+	(* <- lang_en;; *);;
+
+nrel_failure
+=> nrel_main_idtf:
+	[поражение*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[failure*]
+	(* <- lang_en;; *);;
+
+nrel_physical_damage
+=> nrel_main_idtf:
+	[физическое повреждение*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[physical damage*]
+	(* <- lang_en;; *);;
+
+nrel_area
+=> nrel_main_idtf:
+	[область*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[area*]
+	(* <- lang_en;; *);;
+
+nrel_behind
+=> nrel_main_idtf:
+	[за*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[behind*]
+	(* <- lang_en;; *);;
