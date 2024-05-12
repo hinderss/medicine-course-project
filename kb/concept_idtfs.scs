@@ -3439,3 +3439,20 @@ concept_upper_abdomen_pain
 => nrel_main_idtf:
 	[upper abdomen pain]
 	(* <- lang_en;; *);;
+
+concept_stomach_tumor_development
+=> nrel_main_idtf:
+	[развитие опухоли желудка]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[stomach tumor development]
+	(* <- lang_en;; *);;
+
+concept_helicobacter_pylori
+=> nrel_main_idtf:
+	[хеликобактер пилори]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[helicobacter pylori]
+	(* <- lang_en;; *);;
+
