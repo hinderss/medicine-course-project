@@ -1,11 +1,3 @@
-concept_cholelithiasis
-=> nrel_main_idtf:
-	[желчнокаменная болезнь]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[cholelithiasis]
-	(* <- lang_en;; *);;
-
 	by_localization_of_stones
 => nrel_main_idtf:
 	[по локализации камней]
@@ -20,38 +12,6 @@ concept_cholelithiasis
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[from the composition of the stones]
-	(* <- lang_en;; *);;
-
-	concept_stones_in_the_hepatic_duct
-=> nrel_main_idtf:
-	[камни в печеночном протоке]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[stones in the hepatic duct]
-	(* <- lang_en;; *);;
-
-	concept_stones_in_the_common_bile_duct
-=> nrel_main_idtf:
-	[камни в общем желчном протоке]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[stones in the common bile duct]
-	(* <- lang_en;; *);;
-
-	concept_homogeneous_stones
-=> nrel_main_idtf:
-	[гомогенные камни]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[homogeneous stones]
-	(* <- lang_en;; *);;
-
-	concept_mixed_stones
-=> nrel_main_idtf:
-	[смешанные камни]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[mixed stones]
 	(* <- lang_en;; *);;
 
 	concept_difficult_stones
@@ -118,295 +78,6 @@ concept_cholelithiasis
 	[calcium]
 	(* <- lang_en;; *);;
 
-	concept_dyspeptic
-=> nrel_main_idtf:
-	[диспепсическая]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[dyspeptic]
-	(* <- lang_en;; *);;
-
-	concept_asymptomatic
-=> nrel_main_idtf:
-	[бессимптомная]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[asymptomatic]
-	(* <- lang_en;; *);;
-
-	concept_painful
-=> nrel_main_idtf:
-	[болевая]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[painful]
-	(* <- lang_en;; *);;
-
-	concept_hepatic_bile_duct
-=> nrel_main_idtf:
-	[печеночный желчный проток]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[hepatic bile duct]
-	(* <- lang_en;; *);;
-
-	concept_concretion
-=> nrel_main_idtf:
-	[конкремент]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[concretion]
-	(* <- lang_en;; *);;
-
-
-concept_cirrhosis_of_the_liver
-=> nrel_main_idtf:
-	[цирроз печени]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[cirrhosis of the liver]
-	(* <- lang_en;; *);;
-
-	concept_liver
-=> nrel_main_idtf:
-	[печень]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[liver]
-	(* <- lang_en;; *);;
-
-	concept_liver_tissue
-=> nrel_main_idtf:
-	[ткань печени]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[liver tissue]
-	(* <- lang_en;; *);;
-
-	concept_connective_tissue_of_the_liver
-=> nrel_main_idtf:
-	[соединительная ткань печени]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[connective tissue of the liver]
-	(* <- lang_en;; *);;
-
-	concept_F4
-=> nrel_main_idtf:
-	[стадия 4]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[F4]
-	(* <- lang_en;; *);;
-
-	concept_F3
-=> nrel_main_idtf:
-	[стадия 3]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[F3]
-	(* <- lang_en;; *);;
-
-	concept_F2
-=> nrel_main_idtf:
-	[стадия 2]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[F2]
-	(* <- lang_en;; *);;
-
-	concept_F1
-=> nrel_main_idtf:
-	[стадия 1]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[F1]
-	(* <- lang_en;; *);;
-
-	concept_liver_fibrosis
-=> nrel_main_idtf:
-	[фиброз печени]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[liver fibrosis]
-	(* <- lang_en;; *);;
-
-concept_psychosomatic_disorders
-=> nrel_main_idtf:
-	[психосоматические расстройства]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[psychosomatic disorders]
-	(* <- lang_en;; *);;
-
-	concept_body_weight
-=> nrel_main_idtf:
-	[масса тела]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[body weight]
-	(* <- lang_en;; *);;
-
-	concept_colitis
-=> nrel_main_idtf:
-	[колит]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[colitis]
-	(* <- lang_en;; *);;
-
-	concept_primary
-=> nrel_main_idtf:
-	[первичный]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[primary]
-	(* <- lang_en;; *);;
-
-	concept_secondary
-=> nrel_main_idtf:
-	[вторичный]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[secondary]
-	(* <- lang_en;; *);;
-
-	concept_infectious_colitis
-=> nrel_main_idtf:
-	[инфекционный колит]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[infectious colitis]
-	(* <- lang_en;; *);;
-
-	concept_lymphocytic_colitis
-=> nrel_main_idtf:
-	[лимфоцитарный колит]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[lymphocytic colitis]
-	(* <- lang_en;; *);;
-
-	concept_mechanical_colitis
-=> nrel_main_idtf:
-	[механический колит]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[mechanical colitis]
-	(* <- lang_en;; *);;
-
-	concept_radiation_colitis
-=> nrel_main_idtf:
-	[радиационный колит]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[radiation colitis]
-	(* <- lang_en;; *);;
-
-	concept_toxic_colitis
-=> nrel_main_idtf:
-	[токсический колит]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[toxic colitis]
-	(* <- lang_en;; *);;
-
-	concept_parasitic_colitis
-=> nrel_main_idtf:
-	[паразитарный колит]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[parasitic colitis]
-	(* <- lang_en;; *);;
-
-	concept_allergic_colitis
-=> nrel_main_idtf:
-	[аллергический колит]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[allergic colitis]
-	(* <- lang_en;; *);;
-
-	concept_large_intestine
-=> nrel_main_idtf:
-	[толстая кишка]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[large intestine]
-	(* <- lang_en;; *);;
-
-	concept_enteritis
-=> nrel_main_idtf:
-	[энтерит]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[enteritis]
-	(* <- lang_en;; *);;
-
-	concept_function
-=> nrel_main_idtf:
-	[функция]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[function]
-	(* <- lang_en;; *);;
-
-	concept_diverticulosis
-=> nrel_main_idtf:
-	[дивертикулез]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[diverticulosis]
-	(* <- lang_en;; *);;
-
-concept_diverticula
-=> nrel_main_idtf:
-	[дивертикула]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[diverticula]
-	(* <- lang_en;; *);;
-
-concept_intestine
-=> nrel_main_idtf:
-	[кишечник]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[intestine]
-	(* <- lang_en;; *);;
-
-concept_without_clinical_manifestations
-=> nrel_main_idtf:
-	[без клинических проявлений]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[without clinical manifestations]
-	(* <- lang_en;; *);;
-
-concept_with_clinical_manifestations
-=> nrel_main_idtf:
-	[с клиническими проявлениями]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[with clinical manifestations]
-	(* <- lang_en;; *);;
-
-concept_with_a_complicated_course
-=> nrel_main_idtf:
-	[с осложненным течением]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[with a complicated course]
-	(* <- lang_en;; *);;
-
-concept_portal_vein
-=> nrel_main_idtf:
-	[воротная вена]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[portal vein]
-	(* <- lang_en;; *);;
-
 inflammation_of_the_liver
 => nrel_main_idtf:
 	[воспаление печени]
@@ -415,492 +86,12 @@ inflammation_of_the_liver
 	[inflammation of the liver]
 	(* <- lang_en;; *);;
 
-	nrel_causes_of_occurrence
-=> nrel_main_idtf:
-	[причины возникновения*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[causes of occurrence*]
-	(* <- lang_en;; *);;
-
-concept_metabolic_disorders
-=> nrel_main_idtf:
-	[метаболические нарушения]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[metabolic disorders]
-	(* <- lang_en;; *);;
-
-concept_genetic_factor
-=> nrel_main_idtf:
-	[генетический фактор]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[genetic factor]
-	(* <- lang_en;; *);;
-
-concept_medicines
-=> nrel_main_idtf:
-	[медикаменты]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[medicines]
-	(* <- lang_en;; *);;
-
-concept_poison
-=> nrel_main_idtf:
-	[яд]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[poison]
-	(* <- lang_en;; *);;
-
-concept_toxic_substances
-=> nrel_main_idtf:
-	[токсичные вещества]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[toxic substances]
-	(* <- lang_en;; *);;
-
-concept_chemicals
-=> nrel_main_idtf:
-	[химикаты]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[chemicals]
-	(* <- lang_en;; *);;
-
-	concept_phosphorus_salts
-=> nrel_main_idtf:
-	[соли фосфора]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[phosphorus salts]
-	(* <- lang_en;; *);;
-
-	concept_arsenic
-=> nrel_main_idtf:
-	[мышьяк]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[arsenic]
-	(* <- lang_en;; *);;
-
-	concept_lead
-=> nrel_main_idtf:
-	[свинец]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[lead]
-	(* <- lang_en;; *);;
-
-	concept_mercury
-=> nrel_main_idtf:
-	[ртуть]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[mercury]
-	(* <- lang_en;; *);;
-
-concept_hepatitis_C_virus
-=> nrel_main_idtf:
-	[вирус гепатита С]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[hepatitis C virus]
-	(* <- lang_en;; *);;
-
-concept_hepatitis_B_virus
-=> nrel_main_idtf:
-	[вирус гепатита В]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[hepatitis B virus]
-	(* <- lang_en;; *);;
-
-concept_hepatitis_D_virus
-=> nrel_main_idtf:
-	[вирус гепатита D]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[hepatitis D virus]
-	(* <- lang_en;; *);;
-
-concept_hepatitis_E_virus
-=> nrel_main_idtf:
-	[вирус гепатита Е]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[hepatitis E virus]
-	(* <- lang_en;; *);;
-
-concept_hepatitis_A_virus
-=> nrel_main_idtf:
-	[вирус гепатита А]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[hepatitis A virus]
-	(* <- lang_en;; *);;
-
 viral_infections
 => nrel_main_idtf:
 	[вирусные инфекции]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[viral infections]
-	(* <- lang_en;; *);;
-
-concept_fiber
-=> nrel_main_idtf:
-	[клетчатка]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[fiber]
-	(* <- lang_en;; *);;
-
-concept_old_age
-=> nrel_main_idtf:
-	[старость]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[old age]
-	(* <- lang_en;; *);;
-
-concept_sedentary_lifestyle
-=> nrel_main_idtf:
-	[сидячий образ жизни]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[sedentary lifestyle]
-	(* <- lang_en;; *);;
-
-concept_smoking
-=> nrel_main_idtf:
-	[курение]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[smoking]
-	(* <- lang_en;; *);;
-
-	concept_bile_excreting_pathway
-=> nrel_main_idtf:
-	[желчновыводящий путь]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[bile-excreting pathway]
-	(* <- lang_en;; *);;
-
-	concept_bile
-=> nrel_main_idtf:
-	[желчь]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[bile]
-	(* <- lang_en;; *);;
-
-	concept_cholesterol
-=> nrel_main_idtf:
-	[холестерин]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[cholesterol]
-	(* <- lang_en;; *);;
-
-	concept_process
-=> nrel_main_idtf:
-	[процесс]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[process]
-	(* <- lang_en;; *);;
-
-	concept_bilirubin
-=> nrel_main_idtf:
-	[билирубин]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[bilirubin]
-	(* <- lang_en;; *);;
-
-concept_severe_form_of_heart_failure
-=> nrel_main_idtf:
-	[тяжелая форма сердечной недостаточности]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[severe form of heart failure]
-	(* <- lang_en;; *);;
-
-	concept_autoimmune_disorder
-=> nrel_main_idtf:
-	[аутоиммунное расстройство]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[autoimmune disorder]
-	(* <- lang_en;; *);;
-
-	concept_parasitic_infestations
-=> nrel_main_idtf:
-	[паразитарные инвазии]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[parasitic infestations]
-	(* <- lang_en;; *);;
-
-	concept_fatness
-=> nrel_main_idtf:
-	[ожирение]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[fatness]
-	(* <- lang_en;; *);;
-
-	concept_portal_hypertension
-=> nrel_main_idtf:
-	[портальная гипертензия]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[portal hypertension]
-	(* <- lang_en;; *);;
-
-	concept_outflow_of_bile
-=> nrel_main_idtf:
-	[отток желчи]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[outflow of bile]
-	(* <- lang_en;; *);;
-
-	concept_diabetes_mellitus
-=> nrel_main_idtf:
-	[сахарный диабет]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[diabetes mellitus]
-	(* <- lang_en;; *);;
-
-	concept_worms
-=> nrel_main_idtf:
-	[глисты]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[worms]
-	(* <- lang_en;; *);;
-
-	concept_nutrition
-=> nrel_main_idtf:
-	[питание]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[nutrition]
-	(* <- lang_en;; *);;
-
-	concept_liver_failure
-=> nrel_main_idtf:
-	[печеночная недостаточность]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[liver failure]
-	(* <- lang_en;; *);;
-
-	concept_radiation
-=> nrel_main_idtf:
-	[радиация]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[radiation]
-	(* <- lang_en;; *);;
-
-	concept_atherosclerosis
-=> nrel_main_idtf:
-	[атеросклероз]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[atherosclerosis]
-	(* <- lang_en;; *);;
-
-	concept_hygiene
-=> nrel_main_idtf:
-	[гигиена]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[hygiene]
-	(* <- lang_en;; *);;
-
-	concept_allergy
-=> nrel_main_idtf:
-	[аллергия]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[allergy]
-	(* <- lang_en;; *);;
-
-	nrel_symptoms
-=> nrel_main_idtf:
-	[симптомы*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[symptoms*]
-	(* <- lang_en;; *);;
-
-concept_belly
-=> nrel_main_idtf:
-	[живот]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[belly]
-	(* <- lang_en;; *);;
-
-concept_bloating
-=> nrel_main_idtf:
-	[вздутие живота]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[bloating]
-	(* <- lang_en;; *);;
-
-concept_hypochondrium
-=> nrel_main_idtf:
-	[подреберье]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[hypochondrium]
-	(* <- lang_en;; *);;
-
-	concept_right_upper_arm
-=> nrel_main_idtf:
-	[правое надплечье]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[right upper arm]
-	(* <- lang_en;; *);;
-
-	concept_shoulder_blade
-=> nrel_main_idtf:
-	[лопатка]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[shoulder blade]
-	(* <- lang_en;; *);;
-
-concept_joints
-=> nrel_main_idtf:
-	[суставы]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[joints]
-	(* <- lang_en;; *);;
-
-	concept_palms
-=> nrel_main_idtf:
-	[ладони]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[palms]
-	(* <- lang_en;; *);;
-
-	concept_feet
-=> nrel_main_idtf:
-	[стопы]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[feet]
-	(* <- lang_en;; *);;
-
-	concept_lumbar_region
-=> nrel_main_idtf:
-	[поясничная область]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[lumbar region]
-	(* <- lang_en;; *);;
-
-concept_volatile
-=> nrel_main_idtf:
-	[летучая]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[volatile]
-	(* <- lang_en;; *);;
-
-concept_pinpoint
-=> nrel_main_idtf:
-	[точечная]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[pinpoint]
-	(* <- lang_en;; *);;
-
-concept_aching
-=> nrel_main_idtf:
-	[ноющая]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[aching]
-	(* <- lang_en;; *);;
-
-concept_sharp
-=> nrel_main_idtf:
-	[резкая]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[sharp]
-	(* <- lang_en;; *);;
-
-concept_emotional_instability
-=> nrel_main_idtf:
-	[эмоциональная нестабильность]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[emotional instability]
-	(* <- lang_en;; *);;
-
-concept_restless_sleep
-=> nrel_main_idtf:
-	[беспокойный сон]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[restless sleep]
-	(* <- lang_en;; *);;
-
-concept_changing_the_shade_of_physiological_functions
-=> nrel_main_idtf:
-	[изменение оттенка физиологических функций]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[changing the shade of physiological functions]
-	(* <- lang_en;; *);;
-
-concept_whites_of_the_eyes
-=> nrel_main_idtf:
-	[белки глаз]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[whites of the eyes]
-	(* <- lang_en;; *);;
-
-concept_skin
-=> nrel_main_idtf:
-	[кожа]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[skin]
-	(* <- lang_en;; *);;
-
-concept_mucous_membranes
-=> nrel_main_idtf:
-	[слизистые оболочки]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[mucous membranes]
-	(* <- lang_en;; *);;
-
-concept_nose
-=> nrel_main_idtf:
-	[нос]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[nose]
 	(* <- lang_en;; *);;
 
 concept_mouth
@@ -1095,52 +286,12 @@ concept_disease
 	[anemia]
 	(* <- lang_en;; *);;
 
-	concept_foreign_bodies
-=> nrel_main_idtf:
-	[инородные тела]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[foreign bodies]
-	(* <- lang_en;; *);;
-
-	concept_polyps
-=> nrel_main_idtf:
-	[полипы]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[polyps]
-	(* <- lang_en;; *);;
-
-	concept_mucus
-=> nrel_main_idtf:
-	[слизистая]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[mucus]
-	(* <- lang_en;; *);;
-
-	concept_reflux
-=> nrel_main_idtf:
-	[рефлюкс]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[reflux]
-	(* <- lang_en;; *);;
-
 concept_ascariasis
 => nrel_main_idtf:
 	[аскаридоз]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[ascariasis]
-	(* <- lang_en;; *);;
-
-concept_hepatitis
-=> nrel_main_idtf:
-	[гепатит]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[hepatitis]
 	(* <- lang_en;; *);;
 
 concept_klebsiella
@@ -1181,14 +332,6 @@ concept_parasitic
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[parasitic]
-	(* <- lang_en;; *);;
-
-concept_ischemia
-=> nrel_main_idtf:
-	[ишемия]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[ischemia]
 	(* <- lang_en;; *);;
 
 concept_biliary_sludge
@@ -1237,14 +380,6 @@ concept_tumors_of_the_biliary_tract
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[tumors of the biliary tract]
-	(* <- lang_en;; *);;
-
-concept_tumors
-=> nrel_main_idtf:
-	[опухоли]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[tumors]
 	(* <- lang_en;; *);;
 
 concept_gallbladder_cancer
@@ -1376,14 +511,6 @@ concept_gastrointestinal_symptoms
 	[gastrointestinal symptoms]
 	(* <- lang_en;; *);;
 
-concept_discomfort
-=> nrel_main_idtf:
-	[дискомфорт]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[discomfort]
-	(* <- lang_en;; *);;
-
 concept_general_symptoms
 => nrel_main_idtf:
 	[общие симптомы]
@@ -1456,37 +583,12 @@ concept_lactose_intolerance
 	[lactose intolerance]
 	(* <- lang_en;; *);;
 
-
-concept_abdominal_area
-=> nrel_main_idtf:
-	[область живота]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[abdominal area]
-	(* <- lang_en;; *);;
-
 concept_intestinal_infections
 => nrel_main_idtf:
 	[кишечные инфекции]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[intestinal infections]
-	(* <- lang_en;; *);;
-
-concept_bacteria
-=> nrel_main_idtf:
-	[бактерия]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[bacteria]
-	(* <- lang_en;; *);;
-
-concept_alcohol
-=> nrel_main_idtf:
-	[алкоголь]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[alcohol]
 	(* <- lang_en;; *);;
 
 concept_improper_nutrition
@@ -1511,14 +613,6 @@ concept_frequent
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[frequent]
-	(* <- lang_en;; *);;
-
-concept_constipation
-=> nrel_main_idtf:
-	[запор]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[constipation]
 	(* <- lang_en;; *);;
 
 concept_emotional_stress
@@ -1609,14 +703,6 @@ concept_feces
 	[feces]
 	(* <- lang_en;; *);;
 	
-concept_vomiting
-=> nrel_main_idtf:
-	[рвота]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[vomiting]
-	(* <- lang_en;; *);;
-	
 concept_yellowing
 => nrel_main_idtf:
 	[пожелтение]
@@ -1703,14 +789,6 @@ concept_hastritis
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[hastritis]
-	(* <- lang_en;; *);;
-	
-concept_stomach
-=> nrel_main_idtf:
-	[желудок]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[stomach]
 	(* <- lang_en;; *);;
 
 concept_stomach_pain
@@ -1865,14 +943,6 @@ concept_stomach_pain
 	[gastriris]
 	(* <- lang_en;; *);;
 
-concept_nausea  
-=> nrel_main_idtf:
-	[тошнота]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[nausea]
-	(* <- lang_en;; *);;
-
 concept_aftertaste
 => nrel_main_idtf:
 	[привкус]
@@ -1919,14 +989,6 @@ concept_bursting
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[bursting]
-	(* <- lang_en;; *);;
-
-concept_pancreas
-=> nrel_main_idtf:
-	[поджелудочная железа]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[pancreas]
 	(* <- lang_en;; *);;
 
 Helicobacter_pylori
@@ -1977,36 +1039,12 @@ nrel_symptom
 	[symptom*]
 	(* <- lang_en;; *);;
 
-concept_pain
-=> nrel_main_idtf:
-	[боль]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[pain]
-	(* <- lang_en;; *);;
-
-concept_heartburn
-=> nrel_main_idtf:
-	[изжога]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[heartburn]
-	(* <- lang_en;; *);;
-
 	concept_gastroesophageal_reflux_disease
 => nrel_main_idtf:
   [гастроэззофагеальная рефлюксная болезнь ]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[gastroesophageal reflux disease]
-	(* <- lang_en;; *);;
-
-concept_dysphagia
-=> nrel_main_idtf:
-	[дисфагия]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[dysphagia]
 	(* <- lang_en;; *);;
 
 concept_regurgitation
@@ -2031,14 +1069,6 @@ concept_swallowing
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[swallowing]
-	(* <- lang_en;; *);;
-
-concept_esophagus
-=> nrel_main_idtf:
-	[пищевод]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[esophagus]
 	(* <- lang_en;; *);;
 
 concept_duodenum
@@ -2352,3 +1382,2077 @@ concept_classification
 => nrel_main_idtf:
 	[inflammation of mucous membranes]
 	(* <- lang_en;; *);;
+
+concept_cholelithiasis
+=> nrel_main_idtf:
+	[желчнокаменная болезнь]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[cholelithiasis]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[желчнокаменная болезнь — заболевание гепатобилиарной системы, характеризующееся образованием конкрементов в желчном пузыре, в общем желчном протоке и печеночных желчных протоках.]
+	(* <- lang_ru;; *);;
+
+	by_localization_of_stones
+=> nrel_main_idtf:
+	[по локализации камней]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[by localization of stones]
+	(* <- lang_en;; *);;
+
+	from_the_composition_of_the_stones
+=> nrel_main_idtf:
+	[по составу камней]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[from the composition of the stones]
+	(* <- lang_en;; *);;
+
+	concept_gallstones
+=> nrel_main_idtf:
+	[камни в желчном пузыре]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[gallstones]
+	(* <- lang_en;; *);;
+
+	concept_stones_in_the_hepatic_duct
+=> nrel_main_idtf:
+	[камни в печеночном протоке]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[stones in the hepatic duct]
+	(* <- lang_en;; *);;
+
+	concept_stones_in_the_common_bile_duct
+=> nrel_main_idtf:
+	[камни в общем желчном протоке]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[stones in the common bile duct]
+	(* <- lang_en;; *);;
+
+	concept_homogeneous_stones
+=> nrel_main_idtf:
+	[гомогенные камни]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[homogeneous stones]
+	(* <- lang_en;; *);;
+
+	concept_mixed_stones
+=> nrel_main_idtf:
+	[смешанные камни]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[mixed stones]
+	(* <- lang_en;; *);;
+
+	concept_dyspeptic
+=> nrel_main_idtf:
+	[диспепсическая]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[dyspeptic]
+	(* <- lang_en;; *);;
+
+	concept_asymptomatic
+=> nrel_main_idtf:
+	[бессимптомная]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[asymptomatic]
+	(* <- lang_en;; *);;
+
+	concept_painful
+=> nrel_main_idtf:
+	[болевая]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[painful]
+	(* <- lang_en;; *);;
+
+	concept_gallbladder
+=> nrel_main_idtf:
+	[желчный пузырь]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[gallbladder]
+	(* <- lang_en;; *);;
+
+	concept_hepatic_bile_duct
+=> nrel_main_idtf:
+	[печеночный желчный проток]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[hepatic bile duct]
+	(* <- lang_en;; *);;
+
+	concept_concretion
+=> nrel_main_idtf:
+	[конкремент]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[concretion]
+	(* <- lang_en;; *);;
+
+
+concept_cirrhosis_of_the_liver
+=> nrel_main_idtf:
+	[цирроз печени]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[cirrhosis of the liver]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[цирроз печени - это конечная стадия многих заболеваний печени, в результате которого ткани печени замещаются на соединительную ткань и орган перестает выполнять свою функцию.]
+	(* <- lang_ru;; *);;
+
+concept_liver
+=> nrel_main_idtf:
+	[печень]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[liver]
+	(* <- lang_en;; *);;
+
+	concept_liver_tissue
+=> nrel_main_idtf:
+	[ткань печени]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[liver tissue]
+	(* <- lang_en;; *);;
+
+	concept_connective_tissue_of_the_liver
+=> nrel_main_idtf:
+	[соединительная ткань печени]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[connective tissue of the liver]
+	(* <- lang_en;; *);;
+
+	concept_F4
+=> nrel_main_idtf:
+	[стадия 4]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[F4]
+	(* <- lang_en;; *);;
+
+	concept_F3
+=> nrel_main_idtf:
+	[стадия 3]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[F3]
+	(* <- lang_en;; *);;
+
+	concept_F2
+=> nrel_main_idtf:
+	[стадия 2]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[F2]
+	(* <- lang_en;; *);;
+
+	concept_F1
+=> nrel_main_idtf:
+	[стадия 1]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[F1]
+	(* <- lang_en;; *);;
+
+	concept_liver_fibrosis
+=> nrel_main_idtf:
+	[фиброз печени]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[liver fibrosis]
+	(* <- lang_en;; *);;
+
+concept_psychosomatic_disorders
+=> nrel_main_idtf:
+	[психосоматические расстройства]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[psychosomatic disorders]
+	(* <- lang_en;; *);;
+
+concept_body_weight
+=> nrel_main_idtf:
+	[масса тела]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[body weight]
+	(* <- lang_en;; *);;
+
+	concept_colitis
+=> nrel_main_idtf:
+	[колит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[colitis]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[колит - заболевание, локализующееся в области толстой кишки. Это воспаление слизистой, которое сопровождается характерными симптомами.]
+	(* <- lang_ru;; *);;
+
+	concept_primary
+=> nrel_main_idtf:
+	[первичный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[primary]
+	(* <- lang_en;; *);;
+
+	concept_secondary
+=> nrel_main_idtf:
+	[вторичный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[secondary]
+	(* <- lang_en;; *);;
+
+	concept_infectious_colitis
+=> nrel_main_idtf:
+	[инфекционный колит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[infectious colitis]
+	(* <- lang_en;; *);;
+
+	concept_lymphocytic_colitis
+=> nrel_main_idtf:
+	[лимфоцитарный колит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[lymphocytic colitis]
+	(* <- lang_en;; *);;
+
+	concept_mechanical_colitis
+=> nrel_main_idtf:
+	[механический колит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[mechanical colitis]
+	(* <- lang_en;; *);;
+
+	concept_radiation_colitis
+=> nrel_main_idtf:
+	[радиационный колит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[radiation colitis]
+	(* <- lang_en;; *);;
+
+	concept_toxic_colitis
+=> nrel_main_idtf:
+	[токсический колит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[toxic colitis]
+	(* <- lang_en;; *);;
+
+	concept_parasitic_colitis
+=> nrel_main_idtf:
+	[паразитарный колит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[parasitic colitis]
+	(* <- lang_en;; *);;
+
+	concept_allergic_colitis
+=> nrel_main_idtf:
+	[аллергический колит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[allergic colitis]
+	(* <- lang_en;; *);;
+
+	concept_large_intestine
+=> nrel_main_idtf:
+	[толстая кишка]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[large intestine]
+	(* <- lang_en;; *);;
+
+	concept_cholecystitis
+=> nrel_main_idtf:
+	[холецистит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[cholecystitis]
+	(* <- lang_en;; *);;
+
+	concept_enteritis
+=> nrel_main_idtf:
+	[энтерит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[enteritis]
+	(* <- lang_en;; *);;
+
+	concept_function
+=> nrel_main_idtf:
+	[функция]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[function]
+	(* <- lang_en;; *);;
+
+	concept_diverticulosis
+=> nrel_main_idtf:
+	[дивертикулез]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[diverticulosis]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[дивертикулез - это состояние, при котором в просвете кишечника образуются мешочки или выступы, называемые дивертикулами.]
+	(* <- lang_ru;; *);;
+
+concept_diverticula
+=> nrel_main_idtf:
+	[дивертикула]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[diverticula]
+	(* <- lang_en;; *);;
+
+concept_intestine
+=> nrel_main_idtf:
+	[кишечник]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[intestine]
+	(* <- lang_en;; *);;
+
+concept_without_clinical_manifestations
+=> nrel_main_idtf:
+	[без клинических проявлений]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[without clinical manifestations]
+	(* <- lang_en;; *);;
+
+concept_with_clinical_manifestations
+=> nrel_main_idtf:
+	[с клиническими проявлениями]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[with clinical manifestations]
+	(* <- lang_en;; *);;
+
+concept_with_a_complicated_course
+=> nrel_main_idtf:
+	[с осложненным течением]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[with a complicated course]
+	(* <- lang_en;; *);;
+
+	concept_hepatitis
+=> nrel_main_idtf:
+	[гепатит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[hepatitis]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[гепатит - это воспаление печени. Оно может быть вызвано различными причинами, включая вирусы, алкоголь, лекарства и другие токсины. Гепатит может находиться в различных частях печени и иметь разную степень тяжести.]
+	(* <- lang_ru;; *);;
+
+concept_chronic
+=> nrel_main_idtf:
+	[хронический]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[chronic]
+	(* <- lang_en;; *);;
+
+concept_portal_vein
+=> nrel_main_idtf:
+	[воротная вена]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[portal vein]
+	(* <- lang_en;; *);;
+
+concept_digestive_system
+=> nrel_main_idtf:
+	[пищеварительная система]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[digestive system]
+	(* <- lang_en;; *);;
+
+concept_inflammation
+=> nrel_main_idtf:
+	[воспаление]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[inflammation]
+	(* <- lang_en;; *);;
+
+inflammation_of_the_liver
+=> nrel_main_idtf:
+	[воспаление печени]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[inflammation of the liver]
+	(* <- lang_en;; *);;
+
+	nrel_causes_of_occurrence
+=> nrel_main_idtf:
+	[причины возникновения*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[causes of occurrence*]
+	(* <- lang_en;; *);;
+
+concept_metabolic_disorders
+=> nrel_main_idtf:
+	[метаболические нарушения]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[metabolic disorders]
+	(* <- lang_en;; *);;
+
+concept_genetic_factor
+=> nrel_main_idtf:
+	[генетический фактор]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[genetic factor]
+	(* <- lang_en;; *);;
+
+concept_medicines
+=> nrel_main_idtf:
+	[медикаменты]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[medicines]
+	(* <- lang_en;; *);;
+
+concept_poison
+=> nrel_main_idtf:
+	[яд]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[poison]
+	(* <- lang_en;; *);;
+
+concept_acclimatization
+=> nrel_main_idtf:
+	[акклиматизация]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[acclimatization]
+	(* <- lang_en;; *);;
+
+concept_toxic_substances
+=> nrel_main_idtf:
+	[токсичные вещества]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[toxic substances]
+	(* <- lang_en;; *);;
+
+concept_chemicals
+=> nrel_main_idtf:
+	[химикаты]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[chemicals]
+	(* <- lang_en;; *);;
+
+	concept_phosphorus_salts
+=> nrel_main_idtf:
+	[соли фосфора]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[phosphorus salts]
+	(* <- lang_en;; *);;
+
+	concept_arsenic
+=> nrel_main_idtf:
+	[мышьяк]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[arsenic]
+	(* <- lang_en;; *);;
+
+	concept_lead
+=> nrel_main_idtf:
+	[свинец]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[lead]
+	(* <- lang_en;; *);;
+
+	concept_mercury
+=> nrel_main_idtf:
+	[ртуть]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[mercury]
+	(* <- lang_en;; *);;
+
+concept_alcohol
+=> nrel_main_idtf:
+	[алкоголь]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[alcohol]
+	(* <- lang_en;; *);;
+
+concept_hepatitis_C_virus
+=> nrel_main_idtf:
+	[Вирус гепатита С]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Hepatitis C virus]
+	(* <- lang_en;; *);;
+
+concept_hepatitis_B_virus
+=> nrel_main_idtf:
+	[Вирус гепатита В]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Hepatitis B virus]
+	(* <- lang_en;; *);;
+
+concept_hepatitis_D_virus
+=> nrel_main_idtf:
+	[Вирус гепатита D]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Hepatitis D virus]
+	(* <- lang_en;; *);;
+
+concept_hepatitis_E_virus
+=> nrel_main_idtf:
+	[вирус гепатита Е]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[hepatitis E virus]
+	(* <- lang_en;; *);;
+
+concept_hepatitis_A_virus
+=> nrel_main_idtf:
+	[Вирус гепатита А]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Hepatitis A virus]
+	(* <- lang_en;; *);;
+
+concept_infections
+=> nrel_main_idtf:
+	[инфекции]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[infections]
+	(* <- lang_en;; *);;
+
+viral_infections
+=> nrel_main_idtf:
+	[вирусные инфекции]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[viral infections]
+	(* <- lang_en;; *);;
+
+concept_fiber
+=> nrel_main_idtf:
+	[клетчатка]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[fiber]
+	(* <- lang_en;; *);;
+
+concept_old_age
+=> nrel_main_idtf:
+	[старость]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[old age]
+	(* <- lang_en;; *);;
+
+concept_sedentary_lifestyle
+=> nrel_main_idtf:
+	[сидячий образ жизни]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[sedentary lifestyle]
+	(* <- lang_en;; *);;
+
+concept_smoking
+=> nrel_main_idtf:
+	[курение]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[smoking]
+	(* <- lang_en;; *);;
+
+	concept_bile_excreting_pathway
+=> nrel_main_idtf:
+	[желчновыводящий путь]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[bile-excreting pathway]
+	(* <- lang_en;; *);;
+
+	concept_bile
+=> nrel_main_idtf:
+	[желчь]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[bile]
+	(* <- lang_en;; *);;
+
+	concept_cholesterol
+=> nrel_main_idtf:
+	[холестерин]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[cholesterol]
+	(* <- lang_en;; *);;
+
+	concept_process
+=> nrel_main_idtf:
+	[процесс]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[process]
+	(* <- lang_en;; *);;
+
+	concept_bilirubin
+=> nrel_main_idtf:
+	[билирубин]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[bilirubin]
+	(* <- lang_en;; *);;
+
+concept_severe_form_of_heart_failure
+=> nrel_main_idtf:
+	[тяжелая форма сердечной недостаточности]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[severe form of heart failure]
+	(* <- lang_en;; *);;
+
+	concept_autoimmune_disorder
+=> nrel_main_idtf:
+	[аутоиммунное расстройство]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[autoimmune disorder]
+	(* <- lang_en;; *);;
+
+	concept_parasitic_infestations
+=> nrel_main_idtf:
+	[паразитарные инвазии]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[parasitic infestations]
+	(* <- lang_en;; *);;
+
+	concept_fatness
+=> nrel_main_idtf:
+	[ожирение]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[fatness]
+	(* <- lang_en;; *);;
+
+	concept_portal_hypertension
+=> nrel_main_idtf:
+	[портальная гипертензия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[portal hypertension]
+	(* <- lang_en;; *);;
+
+	concept_outflow_of_bile
+=> nrel_main_idtf:
+	[отток желчи]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[outflow of bile]
+	(* <- lang_en;; *);;
+
+concept_diabetes_mellitus
+=> nrel_main_idtf:
+	[сахарный диабет]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[diabetes mellitus]
+	(* <- lang_en;; *);;
+
+	concept_worms
+=> nrel_main_idtf:
+	[глисты]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[worms]
+	(* <- lang_en;; *);;
+
+concept_bacteria
+=> nrel_main_idtf:
+	[бактерии]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[bacteria]
+	(* <- lang_en;; *);;
+
+	concept_nutrition
+=> nrel_main_idtf:
+	[питание]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[nutrition]
+	(* <- lang_en;; *);;
+
+	concept_liver_failure
+=> nrel_main_idtf:
+	[печеночная недостаточность]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[liver failure]
+	(* <- lang_en;; *);;
+
+	concept_radiation
+=> nrel_main_idtf:
+	[радиация]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[radiation]
+	(* <- lang_en;; *);;
+
+	concept_atherosclerosis
+=> nrel_main_idtf:
+	[атеросклероз]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[atherosclerosis]
+	(* <- lang_en;; *);;
+
+	concept_hygiene
+=> nrel_main_idtf:
+	[гигиена]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[hygiene]
+	(* <- lang_en;; *);;
+
+	concept_allergy
+=> nrel_main_idtf:
+	[аллергия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[allergy]
+	(* <- lang_en;; *);;
+
+	nrel_symptoms
+=> nrel_main_idtf:
+	[симптомы*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[symptoms*]
+	(* <- lang_en;; *);;
+
+concept_belly
+=> nrel_main_idtf:
+	[живот]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[belly]
+	(* <- lang_en;; *);;
+
+concept_bloating
+=> nrel_main_idtf:
+	[вздутие]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[bloating]
+	(* <- lang_en;; *);;
+
+concept_pain
+=> nrel_main_idtf:
+	[боль]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pain]
+	(* <- lang_en;; *);;
+
+concept_fever
+=> nrel_main_idtf:
+	[лихорадка]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[fever]
+	(* <- lang_en;; *);;
+
+concept_nausea
+=> nrel_main_idtf:
+	[тошнота]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[nausea]
+	(* <- lang_en;; *);;
+
+concept_weakness
+=> nrel_main_idtf:
+	[слабость]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[weakness]
+	(* <- lang_en;; *);;
+
+concept_hypochondrium
+=> nrel_main_idtf:
+	[подреберье]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[hypochondrium]
+	(* <- lang_en;; *);;
+
+	concept_right_upper_arm
+=> nrel_main_idtf:
+	[правое надплечье]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[right upper arm]
+	(* <- lang_en;; *);;
+
+	concept_shoulder_blade
+=> nrel_main_idtf:
+	[лопатка]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[shoulder blade]
+	(* <- lang_en;; *);;
+
+concept_joints
+=> nrel_main_idtf:
+	[суставы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[joints]
+	(* <- lang_en;; *);;
+
+	concept_palms
+=> nrel_main_idtf:
+	[ладони]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[palms]
+	(* <- lang_en;; *);;
+
+	concept_feet
+=> nrel_main_idtf:
+	[стопы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[feet]
+	(* <- lang_en;; *);;
+
+	concept_lumbar_region
+=> nrel_main_idtf:
+	[поясничная область]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[lumbar region]
+	(* <- lang_en;; *);;
+
+concept_volatile
+=> nrel_main_idtf:
+	[летучая]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[volatile]
+	(* <- lang_en;; *);;
+
+concept_pinpoint
+=> nrel_main_idtf:
+	[точечная]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pinpoint]
+	(* <- lang_en;; *);;
+
+concept_aching
+=> nrel_main_idtf:
+	[ноющая]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[aching]
+	(* <- lang_en;; *);;
+
+concept_sharp
+=> nrel_main_idtf:
+	[резкая]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[sharp]
+	(* <- lang_en;; *);;
+
+concept_emotional_instability
+=> nrel_main_idtf:
+	[эмоциональная нестабильность]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[emotional instability]
+	(* <- lang_en;; *);;
+
+concept_restless_sleep
+=> nrel_main_idtf:
+	[беспокойный сон]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[restless sleep]
+	(* <- lang_en;; *);;
+
+concept_vomiting
+=> nrel_main_idtf:
+	[рвота]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[vomiting]
+	(* <- lang_en;; *);;
+
+concept_fatigue
+=> nrel_main_idtf:
+	[усталость]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[fatigue]
+	(* <- lang_en;; *);;
+
+concept_changing_the_shade_of_physiological_functions
+=> nrel_main_idtf:
+	[изменение оттенка физиологических функций]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[changing the shade of physiological functions]
+	(* <- lang_en;; *);;
+
+concept_whites_of_the_eyes
+=> nrel_main_idtf:
+	[белки глаз]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[whites of the eyes]
+	(* <- lang_en;; *);;
+
+concept_skin
+=> nrel_main_idtf:
+	[кожа]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[skin]
+	(* <- lang_en;; *);;
+
+concept_mucous_membranes
+=> nrel_main_idtf:
+	[слизистые оболочки]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[mucous membranes]
+	(* <- lang_en;; *);;
+
+concept_nose
+=> nrel_main_idtf:
+	[нос]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[nose]
+	(* <- lang_en;; *);;
+
+concept_incorrect
+=> nrel_main_idtf:
+	[неправильное]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[incorrect]
+	(* <- lang_en;; *);;
+
+concept_diarrhea
+=> nrel_main_idtf:
+	[диарея]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[diarrhea]
+	(* <- lang_en;; *);;
+
+concept_constipation
+=> nrel_main_idtf:
+	[запор]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[constipation]
+	(* <- lang_en;; *);;
+
+concept_discomfort
+=> nrel_main_idtf:
+	[дискомфорт]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[discomfort]
+	(* <- lang_en;; *);;
+
+concept_blood
+=> nrel_main_idtf:
+	[кровь]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[blood]
+	(* <- lang_en;; *);;
+
+	concept_foreign_bodies
+=> nrel_main_idtf:
+	[инородные тела]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[foreign bodies]
+	(* <- lang_en;; *);;
+
+concept_tumor
+=> nrel_main_idtf:
+	[опухоль]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[tumor]
+	(* <- lang_en;; *);;
+
+concept_tumors
+=> nrel_main_idtf:
+	[опухоли]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[tumors]
+	(* <- lang_en;; *);;
+
+	concept_polyps
+=> nrel_main_idtf:
+	[полипы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[polyps]
+	(* <- lang_en;; *);;
+
+	concept_mucus
+=> nrel_main_idtf:
+	[слизистая]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[mucus]
+	(* <- lang_en;; *);;
+
+	concept_reflux
+=> nrel_main_idtf:
+	[рефлюкс]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[reflux]
+	(* <- lang_en;; *);;
+
+concept_definition
+=> nrel_main_idtf:
+	[определение]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[definition]
+	(* <- lang_en;; *);;
+
+
+concept_definitions
+=> nrel_main_idtf:
+	[определения]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[definitions]
+	(* <- lang_en;; *);;
+
+concept_brain
+=> nrel_main_idtf:
+	[мозг]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[brain]
+	(* <- lang_en;; *);;
+
+concept_depression
+=> nrel_main_idtf:
+	[депрессия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[depression]
+	(* <- lang_en;; *);;	
+
+concept_multiple_sclerosis
+=> nrel_main_idtf:
+	[рассеянный склероз]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[multiple sclerosis]
+	(* <- lang_en;; *);;	
+
+concept_insulin_resistance
+=> nrel_main_idtf:
+	[инсулинорезистентность]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[insulin resistance]
+	(* <- lang_en;; *);;	
+
+concept_microbiota
+=> nrel_main_idtf:
+	[микробиота]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[microbiota]
+	(* <- lang_en;; *);;	
+
+concept_stomach
+=> nrel_main_idtf:
+	[живот]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[stomach]
+	(* <- lang_en;; *);;	
+
+concept_stomach
+=> nrel_main_idtf:
+	[живот]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[stomach]
+	(* <- lang_en;; *);;	
+
+concept_nutritious
+=> nrel_main_idtf:
+	[питательный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[nutritious]
+	(* <- lang_en;; *);;	
+
+concept_substances
+=> nrel_main_idtf:
+	[вещества]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[substances]
+	(* <- lang_en;; *);;
+
+concept_suction
+=> nrel_main_idtf:
+	[всасывание]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[suction]
+	(* <- lang_en;; *);;
+
+concept_abdominal_area
+=> nrel_main_idtf:
+	[область живота]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[abdominal area]
+	(* <- lang_en;; *);;
+
+concept_colicobranch
+=> nrel_main_idtf:
+	[коликобразная]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[colicobranch]
+	(* <- lang_en;; *);;
+
+concept_tumescent
+=> nrel_main_idtf:
+	[распирающая]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[tumescent]
+	(* <- lang_en;; *);;
+
+concept_oral_cavity
+=> nrel_main_idtf:
+	[полость рта]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[oral cavity]
+	(* <- lang_en;; *);;
+
+concept_skin_microflora
+=> nrel_main_idtf:
+	[кожная микрофлора]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[skin microflora]
+	(* <- lang_en;; *);;
+
+concept_genitals
+=> nrel_main_idtf:
+	[гениталии]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[genitals]
+	(* <- lang_en;; *);;
+
+concept_malabsorption
+=> nrel_main_idtf:
+	[мальабсорбция]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[malabsorption]
+	(* <- lang_en;; *);;
+
+concept_reactions
+=> nrel_main_idtf:
+	[реакции]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[reactions]
+	(* <- lang_en;; *);;
+
+concept_allergic
+=> nrel_main_idtf:
+	[аллергические]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[allergic]
+	(* <- lang_en;; *);;
+
+concept_microflora
+=> nrel_main_idtf:
+	[микрофлора]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[microflora]
+	(* <- lang_en;; *);;
+
+concept_digestive_tract
+=> nrel_main_idtf:
+	[пищеварительный тракт]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[digestive tract]
+	(* <- lang_en;; *);;
+
+concept_atopic_dermatitis
+=> nrel_main_idtf:
+	[атопический дерматит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[atopic dermatitis]
+	(* <- lang_en;; *);;
+
+concept_rheumatoid_arthritis
+=> nrel_main_idtf:
+	[ревматоидный артрит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[rheumatoid arthritis]
+	(* <- lang_en;; *);;
+
+concept_systemic_lupus_erythematosus
+=> nrel_main_idtf:
+	[системная красная волчанка]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[systemic lupus erythematosus]
+	(* <- lang_en;; *);;
+
+concept_left_subcostal_area
+=> nrel_main_idtf:
+	[левое подреберье]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[left subcostal area]
+	(* <- lang_en;; *);;
+
+concept_recurrent
+=> nrel_main_idtf:
+	[рецедивирующий]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[recurrent]
+	(* <- lang_en;; *);;
+
+concept_idiomatic
+=> nrel_main_idtf:
+	[идиоматический]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[idiomatic]
+	(* <- lang_en;; *);;
+
+concept_toxic
+=> nrel_main_idtf:
+	[токсический]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[toxic]
+	(* <- lang_en;; *);;
+
+concept_hereditary
+=> nrel_main_idtf:
+	[наследственный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[hereditary]
+	(* <- lang_en;; *);;
+
+concept_autoimmune
+=> nrel_main_idtf:
+	[автоимунный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[autoimmune]
+	(* <- lang_en;; *);;
+
+concept_obstructive
+=> nrel_main_idtf:
+	[обструктивный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[obstructive]
+	(* <- lang_en;; *);;
+
+concept_acute
+=> nrel_main_idtf:
+	[острый]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[acute]
+	(* <- lang_en;; *);;
+
+concept_light
+=> nrel_main_idtf:
+	[лёкгая]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[light]
+	(* <- lang_en;; *);;
+
+concept_medium
+=> nrel_main_idtf:
+	[средняя]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[medium]
+	(* <- lang_en;; *);;
+
+concept_heavy
+=> nrel_main_idtf:
+	[тяжёлая]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[heavy]
+	(* <- lang_en;; *);;
+
+concept_human_organism
+=> nrel_main_idtf:
+	[организм человека]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[human organism]
+	(* <- lang_en;; *);;
+
+concept_last_six_months
+=> nrel_main_idtf:
+	[последние 6 мес]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[last six months]
+	(* <- lang_en;; *);;
+
+concept_unstoppable
+=> nrel_main_idtf:
+	[неукротимая]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[unstoppable]
+	(* <- lang_en;; *);;
+
+concept_spine
+=> nrel_main_idtf:
+	[спина]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[spine]
+	(* <- lang_en;; *);;
+
+concept_upper_abdomen
+=> nrel_main_idtf:
+	[верхняя часть живота]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[upper abdomen]
+	(* <- lang_en;; *);;
+
+concept_shingles
+=> nrel_main_idtf:
+	[опоясывающая]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[shingles]
+	(* <- lang_en;; *);;
+
+concept_gastric_stomach
+=> nrel_main_idtf:
+	[желудок]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[gastric stomach]
+	(* <- lang_en;; *);;
+
+concept_pancreas
+=> nrel_main_idtf:
+	[поджелудочная железа]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pancreas]
+	(* <- lang_en;; *);;
+
+concept_loss
+=> nrel_main_idtf:
+	[потеря]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[loss]
+	(* <- lang_en;; *);;
+
+concept_alcoholic_alimentary
+=> nrel_main_idtf:
+	[алкогольно-алиментарный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[alcoholic-alimentary]
+	(* <- lang_en;; *);;
+
+concept_biliary
+=> nrel_main_idtf:
+	[билеариный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[biliary]
+	(* <- lang_en;; *);;
+
+concept_traumatic
+=> nrel_main_idtf:
+	[травматический]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[traumatic]
+	(* <- lang_en;; *);;
+
+concept_alcohol_abuse
+=> nrel_main_idtf:
+	[злоупотребление спиртным]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[alcohol abuse]
+	(* <- lang_en;; *);;
+
+concept_improper_diet
+=> nrel_main_idtf:
+	[неправильное питание]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[improper diet]
+	(* <- lang_en;; *);;
+
+concept_mechanical_jaundice
+=> nrel_main_idtf:
+	[механическая желтуха]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[mechanical jaundice]
+	(* <- lang_en;; *);;
+
+concept_pseudoaneurysm
+=> nrel_main_idtf:
+	[псевдоаневризма]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pseudoaneurysm]
+	(* <- lang_en;; *);;
+
+concept_endocrine_disorders
+=> nrel_main_idtf:
+	[эндокринные нарушения]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[endocrine disorders]
+	(* <- lang_en;; *);;
+
+concept_pancreatic_cancer
+=> nrel_main_idtf:
+	[рак поджелудочной железы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pancreatic cancer]
+	(* <- lang_en;; *);;
+
+concept_meal
+=> nrel_main_idtf:
+	[приём пищи]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[meal]
+	(* <- lang_en;; *);;
+
+concept_cyst
+=> nrel_main_idtf:
+	[киста]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[cyst]
+	(* <- lang_en;; *);;
+
+concept_thin
+=> nrel_main_idtf:
+	[тонкий]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[thin]
+	(* <- lang_en;; *);;
+
+concept_thick
+=> nrel_main_idtf:
+	[толстый]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[thick]
+	(* <- lang_en;; *);;
+
+concept_aggravated
+=> nrel_main_idtf:
+	[осложнённая]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[aggravated]
+	(* <- lang_en;; *);;
+
+concept_non_aggravated
+=> nrel_main_idtf:
+	[неосложнённая]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[non aggravated]
+	(* <- lang_en;; *);;
+
+concept_stool
+=> nrel_main_idtf:
+	[стул]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[stool]
+	(* <- lang_en;; *);;
+
+concept_disturbed
+=> nrel_main_idtf:
+	[нарушенный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[disturbed]
+	(* <- lang_en;; *);;
+
+concept_soldering
+=> nrel_main_idtf:
+	[спайка]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[soldering]
+	(* <- lang_en;; *);;
+
+concept_smell
+=> nrel_main_idtf:
+	[запах]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[smell]
+	(* <- lang_en;; *);;
+
+concept_unpleasant
+=> nrel_main_idtf:
+	[неприятный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[unpleasant]
+	(* <- lang_en;; *);;
+
+concept_lifestyle
+=> nrel_main_idtf:
+	[образ жизни]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[lifestyle]
+	(* <- lang_en;; *);;
+
+concept_sedentary
+=> nrel_main_idtf:
+	[неподвижный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[sedentary]
+	(* <- lang_en;; *);;
+
+concept_infectious_toxic
+=> nrel_main_idtf:
+	[инфекционно-токсический]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[infectious-toxic]
+	(* <- lang_en;; *);;
+
+concept_shock
+=> nrel_main_idtf:
+	[шок]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[shock]
+	(* <- lang_en;; *);;
+
+concept_necrosis
+=> nrel_main_idtf:
+	[некроз]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[necrosis]
+	(* <- lang_en;; *);;
+
+concept_ischemia
+=> nrel_main_idtf:
+	[ишемия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[ischemia]
+	(* <- lang_en;; *);;
+
+concept_color
+=> nrel_main_idtf:
+	[цвет]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[color]
+	(* <- lang_en;; *);;
+
+concept_scarlet
+=> nrel_main_idtf:
+	[алый]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[scarlet]
+	(* <- lang_en;; *);;
+
+concept_first
+=> nrel_main_idtf:
+	[первый]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[first]
+	(* <- lang_en;; *);;
+
+concept_second
+=> nrel_main_idtf:
+	[второй]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[second]
+	(* <- lang_en;; *);;
+
+concept_third
+=> nrel_main_idtf:
+	[третий]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[third]
+	(* <- lang_en;; *);;
+
+concept_fourth
+=> nrel_main_idtf:
+	[четвертый]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[fourth]
+	(* <- lang_en;; *);;
+
+concept_lowered
+=> nrel_main_idtf:
+	[пониженный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[lowered]
+	(* <- lang_en;; *);;
+
+concept_lungs
+=> nrel_main_idtf:
+	[легкие]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[lungs]
+	(* <- lang_en;; *);;
+
+concept_bones
+=> nrel_main_idtf:
+	[кости]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[bones]
+	(* <- lang_en;; *);;
+
+concept_metastasis
+=> nrel_main_idtf:
+	[метастазирование]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[metastasis]
+	(* <- lang_en;; *);;
+
+concept_mucous_membrane
+=> nrel_main_idtf:
+	[слизистая оболочка]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[mucous membrane]
+	(* <- lang_en;; *);;
+
+concept_breast
+=> nrel_main_idtf:
+	[грудина]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[breast]
+	(* <- lang_en;; *);;
+
+concept_burn
+=> nrel_main_idtf:
+	[ожог]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[burn]
+	(* <- lang_en;; *);;
+
+concept_foreign_body
+=> nrel_main_idtf:
+	[инородное тело]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[foreign body]
+	(* <- lang_en;; *);;
+
+concept_chemical
+=> nrel_main_idtf:
+	[химический]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[chemical]
+	(* <- lang_en;; *);;
+
+concept_epigastrium
+=> nrel_main_idtf:
+	[эпигастрий]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[epigastrium]
+	(* <- lang_en;; *);;
+
+concept_stinging
+=> nrel_main_idtf:
+	[жжение]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[stinging]
+	(* <- lang_en;; *);;
+
+concept_epigastric_area
+=> nrel_main_idtf:
+	[область эпигастрия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[epigastric area]
+	(* <- lang_en;; *);;
+
+concept_heartburn
+=> nrel_main_idtf:
+	[изжога]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[heartburn]
+	(* <- lang_en;; *);;
+
+concept_strong
+=> nrel_main_idtf:
+	[сильный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[strong]
+	(* <- lang_en;; *);;
+
+concept_searing
+=> nrel_main_idtf:
+	[жгучий]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[searing]
+	(* <- lang_en;; *);;
+
+concept_esophagus
+=> nrel_main_idtf:
+	[пищевод]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[esophagus]
+	(* <- lang_en;; *);;
+
+concept_dysphagia
+=> nrel_main_idtf:
+	[дисфагия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[dysphagia]
+	(* <- lang_en;; *);;
+
+concept_salivation
+=> nrel_main_idtf:
+	[слюноотделение]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[salivation]
+	(* <- lang_en;; *);;
+
+concept_increased
+=> nrel_main_idtf:
+	[повышенное]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[increased]
+	(* <- lang_en;; *);;
+
+concept_subacute
+=> nrel_main_idtf:
+	[подострый]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[subacute]
+	(* <- lang_en;; *);;
+
+concept_ulcer
+=> nrel_main_idtf:
+	[язва]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[ulcer]
+	(* <- lang_en;; *);;
+
+concept_barretts_disease
+=> nrel_main_idtf:
+	[болезнь Барретта]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Barrett's disease]
+	(* <- lang_en;; *);;
+
+concept_stenosis
+=> nrel_main_idtf:
+	[стеноз]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[stenosis]
+	(* <- lang_en;; *);;
+
+concept_dysbacteriosis
+=> nrel_main_idtf:
+	[дисбактериоз]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[dysbacteriosis]
+	(* <- lang_en;; *);;
+
+concept_esophagitis
+=> nrel_main_idtf:
+	[эзофагит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[esophagitis]
+	(* <- lang_en;; *);;
+
+concept_pneumatosis
+=> nrel_main_idtf:
+	[пневматоз]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pneumatosis]
+	(* <- lang_en;; *);;
+
+concept_stomach_cancer
+=> nrel_main_idtf:
+	[рак желудка]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[stomach_cancer]
+	(* <- lang_en;; *);;
+
+concept_occurence
+=> nrel_main_idtf:
+	[появление]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[occurence]
+	(* <- lang_en;; *);;
+
+concept_localization
+=> nrel_main_idtf:
+	[место расположения]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[localization]
+	(* <- lang_en;; *);;
+
+concept_form
+=> nrel_main_idtf:
+	[форма]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[form]
+	(* <- lang_en;; *);;
+
+concept_physical_damage
+=> nrel_main_idtf:
+	[физический ущерб]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[physical damage]
+	(* <- lang_en;; *);;
+
+concept_behind_breast
+=> nrel_main_idtf:
+	[позади груди]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[behind breast]
+	(* <- lang_en;; *);;
+
+concept_autoimmune_diseases
+=> nrel_main_idtf:
+	[аутоимунные патологии]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[autoimmune diseases]
+	(* <- lang_en;; *);;
+
+concept_allergic_diseases
+=> nrel_main_idtf:
+	[аллергические заболевания]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[allergic diseases]
+	(* <- lang_en;; *);;
+
+concept_neuropsychiatric_diseases
+=> nrel_main_idtf:
+	[нейропсихические болезни]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[neuropsychiatric diseases]
+	(* <- lang_en;; *);;
+
+concept_pathological_pathway
+=> nrel_main_idtf:
+	[патологический путь]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[pathological pathway]
+	(* <- lang_en;; *);;
+
+concept_mucous_membrane_inflammation
+=> nrel_main_idtf:
+	[воспаление слизистой оболочки]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[mucous membrane inflammation]
+	(* <- lang_en;; *);;
+
+concept_violation_microflora
+=> nrel_main_idtf:
+	[нарушение микрофлоры]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[violation microflora]
+	(* <- lang_en;; *);;
+
+concept_behind_breast_pain
+=> nrel_main_idtf:
+	[боль за грудиной]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[behind breast pain]
+	(* <- lang_en;; *);;
+
+conecpt_epigastric_pain
+=> nrel_main_idtf:
+	[эпигастральная боль]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[epigastric pain]
+	(* <- lang_en;; *);;
+
+concept_abdominal_pain
+=> nrel_main_idtf:
+	[боль в животе]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[abdominal pain]
+	(* <- lang_en;; *);;
+
+concept_cyst_forming
+=> nrel_main_idtf:
+	[образование кисты]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[cyst forming]
+	(* <- lang_en;; *);;
+
+concept_tumor_development
+=> nrel_main_idtf:
+	[развитие опухоли]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[tumor development]
+	(* <- lang_en;; *);;
+
+concept_upper_abdomen_pain
+=> nrel_main_idtf:
+	[боль в верхней части живота]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[upper abdomen pain]
+	(* <- lang_en;; *);;
+
+concept_stomach_tumor_development
+=> nrel_main_idtf:
+	[развитие опухоли желудка]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[stomach tumor development]
+	(* <- lang_en;; *);;
+
+concept_helicobacter_pylori
+=> nrel_main_idtf:
+	[хеликобактер пилори]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[helicobacter pylori]
+	(* <- lang_en;; *);;
+
