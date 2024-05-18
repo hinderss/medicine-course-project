@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="r{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='scripts/dropdownTrigger.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/menuTrigger.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/sidebarTrigger.js') }}"></script>
+
 
     <title>Doctor List</title>
 </head>
@@ -264,7 +268,7 @@
       </div>
 </body>
 
-<script>
+<!-- <script>
     document.addEventListener("DOMContentLoaded", function() {
         const dropdownBtn = document.getElementById("doctorListSortContainer");
         const dropdownImg = document.getElementById("sortDropdownImg");
@@ -282,8 +286,8 @@
         });
     });
 
-</script>
-<script>
+</script> -->
+<!-- <script>
     document.addEventListener("DOMContentLoaded", function() {
         // Для специализации врачей
         const dropdownSpecialityImg = document.getElementById("doctorsSpecialtyDropdownImg");
@@ -357,9 +361,9 @@
             }
         });
     });
-</script>
+</script> -->
 
-<script>
+<!-- <script>
     document.addEventListener("DOMContentLoaded", function() {
         const menuBtn = document.querySelector("#menuIcon"); // Получаем изображение меню
         const menu = document.querySelector(".menu"); // Получаем само меню
@@ -381,9 +385,9 @@
             }
         });
     });
-</script>
+</script> -->
 
-<script>
+<!-- <script>
     document.addEventListener("DOMContentLoaded", function() {
         const closeSidebarBtn = document.querySelector("#closeSidebarBtn");
         const openSidebarBtn =  document.querySelector("#filterIcon");
@@ -409,7 +413,7 @@
                 sidebar.style.display = "none";
         });
     });
-</script>
+</script> -->
 
 
 {% endblock %}

@@ -12,28 +12,34 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.0.9/dist/js/splide.min.js"></script>
     <script src="static/calendar/vanilla-calendar.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script>
+    <script src="{{ url_for('static', filename='scripts/changeChatIconOnScroll.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/calendarInit.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/getCalendarValue.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/sliderSettings.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/chat.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/availableAppointments.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/createAppointment.js') }}"></script>
+
+   <!-- <script>
         window.addEventListener('scroll', function () {
             var gptIcon = document.getElementById('gptIcon');
             var scrollPosition = window.scrollY;
 
-            // Use className instead of class
-            // Also, set the correct classList values
             if (scrollPosition > 70) {
                 gptIcon.classList.remove('white');
             } else {
                 gptIcon.classList.add('white');
             }
         });
-    </script>
-    <script>
+    </script> -->
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function() {
             const calendar = new VanillaCalendar('#calendar');
             calendar.init();
             document.getElementById("specialtySelection").classList.add("hidden");
         });
-    </script>
-    <script>
+    </script> -->
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Добавляем обработчик событий для родительского элемента, используя делегирование
             document.addEventListener('click', function(event) {
@@ -42,37 +48,37 @@
                     // Получаем значение data-calendar-day
                     var selectedDate = event.target.getAttribute('data-calendar-day');
 
-                    // Выводим значение в консоль
-                    // console.log("Выбранная дата:", selectedDate);
+                        // Выводим значение в консоль
+                        // console.log("Выбранная дата:", selectedDate);
 
-                    // Далее, вы можете использовать значение selectedDate и подставить его в нужное место в форме
-                    // Например, для подстановки в поле с именем "date":
+                        // Далее, вы можете использовать значение selectedDate и подставить его в нужное место в форме
+                        // Например, для подстановки в поле с именем "date":
                     document.querySelector('input[name="date"]').value = selectedDate;
                     goBack();
                     document.getElementById("specialtySelection").classList.remove("hidden");
                 }
             });
         });
-    </script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-      new Splide('#splide-container', {
-        type       : 'carousel',
-        perPage    : 1,
-        pagination : false,
-        focus      : 'center',
-        breakpoints: {
-          600: {
-            perPage: 1,
-          },
-          800: {
-            perPage: 1,
-          },
-        },
-        drag: false,
-      }).mount();
-    });
-  </script>
+    </script> -->
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        new Splide('#splide-container', {
+            type       : 'carousel',
+            perPage    : 1,
+            pagination : false,
+            focus      : 'center',
+            breakpoints: {
+            600: {
+                perPage: 1,
+            },
+            800: {
+                perPage: 1,
+            },
+            },
+            drag: false,
+        }).mount();
+        });
+    </script> -->
 
 
 
@@ -308,7 +314,7 @@
         </div>
     </div>
 
-    <script>
+    <!-- <script>
             $(document).ready(function() {
                 $('#gptIcon').on('click', function() {
                     $('.chat').css('display', 'flex');
@@ -384,9 +390,9 @@
                 scrollChat();
             }, 100);
         });
-    </script>
+    </script> -->
 
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Создаем новый объект XMLHttpRequest
             var xhr = new XMLHttpRequest();
@@ -416,9 +422,9 @@
                 });
             };
         });
-    </script>
+    </script> -->
 
-    <script>
+    <!-- <script>
         function selectSpecialty(specialty) {
             // Отправляем AJAX-запрос для получения списка врачей по выбранному направлению
             var xhr = new XMLHttpRequest();
@@ -571,9 +577,9 @@
             $("#appointementTextArea").addClass("hidden");
             $("#goBackBtn").addClass("hidden");
         }
-    </script>
+    </script> -->
 
-    <script>
+    <!-- <script>
         document.getElementById("createAppointment").addEventListener("submit", function(event){
             event.preventDefault(); // Предотвращаем отправку формы
         
@@ -600,7 +606,7 @@
                 console.error('Произошла ошибка:', error);
             });
         });
-    </script>
+    </script> -->
 
 
             

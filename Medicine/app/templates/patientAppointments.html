@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}Список врачей{% endblock %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/patient_appointments_style.css') }}">
+
+    <title>Записи</title>
+</head>
+<header class="doctorListHeader">
+    <div class="header container row centerH padding100pxW spacebtw">
+        <div class="container row small centerH" id="doctorListHeaderDropdownContainer">
+            <!-- <img src="static/images/dropdown.svg" id="dropdown" class="marginW10px"> -->
+            <h4 class="thin" id="titleBlack">Записи</h4>
+        </div>
+        <div class="container row small center">
+            <img src="static/images/logo.svg" width="40px" class="marginW30px">
+        </div>
+        <div class="container row small" id="doctorListHeaderProfile">
+            <a href="profile">
+                <img src="static/images/profileLogo.svg" width="40px" class="marginW10px">
+            </a>
+            <img src="static/images/menu.png" width="40px" id="menuIcon">
+        </div>
+    </div>
+</header>
+<body class="container marginTop120px">
+    <div class="menu">
+        <div class="container row" id="menuProfileDiv">
+            <img src="static/images/profileLogo.svg" width="40px">
+            <div>
+                <h4 id="name">Загеев Ален</h4>
+                <h5 id="email">gaj@gmail.com</h5>
+            </div>
+        </div>
+        <div class="menuItem active">
+            <img src="static/images/doctorsList.svg" width="40px">
+            <h5>Наши специалисты</h5>
+        </div>
+        <div class="menuItem">
+            <img src="static/images/appointments.svg" width="40px">
+            <a href="appointments">Записи</a>
+        </div>
+        <div class="menuItem">
+            <img src="static/images/medicalCard.png" width="40px">
+            <a href="medicalCard">Медицинская карта</a>
+        </div>
+    </div>
+    <div class="container center">
+        <div id="appointmentsTitle">
+            <h2>Мои записи</h2>
+            <h3>Никита, Хочу К Проктологу</h3>
+        </div>
+    </div>
+
+    <div class="appointments"> 
+        <div class="appointment">
+            <div id="apointementsItem">
+                <div class="container row">
+                    <img src="static/images/logo.svg" width="200px">
+                    <div id="apointementData">
+                        <h3>Витальев Виталий</h3>
+                        <div id="date-time">
+                            <h3>DATE</h3>
+                            <h3>TIME</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <h5 id="details">Примечания: Болит жопа, очень</h5>
+
+            </div>    
+        </div>
+
+        <div class="appointment">
+            <div id="apointementsItem">
+                <div class="container row">
+                    <img src="static/images/logo.svg" width="200px">
+                    <div id="apointementData">
+                        <h3>Витальев Виталий</h3>
+                        <div id="date-time">
+                            <h3>DATE</h3>
+                            <h3>TIME</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <h5 id="details">Примечания: Не болит жопа, просто хочу массаж простаты</h5>
+
+            </div>    
+        </div>
+    </div>
+</body>
+{% endblock %}

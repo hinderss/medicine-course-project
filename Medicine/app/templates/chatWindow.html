@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/style.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts/chat.js') }}"></script>
+    
     <title>Index</title>
 </head>
 <body> 
@@ -31,7 +33,7 @@
         </div>
         </div>
 
-        <script>
+        <!-- <script>
                 $(document).ready(function() {
                     $('#gptIcon').on('click', function() {
                         $('.chat').css('display', 'flex');
@@ -107,6 +109,6 @@
                     scrollChat();
                 }, 100);
             });
-        </script>
+        </script> -->
 </body>
 </html>

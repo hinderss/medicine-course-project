@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="r{{ url_for('static', filename='style.css') }}">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script>
+    <script src="{{ url_for('static', filename='scripts/chat.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/medicalCardToggleRegistrationAddress.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/medicalCardHighlightActive.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/scrollToTop.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/toggleSubmitForm.js') }}"></script>
+
+    <!-- <script>
         document.addEventListener('DOMContentLoaded', function() {
             const sidebarItems = document.querySelectorAll('.sidebar h5');
 
@@ -21,6 +27,7 @@
             });
         });
     </script>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const byAddressButton = document.getElementById('byAddressButton');
@@ -37,7 +44,8 @@
             });
         });
     });
-</script>
+</script> -->
+
     <title>Medical Card</title>
 </head>
 <header class="medicalCardHeader">
@@ -259,7 +267,7 @@
         </div>
         </div>
 
-    <script>
+    <!-- <script>
     document.addEventListener('DOMContentLoaded', function() {
         const sidebarItems = document.querySelectorAll('.sidebar h5');
 
@@ -273,8 +281,8 @@
             });
         });
     });
-</script>
-<script>
+    </script> -->
+<!-- <script>
 document.addEventListener('DOMContentLoaded', function() {
     const byAddressButton = document.getElementById('registrationAddressEqualLivivngAddress');
     const registrationAddressSection = document.querySelectorAll('.registrationAddressSection');
@@ -326,95 +334,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-</script>
-<script>
+</script> -->
+<!-- <script>
 function scrollToTop() {
     window.scrollTo(0, 0);
 }
-</script>
-<script>
+</script> -->
+<!-- <script>
     document.getElementById('submitBtn').addEventListener('click', function() {
             document.getElementById('signupForm').submit();
         });
-</script>
-
-        <script>
-                $(document).ready(function() {
-                    $('#gptIcon').on('click', function() {
-                        $('.chat').css('display', 'flex');
-                        $('#gptIcon').css('display', 'none');
-                    });
-        
-                    $('#closeChatBtn').on('click', function() {
-                        $('.chat').css('display', 'none');
-                        $('#gptIcon').css('display', 'block');
-                    });
-                });
-
-            var $messages = $('.messages-content'),
-                i = 0;
-
-            function setDate() {
-                var d = new Date();
-                $('<div class="timestamp">' + d.getHours() + ':' + d.getMinutes() + '</div>').appendTo($('.message:last'));
-            }
-
-            function insertMessage(msg) {
-                if ($.trim(msg) == '') {
-                    return false;
-                }
-                $('<div class="message message-personal">' + msg + '</div>').appendTo($messages).addClass('new');
-                setDate();
-                $('.message-input').val(null);
-                scrollChat(); // Прокручиваем при каждом сообщении
-                setTimeout(function() {
-                    fakeMessage();
-                }, 1000 + (Math.random() * 20) * 20);
-            }
-
-            $('.message-submit').click(function() {
-                insertMessage($('.message-input').val());
-            });
-
-            $(window).on('keydown', function(e) {
-                if (e.which == 13) {
-                    insertMessage($('.message-input').val());
-                    return false;
-                }
-            });
-
-            var Fake = [
-                'Hi there, I\'m AI Chat and you?',
-                'Nice to meet you',
-                'How are you?',
-                'It\'s an example of an answer. I can\'t understand you',
-                'Still can\'t',
-                ':)'
-            ];
-
-            function fakeMessage() {
-                if ($('.message-input').val() !== '') {
-                    return false;
-                }
-                $('<div class="message new">' + Fake[i] + '</div>').appendTo($messages).addClass('new');
-                setDate();
-                i++;
-                scrollChat(); // Прокручиваем при каждом сообщении
-            }
-
-            function scrollChat() {
-                var height = $messages[0].scrollHeight;
-                $messages.stop().animate({ scrollTop: height }, 'slow');
-            }
-
-            // Initial fake message
-            $(window).on('load', function() {
-                setTimeout(function() {
-                    fakeMessage();
-                    scrollChat();
-                }, 100);
-            });
-        </script>
+</script> -->
 </body>
 {% endblock %}
     

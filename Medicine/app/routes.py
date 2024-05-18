@@ -39,6 +39,10 @@ def welcome():
 def doctor_list():
     return render_template('doctorListPage.html')
 
+@app.route('/doctor_appointments')
+def doctor_appointments():
+    return render_template('doctorAppointments.html')
+
 @app.route('/medical_card', methods=['GET', 'POST'])
 @login_required
 def medical_card():
@@ -224,7 +228,7 @@ def appointments():
     if current_user.patient:
         user = current_user.patient
         appointments = Appointment.query.filter_by(patient_id=user.id).all()
-        return render_template('appointments.html', appointments=appointments)
+        return render_template('patientAppointments.html', appointments=appointments)
     else:
         return 'Unauthorized', 403
 

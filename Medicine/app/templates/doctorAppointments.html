@@ -1,0 +1,530 @@
+{% extends "base.html" %}
+{% block title %}Список врачей{% endblock %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/doctor_appointments_style.css') }}">
+
+    <title>Записи</title>
+</head>
+<header class="doctorListHeader">
+    <div class="header container row centerH padding100pxW spacebtw">
+        <div class="container row small centerH" id="doctorListHeaderDropdownContainer">
+            <!-- <img src="static/images/dropdown.svg" id="dropdown" class="marginW10px"> -->
+            <h4 class="thin" id="titleBlack">Записи</h4>
+        </div>
+        <div class="container row small center">
+            <img src="static/images/logo.svg" width="40px" class="marginW30px">
+        </div>
+        <div class="container row small" id="doctorListHeaderProfile">
+            <a href="profile">
+                <img src="static/images/profileLogo.svg" width="40px" class="marginW10px">
+            </a>
+            <img src="static/images/menu.png" width="40px" id="menuIcon">
+        </div>
+    </div>
+</header>
+<body class="container marginTop120px">
+    <div class="menu">
+        <div class="container row" id="menuProfileDiv">
+            <img src="static/images/profileLogo.svg" width="40px">
+            <div>
+                <h4 id="name">Загеев Ален</h4>
+                <h5 id="email">gaj@gmail.com</h5>
+            </div>
+        </div>
+        <div class="menuItem active">
+            <img src="static/images/doctorsList.svg" width="40px">
+            <h5>Наши специалисты</h5>
+        </div>
+        <div class="menuItem">
+            <img src="static/images/appointments.svg" width="40px">
+            <a href="appointments">Записи</a>
+        </div>
+        <div class="menuItem">
+            <img src="static/images/medicalCard.png" width="40px">
+            <a href="medicalCard">Медицинская карта</a>
+        </div>
+    </div>
+    <div class="container center">
+        <div id="appointmentsTitle">
+            <h2>Записи</h2>
+            <h3>Загеев Ален Хуялен (проктолог)</h3>
+        </div>
+    </div>
+
+    <div id="appointmentsTable">
+        <div class="appointmentRow">
+            <h5></h5>
+            <h5>07:00</h5>
+            <h5>08:00</h5>
+            <h5>09:00</h5>
+            <h5>10:00</h5>
+            <h5>11:00</h5>
+            <h5>12:00</h5>
+            <h5>13:00</h5>
+            <h5>14:00</h5>
+            <h5>15:00</h5>
+            <h5>16:00</h5>
+            <h5>17:00</h5>
+            
+        </div>
+        <div class="appointmentRow">
+            <h4>Today</h4>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem">
+                <h6 id="appointmentType">Осмотр</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+        </div>
+        <div class="appointmentRow">
+            <h4>Date 2</h4>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem">
+                <h6 id="appointmentType">Осмотр</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+        </div>
+
+        <div class="appointmentRow">
+            <h4>Date 3</h4>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem">
+                <h6 id="appointmentType">Осмотр</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+        </div>
+
+        <div class="appointmentRow">
+            <h4>Date 4</h4>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem">
+                <h6 id="appointmentType">Осмотр</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+        </div>
+
+        <div class="appointmentRow">
+            <h4>Date 5</h4>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem">
+                <h6 id="appointmentType">Осмотр</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
