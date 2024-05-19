@@ -8,6 +8,8 @@ subject_domain_of_diseases
 	(* <- lang_en;; *);
 
 <- subject_domain;
+<- sc_node_struct;
+<- structure;	
 
 => nrel_private_subject_domain:
 	subject_domain_of_diseases_of_the_gastrointestinal_tract;
