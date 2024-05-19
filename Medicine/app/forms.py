@@ -3,8 +3,9 @@ from flask_wtf.file import FileRequired, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.fields.choices import SelectField, RadioField
 from wtforms.fields.datetime import DateField, TimeField
-from wtforms.fields.simple import FileField, TextAreaField
-from wtforms.validators import DataRequired, Length, Email, InputRequired
+from wtforms.fields.numeric import IntegerField
+from wtforms.fields.simple import FileField, TextAreaField, BooleanField
+from wtforms.validators import DataRequired, Length, Email, InputRequired, Optional, ValidationError, StopValidation
 from app.validators import Phone, FutureDateValidator, FutureTimeValidator, PastDateValidator
 
 
@@ -141,3 +142,65 @@ class CreateAppointmentForm(FlaskForm):
         DataRequired(),
         FutureTimeValidator()])
     submit = SubmitField('Создать окно записи')
+
+
+class ScheduleTimeValidator:
+    def __init__(self, bool_field, message=None):
+        if not message:
+            message = 'Time required'
+        self.message = message
+        self.bool_field = bool_field
+
+    def __call__(self, form, field):
+        if self.bool_field.data:
+            if not field.data:
+                raise ValidationError(self.message)
+        else:
+            field.validators = []
+
+
+class DoctorScheduleForm(FlaskForm):
+    monday_check = BooleanField('Понедельник')
+    monday_start_time = TimeField('C', validators=[Optional()])
+    monday_end_time = TimeField('До', validators=[Optional()])
+    monday_duration = IntegerField('продолжительность(мин)', validators=[Optional()])
+
+    tuesday_check = BooleanField('Вторник')
+    tuesday_start_time = TimeField('C', validators=[Optional()])
+    tuesday_end_time = TimeField('До', validators=[Optional()])
+    tuesday_duration = IntegerField('продолжительность(мин)', validators=[Optional()])
+
+    wednesday_check = BooleanField('Среда')
+    wednesday_start_time = TimeField('C', validators=[Optional()])
+    wednesday_end_time = TimeField('До', validators=[Optional()])
+    wednesday_duration = IntegerField('продолжительность(мин)', validators=[Optional()])
+
+    thursday_check = BooleanField('Четверг')
+    thursday_start_time = TimeField('C', validators=[Optional()])
+    thursday_end_time = TimeField('До', validators=[Optional()])
+    thursday_duration = IntegerField('продолжительность(мин)', validators=[Optional()])
+
+    friday_check = BooleanField('Пятница')
+    friday_start_time = TimeField('C', validators=[Optional()])
+    friday_end_time = TimeField('До', validators=[Optional()])
+    friday_duration = IntegerField('продолжительность(мин)', validators=[Optional()])
+
+    saturday_check = BooleanField('Суббота')
+    saturday_start_time = TimeField('C')
+    saturday_end_time = TimeField('До', validators=[Optional()])
+    saturday_duration = IntegerField('продолжительность(мин)', validators=[Optional()])
+
+    sunday_check = BooleanField('Воскресенье')
+    sunday_start_time = TimeField('C', validators=[Optional()])
+    sunday_end_time = TimeField('До')
+    sunday_duration = IntegerField('продолжительность(мин)', validators=[Optional()])
+
+    submit = SubmitField('Сохранить')
+
+    # def __init__(self, *args, **kwargs):
+    #     super(DoctorScheduleForm, self).__init__(*args, **kwargs)
+    #     self.monday_start_time.validators = [ScheduleTimeValidator(self.monday_check)]
+
+
+
+

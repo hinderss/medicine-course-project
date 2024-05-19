@@ -47,6 +47,8 @@ class Doctor(db.Model):
     rating = db.Column(db.Integer, default=5, nullable=False)
 
     user = db.relationship('User', backref=db.backref('doctor', uselist=False))
+    # Добавляем ссылку на расписание (schedule)
+    schedules = db.relationship('Schedule', backref='doctor', lazy=True)
 
     def to_dict(self):
         return {
@@ -67,6 +69,21 @@ class Doctor(db.Model):
 
     def __str__(self):
         return f"Doctor: {self.surname} {self.firstname} {self.patronymic}, ID: {self.id}"
+
+
+class Schedule(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    doctor_id = db.Column(db.Integer, db.ForeignKey('doctor.id'), nullable=False)
+    weekday = db.Column(db.Integer, nullable=False)
+    start_time = db.Column(db.Time, nullable=False)
+    end_time = db.Column(db.Time, nullable=False)
+    duration_minutes = db.Column(db.Integer, nullable=False)
+
+    # doctor = db.relationship('Doctor', backref=db.backref('schedules', lazy='dynamic'))
+
+    def __str__(self):
+        return (f"Schedule for Doctor {self.doctor_id}, Day: {self.weekday}, ID: {self.id}, "
+                f"{self.start_time} - {self.end_time}, {self.duration_minutes} min")
 
 
 class Patient(db.Model):

@@ -1,10 +1,14 @@
-from datetime import datetime
+from datetime import datetime, timedelta
+
+from sqlalchemy.exc import NoResultFound
+
 from app.helpers import save_file
 from flask import render_template, redirect, url_for, flash, request, send_from_directory, jsonify
 from flask_login import login_user, login_required, logout_user, current_user
 from app import app, db, login_manager
-from app.forms import LoginForm, DoctorForm, PatientForm, MedicalCardForm, AppointmentForm, CreateAppointmentForm
-from app.models import User, Doctor, Patient, MedicalCard, Appointment
+from app.forms import LoginForm, DoctorForm, PatientForm, MedicalCardForm, AppointmentForm, CreateAppointmentForm, \
+    DoctorScheduleForm
+from app.models import User, Doctor, Patient, MedicalCard, Appointment, Schedule
 
 
 @app.route('/')
@@ -142,13 +146,27 @@ def get_available_doctor_time():
         doctor = Doctor.query.get(doctor_id)
         if doctor:
             date = datetime.strptime(date_str, '%Y-%m-%d')
-            appointments = Appointment.query.filter_by(doctor_id=doctor_id) \
+            weekday = date.weekday()
+
+            appointments = []
+            schedule: Schedule = Schedule.query.filter_by(doctor_id=doctor_id, weekday=weekday).first()
+            assigned = Appointment.query.filter_by(doctor_id=doctor_id) \
                 .filter(db.func.date(Appointment.appointment_date_time) == date.date()) \
-                .filter(Appointment.patient_id.is_(None)) \
                 .all()
-            appointments = sorted(appointments, key=lambda x: x.appointment_date_time)
+            assigned_times = [assign.appointment_date_time for assign in assigned]
+            if schedule:
+                start_time = datetime.combine(date, schedule.start_time)
+                end_time = datetime.combine(date, schedule.end_time)
+                step = timedelta(minutes=schedule.duration_minutes)
+                current_time = start_time
+                while current_time <= end_time:
+                    appointments.append(current_time)
+                    current_time += step
+            appointments = sorted(list(
+                set(appointments) - set(assigned_times)
+            ))
             appointments_dict = [
-                {'appointment_date_time': appointment.appointment_date_time}
+                {'appointment_date_time': appointment}
                 for appointment in appointments
             ]
             return jsonify({'appointments': appointments_dict})
@@ -167,21 +185,36 @@ def assign_appointment():
         time = datetime.strptime(form.time.data, '%H:%M:%S').time()
         date_time = datetime.combine(date, time)
 
+        date_time = datetime.combine(date, time).replace(microsecond=0)
         appointment = Appointment.query.filter_by(appointment_date_time=date_time,
                                                   doctor_id=form.doctor_id.data).first()
         if appointment:
-            if not appointment.patient_id:
-                if current_user.patient:
-                    appointment.patient_id = current_user.patient.id
-                    appointment.appointment_details = form.appointment_details.data
-                    db.session.commit()
-                    return jsonify({'message': 'Appointment successfully updated!'}), 200
-                else:
-                    return jsonify({'error': 'User not authorized as patient to update this appointment.'}), 403
-            else:
-                return jsonify({'error': 'Time already selected. Try again.'}), 403
+            return jsonify({'message': 'Appointment already created!'}), 409
+        if current_user.patient:
+            new_appointment: Appointment = Appointment(
+                doctor_id=form.doctor_id.data,
+                patient_id=current_user.patient.id,
+                appointment_date_time=date_time,
+                appointment_details=form.appointment_details.data
+            )
+            db.session.add(new_appointment)
+            db.session.commit()
+            return jsonify({'message': 'Appointment successfully created!'}), 200
         else:
-            return jsonify({'error': 'Appointment not found.'}), 404
+            return jsonify({'error': 'User not authorized as patient to update this appointment.'}), 403
+        # if appointment:
+        #     if not appointment.patient_id:
+        #         if current_user.patient:
+        #             appointment.patient_id = current_user.patient.id
+        #             appointment.appointment_details = form.appointment_details.data
+        #             db.session.commit()
+        #             return jsonify({'message': 'Appointment successfully updated!'}), 200
+        #         else:
+        #             return jsonify({'error': 'User not authorized as patient to update this appointment.'}), 403
+        #     else:
+        #         return jsonify({'error': 'Time already selected. Try again.'}), 403
+        # else:
+        #     return jsonify({'error': 'Appointment not found.'}), 404
     else:
         errors = {field: error for field, error in form.errors.items()}
         return jsonify(errors), 400
@@ -231,12 +264,22 @@ def cancel_appointment():
 @login_required
 def doctor_appointments():
     template = 'doctorAppointments.html'
-    form: CreateAppointmentForm = CreateAppointmentForm()
+    form: DoctorScheduleForm = DoctorScheduleForm()
     if current_user.doctor:
         user: Doctor = current_user.doctor
         appointments = Appointment.query.filter_by(doctor_id=user.id).all()
         appointments = sorted(appointments, key=lambda x: x.appointment_date_time)
-        return render_template(template, appointments=appointments, form=form)
+        return render_template(template,
+                               appointments=appointments,
+                               form=form,
+                               monday=Schedule.query.filter_by(doctor_id=current_user.doctor.id, weekday=0).first(),
+                               tuesday=Schedule.query.filter_by(doctor_id=current_user.doctor.id, weekday=1).first(),
+                               wednesday=Schedule.query.filter_by(doctor_id=current_user.doctor.id, weekday=2).first(),
+                               thursday=Schedule.query.filter_by(doctor_id=current_user.doctor.id, weekday=3).first(),
+                               friday=Schedule.query.filter_by(doctor_id=current_user.doctor.id, weekday=4).first(),
+                               saturday=Schedule.query.filter_by(doctor_id=current_user.doctor.id, weekday=5).first(),
+                               sunday=Schedule.query.filter_by(doctor_id=current_user.doctor.id, weekday=6).first(),
+                               )
     else:
         return "You are not authorized as doctor to access this page.", 403
 
@@ -244,27 +287,62 @@ def doctor_appointments():
 @app.route('/create-appointment', methods=['POST'])
 @login_required
 def create_appointment():
-    form: CreateAppointmentForm = CreateAppointmentForm()
+    form: DoctorScheduleForm = DoctorScheduleForm()
     if current_user.doctor:
-        if form.validate_on_submit():
-            date = form.date.data
-            time = form.time.data
-            date_time = datetime.combine(date, time).replace(microsecond=0)
+        #
+        # form.validate_on_submit()
+        # print(list(form.errors.values()))
+        # try:
+        #     cond = 'Time required' not in list(form.errors.values())[0] and 'Not a valid time value.' in \
+        #     list(form.errors.values())[0] and len(form.errors) == 1
+        # except:
+        #     cond = False
+        #     if len(form.errors) == 0:
+        #         cond = True
+        #     print(cond)
+        # if cond:
+        #
+        # if form.validate_on_submit():
+        if True:
+            doctor_id = current_user.doctor.id
+            weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+            for i, day in enumerate(weekdays):
+                if not getattr(form, f"{day}_check").data:
+                    existing_schedule = Schedule.query.filter_by(doctor_id=doctor_id, weekday=i).first()
+                    if existing_schedule:
+                        db.session.delete(existing_schedule)
+                        db.session.commit()
+                else:
+                    existing_schedule = Schedule.query.filter_by(doctor_id=doctor_id, weekday=i).first()
+                    # Преобразование строк времени в объекты времени Python
+                    try:
+                        start_time = datetime.strptime(request.form[f'{day}_start_time'], '%H:%M:%S').time()
+                    except ValueError:
+                        start_time = datetime.strptime(request.form[f'{day}_start_time'], '%H:%M').time()
+                    try:
+                        end_time = datetime.strptime(request.form[f'{day}_end_time'], '%H:%M:%S').time()
+                    except ValueError:
+                        end_time = datetime.strptime(request.form[f'{day}_end_time'], '%H:%M').time()
 
-            appointment = Appointment.query.filter_by(appointment_date_time=date_time,
-                                                      doctor_id=current_user.doctor.id).first()
-            if appointment:
-                return jsonify({'message': 'Appointment already created!'}), 409
-            new_appointment: Appointment = Appointment(
-                doctor_id=current_user.doctor.id,
-                appointment_date_time=date_time
-            )
-            db.session.add(new_appointment)
-            db.session.commit()
+                    if existing_schedule:
+                        existing_schedule.start_time = start_time
+                        existing_schedule.end_time = end_time
+                        existing_schedule.duration_minutes = int(request.form[f'{day}_duration'])
+                        db.session.commit()
+                    else:
+                        new_schedule = Schedule(
+                            doctor_id=doctor_id,
+                            weekday=i,
+                            start_time=start_time,
+                            end_time=end_time,
+                            duration_minutes=int(request.form[f'{day}_duration'])
+                        )
+                        db.session.add(new_schedule)
+                        db.session.commit()
             return jsonify({'message': 'Appointment successfully created!'}), 200
-        else:
-            errors = {field: error for field, error in form.errors.items()}
-            return jsonify(errors), 400
+        # else:
+        #     errors = {field: error for field, error in form.errors.items()}
+        #     return jsonify(errors), 400
     else:
         return jsonify({'message': 'You are not authorized as doctor to access this page.'}), 403
 
