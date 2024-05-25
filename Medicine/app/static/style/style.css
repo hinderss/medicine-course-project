@@ -276,7 +276,7 @@ input, select, textarea {
   align-items: center;
   margin: 0; /* Add this to remove default margin */
   font-family: 'Helvetica', Arial, sans-serif;
-    background-image: url("images/login.png");
+    background-image: url("../images/login.png");
     background-size: cover;
 
     display: flex;
@@ -284,7 +284,7 @@ input, select, textarea {
 }
 
 .signup {
-  background-image: url("images/signup.png");
+  background-image: url("../images/signup.png");
   background-size: cover;
 
   display: flex;
@@ -294,7 +294,7 @@ input, select, textarea {
 }
 
 .signup.tinted{
-	background-image: url("images/signupTinted.png");
+	background-image: url("../images/signupTinted.png");
   background-size: cover;
 
 }
@@ -574,7 +574,7 @@ input, select, textarea {
   width: 100%;
   height: 70px;
   /* height: 146.07px ; */
-  background-image: url("images/headerMedicalCard.png");
+  background-image: url("../images/headerMedicalCard.png");
   background-size: cover;
 
   z-index: 999;
@@ -984,7 +984,7 @@ input, select, textarea {
 #indexPage{
   width: 100%;
   min-height: 100vh;
-  background-image: url("images/indexPage.png");
+  background-image: url("../images/indexPage.png");
   background-size: cover;
 }
 
@@ -1037,7 +1037,11 @@ input, select, textarea {
   align-items: flex-end;
 }
 
-.diagnosticsButton{
+#diagnosticsButtonDiv{
+  height: 80vh !important;
+}
+
+#diagnosticsButton{
   display: flex;
   width: 400px;
   height: 110px;
@@ -1171,23 +1175,23 @@ input, select, textarea {
   width: 100%;
   padding: 80px 150px;
   justify-content: center;
-  background: url("images/calendarDivBG.png");
+  background: url("../images/calendarDivBG.png");
   background-size: cover;
 
 }
 
-.assignAppointmentTimePicker{
+.createAppointmentTimePicker{
   height: 50px;
   width: 120px;
 }
 
-.assignAppointmentTimePickerContainer{
+.createAppointmentTimePickerContainer{
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
 
-.assignAppointmentTimePicker label, .assignAppointmentTimePicker input{
+.createAppointmentTimePicker label, .createAppointmentTimePicker input{
   display: block;
   font:
     1rem 'Fira Sans',
@@ -1208,7 +1212,7 @@ input, select, textarea {
   margin-left: 30px;
 }
 
-#createAppointmentDiv{
+#createAppointmenDiv{
 margin-left:20px;
   width: 600px;
   height: 630px;
@@ -1665,6 +1669,55 @@ Bounce
   background: #0b7dda;
 }
 
+.pop_up_diagnostic {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.pop_up_diagnostic-content {
+    min-width:400px !important;
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 330px;
+}
+
+.closeDiagnosticPopUp {
+    display:block;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.closeDiagnosticPopUp:hover,
+.closeDiagnosticPopUp:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#symptoms-form{
+    height: 300px !important;
+    overflow-y: scroll;
+}
+
+.symptom_checkbox{
+    display: flex;
+}
+.symptom_checkbox input{
+    width: 20px !important;
+}
 
 @media screen and (max-width: 1200px) {
   .calendarDiv{
@@ -1675,11 +1728,12 @@ Bounce
   }
 
   #diagnosticsButtonDiv{
+    height: 100vh !important;
     align-items: center;
   }
 
 
-  .diagnosticsButton{
+  #diagnosticsButton{
 
     width: 350px;
     padding: 0px;
@@ -1914,7 +1968,7 @@ Bounce
     position: relative;
   }
 
-  #createAppointmentDiv{
+  #createAppointmenDiv{
       padding: 0 20px;
       display: flex;
       width: 100vw !important;
@@ -1931,11 +1985,11 @@ Bounce
       max-width: 100px; /* Ширина фотографии (можно настроить по вашему вкусу) */
   }
 
-  .assignAppointmentTimePicker{
+  .createAppointmentTimePicker{
     width: 100px !important;
   }
 
-  #createAppointmentDiv h2{
+  #createAppointmenDiv h2{
     font-size: 30pt;
   }
 

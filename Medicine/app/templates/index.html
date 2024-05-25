@@ -5,34 +5,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="r{{ url_for('static', filename='style.css') }}">
     <link href="static/calendar/vanilla-calendar.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.0.9/dist/css/splide.min.css">
 
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.0.9/dist/js/splide.min.js"></script>
     <script src="static/calendar/vanilla-calendar.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script>
+    <script src="{{ url_for('static', filename='scripts/changeChatIconOnScroll.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/calendarInit.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/getCalendarValue.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/sliderSettings.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/chat.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/availableAppointments.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/createAppointment.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/define_disease.js') }}"></script>
+
+   <!-- <script>
         window.addEventListener('scroll', function () {
             var gptIcon = document.getElementById('gptIcon');
             var scrollPosition = window.scrollY;
 
-            // Use className instead of class
-            // Also, set the correct classList values
             if (scrollPosition > 70) {
                 gptIcon.classList.remove('white');
             } else {
                 gptIcon.classList.add('white');
             }
         });
-    </script>
-    <script>
+    </script> -->
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function() {
             const calendar = new VanillaCalendar('#calendar');
             calendar.init();
             document.getElementById("specialtySelection").classList.add("hidden");
         });
-    </script>
-    <script>
+    </script> -->
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Добавляем обработчик событий для родительского элемента, используя делегирование
             document.addEventListener('click', function(event) {
@@ -41,37 +49,37 @@
                     // Получаем значение data-calendar-day
                     var selectedDate = event.target.getAttribute('data-calendar-day');
 
-                    // Выводим значение в консоль
-                    // console.log("Выбранная дата:", selectedDate);
+                        // Выводим значение в консоль
+                        // console.log("Выбранная дата:", selectedDate);
 
-                    // Далее, вы можете использовать значение selectedDate и подставить его в нужное место в форме
-                    // Например, для подстановки в поле с именем "date":
+                        // Далее, вы можете использовать значение selectedDate и подставить его в нужное место в форме
+                        // Например, для подстановки в поле с именем "date":
                     document.querySelector('input[name="date"]').value = selectedDate;
                     goBack();
                     document.getElementById("specialtySelection").classList.remove("hidden");
                 }
             });
         });
-    </script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-      new Splide('#splide-container', {
-        type       : 'carousel',
-        perPage    : 1,
-        pagination : false,
-        focus      : 'center',
-        breakpoints: {
-          600: {
-            perPage: 1,
-          },
-          800: {
-            perPage: 1,
-          },
-        },
-        drag: false,
-      }).mount();
-    });
-  </script>
+    </script> -->
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        new Splide('#splide-container', {
+            type       : 'carousel',
+            perPage    : 1,
+            pagination : false,
+            focus      : 'center',
+            breakpoints: {
+            600: {
+                perPage: 1,
+            },
+            800: {
+                perPage: 1,
+            },
+            },
+            drag: false,
+        }).mount();
+        });
+    </script> -->
 
 
 
@@ -87,12 +95,12 @@
 
             {% if current_user.is_authenticated %}
                 {% if current_user.patient %}
-                    <a href="/medical-card" class="link"><h4 class="thin">Медицинская карта</h4></a>
+                    <a href="/medical_card" class="link"><h4 class="thin">Медицинская карта</h4></a>
                     <a href="#" class="link"><h4 class="thin">Записи</h4></a>
                 {% endif %}
             {% endif %}
 
-            <a href="/doctor_list" class="link"><h4 class="thin">Специалисты</h4></a>
+            <a href="#" class="link"><h4 class="thin">Специалисты</h4></a>
             
             {% if current_user.is_authenticated %}
                 {% if name and surname %}
@@ -124,8 +132,21 @@
             {% endif %}
 
 </div>
+        <div id="popUp" class="pop_up_diagnostic">
+        <div class="pop_up_diagnostic-content">
+            <span class="closeDiagnosticPopUp">&times;</span>
+
+            <form id="symptoms-form">
+                 {% for symptom in symptoms %}
+                    <label class="symptom_checkbox"><input type="checkbox" name="symptom" value="{{ symptom }}"> {{ symptom }}</label><br>
+                 {% endfor %}
+             </form>
+            <button class="button"  type="button" onclick="submitSymptoms()">Диагностировать</button>
+            <div id="results"></div>
+        </div>
+    </div>
         <div class="container fullHeight centerH flex-end padding100pxW" id="diagnosticsButtonDiv">
-            <a class="diagnosticsButton">Диагностика</a>
+            <a id="diagnosticsButton">Диагностика</a>
         </div>
     </div>
     <div class="container padding100pxW indexDoctors">
@@ -215,7 +236,7 @@
 
     <div class="container big calendarDiv marginTop40px">
         <div id="calendar"></div>
-        <div id="createAppointmentDiv" action="/assign-appointment" method="POST" class="container small">
+        <div id="createAppointmenDiv" action="/createAppointment" method="POST" class="container small">
             <div class="container row" id="apointementHeader">
                 <img src="../static/images/backBtn.png" class="logo white hidden" onclick="goBack()" id="goBackBtn">
                 <h2 class="container center white">Записаться</h2>
@@ -242,10 +263,8 @@
                 </div>
             </div>
 
-            <form id="assignAppointment" action="/assign-appointment" method="POST">
-
-                {{ form.csrf_token }}
-                {{ form.date(class="hidden", required="required", onchange="goBack()") }}
+            <form id="createAppointment" action="/createAppointment" method="POST">
+                <input type="text" name="date" class="hidden" required="required" onchange="goBack()">
                 <div class="container row hidden" id="doctorDetails">
                     <div id="appointementDoctorPhotoApp">
                         <img src="../static/images/doctorCardPhoto.jpg">
@@ -256,20 +275,30 @@
                     </div>
 
                     <!-- Выбор времени и дополнительные элементы -->
-                    <div class="container assignAppointmentTimePickerContainer hidden" id="timePickerContainer">
+                    <div class="container createAppointmentTimePickerContainer hidden" id="timePickerContainer">
                         <style>
-                            .assignAppointmentTimePicker option[value=""] {
+                            .createAppointmentTimePicker option[value=""] {
                                 display: none;
                             }
                         </style>
 
-                        {{ form.time(class="assignAppointmentTimePicker", id="appt", required="required", onchange="addIcon()") }}
+                        <select class="createAppointmentTimePicker" id="appt" name="appt" required onchange="addIcon()">
+                            <!-- Добавляем значение по умолчанию -->
+                            <option value="" disabled selected>🕑 --:--</option>
+                            <!-- Вставьте интервал времени с учетом 15-минутного шага -->
+                            <option value="09:00">09:00</option>
+                            <option value="09:15" disabled>09:15 (занято)</option>
+                            <option value="09:30">09:30</option>
+                            <option value="09:45">09:45</option>
+                            <!-- ... (дополните интервалы по аналогии) ... -->
+                            <option value="18:00">18:00</option>
+                        </select>
                     </div>
 
                     <!-- Детали записи -->
                 </div>
-                {{ form.appointment_details(class="hidden", placeholder="Детали записи", id="appointementTextArea") }}
-                {{ form.submit(class="button hidden", id="submitAppointment") }}
+                <textarea class="hidden" name="appointment_details" placeholder="Детали записи" id="appointementTextArea"></textarea>
+                <button type="submit" class="button hidden" id="submitAppointment">Записаться</button>
             </form>
         </div>
     </div>
@@ -299,7 +328,7 @@
         </div>
     </div>
 
-    <script>
+    <!-- <script>
             $(document).ready(function() {
                 $('#gptIcon').on('click', function() {
                     $('.chat').css('display', 'flex');
@@ -375,15 +404,15 @@
                 scrollChat();
             }, 100);
         });
-    </script>
+    </script> -->
 
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Создаем новый объект XMLHttpRequest
             var xhr = new XMLHttpRequest();
 
             // Открываем новый запрос GET к указанному URL-адресу
-            xhr.open("GET", "/practice-profiles", true);
+            xhr.open("GET", "/practice_profiles", true);
 
             // Отправляем запрос
             xhr.send();
@@ -407,13 +436,13 @@
                 });
             };
         });
-    </script>
+    </script> -->
 
-    <script>
+    <!-- <script>
         function selectSpecialty(specialty) {
             // Отправляем AJAX-запрос для получения списка врачей по выбранному направлению
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "/doctors-by-specialty?specialty=" + specialty, true);
+            xhr.open("GET", "/doctors?specialty=" + specialty, true);
             xhr.send();
 
             xhr.onload = function() {
@@ -498,25 +527,17 @@
             document.getElementById("goBackBtn").classList.remove("hidden");
 
             document.getElementById("appointementTextArea").value = "";
-            var form = document.getElementById('assignAppointment');
+            var form = document.getElementById('createAppointment');
             var dateInput = form.querySelector('input[name="date"]');
             console.log(form);
             console.log(dateInput);
             console.log(dateInput.value);
 
             // Делаем запрос для получения списка занятого времени
-            fetch('/appointments/available-doctor-time?doctor_id=' + doctor.id + '&date=' + dateInput.value)
+            fetch('/appointments/get_doctor_time?doctor_id=' + doctor.id + '&date=' + dateInput.value)
                 .then(response => {
                     if (!response.ok) {
-                        response.json().then(errors => {
-                            let errorMessage = '';
-                            for (const field in errors) {
-                                errorMessage += `${field}: ${errors[field]}\n`;
-                            }
-                            alert('Произошла ошибка\n' + errorMessage);
-                            goBack();
-                            throw new Error('Network response was not ok' + errorMessage);
-                        });
+                        throw new Error('Network response was not ok');
                     }
                     return response.json();
                 })
@@ -570,15 +591,15 @@
             $("#appointementTextArea").addClass("hidden");
             $("#goBackBtn").addClass("hidden");
         }
-    </script>
+    </script> -->
 
-    <script>
-        document.getElementById("assignAppointment").addEventListener("submit", function(event){
+    <!-- <script>
+        document.getElementById("createAppointment").addEventListener("submit", function(event){
             event.preventDefault(); // Предотвращаем отправку формы
         
             // Отправляем запрос на сервер
             var formData = new FormData(this);
-            fetch('/assign-appointment', {
+            fetch('/createAppointment', {
                 method: 'POST',
                 body: formData
             })
@@ -586,14 +607,12 @@
                 if (response.ok) {
                     alert('Вы успешно записаны на прием!'); // Показываем сообщение об успехе
                     goBack();
+                } else if (response.status === 401) {
+                    // Если получен статус 401, перенаправляем на страницу входа
+                    window.location.href = '/login';
                 } else {
-                    response.json().then(errors => {
-                        let errorMessage = '';
-                        for (const field in errors) {
-                            errorMessage += `${field}: ${errors[field]}\n`;
-                        }
-                        alert('Произошла ошибка при записи на прием:\n' + errorMessage + 'Возможно стоит попробовать позже.');
-                        goBack();
+                    response.text().then(errorMessage => {
+                        alert('Произошла ошибка при записи на прием: ' + errorMessage); // Показываем сообщение об ошибке
                     });
                 }
             })
@@ -601,7 +620,7 @@
                 console.error('Произошла ошибка:', error);
             });
         });
-    </script>
+    </script> -->
 
 
             
@@ -665,7 +684,7 @@
                 <a href="#" class="thin">Онлайн чат</a>
                 <a href="#" class="thin">Диагностика</a>
                 <a href="#" class="thin">Записи</a>
-                <a href="/medical-card" class="thin">Медицинская карта</a>
+                <a href="/medical_card" class="thin">Медицинская карта</a>
             </div>
         </div>
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Диагностика болезней</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <h1>Диагностика болезней</h1>
+    <form id="symptoms-form">
+        <label><input type="checkbox" name="symptom" value="кашель"> Кашель</label><br>
+        <label><input type="checkbox" name="symptom" value="лихорадка"> Лихорадка</label><br>
+        <label><input type="checkbox" name="symptom" value="головная боль"> Головная боль</label><br>
+        <label><input type="checkbox" name="symptom" value="боль в горле"> Боль в горле</label><br>
+        <label><input type="checkbox" name="symptom" value="увеличенные лимфоузлы"> Увеличенные лимфоузлы</label><br>
+        <button type="button" onclick="submitSymptoms()">Диагностировать</button>
+    </form>
+    <div id="results"></div>
+
+    <script>
+        function submitSymptoms() {
+            let symptoms = [];
+            $('input[name="symptom"]:checked').each(function() {
+                symptoms.push($(this).val());
+            });
+
+            $.ajax({
+                url: '/diagnose',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ symptoms: symptoms }),
+                success: function(response) {
+                    $('#results').empty();
+                    if (response.length > 0) {
+                        response.forEach(function(disease) {
+                            $('#results').append('<p>Возможное заболевание: ' + disease.name + '<br>Рекомендуется обратиться к врачу: ' + disease.doctor + '</p>');
+                        });
+                    } else {
+                        $('#results').append('<p>Нет совпадений для указанных симптомов.</p>');
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

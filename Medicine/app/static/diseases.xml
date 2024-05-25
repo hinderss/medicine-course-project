@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diseases>
+    <disease>
+        <name>Грипп</name>
+        <symptoms>
+            <symptom>кашель</symptom>
+            <symptom>лихорадка</symptom>
+            <symptom>головная боль</symptom>
+        </symptoms>
+        <doctor>Терапевт</doctor>
+    </disease>
+    <disease>
+        <name>Ангина</name>
+        <symptoms>
+            <symptom>боль в горле</symptom>
+            <symptom>лихорадка</symptom>
+            <symptom>увеличенные лимфоузлы</symptom>
+        </symptoms>
+        <doctor>ЛОР</doctor>
+    </disease>
+    <disease>
+        <name>Пневмония</name>
+        <symptoms>
+            <symptom>кашель</symptom>
+            <symptom>лихорадка</symptom>
+            <symptom>боль в груди</symptom>
+        </symptoms>
+        <doctor>Пульмонолог</doctor>
+    </disease>
+    <disease>
+        <name>Мигрень</name>
+        <symptoms>
+            <symptom>головная боль</symptom>
+            <symptom>тошнота</symptom>
+            <symptom>чувствительность к свету</symptom>
+        </symptoms>
+        <doctor>Невролог</doctor>
+    </disease>
+    <disease>
+        <name>Бронхит</name>
+        <symptoms>
+            <symptom>кашель</symptom>
+            <symptom>лихорадка</symptom>
+            <symptom>одышка</symptom>
+        </symptoms>
+        <doctor>Пульмонолог</doctor>
+    </disease>
+    <disease>
+        <name>Синусит</name>
+        <symptoms>
+            <symptom>заложенность носа</symptom>
+            <symptom>лихорадка</symptom>
+            <symptom>головная боль</symptom>
+        </symptoms>
+        <doctor>ЛОР</doctor>
+    </disease>
+    <disease>
+        <name>Астма</name>
+        <symptoms>
+            <symptom>одышка</symptom>
+            <symptom>кашель</symptom>
+            <symptom>свистящие хрипы</symptom>
+        </symptoms>
+        <doctor>Аллерголог</doctor>
+    </disease>
+    <disease>
+        <name>Диабет</name>
+        <symptoms>
+            <symptom>жажда</symptom>
+            <symptom>частое мочеиспускание</symptom>
+            <symptom>усталость</symptom>
+        </symptoms>
+        <doctor>Эндокринолог</doctor>
+    </disease>
+    <disease>
+        <name>Гастрит</name>
+        <symptoms>
+            <symptom>боль в животе</symptom>
+            <symptom>тошнота</symptom>
+            <symptom>изжога</symptom>
+        </symptoms>
+        <doctor>Гастроэнтеролог</doctor>
+    </disease>
+    <disease>
+        <name>Холецистит</name>
+        <symptoms>
+            <symptom>боль в правом подреберье</symptom>
+            <symptom>тошнота</symptom>
+            <symptom>лихорадка</symptom>
+        </symptoms>
+        <doctor>Гастроэнтеролог</doctor>
+    </disease>
+    <!-- добавьте еще 90 заболеваний в таком же формате -->
+    <disease>
+        <name>Артрит</name>
+        <symptoms>
+            <symptom>боль в суставах</symptom>
+            <symptom>отек</symptom>
+            <symptom>скованность</symptom>
+        </symptoms>
+        <doctor>Ревматолог</doctor>
+    </disease>
+    <disease>
+        <name>Гепатит</name>
+        <symptoms>
+            <symptom>желтуха</symptom>
+            <symptom>боль в животе</symptom>
+            <symptom>усталость</symptom>
+        </symptoms>
+        <doctor>Инфекционист</doctor>
+    </disease>
+    <disease>
+        <name>Конъюнктивит</name>
+        <symptoms>
+            <symptom>покраснение глаз</symptom>
+            <symptom>зуд</symptom>
+            <symptom>слезоточивость</symptom>
+        </symptoms>
+        <doctor>Офтальмолог</doctor>
+    </disease>
+    <disease>
+        <name>Менингит</name>
+        <symptoms>
+            <symptom>головная боль</symptom>
+            <symptom>лихорадка</symptom>
+            <symptom>ригидность затылочных мышц</symptom>
+        </symptoms>
+        <doctor>Инфекционист</doctor>
+    </disease>
+    <disease>
+        <name>Глаукома</name>
+        <symptoms>
+            <symptom>снижение зрения</symptom>
+            <symptom>боль в глазу</symptom>
+            <symptom>радужные круги перед глазами</symptom>
+        </symptoms>
+        <doctor>Офтальмолог</doctor>
+    </disease>
+    <disease>
+        <name>Псориаз</name>
+        <symptoms>
+            <symptom>кожные высыпания</symptom>
+            <symptom>зуд</symptom>
+            <symptom>шелушение</symptom>
+        </symptoms>
+        <doctor>Дерматолог</doctor>
+    </disease>
+    <disease>
+        <name>Цистит</name>
+        <symptoms>
+            <symptom>боль при мочеиспускании</symptom>
+            <symptom>частое мочеиспускание</symptom>
+            <symptom>боль внизу живота</symptom>
+        </symptoms>
+        <doctor>Уролог</doctor>
+    </disease>
+    <disease>
+        <name>Энцефалит</name>
+        <symptoms>
+            <symptom>головная боль</symptom>
+            <symptom>лихорадка</symptom>
+            <symptom>помутнение сознания</symptom>
+        </symptoms>
+        <doctor>Инфекционист</doctor>
+    </disease>
+    <disease>
+        <name>Ларингит</name>
+        <symptoms>
+            <symptom>осиплость</symptom>
+            <symptom>боль в горле</symptom>
+            <symptom>кашель</symptom>
+        </symptoms>
+        <doctor>ЛОР</doctor>
+    </disease>
+    <disease>
+        <name>Тонзиллит</name>
+        <symptoms>
+            <symptom>боль в горле</symptom>
+            <symptom>увеличенные миндалины</symptom>
+            <symptom>лихорадка</symptom>
+        </symptoms>
+        <doctor>ЛОР</doctor>
+    </disease>
+    <disease>
+        <name>Сколиоз</name>
+        <symptoms>
+            <symptom>боль в спине</symptom>
+            <symptom>искривление позвоночника</symptom>
+            <symptom>усталость</symptom>
+        </symptoms>
+        <doctor>Ортопед</doctor>
+    </disease>
+    <disease>
+        <name>Отит</name>
+        <symptoms>
+            <symptom>боль в ухе</symptom>
+            <symptom>потеря слуха</symptom>
+            <symptom>лихорадка</symptom>
+        </symptoms>
+        <doctor>ЛОР</doctor>
+    </disease>
+    <disease>
+        <name>Экзема</name>
+        <symptoms>
+            <symptom>кожные высыпания</symptom>
+            <symptom>зуд</symptom>
+            <symptom>сухость кожи</symptom>
+        </symptoms>
+        <doctor>Дерматолог</doctor>
+    </disease>
+</diseases>

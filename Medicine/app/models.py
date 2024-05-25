@@ -41,14 +41,9 @@ class Doctor(db.Model):
     workplace = db.Column(db.String(100))
     practice_profile = db.Column(db.String(100))
     phone = db.Column(db.String(15))
-    photo_path = db.Column(db.String(255))
-    experience_years = db.Column(db.Integer)
-    consultation_price = db.Column(db.Float(precision=2))
-    rating = db.Column(db.Integer, default=5, nullable=False)
+    photo_path = db.Column(db.String(255))  # Added field for storing photo filename
 
     user = db.relationship('User', backref=db.backref('doctor', uselist=False))
-    # Добавляем ссылку на расписание (schedule)
-    schedules = db.relationship('Schedule', backref='doctor', lazy=True)
 
     def to_dict(self):
         return {
@@ -61,29 +56,11 @@ class Doctor(db.Model):
             'workplace': self.workplace,
             'practice_profile': self.practice_profile,
             'phone': self.phone,
-            'photo_path': self.photo_path,
-            'experience_years': self.experience_years,
-            'consultation_price': self.consultation_price,
-            'rating': self.rating
+            'photo_path': self.photo_path
         }
 
     def __str__(self):
         return f"Doctor: {self.surname} {self.firstname} {self.patronymic}, ID: {self.id}"
-
-
-class Schedule(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    doctor_id = db.Column(db.Integer, db.ForeignKey('doctor.id'), nullable=False)
-    weekday = db.Column(db.Integer, nullable=False)
-    start_time = db.Column(db.Time, nullable=False)
-    end_time = db.Column(db.Time, nullable=False)
-    duration_minutes = db.Column(db.Integer, nullable=False)
-
-    # doctor = db.relationship('Doctor', backref=db.backref('schedules', lazy='dynamic'))
-
-    def __str__(self):
-        return (f"Schedule for Doctor {self.doctor_id}, Day: {self.weekday}, ID: {self.id}, "
-                f"{self.start_time} - {self.end_time}, {self.duration_minutes} min")
 
 
 class Patient(db.Model):
@@ -175,3 +152,15 @@ class MedicalCard(db.Model):
 
     def __str__(self):
         return f"{self.surname} {self.firstname} {self.patronymic}"
+
+#
+# class Patient(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+#     last_name = db.Column(db.String(50), nullable=False)
+#     first_name = db.Column(db.String(50), nullable=False)
+#     date_of_birth = db.Column(db.Date)
+#     region = db.Column(db.String(2))
+#     phone_number = db.Column(db.String(15))
+#
+#     user = db.relationship('User', backref=db.backref('patient', uselist=False))
