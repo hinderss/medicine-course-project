@@ -1,38 +1,18 @@
-import re
-
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileRequired, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.fields.choices import SelectField, RadioField
-from wtforms.fields.datetime import DateField
-from wtforms.fields.simple import FileField, TextAreaField
-from wtforms.validators import DataRequired, Length, Email, ValidationError
-
-RE_PHONE = r"^((8|\+374|\+994|\+995|\+375|\+7|\+380|\+38|\+996|\+998|\+993)[\- ]?)?\(?\d{3,5}\)?[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}(([\- ]?\d{1})?[\- ]?\d{1})?$"
-
-
-class Phone(object):
-    def __init__(self, message=None):
-        if message is None:
-            message = 'Invalid phone number'
-        self.message = message
-
-    def __call__(self, form, field):
-        phone_number = field.data
-        if not re.match(RE_PHONE, phone_number):
-            raise ValidationError(self.message)
+from wtforms.fields.datetime import DateField, TimeField
+from wtforms.fields.numeric import IntegerField
+from wtforms.fields.simple import FileField, TextAreaField, BooleanField
+from wtforms.validators import DataRequired, Length, Email, InputRequired, Optional, ValidationError, StopValidation
+from app.validators import Phone, FutureDateValidator, FutureTimeValidator, PastDateValidator
 
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    submit = SubmitField('Login')
-
-# class RegistrationForm(FlaskForm):
-#     username = StringField('Username', validators=[DataRequired(), Length(min=4, max=20)])
-#     password = PasswordField('Password', validators=[DataRequired(), Length(min=6)])
-#     confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
-#     submit = SubmitField('Sign Up')
+    username = StringField('Электронная почта', validators=[DataRequired()])
+    password = PasswordField('Пароль', validators=[DataRequired()])
+    submit = SubmitField('Войти')
 
 
 class DoctorForm(FlaskForm):
@@ -42,8 +22,9 @@ class DoctorForm(FlaskForm):
         DataRequired(message="Введите вашу фамилию")])
     patronymic = StringField('Отчество', validators=[
         DataRequired(message="Введите ваше отчество")])
-    dob = DateField('Дата рождения: dd.mm.yyyy', validators=[
-        DataRequired(message="Введите вашу дату рождения")])
+    dob = DateField('Дата рождения: дд.мм.гггг', validators=[
+        DataRequired(message="Введите вашу дату рождения"),
+        PastDateValidator(message="Дата рождения должна быть в прошлом.")])
     education = StringField('Образование', validators=[
         DataRequired(message="Введите ваше образование")])
     workplace = StringField('Место работы', validators=[
@@ -62,6 +43,7 @@ class DoctorForm(FlaskForm):
     photo = FileField('Фотография', validators=[
         FileRequired(message="Загрузите вашу фотографию"),
         FileAllowed(['jpg', 'jpeg', 'png'], message="Разрешены только файлы с расширениями .jpg, .jpeg, .png")])
+    submit = SubmitField('Зарегистрироваться')
 
 
 class PatientForm(FlaskForm):
@@ -69,8 +51,9 @@ class PatientForm(FlaskForm):
         DataRequired(message="Введите ваше имя")])
     surname = StringField('Фамилия', validators=[
         DataRequired(message="Введите вашу фамилию")])
-    dob = DateField('Дата рождения: dd.mm.yyyy', validators=[
-        DataRequired(message="Введите вашу дату рождения")])
+    dob = DateField('Дата рождения: дд.мм.гггг', validators=[
+        DataRequired(message="Введите вашу дату рождения"),
+        PastDateValidator(message="Дата рождения должна быть в прошлом.")])
     CHOICES = [('', 'Выберите регион'), ('BY', 'BY'), ('RU', 'RU'), ('KZ', 'KZ')]
     region = SelectField('Регион', choices=CHOICES, validators=[
         DataRequired(message="Выберите ваш регион")])
@@ -86,6 +69,7 @@ class PatientForm(FlaskForm):
     photo = FileField('Фотография', validators=[
         FileRequired(message="Загрузите вашу фотографию"),
         FileAllowed(['jpg', 'jpeg', 'png'], message="Разрешены только файлы с расширениями .jpg, .jpeg, .png")])
+    submit = SubmitField('Зарегистрироваться')
 
 
 class MedicalCardForm(FlaskForm):
@@ -95,15 +79,16 @@ class MedicalCardForm(FlaskForm):
         DataRequired()])
     patronymic = StringField('Отчество')
     gender = RadioField('Пол', choices=[('male', 'Мужской'), ('female', 'Женский')])
-    dob = DateField('Дата рождения: dd.mm.yyyy', validators=[
-        DataRequired()])
+    dob = DateField('Дата рождения: дд.мм.гггг', validators=[
+        DataRequired(),
+        PastDateValidator(message="Дата рождения должна быть в прошлом.")])
     passport = StringField('Личный Номер паспорта')
     family = StringField('Семейное положение')
     document_type = StringField('Документ')
     document_serial = StringField('Серия документа')
     document_number = StringField('Номер документа')
     document_authority = StringField('Кем выдан')
-    document_issue_date = DateField('Дата выдачи: dd.mm.yyyy')
+    document_issue_date = DateField('Дата выдачи: дд.мм.гггг')
     region = StringField('Область')
     city = StringField('Населенный пункт')
     street = StringField('Улица/Переулок/Проезд')
@@ -135,6 +120,87 @@ class MedicalCardForm(FlaskForm):
     blood_transfusion = StringField('Переливание крови')
     surgical_intervention = StringField('Хирургическое вмешательство')
     previous_infectious_diseases = TextAreaField('Перенесенные инфекционные заболевания')
+    submit = SubmitField('Сохранить')
+
+
+class AppointmentForm(FlaskForm):
+    date = StringField('Дата', validators=[
+        InputRequired()])
+    doctor_id = StringField('doctor id', validators=[
+        DataRequired()])
+    time = SelectField('Время записи', choices=[], validate_choice=False, validators=[
+        DataRequired()])
+    appointment_details = TextAreaField('Детали записи')
+    submit = SubmitField('Записаться')
+
+
+class CreateAppointmentForm(FlaskForm):
+    date = DateField('Дата: дд.мм.гггг', validators=[
+        DataRequired(),
+        FutureDateValidator()])
+    time = TimeField('Время: ', validators=[
+        DataRequired(),
+        FutureTimeValidator()])
+    submit = SubmitField('Создать окно записи')
+
+
+class ScheduleTimeValidator:
+    def __init__(self, bool_field, message=None):
+        if not message:
+            message = 'Time required'
+        self.message = message
+        self.bool_field = bool_field
+
+    def __call__(self, form, field):
+        if self.bool_field.data:
+            if not field.data:
+                raise ValidationError(self.message)
+        else:
+            field.validators = []
+
+
+class DoctorScheduleForm(FlaskForm):
+    monday_check = BooleanField('Понедельник')
+    monday_start_time = TimeField('C', validators=[Optional()])
+    monday_end_time = TimeField('До', validators=[Optional()])
+    monday_duration = IntegerField('продолжительность(мин)', validators=[Optional()])
+
+    tuesday_check = BooleanField('Вторник')
+    tuesday_start_time = TimeField('C', validators=[Optional()])
+    tuesday_end_time = TimeField('До', validators=[Optional()])
+    tuesday_duration = IntegerField('продолжительность(мин)', validators=[Optional()])
+
+    wednesday_check = BooleanField('Среда')
+    wednesday_start_time = TimeField('C', validators=[Optional()])
+    wednesday_end_time = TimeField('До', validators=[Optional()])
+    wednesday_duration = IntegerField('продолжительность(мин)', validators=[Optional()])
+
+    thursday_check = BooleanField('Четверг')
+    thursday_start_time = TimeField('C', validators=[Optional()])
+    thursday_end_time = TimeField('До', validators=[Optional()])
+    thursday_duration = IntegerField('продолжительность(мин)', validators=[Optional()])
+
+    friday_check = BooleanField('Пятница')
+    friday_start_time = TimeField('C', validators=[Optional()])
+    friday_end_time = TimeField('До', validators=[Optional()])
+    friday_duration = IntegerField('продолжительность(мин)', validators=[Optional()])
+
+    saturday_check = BooleanField('Суббота')
+    saturday_start_time = TimeField('C')
+    saturday_end_time = TimeField('До', validators=[Optional()])
+    saturday_duration = IntegerField('продолжительность(мин)', validators=[Optional()])
+
+    sunday_check = BooleanField('Воскресенье')
+    sunday_start_time = TimeField('C', validators=[Optional()])
+    sunday_end_time = TimeField('До')
+    sunday_duration = IntegerField('продолжительность(мин)', validators=[Optional()])
+
+    submit = SubmitField('Сохранить')
+
+    # def __init__(self, *args, **kwargs):
+    #     super(DoctorScheduleForm, self).__init__(*args, **kwargs)
+    #     self.monday_start_time.validators = [ScheduleTimeValidator(self.monday_check)]
+
 
 
 

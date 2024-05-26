@@ -5,6 +5,7 @@ from typing import Dict, List
 from sqlalchemy import func
 from sqlalchemy.exc import NoResultFound
 
+from app.define_disease import DiseaseDefiner
 from app.helpers import save_file
 from flask import render_template, redirect, url_for, flash, request, send_from_directory, jsonify
 from flask_login import login_user, login_required, logout_user, current_user
@@ -19,6 +20,7 @@ from app.models import User, Doctor, Patient, MedicalCard, Appointment, Schedule
 def index():
     template = 'index.html'
     form: AppointmentForm = AppointmentForm()
+    symptoms = DiseaseDefiner.get_unique_symptoms()
 
     if current_user.is_authenticated:
         if current_user.patient:
@@ -27,9 +29,9 @@ def index():
             user = current_user.doctor
         name = user.firstname
         surname = user.surname
-        return render_template(template, name=name, surname=surname, form=form)
+        return render_template(template, name=name, surname=surname, form=form, symptoms=symptoms)
 
-    return render_template(template, form=form)
+    return render_template(template, form=form, symptoms=symptoms)
 
 
 @app.route('/welcome')
@@ -553,3 +555,10 @@ def signup_patient():
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
+
+@app.route('/diagnose', methods=['POST'])
+def diagnose():
+    symptoms = request.json.get('symptoms', [])
+    possible_diseases = DiseaseDefiner.get_possible_disease(symptoms)
+
+    return jsonify(possible_diseases)

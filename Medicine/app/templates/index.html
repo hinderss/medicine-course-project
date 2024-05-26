@@ -11,6 +11,12 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.0.9/dist/js/splide.min.js"></script>
     <script src="static/calendar/vanilla-calendar.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts/changeChatIconOnScroll.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/calendarInit.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/getCalendarValue.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/sliderSettings.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/chat.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/define_disease.js') }}"></script>
     <script>
         window.addEventListener('scroll', function () {
             var gptIcon = document.getElementById('gptIcon');
@@ -124,8 +130,21 @@
             {% endif %}
 
 </div>
+        <div id="popUp" class="pop_up_diagnostic">
+        <div class="pop_up_diagnostic-content">
+            <span class="closeDiagnosticPopUp">&times;</span>
+
+            <form id="symptoms-form">
+                 {% for symptom in symptoms %}
+                    <label class="symptom_checkbox"><input type="checkbox" name="symptom" value="{{ symptom }}"> {{ symptom }}</label><br>
+                 {% endfor %}
+             </form>
+            <button class="button"  type="button" onclick="submitSymptoms()">Диагностировать</button>
+            <div id="results"></div>
+        </div>
+    </div>
         <div class="container fullHeight centerH flex-end padding100pxW" id="diagnosticsButtonDiv">
-            <a class="diagnosticsButton">Диагностика</a>
+            <a id="diagnosticsButton">Диагностика</a>
         </div>
     </div>
     <div class="container padding100pxW indexDoctors">
@@ -215,7 +234,7 @@
 
     <div class="container big calendarDiv marginTop40px">
         <div id="calendar"></div>
-        <div id="createAppointmentDiv" action="/assign-appointment" method="POST" class="container small">
+        <div id="createAppointmenDiv" action="/assign-appointment" method="POST" class="container small">
             <div class="container row" id="apointementHeader">
                 <img src="../static/images/backBtn.png" class="logo white hidden" onclick="goBack()" id="goBackBtn">
                 <h2 class="container center white">Записаться</h2>
@@ -256,14 +275,14 @@
                     </div>
 
                     <!-- Выбор времени и дополнительные элементы -->
-                    <div class="container assignAppointmentTimePickerContainer hidden" id="timePickerContainer">
+                    <div class="container createAppointmentTimePickerContainer hidden" id="timePickerContainer">
                         <style>
-                            .assignAppointmentTimePicker option[value=""] {
+                            .createAppointmentTimePicker option[value=""] {
                                 display: none;
                             }
                         </style>
 
-                        {{ form.time(class="assignAppointmentTimePicker", id="appt", required="required", onchange="addIcon()") }}
+                        {{ form.time(class="createAppointmentTimePicker", id="appt", required="required", onchange="addIcon()") }}
                     </div>
 
                     <!-- Детали записи -->
