@@ -12,6 +12,7 @@
     <script src="static/calendar/vanilla-calendar.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="{{ url_for('static', filename='scripts/changeChatIconOnScroll.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/menuTrigger.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/calendarInit.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/getCalendarValue.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/sliderSettings.js') }}"></script>
@@ -84,6 +85,57 @@
     <title>Index</title>
 </head>
 <body class="container">
+    {% if current_user.patient or current_user.doctor %}
+    <div class="menu">
+        <div class="container row" id="menuProfileDiv">
+            {% if current_user.patient %}
+                {% if current_user.patient.photo_path %}
+                    <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}" width="40px">
+                {% else %}
+                    <img src="static/images/profileLogo.svg" width="40px">
+                {% endif %}
+            {% else %}
+                {% if current_user.doctor.photo_path %}
+                    <img src="{{ url_for('uploaded_file', filename=current_user.doctor.photo_path) }}" width="40px">
+                {% else %}
+                    <img src="static/images/profileLogo.svg" width="40px">
+                {% endif %}
+            {% endif %}
+            <div>
+                <h4 id="name">
+                    {% if current_user.patient %}
+                    <span>{{ current_user.patient.firstname }} {{ current_user.patient.surname }}</span>
+                    {% else %}
+                    <span>{{ current_user.doctor.firstname }} {{ current_user.doctor.surname }}</span>
+                    {% endif %}
+                <h5 id="email">{{ current_user.username }}</h5>
+            </div>
+        </div>
+        <div class="menuItem active">
+            <img src="static/images/doctorsList.svg" width="40px">
+            <h5>Наши специалисты</h5>
+        </div>
+        <div class="menuItem">
+            <img src="static/images/appointments.svg" width="40px">
+            {% if current_user.patient %}
+                <a href="patient-appointments">Записи</a>
+            {% else %}
+                <a href="doctor_appointments">Записи</a>
+            {% endif %}
+        </div>
+        {% if current_user.patient %}
+        <div class="menuItem">
+            <img src="static/images/medicalCard.png" width="40px">
+            <a href="/medical-card">Медицинская карта</a>
+        </div>
+        {% endif %}
+        <div class="menuItem">
+            <img src="static/images/exit.svg" width="40px">
+            <a href="/logout">Выйти</a>
+        </div>
+
+    </div>
+    {% endif %}
     <div class="container padding100pxW" id="indexPage">
         <div class="container row spacebtw marginTop20px" id="indexPageHeader">
             <div class="container row small" id="headerLogo">
@@ -94,7 +146,9 @@
             {% if current_user.is_authenticated %}
                 {% if current_user.patient %}
                     <a href="/medical-card" class="link"><h4 class="thin">Медицинская карта</h4></a>
-                    <a href="#" class="link"><h4 class="thin">Записи</h4></a>
+                    <a href="patient-appointments" class="link"><h4 class="thin">Записи</h4></a>
+                {% else %}
+                    <a href="doctor_appointments" class="link"><h4 class="thin">Записи</h4></a>
                 {% endif %}
             {% endif %}
 
@@ -102,7 +156,7 @@
             
             {% if current_user.is_authenticated %}
                 {% if name and surname %}
-                    <a href="/menu">
+                    <a>
                         <div class="profile">
                             <div class="profileName">
                                 <h5>{{ name }}</h5>
@@ -119,7 +173,7 @@
                                 {% else %}
                                     <img src="static/images/profileLogo.svg" width="40px" class="logo white">
                                 {% endif %} -->
-                                <img src="static/images/profileLogo.svg" width="40px" class="logo white">
+                                <img id="menuIcon" src="static/images/profileLogo.svg" width="40px" class="logo white">
                         </div>
                     </a>
                 {% endif %}
@@ -154,79 +208,83 @@
             <div class="splide" id="splide-container">
                 <div class="splide__track">
                     <ul class="splide__list">
+
+                        {% for doctor in doctors_slider %}
                         <li class="splide__slide">
                             <div class="container small centerItemsW marginRight70px" id="doctorCard">
-                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
+                                <img src="{{ url_for('uploaded_file', filename=doctor.photo_path) }}" id="doctorCardPhoto">
                                 <div class="container medium faded"  id="doctorCardData">
-                                    <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
-                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>
-                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
+                                    <h5 class="aboutDoctor thin" id="doctorPosition">{{ doctor.practice_profile }}</h5>
+                                    <h4 class="aboutDoctor" id="doctorName">{{ doctor.firstname }}</h4>
+                                    <h4 class="aboutDoctor" id="doctorSurname">{{ doctor.surname }}</h4>
+                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">{{ doctor.education }}</h5>
                                 </div>
                             </div>
                         </li>
-                        <li class="splide__slide">
-                            <div class="container small centerItemsW marginRight70px" id="doctorCard">
-                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
-                                <div class="container medium faded"  id="doctorCardData">
-                                    <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
-                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>
-                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="container small centerItemsW marginRight70px" id="doctorCard">
-                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
-                                <div class="container medium faded"  id="doctorCardData">
-                                    <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
-                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>
-                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="container small centerItemsW marginRight70px" id="doctorCard">
-                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
-                                <div class="container medium faded"  id="doctorCardData">
-                                    <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
-                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>
-                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="container small centerItemsW marginRight70px" id="doctorCard">
-                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
-                                <div class="container medium faded"  id="doctorCardData">
-                                    <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
-                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>
-                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
-                                </div>
-                            </div>
-                        </li>
-                                                <li class="splide__slide">
-                            <div class="container small centerItemsW marginRight70px" id="doctorCard">
-                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">
-                                <div class="container medium faded"  id="doctorCardData">
-                                    <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>
-                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>
-                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>
-                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>
-                                </div>
-                            </div>
-                        </li>
+                        {% endfor %}
+
+<!--                        <li class="splide__slide">-->
+<!--                            <div class="container small centerItemsW marginRight70px" id="doctorCard">-->
+<!--                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">-->
+<!--                                <div class="container medium faded"  id="doctorCardData">-->
+<!--                                    <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>-->
+<!--                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>-->
+<!--                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>-->
+<!--                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </li>-->
+<!--                        <li class="splide__slide">-->
+<!--                            <div class="container small centerItemsW marginRight70px" id="doctorCard">-->
+<!--                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">-->
+<!--                                <div class="container medium faded"  id="doctorCardData">-->
+<!--                                    <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>-->
+<!--                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>-->
+<!--                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>-->
+<!--                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </li>-->
+<!--                        <li class="splide__slide">-->
+<!--                            <div class="container small centerItemsW marginRight70px" id="doctorCard">-->
+<!--                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">-->
+<!--                                <div class="container medium faded"  id="doctorCardData">-->
+<!--                                    <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>-->
+<!--                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>-->
+<!--                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>-->
+<!--                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </li>-->
+<!--                        <li class="splide__slide">-->
+<!--                            <div class="container small centerItemsW marginRight70px" id="doctorCard">-->
+<!--                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">-->
+<!--                                <div class="container medium faded"  id="doctorCardData">-->
+<!--                                    <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>-->
+<!--                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>-->
+<!--                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>-->
+<!--                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </li>-->
+<!--                                                <li class="splide__slide">-->
+<!--                            <div class="container small centerItemsW marginRight70px" id="doctorCard">-->
+<!--                                <img src="static/images/doctorCardPhoto.jpg" id="doctorCardPhoto">-->
+<!--                                <div class="container medium faded"  id="doctorCardData">-->
+<!--                                    <h5 class="aboutDoctor thin" id="doctorPosition">Нарколог</h5>-->
+<!--                                    <h4 class="aboutDoctor" id="doctorName">Олег</h4>-->
+<!--                                    <h4 class="aboutDoctor" id="doctorSurname">Олегов</h4>-->
+<!--                                    <h5 class="aboutDoctor thin" id="doctorScientificDegree">Кандидат наук</h5>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </li>-->
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="container center" id="allDoctorsDiv">
-            <a class="button" id="allDoctorsBtn">Все врачи</a>
+            <a href="/doctor_list" class="button" id="allDoctorsBtn">Все врачи</a>
         </div>
     </div>
 

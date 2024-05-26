@@ -2021,3 +2021,13 @@ Bounce
     display: none;
   }
 }
+
+#patient_appointments_doctor_photo {
+    border-radius: 50%;
+    min-width: 250px !important;
+  min-height: 250px !important;
+  width: 250px !important;
+  height: 250px !important;
+  border-radius: 50%;
+  object-fit: cover;
+}

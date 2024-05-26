@@ -21,6 +21,7 @@ def index():
     template = 'index.html'
     form: AppointmentForm = AppointmentForm()
     symptoms = DiseaseDefiner.get_unique_symptoms()
+    random_doctors = Doctor.query.order_by(func.random()).limit(10).all()
 
     if current_user.is_authenticated:
         if current_user.patient:
@@ -29,9 +30,14 @@ def index():
             user = current_user.doctor
         name = user.firstname
         surname = user.surname
-        return render_template(template, name=name, surname=surname, form=form, symptoms=symptoms)
+        return render_template(template,
+                               name=name,
+                               surname=surname,
+                               form=form,
+                               symptoms=symptoms,
+                               doctors_slider=random_doctors)
 
-    return render_template(template, form=form, symptoms=symptoms)
+    return render_template(template, form=form, symptoms=symptoms, doctors_slider=random_doctors)
 
 
 @app.route('/welcome')
@@ -126,15 +132,41 @@ def patient_appointments():
 
 @app.route('/doctor_list', methods=['GET', 'POST'])
 def doctor_list():
+    template = 'doctorListPage.html'
     count = Doctor.query.count()
-    # Получаем номер текущей страницы из запроса, либо устанавливаем по умолчанию
     page = request.args.get('page', 1, type=int)
 
-    # Получаем параметры сортировки из запроса
-    sort_by = request.args.get('sort_by', 'rating')
-    order = request.args.get('order', 'desc')  # по умолчанию сортировка по убыванию
+    specialty = request.args.get('specialty')
+    experience = request.args.get('experience')
+    price = request.args.get('price')
+    rating = request.args.get('rating')
 
-    # Определяем, какое поле использовать для сортировки
+    query = Doctor.query
+
+    if specialty:
+        query = query.filter(Doctor.practice_profile == specialty)
+
+    if experience:
+        years = int(experience)
+        query = query.filter(Doctor.experience_years >= years)
+
+    if price:
+        if price == 'below30':
+            query = query.filter(Doctor.consultation_price < 30)
+        elif price == '30_50':
+            query = query.filter(Doctor.consultation_price.between(30, 50))
+        elif price == '50_80':
+            query = query.filter(Doctor.consultation_price.between(50, 80))
+        elif price == 'above100':
+            query = query.filter(Doctor.consultation_price >= 100)
+
+    if rating:
+        min_rating = int(rating[0])
+        query = query.filter(Doctor.rating == min_rating)
+
+    sort_by = request.args.get('sort_by', 'rating')
+    order = request.args.get('order', 'desc')
+
     sort_field = None
     if sort_by == 'rating':
         sort_field = Doctor.rating
@@ -146,18 +178,22 @@ def doctor_list():
     # Применяем сортировку
     if sort_field:
         if order == 'asc':
-            doctors = Doctor.query.order_by(sort_field.asc())
+            query = query.order_by(sort_field.asc())
         else:
-            doctors = Doctor.query.order_by(sort_field.desc())
-    else:
-        doctors = Doctor.query
+            query = query.order_by(sort_field.desc())
 
     # Пагинация
     per_page = 4  # Количество докторов на странице
-    doctors = doctors.paginate(page=page, per_page=per_page)
+    doctors = query.paginate(page=page, per_page=per_page)
 
-    return render_template('doctorListPage.html', doctors=doctors, count=count)
+    practice_profiles = Doctor.query.with_entities(Doctor.practice_profile).distinct().all()
+    practice_profiles = [profile[0] for profile in practice_profiles]
+    print(practice_profiles)
 
+    return render_template(template,
+                           doctors=doctors,
+                           count=count,
+                           practice_profiles=practice_profiles)
 
 @app.route('/medical-card', methods=['GET', 'POST'])
 @login_required
@@ -260,14 +296,15 @@ def get_available_doctor_time():
 
 
 @app.route('/assign-appointment', methods=['GET', 'POST'])
-@login_required
+# @login_required
 def assign_appointment():
     form: AppointmentForm = AppointmentForm()
+    if not current_user.is_authenticated:
+        return jsonify({'error': 'Sign in as user to continue.'}), 403
     if form.validate_on_submit():
         print("Doctor id", form.doctor_id.data)
         date = datetime.strptime(form.date.data, '%Y-%m-%d')
         time = datetime.strptime(form.time.data, '%H:%M:%S').time()
-        date_time = datetime.combine(date, time)
 
         date_time = datetime.combine(date, time).replace(microsecond=0)
         appointment = Appointment.query.filter_by(appointment_date_time=date_time,

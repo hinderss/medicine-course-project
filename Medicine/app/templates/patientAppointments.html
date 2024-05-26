@@ -20,9 +20,6 @@
             </a>
         </div>
         <div class="container row small" id="doctorListHeaderProfile">
-            <a href="profile">
-                <img src="static/images/profileLogo.svg" width="40px" class="marginW10px">
-            </a>
             <img src="static/images/menu.png" width="40px" id="menuIcon">
         </div>
     </div>
@@ -30,20 +27,26 @@
 <body class="container marginTop120px">
     <div class="menu">
         <div class="container row" id="menuProfileDiv">
-            {% if current_user.doctor.photo_path %}
-                <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}" width="40px">
-            {% else %}
-                <img src="static/images/profileLogo.svg" width="40px">
-            {% endif %}
-            <div>
-                <h4 id="name">
-                {% if current_user.patient %}
-                <span>{{ current_user.patient.firstname }} {{ current_user.patient.surname }}</span>
+            {% if current_user %}
+                {% if current_user.doctor.photo_path %}
+                    <img src="{{ url_for('uploaded_file', filename=current_user.doctor.photo_path) }}" width="40px">
                 {% else %}
-                <span>{{ current_user.doctor.firstname }} {{ current_user.doctor.surname }}</span>
+                    {% if current_user.patient.photo_path %}
+                        <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}" width="40px">
+                    {% else %}
+                        <img src="static/images/profileLogo.svg" width="40px">
+                    {% endif %}
                 {% endif %}
-                <h5 id="email">{{ current_user.username }}</h5>
-            </div>
+                <div>
+                    <h4 id="name">
+                    {% if current_user.patient %}
+                    <span>{{ current_user.patient.firstname }} {{ current_user.patient.surname }}</span>
+                    {% else %}
+                    <span>{{ current_user.doctor.firstname }} {{ current_user.doctor.surname }}</span>
+                    {% endif %}
+                    <h5 id="email">{{ current_user.username }}</h5>
+                </div>
+            {% endif %}
         </div>
         <div class="menuItem">
             <img src="static/images/doctorsList.svg" width="40px" style="filter: invert(1);">
@@ -56,6 +59,10 @@
         <div class="menuItem">
             <img src="static/images/medicalCard.png" width="40px">
             <a href="medical-card">Медицинская карта</a>
+        </div>
+        <div class="menuItem">
+            <img src="static/images/exit.svg" width="40px">
+            <a href="/logout">Выйти</a>
         </div>
     </div>
     <div class="container center">
@@ -70,7 +77,7 @@
             <div class="appointment">
                 <div id="apointementsItem">
                     <div class="container row">
-                        <img src="{{ url_for('uploaded_file', filename=appointment.doctor.photo_path) }}" width="200px">
+                        <img id="patient_appointments_doctor_photo" src="{{ url_for('uploaded_file', filename=appointment.doctor.photo_path) }}" width="200px">
                         <div id="apointementData">
                             <h3>{{ appointment.doctor.surname }} {{ appointment.doctor.firstname }}</h3>
                             <div id="date-time">
