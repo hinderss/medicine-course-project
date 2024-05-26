@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from sqlalchemy import Enum
 
 from app import db
@@ -83,7 +85,7 @@ class Appointment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     doctor_id = db.Column(db.Integer, db.ForeignKey('doctor.id'), nullable=False)
     patient_id = db.Column(db.Integer, db.ForeignKey('patient.id'), nullable=True)
-    appointment_date_time = db.Column(db.DateTime)
+    appointment_date_time: datetime = db.Column(db.DateTime)
     appointment_details = db.Column(db.Text, nullable=True)
 
     doctor = db.relationship('Doctor', backref=db.backref('appointments'))

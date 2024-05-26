@@ -1,3 +1,5 @@
+import datetime
+
 from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
@@ -14,5 +16,6 @@ app.config['UPLOAD_FOLDER'] = os.getenv('UPLOAD_FOLDER')
 db = SQLAlchemy(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
+TODAY = datetime.date(2024, 5, 20)
 
 from app import routes

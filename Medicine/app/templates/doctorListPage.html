@@ -170,12 +170,19 @@
         </div>
         <div class="menuItem">
             <img src="static/images/appointments.svg" width="40px">
-            <a href="appointments">Записи</a>
-        </div>     
+            {% if current_user.patient %}
+                <a href="patient-appointments">Записи</a>
+            {% else %}
+                <a href="doctor_appointments">Записи</a>
+            {% endif %}
+        </div>
+        {% if current_user.patient %}
         <div class="menuItem">
             <img src="static/images/medicalCard.png" width="40px">
             <a href="medicalCard">Медицинская карта</a>
         </div>     
+        {% endif %} 
+        
     </div>
     <div class="header container row padding100pxW spacebtw">
         <div class="container row centerH" id="doctorListFilterContainer">

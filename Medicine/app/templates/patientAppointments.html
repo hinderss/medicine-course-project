@@ -15,7 +15,9 @@
             <h4 class="thin" id="titleBlack">Записи</h4>
         </div>
         <div class="container row small center">
-            <img src="static/images/logo.svg" width="40px" class="marginW30px">
+            <a href="/index">
+                <img src="static/images/logo.svg" width="40px" class="marginW30px">
+            </a>
         </div>
         <div class="container row small" id="doctorListHeaderProfile">
             <a href="profile">
@@ -28,68 +30,116 @@
 <body class="container marginTop120px">
     <div class="menu">
         <div class="container row" id="menuProfileDiv">
-            <img src="static/images/profileLogo.svg" width="40px">
+            {% if current_user.doctor.photo_path %}
+                <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}" width="40px">
+            {% else %}
+                <img src="static/images/profileLogo.svg" width="40px">
+            {% endif %}
             <div>
-                <h4 id="name">Загеев Ален</h4>
-                <h5 id="email">gaj@gmail.com</h5>
+                <h4 id="name">
+                {% if current_user.patient %}
+                <span>{{ current_user.patient.firstname }} {{ current_user.patient.surname }}</span>
+                {% else %}
+                <span>{{ current_user.doctor.firstname }} {{ current_user.doctor.surname }}</span>
+                {% endif %}
+                <h5 id="email">{{ current_user.username }}</h5>
             </div>
         </div>
-        <div class="menuItem active">
-            <img src="static/images/doctorsList.svg" width="40px">
-            <h5>Наши специалисты</h5>
-        </div>
         <div class="menuItem">
-            <img src="static/images/appointments.svg" width="40px">
-            <a href="appointments">Записи</a>
+            <img src="static/images/doctorsList.svg" width="40px" style="filter: invert(1);">
+            <a href="doctor_list">Наши специалисты</a>
+        </div>
+        <div class="menuItem active">
+            <img src="static/images/appointments.svg" width="40px" style="filter: invert(1);">
+            <a href="patient-appointments">Записи</a>
         </div>
         <div class="menuItem">
             <img src="static/images/medicalCard.png" width="40px">
-            <a href="medicalCard">Медицинская карта</a>
+            <a href="medical-card">Медицинская карта</a>
         </div>
     </div>
     <div class="container center">
         <div id="appointmentsTitle">
             <h2>Мои записи</h2>
-            <h3>Никита, Хочу К Проктологу</h3>
+            <h3>{{ current_user.patient.surname }} {{ current_user.patient.firstname }}</h3>
         </div>
     </div>
 
-    <div class="appointments"> 
-        <div class="appointment">
-            <div id="apointementsItem">
-                <div class="container row">
-                    <img src="static/images/logo.svg" width="200px">
-                    <div id="apointementData">
-                        <h3>Витальев Виталий</h3>
-                        <div id="date-time">
-                            <h3>DATE</h3>
-                            <h3>TIME</h3>
+    <div class="appointments">
+        {% for appointment in patient_appointments %}
+            <div class="appointment">
+                <div id="apointementsItem">
+                    <div class="container row">
+                        <img src="{{ url_for('uploaded_file', filename=appointment.doctor.photo_path) }}" width="200px">
+                        <div id="apointementData">
+                            <h3>{{ appointment.doctor.surname }} {{ appointment.doctor.firstname }}</h3>
+                            <div id="date-time">
+                                <h3>{{ appointment.appointment_date_time.strftime('%d.%m.%Y') }}</h3> <!-- Вывод только даты в формате 'год-месяц-день' -->
+                                <h3>{{ appointment.appointment_date_time.strftime('%H:%M') }}</h3> <!-- Вывод только даты в формате 'год-месяц-день' -->
+
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <h5 id="details">Примечания: Болит жопа, очень</h5>
+                    <h5 id="details">Примечания: {{ appointment.appointment_details }}</h5>
 
-            </div>    
-        </div>
+                </div>    
+            </div>
+        {% endfor %}
 
-        <div class="appointment">
-            <div id="apointementsItem">
-                <div class="container row">
-                    <img src="static/images/logo.svg" width="200px">
-                    <div id="apointementData">
-                        <h3>Витальев Виталий</h3>
-                        <div id="date-time">
-                            <h3>DATE</h3>
-                            <h3>TIME</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <h5 id="details">Примечания: Не болит жопа, просто хочу массаж простаты</h5>
-
-            </div>    
-        </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuBtn = document.querySelector("#menuIcon"); // Получаем изображение меню
+            const menu = document.querySelector(".menu"); // Получаем само меню
+
+            // Показываем или скрываем меню при нажатии на изображение меню
+            menuBtn.addEventListener("click", function() {
+                if (menu.style.display === "block") {
+                    menu.style.display = "none";
+                } else {
+                    menu.style.display = "block";
+                }
+            });
+
+            // Скрываем меню при нажатии вне его области
+            document.addEventListener("click", function(event) {
+                // Проверяем, что клик произошел не на изображении меню и не внутри самого меню
+                if (event.target !== menuBtn && !menu.contains(event.target)) {
+                    menu.style.display = "none";
+                }
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const closeSidebarBtn = document.querySelector("#closeSidebarBtn");
+            const openSidebarBtn =  document.querySelector("#filterIcon");
+            const sidebar = document.querySelector(".sidebar"); 
+            // Показываем или скрываем меню при нажатии на изображение меню
+            openSidebarBtn.addEventListener("click", function() {
+                if (sidebar.style.display === "flex") {
+                    sidebar.style.display = "none";
+                } else {
+                    sidebar.style.display = "flex";
+                }
+            });
+
+            // Скрываем меню при нажатии вне его области
+            document.addEventListener("click", function(event) {
+                // Проверяем, что клик произошел не на изображении меню и не внутри самого меню
+                if (event.target !== openSidebarBtn && !sidebar.contains(event.target)) {
+                    sidebar.style.display = "none";
+                }
+            });
+
+            closeSidebarBtn.addEventListener("click", function(event) {
+                    sidebar.style.display = "none";
+            });
+        });
+    </script>
+
 </body>
 {% endblock %}
