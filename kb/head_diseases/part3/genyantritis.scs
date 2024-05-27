@@ -6,13 +6,53 @@ concept_genyantritis
 	[genyantritis]
 	(* <- lang_en;; *);;
 
+concept_head_disease
+=> nrel_main_idtf:
+	[болезнь головы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[head disease]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_head_disease
+   (*
+   => nrel_main_idtf:
+      [Опр. (болезнь головы)]
+      (* <- lang_ru;; *);;
+   -> [Любое заболевание, затрагивающее голову, включая кожные заболевания, инфекции, опухоли и травмы.]
+      (* <- lang_ru;; *);;
+   -> [Any disease affecting the head, including skin conditions, infections, tumors, and injuries.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
 concept_difficulty_breathing
 => nrel_main_idtf:
 	[затрудненное дыхание]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[difficulty breathing]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_difficulty_breathing
+   (*
+   => nrel_main_idtf:
+      [Опр. (затрудненное дыхание)]
+      (* <- lang_ru;; *);;
+   -> [Сложности при выполнении дыхательных движений, часто вызванные обструкцией дыхательных путей.]
+      (* <- lang_ru;; *);;
+   -> [Difficulty in performing respiratory movements, often caused by obstruction of the airways.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_purulent_discharge
 => nrel_main_idtf:
@@ -20,7 +60,23 @@ concept_purulent_discharge
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[purulent discharge]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_purulent_discharge
+   (*
+   => nrel_main_idtf:
+      [Опр. (гнойные выделения)]
+      (* <- lang_ru;; *);;
+   -> [Выделение гноя из организма, часто свидетельствующее о воспалительном процессе.]
+      (* <- lang_ru;; *);;
+   -> [Discharge of pus from the body, often indicating an inflammatory process.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_headache
 => nrel_main_idtf:
@@ -28,7 +84,23 @@ concept_headache
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[headache]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_headache
+   (*
+   => nrel_main_idtf:
+      [Опр. (головная боль)]
+      (* <- lang_ru;; *);;
+   -> [Боль или дискомфорт, ощущаемые в области головы или верхней части шеи.]
+      (* <- lang_ru;; *);;
+   -> [Pain or discomfort felt in the head or upper neck area.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_temperature_rise
 => nrel_main_idtf:
@@ -36,7 +108,23 @@ concept_temperature_rise
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[temperature rise]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_temperature_rise
+   (*
+   => nrel_main_idtf:
+      [Опр. (повышение температуры)]
+      (* <- lang_ru;; *);;
+   -> [Увеличение температуры тела сверх нормы, часто сопровождающееся другими симптомами заболевания.]
+      (* <- lang_ru;; *);;
+   -> [Elevation of body temperature above normal, often accompanied by other symptoms of illness.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_heaviness_in_the_nasal_area
 => nrel_main_idtf:
@@ -44,7 +132,23 @@ concept_heaviness_in_the_nasal_area
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[heaviness in the nasal area]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_heaviness_in_the_nasal_area
+   (*
+   => nrel_main_idtf:
+      [Опр. (тяжесть в области носа)]
+      (* <- lang_ru;; *);;
+   -> [Ощущение дискомфорта или тяжести в области носа, часто сопровождающее заболевания верхних дыхательных путей.]
+      (* <- lang_ru;; *);;
+   -> [A sensation of discomfort or heaviness in the nasal area, often accompanying upper respiratory tract infections.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_bacteria
 => nrel_main_idtf:
@@ -52,7 +156,23 @@ concept_bacteria
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[bacteria]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_bacteria
+   (*
+   => nrel_main_idtf:
+      [Опр. (бактерии)]
+      (* <- lang_ru;; *);;
+   -> [Микроорганизмы одноклеточные или многоклеточные, прокариотические, обычно присутствующие в различных средах.]
+      (* <- lang_ru;; *);;
+   -> [Single-celled or multicellular microorganisms, prokaryotic, typically found in various environments.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_rhinovirus
 => nrel_main_idtf:
@@ -60,7 +180,23 @@ concept_rhinovirus
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[rhinovirus]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_rhinovirus
+   (*
+   => nrel_main_idtf:
+      [Опр. (риновирус)]
+      (* <- lang_ru;; *);;
+   -> [Вирус, вызывающий простудные заболевания у человека, часто проникающий через слизистые оболочки верхних дыхательных путей.]
+      (* <- lang_ru;; *);;
+   -> [A virus that causes the common cold in humans, often entering through the mucous membranes of the upper respiratory tract.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_mycetoma
 => nrel_main_idtf:
@@ -68,7 +204,23 @@ concept_mycetoma
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[mycetoma]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_mycetoma
+   (*
+   => nrel_main_idtf:
+      [Опр. (мицетома)]
+      (* <- lang_ru;; *);;
+   -> [Хроническое инфекционное заболевание, характеризующееся образованием гнойных опухолей, часто поражающее кожу и ткани под кожей.]
+      (* <- lang_ru;; *);;
+   -> [A chronic infectious disease characterized by the formation of purulent tumors, often affecting the skin and subcutaneous tissues.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_pain
 => nrel_main_idtf:
@@ -76,7 +228,23 @@ concept_pain
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[pain]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_pain
+   (*
+   => nrel_main_idtf:
+      [Опр. (боль)]
+      (* <- lang_ru;; *);;
+   -> [Неприятное ощущение, чувство дискомфорта или страдания, часто связанное с повреждением тканей или болезненным состоянием.]
+      (* <- lang_ru;; *);;
+   -> [An unpleasant sensation, feeling of discomfort, or suffering often associated with tissue damage or a painful condition.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_maxillary_sinuses_of_the_skull
 => nrel_main_idtf:
@@ -84,7 +252,23 @@ concept_maxillary_sinuses_of_the_skull
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[maxillary sinuses of the skull]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_maxillary_sinuses_of_the_skull
+   (*
+   => nrel_main_idtf:
+      [Опр. (верхнечелюстные пазухи черепа)]
+      (* <- lang_ru;; *);;
+   -> [Парные пазухи в костной структуре черепа, расположенные в области щек и верхней части лица, обычно соединенные с полостью носа.]
+      (* <- lang_ru;; *);;
+   -> [Paired cavities within the bony structure of the skull located in the area of the cheeks and upper face, usually connected to the nasal cavity.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_sharp
 => nrel_main_idtf:
@@ -92,7 +276,23 @@ concept_sharp
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[sharp]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_sharp
+   (*
+   => nrel_main_idtf:
+      [Опр. (острый)]
+      (* <- lang_ru;; *);;
+   -> [Имеющий четкое или пронзительное ощущение, часто ассоциируемое с интенсивной болезненностью.]
+      (* <- lang_ru;; *);;
+   -> [Having a keen or piercing sensation, often associated with intense pain.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_purulent
 => nrel_main_idtf:
@@ -100,7 +300,23 @@ concept_purulent
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[purulent]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_purulent
+   (*
+   => nrel_main_idtf:
+      [Опр. (гнойный)]
+      (* <- lang_ru;; *);;
+   -> [Содержащий гной, характеризующийся образованием или присутствием гноя.]
+      (* <- lang_ru;; *);;
+   -> [Containing or characterized by the presence of pus, often indicating the formation of or presence of pus.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_chronic
 => nrel_main_idtf:
@@ -108,7 +324,23 @@ concept_chronic
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[chronic]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_chronic
+   (*
+   => nrel_main_idtf:
+      [Опр. (хронический)]
+      (* <- lang_ru;; *);;
+   -> [Продолжающийся или повторяющийся в течение длительного времени, обычно более трех месяцев или возникающий повторно.]
+      (* <- lang_ru;; *);;
+   -> [Persisting or recurring over a long period, usually more than three months or recurring intermittently.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_bilateral
 => nrel_main_idtf:
@@ -116,7 +348,23 @@ concept_bilateral
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[concept_bilateral]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_bilateral
+   (*
+   => nrel_main_idtf:
+      [Опр. (двусторонний)]
+      (* <- lang_ru;; *);;
+   -> [Присутствующий или происходящий на обеих сторонах или в обеих частях чего-либо.]
+      (* <- lang_ru;; *);;
+   -> [Present or occurring on both sides or in both parts of something.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_antibiotics
 => nrel_main_idtf:
@@ -124,7 +372,23 @@ concept_antibiotics
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[antibiotics]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_antibiotics
+   (*
+   => nrel_main_idtf:
+      [Опр. (антибиотики)]
+      (* <- lang_ru;; *);;
+   -> [Препараты, применяемые для лечения инфекций, вызванных бактериями, обычно убивающие или замедляющие рост бактерий.]
+      (* <- lang_ru;; *);;
+   -> [Drugs used to treat infections caused by bacteria, typically killing or slowing the growth of bacteria.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_surgically
 => nrel_main_idtf:
@@ -132,7 +396,23 @@ concept_surgically
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[surgically]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_surgically
+   (*
+   => nrel_main_idtf:
+      [Опр. (хирургический)]
+      (* <- lang_ru;; *);;
+   -> [Связанный с хирургическим вмешательством или выполненный с помощью хирургической процедуры.]
+      (* <- lang_ru;; *);;
+   -> [Related to or performed by means of surgery or a surgical procedure.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_puffiness
 => nrel_main_idtf:
@@ -140,15 +420,23 @@ concept_puffiness
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[puffiness]
-	(* <- lang_en;; *);;
-
-concept_purulent
-=> nrel_main_idtf:
-	[гнойный]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[purulent]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_puffiness
+   (*
+   => nrel_main_idtf:
+      [Опр. (отечность)]
+      (* <- lang_ru;; *);;
+   -> [Состояние или образование отека, характеризующееся накоплением жидкости и разбуханием тканей.]
+      (* <- lang_ru;; *);;
+   -> [The state or condition of being swollen or having an accumulation of fluid, characterized by tissue enlargement.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_the_respiratory_system
 => nrel_main_idtf:
@@ -156,7 +444,23 @@ concept_the_respiratory_system
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[the respiratory system]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_the_respiratory_system
+   (*
+   => nrel_main_idtf:
+      [Опр. (дыхательная система)]
+      (* <- lang_ru;; *);;
+   -> [Система органов, включающая органы дыхания, такие как нос, гортань, трахея, бронхи и легкие, ответственные за вдыхание и выдыхание воздуха и обеспечивающие обмен газами между воздухом и кровью.]
+      (* <- lang_ru;; *);;
+   -> [The organ system that includes the organs of breathing, such as the nose, larynx, trachea, bronchi, and lungs, responsible for inhaling and exhaling air and facilitating gas exchange between air and blood.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_nasal_cavity
 => nrel_main_idtf:
@@ -164,7 +468,23 @@ concept_nasal_cavity
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[nasal cavity]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_nasal_cavity
+   (*
+   => nrel_main_idtf:
+      [Опр. (носовая полость)]
+      (* <- lang_ru;; *);;
+   -> [Пространство внутри носа, образованное носовыми раковинами, черепными костями и прокладками, заполненное воздухом и служащее путем для вдыхания и выдыхания, а также чувствительное к запахам.]
+      (* <- lang_ru;; *);;
+   -> [The space inside the nose, formed by the nasal conchae, cranial bones, and septa, filled with air and serving as a passageway for inhalation and exhalation, as well as being sensitive to odors.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_maxillary_sinuses_of_the_nose
 => nrel_main_idtf:
@@ -172,7 +492,23 @@ concept_maxillary_sinuses_of_the_nose
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[concept maxillary sinuses of the nose]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_maxillary_sinuses_of_the_nose
+   (*
+   => nrel_main_idtf:
+      [Опр. (верхнечелюстные пазухи носа)]
+      (* <- lang_ru;; *);;
+   -> [Парные пазухи в костях лица, расположенные под глазами и вверху носа, которые соединены с носовой полостью и могут становиться воспаленными из-за инфекций, аллергий или других причин.]
+      (* <- lang_ru;; *);;
+   -> [Paired cavities in the facial bones located beneath the eyes and above the nose, which are connected to the nasal cavity and may become inflamed due to infections, allergies, or other reasons.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_the_constellation
 => nrel_main_idtf:
@@ -180,7 +516,23 @@ concept_the_constellation
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[the constellation]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_the_constellation
+   (*
+   => nrel_main_idtf:
+      [Опр. (соустье)]
+      (* <- lang_ru;; *);;
+   -> [Совокупность патологических симптомов, характеризующихся сходными проявлениями или признаками и указывающих на общее заболевание или состояние.]
+      (* <- lang_ru;; *);;
+   -> [A collection of pathological symptoms characterized by similar manifestations or signs, indicating a common disease or condition.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_purulent_inflammation
 => nrel_main_idtf:
@@ -188,7 +540,23 @@ concept_purulent_inflammation
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[purulent inflammation]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_purulent_inflammation
+   (*
+   => nrel_main_idtf:
+      [Опр. (гнойное воспаление)]
+      (* <- lang_ru;; *);;
+   -> [Воспалительная реакция, характеризующаяся образованием гноя как результатом защитного механизма организма в ответ на инфекцию или травму.]
+      (* <- lang_ru;; *);;
+   -> [An inflammatory response characterized by the formation of pus as a result of the body's defensive mechanism in response to infection or injury.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 nrel_stages
 => nrel_main_idtf:

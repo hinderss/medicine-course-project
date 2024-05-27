@@ -8,83 +8,243 @@ concept_cluster_headaches
 
 concept_alcohol_consumption
 => nrel_main_idtf:
-	[употребление алкоголя]
-	(* <- lang_ru;; *);
+    [употребление алкоголя]
+    (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[alcohol consumption]
-	(* <- lang_en;; *);;
+    [alcohol consumption]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_alcohol_consumption
+     (*
+     => nrel_main_idtf:
+        [Опр. (употребление алкоголя)]
+        (* <- lang_ru;; *);;
+     -> [Употребление алкоголя — это процесс употребления напитков, содержащих этанол, который может повлиять на физическое и психическое состояние человека.]
+        (* <- lang_ru;; *);;
+     -> [Alcohol consumption is the process of drinking beverages containing ethanol, which can affect a person's physical and mental state.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_eye_area
 => nrel_main_idtf:
-	[область вокруг глаз]
-	(* <- lang_ru;; *);
+    [область вокруг глаз]
+    (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[eye area]
-	(* <- lang_en;; *);;
+    [eye area]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_eye_area
+     (*
+     => nrel_main_idtf:
+        [Опр. (область вокруг глаз)]
+        (* <- lang_ru;; *);;
+     -> [Область вокруг глаз — это зона лица, которая включает кожу и структуры вокруг глаз, такие как веки и орбиты.]
+        (* <- lang_ru;; *);;
+     -> [The eye area is the part of the face that includes the skin and structures around the eyes, such as the eyelids and orbits.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_temple_area
 => nrel_main_idtf:
-	[височная зона]
-	(* <- lang_ru;; *);
+    [височная зона]
+    (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[temple area]
-	(* <- lang_en;; *);;
+    [temple area]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_temple_area
+     (*
+     => nrel_main_idtf:
+        [Опр. (височная зона)]
+        (* <- lang_ru;; *);;
+     -> [Височная зона — это область на боковой стороне головы, расположенная между лбом и ухом.]
+        (* <- lang_ru;; *);;
+     -> [The temple area is the region on the side of the head located between the forehead and the ear.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_loss_of_balance
 => nrel_main_idtf:
-	[потеря равновесия]
-	(* <- lang_ru;; *);
+    [потеря равновесия]
+    (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[loss of balance]
-	(* <- lang_en;; *);;
+    [loss of balance]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_loss_of_balance
+     (*
+     => nrel_main_idtf:
+        [Опр. (потеря равновесия)]
+        (* <- lang_ru;; *);;
+     -> [Потеря равновесия — это состояние, при котором человек испытывает затруднения в поддержании устойчивого положения тела.]
+        (* <- lang_ru;; *);;
+     -> [Loss of balance is a condition where a person experiences difficulty in maintaining a stable body position.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_headache
 => nrel_main_idtf:
-	[головная боль]
-	(* <- lang_ru;; *);
+    [головная боль]
+    (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[headache]
-	(* <- lang_en;; *);;
+    [headache]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_headache
+     (*
+     => nrel_main_idtf:
+        [Опр. (головная боль)]
+        (* <- lang_ru;; *);;
+     -> [Головная боль — это боль или дискомфорт, ощущаемый в области головы или верхней части шеи.]
+        (* <- lang_ru;; *);;
+     -> [Headache is pain or discomfort experienced in the area of the head or upper neck.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_increased_sensitivity_to_light
 => nrel_main_idtf:
-	[повышенная чувствительность к свету]
-	(* <- lang_ru;; *);
+    [повышенная чувствительность к свету]
+    (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[increased sensitivity to light]
-	(* <- lang_en;; *);;
+    [increased sensitivity to light]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_increased_sensitivity_to_light
+     (*
+     => nrel_main_idtf:
+        [Опр. (повышенная чувствительность к свету)]
+        (* <- lang_ru;; *);;
+     -> [Повышенная чувствительность к свету — это состояние, при котором глаза становятся необычно чувствительными к свету, вызывая дискомфорт или боль.]
+        (* <- lang_ru;; *);;
+     -> [Increased sensitivity to light is a condition where the eyes become unusually sensitive to light, causing discomfort or pain.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_increased_sensitivity_to_sound
 => nrel_main_idtf:
-	[повышенная чувствительность к звуку]
-	(* <- lang_ru;; *);
+    [повышенная чувствительность к звуку]
+    (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[increased sensitivity to sound]
-	(* <- lang_en;; *);;
+    [increased sensitivity to sound]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_increased_sensitivity_to_sound
+     (*
+     => nrel_main_idtf:
+        [Опр. (повышенная чувствительность к звуку)]
+        (* <- lang_ru;; *);;
+     -> [Повышенная чувствительность к звуку — это состояние, при котором человек испытывает дискомфорт или боль от обычных звуков, которые в норме не вызывают таких ощущений.]
+        (* <- lang_ru;; *);;
+     -> [Increased sensitivity to sound is a condition where a person experiences discomfort or pain from everyday sounds that are normally not bothersome.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_nasal_congestion
 => nrel_main_idtf:
-	[заложенность носа]
-	(* <- lang_ru;; *);
+    [заложенность носа]
+    (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[nasal congestion]
-	(* <- lang_en;; *);;
+    [nasal congestion]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_nasal_congestion
+     (*
+     => nrel_main_idtf:
+        [Опр. (заложенность носа)]
+        (* <- lang_ru;; *);;
+     -> [Заложенность носа — это состояние, при котором носовые проходы блокируются из-за воспаления или скопления слизи, что затрудняет дыхание.]
+        (* <- lang_ru;; *);;
+     -> [Nasal congestion is a condition where the nasal passages become blocked due to inflammation or mucus buildup, making breathing difficult.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_the_central_nervous_system
 => nrel_main_idtf:
-	[центральная нервная система]
-	(* <- lang_ru;; *);
+    [центральная нервная система]
+    (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[the central nervous system]
-	(* <- lang_en;; *);;
+    [the central nervous system]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_the_central_nervous_system
+     (*
+     => nrel_main_idtf:
+        [Опр. (центральная нервная система)]
+        (* <- lang_ru;; *);;
+     -> [Центральная нервная система — это часть нервной системы, включающая головной и спинной мозг, которая отвечает за обработку информации и контроль над телом.]
+        (* <- lang_ru;; *);;
+     -> [The central nervous system is the part of the nervous system that includes the brain and spinal cord, responsible for processing information and controlling the body.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_the_brain
 => nrel_main_idtf:
-	[головной мозг]
-	(* <- lang_ru;; *);
+    [головной мозг]
+    (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[the brain]
-	(* <- lang_en;; *);;
+    [the brain]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_the_brain
+     (*
+     => nrel_main_idtf:
+        [Опр. (головной мозг)]
+        (* <- lang_ru;; *);;
+     -> [Головной мозг — это основной орган центральной нервной системы, ответственный за обработку сенсорной информации, координацию движений и принятие решений.]
+        (* <- lang_ru;; *);;
+     -> [The brain is the primary organ of the central nervous system, responsible for processing sensory information, coordinating movements, and making decisions.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_hypothalamus
 => nrel_main_idtf:
@@ -92,7 +252,23 @@ concept_hypothalamus
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[hypothalamus]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_hypothalamus
+     (*
+     => nrel_main_idtf:
+        [Опр. (гипоталамус)]
+        (* <- lang_ru;; *);;
+     -> [Гипоталамус — это часть мозга, которая контролирует множество функций организма, включая температуру, жажду, голод и циркадные ритмы.]
+        (* <- lang_ru;; *);;
+     -> [The hypothalamus is a part of the brain that controls many body functions, including temperature, thirst, hunger, and circadian rhythms.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_neural_pathways
 => nrel_main_idtf:
@@ -100,7 +276,23 @@ concept_neural_pathways
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[neural pathways]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_neural_pathways
+     (*
+     => nrel_main_idtf:
+        [Опр. (нейронные пути)]
+        (* <- lang_ru;; *);;
+     -> [Нейронные пути — это сети нейронов, которые передают сигналы между различными частями мозга и другими частями нервной системы.]
+        (* <- lang_ru;; *);;
+     -> [Neural pathways are networks of neurons that transmit signals between different parts of the brain and other parts of the nervous system.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_dizziness
 => nrel_main_idtf:
@@ -108,23 +300,71 @@ concept_dizziness
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[dizziness]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_dizziness
+     (*
+     => nrel_main_idtf:
+        [Опр. (головокружение)]
+        (* <- lang_ru;; *);;
+     -> [Головокружение — это чувство вращения или нестабильности, часто сопровождающееся нарушением равновесия.]
+        (* <- lang_ru;; *);;
+     -> [Dizziness is a feeling of spinning or instability, often accompanied by a loss of balance.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_redness_of_the_eye
 => nrel_main_idtf:
 	[покраснение глаз]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[redness_of_the_eye]
-	(* <- lang_en;; *);;
+	[redness of the eye]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_redness_of_the_eye
+     (*
+     => nrel_main_idtf:
+        [Опр. (покраснение глаз)]
+        (* <- lang_ru;; *);;
+     -> [Покраснение глаз — это состояние, при котором белок глаза становится красным из-за расширения кровеносных сосудов.]
+        (* <- lang_ru;; *);;
+     -> [Redness of the eye is a condition where the white part of the eye becomes red due to the dilation of blood vessels.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_watery_eyes
 => nrel_main_idtf:
 	[слезотечение глаз]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[watery_eyes]
-	(* <- lang_en;; *);;
+	[watery eyes]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_watery_eyes
+     (*
+     => nrel_main_idtf:
+        [Опр. (слезотечение глаз)]
+        (* <- lang_ru;; *);;
+     -> [Слезотечение глаз — это состояние, при котором глаза производят избыточное количество слез, часто из-за раздражения или воспаления.]
+        (* <- lang_ru;; *);;
+     -> [Watery eyes is a condition where the eyes produce an excessive amount of tears, often due to irritation or inflammation.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_cranial_region
 => nrel_main_idtf:
@@ -132,15 +372,71 @@ concept_cranial_region
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[cranial region]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_cranial_region
+     (*
+     => nrel_main_idtf:
+        [Опр. (область черепа)]
+        (* <- lang_ru;; *);;
+     -> [Область черепа — это часть головы, содержащая мозг, череп и другие важные структуры.]
+        (* <- lang_ru;; *);;
+     -> [The cranial region is the part of the head that contains the brain, skull, and other important structures.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_head_disease
+=> nrel_main_idtf:
+	[болезнь головы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[head disease]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_head_disease
+     (*
+     => nrel_main_idtf:
+        [Опр. (болезнь головы)]
+        (* <- lang_ru;; *);;
+     -> [Болезнь головы — это любое заболевание, которое поражает голову, включая мозг, череп или мягкие ткани.]
+        (* <- lang_ru;; *);;
+     -> [Head disease refers to any ailment that affects the head, including the brain, skull, or soft tissues.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_average
 => nrel_main_idtf:
 	[средний]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[concept_average]
-	(* <- lang_en;; *);;
+	[average]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_average
+     (*
+     => nrel_main_idtf:
+        [Опр. (средний)]
+        (* <- lang_ru;; *);;
+     -> [Средний — это показатель, представляющий собой сумму значений, деленную на их количество.]
+        (* <- lang_ru;; *);;
+     -> [Average is a measure that represents the sum of values divided by their number.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_temple_area
 => nrel_main_idtf:
@@ -148,7 +444,23 @@ concept_temple_area
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[temple area]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_temple_area
+     (*
+     => nrel_main_idtf:
+        [Опр. (височная зона)]
+        (* <- lang_ru;; *);;
+     -> [Височная зона — это область головы, расположенная по бокам лба и вокруг висков.]
+        (* <- lang_ru;; *);;
+     -> [The temple area is the region of the head located on the sides of the forehead and around the temples.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_hypothalamus_arousal
 => nrel_main_idtf:
@@ -156,7 +468,23 @@ concept_hypothalamus_arousal
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[hypothalamus arousal]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_hypothalamus_arousal
+     (*
+     => nrel_main_idtf:
+        [Опр. (возбуждение гипоталамуса)]
+        (* <- lang_ru;; *);;
+     -> [Возбуждение гипоталамуса — это активация гипоталамуса, части мозга, которая регулирует многие функции организма, включая эмоции и поведение.]
+        (* <- lang_ru;; *);;
+     -> [Hypothalamus arousal is the activation of the hypothalamus, a part of the brain that regulates many body functions, including emotions and behavior.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 nrel_possible_reason_for_occurrence
 => nrel_main_idtf:

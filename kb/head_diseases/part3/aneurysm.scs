@@ -12,7 +12,23 @@ concept_headache
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[headache]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_headache
+     (*
+     => nrel_main_idtf:
+        [Опр. (головная боль)]
+        (* <- lang_ru;; *);;
+     -> [Боль или дискомфорт, возникающие в области головы или верхней части шеи.]
+        (* <- lang_ru;; *);;
+     -> [Pain or discomfort occurring in the head or upper neck region.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_visual_impairment
 => nrel_main_idtf:
@@ -20,7 +36,23 @@ concept_visual_impairment
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[visual impairment]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_visual_impairment
+     (*
+     => nrel_main_idtf:
+        [Опр. (нарушение зрения)]
+        (* <- lang_ru;; *);;
+     -> [Частичная или полная потеря способности видеть, которая может быть временной или постоянной.]
+        (* <- lang_ru;; *);;
+     -> [Partial or complete loss of the ability to see, which can be temporary or permanent.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_seizures
 => nrel_main_idtf:
@@ -28,7 +60,23 @@ concept_seizures
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[seizures]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_seizures
+     (*
+     => nrel_main_idtf:
+        [Опр. (судороги)]
+        (* <- lang_ru;; *);;
+     -> [Внезапные, неконтролируемые электрические возмущения в головном мозге, которые могут вызвать изменения в поведении, движениях или сознании.]
+        (* <- lang_ru;; *);;
+     -> [Sudden, uncontrolled electrical disturbances in the brain that can cause changes in behavior, movements, or consciousness.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_atherosclerosis
 => nrel_main_idtf:
@@ -36,7 +84,23 @@ concept_atherosclerosis
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[atherosclerosis]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_atherosclerosis
+     (*
+     => nrel_main_idtf:
+        [Опр. (атеросклероз)]
+        (* <- lang_ru;; *);;
+     -> [Заболевание, характеризующееся накоплением жировых отложений и бляшек на стенках артерий, что может привести к сужению и жесткости артерий.]
+        (* <- lang_ru;; *);;
+     -> [A disease characterized by the accumulation of fatty deposits and plaques on the walls of arteries, which can lead to narrowing and hardening of the arteries.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_injuries
 => nrel_main_idtf:
@@ -44,15 +108,47 @@ concept_injuries
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[injuries]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_injuries
+     (*
+     => nrel_main_idtf:
+        [Опр. (травмы)]
+        (* <- lang_ru;; *);;
+     -> [Физическое повреждение тела, вызванное внешним воздействием, таким как удар, падение или другой травмирующий фактор.]
+        (* <- lang_ru;; *);;
+     -> [Physical damage to the body caused by external forces such as a blow, fall, or other traumatic event.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_enmity
 => nrel_main_idtf:
-	[вражденное]
+	[враждебность]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[enmity]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_enmity
+     (*
+     => nrel_main_idtf:
+        [Опр. (враждебность)]
+        (* <- lang_ru;; *);;
+     -> [Чувство вражды или недоброжелательности по отношению к кому-либо или чему-либо.]
+        (* <- lang_ru;; *);;
+     -> [A feeling of hostility or ill-will towards someone or something.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_arterial_hypertension
 => nrel_main_idtf:
@@ -60,7 +156,23 @@ concept_arterial_hypertension
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[arterial hypertension]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_arterial_hypertension
+     (*
+     => nrel_main_idtf:
+        [Опр. (артериальная гипертензия)]
+        (* <- lang_ru;; *);;
+     -> [Состояние, при котором артериальное давление в артериях постоянно повышено.]
+        (* <- lang_ru;; *);;
+     -> [A condition in which the blood pressure in the arteries is persistently elevated.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_asymptomatic
 => nrel_main_idtf:
@@ -68,7 +180,23 @@ concept_asymptomatic
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[asymptomatic]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_asymptomatic
+     (*
+     => nrel_main_idtf:
+        [Опр. (бессимптомный)]
+        (* <- lang_ru;; *);;
+     -> [Состояние, при котором отсутствуют явные симптомы болезни.]
+        (* <- lang_ru;; *);;
+     -> [A condition in which there are no apparent symptoms of a disease.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_gap
 => nrel_main_idtf:
@@ -76,7 +204,23 @@ concept_gap
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[gap]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_gap
+     (*
+     => nrel_main_idtf:
+        [Опр. (разрыв)]
+        (* <- lang_ru;; *);;
+     -> [Прерывание или разрыв непрерывности чего-либо, например, ткани или связи.]
+        (* <- lang_ru;; *);;
+     -> [An interruption or break in the continuity of something, such as tissue or connection.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_residual_symptom
 => nrel_main_idtf:
@@ -84,7 +228,23 @@ concept_residual_symptom
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[residual symptom]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_residual_symptom
+     (*
+     => nrel_main_idtf:
+        [Опр. (остаточный симптом)]
+        (* <- lang_ru;; *);;
+     -> [Симптом, который остается после исчезновения основной болезни.]
+        (* <- lang_ru;; *);;
+     -> [A symptom that remains after the primary illness has subsided.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_small
 => nrel_main_idtf:
@@ -92,7 +252,23 @@ concept_small
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[small]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_small
+     (*
+     => nrel_main_idtf:
+        [Опр. (малый)]
+        (* <- lang_ru;; *);;
+     -> [Размер или величина, которая меньше обычного или среднего.]
+        (* <- lang_ru;; *);;
+     -> [A size or magnitude that is less than usual or average.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_medium
 => nrel_main_idtf:
@@ -100,7 +276,23 @@ concept_medium
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[medium]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_medium
+     (*
+     => nrel_main_idtf:
+        [Опр. (средний)]
+        (* <- lang_ru;; *);;
+     -> [Размер или величина, которая находится между большим и малым.]
+        (* <- lang_ru;; *);;
+     -> [A size or magnitude that is between large and small.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_large
 => nrel_main_idtf:
@@ -108,7 +300,23 @@ concept_large
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[large]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_large
+     (*
+     => nrel_main_idtf:
+        [Опр. (большой)]
+        (* <- lang_ru;; *);;
+     -> [Размер или величина, которая больше обычного или среднего.]
+        (* <- lang_ru;; *);;
+     -> [A size or magnitude that is greater than usual or average.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_fusiform
 => nrel_main_idtf:
@@ -116,7 +324,23 @@ concept_fusiform
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[fusiform]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_fusiform
+     (*
+     => nrel_main_idtf:
+        [Опр. (веретенообразный)]
+        (* <- lang_ru;; *);;
+     -> [Форма, напоминающая веретено, сужающаяся к обоим концам.]
+        (* <- lang_ru;; *);;
+     -> [A shape that tapers at both ends, resembling a spindle.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_baggy
 => nrel_main_idtf:
@@ -124,7 +348,23 @@ concept_baggy
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[baggy]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_baggy
+     (*
+     => nrel_main_idtf:
+        [Опр. (мешотчатый)]
+        (* <- lang_ru;; *);;
+     -> [Форма, напоминающая мешок или не плотно прилегающая.]
+        (* <- lang_ru;; *);;
+     -> [A shape that resembles a bag or is loosely fitting.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_the_central_nervous_system
 => nrel_main_idtf:
@@ -132,7 +372,23 @@ concept_the_central_nervous_system
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[the central nervous system]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_the_central_nervous_system
+     (*
+     => nrel_main_idtf:
+        [Опр. (центральная нервная система)]
+        (* <- lang_ru;; *);;
+     -> [Центральная нервная система — это часть нервной системы, включающая головной и спинной мозг, которая отвечает за обработку и передачу информации в организме.]
+        (* <- lang_ru;; *);;
+     -> [The central nervous system is the part of the nervous system comprising the brain and spinal cord, responsible for processing and transmitting information in the body.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_the_brain
 => nrel_main_idtf:
@@ -140,7 +396,23 @@ concept_the_brain
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[the brain]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_the_brain
+     (*
+     => nrel_main_idtf:
+        [Опр. (головной мозг)]
+        (* <- lang_ru;; *);;
+     -> [Головной мозг — это центральный орган нервной системы, который управляет всеми функциями организма, включая мысли, движения и ощущения.]
+        (* <- lang_ru;; *);;
+     -> [The brain is the central organ of the nervous system that controls all bodily functions, including thoughts, movements, and sensations.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_vessels_of_the_brain
 => nrel_main_idtf:
@@ -148,7 +420,23 @@ concept_vessels_of_the_brain
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[vessels of the brain]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_vessels_of_the_brain
+     (*
+     => nrel_main_idtf:
+        [Опр. (сосуды головного мозга)]
+        (* <- lang_ru;; *);;
+     -> [Сосуды головного мозга — это кровеносные сосуды, которые снабжают головной мозг кислородом и питательными веществами.]
+        (* <- lang_ru;; *);;
+     -> [Vessels of the brain are the blood vessels that supply the brain with oxygen and nutrients.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_rupture_of_the_aneurysm
 => nrel_main_idtf:
@@ -156,7 +444,23 @@ concept_rupture_of_the_aneurysm
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[rupture of the aneurysm]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_rupture_of_the_aneurysm
+     (*
+     => nrel_main_idtf:
+        [Опр. (разрыв аневризмы)]
+        (* <- lang_ru;; *);;
+     -> [Разрыв аневризмы — это острое состояние, при котором стенка аневризмы сосуда разрывается, что может привести к серьезным последствиям, таким как кровоизлияние.]
+        (* <- lang_ru;; *);;
+     -> [Rupture of the aneurysm is an acute condition where the wall of an aneurysm in a blood vessel breaks, potentially leading to severe consequences such as hemorrhage.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 nrel_treatment_methods
 => nrel_main_idtf:

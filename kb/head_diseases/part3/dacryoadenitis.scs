@@ -12,7 +12,23 @@ concept_lacrimal_gland_pain
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[lacrimal gland pain]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_lacrimal_gland_pain
+   (*
+   => nrel_main_idtf:
+      [Опр. (боль в слезной железе)]
+      (* <- lang_ru;; *);;
+   -> [Дискомфорт, дискомфорт или боль, связанные с заболеванием или воспалением слезной железы, которая находится в верхнем внешнем углу глазной впадины и отвечает за производство слезной жидкости.]
+      (* <- lang_ru;; *);;
+   -> [Discomfort, ache, or pain associated with a condition or inflammation of the lacrimal gland, which is located in the upper outer corner of the eye socket and responsible for producing tears.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_edema_of_the_eyelid
 => nrel_main_idtf:
@@ -20,7 +36,23 @@ concept_edema_of_the_eyelid
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[edema of the eyelid]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_edema_of_the_eyelid
+   (*
+   => nrel_main_idtf:
+      [Опр. (отек века)]
+      (* <- lang_ru;; *);;
+   -> [Увеличение объема или набухание тканей вокруг верхнего или нижнего века, обычно вызванное воспалением, аллергической реакцией или другими патологическими процессами.]
+      (* <- lang_ru;; *);;
+   -> [An increase in volume or swelling of tissues around the upper or lower eyelid, typically caused by inflammation, an allergic reaction, or other pathological processes.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_temperature_rise
 => nrel_main_idtf:
@@ -28,15 +60,46 @@ concept_temperature_rise
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[temperature rise]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_temperature_rise
+   (*
+   => nrel_main_idtf:
+      [Опр. (повышение температуры)]
+      (* <- lang_ru;; *);;
+   -> [Увеличение температуры тела выше нормального уровня, часто связанное с инфекцией, воспалением или другими патологическими процессами.]
+      (* <- lang_ru;; *);;
+   -> [An increase in body temperature above the normal level, often associated with infection, inflammation, or other pathological processes.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 
 concept_pneumococks
 => nrel_main_idtf:
 	[пневмококки]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
-	[pneumococks]
-	(* <- lang_en;; *);;
+	[pneumococci]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+  (*
+  => nrel_sc_text_translation:
+     def_pneumococci
+     (*
+     => nrel_main_idtf:
+        [Опр. (пневмококки)]
+        (* <- lang_ru;; *);;
+     -> [Бактерии из рода Streptococcus pneumoniae, которые могут вызывать различные инфекции, такие как пневмония, синусит и бронхит, а также другие серьезные заболевания.]
+        (* <- lang_ru;; *);;
+     -> [Bacteria of the genus Streptococcus pneumoniae, which can cause various infections such as pneumonia, sinusitis, and bronchitis, as well as other serious diseases.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_staphylococcus
 => nrel_main_idtf:
@@ -44,7 +107,22 @@ concept_staphylococcus
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[staphylococcus]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+  (*
+  => nrel_sc_text_translation:
+     def_staphylococcus
+     (*
+     => nrel_main_idtf:
+        [Опр. (стафилококки)]
+        (* <- lang_ru;; *);;
+     -> [Кокковые бактерии из рода Staphylococcus, которые могут вызывать различные инфекции, включая кожные инфекции, респираторные инфекции и инфекции крови, и часто являются причиной гнойных заболеваний.]
+        (* <- lang_ru;; *);;
+     -> [Coccal bacteria of the genus Staphylococcus, which can cause various infections, including skin infections, respiratory infections, and bloodstream infections, and are often responsible for purulent conditions.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_mumps
 => nrel_main_idtf:
@@ -52,7 +130,22 @@ concept_mumps
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[mumps]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+  (*
+  => nrel_sc_text_translation:
+     def_mumps
+     (*
+     => nrel_main_idtf:
+        [Опр. (паротит)]
+        (* <- lang_ru;; *);;
+     -> [Вирусное заболевание, вызываемое вирусом паротита, который приводит к воспалению одного или обоих околоушных слюнных желез, что может привести к опухоли и боли в области щеки и шеи.]
+        (* <- lang_ru;; *);;
+     -> [A viral disease caused by the mumps virus, which leads to inflammation of one or both of the parotid salivary glands, resulting in swelling and pain in the cheek and neck area.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_streptococci
 => nrel_main_idtf:
@@ -60,7 +153,22 @@ concept_streptococci
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[streptococci]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+  (*
+  => nrel_sc_text_translation:
+     def_streptococci
+     (*
+     => nrel_main_idtf:
+        [Опр. (стрептококки)]
+        (* <- lang_ru;; *);;
+     -> [Бактерии из рода Streptococcus, которые могут вызывать широкий спектр инфекций, включая ангину, пневмонию, скарлатину и другие инфекции.]
+        (* <- lang_ru;; *);;
+     -> [Bacteria of the genus Streptococcus, which can cause a wide range of infections, including strep throat, pneumonia, scarlet fever, and other infections.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_pain
 => nrel_main_idtf:
@@ -68,7 +176,22 @@ concept_pain
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[pain]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+  (*
+  => nrel_sc_text_translation:
+     def_pain
+     (*
+     => nrel_main_idtf:
+        [Опр. (боль)]
+        (* <- lang_ru;; *);;
+     -> [Неприятное физическое или эмоциональное ощущение, которое может возникать в различных частях тела и иметь различную интенсивность, обычно связанное с травмой, болезнью или повреждением тканей.]
+        (* <- lang_ru;; *);;
+     -> [An unpleasant physical or emotional sensation that can occur in various parts of the body and have varying intensity, typically associated with injury, illness, or tissue damage.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_lacrimal_gland
 => nrel_main_idtf:
@@ -76,7 +199,22 @@ concept_lacrimal_gland
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[lacrimal gland]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+  (*
+  => nrel_sc_text_translation:
+     def_lacrimal_gland
+     (*
+     => nrel_main_idtf:
+        [Опр. (слезная железа)]
+        (* <- lang_ru;; *);;
+     -> [Железа, производящая слезную жидкость, которая увлажняет и защищает глаз, а также помогает удалить микробы и инородные частицы.]
+        (* <- lang_ru;; *);;
+     -> [The gland that produces tears, which moisten and protect the eye, as well as help to remove microbes and foreign particles.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_sharp
 => nrel_main_idtf:
@@ -84,7 +222,22 @@ concept_sharp
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[sharp]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+  (*
+  => nrel_sc_text_translation:
+     def_sharp
+     (*
+     => nrel_main_idtf:
+        [Опр. (острый)]
+        (* <- lang_ru;; *);;
+     -> [Ощущение, характеризующееся интенсивной и четкой болью или дискомфортом.]
+        (* <- lang_ru;; *);;
+     -> [A sensation characterized by intense and distinct pain or discomfort.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_chronic
 => nrel_main_idtf:
@@ -92,7 +245,22 @@ concept_chronic
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[chronic]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+  (*
+  => nrel_sc_text_translation:
+     def_chronic
+     (*
+     => nrel_main_idtf:
+        [Опр. (хронический)]
+        (* <- lang_ru;; *);;
+     -> [Относящийся к заболеванию или состоянию, которое длится продолжительное время и обычно развивается медленно.]
+        (* <- lang_ru;; *);;
+     -> [Relating to a disease or condition that lasts for a long time and typically develops slowly.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_antibiotics
 => nrel_main_idtf:
@@ -100,7 +268,22 @@ concept_antibiotics
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[antibiotics]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+  (*
+  => nrel_sc_text_translation:
+     def_antibiotics
+     (*
+     => nrel_main_idtf:
+        [Опр. (антибиотики)]
+        (* <- lang_ru;; *);;
+     -> [Лекарственные средства, используемые для лечения инфекций, вызванных бактериями, обычно путем уничтожения или замедления их роста.]
+        (* <- lang_ru;; *);;
+     -> [Medications used to treat infections caused by bacteria, typically by destroying or slowing down their growth.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_physical_therapy
 => nrel_main_idtf:
@@ -108,31 +291,91 @@ concept_physical_therapy
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[physical therapy]
-	(* <- lang_en;; *);;
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+  (*
+  => nrel_sc_text_translation:
+     def_physical_therapy
+     (*
+     => nrel_main_idtf:
+        [Опр. (физиотерапия)]
+        (* <- lang_ru;; *);;
+     -> [Методы лечения, использующие физические методы, такие как упражнения, массаж и теплотерапия, для восстановления и поддержания здоровья и подавления боли.]
+        (* <- lang_ru;; *);;
+     -> [Treatment methods that use physical techniques, such as exercises, massage, and heat therapy, to restore and maintain health and alleviate pain.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_the_visual_system
 => nrel_main_idtf:
-	[зрительная система]
-	(* <- lang_ru;; *);
+    [зрительная система]
+    (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[the visual system]
-	(* <- lang_en;; *);;
+    [the visual system]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+    (*
+    => nrel_sc_text_translation:
+        def_the_visual_system
+        (*
+        => nrel_main_idtf:
+            [Опр. (зрительная система)]
+            (* <- lang_ru;; *);;
+        -> [Совокупность органов и структур, отвечающих за восприятие и обработку зрительной информации, включая глаза, оптические нервы и различные области мозга.]
+            (* <- lang_ru;; *);;
+        -> [The collection of organs and structures responsible for perceiving and processing visual information, including the eyes, optic nerves, and various areas of the brain.]
+            (* <- lang_en;; *);;
+        <- definition;;
+        *);;
+    *);;
 
 concept_eye_socket
 => nrel_main_idtf:
-	[глазница]
-	(* <- lang_ru;; *);
+    [глазница]
+    (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[eye socket]
-	(* <- lang_en;; *);;
+    [eye socket]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+    (*
+    => nrel_sc_text_translation:
+        def_eye_socket
+        (*
+        => nrel_main_idtf:
+            [Опр. (глазница)]
+            (* <- lang_ru;; *);;
+        -> [Костная полость в черепе, в которой располагается глаз.]
+            (* <- lang_ru;; *);;
+        -> [The bony cavity in the skull in which the eye is situated.]
+            (* <- lang_en;; *);;
+        <- definition;;
+        *);;
+    *);;
 
 concept_inflammation_of_the_lacrimal_gland
 => nrel_main_idtf:
-	[воспаление слезнйо железы]
-	(* <- lang_ru;; *);
+    [воспаление слезной железы]
+    (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[concept inflammation of the lacrimal gland]
-	(* <- lang_en;; *);;
+    [concept inflammation of the lacrimal gland]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+    (*
+    => nrel_sc_text_translation:
+        def_inflammation_of_the_lacrimal_gland
+        (*
+        => nrel_main_idtf:
+            [Опр. (воспаление слезной железы)]
+            (* <- lang_ru;; *);;
+        -> [Воспалительный процесс, который влияет на слезную железу, часто приводя к ее увеличению в размере и болезненности.]
+            (* <- lang_ru;; *);;
+        -> [An inflammatory process that affects the lacrimal gland, often leading to its enlargement and tenderness.]
+            (* <- lang_en;; *);;
+        <- definition;;
+        *);;
+    *);;
 
 nrel_treatment_methods
 => nrel_main_idtf:
