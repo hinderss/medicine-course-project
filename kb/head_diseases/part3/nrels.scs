@@ -87,7 +87,7 @@ nrel_symptom
 	[symptom*]
 	(* <- lang_en;; *);;
 
-nrel_the_attack
+nrel_attack
 => nrel_main_idtf:
 	[приступ*]
 	(* <- lang_ru;; *);
@@ -160,6 +160,13 @@ nrel_kinds
 	[kinds*]
 	(* <- lang_en;; *);;
 
+nrel_types
+=> nrel_main_idtf:
+	[типы*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[types*]
+	(* <- lang_en;; *);;
 
 nrel_damage
 => nrel_main_idtf:

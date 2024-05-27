@@ -38,14 +38,6 @@
 	[form*]
 	(* <- lang_en;; *);;
 
-  nrel_equivalent
-=> nrel_main_idtf:
-	[эквивалентно*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[equivalent*]
-	(* <- lang_en;; *);;
-
   nrel_character
 => nrel_main_idtf:
 	[характер*]
