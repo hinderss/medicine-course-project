@@ -1,11 +1,3 @@
-concept_dacryoadenitis
-=> nrel_main_idtf:
-	[дакриоаденит]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[dacryoadenitis]
-	(* <- lang_en;; *);;
-
 concept_lacrimal_gland_pain
 => nrel_main_idtf:
 	[боль в слезной железе]
@@ -86,6 +78,7 @@ concept_pneumococks
 	[pneumococci]
 	(* <- lang_en;; *);
 <- rrel_key_sc_element:
+...
   (*
   => nrel_sc_text_translation:
      def_pneumococci
@@ -109,6 +102,7 @@ concept_staphylococcus
 	[staphylococcus]
 	(* <- lang_en;; *);
 <- rrel_key_sc_element:
+...
   (*
   => nrel_sc_text_translation:
      def_staphylococcus
@@ -132,6 +126,7 @@ concept_mumps
 	[mumps]
 	(* <- lang_en;; *);
 <- rrel_key_sc_element:
+...
   (*
   => nrel_sc_text_translation:
      def_mumps
@@ -155,6 +150,7 @@ concept_streptococci
 	[streptococci]
 	(* <- lang_en;; *);
 <- rrel_key_sc_element:
+...
   (*
   => nrel_sc_text_translation:
      def_streptococci
@@ -178,6 +174,7 @@ concept_pain
 	[pain]
 	(* <- lang_en;; *);
 <- rrel_key_sc_element:
+...
   (*
   => nrel_sc_text_translation:
      def_pain
@@ -201,6 +198,7 @@ concept_lacrimal_gland
 	[lacrimal gland]
 	(* <- lang_en;; *);
 <- rrel_key_sc_element:
+...
   (*
   => nrel_sc_text_translation:
      def_lacrimal_gland
@@ -224,6 +222,7 @@ concept_sharp
 	[sharp]
 	(* <- lang_en;; *);
 <- rrel_key_sc_element:
+...
   (*
   => nrel_sc_text_translation:
      def_sharp
@@ -247,6 +246,7 @@ concept_chronic
 	[chronic]
 	(* <- lang_en;; *);
 <- rrel_key_sc_element:
+...
   (*
   => nrel_sc_text_translation:
      def_chronic
@@ -270,6 +270,7 @@ concept_antibiotics
 	[antibiotics]
 	(* <- lang_en;; *);
 <- rrel_key_sc_element:
+...
   (*
   => nrel_sc_text_translation:
      def_antibiotics
@@ -293,6 +294,7 @@ concept_physical_therapy
 	[physical therapy]
 	(* <- lang_en;; *);
 <- rrel_key_sc_element:
+...
   (*
   => nrel_sc_text_translation:
      def_physical_therapy
@@ -316,6 +318,7 @@ concept_the_visual_system
     [the visual system]
     (* <- lang_en;; *);
 <- rrel_key_sc_element:
+...
     (*
     => nrel_sc_text_translation:
         def_the_visual_system
@@ -339,6 +342,7 @@ concept_eye_socket
     [eye socket]
     (* <- lang_en;; *);
 <- rrel_key_sc_element:
+...
     (*
     => nrel_sc_text_translation:
         def_eye_socket
@@ -362,6 +366,7 @@ concept_inflammation_of_the_lacrimal_gland
     [concept inflammation of the lacrimal gland]
     (* <- lang_en;; *);
 <- rrel_key_sc_element:
+...
     (*
     => nrel_sc_text_translation:
         def_inflammation_of_the_lacrimal_gland
@@ -377,50 +382,3 @@ concept_inflammation_of_the_lacrimal_gland
         *);;
     *);;
 
-nrel_treatment_methods
-=> nrel_main_idtf:
-	[методы лечения*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[treatment methods*]
-	(* <- lang_en;; *);;
-
-nrel_localization
-=> nrel_main_idtf:
-	[локализация*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[localization*]
-	(* <- lang_en;; *);;
-
-nrel_forms_of_flow
-=> nrel_main_idtf:
-	[формы протекания*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[forms of flow*]
-	(* <- lang_en;; *);;
-
-nrel_possible_reason_for_occurrence
-=> nrel_main_idtf:
-	[возможная причина возникновения*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[possible reason for occurrence*]
-	(* <- lang_en;; *);;
-
-nrel_inclusion
-=> nrel_main_idtf:
-	[включение*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[nrel_inclusion*]
-	(* <- lang_en;; *);;
-
-nrel_inflammation
-=> nrel_main_idtf:
-	[воспаление*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[inflammation*]
-	(* <- lang_en;; *);;

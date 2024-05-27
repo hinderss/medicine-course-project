@@ -1,35 +1,3 @@
-concept_aneurysm
-=> nrel_main_idtf:
-	[аневризма]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[aneurysm]
-	(* <- lang_en;; *);;
-
-concept_headache
-=> nrel_main_idtf:
-	[головная боль]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[headache]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-  (*
-  => nrel_sc_text_translation:
-     def_headache
-     (*
-     => nrel_main_idtf:
-        [Опр. (головная боль)]
-        (* <- lang_ru;; *);;
-     -> [Боль или дискомфорт, возникающие в области головы или верхней части шеи.]
-        (* <- lang_ru;; *);;
-     -> [Pain or discomfort occurring in the head or upper neck region.]
-        (* <- lang_en;; *);;
-     <- definition;;
-     *);;
-  *);;
-
 concept_visual_impairment
 => nrel_main_idtf:
 	[нарушение зрения]
@@ -438,83 +406,27 @@ concept_vessels_of_the_brain
      *);;
   *);;
 
-concept_rupture_of_the_aneurysm
+vasodilation_of_vessels_of_the_brain
 => nrel_main_idtf:
-	[разрыв аневризмы]
-	(* <- lang_ru;; *);
+  [vasodilation of vessels of the brain]
+  (* <- lang_en;; *);
 => nrel_main_idtf:
-	[rupture of the aneurysm]
-	(* <- lang_en;; *);
+  [расширение сосудов головного мозга]
+  (* <- lang_ru;; *);
 <- rrel_key_sc_element:
 ...
-  (*
-  => nrel_sc_text_translation:
-     def_rupture_of_the_aneurysm
-     (*
-     => nrel_main_idtf:
-        [Опр. (разрыв аневризмы)]
-        (* <- lang_ru;; *);;
-     -> [Разрыв аневризмы — это острое состояние, при котором стенка аневризмы сосуда разрывается, что может привести к серьезным последствиям, таким как кровоизлияние.]
-        (* <- lang_ru;; *);;
-     -> [Rupture of the aneurysm is an acute condition where the wall of an aneurysm in a blood vessel breaks, potentially leading to severe consequences such as hemorrhage.]
-        (* <- lang_en;; *);;
-     <- definition;;
-     *);;
-  *);;
-
-nrel_treatment_methods
-=> nrel_main_idtf:
-	[методы лечения*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[treatment methods*]
-	(* <- lang_en;; *);;
-
-nrel_stages_of_development
-=> nrel_main_idtf:
-	[этапы развития*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[stages of development*]
-	(* <- lang_en;; *);;
-
-nrel_possible_reason_for_occurrence
-=> nrel_main_idtf:
-	[возможная причина возникновения*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[possible reason for occurrence*]
-	(* <- lang_en;; *);;
-
-nrel_inclusion
-=> nrel_main_idtf:
-	[включение*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[nrel_inclusion*]
-	(* <- lang_en;; *);;
-
-nrel_rupture
-=> nrel_main_idtf:
-	[разрыв*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[rupture*]
-	(* <- lang_en;; *);;
-
-nrel_types
-=> nrel_main_idtf:
-	[типы*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[types*]
-	(* <- lang_en;; *);;
-
-nrel_shape
-=> nrel_main_idtf:
-	[форма*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[shape*]
-	(* <- lang_en;; *);;
+ (*
+ => nrel_sc_text_translation:
+   def_vasodilation_of_vessels_of_the_brain
+   (*
+   => nrel_main_idtf:
+      [Опр. (Расширение сосудов головного мозга)]
+      (* <- lang_ru;; *);;
+   -> [Расширение сосудов головного мозга - это процесс расширения кровеносных сосудов в головном мозге, который может улучшить кровоток и снизить кровяное давление, но также может быть связан с головными болями и другими симптомами.]
+      (* <- lang_ru;; *);;
+   -> [Vasodilation of vessels of the brain is the process of widening the blood vessels in the brain, which can improve blood flow and reduce blood pressure, but may also be associated with headaches and other symptoms.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
 

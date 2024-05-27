@@ -41,17 +41,6 @@ concept_sinusitis
 	[sinusitis]
 	(* <- lang_en;;   *);;
 
-	
-
-concept_ethmoiditis
-<- concept_head_disease;
-=> nrel_main_idtf:
-	[гайморит]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[ethmoiditis]
-	(* <- lang_en;;   *);;
-
 
 concept_dacryoadenitis
 <- concept_head_disease;

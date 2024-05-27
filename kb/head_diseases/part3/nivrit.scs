@@ -414,30 +414,6 @@ concept_cranial_nerves
    *);;
  *);;
 
-concept_facial_nerve
-=> nrel_main_idtf:
-	[лицевой нерв]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[facial nerve]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-(*
- => nrel_sc_text_translation:
-   def_facial_nerve
-   (*
-   => nrel_main_idtf:
-      [Опр. (лицевой нерв)]
-      (* <- lang_ru;; *);;
-   -> [Нерв, контролирующий движения мышц лица и передающий чувствительность на кожу лица.]
-      (* <- lang_ru;; *);;
-   -> [The nerve that controls movements of the facial muscles and transmits sensation to the skin of the face.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
 concept_inflammation_of_the_facial_nerve
 => nrel_main_idtf:
 	[воспаление лицевого нерва]
@@ -463,58 +439,3 @@ concept_inflammation_of_the_facial_nerve
  *);;
 
 
-nrel_treatment_methods
-=> nrel_main_idtf:
-	[методы лечения*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[treatment methods*]
-	(* <- lang_en;; *);;
-
-nrel_kinds
-=> nrel_main_idtf:
-	[виды*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[kinds*]
-	(* <- lang_en;; *);;
-
-nrel_possible_reason_for_occurrence
-=> nrel_main_idtf:
-	[возможная причина возникновения*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[possible reason for occurrence*]
-	(* <- lang_en;; *);;
-
-nrel_inclusion
-=> nrel_main_idtf:
-	[включение*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[nrel_inclusion*]
-	(* <- lang_en;; *);;
-
-nrel_localization
-=> nrel_main_idtf:
-	[локализация*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[localization*]
-	(* <- lang_en;; *);;
-
-nrel_inflammation
-=> nrel_main_idtf:
-	[воспаление*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[inflammation*]
-	(* <- lang_en;; *);;
-
-nrel_damage
-=> nrel_main_idtf:
-	[поражение*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[damage*]
-	(* <- lang_en;; *);;

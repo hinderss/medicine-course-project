@@ -1,11 +1,3 @@
-concept_genyantritis
-=> nrel_main_idtf:
-	[гайморит]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[genyantritis]
-	(* <- lang_en;; *);;
-
 concept_head_disease
 => nrel_main_idtf:
 	[болезнь головы]
@@ -558,58 +550,4 @@ concept_purulent_inflammation
    *);;
  *);;
 
-nrel_stages
-=> nrel_main_idtf:
-	[стадии*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[stages*]
-	(* <- lang_en;; *);;
 
-nrel_types_of_treatment
-=> nrel_main_idtf:
-	[виды лечения*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[types of treatment*]
-	(* <- lang_en;; *);;
-
-nrel_localization
-=> nrel_main_idtf:
-	[локализация*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[localization*]
-	(* <- lang_en;; *);;
-
-nrel_forms_of_flow
-=> nrel_main_idtf:
-	[формы протекания*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[forms of flow*]
-	(* <- lang_en;; *);;
-
-nrel_possible_reason_for_occurrence
-=> nrel_main_idtf:
-	[возможная причина возникновения*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[possible reason for occurrence*]
-	(* <- lang_en;; *);;
-
-nrel_inclusion
-=> nrel_main_idtf:
-	[включение*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[nrel_inclusion*]
-	(* <- lang_en;; *);;
-
-nrel_inflammation
-=> nrel_main_idtf:
-	[воспаление*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[inflammation*]
-	(* <- lang_en;; *);;
