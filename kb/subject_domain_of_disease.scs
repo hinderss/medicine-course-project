@@ -9,22 +9,27 @@ subject_domain_of_diseases
 
 <- subject_domain;
 <- sc_node_struct;
-<- structure;
-
+<- structure;	
 
 => nrel_private_subject_domain:
-	section_subject_domain_of_diseases_of_the_gastrointestinal_tract;
-	section_subject_domain_of_head_diseases;
-	section_subject_domain_of_inflammatory_diseases_of_muscle_tissues;
-	section_subject_domain_of_respiratory_diseases;
+	subject_domain_of_diseases_of_the_gastrointestinal_tract;
+	subject_domain_of_head_diseases;
+	subject_domain_of_inflammatory_diseases_of_muscle_tissues;
+	subject_domain_of_respiratory_diseases;
 
-<= nrel_private_subject_domain:
+-> rrel_key_sc_element:
 	section_subject_domain_of_diseases;
 
 -> rrel_maximum_studied_object_class:
 	concept_disease;
+	
+-> rrel_explored_relation:
+    nrel_disease;
 
 -> rrel_not_maximum_studied_object_class:
+	concept_human_organism;
+	concept_cough;
+	concept_pain;
 	concept_hepatitis;
 	concept_diverticulosis;
 	concept_cholelithiasis;

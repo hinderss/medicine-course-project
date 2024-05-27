@@ -11,10 +11,12 @@ section_subject_domain_of_diseases
 
 => nrel_idtf:
 	[A section of the IMS knowledge base describing the symptoms, diseases and causes of their occurrence]
-	(* <- lang_en;; *);	
+	(* <- lang_en;; *);
 
+<- sc_node_struct;
+<- structure;	
 
-<= nrel_section_decomposition:
+=> nrel_section_decomposition:
 	{
 		section_subject_domain_of_diseases_of_the_gastrointestinal_tract;
 		section_subject_domain_of_head_diseases;
@@ -22,11 +24,9 @@ section_subject_domain_of_diseases
 		section_subject_domain_of_respiratory_diseases
 	};
 
-<- atomic_section;
-<- sc_model_of_knowledge_base;;
+<- sc_model_of_knowledge_base;
+<- non_atomic_section;
 
-
-section_subject_domain_of_diseases
 -> rrel_key_sc_element:
-	subject_domain_of_diseases;
-	concept_disease;;
+	concept_disease;
+	concept_human_organism;;
