@@ -11793,23 +11793,7 @@ concept_lactose_intolerance
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[lactose intolerance]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-	def_lactose_intolerance
-	(*
-	=> nrel_main_idtf:
-		[Опр. (непереносимость лактозы)]
-		(* <- lang_ru;; *);;
-	-> [Неспособность организма переваривать лактозу, что приводит к желудочно-кишечным симптомам.]
-		(* <- lang_ru;; *);;
-	-> [The inability of the body to digest lactose, leading to gastrointestinal symptoms.]
-		(* <- lang_en;; *);;
-	<- definition;;
-	*);;
- *);;
+	(* <- lang_en;; *);;
 
 concept_hemorrhagic_duodenitis
 => nrel_main_idtf:
@@ -12301,7 +12285,7 @@ concept_mealtime_talk
 
 concept_shingles
 => nrel_main_idtf:
-	[опоясывающий лишай]
+	[опоясывающий]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[shingles]
@@ -12315,9 +12299,9 @@ concept_shingles
 	=> nrel_main_idtf:
 		[Опр. (опоясывающий лишай)]
 		(* <- lang_ru;; *);;
-	-> [Вирусное заболевание, вызываемое вирусом ветряной оспы и сопровождающееся болезненными высыпаниями.]
+	-> [Опоясывающий — прилагательное, описывающее что-либо, что окружает или охватывает что-то как пояс.]
 		(* <- lang_ru;; *);;
-	-> [A viral disease caused by the varicella-zoster virus and characterized by painful rashes.]
+	-> [Encircling — an adjective describing something that surrounds or encircles something like a belt.]
 		(* <- lang_en;; *);;
 	<- definition;;
 	*);;
@@ -14848,4 +14832,1156 @@ concept_F4
 		(* <- lang_en;; *);;
 	<- definition;;
 	*);;
+ *);;
+
+concept_acute_cholangitis
+=> nrel_main_idtf:
+ [острый холангит]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [acute cholangitis]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_acute_cholangitis
+   (*
+   => nrel_main_idtf:
+      [Опр. (острый холангит)]
+      (* <- lang_ru;; *);;
+   -> [Воспаление желчных протоков, вызванное бактериальной инфекцией, часто связанное с обструкцией желчных путей, что приводит к симптомам, таким как лихорадка, боль в правом верхнем квадранте живота и желтуха.]
+      (* <- lang_ru;; *);;
+   -> [Inflammation of the bile ducts caused by bacterial infection, often associated with bile duct obstruction, leading to symptoms such as fever, right upper quadrant abdominal pain, and jaundice.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_strong_esophagitis_pain
+=> nrel_main_idtf:
+ [сильная боль при эзофагите]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [strong esophagitis pain]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_strong_esophagitis_pain
+   (*
+   => nrel_main_idtf:
+      [Опр. (сильная боль при эзофагите)]
+      (* <- lang_ru;; *);;
+   -> [Интенсивная боль, возникающая при воспалении пищевода, часто сопровождающаяся жжением за грудиной, дисфагией и рефлюксом.]
+      (* <- lang_ru;; *);;
+   -> [Intense pain occurring with inflammation of the esophagus, often accompanied by burning behind the sternum, dysphagia, and reflux.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_lactose_intolerance_vomiting
+=> nrel_main_idtf:
+ [рвота при непереносимости лактозы]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [lactose intolerance vomiting]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_lactose_intolerance_vomiting
+   (*
+   => nrel_main_idtf:
+      [Опр. (рвота при непереносимости лактозы)]
+      (* <- lang_ru;; *);;
+   -> [Рвота, возникающая вследствие непереносимости лактозы, характеризующаяся неспособностью организма переваривать лактозу, что приводит к гастроинтестинальным симптомам после потребления молочных продуктов.]
+      (* <- lang_ru;; *);;
+   -> [Vomiting resulting from lactose intolerance, characterized by the body's inability to digest lactose, leading to gastrointestinal symptoms after consuming dairy products.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_intestinal_atony_vomiting
+=> nrel_main_idtf:
+ [рвота при атонии кишечника]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [intestinal atony vomiting]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_intestinal_atony_vomiting
+   (*
+   => nrel_main_idtf:
+      [Опр. (рвота при атонии кишечника)]
+      (* <- lang_ru;; *);;
+   -> [Рвота, возникающая вследствие атонии кишечника, характеризующаяся потерей тонуса и моторной функции кишечника, что приводит к задержке пищи и жидкости, вызывающей тошноту и рвоту.]
+      (* <- lang_ru;; *);;
+   -> [Vomiting resulting from intestinal atony, characterized by loss of tone and motor function of the intestines, leading to the retention of food and fluids, causing nausea and vomiting.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_chronic_celiac_disease
+=> nrel_main_idtf:
+ [хроническая целиакия]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [chronic celiac disease]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_chronic_celiac_disease
+   (*
+   => nrel_main_idtf:
+      [Опр. (хроническая целиакия)]
+      (* <- lang_ru;; *);;
+   -> [Хроническое аутоиммунное заболевание, вызванное непереносимостью глютена, приводящее к повреждению слизистой оболочки тонкой кишки, что вызывает мальабсорбцию питательных веществ и приводит к различным системным симптомам.]
+      (* <- lang_ru;; *);;
+   -> [Chronic autoimmune disease caused by gluten intolerance, leading to damage to the lining of the small intestine, causing malabsorption of nutrients and resulting in various systemic symptoms.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_cholangitis_vomiting
+=> nrel_main_idtf:
+ [рвота при холангите]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [cholangitis vomiting]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_cholangitis_vomiting
+   (*
+   => nrel_main_idtf:
+      [Опр. (рвота при холангите)]
+      (* <- lang_ru;; *);;
+   -> [Рвота, возникающая при воспалении желчных протоков (холангите), часто сопровождающаяся симптомами, такими как боль в животе, лихорадка и желтуха.]
+      (* <- lang_ru;; *);;
+   -> [Vomiting occurring with inflammation of the bile ducts (cholangitis), often accompanied by symptoms such as abdominal pain, fever, and jaundice.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_allergic_colitis_vomiting
+=> nrel_main_idtf:
+ [рвота при аллергическом колите]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [allergic colitis vomiting]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_allergic_colitis_vomiting
+   (*
+   => nrel_main_idtf:
+      [Опр. (рвота при аллергическом колите)]
+      (* <- lang_ru;; *);;
+   -> [Рвота, возникающая при аллергическом воспалении толстой кишки (колите), характеризующемся иммунной реакцией на пищевые аллергены, что приводит к симптомам, таким как боль в животе, диарея и рвота.]
+      (* <- lang_ru;; *);;
+   -> [Vomiting occurring with allergic inflammation of the colon (colitis), characterized by an immune response to food allergens, leading to symptoms such as abdominal pain, diarrhea, and vomiting.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_acute_esophagitis_pain
+=> nrel_main_idtf:
+ [острая боль при эзофагите]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [acute esophagitis pain]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_acute_esophagitis_pain
+   (*
+   => nrel_main_idtf:
+      [Опр. (острая боль при эзофагите)]
+      (* <- lang_ru;; *);;
+   -> [Интенсивная боль, возникающая при остром воспалении пищевода (эзофагите), часто сопровождаемая жжением, затрудненным глотанием и рефлюксом.]
+      (* <- lang_ru;; *);;
+   -> [Intense pain occurring with acute inflammation of the esophagus (esophagitis), often accompanied by burning sensation, difficulty swallowing, and reflux.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_esophagitis_heartburn
+=> nrel_main_idtf:
+ [изжога при эзофагите]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [esophagitis heartburn]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_esophagitis_heartburn
+   (*
+   => nrel_main_idtf:
+      [Опр. (изжога при эзофагите)]
+      (* <- lang_ru;; *);;
+   -> [Жжение за грудиной, возникающее при воспалении пищевода (эзофагите), часто связанное с кислотным рефлюксом и дисфагией.]
+      (* <- lang_ru;; *);;
+   -> [Burning sensation behind the sternum occurring with inflammation of the esophagus (esophagitis), often associated with acid reflux and difficulty swallowing.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_esophagitis_vomiting
+=> nrel_main_idtf:
+ [рвота при эзофагите]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [esophagitis vomiting]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_esophagitis_vomiting
+   (*
+   => nrel_main_idtf:
+      [Опр. (рвота при эзофагите)]
+      (* <- lang_ru;; *);;
+   -> [Рвота, возникающая при воспалении пищевода (эзофагите), часто связанная с раздражением слизистой оболочки, болями и кислотным рефлюксом.]
+      (* <- lang_ru;; *);;
+   -> [Vomiting occurring with inflammation of the esophagus (esophagitis), often associated with mucosal irritation, pain, and acid reflux.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_stomach_cancer_vomiting
+=> nrel_main_idtf:
+ [рвота при раке желудка]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [stomach cancer vomiting]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_stomach_cancer_vomiting
+   (*
+   => nrel_main_idtf:
+      [Опр. (рвота при раке желудка)]
+      (* <- lang_ru;; *);;
+   -> [Рвота, возникающая при раке желудка, часто связанная с нарушением пищеварения, метастазами или сжатием пищевода.]
+      (* <- lang_ru;; *);;
+   -> [Vomiting occurring with stomach cancer, often associated with digestive disturbances, metastases, or compression of the esophagus.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_subacute_esophagitis
+=> nrel_main_idtf:
+ [субакутный эзофагит]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [subacute esophagitis]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_subacute_esophagitis
+   (*
+   => nrel_main_idtf:
+      [Опр. (субакутный эзофагит)]
+      (* <- lang_ru;; *);;
+   -> [Воспаление пищевода, характеризующееся прогрессивным характером симптомов, обычно связанных с жжением и болями за грудиной, но без сильной дисфагии и острой боли.]
+      (* <- lang_ru;; *);;
+   -> [Inflammation of the esophagus characterized by a progressive onset of symptoms, typically associated with burning and chest pain, but without severe dysphagia and acute pain.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_mechanical_colitis_vomiting
+=> nrel_main_idtf:
+ [рвота при механическом колите]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [mechanical colitis vomiting]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_mechanical_colitis_vomiting
+   (*
+   => nrel_main_idtf:
+      [Опр. (рвота при механическом колите)]
+      (* <- lang_ru;; *);;
+   -> [Рвота, возникающая при механическом воспалении ободочной кишки, обусловленном физическими препятствиями, такими как опухоли, рубцы или затянувшийся кала.]
+      (* <- lang_ru;; *);;
+   -> [Vomiting occurring with mechanical inflammation of the colon, caused by physical obstructions such as tumors, scars, or impacted stool.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_appendicitis_vomiting
+=> nrel_main_idtf:
+ [рвота при аппендиците]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [appendicitis vomiting]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_appendicitis_vomiting
+   (*
+   => nrel_main_idtf:
+      [Опр. (рвота при аппендиците)]
+      (* <- lang_ru;; *);;
+   -> [Рвота, возникающая при воспалении аппендикса, часто связанная с нарушением пищеварения, болями в животе и лихорадкой.]
+      (* <- lang_ru;; *);;
+   -> [Vomiting occurring with inflammation of the appendix, often associated with digestive disturbances, abdominal pain, and fever.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_acute_cholecystitis
+=> nrel_main_idtf:
+ [острый холецистит]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [acute cholecystitis]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_acute_cholecystitis
+   (*
+   => nrel_main_idtf:
+      [Опр. (острый холецистит)]
+      (* <- lang_ru;; *);;
+   -> [Воспаление желчного пузыря, вызванное обструкцией желчных протоков или инфекцией, часто сопровождающееся сильной болью в правом верхнем квадранте живота, тошнотой и рвотой.]
+      (* <- lang_ru;; *);;
+   -> [Inflammation of the gallbladder caused by obstruction of the bile ducts or infection, often accompanied by severe pain in the right upper quadrant of the abdomen, nausea, and vomiting.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_chronic_pancreatitis_vomiting
+=> nrel_main_idtf:
+ [рвота при хроническом панкреатите]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [chronic pancreatitis vomiting]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_chronic_pancreatitis_vomiting
+   (*
+   => nrel_main_idtf:
+      [Опр. (рвота при хроническом панкреатите)]
+      (* <- lang_ru;; *);;
+   -> [Рвота, возникающая при хроническом воспалении поджелудочной железы, часто связанная с нарушениями пищеварения, утомлением и снижением веса.]
+      (* <- lang_ru;; *);;
+   -> [Vomiting occurring with chronic inflammation of the pancreas, often associated with digestive disturbances, fatigue, and weight loss.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_agressive_intestinal_polyps
+=> nrel_main_idtf:
+ [агрессивные полипы кишечника]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [aggressive intestinal polyps]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_agressive_intestinal_polyps
+   (*
+   => nrel_main_idtf:
+      [Опр. (агрессивные полипы кишечника)]
+      (* <- lang_ru;; *);;
+   -> [Полипы, обладающие быстрым темпом роста и повышенным риском злокачественной трансформации, часто сопровождающиеся симптомами, такими как кровотечение из кишечника, изменение ритма дефекации и боли в животе.]
+      (* <- lang_ru;; *);;
+   -> [Polyps characterized by rapid growth rate and increased risk of malignant transformation, often accompanied by symptoms such as gastrointestinal bleeding, changes in bowel habits, and abdominal pain.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_chronic_lactose_intolerance
+=> nrel_main_idtf:
+ [хроническая лактозная непереносимость]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [chronic lactose intolerance]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_chronic_lactose_intolerance
+   (*
+   => nrel_main_idtf:
+      [Опр. (хроническая лактозная непереносимость)]
+      (* <- lang_ru;; *);;
+   -> [Нарушение пищеварения молочного сахара, продолжающееся в течение длительного времени и характеризующееся симптомами, такими как вздутие, вздутие живота, диарея и рвота после употребления молочных продуктов.]
+      (* <- lang_ru;; *);;
+   -> [Impaired digestion of lactose persisting for a prolonged period and characterized by symptoms such as bloating, abdominal distension, diarrhea, and vomiting after consumption of dairy products.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_toxic_colitis_vomiting
+=> nrel_main_idtf:
+ [рвота при токсическом колите]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [toxic colitis vomiting]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_toxic_colitis_vomiting
+   (*
+   => nrel_main_idtf:
+      [Опр. (рвота при токсическом колите)]
+      (* <- lang_ru;; *);;
+   -> [Рвота, возникающая при воспалении ободочной кишки (колите), вызванном токсическими веществами, такими как лекарства или патогенные бактерии, часто сопровождаемая кровотечением и диареей.]
+      (* <- lang_ru;; *);;
+   -> [Vomiting occurring with inflammation of the colon (colitis) caused by toxic substances such as medications or pathogenic bacteria, often accompanied by bleeding and diarrhea.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_chronic_esophagitis
+=> nrel_main_idtf:
+ [хронический эзофагит]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [chronic esophagitis]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_chronic_esophagitis
+   (*
+   => nrel_main_idtf:
+      [Опр. (хронический эзофагит)]
+      (* <- lang_ru;; *);;
+   -> [Длительное воспаление пищевода, обычно вызванное рефлюксом кислоты из желудка, характеризующееся периодическими обострениями и симптомами, такими как изжога, боли за грудиной и затрудненное глотание.]
+      (* <- lang_ru;; *);;
+   -> [Long-term inflammation of the esophagus, typically caused by acid reflux from the stomach, characterized by periodic exacerbations and symptoms such as heartburn, chest pain, and difficulty swallowing.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_infectious_colitis_vomiting
+=> nrel_main_idtf:
+ [рвота при инфекционном колите]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [infectious colitis vomiting]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_infectious_colitis_vomiting
+   (*
+   => nrel_main_idtf:
+      [Опр. (рвота при инфекционном колите)]
+      (* <- lang_ru;; *);;
+   -> [Рвота, возникающая при воспалении ободочной кишки (колите), вызванном инфекционными агентами, такими как бактерии, вирусы или паразиты, часто сопровождаемая диареей и кровотечением.]
+      (* <- lang_ru;; *);;
+   -> [Vomiting occurring with inflammation of the colon (colitis) caused by infectious agents such as bacteria, viruses, or parasites, often accompanied by diarrhea and bleeding.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_cholecystitis_vomiting
+=> nrel_main_idtf:
+ [рвота при холецистите]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [cholecystitis vomiting]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_cholecystitis_vomiting
+   (*
+   => nrel_main_idtf:
+      [Опр. (рвота при холецистите)]
+      (* <- lang_ru;; *);;
+   -> [Рвота, возникающая при воспалении желчного пузыря, часто связанная с болями в правом верхнем квадранте живота и рефлюксом желчи в пищевод, что может привести к изжоге и диспепсии.]
+      (* <- lang_ru;; *);;
+   -> [Vomiting occurring with inflammation of the gallbladder, often associated with pain in the right upper quadrant of the abdomen and reflux of bile into the esophagus, which may lead to heartburn and dyspepsia.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_duodenitis_vomiting
+=> nrel_main_idtf:
+ [рвота при дуодените]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [duodenitis vomiting]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_duodenitis_vomiting
+   (*
+   => nrel_main_idtf:
+      [Опр. (рвота при дуодените)]
+      (* <- lang_ru;; *);;
+   -> [Рвота, возникающая при воспалении двенадцатиперстной кишки, часто связанная с симптомами, такими как боли в эпигастральной области и диспепсия.]
+      (* <- lang_ru;; *);;
+   -> [Vomiting occurring with inflammation of the duodenum, often associated with symptoms such as epigastric pain and dyspepsia.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_chronic_intestinal_polyps
+=> nrel_main_idtf:
+ [хронические полипы кишечника]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [chronic intestinal polyps]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_chronic_intestinal_polyps
+   (*
+   => nrel_main_idtf:
+      [Опр. (хронические полипы кишечника)]
+      (* <- lang_ru;; *);;
+   -> [Полипы, формирующиеся в кишечнике и продолжающие расти или оставаться неизменными на протяжении продолжительного времени, часто вызывающие кровотечение, диарею или изменение ритма дефекации.]
+      (* <- lang_ru;; *);;
+   -> [Polyps forming in the intestine and persisting or remaining unchanged for a prolonged period, often causing bleeding, diarrhea, or changes in bowel habits.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_acute_intestinal_atony
+=> nrel_main_idtf:
+ [острая кишечная атония]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [acute intestinal atony]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_acute_intestinal_atony
+   (*
+   => nrel_main_idtf:
+      [Опр. (острая кишечная атония)]
+      (* <- lang_ru;; *);;
+   -> [Снижение или отсутствие моторной активности кишечника, возникающее внезапно и часто вызванное патологическими состояниями или хирургическими вмешательствами, часто сопровождаемое рвотой и запором.]
+      (* <- lang_ru;; *);;
+   -> [Decrease or absence of intestinal motility occurring suddenly and often caused by pathological conditions or surgical interventions, often accompanied by vomiting and constipation.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_chronic_cholecystitis
+=> nrel_main_idtf:
+ [хронический холецистит]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [chronic cholecystitis]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_chronic_cholecystitis
+   (*
+   => nrel_main_idtf:
+      [Опр. (хронический холецистит)]
+      (* <- lang_ru;; *);;
+   -> [Длительное воспаление желчного пузыря, часто вызванное образованием желчных камней и характеризующееся периодическими обострениями симптомов, таких как боли в правом верхнем квадранте живота, тошнота и рвота.]
+      (* <- lang_ru;; *);;
+   -> [Long-term inflammation of the gallbladder, often caused by the formation of gallstones and characterized by periodic exacerbations of symptoms such as pain in the right upper quadrant of the abdomen, nausea, and vomiting.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_acute_esophagitis
+=> nrel_main_idtf:
+ [острый эзофагит]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [acute esophagitis]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_acute_esophagitis
+   (*
+   => nrel_main_idtf:
+      [Опр. (острый эзофагит)]
+      (* <- lang_ru;; *);;
+   -> [Внезапное воспаление пищевода, обычно вызванное рефлюксом кислоты из желудка или раздражающими веществами, часто сопровождающееся болями за грудиной, изжогой и затрудненным глотанием.]
+      (* <- lang_ru;; *);;
+   -> [Sudden inflammation of the esophagus, typically caused by acid reflux from the stomach or irritants, often accompanied by chest pain, heartburn, and difficulty swallowing.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_hepatitis_vomiting
+=> nrel_main_idtf:
+ [рвота при гепатите]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [hepatitis vomiting]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_hepatitis_vomiting
+   (*
+   => nrel_main_idtf:
+      [Опр. (рвота при гепатите)]
+      (* <- lang_ru;; *);;
+   -> [Рвота, возникающая при воспалении печени, обусловленном различными причинами, такими как инфекции вирусами или токсические вещества, часто сопровождающаяся желтухой, утомлением и болью в правом верхнем квадранте живота.]
+      (* <- lang_ru;; *);;
+   -> [Vomiting occurring with inflammation of the liver, caused by various factors such as viral infections or toxic substances, often accompanied by jaundice, fatigue, and pain in the right upper quadrant of the abdomen.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_acute_chronic_diarrhea
+=> nrel_main_idtf:
+ [острая хроническая диарея]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [acute chronic diarrhea]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_acute_chronic_diarrhea
+   (*
+   => nrel_main_idtf:
+      [Опр. (острая хроническая диарея)]
+      (* <- lang_ru;; *);;
+   -> [Частые эпизоды жидкого стула, продолжающиеся длительное время, и имеющие внезапный начало или периодически обостряющиеся, часто связанные с инфекциями, пищевой непереносимостью или хроническими заболеваниями кишечника.]
+      (* <- lang_ru;; *);;
+   -> [Frequent episodes of liquid stools persisting for a prolonged period and having a sudden onset or periodically exacerbating, often associated with infections, food intolerance, or chronic intestinal disorders.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_searing_esophagitis_pain
+=> nrel_main_idtf:
+ [горящая боль при эзофагите]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [searing esophagitis pain]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_searing_esophagitis_pain
+   (*
+   => nrel_main_idtf:
+      [Опр. (горящая боль при эзофагите)]
+      (* <- lang_ru;; *);;
+   -> [Интенсивная боль или жжение за грудиной, обусловленные воспалением пищевода и часто вызванные рефлюксом кислоты из желудка, а также раздражающими веществами, такими как алкоголь или курение.]
+      (* <- lang_ru;; *);;
+   -> [Intense pain or burning sensation behind the breastbone, caused by inflammation of the esophagus and often triggered by acid reflux from the stomach as well as irritants such as alcohol or smoking.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_gastritis_vomiting
+=> nrel_main_idtf:
+ [рвота при гастрите]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [gastritis vomiting]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_gastritis_vomiting
+   (*
+   => nrel_main_idtf:
+      [Опр. (рвота при гастрите)]
+      (* <- lang_ru;; *);;
+   -> [Рвота, возникающая при воспалении слизистой оболочки желудка, часто связанная с симптомами, такими как боль в эпигастральной области, изжога и отрыжка.]
+      (* <- lang_ru;; *);;
+   -> [Vomiting occurring with inflammation of the gastric mucosa, often associated with symptoms such as pain in the epigastric region, heartburn, and belching.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_chronic_cholangitis
+=> nrel_main_idtf:
+ [хронический холангит]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [chronic cholangitis]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_chronic_cholangitis
+   (*
+   => nrel_main_idtf:
+      [Опр. (хронический холангит)]
+      (* <- lang_ru;; *);;
+   -> [Длительное воспаление желчных протоков, часто вызванное желчнокаменной болезнью или инфекцией, часто сопровождающееся болями в правом верхнем квадранте живота, тошнотой и рвотой.]
+      (* <- lang_ru;; *);;
+   -> [Long-term inflammation of the bile ducts, often caused by gallstone disease or infection, often accompanied by pain in the right upper quadrant of the abdomen, nausea, and vomiting.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_chronic_intestinal_atony
+=> nrel_main_idtf:
+ [хроническая кишечная атония]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [chronic intestinal atony]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_chronic_intestinal_atony
+   (*
+   => nrel_main_idtf:
+      [Опр. (хроническая кишечная атония)]
+      (* <- lang_ru;; *);;
+   -> [Снижение или отсутствие моторной активности кишечника, продолжающееся длительное время и часто вызванное нейрологическими расстройствами или длительной патологической стимуляцией, часто сопровождающееся запорами и метеоризмом.]
+      (* <- lang_ru;; *);;
+   -> [Decrease or absence of intestinal motility persisting for a prolonged period and often caused by neurological disorders or prolonged pathological stimulation, often accompanied by constipation and bloating.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_chronic_diarrhea_vomiting
+=> nrel_main_idtf:
+ [рвота при хроническом поносе]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [chronic diarrhea vomiting]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_chronic_diarrhea_vomiting
+   (*
+   => nrel_main_idtf:
+      [Опр. (рвота при хроническом поносе)]
+      (* <- lang_ru;; *);;
+   -> [Рвота, возникающая при длительном поносе, часто связанная с различными причинами, такими как инфекции, пищевые непереносимости или хронические заболевания кишечника, которые могут привести к потере жидкости и электролитов.]
+      (* <- lang_ru;; *);;
+   -> [Vomiting occurring with prolonged diarrhea, often associated with various causes such as infections, food intolerances, or chronic intestinal disorders, which may lead to fluid and electrolyte loss.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_first_stomach_cancer_stage
+=> nrel_main_idtf:
+ [первая стадия рака желудка]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [first stomach cancer stage]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_first_stomach_cancer_stage
+   (*
+   => nrel_main_idtf:
+      [Опр. (первая стадия рака желудка)]
+      (* <- lang_ru;; *);;
+   -> [Первый этап развития рака желудка, характеризующийся ограничением опухоли только слизистым слоем желудка и отсутствием распространения на соседние ткани и лимфатические узлы.]
+      (* <- lang_ru;; *);;
+   -> [The initial stage of stomach cancer development, characterized by the tumor being confined to the mucosal layer of the stomach and no spread to adjacent tissues or lymph nodes.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_second_stomach_cancer_stage
+=> nrel_main_idtf:
+ [вторая стадия рака желудка]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [second stomach cancer stage]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_second_stomach_cancer_stage
+   (*
+   => nrel_main_idtf:
+      [Опр. (вторая стадия рака желудка)]
+      (* <- lang_ru;; *);;
+   -> [Второй этап развития рака желудка, при котором опухоль проникает в более глубокие слои стенки желудка или доходит до мускулатуры, но не распространяется за его пределы или на лимфатические узлы.]
+      (* <- lang_ru;; *);;
+   -> [The second stage of stomach cancer development, in which the tumor invades deeper layers of the stomach wall or reaches the muscular layer but does not extend beyond it or to lymph nodes.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_third_stomach_cancer_stage
+=> nrel_main_idtf:
+ [третья стадия рака желудка]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [third stomach cancer stage]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_third_stomach_cancer_stage
+   (*
+   => nrel_main_idtf:
+      [Опр. (третья стадия рака желудка)]
+      (* <- lang_ru;; *);;
+   -> [Третий этап развития рака желудка, характеризующийся распространением опухоли за пределы желудка на соседние органы или лимфатические узлы, но без удаленных метастазов.]
+      (* <- lang_ru;; *);;
+   -> [The third stage of stomach cancer development, characterized by the tumor spreading beyond the stomach to adjacent organs or lymph nodes but without distant metastasis.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_fourth_stomach_cancer_stage
+=> nrel_main_idtf:
+ [четвертая стадия рака желудка]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [fourth stomach cancer stage]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_fourth_stomach_cancer_stage
+   (*
+   => nrel_main_idtf:
+      [Опр. (четвертая стадия рака желудка)]
+      (* <- lang_ru;; *);;
+   -> [Четвертый этап развития рака желудка, характеризующийся удаленными метастазами, которые могут поражать далеко отстоящие органы или ткани.]
+      (* <- lang_ru;; *);;
+   -> [The fourth stage of stomach cancer development, characterized by distant metastasis that may affect distant organs or tissues.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_severe
+=> nrel_main_idtf:
+ [тяжелый]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [severe]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_severe
+   (*
+   => nrel_main_idtf:
+      [Опр. (тяжелый)]
+      (* <- lang_ru;; *);;
+   -> [Состояние или симптом, характеризующиеся серьезностью или выраженностью, часто требующие интенсивного лечения или медицинского вмешательства.]
+      (* <- lang_ru;; *);;
+   -> [A condition or symptom characterized by seriousness or severity, often requiring intensive treatment or medical intervention.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_lowered_appetite
+=> nrel_main_idtf:
+ [сниженный аппетит]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [lowered appetite]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_lowered_appetite
+   (*
+   => nrel_main_idtf:
+      [Опр. (сниженный аппетит)]
+      (* <- lang_ru;; *);;
+   -> [Уменьшение желания к пище или уменьшение объема потребляемой пищи, часто связанное с различными физиологическими или патологическими состояниями.]
+      (* <- lang_ru;; *);;
+   -> [Reduction in desire for food or decrease in the amount of food consumed, often associated with various physiological or pathological conditions.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_stool_disorder
+=> nrel_main_idtf:
+ [нарушение стула]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [stool disorder]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_stool_disorder
+   (*
+   => nrel_main_idtf:
+      [Опр. (нарушение стула)]
+      (* <- lang_ru;; *);;
+   -> [Любые изменения в характере, консистенции, частоте или объеме стула, часто связанные с расстройствами пищеварения или другими патологическими состояниями.]
+      (* <- lang_ru;; *);;
+   -> [Any changes in the character, consistency, frequency, or volume of stool, often associated with digestive disorders or other pathological conditions.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_exudative_diarrhea
+=> nrel_main_idtf:
+ [экссудативный понос]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [exudative diarrhea]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_exudative_diarrhea
+   (*
+   => nrel_main_idtf:
+      [Опр. (экссудативный понос)]
+      (* <- lang_ru;; *);;
+   -> [Вид диареи, при котором в кишечном содержимом присутствуют большие количества экссудата, часто связанного с воспалительными процессами в кишечнике.]
+      (* <- lang_ru;; *);;
+   -> [A type of diarrhea characterized by the presence of large amounts of exudate in the intestinal contents, often associated with inflammatory processes in the intestines.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_secretory_diarrhea
+=> nrel_main_idtf:
+ [секреторный понос]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [secretory diarrhea]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_secretory_diarrhea
+   (*
+   => nrel_main_idtf:
+      [Опр. (секреторный понос)]
+      (* <- lang_ru;; *);;
+   -> [Форма диареи, вызванная избыточным выделением жидкости в кишечном тракте без каких-либо воспалительных изменений.]
+      (* <- lang_ru;; *);;
+   -> [A form of diarrhea caused by excessive fluid secretion in the gastrointestinal tract without any inflammatory changes.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_osmotic_diarrhea
+=> nrel_main_idtf:
+ [осмотический понос]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [osmotic diarrhea]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_osmotic_diarrhea
+   (*
+   => nrel_main_idtf:
+      [Опр. (осмотический понос)]
+      (* <- lang_ru;; *);;
+   -> [Тип диареи, вызванный нарушением поглощения жидкости в кишечном тракте, часто связанный с приемом определенных лекарств, непереносимостью некоторых пищевых компонентов или другими патологическими состояниями.]
+      (* <- lang_ru;; *);;
+   -> [A type of diarrhea caused by impaired fluid absorption in the gastrointestinal tract, often associated with the intake of certain medications, intolerance to certain food components, or other pathological conditions.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_motor_diarrhea
+=> nrel_main_idtf:
+ [моторный понос]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [motor diarrhea]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_motor_diarrhea
+   (*
+   => nrel_main_idtf:
+      [Опр. (моторный понос)]
+      (* <- lang_ru;; *);;
+   -> [Форма диареи, обусловленная ускорением моторной активности кишечника, что приводит к учащенному опорожнению кишечника и возможному нарушению образования кала.]
+      (* <- lang_ru;; *);;
+   -> [A form of diarrhea caused by increased motor activity of the intestines, leading to more frequent bowel movements and possible disruption of stool formation.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_hepatic_bile_ducts
+=> nrel_main_idtf:
+ [печеночные желчные протоки]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [hepatic bile ducts]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_hepatic_bile_ducts
+   (*
+   => nrel_main_idtf:
+      [Опр. (печеночные желчные протоки)]
+      (* <- lang_ru;; *);;
+   -> [Каналы, которые переносят желчь от печени к общему желчному протоку, играющие важную роль в процессе пищеварения и выведении отходов из организма.]
+      (* <- lang_ru;; *);;
+   -> [Channels that transport bile from the liver to the common bile duct, playing an important role in the process of digestion and waste elimination from the body.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_from_the_composition_of_the_stones
+=> nrel_main_idtf:
+ [из состава камней]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [from the composition of the stones]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_from_the_composition_of_the_stones
+   (*
+   => nrel_main_idtf:
+      [Опр. (из состава камней)]
+      (* <- lang_ru;; *);;
+   -> [Метод классификации желчных камней по составу, который основан на химическом анализе состава камней и позволяет определить их тип и структуру.]
+      (* <- lang_ru;; *);;
+   -> [A method of classifying gallstones based on their composition, which involves chemical analysis of the stones' composition to determine their type and structure.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_by_localization_of_stones
+=> nrel_main_idtf:
+ [по локализации камней]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [by localization of stones]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_by_localization_of_stones
+   (*
+   => nrel_main_idtf:
+      [Опр. (по локализации камней)]
+      (* <- lang_ru;; *);;
+   -> [Метод классификации желчных камней, основанный на их местоположении в желчевыводящих путях, что позволяет определить характеристики и возможные осложнения.]
+      (* <- lang_ru;; *);;
+   -> [A method of classifying gallstones based on their location in the biliary tract, which helps determine their characteristics and potential complications.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
  *);;
