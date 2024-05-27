@@ -1,0 +1,121 @@
+nrel_tumor
+=> nrel_main_idtf:
+ [опухоль]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [tumor]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_tumor
+   (*
+   => nrel_main_idtf:
+      [Опр. (опухоль)]
+      (* <- lang_ru;; *);;
+   -> [Патологическое новообразование в тканях организма, которое может быть доброкачественным или злокачественным.]
+      (* <- lang_ru;; *);;
+   -> [A pathological growth in body tissues, which can be benign or malignant.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+nrel_neurosis
+=> nrel_main_idtf:
+ [невроз]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [neurosis]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_cerebral_vascular_neurosis
+   (*
+   => nrel_main_idtf:
+      [Опр. (невроз)]
+      (* <- lang_ru;; *);;
+   -> [Функциональное расстройство сосудов, сопровождающееся нарушением кровообращения и изменениями в функционировании нервной системы.]
+      (* <- lang_ru;; *);;
+   -> [A functional disorder of the vessels, accompanied by circulatory disturbances and changes in the functioning of the nervous system.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+
+nrel_high_blood_pressure
+=> nrel_main_idtf:
+ [повышенное кровяное давление]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [high blood pressure]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_high_blood_pressure
+   (*
+   => nrel_main_idtf:
+      [Опр. (повышенное кровяное давление)]
+      (* <- lang_ru;; *);;
+   -> [Состояние, при котором сила крови на стенки артерий постоянно повышена, что может привести к проблемам со здоровьем, таким как болезни сердца.]
+      (* <- lang_ru;; *);;
+   -> [A condition in which the force of the blood against the artery walls is consistently too high, which can lead to health problems such as heart disease.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+nrel_purulent_formation
+=> nrel_main_idtf:
+ [гнойное образование]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [purulent formation]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_purulent_formation
+   (*
+   => nrel_main_idtf:
+      [Опр. (гнойное образование)]
+      (* <- lang_ru;; *);;
+   -> [Скопление гноя в результате инфекции, которое может привести к воспалению и повреждению окружающих тканей.]
+      (* <- lang_ru;; *);;
+   -> [Accumulation of pus due to infection, which can lead to inflammation and damage to surrounding tissues.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+nrel_brain_damage
+=> nrel_main_idtf:
+ [повреждение мозга]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [brain damage]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_brain_damage
+   (*
+   => nrel_main_idtf:
+      [Опр. (повреждение мозга)]
+      (* <- lang_ru;; *);;
+   -> [Любое поражение мозговой ткани, вызванное травмой, болезнью или другим патологическим процессом, которое может привести к нарушению функций мозга.]
+      (* <- lang_ru;; *);;
+   -> [Any damage to brain tissue caused by injury, disease, or other pathological process, which can lead to impairment of brain functions.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
