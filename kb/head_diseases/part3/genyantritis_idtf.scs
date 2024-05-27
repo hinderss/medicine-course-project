@@ -1,26 +1,10 @@
 concept_genyantritis
 => nrel_main_idtf:
- [гайморит]
- (* <- lang_ru;; *);
+	[гайморит]
+	(* <- lang_ru;; *);
 => nrel_main_idtf:
- [genyantritis]
- (* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-   def_genyantritis
-   (*
-   => nrel_main_idtf:
-      [Опр. (гайморит)]
-      (* <- lang_ru;; *);;
-   -> [Воспаление слизистой оболочки верхнечелюстной пазухи, которое может сопровождаться болью, заложенностью носа и выделениями.]
-      (* <- lang_ru;; *);;
-   -> [Inflammation of the mucous membrane of the maxillary sinus, which may be accompanied by pain, nasal congestion, and discharge.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
+	[genyantritis]
+	(* <- lang_en;; *);;
 
 
 concept_difficulty_breathing
