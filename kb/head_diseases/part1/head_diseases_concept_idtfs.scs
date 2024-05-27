@@ -1,0 +1,1753 @@
+concept_head_disease
+=> nrel_main_idtf:
+	[болезнь головы]
+(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[head disease]
+(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_head_disease
+   (*
+   => nrel_main_idtf:
+      [Опр. (болезнь головы)]
+      (* <- lang_ru;; *);;
+   -> [Состояние, при котором человек испытывает длительные и повторяющиеся    симптомы, связанные с функционированием головного мозга или его окружающих тканей.]
+      (* <- lang_ru;; *);;
+   -> [Condition in which a person experiences prolonged and recurrent symptoms related to the functioning of the brain or its surrounding tissues..]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+
+concept_meningitis
+=> nrel_main_idtf:
+	[менингит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[meningitis]
+	(* <- lang_en;;   *);;
+	
+	
+concept_sinusitis
+<- concept_head_disease;
+=> nrel_main_idtf:
+	[синусит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[sinusitis]
+	(* <- lang_en;;   *);;
+
+	
+
+concept_ethmoiditis
+<- concept_head_disease;
+=> nrel_main_idtf:
+	[гайморит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[ethmoiditis]
+	(* <- lang_en;;   *);;
+
+
+concept_dacryoadenitis
+<- concept_head_disease;
+=> nrel_main_idtf:
+	[дакриоаденит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[dacryoadenitis]
+	(* <- lang_en;;   *);;
+
+	
+
+concept_brain_tumor
+<- concept_head_disease;
+=> nrel_main_idtf:
+	[опухоль мозга]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[brain tumor]
+	(* <- lang_en;;   *);;
+	
+
+
+concept_epilepsy
+<- concept_head_disease;
+=> nrel_main_idtf:
+	[эпилепсия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[epilepsy]
+	(* <- lang_en;;   *);;
+	
+	
+
+concept_brain_abscess
+<- concept_head_disease;
+=> nrel_main_idtf:
+	[абсцесс мозга]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[brain abscess]
+	(* <- lang_en;;   *);;
+	
+concept_encephalitis
+<- concept_head_disease;
+=> nrel_main_idtf:
+	[энцефалит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[encephalitis]
+	(* <- lang_en;;   *);;
+
+concept_meningioma
+<- concept_head_disease;
+=> nrel_main_idtf:
+	[менингиома]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[meningioma]
+	(* <- lang_en;;   *);;
+
+
+concept_intracranial_hypertension
+<- concept_head_disease;
+=> nrel_main_idtf:
+	[внутричерепная гипертензия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[intracranial hypertension]
+	(* <- lang_en;;   *);;
+	
+
+
+concept_stroke
+<- concept_head_disease;
+=> nrel_main_idtf:
+	[инсульт]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[stroke]
+	(* <- lang_en;;   *);;
+
+
+concept_encephalopathy
+<- concept_head_disease;
+=> nrel_main_idtf:
+	[энцефалопатия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[encephalopathy]
+	(* <- lang_en;;   *);;
+	
+	
+concept_myasthenia
+<- concept_head_disease;
+=> nrel_main_idtf:
+	[миастения]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[myasthenia]
+	(* <- lang_en;;   *);;
+
+concept_dementia
+<- concept_head_disease;
+=> nrel_main_idtf:
+	[деменция]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[dementia]
+	(* <- lang_en;;   *);;
+
+
+concept_hydrocephalus
+<- concept_head_disease;
+=> nrel_main_idtf:
+	[гидроцефалия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[hydrocephalus]
+	(* <- lang_en;;   *);;
+	
+
+concept_cerebrovascular_autonomic_dysfunction
+<- concept_head_disease;
+=> nrel_main_idtf:
+	[вегето-сосудистая дистония сосудов головного мозга]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[cerebrovascular autonomic dysfunction]
+	(* <- lang_en;;   *);;
+
+	
+
+concept_parkinsons_disease
+=> nrel_main_idtf:
+	[болезнь Паркинсона]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Parkinson's disease]
+	(* <- lang_en;;   *);;
+
+
+
+concept_aneurysm
+<- concept_head_disease;
+=> nrel_main_idtf:
+	[аневризма]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[aneurysm]
+	(* <- lang_en;;   *);;
+
+	
+concept_rigidity_of_neck_muscles
+=> nrel_main_idtf:
+	[ригидность мышц шеи]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[rigidity of neck muscles]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_rigidity_of_neck_muscles
+   (*
+   => nrel_main_idtf:
+      [Опр. (Ригидность мышц шеи)]
+      (* <- lang_ru;; *);;
+   -> [Ригидность мышц шеи - упорствующее напряжение и ограничение движения в области шеи.]
+      (* <- lang_ru;; *);;
+   -> [Rigidity of neck muscles is persistent tension and restricted movement in the neck area.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+	
+
+concept_headache
+=> nrel_main_idtf:
+	[головная боль]
+(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[headache]
+(* <- lang_en;; *);;
+
+
+
+concept_photophobia
+=> nrel_main_idtf:
+	[фотобоязнь]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[photophobia]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[чрезмерная чувствительность к свету]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[excessive sensitivity to light]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_photophobia
+   (*
+   => nrel_main_idtf:
+      [Опр. (фотобоязнь)]
+      (* <- lang_ru;; *);;
+   -> [Фотобоязнь представляет собой чувство чрезмерной чувствительности к свету, которое может проявляться как дискомфорт или болезненность при воздействии яркого света на глаза.]
+      (* <- lang_ru;; *);;
+   -> [Photophobia is a feeling of excessive sensitivity to light, which may manifest as discomfort or pain when exposed to bright light.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+
+concept_enterovirus
+=> nrel_main_idtf:
+	[энтеровирус]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[enterovirus]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_enterovirus
+   (*
+   => nrel_main_idtf:
+      [Опр. (Энтеровирус)]
+      (* <- lang_ru;; *);;
+   -> [Энтеровирусы представляют собой группу вирусов, которые обычно вызывают различные заболевания, включая респираторные инфекции, гастроэнтериты и вирусные менингиты.]
+      (* <- lang_ru;; *);;
+   -> [Enteroviruses are a group of viruses that commonly cause various illnesses, including respiratory infections, gastroenteritis, and viral meningitis.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+
+concept_herpes_simplex_virus
+=> nrel_main_idtf:
+	[вирус простого герпеса]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[herpes simplex virus]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_herpes_simplex_virus
+   (*
+   => nrel_main_idtf:
+      [Опр. (вирус простого герпеса)]
+      (* <- lang_ru;; *);;
+   -> [Вирус простого герпеса (ВПГ) является причиной инфекции, которая проявляется в виде пузырьковых высыпаний на коже или слизистых оболочках, обычно в области рта или половых органов.]
+      (* <- lang_ru;; *);;
+   -> [Herpes simplex virus (HSV) is the cause of an infection that manifests as blistering lesions on the skin or mucous membranes, typically around the mouth or genital area.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+
+
+concept_varicella_zoster_virus
+=> nrel_main_idtf:
+	[вирус ветряной оспы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[varicella-zoster virus]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_varicella_zoster_virus
+   (*
+   => nrel_main_idtf:
+      [Опр. (Вирус ветряной оспы)]
+      (* <- lang_ru;; *);;
+   -> [Вирус ветряной оспы (Varicella-zoster virus) является возбудителем ветряной оспы, характеризующейся высыпаниями на коже и сопутствующими симптомами, такими как лихорадка и зуд. Позднее в жизни, этот же вирус может вызвать опоясывающий лишай.]
+      (* <- lang_ru;; *);;
+   -> [The varicella-zoster virus is the causative agent of chickenpox, characterized by skin rash and accompanying symptoms such as fever and itching. Later in life, the same virus can cause shingles.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+	
+
+concept_mumps_virus
+=> nrel_main_idtf:
+	[вирус паротита]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[mumps virus]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_mumps_virus
+   (*
+   => nrel_main_idtf:
+      [Опр. (Вирус паротита)]
+      (* <- lang_ru;; *);;
+   -> [Вирус паротита вызывает инфекцию, проявляющуюся воспалением слюнных желез, что приводит к отечности лица и боли при жевании или глотании.]
+      (* <- lang_ru;; *);;
+   -> [The mumps virus causes an infection characterized by inflammation of the salivary glands, resulting in swelling of the face and pain when chewing or swallowing.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+
+
+concept_HIV
+=> nrel_main_idtf:
+	[ВИЧ]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[HIV]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Вирус иммунодефицита человека]
+	(* <- lang_ru;; *);
+=> nrel_idtf:
+	[Human immunodeficiency virus]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_HIV
+   (*
+   => nrel_main_idtf:
+      [Опр. (ВИЧ)]
+      (* <- lang_ru;; *);;
+   -> [ВИЧ (вирус иммунодефицита человека) является возбудителем ВИЧ-инфекции, которая разрушает иммунную систему человека, делая организм более уязвимым для инфекций и опасных заболеваний.]
+      (* <- lang_ru;; *);;
+   -> [HIV (human immunodeficiency virus) is the causative agent of HIV infection, which destroys the human immune system, making the body more susceptible to infections and serious illnesses.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+
+concept_LCMV
+=> nrel_main_idtf:
+	[lymphocytic choriomeningitis virus]
+	(* <- lang_en;; *);
+=> nrel_main_idtf:
+	[лимфоцитарный хориоменингитный вирус]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_
+   (*
+   => nrel_main_idtf:
+      [Опр. (Лимфоцитарный хориоменингитный вирус)]
+      (* <- lang_ru;; *);;
+   -> [Лимфоцитарный хориоменингитный вирус (LCMV) — это вирус, который может вызывать различные симптомы у человека, включая лихорадку, головную боль, а также воспаление мозга и спинного мозга.]
+      (* <- lang_ru;; *);;
+   -> [Lymphocytic choriomeningitis virus (LCMV) is a virus that can cause various symptoms in humans, including fever, headache, as well as inflammation of the brain and spinal cord.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+concept_arboviruses
+=> nrel_main_idtf:
+	[arboviruses]
+	(* <- lang_en;; *);
+=> nrel_main_idtf:
+	[арбовирусы]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_arboviruses
+   (*
+   => nrel_main_idtf:
+      [Опр. (Арбовирусы)]
+      (* <- lang_ru;; *);;
+   -> [Арбовирусы представляют собой группу вирусов, которые передаются насекомыми, такими как комары и клещи, и могут вызывать различные заболевания у человека, такие как лихорадка, энцефалит или геморрагическая лихорадка.]
+      (* <- lang_ru;; *);;
+   -> [Arboviruses are a group of viruses transmitted by insects such as mosquitoes and ticks, and can cause various diseases in humans, such as fever, encephalitis, or hemorrhagic fever.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+
+concept_influenza_virus
+=> nrel_main_idtf:
+	[influenza virus]
+	(* <- lang_en;; *);
+=> nrel_main_idtf:
+	[вирус гриппа]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_influenza_virus
+   (*
+   => nrel_main_idtf:
+      [Опр. (Вирус гриппа)]
+      (* <- lang_ru;; *);;
+   -> [Вирус гриппа вызывает острое респираторное заболевание, проявляющееся в симптомах, таких как лихорадка, кашель, насморк, боль в горле, и общее недомогание.]
+      (* <- lang_ru;; *);;
+   -> [The influenza virus causes acute respiratory illness, manifested by symptoms such as fever, cough, runny nose, sore throat, and general malaise.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+concept_bacterial_infections
+=> nrel_main_idtf:
+	[bacterial infections]
+	(* <- lang_en;; *);
+=> nrel_main_idtf:
+	[бактериальные инфекции]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_bacterial_infections
+   (*
+   => nrel_main_idtf:
+      [Опр. (Бактериальные инфекции)]
+      (* <- lang_ru;; *);;
+   -> [Бактериальные инфекции вызываются бактериями и могут привести к различным заболеваниям, таким как инфекции мочевыводящих путей, пневмония, сепсис, инфекции кожи и другие. Симптомы могут варьироваться в зависимости от места инфекции и типа бактерии.]
+      (* <- lang_ru;; *);;
+   -> [Bacterial infections are caused by bacteria and can lead to various diseases such as urinary tract infections, pneumonia, sepsis, skin infections, and others. Symptoms may vary depending on the location of the infection and the type of bacteria.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+ 
+concept_viral_infections
+=> nrel_main_idtf:
+  [viral infections]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [вирусные инфекции]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_viral_infections
+   (*
+   => nrel_main_idtf:
+      [Опр. (Вирусные инфекции)]
+      (* <- lang_ru;; *);;
+   -> [Вирусные инфекции - это заболевания, вызванные вирусами, которые могут поражать различные органы и системы организма, вызывая широкий спектр симптомов и состояний, от легких до тяжелых.]
+      (* <- lang_ru;; *);;
+   -> [Viral infections are diseases caused by viruses, which can affect various organs and systems in the body, causing a wide range of symptoms and conditions, from mild to severe.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+
+concept_sarcoidosis
+=> nrel_main_idtf:
+	[sarcoidosis]
+	(* <- lang_en;; *);
+=> nrel_main_idtf:
+	[саркоидоз]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_sarcoidosis
+   (*
+   => nrel_main_idtf:
+      [Опр. (Саркоидоз)]
+      (* <- lang_ru;; *);;
+   -> [Саркоидоз - это системное заболевание, которое характеризуется образованием гранулем в различных органах, чаще всего в легких и лимфатических узлах. Причина саркоидоза неизвестна, но считается, что иммунная система играет роль в его развитии.]
+      (* <- lang_ru;; *);;
+   -> [Sarcoidosis is a systemic disease characterized by the formation of granulomas in various organs, most commonly in the lungs and lymph nodes. The cause of sarcoidosis is unknown, but it is believed that the immune system plays a role in its development.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+concept_streptococcus
+=> nrel_main_idtf:
+	[streptococcus]
+	(* <- lang_en;; *);
+=> nrel_main_idtf:
+	[стрептококки]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_streptococcus
+   (*
+   => nrel_main_idtf:
+      [Опр. (Стрептококки)]
+      (* <- lang_ru;; *);;
+   -> [Стрептококки - это группа бактерий, которые могут вызывать различные инфекции у человека, такие как ангина, скарлатина, инфекции мочевыводящих путей, пневмония и другие.]
+      (* <- lang_ru;; *);;
+   -> [Streptococcus is a group of bacteria that can cause various infections in humans, such as strep throat, scarlet fever, urinary tract infections, pneumonia, and others.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+concept_meningococcus
+=> nrel_main_idtf:
+	[meningococcus]
+	(* <- lang_en;; *);
+=> nrel_main_idtf:
+	[менингококк]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_meningococcus
+   (*
+   => nrel_main_idtf:
+      [Опр. (Менингококк)]
+      (* <- lang_ru;; *);;
+   -> [Менингококк - это бактерия Neisseria meningitidis, которая может вызывать менингит и сепсис у людей. Эти инфекции могут быть серьезными и требуют немедленного лечения антибиотиками.]
+      (* <- lang_ru;; *);;
+   -> [Meningococcus is the bacterium Neisseria meningitidis, which can cause meningitis and sepsis in humans. These infections can be serious and require immediate antibiotic treatment.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+concept_tuberculosis_mycobacteria
+=> nrel_main_idtf:
+	[tuberculosis mycobacteria]
+	(* <- lang_en;; *);
+=> nrel_main_idtf:
+	[микобактерии туберкулеза]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_tuberculosis_mycobacteria
+   (*
+   => nrel_main_idtf:
+      [Опр. (Микобактерии туберкулеза)]
+      (* <- lang_ru;; *);;
+   -> [Микобактерии туберкулеза - это группа микроорганизмов, причиной заболевания которыми является туберкулез. Главный представитель этой группы - Mycobacterium tuberculosis, вызывающий туберкулез у людей.]
+      (* <- lang_ru;; *);;
+   -> [Tuberculosis mycobacteria are a group of microorganisms that cause tuberculosis. The main representative of this group is Mycobacterium tuberculosis, which causes tuberculosis in humans.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+concept_fungal_infections
+=> nrel_main_idtf:
+	[fungal infections]
+	(* <- lang_en;; *);
+=> nrel_main_idtf:
+	[грибковые инфекции]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_fungal_infections
+   (*
+   => nrel_main_idtf:
+      [Опр. (Грибковые инфекции)]
+      (* <- lang_ru;; *);;
+   -> [Грибковые инфекции вызываются различными видами грибов и могут поражать кожу, ногти, волосы, слизистые оболочки, а также внутренние органы. Симптомы могут включать зуд, покраснение, шелушение, дискомфорт и другие.]
+      (* <- lang_ru;; *);;
+   -> [Fungal infections are caused by various types of fungi and can affect the skin, nails, hair, mucous membranes, as well as internal organs. Symptoms may include itching, redness, scaling, discomfort, and others.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+concept_meninges
+=> nrel_main_idtf:
+	[meninges]
+	(* <- lang_en;; *);
+=> nrel_main_idtf:
+	[мозговые оболочки]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_meninges
+   (*
+   => nrel_main_idtf:
+      [Опр. (Мозговые оболочки)]
+      (* <- lang_ru;; *);;
+   -> [Мозговые оболочки - это три слоя защитной оболочки, окружающие головной и спинной мозг. Они включают дурную, паутинную и мягкую мозговые оболочки, которые играют важную роль в защите и питании центральной нервной системы.]
+      (* <- lang_ru;; *);;
+   -> [The meninges are the three layers of protective membranes that surround the brain and spinal cord. They include the dura mater, arachnoid mater, and pia mater, which play an important role in protecting and nourishing the central nervous system.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+
+
+concept_nervous_system
+=> nrel_main_idtf:
+	[nervous system]
+	(* <- lang_en;; *);
+=> nrel_main_idtf:
+	[нервная система]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nervous_system
+   (*
+   => nrel_main_idtf:
+      [Опр. (Нервная система)]
+      (* <- lang_ru;; *);;
+   -> [Нервная система - это сложная сеть нервов и клеток, которая передает сигналы между различными частями организма и контролирует их функции. Она включает центральную нервную систему (головной и спинной мозг) и периферическую нервную систему (нервы, соединяющие центральную нервную систему с остальными частями тела).]
+      (* <- lang_ru;; *);;
+   -> [The nervous system is a complex network of nerves and cells that transmit signals between different parts of the body and control their functions. It includes the central nervous system (the brain and spinal cord) and the peripheral nervous system (nerves connecting the central nervous system to the rest of the body).]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+concept_brain
+=> nrel_main_idtf:
+	[brain]
+	(* <- lang_en;; *);
+=> nrel_main_idtf:
+	[мозг]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_brain
+   (*
+   => nrel_main_idtf:
+      [Опр. (Мозг)]
+      (* <- lang_ru;; *);;
+   -> [Мозг - это орган центральной нервной системы, расположенный в черепной коробке. Он отвечает за обработку информации, управление движениями, контроль органов и многие другие функции, необходимые для жизнедеятельности организма.]
+      (* <- lang_ru;; *);;
+   -> [The brain is the organ of the central nervous system located within the skull. It is responsible for processing information, controlling movements, regulating organs, and many other functions necessary for the organism's survival.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+concept_subacute
+=> nrel_main_idtf:
+	[subacute]
+	(* <- lang_en;; *);
+=> nrel_main_idtf:
+	[подострый]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_subacute
+   (*
+   => nrel_main_idtf:
+      [Опр. (Подострый)]
+      (* <- lang_ru;; *);;
+   -> [Подострый - это термин, который используется для описания состояний или заболеваний, которые находятся между острым и хроническим, проявляющиеся в течение более длительного времени, чем острые, но менее длительного, чем хронические.]
+      (* <- lang_ru;; *);;
+   -> [Subacute is a term used to describe conditions or diseases that are between acute and chronic, manifesting over a longer period than acute but shorter than chronic.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+concept_acute
+=> nrel_main_idtf:
+	[acute]
+	(* <- lang_en;; *);
+=> nrel_main_idtf:
+	[острый]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_acute
+   (*
+   => nrel_main_idtf:
+      [Опр. (Острый)]
+      (* <- lang_ru;; *);;
+   -> [Острый - это термин, используемый для описания состояний или заболеваний, характеризующихся быстрым началом и часто сильными симптомами. Острое состояние обычно имеет короткое длительность и требует немедленного вмешательства или лечения.]
+      (* <- lang_ru;; *);;
+   -> [Acute is a term used to describe conditions or diseases characterized by a rapid onset and often severe symptoms. An acute condition typically has a short duration and requires immediate intervention or treatment.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+concept_lightning_fast
+=> nrel_main_idtf:
+	[lightning-fast]
+	(* <- lang_en;; *);
+=> nrel_main_idtf:
+	[молниеносный]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_lightning_fast
+   (*
+   => nrel_main_idtf:
+      [Опр. (Молниеносный)]
+      (* <- lang_ru;; *);;
+   -> [Молниеносный - это термин, используемый для описания явлений или процессов, которые происходят с невероятной скоростью или моментально. В медицинском контексте это может относиться к быстрому развитию симптомов или острой реакции организма на внешние факторы.]
+      (* <- lang_ru;; *);;
+   -> [Lightning-fast is a term used to describe phenomena or processes that occur at incredible speed or instantaneously. In a medical context, this could refer to the rapid onset of symptoms or a sudden response of the body to external factors.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+concept_basal
+=> nrel_main_idtf:
+	[basal]
+	(* <- lang_en;; *);
+=> nrel_main_idtf:
+	[базальный]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_basal
+   (*
+   => nrel_main_idtf:
+      [Опр. (Базальный)]
+      (* <- lang_ru;; *);;
+   -> [Базальный - это термин, который обычно означает "относящийся к основанию" или "находящийся в основе". В медицинском контексте он может использоваться для описания расположения опухоли или поражения, которое начинается с базальной части органа или ткани.]
+      (* <- lang_ru;; *);;
+   -> [Basal is a term that typically means "relating to the base" or "located at the base." In a medical context, it may be used to describe the location of a tumor or lesion that originates from the basal part of an organ or tissue.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+concept_convexital
+=> nrel_main_idtf:
+	[convexital]
+	(* <- lang_en;; *);
+=> nrel_main_idtf:
+	[конвекситальный]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_convexital
+   (*
+   => nrel_main_idtf:
+      [Опр. (Конвекситальный)]
+      (* <- lang_ru;; *);;
+   -> [Конвекситальный - это термин, который может использоваться для описания процесса или изменения, которые связаны с выпуклой поверхностью. В медицинском контексте это может относиться к изменениям в мозговой коре, характеризующимся выпуклостью.]
+      (* <- lang_ru;; *);;
+   -> [Convexital is a term that may be used to describe a process or change associated with a convex surface. In a medical context, it could refer to changes in the brain cortex characterized by convexity.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+concept_total
+=> nrel_main_idtf:
+	[total]
+	(* <- lang_en;; *);
+=> nrel_main_idtf:
+	[тотальный]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_total
+   (*
+   => nrel_main_idtf:
+      [Опр. (Тотальный)]
+      (* <- lang_ru;; *);;
+   -> [Тотальный - это термин, который обычно означает "полный" или "всеобъемлющий". В медицинском контексте он может использоваться для описания состояния, когда поражение или расстройство затрагивает всю структуру или орган.]
+      (* <- lang_ru;; *);;
+   -> [Total is a term that typically means "complete" or "comprehensive." In a medical context, it may be used to describe a condition where the damage or disorder affects the entire structure or organ.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+concept_spinal
+=> nrel_main_idtf:
+	[spinal]
+	(* <- lang_en;; *);
+=> nrel_main_idtf:
+	[спинальный]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_spinal
+   (*
+   => nrel_main_idtf:
+      [Опр. (Спинальный)]
+      (* <- lang_ru;; *);;
+   -> [Спинальный - это термин, который относится к позвоночнику или спинному мозгу. В медицинском контексте он может использоваться для описания поражения или процесса, связанного со спинным столбом или спинным мозгом.]
+      (* <- lang_ru;; *);;
+   -> [Spinal is a term that relates to the spine or spinal cord. In a medical context, it may be used to describe a lesion or process related to the spinal column or spinal cord.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+	
+concept_head
+=> nrel_main_idtf:
+	[голова]
+	(* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_head
+   (*
+   => nrel_main_idtf:
+      [Опр. (Голова)]
+      (* <- lang_ru;; *);;
+   -> [Голова - это верхняя часть тела человека, которая содержит мозг, череп, лицо и другие важные органы и структуры. Она играет ключевую роль в осуществлении различных функций, таких как зрение, слух, обоняние, вкус, а также в поддержании равновесия и координации движений.]
+      (* <- lang_ru;; *);;
+   -> [The head is the upper part of the human body, which contains the brain, skull, face, and other important organs and structures. It plays a key role in carrying out various functions such as vision, hearing, smell, taste, as well as in maintaining balance and coordinating movements.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+	
+inflammation_of_the_meninges
+=> nrel_main_idtf:
+	[воспаление мозговых оболочек]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[inflammation of the meninges]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_inflammation_of_the_meninges
+   (*
+   => nrel_main_idtf:
+      [Опр. (Воспаление мозговых оболочек)]
+      (* <- lang_ru;; *);;
+   -> [Воспаление мозговых оболочек - это состояние, при котором происходит воспалительный процесс в тканях, окружающих головной и спинной мозг, включая дурную, паутинную и мягкую мозговые оболочки. Это может быть вызвано инфекцией, травмой, аутоиммунным заболеванием или другими причинами. Симптомы включают головную боль, жесткость шеи, лихорадку, тошноту и рвоту, нарушение сознания и другие.]
+      (* <- lang_ru;; *);;
+   -> [Inflammation of the meninges is a condition where there is an inflammatory process in the tissues surrounding the brain and spinal cord, including the dura mater, arachnoid mater, and pia mater. It can be caused by infection, trauma, autoimmune disease, or other reasons. Symptoms include headache, neck stiffness, fever, nausea and vomiting, altered consciousness, and others.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+	
+concept_Coccidioides_immitis
+=> nrel_main_idtf:
+	[Coccidioides immitis]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Coccidioides immitis]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_Coccidioides_immitis
+   (*
+   => nrel_main_idtf:
+      [Опр. (Coccidioides immitis)]
+      (* <- lang_ru;; *);;
+   -> [Coccidioides immitis - это гриб, вызывающий кокцидиоидомикоз, также известный как лихорадка долин. Он эндемичен для засушливых регионов юго-запада США, Мексики и некоторых стран Центральной и Южной Америки. Инфекция происходит через вдыхание грибных спор, содержащихся в почве, что может привести к респираторным симптомам и иногда распространенному заболеванию.]
+      (* <- lang_ru;; *);;
+   -> [Coccidioides immitis is a fungus that causes coccidioidomycosis, also known as Valley fever. It is endemic to arid regions of the southwestern United States, Mexico, and parts of Central and South America. Infection occurs through inhalation of fungal spores present in the soil, leading to respiratory symptoms and sometimes disseminated disease.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;	
+
+concept_Histoplasma_capsulatum
+=> nrel_main_idtf:
+	[Histoplasma capsulatum]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Histoplasma capsulatum]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_spinal
+   (*
+   => nrel_main_idtf:
+      [Опр. (Histoplasma capsulatum)]
+      (* <- lang_ru;; *);;
+   -> [Histoplasma capsulatum - это гриб, вызывающий гистоплазмоз, респираторное заболевание. Он обитает в почве, загрязненной птичьими или летучими мышьями испражнениями, особенно в районах с большими популяциями этих животных. Вдыхание грибных спор может привести к легким симптомам, похожим на грипп, или к тяжелым респираторным заболеваниям в зависимости от степени воздействия и иммунного статуса человека.]
+      (* <- lang_ru;; *);;
+   -> [Histoplasma capsulatum is a fungus that causes histoplasmosis, a respiratory disease. It is found in soil contaminated with bird or bat droppings, particularly in areas with large populations of these animals. Inhalation of fungal spores can lead to mild flu-like symptoms or severe respiratory illness, depending on the extent of exposure and the individual's immune status.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;	
+
+concept_confusion
+=> nrel_main_idtf:
+	[спутанность сознания]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[confusion]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_spinal
+   (*
+   => nrel_main_idtf:
+      [Опр. (Спутанность сознания)]
+      (* <- lang_ru;; *);;
+   -> [Спутанность сознания - это состояние, при котором человек испытывает затруднения в понимании, восприятии и ориентации в окружающем мире. Это может проявляться как дезориентация во времени, месте и личности, а также затруднение в общении и принятии решений. Спутанность сознания может быть вызвана различными причинами, такими как инфекции, травмы, нарушения обмена веществ или психические расстройства.]
+      (* <- lang_ru;; *);;
+   -> [Confusion is a state in which a person experiences difficulties in understanding, perceiving, and orienting themselves in the surrounding world. It may manifest as disorientation in time, place, and person, as well as difficulty in communication and decision-making. Confusion can be caused by various factors such as infections, injuries, metabolic disorders, or psychiatric conditions.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+concept_rabies_virus
+=> nrel_main_idtf:
+	[вирус бешенства]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[rabies virus]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_spinal
+   (*
+   => nrel_main_idtf:
+      [Опр. (Вирус бешенства)]
+      (* <- lang_ru;; *);;
+   -> [Вирус бешенства - это вирус, вызывающий болезнь бешенства, которая поражает центральную нервную систему и чаще всего передается через укусы зараженных животных, таких как собаки или летучие мыши. Бешенство у человека чрезвычайно опасно и, если не лечится, часто приводит к смерти.]
+      (* <- lang_ru;; *);;
+   -> [The rabies virus is a virus that causes rabies, a disease that affects the central nervous system and is most commonly transmitted through the bites of infected animals such as dogs or bats. Rabies in humans is extremely dangerous and, if left untreated, often leads to death.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
+
+concept_poliovirus
+=> nrel_main_idtf:
+  [poliovirus]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [полиовирус]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_poliovirus
+   (*
+   => nrel_main_idtf:
+      [Опр. (Полиовирус)]
+      (* <- lang_ru;; *);;
+   -> [Полиовирус - это вирус, вызывающий полиомиелит, инфекционное заболевание, которое может приводить к параличу и другим серьезным осложнениям.]
+      (* <- lang_ru;; *);;
+   -> [Poliovirus is the virus that causes poliomyelitis, an infectious disease that can lead to paralysis and other serious complications.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+ *);;
+
+concept_measles_virus
+=> nrel_main_idtf:
+  [measles virus]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [вирус кори]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_measles_virus
+   (*
+   => nrel_main_idtf:
+      [Опр. (Вирус кори)]
+      (* <- lang_ru;; *);;
+   -> [Вирус кори - это вирус, вызывающий корь, высокозаразное заболевание, характеризующееся лихорадкой, сыпью и осложнениями, такими как пневмония и энцефалит.]
+      (* <- lang_ru;; *);;
+   -> [The measles virus is the virus that causes measles, a highly contagious disease characterized by fever, rash, and complications such as pneumonia and encephalitis.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+ *);;
+
+concept_toxoplasmosis
+=> nrel_main_idtf:
+  [toxoplasmosis]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [токсоплазмоз]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_toxoplasmosis
+   (*
+   => nrel_main_idtf:
+      [Опр. (Токсоплазмоз)]
+      (* <- lang_ru;; *);;
+   -> [Токсоплазмоз - это паразитарное заболевание, вызываемое простейшим Toxoplasma gondii, которое может приводить к серьезным осложнениям у людей с ослабленным иммунитетом и беременных женщин.]
+      (* <- lang_ru;; *);;
+   -> [Toxoplasmosis is a parasitic disease caused by the protozoan Toxoplasma gondii, which can lead to severe complications in immunocompromised individuals and pregnant women.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+ *);;
+
+concept_primary_amoebic_meningoencephalitis
+=> nrel_main_idtf:
+  [primary amoebic meningoencephalitis]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [первичный амебный менингоэнцефалит]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_primary_amoebic_meningoencephalitis
+   (*
+   => nrel_main_idtf:
+      [Опр. (Первичный амебный менингоэнцефалит)]
+      (* <- lang_ru;; *);;
+   -> [Первичный амебный менингоэнцефалит - это редкое и часто смертельное заболевание центральной нервной системы, вызываемое амебой Naegleria fowleri, которая проникает в мозг через нос при вдыхании загрязненной воды.]
+      (* <- lang_ru;; *);;
+   -> [Primary amoebic meningoencephalitis is a rare and often fatal central nervous system disease caused by the amoeba Naegleria fowleri, which enters the brain through the nose when contaminated water is inhaled.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+ *);;
+
+concept_mycoplasma
+=> nrel_main_idtf:
+  [mycoplasma]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [микоплазма]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_mycoplasma
+   (*
+   => nrel_main_idtf:
+      [Опр. (Микоплазма)]
+      (* <- lang_ru;; *);;
+   -> [Микоплазма - это род бактерий, не имеющих клеточной стенки, которые могут вызывать различные инфекции у человека, включая респираторные и урогенитальные инфекции.]
+      (* <- lang_ru;; *);;
+   -> [Mycoplasma is a genus of bacteria lacking a cell wall that can cause various infections in humans, including respiratory and urogenital infections.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+ *);;
+
+inflammation_of_the_brain
+=> nrel_main_idtf:
+  [воспаление головного мозга]
+  (* <- lang_ru;; *);
+=> nrel_main_idtf:
+  [inflammation of the brain]
+  (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_inflammation_of_the_brain
+   (*
+   => nrel_main_idtf:
+      [Опр. (Воспаление головного мозга)]
+      (* <- lang_ru;; *);;
+   -> [Воспаление головного мозга - это состояние, характеризующееся воспалением мозговой ткани, которое может быть вызвано инфекциями, аутоиммунными реакциями или другими факторами и приводить к различным неврологическим симптомам.]
+      (* <- lang_ru;; *);;
+   -> [Inflammation of the brain is a condition characterized by inflammation of brain tissue, which can be caused by infections, autoimmune reactions, or other factors and can lead to various neurological symptoms.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+ *);;
+
+cerebral_hypoperfusion
+=> nrel_main_idtf:
+  [cerebral hypoperfusion]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [церебральная гипоперфузия]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_cerebral_hypoperfusion
+   (*
+   => nrel_main_idtf:
+      [Опр. (Церебральная гипоперфузия)]
+      (* <- lang_ru;; *);;
+   -> [Церебральная гипоперфузия - это состояние, при котором уменьшается кровоснабжение головного мозга, что может приводить к ишемии и повреждению мозговой ткани.]
+      (* <- lang_ru;; *);;
+   -> [Cerebral hypoperfusion is a condition in which there is reduced blood flow to the brain, which can lead to ischemia and brain tissue damage.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+ *);;
+
+concept_ischemic_stroke
+=> nrel_main_idtf:
+  [ischemic stroke]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [ишемический инсульт]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_ischemic_stroke
+   (*
+   => nrel_main_idtf:
+      [Опр. (Ишемический инсульт)]
+      (* <- lang_ru;; *);;
+   -> [Ишемический инсульт - это тип инсульта, вызванный закупоркой кровеносного сосуда, питающего головной мозг, что приводит к ишемии и повреждению мозговой ткани.]
+      (* <- lang_ru;; *);;
+   -> [Ischemic stroke is a type of stroke caused by a blockage in a blood vessel supplying the brain, leading to ischemia and brain tissue damage.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+ *);;
+
+concept_hemorrhagic_stroke
+=> nrel_main_idtf:
+  [hemorrhagic stroke]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [геморрагический инсульт]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_hemorrhagic_stroke
+   (*
+   => nrel_main_idtf:
+      [Опр. (Геморрагический инсульт)]
+      (* <- lang_ru;; *);;
+   -> [Геморрагический инсульт - это тип инсульта, вызванный разрывом кровеносного сосуда в головном мозге, что приводит к кровоизлиянию в мозговую ткань и ее повреждению.]
+      (* <- lang_ru;; *);;
+   -> [Hemorrhagic stroke is a type of stroke caused by the rupture of a blood vessel in the brain, leading to bleeding into the brain tissue and its damage.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+ *);;
+
+concept_speech_impairment
+=> nrel_main_idtf:
+  [speech impairment]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [нарушение речи]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_speech_impairment
+   (*
+   => nrel_main_idtf:
+      [Опр. (Нарушение речи)]
+      (* <- lang_ru;; *);;
+   -> [Нарушение речи - это состояние, при котором человек испытывает трудности с производством, формированием или пониманием речи, что может быть вызвано различными неврологическими, когнитивными или физическими факторами.]
+      (* <- lang_ru;; *);;
+   -> [Speech impairment is a condition in which a person has difficulty producing, forming, or understanding speech, which can be caused by various neurological, cognitive, or physical factors.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+ *);;
+
+concept_facial_asymmetry
+=> nrel_main_idtf:
+  [facial asymmetry]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [асимметрия лица]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_facial_asymmetry
+   (*
+   => nrel_main_idtf:
+      [Опр. (Асимметрия лица)]
+      (* <- lang_ru;; *);;
+   -> [Асимметрия лица - это состояние, при котором одна сторона лица отличается от другой, что может быть вызвано врожденными аномалиями, травмами или неврологическими расстройствами.]
+      (* <- lang_ru;; *);;
+   -> [Facial asymmetry is a condition in which one side of the face differs from the other, which can be caused by congenital anomalies, injuries, or neurological disorders.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+ *);;
+
+concept_paralysis
+=> nrel_main_idtf:
+  [paralysis]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [паралич]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_paralysis
+   (*
+   => nrel_main_idtf:
+      [Опр. (Паралич)]
+      (* <- lang_ru;; *);;
+   -> [Паралич - это состояние, при котором человек теряет способность двигать одной или несколькими частями тела, что может быть вызвано повреждением нервной системы или мышц.]
+      (* <- lang_ru;; *);;
+   -> [Paralysis is a condition in which a person loses the ability to move one or more parts of the body, which can be caused by damage to the nervous system or muscles.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+ *);;
+
+
+concept_generalized
+=> nrel_main_idtf:
+  [generalized]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [генерализованный]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_generalized
+   (*
+   => nrel_main_idtf:
+      [Опр. (Генерализованный)]
+      (* <- lang_ru;; *);;
+   -> [Генерализованный - это термин, используемый для описания состояний или явлений, которые охватывают или затрагивают всю систему или орган целиком, например, генерализованные судорожные приступы, которые охватывают весь мозг.]
+      (* <- lang_ru;; *);;
+   -> [Generalized is a term used to describe conditions or phenomena that involve or affect an entire system or organ, such as generalized seizures, which involve the entire brain.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+ 
+concept_partial
+=> nrel_main_idtf:
+  [partial]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [парциальный]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_partial
+   (*
+   => nrel_main_idtf:
+      [Опр. (Парциальный)]
+      (* <- lang_ru;; *);;
+   -> [Парциальный - это термин, используемый для описания состояний или явлений, которые охватывают или затрагивают только часть системы или органа, например, парциальные судорожные приступы, которые затрагивают только часть мозга.]
+      (* <- lang_ru;; *);;
+   -> [Partial is a term used to describe conditions or phenomena that involve or affect only part of a system or organ, such as partial seizures, which involve only part of the brain.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+ 
+abnormally_excessive_neuronal_activity
+=> nrel_main_idtf:
+  [abnormally excessive neuronal activity]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [аномально чрезмерная нейронная активность]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_abnormally_excessive_neuronal_activity
+   (*
+   => nrel_main_idtf:
+      [Опр. (Аномально чрезмерная нейронная активность)]
+      (* <- lang_ru;; *);;
+   -> [Аномально чрезмерная нейронная активность - это состояние, при котором нейроны мозга демонстрируют аномально высокую степень возбуждения или активности, что может приводить к различным неврологическим нарушениям, таким как эпилептические приступы.]
+      (* <- lang_ru;; *);;
+   -> [Abnormally excessive neuronal activity is a condition in which the neurons of the brain exhibit an abnormally high level of excitation or activity, which can lead to various neurological disorders such as epileptic seizures.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+ 
+ 
+concept_loss_of_consciousness
+=> nrel_main_idtf:
+  [loss of consciousness]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [потеря сознания]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_loss_of_consciousness
+   (*
+   => nrel_main_idtf:
+      [Опр. (Потеря сознания)]
+      (* <- lang_ru;; *);;
+   -> [Потеря сознания - это состояние, при котором человек не реагирует на внешние раздражители и не осознаёт своего окружения, часто вызываемое травмой, заболеванием или аномальной нейронной активностью.]
+      (* <- lang_ru;; *);;
+   -> [Loss of consciousness is a state in which a person is unresponsive to external stimuli and unaware of their surroundings, often caused by injury, illness, or abnormal neuronal activity.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+ 
+concept_convulsive_movements
+=> nrel_main_idtf:
+  [convulsive movements]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [судорожные движения]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_convulsive_movements
+   (*
+   => nrel_main_idtf:
+      [Опр. (Судорожные движения)]
+      (* <- lang_ru;; *);;
+   -> [Судорожные движения - это непроизвольные, быстрые и повторяющиеся сокращения мышц, часто связанные с эпилептическими приступами или другими неврологическими состояниями.]
+      (* <- lang_ru;; *);;
+   -> [Convulsive movements are involuntary, rapid, and repetitive muscle contractions often associated with epileptic seizures or other neurological conditions.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+ 
+concept_mood_changes
+=> nrel_main_idtf:
+  [mood changes]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [изменения настроения]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_mood_changes
+   (*
+   => nrel_main_idtf:
+      [Опр. (Изменения настроения)]
+      (* <- lang_ru;; *);;
+   -> [Изменения настроения - это колебания эмоционального состояния человека, которые могут варьироваться от лёгких до серьёзных и могут быть вызваны различными факторами, включая медицинские, психологические и социальные причины.]
+      (* <- lang_ru;; *);;
+   -> [Mood changes are fluctuations in a person's emotional state, which can range from mild to severe and can be caused by various factors, including medical, psychological, and social reasons.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+ 
+concept_cognitive_disturbances
+=> nrel_main_idtf:
+  [cognitive disturbances]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [когнитивные нарушения]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_cognitive_disturbances
+   (*
+   => nrel_main_idtf:
+      [Опр. (Когнитивные нарушения)]
+      (* <- lang_ru;; *);;
+   -> [Когнитивные нарушения - это отклонения в нормальном функционировании познавательных процессов, таких как память, внимание, язык и мышление, которые могут быть вызваны различными медицинскими и психологическими состояниями.]
+      (* <- lang_ru;; *);;
+   -> [Cognitive disturbances are deviations in the normal functioning of cognitive processes, such as memory, attention, language, and thinking, which can be caused by various medical and psychological conditions.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+ 
+concept_brain_injury
+=> nrel_main_idtf:
+  [brain injury]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [травма мозга]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_brain_injury
+   (*
+   => nrel_main_idtf:
+      [Опр. (Травма мозга)]
+      (* <- lang_ru;; *);;
+   -> [Травма мозга - это повреждение мозга, вызванное внешним воздействием или внутренними факторами, такими как удар, падение, инфекция или кровоизлияние, и может приводить к различным физическим, когнитивным и эмоциональным последствиям.]
+      (* <- lang_ru;; *);;
+   -> [Brain injury is damage to the brain caused by external impact or internal factors such as a blow, fall, infection, or hemorrhage, and can lead to various physical, cognitive, and emotional consequences.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+ 
+concept_birth_defects
+=> nrel_main_idtf:
+  [birth defects]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [врождённые дефекты]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_birth_defects
+   (*
+   => nrel_main_idtf:
+      [Опр. (Врождённые дефекты)]
+      (* <- lang_ru;; *);;
+   -> [Врождённые дефекты - это структурные или функциональные отклонения, присутствующие при рождении, которые могут затрагивать любую часть тела и могут быть вызваны генетическими, экологическими или неизвестными факторами.]
+      (* <- lang_ru;; *);;
+   -> [Birth defects are structural or functional abnormalities present at birth that can affect any part of the body and can be caused by genetic, environmental, or unknown factors.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+ 
+concept_seizure
+=> nrel_main_idtf:
+  [seizure]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [судорожный приступ]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_seizure
+   (*
+   => nrel_main_idtf:
+      [Опр. (Судорожный приступ)]
+      (* <- lang_ru;; *);;
+   -> [Судорожный приступ - это внезапный эпизод аномальной электрической активности в мозге, который может приводить к судорогам, потере сознания и другим неврологическим симптомам.]
+      (* <- lang_ru;; *);;
+   -> [A seizure is a sudden episode of abnormal electrical activity in the brain, which can lead to convulsions, loss of consciousness, and other neurological symptoms.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_tremor
+=> nrel_main_idtf:
+  [tremor]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [тремор]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_tremor
+   (*
+   => nrel_main_idtf:
+      [Опр. (Тремор)]
+      (* <- lang_ru;; *);;
+   -> [Тремор - это непроизвольное, ритмическое колебательное движение какой-либо части тела, вызванное сокращением и расслаблением мышц.]
+      (* <- lang_ru;; *);;
+   -> [Tremor is an involuntary, rhythmic oscillatory movement of a part of the body caused by alternating muscle contractions and relaxations.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_bradykinesia
+=> nrel_main_idtf:
+  [bradykinesia]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [брадикинезия]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_bradykinesia
+   (*
+   => nrel_main_idtf:
+      [Опр. (Брадикинезия)]
+      (* <- lang_ru;; *);;
+   -> [Брадикинезия - это состояние, характеризующееся замедлением или затруднением произвольных движений, часто наблюдаемое при таких заболеваниях, как болезнь Паркинсона.]
+      (* <- lang_ru;; *);;
+   -> [Bradykinesia is a condition characterized by the slowness or difficulty of voluntary movements, often observed in diseases such as Parkinson's disease.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+ 
+concept_dysautonomia
+=> nrel_main_idtf:
+  [dysautonomia]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [дисавтономия]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_dysautonomia
+   (*
+   => nrel_main_idtf:
+      [Опр. (Дисавтономия)]
+      (* <- lang_ru;; *);;
+   -> [Дисавтономия - это нарушение функции вегетативной нервной системы, которое может приводить к различным симптомам, таким как головокружение, обмороки, проблемы с сердцебиением и пищеварением.]
+      (* <- lang_ru;; *);;
+   -> [Dysautonomia is a disorder of the autonomic nervous system that can lead to various symptoms, such as dizziness, fainting, heart rate problems, and digestive issues.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+ 
+concept_pesticide
+=> nrel_main_idtf:
+  [pesticide]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [пестицид]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_pesticide
+   (*
+   => nrel_main_idtf:
+      [Опр. (Пестицид)]
+      (* <- lang_ru;; *);;
+   -> [Пестицид - это химическое вещество, используемое для уничтожения или контроля вредителей, включая насекомых, сорняки, грибы и другие организмы, наносящие вред сельскому хозяйству и экосистемам.]
+      (* <- lang_ru;; *);;
+   -> [A pesticide is a chemical substance used to kill or control pests, including insects, weeds, fungi, and other organisms that can damage crops and ecosystems.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+ 
+concept_substantia_nigra
+=> nrel_main_idtf:
+  [substantia nigra]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [чёрная субстанция]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_substantia_nigra
+   (*
+   => nrel_main_idtf:
+      [Опр. (Чёрное вещество)]
+      (* <- lang_ru;; *);;
+   -> [Чёрная субстанция - это область мозга, расположенная в среднем мозге, которая играет важную роль в контроле движений и выработке дофамина.]
+      (* <- lang_ru;; *);;
+   -> [The substantia nigra is a region of the brain located in the midbrain that plays an important role in movement control and dopamine production.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+progressive_neurodegeneration
+=> nrel_main_idtf:
+  [progressive neurodegeneration]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [прогрессирующая нейродегенерация]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_progressive_neurodegeneration
+   (*
+   => nrel_main_idtf:
+      [Опр. (Прогрессирующая нейродегенерация)]
+      (* <- lang_ru;; *);;
+   -> [Прогрессирующая нейродегенерация - это постепенное ухудшение структуры и функции нервных клеток, приводящее к прогрессирующей утрате их активности, что наблюдается при таких заболеваниях, как болезнь Альцгеймера и болезнь Паркинсона.]
+      (* <- lang_ru;; *);;
+   -> [Progressive neurodegeneration is the gradual deterioration of the structure and function of nerve cells, leading to a progressive loss of their activity, as seen in diseases such as Alzheimer's and Parkinson's.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+ 
+concept_convulsive_movements
+=> nrel_main_idtf:
+  [convulsive movements]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [судорожные движения]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_convulsive_movements
+   (*
+   => nrel_main_idtf:
+      [Опр. (Судорожные движения)]
+      (* <- lang_ru;; *);;
+   -> [Судорожные движения - это внезапные, непроизвольные сокращения мышц, которые могут быть вызваны аномальной электрической активностью в мозге и часто ассоциируются с эпилепсией и другими неврологическими состояниями.]
+      (* <- lang_ru;; *);;
+   -> [Convulsive movements are sudden, involuntary muscle contractions that can be caused by abnormal electrical activity in the brain and are often associated with epilepsy and other neurological conditions.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_functional
+=> nrel_main_idtf:
+  [functional]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [функциональный]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_functional
+   (*
+   => nrel_main_idtf:
+      [Опр. (Функциональный)]
+      (* <- lang_ru;; *);;
+   -> [Функциональный - это относящийся к способности выполнять определенную задачу или роль, часто используемый для описания нормальной или ожидаемой работы органов, систем или устройств.]
+      (* <- lang_ru;; *);;
+   -> [Functional refers to the ability to perform a specific task or role, often used to describe the normal or expected operation of organs, systems, or devices.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;

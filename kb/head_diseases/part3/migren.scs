@@ -1,0 +1,238 @@
+concept_migraine
+=> nrel_main_idtf:
+	[мигрень]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[migraine]
+	(* <- lang_en;; *);;
+concept_anxiety
+=> nrel_main_idtf:
+	[тревога]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[anxiety]
+	(* <- lang_en;; *);;
+
+concept_depression
+=> nrel_main_idtf:
+	[депрессия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[depression]
+	(* <- lang_en;; *);;
+
+concept_stress  
+=> nrel_main_idtf:
+	[стресс]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[stress]
+	(* <- lang_en;; *);;
+
+concept_headache
+=> nrel_main_idtf:
+	[головная боль]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[headache]
+	(* <- lang_en;; *);;
+
+concept_sensitivity_to_light
+=> nrel_main_idtf:
+	[чувствительность к свету]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[sensitivity to light]
+	(* <- lang_en;; *);;
+
+concept_sensitivity_to_sounds
+=> nrel_main_idtf:
+	[чувствительность к звуку]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[sensitivity to sounds]
+	(* <- lang_en;; *);;
+
+concept_the_central_nervous_system
+=> nrel_main_idtf:
+	[центральная нервная система]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[the central nervous system]
+	(* <- lang_en;; *);;
+
+concept_the_brain
+=> nrel_main_idtf:
+	[головной мозг]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[the brain]
+	(* <- lang_en;; *);;
+
+concept_vessels_of_the_brain
+=> nrel_main_idtf:
+	[сосуды головного мозга]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[vessels of the brain]
+	(* <- lang_en;; *);;
+
+concept_temporal_artery
+=> nrel_main_idtf:
+	[височная артерия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[temporal artery]
+	(* <- lang_en;; *);;
+
+concept_throbbing
+=> nrel_main_idtf:
+	[пульсирующий]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[throbbing]
+	(* <- lang_en;; *);;
+
+concept_non_pulsating
+=> nrel_main_idtf:
+	[не пульсирующий]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[non-pulsating]
+	(* <- lang_en;; *);;
+
+concept_long_term
+=> nrel_main_idtf:
+	[долгосрочный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[long-term]
+	(* <- lang_en;; *);;
+
+concept_short_term
+=> nrel_main_idtf:
+	[краткосрочный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[short-term]
+	(* <- lang_en;; *);;
+
+concept_episodic
+=> nrel_main_idtf:
+	[эпизодический]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[concept_episodic]
+	(* <- lang_en;; *);;
+
+
+concept_average
+=> nrel_main_idtf:
+	[средний]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[concept_average]
+	(* <- lang_en;; *);;
+
+concept_heavy
+=> nrel_main_idtf:
+	[тяжелый]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[heavy]
+	(* <- lang_en;; *);;
+
+concept_easy
+=> nrel_main_idtf:
+	[легкий]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[concept_easy]
+	(* <- lang_en;; *);;
+
+concept_temple_area
+=> nrel_main_idtf:
+	[височная зона]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[temple area]
+	(* <- lang_en;; *);;
+concept_spasm
+=> nrel_main_idtf:
+	[спазм]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[spasm]
+	(* <- lang_en;; *);;
+
+nrel_possible_reason_for_occurrence
+=> nrel_main_idtf:
+	[Возможные причины возникновения*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[possible reason for occurrence*]
+	(* <- lang_en;; *);;
+
+nrel_type_of_pain
+=> nrel_main_idtf:
+	[тип боли*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[type of pain*]
+	(* <- lang_en;; *);;
+
+nrel_vasodilation
+=> nrel_main_idtf:
+	[расширение сосудов*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[vasodilation*]
+	(* <- lang_en;; *);;
+
+nrel_localization
+=> nrel_main_idtf:
+	[локализация*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[localization*]
+	(* <- lang_en;; *);;
+
+nrel_symptom
+=> nrel_main_idtf:
+	[симптом*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[symptom*]
+	(* <- lang_en;; *);;
+
+nrel_severity_of_symptoms
+=> nrel_main_idtf:
+	[тяжесть симптомов*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[severity of symptoms*]
+	(* <- lang_en;; *);;
+
+nrel_frequency_of_seizures
+=> nrel_main_idtf:
+	[частота приступов*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[frequency of seizures*]
+	(* <- lang_en;; *);;
+
+nrel_duration_of_seizures
+=> nrel_main_idtf:
+	[продолжительность приступов*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[duration of seizures*]
+	(* <- lang_en;; *);;
+
+nrel_the_attack
+=> nrel_main_idtf:
+	[приступ*]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[the attack*]
+	(* <- lang_en;; *);;

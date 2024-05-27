@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/relation" idtf="nrel_equivalent" shapeColor="0" id="42015568" parent="39766656" left="0" top="0" right="91.7031" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="131.82" y="266.5" haveBus="false" idtf_pos="1">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/var/perm/group" idtf="" shapeColor="0" id="41842704" parent="39766656" x="32.5" y="314.184" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/var/perm/general" idtf="" shapeColor="0" id="42825728" parent="39766656" x="212.82" y="314.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inflammation" shapeColor="0" id="39773696" parent="39766656" left="0" top="0" right="109.063" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="273.82" y="269.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_meninges" shapeColor="0" id="41986624" parent="39766656" left="0" top="0" right="106.859" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="213.82" y="224.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/var/-/perm/noorien" idtf="" shapeColor="0" id="39465712" parent="39766656" id_b="41842704" id_e="42825728" b_x="32.5" b_y="314.184" e_x="212.82" e_y="314.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/var/-/perm/orient" idtf="" shapeColor="0" id="39548672" parent="39766656" id_b="41986624" id_e="42825728" b_x="213.82" b_y="224.5" e_x="212.82" e_y="314.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/var/pos/perm/orient/membership" idtf="" shapeColor="0" id="39548432" parent="39766656" id_b="39773696" id_e="39548672" b_x="273.82" b_y="269.5" e_x="-595" e_y="-31" dotBBalance="0" dotEBalance="0.5">
+            <points/>
+        </pair>
+        <pair type="pair/var/pos/perm/orient/membership" idtf="" shapeColor="0" id="39822880" parent="39766656" id_b="42015568" id_e="39465712" b_x="131.82" b_y="266.5" e_x="-595" e_y="-31" dotBBalance="0" dotEBalance="0.541679">
+            <points/>
+        </pair>
+        <contour type="contour/const/perm" idtf="Test1" shapeColor="0" id="39766656" parent="0" left="0" top="0" right="35.6563" bottom="23" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" idtf_pos_x="-114" idtf_pos_y="-87">
+            <points>
+                <point x="-14" y="202"/>
+                <point x="-18" y="393"/>
+                <point x="463" y="390"/>
+                <point x="459" y="200"/>
+            </points>
+        </contour>
+    </staticSector>
+</GWF>

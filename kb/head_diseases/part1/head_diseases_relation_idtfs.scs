@@ -1,0 +1,73 @@
+nrel_circulatory_disorders
+=> nrel_main_idtf:
+  [circulatory disorders]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [нарушения кровообращения]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_circulatory_disorders
+   (*
+   => nrel_main_idtf:
+      [Опр. (Нарушения кровообращения)]
+      (* <- lang_ru;; *);;
+   -> [Нарушение кровоснабжения - это состояние, при котором происходит нарушение нормального кровотока в органах и тканях организма. Это может быть вызвано различными причинами, включая атеросклероз, тромбоз, эмболию, артериальную гипертензию и другие. Нарушение кровоснабжения может приводить к различным симптомам, в зависимости от затронутого органа, включая боль, онемение, слабость, покалывание и нарушения функций органов.]
+      (* <- lang_ru;; *);;
+   -> [Circulatory disorders are conditions where there is an interruption of normal blood flow to the organs and tissues of the body. This can be caused by various factors including atherosclerosis, thrombosis, embolism, arterial hypertension, and others. Circulatory disorders can lead to various symptoms depending on the affected organ, including pain, numbness, weakness, tingling, and organ dysfunction.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+	
+nrel_excessive_activity
+=> nrel_main_idtf:
+  [excessive activity]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [чрезмерная активность]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_excessive_activity
+   (*
+   => nrel_main_idtf:
+      [Опр. (Чрезмерная активность)]
+      (* <- lang_ru;; *);;
+   -> [Чрезмерная активность - это состояние или поведение, характеризующееся уровнем активности, значительно превышающим норму или типичные уровни для конкретного контекста или индивидуума.]
+      (* <- lang_ru;; *);;
+   -> [Excessive activity is a condition or behavior characterized by a level of activity that significantly exceeds the norm or typical levels for a specific context or individual.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+ 
+nrel_degeneration
+=> nrel_main_idtf:
+  [degeneration]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [дегенерация]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_degeneration
+   (*
+   => nrel_main_idtf:
+      [Опр. (Дегенерация)]
+      (* <- lang_ru;; *);;
+   -> [Дегенерация - это процесс постепенного ухудшения структуры или функции клеток, тканей или органов, который может приводить к утрате их активности и способности выполнять свои функции.]
+      (* <- lang_ru;; *);;
+   -> [Degeneration is the process of gradual deterioration in the structure or function of cells, tissues, or organs, which can lead to the loss of their activity and ability to perform their functions.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+

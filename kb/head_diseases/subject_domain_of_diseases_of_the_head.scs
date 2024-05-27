@@ -1,4 +1,4 @@
-subject_domain_of_headaches
+subject_domain_of_head_diseases
 
 => nrel_main_idtf:
 	[Предметная область болезней головы]
@@ -11,18 +11,27 @@ subject_domain_of_headaches
 <- sc_node_struct;
 <- structure;
 
-<= nrel_private_subject_domain:
-	section_subject_domain_of_headaches;
-
 -> rrel_maximum_studied_object_class:
-	concept_disease;
+	concept_head_disease;
 
 -> rrel_not_maximum_studied_object_class:
+	concept_migraine;
+	concept_cluster_headaches;
+	concept_sinusitis;
+	concept_ethmoiditis;
+	concept_dacryoadenitis;
 	concept_meningitis;
-	concept_meningioma;
+	concept_brain_tumor;
+	concept_epilepsy;
 	concept_brain_abscess;
+	concept_meningioma;
+	concept_intracranial_hypertension;
+	concept_stroke;
 	concept_encephalopathy;
-
--> rrel_explored_relation:
-	nrel_symptoms;
-	nrel_causes_of_occurrence;;
+	concept_myasthenia;
+	concept_dementia;
+	concept_hydrocephalus;
+	concept_cerebrovascular_autonomic_dysfunction;
+	concept_parkinsons_disease;
+	concept_aneurysm;
+	concept_encephalitis;;
