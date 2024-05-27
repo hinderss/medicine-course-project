@@ -102,30 +102,6 @@ concept_loss_of_balance
      *);;
   *);;
 
-concept_headache
-=> nrel_main_idtf:
-    [головная боль]
-    (* <- lang_ru;; *);
-=> nrel_main_idtf:
-    [headache]
-    (* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-  (*
-  => nrel_sc_text_translation:
-     def_headache
-     (*
-     => nrel_main_idtf:
-        [Опр. (головная боль)]
-        (* <- lang_ru;; *);;
-     -> [Головная боль — это боль или дискомфорт, ощущаемый в области головы или верхней части шеи.]
-        (* <- lang_ru;; *);;
-     -> [Headache is pain or discomfort experienced in the area of the head or upper neck.]
-        (* <- lang_en;; *);;
-     <- definition;;
-     *);;
-  *);;
-
 concept_increased_sensitivity_to_light
 => nrel_main_idtf:
     [повышенная чувствительность к свету]
@@ -198,54 +174,6 @@ concept_nasal_congestion
      *);;
   *);;
 
-concept_the_central_nervous_system
-=> nrel_main_idtf:
-    [центральная нервная система]
-    (* <- lang_ru;; *);
-=> nrel_main_idtf:
-    [the central nervous system]
-    (* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-  (*
-  => nrel_sc_text_translation:
-     def_the_central_nervous_system
-     (*
-     => nrel_main_idtf:
-        [Опр. (центральная нервная система)]
-        (* <- lang_ru;; *);;
-     -> [Центральная нервная система — это часть нервной системы, включающая головной и спинной мозг, которая отвечает за обработку информации и контроль над телом.]
-        (* <- lang_ru;; *);;
-     -> [The central nervous system is the part of the nervous system that includes the brain and spinal cord, responsible for processing information and controlling the body.]
-        (* <- lang_en;; *);;
-     <- definition;;
-     *);;
-  *);;
-
-concept_the_brain
-=> nrel_main_idtf:
-    [головной мозг]
-    (* <- lang_ru;; *);
-=> nrel_main_idtf:
-    [the brain]
-    (* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-  (*
-  => nrel_sc_text_translation:
-     def_the_brain
-     (*
-     => nrel_main_idtf:
-        [Опр. (головной мозг)]
-        (* <- lang_ru;; *);;
-     -> [Головной мозг — это основной орган центральной нервной системы, ответственный за обработку сенсорной информации, координацию движений и принятие решений.]
-        (* <- lang_ru;; *);;
-     -> [The brain is the primary organ of the central nervous system, responsible for processing sensory information, coordinating movements, and making decisions.]
-        (* <- lang_en;; *);;
-     <- definition;;
-     *);;
-  *);;
-
 concept_hypothalamus
 => nrel_main_idtf:
 	[гипоталамус]
@@ -289,30 +217,6 @@ concept_neural_pathways
      -> [Нейронные пути — это сети нейронов, которые передают сигналы между различными частями мозга и другими частями нервной системы.]
         (* <- lang_ru;; *);;
      -> [Neural pathways are networks of neurons that transmit signals between different parts of the brain and other parts of the nervous system.]
-        (* <- lang_en;; *);;
-     <- definition;;
-     *);;
-  *);;
-
-concept_dizziness
-=> nrel_main_idtf:
-	[головокружение]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[dizziness]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-  (*
-  => nrel_sc_text_translation:
-     def_dizziness
-     (*
-     => nrel_main_idtf:
-        [Опр. (головокружение)]
-        (* <- lang_ru;; *);;
-     -> [Головокружение — это чувство вращения или нестабильности, часто сопровождающееся нарушением равновесия.]
-        (* <- lang_ru;; *);;
-     -> [Dizziness is a feeling of spinning or instability, often accompanied by a loss of balance.]
         (* <- lang_en;; *);;
      <- definition;;
      *);;
@@ -390,30 +294,6 @@ concept_cranial_region
      *);;
   *);;
 
-concept_head_disease
-=> nrel_main_idtf:
-	[болезнь головы]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[head disease]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-  (*
-  => nrel_sc_text_translation:
-     def_head_disease
-     (*
-     => nrel_main_idtf:
-        [Опр. (болезнь головы)]
-        (* <- lang_ru;; *);;
-     -> [Болезнь головы — это любое заболевание, которое поражает голову, включая мозг, череп или мягкие ткани.]
-        (* <- lang_ru;; *);;
-     -> [Head disease refers to any ailment that affects the head, including the brain, skull, or soft tissues.]
-        (* <- lang_en;; *);;
-     <- definition;;
-     *);;
-  *);;
-
 concept_average
 => nrel_main_idtf:
 	[средний]
@@ -433,30 +313,6 @@ concept_average
      -> [Средний — это показатель, представляющий собой сумму значений, деленную на их количество.]
         (* <- lang_ru;; *);;
      -> [Average is a measure that represents the sum of values divided by their number.]
-        (* <- lang_en;; *);;
-     <- definition;;
-     *);;
-  *);;
-
-concept_temple_area
-=> nrel_main_idtf:
-	[височная зона]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[temple area]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-  (*
-  => nrel_sc_text_translation:
-     def_temple_area
-     (*
-     => nrel_main_idtf:
-        [Опр. (височная зона)]
-        (* <- lang_ru;; *);;
-     -> [Височная зона — это область головы, расположенная по бокам лба и вокруг висков.]
-        (* <- lang_ru;; *);;
-     -> [The temple area is the region of the head located on the sides of the forehead and around the temples.]
         (* <- lang_en;; *);;
      <- definition;;
      *);;

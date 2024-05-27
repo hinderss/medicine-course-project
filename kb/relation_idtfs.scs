@@ -46,28 +46,12 @@
 	[equivalent*]
 	(* <- lang_en;; *);;
 
-nrel_inflammation
-=> nrel_main_idtf:
-	[воспаление*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[inflammation*]
-	(* <- lang_en;; *);;
-
   nrel_character
 => nrel_main_idtf:
 	[характер*]
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[character*]
-	(* <- lang_en;; *);;
-
-	nrel_localization
-=> nrel_main_idtf:
-	[локализация*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[localization*]
 	(* <- lang_en;; *);;
 
 nrel_attack

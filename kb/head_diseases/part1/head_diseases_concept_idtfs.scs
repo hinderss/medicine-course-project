@@ -1,10 +1,10 @@
 concept_head_disease
 => nrel_main_idtf:
-	[болезнь головы]
-(* <- lang_ru;; *);
+ [болезнь головы]
+ (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[head disease]
-(* <- lang_en;; *);
+ [head disease]
+ (* <- lang_en;; *);
 <- rrel_key_sc_element:
 ...
  (*
@@ -14,13 +14,13 @@ concept_head_disease
    => nrel_main_idtf:
       [Опр. (болезнь головы)]
       (* <- lang_ru;; *);;
-   -> [Состояние, при котором человек испытывает длительные и повторяющиеся    симптомы, связанные с функционированием головного мозга или его окружающих тканей.]
+   -> [Любое заболевание, поражающее область головы, включая мозг, череп и мягкие ткани.]
       (* <- lang_ru;; *);;
-   -> [Condition in which a person experiences prolonged and recurrent symptoms related to the functioning of the brain or its surrounding tissues..]
+   -> [Any disease affecting the head region, including the brain, skull, and soft tissues.]
       (* <- lang_en;; *);;
    <- definition;;
-     *);;
    *);;
+ *);;
 
 
 concept_meningitis
@@ -73,17 +73,6 @@ concept_epilepsy
 	[epilepsy]
 	(* <- lang_en;;   *);;
 	
-	
-
-concept_brain_abscess
-<- concept_head_disease;
-=> nrel_main_idtf:
-	[абсцесс мозга]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[brain abscess]
-	(* <- lang_en;;   *);;
-	
 concept_encephalitis
 <- concept_head_disease;
 => nrel_main_idtf:
@@ -93,27 +82,6 @@ concept_encephalitis
 	[encephalitis]
 	(* <- lang_en;;   *);;
 
-concept_meningioma
-<- concept_head_disease;
-=> nrel_main_idtf:
-	[менингиома]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[meningioma]
-	(* <- lang_en;;   *);;
-
-
-concept_intracranial_hypertension
-<- concept_head_disease;
-=> nrel_main_idtf:
-	[внутричерепная гипертензия]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[intracranial hypertension]
-	(* <- lang_en;;   *);;
-	
-
-
 concept_stroke
 <- concept_head_disease;
 => nrel_main_idtf:
@@ -121,18 +89,7 @@ concept_stroke
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[stroke]
-	(* <- lang_en;;   *);;
-
-
-concept_encephalopathy
-<- concept_head_disease;
-=> nrel_main_idtf:
-	[энцефалопатия]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[encephalopathy]
-	(* <- lang_en;;   *);;
-	
+	(* <- lang_en;;   *);;	
 	
 concept_myasthenia
 <- concept_head_disease;
@@ -151,17 +108,6 @@ concept_dementia
 => nrel_main_idtf:
 	[dementia]
 	(* <- lang_en;;   *);;
-
-
-concept_hydrocephalus
-<- concept_head_disease;
-=> nrel_main_idtf:
-	[гидроцефалия]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[hydrocephalus]
-	(* <- lang_en;;   *);;
-	
 
 concept_cerebrovascular_autonomic_dysfunction
 <- concept_head_disease;
@@ -221,13 +167,27 @@ concept_rigidity_of_neck_muscles
 
 concept_headache
 => nrel_main_idtf:
-	[головная боль]
-(* <- lang_ru;; *);
+    [головная боль]
+    (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[headache]
-(* <- lang_en;; *);;
-
-
+    [headache]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_headache
+     (*
+     => nrel_main_idtf:
+        [Опр. (головная боль)]
+        (* <- lang_ru;; *);;
+     -> [Головная боль — это боль или дискомфорт, ощущаемый в области головы или верхней части шеи.]
+        (* <- lang_ru;; *);;
+     -> [Headache is pain or discomfort experienced in the area of the head or upper neck.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
 
 concept_photophobia
 => nrel_main_idtf:
@@ -541,11 +501,11 @@ concept_sarcoidosis
 
 concept_streptococcus
 => nrel_main_idtf:
-	[streptococcus]
-	(* <- lang_en;; *);
+ [стрептококки]
+ (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[стрептококки]
-	(* <- lang_ru;; *);
+ [streptococcus]
+ (* <- lang_en;; *);
 <- rrel_key_sc_element:
 ...
  (*
@@ -553,15 +513,15 @@ concept_streptococcus
    def_streptococcus
    (*
    => nrel_main_idtf:
-      [Опр. (Стрептококки)]
+      [Опр. (стрептококк)]
       (* <- lang_ru;; *);;
-   -> [Стрептококки - это группа бактерий, которые могут вызывать различные инфекции у человека, такие как ангина, скарлатина, инфекции мочевыводящих путей, пневмония и другие.]
+   -> [Группа бактерий, включающая множество видов, некоторые из которых являются патогенными для человека и могут вызывать различные заболевания, такие как ангина, пневмония, сепсис и другие инфекции.]
       (* <- lang_ru;; *);;
-   -> [Streptococcus is a group of bacteria that can cause various infections in humans, such as strep throat, scarlet fever, urinary tract infections, pneumonia, and others.]
+   -> [A group of bacteria comprising many species, some of which are pathogenic to humans and can cause various diseases such as strep throat, pneumonia, sepsis, and other infections.]
       (* <- lang_en;; *);;
    <- definition;;
-     *);;
    *);;
+ *);;
 
 concept_meningococcus
 => nrel_main_idtf:
@@ -687,11 +647,11 @@ concept_nervous_system
 
 concept_brain
 => nrel_main_idtf:
-	[brain]
-	(* <- lang_en;; *);
+ [мозг]
+ (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[мозг]
-	(* <- lang_ru;; *);
+ [brain]
+ (* <- lang_en;; *);
 <- rrel_key_sc_element:
 ...
  (*
@@ -699,15 +659,16 @@ concept_brain
    def_brain
    (*
    => nrel_main_idtf:
-      [Опр. (Мозг)]
+      [Опр. (мозг)]
       (* <- lang_ru;; *);;
-   -> [Мозг - это орган центральной нервной системы, расположенный в черепной коробке. Он отвечает за обработку информации, управление движениями, контроль органов и многие другие функции, необходимые для жизнедеятельности организма.]
+   -> [Основной орган центральной нервной системы человека и многих животных, отвечающий за мышление, чувства, движения и другие функции.]
       (* <- lang_ru;; *);;
-   -> [The brain is the organ of the central nervous system located within the skull. It is responsible for processing information, controlling movements, regulating organs, and many other functions necessary for the organism's survival.]
+   -> [The primary organ of the central nervous system in humans and many animals responsible for thinking, sensation, movement, and other functions.]
       (* <- lang_en;; *);;
    <- definition;;
-     *);;
    *);;
+ *);;
+
 
 concept_subacute
 => nrel_main_idtf:
@@ -1549,6 +1510,30 @@ concept_seizure
    *);;
  *);;
 
+concept_seizures
+=> nrel_main_idtf:
+	[судороги]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[seizures]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_seizures
+     (*
+     => nrel_main_idtf:
+        [Опр. (судороги)]
+        (* <- lang_ru;; *);;
+     -> [Внезапные, неконтролируемые электрические возмущения в головном мозге, которые могут вызвать изменения в поведении, движениях или сознании.]
+        (* <- lang_ru;; *);;
+     -> [Sudden, uncontrolled electrical disturbances in the brain that can cause changes in behavior, movements, or consciousness.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
 concept_tremor
 => nrel_main_idtf:
   [tremor]
@@ -1688,30 +1673,6 @@ progressive_neurodegeneration
    -> [Прогрессирующая нейродегенерация - это постепенное ухудшение структуры и функции нервных клеток, приводящее к прогрессирующей утрате их активности, что наблюдается при таких заболеваниях, как болезнь Альцгеймера и болезнь Паркинсона.]
       (* <- lang_ru;; *);;
    -> [Progressive neurodegeneration is the gradual deterioration of the structure and function of nerve cells, leading to a progressive loss of their activity, as seen in diseases such as Alzheimer's and Parkinson's.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
- 
-concept_convulsive_movements
-=> nrel_main_idtf:
-  [convulsive movements]
-  (* <- lang_en;; *);
-=> nrel_main_idtf:
-  [судорожные движения]
-  (* <- lang_ru;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-   def_convulsive_movements
-   (*
-   => nrel_main_idtf:
-      [Опр. (Судорожные движения)]
-      (* <- lang_ru;; *);;
-   -> [Судорожные движения - это внезапные, непроизвольные сокращения мышц, которые могут быть вызваны аномальной электрической активностью в мозге и часто ассоциируются с эпилепсией и другими неврологическими состояниями.]
-      (* <- lang_ru;; *);;
-   -> [Convulsive movements are sudden, involuntary muscle contractions that can be caused by abnormal electrical activity in the brain and are often associated with epilepsy and other neurological conditions.]
       (* <- lang_en;; *);;
    <- definition;;
    *);;

@@ -1,27 +1,3 @@
-concept_head_disease
-=> nrel_main_idtf:
-	[болезнь головы]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[head disease]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-(*
- => nrel_sc_text_translation:
-   def_head_disease
-   (*
-   => nrel_main_idtf:
-      [Опр. (болезнь головы)]
-      (* <- lang_ru;; *);;
-   -> [Любое заболевание, затрагивающее голову, включая кожные заболевания, инфекции, опухоли и травмы.]
-      (* <- lang_ru;; *);;
-   -> [Any disease affecting the head, including skin conditions, infections, tumors, and injuries.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
 concept_difficulty_breathing
 => nrel_main_idtf:
 	[затрудненное дыхание]
@@ -70,54 +46,6 @@ concept_purulent_discharge
    *);;
  *);;
 
-concept_headache
-=> nrel_main_idtf:
-	[головная боль]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[headache]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-(*
- => nrel_sc_text_translation:
-   def_headache
-   (*
-   => nrel_main_idtf:
-      [Опр. (головная боль)]
-      (* <- lang_ru;; *);;
-   -> [Боль или дискомфорт, ощущаемые в области головы или верхней части шеи.]
-      (* <- lang_ru;; *);;
-   -> [Pain or discomfort felt in the head or upper neck area.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
-concept_temperature_rise
-=> nrel_main_idtf:
-	[повышение температуры]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[temperature rise]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-(*
- => nrel_sc_text_translation:
-   def_temperature_rise
-   (*
-   => nrel_main_idtf:
-      [Опр. (повышение температуры)]
-      (* <- lang_ru;; *);;
-   -> [Увеличение температуры тела сверх нормы, часто сопровождающееся другими симптомами заболевания.]
-      (* <- lang_ru;; *);;
-   -> [Elevation of body temperature above normal, often accompanied by other symptoms of illness.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
 concept_heaviness_in_the_nasal_area
 => nrel_main_idtf:
 	[тяжесть в области носа]
@@ -137,30 +65,6 @@ concept_heaviness_in_the_nasal_area
    -> [Ощущение дискомфорта или тяжести в области носа, часто сопровождающее заболевания верхних дыхательных путей.]
       (* <- lang_ru;; *);;
    -> [A sensation of discomfort or heaviness in the nasal area, often accompanying upper respiratory tract infections.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
-concept_bacteria
-=> nrel_main_idtf:
-	[бактерии]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[bacteria]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-(*
- => nrel_sc_text_translation:
-   def_bacteria
-   (*
-   => nrel_main_idtf:
-      [Опр. (бактерии)]
-      (* <- lang_ru;; *);;
-   -> [Микроорганизмы одноклеточные или многоклеточные, прокариотические, обычно присутствующие в различных средах.]
-      (* <- lang_ru;; *);;
-   -> [Single-celled or multicellular microorganisms, prokaryotic, typically found in various environments.]
       (* <- lang_en;; *);;
    <- definition;;
    *);;
@@ -209,30 +113,6 @@ concept_mycetoma
    -> [Хроническое инфекционное заболевание, характеризующееся образованием гнойных опухолей, часто поражающее кожу и ткани под кожей.]
       (* <- lang_ru;; *);;
    -> [A chronic infectious disease characterized by the formation of purulent tumors, often affecting the skin and subcutaneous tissues.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
-concept_pain
-=> nrel_main_idtf:
-	[боль]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[pain]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-(*
- => nrel_sc_text_translation:
-   def_pain
-   (*
-   => nrel_main_idtf:
-      [Опр. (боль)]
-      (* <- lang_ru;; *);;
-   -> [Неприятное ощущение, чувство дискомфорта или страдания, часто связанное с повреждением тканей или болезненным состоянием.]
-      (* <- lang_ru;; *);;
-   -> [An unpleasant sensation, feeling of discomfort, or suffering often associated with tissue damage or a painful condition.]
       (* <- lang_en;; *);;
    <- definition;;
    *);;
@@ -310,30 +190,6 @@ concept_purulent
    *);;
  *);;
 
-concept_chronic
-=> nrel_main_idtf:
-	[хронический]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[chronic]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-(*
- => nrel_sc_text_translation:
-   def_chronic
-   (*
-   => nrel_main_idtf:
-      [Опр. (хронический)]
-      (* <- lang_ru;; *);;
-   -> [Продолжающийся или повторяющийся в течение длительного времени, обычно более трех месяцев или возникающий повторно.]
-      (* <- lang_ru;; *);;
-   -> [Persisting or recurring over a long period, usually more than three months or recurring intermittently.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
 concept_bilateral
 => nrel_main_idtf:
 	[двусторонний]
@@ -353,30 +209,6 @@ concept_bilateral
    -> [Присутствующий или происходящий на обеих сторонах или в обеих частях чего-либо.]
       (* <- lang_ru;; *);;
    -> [Present or occurring on both sides or in both parts of something.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
-concept_antibiotics
-=> nrel_main_idtf:
-	[антибиотики]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[antibiotics]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-(*
- => nrel_sc_text_translation:
-   def_antibiotics
-   (*
-   => nrel_main_idtf:
-      [Опр. (антибиотики)]
-      (* <- lang_ru;; *);;
-   -> [Препараты, применяемые для лечения инфекций, вызванных бактериями, обычно убивающие или замедляющие рост бактерий.]
-      (* <- lang_ru;; *);;
-   -> [Drugs used to treat infections caused by bacteria, typically killing or slowing the growth of bacteria.]
       (* <- lang_en;; *);;
    <- definition;;
    *);;
@@ -502,7 +334,7 @@ concept_maxillary_sinuses_of_the_nose
    *);;
  *);;
 
-concept_the_constellation
+concept_constellation
 => nrel_main_idtf:
 	[соустье]
 	(* <- lang_ru;; *);
@@ -513,7 +345,7 @@ concept_the_constellation
 ...
 (*
  => nrel_sc_text_translation:
-   def_the_constellation
+   def_constellation
    (*
    => nrel_main_idtf:
       [Опр. (соустье)]

@@ -94,30 +94,6 @@ concept_pneumococks
      *);;
   *);;
 
-concept_staphylococcus
-=> nrel_main_idtf:
-	[стафилококки]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[staphylococcus]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-  (*
-  => nrel_sc_text_translation:
-     def_staphylococcus
-     (*
-     => nrel_main_idtf:
-        [Опр. (стафилококки)]
-        (* <- lang_ru;; *);;
-     -> [Кокковые бактерии из рода Staphylococcus, которые могут вызывать различные инфекции, включая кожные инфекции, респираторные инфекции и инфекции крови, и часто являются причиной гнойных заболеваний.]
-        (* <- lang_ru;; *);;
-     -> [Coccal bacteria of the genus Staphylococcus, which can cause various infections, including skin infections, respiratory infections, and bloodstream infections, and are often responsible for purulent conditions.]
-        (* <- lang_en;; *);;
-     <- definition;;
-     *);;
-  *);;
-
 concept_mumps
 => nrel_main_idtf:
 	[паротит]
@@ -166,30 +142,6 @@ concept_streptococci
      *);;
   *);;
 
-concept_pain
-=> nrel_main_idtf:
-	[боль]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[pain]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-  (*
-  => nrel_sc_text_translation:
-     def_pain
-     (*
-     => nrel_main_idtf:
-        [Опр. (боль)]
-        (* <- lang_ru;; *);;
-     -> [Неприятное физическое или эмоциональное ощущение, которое может возникать в различных частях тела и иметь различную интенсивность, обычно связанное с травмой, болезнью или повреждением тканей.]
-        (* <- lang_ru;; *);;
-     -> [An unpleasant physical or emotional sensation that can occur in various parts of the body and have varying intensity, typically associated with injury, illness, or tissue damage.]
-        (* <- lang_en;; *);;
-     <- definition;;
-     *);;
-  *);;
-
 concept_lacrimal_gland
 => nrel_main_idtf:
 	[слезная железа]
@@ -209,30 +161,6 @@ concept_lacrimal_gland
      -> [Железа, производящая слезную жидкость, которая увлажняет и защищает глаз, а также помогает удалить микробы и инородные частицы.]
         (* <- lang_ru;; *);;
      -> [The gland that produces tears, which moisten and protect the eye, as well as help to remove microbes and foreign particles.]
-        (* <- lang_en;; *);;
-     <- definition;;
-     *);;
-  *);;
-
-concept_sharp
-=> nrel_main_idtf:
-	[острый]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[sharp]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-  (*
-  => nrel_sc_text_translation:
-     def_sharp
-     (*
-     => nrel_main_idtf:
-        [Опр. (острый)]
-        (* <- lang_ru;; *);;
-     -> [Ощущение, характеризующееся интенсивной и четкой болью или дискомфортом.]
-        (* <- lang_ru;; *);;
-     -> [A sensation characterized by intense and distinct pain or discomfort.]
         (* <- lang_en;; *);;
      <- definition;;
      *);;

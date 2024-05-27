@@ -137,14 +137,6 @@ concept_cholelithiasis
 	[dyspeptic]
 	(* <- lang_en;; *);;
 
-	concept_asymptomatic
-=> nrel_main_idtf:
-	[бессимптомная]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[asymptomatic]
-	(* <- lang_en;; *);;
-
 	concept_painful
 => nrel_main_idtf:
 	[болевая]
@@ -287,22 +279,6 @@ concept_psychosomatic_disorders
 => nrel_idtf:
 	[колит - заболевание, локализующееся в области толстой кишки. Это воспаление слизистой, которое сопровождается характерными симптомами.]
 	(* <- lang_ru;; *);;
-
-	concept_primary
-=> nrel_main_idtf:
-	[первичный]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[primary]
-	(* <- lang_en;; *);;
-
-	concept_secondary
-=> nrel_main_idtf:
-	[вторичный]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[secondary]
-	(* <- lang_en;; *);;
 
 	concept_infectious_colitis
 => nrel_main_idtf:
@@ -453,14 +429,6 @@ concept_with_a_complicated_course
 => nrel_idtf:
 	[гепатит - это воспаление печени. Оно может быть вызвано различными причинами, включая вирусы, алкоголь, лекарства и другие токсины. Гепатит может находиться в различных частях печени и иметь разную степень тяжести.]
 	(* <- lang_ru;; *);;
-
-concept_chronic
-=> nrel_main_idtf:
-	[хронический]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[chronic]
-	(* <- lang_en;; *);;
 
 concept_portal_vein
 => nrel_main_idtf:
@@ -798,14 +766,6 @@ concept_severe_form_of_heart_failure
 	[radiation]
 	(* <- lang_en;; *);;
 
-	concept_atherosclerosis
-=> nrel_main_idtf:
-	[атеросклероз]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[atherosclerosis]
-	(* <- lang_en;; *);;
-
 	concept_hygiene
 => nrel_main_idtf:
 	[гигиена]
@@ -844,14 +804,6 @@ concept_bloating
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[bloating]
-	(* <- lang_en;; *);;
-
-concept_pain
-=> nrel_main_idtf:
-	[боль]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[pain]
 	(* <- lang_en;; *);;
 
 concept_fever
@@ -956,14 +908,6 @@ concept_aching
 	(* <- lang_ru;; *);
 => nrel_main_idtf:
 	[aching]
-	(* <- lang_en;; *);;
-
-concept_sharp
-=> nrel_main_idtf:
-	[резкая]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[sharp]
 	(* <- lang_en;; *);;
 
 concept_emotional_instability

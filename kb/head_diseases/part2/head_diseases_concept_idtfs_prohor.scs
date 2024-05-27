@@ -46,30 +46,6 @@ concept_impaired_coordination
    *);;
  *);;
 
-concept_head_disease
-=> nrel_main_idtf:
- [болезнь головы]
- (* <- lang_ru;; *);
-=> nrel_main_idtf:
- [head disease]
- (* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-   def_head_disease
-   (*
-   => nrel_main_idtf:
-      [Опр. (болезнь головы)]
-      (* <- lang_ru;; *);;
-   -> [Любое заболевание, поражающее область головы, включая мозг, череп и мягкие ткани.]
-      (* <- lang_ru;; *);;
-   -> [Any disease affecting the head region, including the brain, skull, and soft tissues.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
 concept_dyscirculation
 => nrel_main_idtf:
  [дисциркуляция]
@@ -89,30 +65,6 @@ concept_dyscirculation
    -> [Нарушение кровообращения в органах или тканях.]
       (* <- lang_ru;; *);;
    -> [Disruption of blood circulation in organs or tissues.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
-concept_stroke
-=> nrel_main_idtf:
- [инсульт]
- (* <- lang_ru;; *);
-=> nrel_main_idtf:
- [stroke]
- (* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-   def_stroke
-   (*
-   => nrel_main_idtf:
-      [Опр. (инсульт)]
-      (* <- lang_ru;; *);;
-   -> [Острое нарушение мозгового кровообращения, приводящее к повреждению мозга.]
-      (* <- lang_ru;; *);;
-   -> [An acute disruption of cerebral blood flow leading to brain damage.]
       (* <- lang_en;; *);;
    <- definition;;
    *);;
@@ -258,54 +210,6 @@ concept_head_noise
    -> [Постоянное или временное ощущение шума в голове, не связанное с внешними источниками.]
       (* <- lang_ru;; *);;
    -> [A constant or temporary sensation of noise in the head not related to external sources.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
-concept_bacterial_infection
-=> nrel_main_idtf:
- [бактериальная инфекция]
- (* <- lang_ru;; *);
-=> nrel_main_idtf:
- [bacterial infection]
- (* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-   def_bacterial_infection
-   (*
-   => nrel_main_idtf:
-      [Опр. (бактериальная инфекция)]
-      (* <- lang_ru;; *);;
-   -> [Инфекция, вызванная патогенными бактериями.]
-      (* <- lang_ru;; *);;
-   -> [An infection caused by pathogenic bacteria.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
-concept_brain_tumor
-=> nrel_main_idtf:
- [опухоль мозга]
- (* <- lang_ru;; *);
-=> nrel_main_idtf:
- [brain tumor]
- (* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-   def_brain_tumor
-   (*
-   => nrel_main_idtf:
-      [Опр. (опухоль мозга)]
-      (* <- lang_ru;; *);;
-   -> [Новое образование в тканях головного мозга, которое может быть доброкачественным или злокачественным.]
-      (* <- lang_ru;; *);;
-   -> [A new growth in brain tissue that can be benign or malignant.]
       (* <- lang_en;; *);;
    <- definition;;
    *);;
@@ -1297,30 +1201,6 @@ concept_chronic_gastrointestinal_diseases
    *);;
  *);;
 
-concept_loss_of_consciousness
-=> nrel_main_idtf:
- [потеря сознания]
- (* <- lang_ru;; *);
-=> nrel_main_idtf:
- [loss of consciousness]
- (* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-   def_loss_of_consciousness
-   (*
-   => nrel_main_idtf:
-      [Опр. (потеря сознания)]
-      (* <- lang_ru;; *);;
-   -> [Временная утрата способности осознавать происходящее.]
-      (* <- lang_ru;; *);;
-   -> [Temporary loss of the ability to be aware of one's surroundings.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
 concept_decreased_concentration
 => nrel_main_idtf:
  [снижение концентрации]
@@ -1561,30 +1441,6 @@ concept_intrahemispheric
    *);;
  *);;
 
-concept_paralysis
-=> nrel_main_idtf:
- [паралич]
- (* <- lang_ru;; *);
-=> nrel_main_idtf:
- [paralysis]
- (* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-   def_paralysis
-   (*
-   => nrel_main_idtf:
-      [Опр. (паралич)]
-      (* <- lang_ru;; *);;
-   -> [Полная или частичная потеря способности двигаться.]
-      (* <- lang_ru;; *);;
-   -> [Complete or partial loss of the ability to move.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
 concept_chronic_stress
 => nrel_main_idtf:
  [хронический стресс]
@@ -1628,30 +1484,6 @@ concept_significant_hormonal_shifts
    -> [Существенные изменения уровня гормонов в организме.]
       (* <- lang_ru;; *);;
    -> [Significant changes in hormone levels in the body.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
-concept_seizures
-=> nrel_main_idtf:
- [припадки]
- (* <- lang_ru;; *);
-=> nrel_main_idtf:
- [seizures]
- (* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-   def_seizures
-   (*
-   => nrel_main_idtf:
-      [Опр. (припадки)]
-      (* <- lang_ru;; *);;
-   -> [Внезапные неконтролируемые электрические разряды в головном мозге.]
-      (* <- lang_ru;; *);;
-   -> [Sudden uncontrolled electrical discharges in the brain.]
       (* <- lang_en;; *);;
    <- definition;;
    *);;
@@ -1903,30 +1735,6 @@ brain_purulent_focal_formation
    *);;
  *);;
 
-concept_convexital
-=> nrel_main_idtf:
- [конвекситальный]
- (* <- lang_ru;; *);
-=> nrel_main_idtf:
- [convexital]
- (* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-   def_convexital
-   (*
-   => nrel_main_idtf:
-      [Опр. (конвекситальный)]
-      (* <- lang_ru;; *);;
-   -> [Связанный с выпуклостью мозжечка или мозгового полушария.]
-      (* <- lang_ru;; *);;
-   -> [Related to the convexity of the cerebellum or cerebral hemisphere.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
 brain_tumor
 => nrel_main_idtf:
  [опухоль мозга]
@@ -1975,54 +1783,6 @@ diffuse_brain_damage
    *);;
  *);;
 
-concept_subacute
-=> nrel_main_idtf:
- [субакутный]
- (* <- lang_ru;; *);
-=> nrel_main_idtf:
- [subacute]
- (* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-   def_subacute
-   (*
-   => nrel_main_idtf:
-      [Опр. (субакутный)]
-      (* <- lang_ru;; *);;
-   -> [Характеризующийся постепенным началом и более медленным течением, чем острый, но быстрее, чем хронический.]
-      (* <- lang_ru;; *);;
-   -> [Characterized by a gradual onset and slower course than acute but faster than chronic.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
-concept_meningitis
-=> nrel_main_idtf:
- [менингит]
- (* <- lang_ru;; *);
-=> nrel_main_idtf:
- [meningitis]
- (* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-   def_meningitis
-   (*
-   => nrel_main_idtf:
-      [Опр. (менингит)]
-      (* <- lang_ru;; *);;
-   -> [Воспаление оболочек головного и спинного мозга, обычно вызванное инфекцией.]
-      (* <- lang_ru;; *);;
-   -> [Inflammation of the membranes surrounding the brain and spinal cord, typically caused by infection.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
 cerebral_vascular_neurosis
 => nrel_main_idtf:
  [церебральный сосудистый невроз]
@@ -2042,79 +1802,6 @@ cerebral_vascular_neurosis
    -> [Невротические расстройства, связанные с нарушениями кровообращения в мозге.]
       (* <- lang_ru;; *);;
    -> [Neurotic disorders associated with cerebral circulation disturbances.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
- 
- concept_brain
-=> nrel_main_idtf:
- [мозг]
- (* <- lang_ru;; *);
-=> nrel_main_idtf:
- [brain]
- (* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-   def_brain
-   (*
-   => nrel_main_idtf:
-      [Опр. (мозг)]
-      (* <- lang_ru;; *);;
-   -> [Основной орган центральной нервной системы человека и многих животных, отвечающий за мышление, чувства, движения и другие функции.]
-      (* <- lang_ru;; *);;
-   -> [The primary organ of the central nervous system in humans and many animals responsible for thinking, sensation, movement, and other functions.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
-concept_headache
-=> nrel_main_idtf:
- [головная боль]
- (* <- lang_ru;; *);
-=> nrel_main_idtf:
- [headache]
- (* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-   def_headache
-   (*
-   => nrel_main_idtf:
-      [Опр. (головная боль)]
-      (* <- lang_ru;; *);;
-   -> [Боль или дискомфорт, ощущаемые в области головы, шеи или лицевого скелета.]
-      (* <- lang_ru;; *);;
-   -> [Pain or discomfort felt in the head, neck, or facial skeleton.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
-
-concept_streptococcus
-=> nrel_main_idtf:
- [стрептококк]
- (* <- lang_ru;; *);
-=> nrel_main_idtf:
- [streptococcus]
- (* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-   def_streptococcus
-   (*
-   => nrel_main_idtf:
-      [Опр. (стрептококк)]
-      (* <- lang_ru;; *);;
-   -> [Группа бактерий, включающая множество видов, некоторые из которых являются патогенными для человека и могут вызывать различные заболевания, такие как ангина, пневмония, сепсис и другие инфекции.]
-      (* <- lang_ru;; *);;
-   -> [A group of bacteria comprising many species, some of which are pathogenic to humans and can cause various diseases such as strep throat, pneumonia, sepsis, and other infections.]
       (* <- lang_en;; *);;
    <- definition;;
    *);;

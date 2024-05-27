@@ -6,30 +6,6 @@ concept_nivrit
 	[nivrit]
 	(* <- lang_en;; *);;
 
-concept_head_disease
-=> nrel_main_idtf:
-	[болезнь головы]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[head disease]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-(*
- => nrel_sc_text_translation:
-   def_head_disease
-   (*
-   => nrel_main_idtf:
-      [Опр. (болезнь головы)]
-      (* <- lang_ru;; *);;
-   -> [Любое заболевание, которое затрагивает голову или головной мозг.]
-      (* <- lang_ru;; *);;
-   -> [Any illness that affects the head or brain.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
 concept_weakening_of_muscle_movement
 => nrel_main_idtf:
 	[ослабление мышечных движений]
@@ -150,30 +126,6 @@ concept_infectious_disease
    *);;
  *);;
 
-concept_injuries
-=> nrel_main_idtf:
-	[травмы]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[injuries]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-(*
- => nrel_sc_text_translation:
-   def_injuries
-   (*
-   => nrel_main_idtf:
-      [Опр. (травмы)]
-      (* <- lang_ru;; *);;
-   -> [Физические повреждения, вызванные воздействием внешних сил на организм.]
-      (* <- lang_ru;; *);;
-   -> [Physical damage caused by external forces acting on the body.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
 concept_hypothermia
 => nrel_main_idtf:
 	[переохлаждение]
@@ -198,30 +150,6 @@ concept_hypothermia
    *);;
  *);;
 
-concept_pain
-=> nrel_main_idtf:
-	[боль]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[pain]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-(*
- => nrel_sc_text_translation:
-   def_pain
-   (*
-   => nrel_main_idtf:
-      [Опр. (боль)]
-      (* <- lang_ru;; *);;
-   -> [Неприятное ощущение, связанное с физическим или эмоциональным страданием, которое может быть острым или хроническим.]
-      (* <- lang_ru;; *);;
-   -> [An unpleasant sensation associated with physical or emotional suffering, which can be acute or chronic.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
 concept_facial_nerve
 => nrel_main_idtf:
 	[лицевой нерв]
@@ -241,30 +169,6 @@ concept_facial_nerve
    -> [Нерв, контролирующий движения мышц лица и передающий чувствительность на кожу лица.]
       (* <- lang_ru;; *);;
    -> [The nerve that controls movements of the facial muscles and transmits sensation to the skin of the face.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
-concept_physical_therapy
-=> nrel_main_idtf:
-	[физиотерапия]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[physical therapy]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-(*
- => nrel_sc_text_translation:
-   def_physical_therapy
-   (*
-   => nrel_main_idtf:
-      [Опр. (физиотерапия)]
-      (* <- lang_ru;; *);;
-   -> [Метод лечения, использующий физические методы и упражнения для восстановления или улучшения функций организма.]
-      (* <- lang_ru;; *);;
-   -> [A treatment method that uses physical methods and exercises to restore or improve bodily functions.]
       (* <- lang_en;; *);;
    <- definition;;
    *);;
@@ -361,30 +265,6 @@ concept_secondary
    -> [Относящийся ко вторичному лечению, причинам или эффектам заболевания.]
       (* <- lang_ru;; *);;
    -> [Relating to secondary treatment, causes, or effects of a disease.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
-concept_the_central_nervous_system
-=> nrel_main_idtf:
-	[центральная нервная система]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[the central nervous system]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-(*
- => nrel_sc_text_translation:
-   def_the_central_nervous_system
-   (*
-   => nrel_main_idtf:
-      [Опр. (центральная нервная система)]
-      (* <- lang_ru;; *);;
-   -> [Часть нервной системы, включающая головной и спинной мозг, которая управляет основными функциями организма и обрабатывает информацию от сенсорных нервов.]
-      (* <- lang_ru;; *);;
-   -> [Part of the nervous system consisting of the brain and spinal cord, which controls basic body functions and processes information from sensory nerves.]
       (* <- lang_en;; *);;
    <- definition;;
    *);;

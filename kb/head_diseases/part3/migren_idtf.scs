@@ -78,30 +78,6 @@ concept_stress
    *);;
  *);;
 
-concept_headache
-=> nrel_main_idtf:
-	[головная боль]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[headache]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-(*
- => nrel_sc_text_translation:
-   def_headache
-   (*
-   => nrel_main_idtf:
-      [Опр. (головная боль)]
-      (* <- lang_ru;; *);;
-   -> [Боль или дискомфорт, ощущаемые в области головы или шеи, часто вызванные напряжением, стрессом или другими причинами.]
-      (* <- lang_ru;; *);;
-   -> [Pain or discomfort felt in the head or neck area, often caused by tension, stress, or other factors.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
 concept_sensitivity_to_light
 => nrel_main_idtf:
 	[чувствительность к свету]
@@ -145,54 +121,6 @@ concept_sensitivity_to_sounds
    -> [Увеличенная реакция организма на звуки, часто сопровождающаяся дискомфортом или болями в ушах.]
       (* <- lang_ru;; *);;
    -> [An increased sensitivity of the body to sounds, often accompanied by discomfort or pain in the ears.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
-concept_the_central_nervous_system
-=> nrel_main_idtf:
-	[центральная нервная система]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[the central nervous system]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-(*
- => nrel_sc_text_translation:
-   def_the_central_nervous_system
-   (*
-   => nrel_main_idtf:
-      [Опр. (центральная нервная система)]
-      (* <- lang_ru;; *);;
-   -> [Часть нервной системы, включающая головной и спинной мозг, которая контролирует большинство функций организма и обрабатывает информацию.]
-      (* <- lang_ru;; *);;
-   -> [The part of the nervous system, including the brain and spinal cord, that controls most functions of the body and processes information.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
-concept_the_brain
-=> nrel_main_idtf:
-	[головной мозг]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[the brain]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-(*
- => nrel_sc_text_translation:
-   def_the_brain
-   (*
-   => nrel_main_idtf:
-      [Опр. (головной мозг)]
-      (* <- lang_ru;; *);;
-   -> [Основная часть центральной нервной системы, отвечающая за мышление, восприятие, движение и другие жизненно важные функции.]
-      (* <- lang_ru;; *);;
-   -> [The main part of the central nervous system responsible for thinking, perception, movement, and other vital functions.]
       (* <- lang_en;; *);;
    <- definition;;
    *);;
@@ -366,30 +294,6 @@ concept_episodic
    *);;
  *);;
 
-concept_average
-=> nrel_main_idtf:
-	[средний]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[concept_average]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-(*
- => nrel_sc_text_translation:
-   def_average
-   (*
-   => nrel_main_idtf:
-      [Опр. (средний)]
-      (* <- lang_ru;; *);;
-   -> [Средний по величине, степени, или качеству.]
-      (* <- lang_ru;; *);;
-   -> [Neither very good nor very bad; mediocre.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
 concept_heavy
 => nrel_main_idtf:
 	[тяжелый]
@@ -433,54 +337,6 @@ concept_easy
    -> [Не требующий большого усилия или сложности для выполнения.]
       (* <- lang_ru;; *);;
    -> [Requiring little effort or difficulty to accomplish.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
-concept_temple_area
-=> nrel_main_idtf:
-	[височная зона]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[temple area]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-(*
- => nrel_sc_text_translation:
-   def_temple_area
-   (*
-   => nrel_main_idtf:
-      [Опр. (височная зона)]
-      (* <- lang_ru;; *);;
-   -> [Область в области висков, боковые части черепа.]
-      (* <- lang_ru;; *);;
-   -> [The area on the sides of the skull, in the temple region.]
-      (* <- lang_en;; *);;
-   <- definition;;
-   *);;
- *);;
-
-concept_head_disease
-=> nrel_main_idtf:
-	[болезнь головы]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[head disease]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-(*
- => nrel_sc_text_translation:
-   def_head_disease
-   (*
-   => nrel_main_idtf:
-      [Опр. (болезнь головы)]
-      (* <- lang_ru;; *);;
-   -> [Любое заболевание, затрагивающее голову, включая кожные заболевания, инфекции, опухоли и травмы.]
-      (* <- lang_ru;; *);;
-   -> [Any disease affecting the head, including skin conditions, infections, tumors, and injuries.]
       (* <- lang_en;; *);;
    <- definition;;
    *);;

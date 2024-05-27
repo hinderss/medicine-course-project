@@ -22,30 +22,6 @@ concept_visual_impairment
      *);;
   *);;
 
-concept_seizures
-=> nrel_main_idtf:
-	[судороги]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[seizures]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-  (*
-  => nrel_sc_text_translation:
-     def_seizures
-     (*
-     => nrel_main_idtf:
-        [Опр. (судороги)]
-        (* <- lang_ru;; *);;
-     -> [Внезапные, неконтролируемые электрические возмущения в головном мозге, которые могут вызвать изменения в поведении, движениях или сознании.]
-        (* <- lang_ru;; *);;
-     -> [Sudden, uncontrolled electrical disturbances in the brain that can cause changes in behavior, movements, or consciousness.]
-        (* <- lang_en;; *);;
-     <- definition;;
-     *);;
-  *);;
-
 concept_atherosclerosis
 => nrel_main_idtf:
 	[атеросклероз]
@@ -329,78 +305,6 @@ concept_baggy
      -> [Форма, напоминающая мешок или не плотно прилегающая.]
         (* <- lang_ru;; *);;
      -> [A shape that resembles a bag or is loosely fitting.]
-        (* <- lang_en;; *);;
-     <- definition;;
-     *);;
-  *);;
-
-concept_the_central_nervous_system
-=> nrel_main_idtf:
-	[центральная нервная система]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[the central nervous system]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-  (*
-  => nrel_sc_text_translation:
-     def_the_central_nervous_system
-     (*
-     => nrel_main_idtf:
-        [Опр. (центральная нервная система)]
-        (* <- lang_ru;; *);;
-     -> [Центральная нервная система — это часть нервной системы, включающая головной и спинной мозг, которая отвечает за обработку и передачу информации в организме.]
-        (* <- lang_ru;; *);;
-     -> [The central nervous system is the part of the nervous system comprising the brain and spinal cord, responsible for processing and transmitting information in the body.]
-        (* <- lang_en;; *);;
-     <- definition;;
-     *);;
-  *);;
-
-concept_the_brain
-=> nrel_main_idtf:
-	[головной мозг]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[the brain]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-  (*
-  => nrel_sc_text_translation:
-     def_the_brain
-     (*
-     => nrel_main_idtf:
-        [Опр. (головной мозг)]
-        (* <- lang_ru;; *);;
-     -> [Головной мозг — это центральный орган нервной системы, который управляет всеми функциями организма, включая мысли, движения и ощущения.]
-        (* <- lang_ru;; *);;
-     -> [The brain is the central organ of the nervous system that controls all bodily functions, including thoughts, movements, and sensations.]
-        (* <- lang_en;; *);;
-     <- definition;;
-     *);;
-  *);;
-
-concept_vessels_of_the_brain
-=> nrel_main_idtf:
-	[сосуды головного мозга]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[vessels of the brain]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
-  (*
-  => nrel_sc_text_translation:
-     def_vessels_of_the_brain
-     (*
-     => nrel_main_idtf:
-        [Опр. (сосуды головного мозга)]
-        (* <- lang_ru;; *);;
-     -> [Сосуды головного мозга — это кровеносные сосуды, которые снабжают головной мозг кислородом и питательными веществами.]
-        (* <- lang_ru;; *);;
-     -> [Vessels of the brain are the blood vessels that supply the brain with oxygen and nutrients.]
         (* <- lang_en;; *);;
      <- definition;;
      *);;
