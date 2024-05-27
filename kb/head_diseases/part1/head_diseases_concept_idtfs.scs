@@ -22,6 +22,30 @@ concept_head_disease
    *);;
  *);;
 
+concept_headaches
+=> nrel_main_idtf:
+ [головные боли]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [headaches]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_headaches
+   (*
+   => nrel_main_idtf:
+      [Опр. (головные боли)]
+      (* <- lang_ru;; *);;
+   -> [Симптом, характеризующийся болью или дискомфортом в области головы, шеи или лицевого скелета. Головные боли могут быть различной интенсивности и продолжительности и могут быть вызваны различными причинами.]
+      (* <- lang_ru;; *);;
+   -> [A symptom characterized by pain or discomfort in the head, neck, or facial skeleton. Headaches can vary in intensity and duration and can be caused by various reasons.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
 
 concept_meningitis
 => nrel_main_idtf:
@@ -91,23 +115,6 @@ concept_stroke
 	[stroke]
 	(* <- lang_en;;   *);;	
 	
-concept_myasthenia
-<- concept_head_disease;
-=> nrel_main_idtf:
-	[миастения]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[myasthenia]
-	(* <- lang_en;;   *);;
-
-concept_dementia
-<- concept_head_disease;
-=> nrel_main_idtf:
-	[деменция]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[dementia]
-	(* <- lang_en;;   *);;
 
 concept_parkinsons_disease
 => nrel_main_idtf:
