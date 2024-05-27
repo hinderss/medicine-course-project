@@ -109,17 +109,6 @@ concept_dementia
 	[dementia]
 	(* <- lang_en;;   *);;
 
-concept_cerebrovascular_autonomic_dysfunction
-<- concept_head_disease;
-=> nrel_main_idtf:
-	[вегето-сосудистая дистония сосудов головного мозга]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[cerebrovascular autonomic dysfunction]
-	(* <- lang_en;;   *);;
-
-	
-
 concept_parkinsons_disease
 => nrel_main_idtf:
 	[болезнь Паркинсона]

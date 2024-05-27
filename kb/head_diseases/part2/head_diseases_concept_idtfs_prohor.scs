@@ -217,7 +217,7 @@ concept_head_noise
 
 concept_vegeto_vascular_dystonia_of_brain_vessels
 => nrel_main_idtf:
- [вегетососудистая дистония сосудов мозга]
+ [вегето-сосудистая дистония сосудов головного мозга]
  (* <- lang_ru;; *);
 => nrel_main_idtf:
  [vegeto-vascular dystonia of brain vessels]
@@ -229,7 +229,7 @@ concept_vegeto_vascular_dystonia_of_brain_vessels
    def_vegeto_vascular_dystonia_of_brain_vessels
    (*
    => nrel_main_idtf:
-      [Опр. (вегетососудистая дистония сосудов мозга)]
+      [Опр. (вегето-сосудистая дистония сосудов головного мозга)]
       (* <- lang_ru;; *);;
    -> [Расстройство вегетативной нервной системы, влияющее на тонус сосудов мозга.]
       (* <- lang_ru;; *);;
@@ -1850,6 +1850,78 @@ concept_ischemia
    -> [Состояние, при котором ткань или орган не получает достаточного количества крови, что может привести к недостатку кислорода и питательных веществ и развитию некроза.]
       (* <- lang_ru;; *);;
    -> [A condition in which tissue or an organ does not receive enough blood supply, leading to a lack of oxygen and nutrients and the development of necrosis.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_hormonal_changes
+=> nrel_main_idtf:
+ [гормональные изменения]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [hormonal changes]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_hormonal_changes
+   (*
+   => nrel_main_idtf:
+      [Опр. (гормональные изменения)]
+      (* <- lang_ru;; *);;
+   -> [Изменения в уровне или активности гормонов в организме, которые могут повлиять на различные физиологические процессы.]
+      (* <- lang_ru;; *);;
+   -> [Changes in the level or activity of hormones in the body, which can affect various physiological processes.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_genetic_predisposition
+=> nrel_main_idtf:
+ [генетическая предрасположенность]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [genetic predisposition]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_genetic_predisposition
+   (*
+   => nrel_main_idtf:
+      [Опр. (генетическая предрасположенность)]
+      (* <- lang_ru;; *);;
+   -> [Наличие генетических факторов, которые увеличивают вероятность развития определенных заболеваний или состояний.]
+      (* <- lang_ru;; *);;
+   -> [The presence of genetic factors that increase the likelihood of developing certain diseases or conditions.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_infections
+=> nrel_main_idtf:
+ [инфекции]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [infections]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_infections
+   (*
+   => nrel_main_idtf:
+      [Опр. (инфекции)]
+      (* <- lang_ru;; *);;
+   -> [Проникновение и размножение патогенных микроорганизмов в организме, вызывающее воспаление и другие патологические процессы.]
+      (* <- lang_ru;; *);;
+   -> [The invasion and multiplication of pathogenic microorganisms in the body, causing inflammation and other pathological processes.]
       (* <- lang_en;; *);;
    <- definition;;
    *);;
