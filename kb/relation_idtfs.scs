@@ -1,543 +1,1342 @@
-	nrel_lack_of
+nrel_lack_of
 => nrel_main_idtf:
-	[недостаток*]
-	(* <- lang_ru;; *);
+    [недостаток*]
+    (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[lack of*]
-	(* <- lang_en;; *);;
+    [lack of*]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_lack_of
+   (*
+   => nrel_main_idtf:
+      [Опр. (недостаток)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает нехватку или отсутствие чего-либо.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the lack or absence of something.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
 
-  nrel_result
+nrel_classification_by_etiology
 => nrel_main_idtf:
-	[результат*]
-	(* <- lang_ru;; *);
+    [классификация по этиологии]
+    (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[result*]
-	(* <- lang_en;; *);;
+    [classification by etiology]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_classification_by_etiology
+   (*
+   => nrel_main_idtf:
+      [Опр. (классификация по этиологии)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает классификацию заболеваний по причине их возникновения.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the classification of diseases based on their cause.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
 
-  nrel_include
+nrel_stage
 => nrel_main_idtf:
-	[включение*]
-	(* <- lang_ru;; *);
+    [стадия]
+    (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[include*]
-	(* <- lang_en;; *);;
+    [stage]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_stage
+   (*
+   => nrel_main_idtf:
+      [Опр. (стадия)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает определенный этап или фазу развития процесса или заболевания.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes a specific phase or stage of the development of a process or disease.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
 
-  nrel_formation
-=> nrel_main_idtf:
-	[образование*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[formation*]
-	(* <- lang_en;; *);;
-
-  nrel_form
-=> nrel_main_idtf:
-	[форма*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[form*]
-	(* <- lang_en;; *);;
-
-  nrel_equivalent
-=> nrel_main_idtf:
-	[эквивалентно*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[equivalent*]
-	(* <- lang_en;; *);;
-
-nrel_inflammation
-=> nrel_main_idtf:
-	[воспаление*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[inflammation*]
-	(* <- lang_en;; *);;
-
-  nrel_character
-=> nrel_main_idtf:
-	[характер*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[character*]
-	(* <- lang_en;; *);;
-
-	nrel_localization
-=> nrel_main_idtf:
-	[локализация*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[localization*]
-	(* <- lang_en;; *);;
-
-nrel_attack
-=> nrel_main_idtf:
-	[приступ*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[attack*]
-	(* <- lang_en;; *);;
-
-  nrel_yellowing
-=> nrel_main_idtf:
-	[пожелтение*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[yellowing*]
-	(* <- lang_en;; *);;
-
-  nrel_accumulation
-=> nrel_main_idtf:
-	[скапливание*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[accumulation*]
-	(* <- lang_en;; *);;
-
-	nrel_violation
-=> nrel_main_idtf:
-	[нарушение*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[violation*]
-	(* <- lang_en;; *);;
-
-	nrel_exchange
-=> nrel_main_idtf:
-	[обмен*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[exchange*]
-	(* <- lang_en;; *);;
-
-nrel_stagnation
-=> nrel_main_idtf:
-	[застой*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[stagnation*]
-	(* <- lang_en;; *);;
-
-	nrel_it_differs
-=> nrel_main_idtf:
-	[различается*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[it differs*]
-	(* <- lang_en;; *);;
-
-	nrel_on_the_right
-=> nrel_main_idtf:
-	[справа*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[on the right*]
-	(* <- lang_en;; *);;
-
-	nrel_leftward
-=> nrel_main_idtf:
-	[слева*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[leftward*]
-	(* <- lang_en;; *);;
-
-	nrel_middle
-=> nrel_main_idtf:
-	[середина*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[middle*]
-	(* <- lang_en;; *);;
-
-	nrel_splitting
-=> nrel_main_idtf:
-	[разбиение*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[splitting*]
-	(* <- lang_en;; *);;
-
-	nrel_contains
-=> nrel_main_idtf:
-	[содержит*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[contains*]
-	(* <- lang_en;; *);;
-
-	nrel_intensity
-=> nrel_main_idtf:
-	[интенсивность*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[intensity*]
-	(* <- lang_en;; *);;
-
-	nrel_substitution
-=> nrel_main_idtf:
-	[замещение*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[substitution*]
-	(* <- lang_en;; *);;
-
-	nrel_stage
-=> nrel_main_idtf:
-	[стадия*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[stage*]
-	(* <- lang_en;; *);;
-
-	nrel_overgrowth
-=> nrel_main_idtf:
-	[разрастание*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[overgrowth*]
-	(* <- lang_en;; *);;
-
-	nrel_loss
-=> nrel_main_idtf:
-	[потеря*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[loss*]
-	(* <- lang_en;; *);;
-
-	nrel_redness
-=> nrel_main_idtf:
-	[покраснение*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[redness*]
-	(* <- lang_en;; *);;
-
-	nrel_increase
-=> nrel_main_idtf:
-	[увелечение*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[increase*]
-	(* <- lang_en;; *);;
-
-	nrel_absence
-=> nrel_main_idtf:
-	[отсутствие*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[absence*]
-	(* <- lang_en;; *);;
-	
-nrel_complications
-=> nrel_main_idtf:
-	[осложнения*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[compliications*]
-	(* <- lang_en;; *);;
-	
-nrel_pain_in_stomach
-=> nrel_main_idtf:
-	[боль в животе*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[pain in stomach*]
-	(* <- lang_en;; *);;
-	
-nrel_prevention
-=> nrel_main_idtf:
-	[профилактика*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[prevention*]
-	(* <- lang_en;; *);;
-	
-nrel_causes_of_occurence
-=> nrel_main_idtf:
-	[причины возникновения*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[causes of occurance*]
-	(* <- lang_en;; *);;
-
-nrel_manifestation
-=> nrel_main_idtf:
-	[проявление*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[manifestation*]
-	(* <- lang_en;; *);;
-	
-nrel_symptom
-=> nrel_main_idtf:
-	[симптом*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[symptom*]
-	(* <- lang_en;; *);;
-	
-nrel_reinforcing_factor
-=> nrel_main_idtf:
-	[усиливающий фактор*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[reinforcing factor*]
-	(* <- lang_en;; *);;
-	
-nrel_type
-=> nrel_main_idtf:
-	[тип*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[type*]
-	(* <- lang_en;; *);;
-	
-nrel_eating
-=> nrel_main_idtf:
-	[приём пищи*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[eating*]
-	(* <- lang_en;; *);;
-
-nrel_causes_of_occurrence
-=> nrel_main_idtf:
-	[причины возникновения*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[causes of occurrence*]
-	(* <- lang_en;; *);;
-
-nrel_stages
-=> nrel_main_idtf:
-	[стадии*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[stages*]
-	(* <- lang_en;; *);;
-
-nrel_sc_text_translation
-=> nrel_main_idtf:
-	[трансляция sc-текста*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[sc text translation*]
-	(* <- lang_en;; *);;
-
-nrel_neuropsychiatric_diseases
-=> nrel_main_idtf:
-	[нейропсихические болезни*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[neuropsychiatric diseases*]
-	(* <- lang_en;; *);;
-
-nrel_classification
-=> nrel_main_idtf:
-	[классификация*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[classification*]
-	(* <- lang_en;; *);;
-
-nrel_pathological_pathway
-=> nrel_main_idtf:
-	[патологический путь*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[pathological pathway*]
-	(* <- lang_en;; *);;
-
-nrel_symptoms
-=> nrel_main_idtf:
-	[симптомы*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[symptoms*]
-	(* <- lang_en;; *);;
-
-rrel_suction_object
-=> rrel_main_idtf:
-	[предмет всасывания']
-	(* <- lang_ru;; *);
-=> rrel_main_idtf:
-	[suction object']
-	(* <- lang_en;; *);;
-
-rrel_key_sc_element
-=> rrel_main_idtf:
-	[ключевой sc-элемент']
-	(* <- lang_ru;; *);
-=> rrel_main_idtf:
-	[key sc element']
-	(* <- lang_en;; *);;
-
-nrel_disease_complications
-=> nrel_main_idtf:
-	[осложнения заболевания*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[disease complications*]
-	(* <- lang_en;; *);;
-
-nrel_autoimmune_diseases
-=> nrel_main_idtf:
-	[аутоимунные патологии*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[autoimmune diseases*]
-	(* <- lang_en;; *);;
-
-nrel_allergic_diseases
-=> nrel_main_idtf:
-	[аллергические заболевания*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[allergic diseases*]
-	(* <- lang_en;; *);;
-
-nrel_types
-=> nrel_main_idtf:
-	[виды*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[types*]
-	(* <- lang_en;; *);;
-
-nrel_weight
-=> nrel_main_idtf:
-	[вес*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[weight*]
-	(* <- lang_en;; *);;
-
-nrel_change
-=> nrel_main_idtf:
-	[изменение*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[change*]
-	(* <- lang_en;; *);;
-
-nrel_time_period
-=> nrel_main_idtf:
-	[временный период*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[time period*]
-	(* <- lang_en;; *);;
-
-nrel_degree_of_severity
-=> nrel_main_idtf:
-	[степень тяжести*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[degree of severity*]
-	(* <- lang_en;; *);;
-
-nrel_spreading
-=> nrel_main_idtf:
-	[распространение*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[spreading*]
-	(* <- lang_en;; *);;
-
-nrel_definition
-=> nrel_main_idtf:
-	[определение*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[definition*]
-	(* <- lang_en;; *);;
-
-nrel_occurrence
-=> nrel_main_idtf:
-	[появление*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[occurrence*]
-	(* <- lang_en;; *);;
-
-nrel_forming
-=> nrel_main_idtf:
-	[формирование*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[forming*]
-	(* <- lang_en;; *);;
-
-nrel_form
-=> nrel_main_idtf:
-	[форма*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[form*]
-	(* <- lang_en;; *);;
-
-nrel_part
-=> nrel_main_idtf:
-	[часть*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[part*]
-	(* <- lang_en;; *);;
-
-nrel_color
-=> nrel_main_idtf:
-	[цвет*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[color*]
-	(* <- lang_en;; *);;
-
-nrel_content
-=> nrel_main_idtf:
-	[содержание*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[content*]
-	(* <- lang_en;; *);;
-
-nrel_development
-=> nrel_main_idtf:
-	[развитие*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[development*]
-	(* <- lang_en;; *);;
-
-nrel_failure
-=> nrel_main_idtf:
-	[поражение*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[failure*]
-	(* <- lang_en;; *);;
-
-nrel_physical_damage
-=> nrel_main_idtf:
-	[физическое повреждение*]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[physical damage*]
-	(* <- lang_en;; *);;
+nrel_predisposing_factors
+=> nrel_main_idtf:
+    [предрасполагающие факторы]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [predisposing factors]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_predisposing_factors
+   (*
+   => nrel_main_idtf:
+      [Опр. (предрасполагающие факторы)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает факторы, увеличивающие вероятность возникновения заболевания.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes factors that increase the likelihood of a disease.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
 
 nrel_area
 => nrel_main_idtf:
-	[область*]
-	(* <- lang_ru;; *);
+    [область]
+    (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[area*]
-	(* <- lang_en;; *);;
+    [area]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_area
+   (*
+   => nrel_main_idtf:
+      [Опр. (область)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает определенное пространство или сферу, в которой что-то находится или происходит.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes a specific space or sphere where something is located or occurs.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
 
-nrel_behind
+nrel_reinforcing_factor
 => nrel_main_idtf:
-	[за*]
-	(* <- lang_ru;; *);
+    [усиливающий фактор]
+    (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[behind*]
-	(* <- lang_en;; *);;
+    [reinforcing factor]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_reinforcing_factor
+   (*
+   => nrel_main_idtf:
+      [Опр. (усиливающий фактор)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает фактор, усиливающий проявления или развитие заболевания.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes a factor that enhances the manifestation or progression of a disease.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_prevention
+=> nrel_main_idtf:
+    [профилактика]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [prevention]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_prevention
+   (*
+   => nrel_main_idtf:
+      [Опр. (профилактика)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает меры по предупреждению возникновения или распространения заболеваний.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes measures to prevent the occurrence or spread of diseases.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_classification_based_on_flow_form
+=> nrel_main_idtf:
+    [классификация по форме течения]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [classification based on flow form]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_classification_based_on_flow_form
+   (*
+   => nrel_main_idtf:
+      [Опр. (классификация по форме течения)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает классификацию заболеваний по форме их течения.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the classification of diseases based on their flow form.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_formation
+=> nrel_main_idtf:
+    [формирование]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [formation]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_formation
+   (*
+   => nrel_main_idtf:
+      [Опр. (формирование)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает процесс формирования или возникновения чего-либо.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the process of formation or emergence of something.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_it_differs
+=> nrel_main_idtf:
+    [отличается]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [it differs]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_it_differs
+   (*
+   => nrel_main_idtf:
+      [Опр. (отличается)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает различие или отличие одного объекта или явления от другого.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the difference or distinction of one object or phenomenon from another.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_stages
+=> nrel_main_idtf:
+    [стадии]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [stages]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_stages
+   (*
+   => nrel_main_idtf:
+      [Опр. (стадии)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает последовательные этапы или фазы процесса или заболевания.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes sequential stages or phases of a process or disease.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_formation_of_defects
+=> nrel_main_idtf:
+    [формирование дефектов]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [formation of defects]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_formation_of_defects
+   (*
+   => nrel_main_idtf:
+      [Опр. (формирование дефектов)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает процесс образования дефектов в органах или тканях.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the process of defect formation in organs or tissues.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_splitting
+=> nrel_main_idtf:
+    [расщепление]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [splitting]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_splitting
+   (*
+   => nrel_main_idtf:
+      [Опр. (расщепление)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает процесс разделения или расщепления вещества или структуры.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the process of separating or splitting a substance or structure.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_underproduction
+=> nrel_main_idtf:
+    [недостаточная выработка]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [underproduction]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_underproduction
+   (*
+   => nrel_main_idtf:
+      [Опр. (недостаточная выработка)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает процесс недостаточной выработки какого-либо вещества в организме.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the process of insufficient production of a substance in the body.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_throwing_in
+=> nrel_main_idtf:
+    [заброс]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [throwing in]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_throwing_in
+   (*
+   => nrel_main_idtf:
+      [Опр. (заброс)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает процесс заброса содержимого одного органа в другой.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the process of throwing in the contents of one organ into another.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_classification_according_to_clinical_manifestations
+=> nrel_main_idtf:
+    [классификация по клиническим проявлениям]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [classification according to clinical manifestations]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_classification_according_to_clinical_manifestations
+   (*
+   => nrel_main_idtf:
+      [Опр. (классификация по клиническим проявлениям)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает классификацию заболеваний на основании их клинических проявлений.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the classification of diseases based on their clinical manifestations.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_contains
+=> nrel_main_idtf:
+    [содержит]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [contains]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_contains
+   (*
+   => nrel_main_idtf:
+      [Опр. (содержит)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает наличие или включение одного объекта в состав другого.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the presence or inclusion of one object within another.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_eating
+=> nrel_main_idtf:
+    [питание]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [eating]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_eating
+   (*
+   => nrel_main_idtf:
+      [Опр. (питание)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает процесс потребления пищи.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the process of consuming food.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_classification_of_acute_duodenitis
+=> nrel_main_idtf:
+    [классификация острого дуоденита]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [classification of acute duodenitis]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_classification_of_acute_duodenitis
+   (*
+   => nrel_main_idtf:
+      [Опр. (классификация острого дуоденита)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает классификацию острого дуоденита на основании различных критериев.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the classification of acute duodenitis based on various criteria.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_localization
+=> nrel_main_idtf:
+    [локализация]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [localization]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_localization
+   (*
+   => nrel_main_idtf:
+      [Опр. (локализация)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает местоположение или расположение чего-либо в теле.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the location or positioning of something within the body.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_violation
+=> nrel_main_idtf:
+    [нарушение]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [violation]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_violation
+   (*
+   => nrel_main_idtf:
+      [Опр. (нарушение)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает нарушение нормальной функции или состояния.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the disruption of normal function or condition.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_substitution
+=> nrel_main_idtf:
+    [замещение]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [substitution]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_substitution
+   (*
+   => nrel_main_idtf:
+      [Опр. (замещение)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает процесс замены одного элемента или вещества другим.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the process of replacing one element or substance with another.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_inclusion
+=> nrel_main_idtf:
+    [включение]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [inclusion]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_inclusion
+   (*
+   => nrel_main_idtf:
+      [Опр. (включение)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает процесс включения одного элемента или вещества в состав другого.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the process of including one element or substance within another.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_classification_according_to_morphologic_features
+=> nrel_main_idtf:
+    [классификация по морфологическим признакам]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [classification according to morphologic features]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_classification_according_to_morphologic_features
+   (*
+   => nrel_main_idtf:
+      [Опр. (классификация по морфологическим признакам)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает классификацию заболеваний на основании их морфологических признаков.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the classification of diseases based on their morphologic features.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_manifestation
+=> nrel_main_idtf:
+    [проявление]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [manifestation]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_manifestation
+   (*
+   => nrel_main_idtf:
+      [Опр. (проявление)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает внешнее проявление или симптом заболевания.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes an outward sign or symptom of a disease.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_development
+=> nrel_main_idtf:
+    [развитие]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [development]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_development
+   (*
+   => nrel_main_idtf:
+      [Опр. (развитие)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает процесс изменения и прогрессирования заболевания или состояния.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the process of change and progression of a disease or condition.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_pain_in_lower_part_abdominal
+=> nrel_main_idtf:
+    [боль в нижней части живота]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [pain in lower part abdominal]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_pain_in_lower_part_abdominal
+   (*
+   => nrel_main_idtf:
+      [Опр. (боль в нижней части живота)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает болевые ощущения, локализованные в нижней части живота.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes pain sensations localized in the lower part of the abdomen.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_content
+=> nrel_main_idtf:
+    [содержимое]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [content]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_content
+   (*
+   => nrel_main_idtf:
+      [Опр. (содержимое)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает вещества или элементы, находящиеся внутри органа или полости.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes substances or elements contained within an organ or cavity.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_attack
+=> nrel_main_idtf:
+    [приступ]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [attack]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_attack
+   (*
+   => nrel_main_idtf:
+      [Опр. (приступ)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает внезапное начало или обострение симптомов заболевания.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the sudden onset or exacerbation of disease symptoms.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_classification_by_presence_of_complications
+=> nrel_main_idtf:
+    [классификация по наличию осложнений]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [classification by presence of complications]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_classification_by_presence_of_complications
+   (*
+   => nrel_main_idtf:
+      [Опр. (классификация по наличию осложнений)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает классификацию заболеваний на основании наличия или отсутствия осложнений.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the classification of diseases based on the presence or absence of complications.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_classification_by_nature_of_complications
+=> nrel_main_idtf:
+    [классификация по характеру осложнений]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [classification by nature of complications]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_classification_by_nature_of_complications
+   (*
+   => nrel_main_idtf:
+      [Опр. (классификация по характеру осложнений)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает классификацию заболеваний на основании характера их осложнений.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the classification of diseases based on the nature of their complications.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_form
+=> nrel_main_idtf:
+    [форма]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [form]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_form
+   (*
+   => nrel_main_idtf:
+      [Опр. (форма)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает внешний вид или форму органа, ткани или заболевания.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the appearance or shape of an organ, tissue, or disease.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_part
+=> nrel_main_idtf:
+    [часть]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [part]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_part
+   (*
+   => nrel_main_idtf:
+      [Опр. (часть)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает элемент или компонент чего-либо.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes an element or component of something.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_classification_causal_types
+=> nrel_main_idtf:
+    [классификация по причинным типам]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [classification causal types]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_classification_causal_types
+   (*
+   => nrel_main_idtf:
+      [Опр. (классификация по причинным типам)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает классификацию заболеваний на основании их причин.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the classification of diseases based on their causes.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_classification_according_to_nature_of_distribution
+=> nrel_main_idtf:
+    [классификация по характеру распространения]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [classification according to nature of distribution]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_classification_according_to_nature_of_distribution
+   (*
+   => nrel_main_idtf:
+      [Опр. (классификация по характеру распространения)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает классификацию заболеваний на основании характера их распространения.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the classification of diseases based on the nature of their distribution.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_character
+=> nrel_main_idtf:
+    [характер]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [character]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_character
+   (*
+   => nrel_main_idtf:
+      [Опр. (характер)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает особенности или свойства чего-либо.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the features or properties of something.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_classification_according_to_degree_of_duodenal_structure_disruption
+=> nrel_main_idtf:
+    [классификация по степени нарушения структуры двенадцатиперстной кишки]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [classification according to degree of duodenal structure disruption]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_classification_according_to_degree_of_duodenal_structure_disruption
+   (*
+   => nrel_main_idtf:
+      [Опр. (классификация по степени нарушения структуры двенадцатиперстной кишки)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает классификацию заболеваний на основании степени нарушения структуры двенадцатиперстной кишки.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the classification of diseases based on the degree of duodenal structure disruption.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_symptom
+=> nrel_main_idtf:
+    [симптом]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [symptom]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_symptom
+   (*
+   => nrel_main_idtf:
+      [Опр. (симптом)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает признак или проявление заболевания.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes a sign or manifestation of a disease.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_type
+=> nrel_main_idtf:
+    [тип]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [type]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_type
+   (*
+   => nrel_main_idtf:
+      [Опр. (тип)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает категорию или вид чего-либо.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the category or kind of something.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_classification_according_to_endoscopic_findings
+=> nrel_main_idtf:
+    [классификация по эндоскопическим находкам]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [classification according to endoscopic findings]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_classification_according_to_endoscopic_findings
+   (*
+   => nrel_main_idtf:
+      [Опр. (классификация по эндоскопическим находкам)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает классификацию заболеваний на основании эндоскопических данных.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the classification of diseases based on endoscopic findings.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_risk_factors
+=> nrel_main_idtf:
+    [факторы риска]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [risk factors]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_risk_factors
+   (*
+   => nrel_main_idtf:
+      [Опр. (факторы риска)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает факторы, увеличивающие вероятность развития заболевания.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes factors increasing the likelihood of developing a disease.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_include
+=> nrel_main_idtf:
+    [включать]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [include]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_include
+   (*
+   => nrel_main_idtf:
+      [Опр. (включать)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает процесс включения одного элемента или вещества в состав другого.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the process of including one element or substance within another.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_classification_based_on_results_of_endoscopic_examination
+=> nrel_main_idtf:
+    [классификация по результатам эндоскопического исследования]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [classification based on results of endoscopic examination]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_classification_based_on_results_of_endoscopic_examination
+   (*
+   => nrel_main_idtf:
+      [Опр. (классификация по результатам эндоскопического исследования)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает классификацию заболеваний на основании результатов эндоскопического исследования.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the classification of diseases based on results of endoscopic examination.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_result
+=> nrel_main_idtf:
+    [результат]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [result]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_result
+   (*
+   => nrel_main_idtf:
+      [Опр. (результат)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает исход или итог чего-либо.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the outcome or conclusion of something.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_equivalence
+=> nrel_main_idtf:
+    [эквивалентность]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [equivalence]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_equivalence
+   (*
+   => nrel_main_idtf:
+      [Опр. (эквивалентность)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает равенство или одинаковость чего-либо.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes equality or sameness of something.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_pain_in_stomach
+=> nrel_main_idtf:
+    [боль в желудке]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [pain in stomach]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_pain_in_stomach
+   (*
+   => nrel_main_idtf:
+      [Опр. (боль в желудке)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает болевые ощущения, локализованные в области желудка.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes pain sensations localized in the stomach area.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_forming
+=> nrel_main_idtf:
+    [формирование]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [forming]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_forming
+   (*
+   => nrel_main_idtf:
+      [Опр. (формирование)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает процесс создания или образования чего-либо.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the process of creating or forming something.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_classification_types_by_localization
+=> nrel_main_idtf:
+    [классификация типов по локализации]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [classification types by localization]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_classification_types_by_localization
+   (*
+   => nrel_main_idtf:
+      [Опр. (классификация типов по локализации)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает классификацию заболеваний на основании их локализации в организме.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the classification of diseases based on their localization in the body.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+nrel_disease_complications
+=> nrel_main_idtf:
+    [осложнения заболеваний]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [disease complications]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_disease_complications
+   (*
+   => nrel_main_idtf:
+      [Опр. (осложнения заболеваний)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает неблагоприятные последствия или осложнения, возникающие в результате заболевания.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes adverse effects or complications arising from a disease.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_classification
+=> nrel_main_idtf:
+    [классификация]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [classification]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_classification
+   (*
+   => nrel_main_idtf:
+      [Опр. (классификация)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает систематизацию объектов или явлений по определенным признакам.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the systematization of objects or phenomena based on certain characteristics.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_causes_of_occurrence
+=> nrel_main_idtf:
+    [причины возникновения]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [causes of occurrence]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_causes_of_occurrence
+   (*
+   => nrel_main_idtf:
+      [Опр. (причины возникновения)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает факторы или условия, приводящие к возникновению заболевания.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes factors or conditions leading to the occurrence of a disease.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_inflammation
+=> nrel_main_idtf:
+    [воспаление]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [inflammation]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_inflammation
+   (*
+   => nrel_main_idtf:
+      [Опр. (воспаление)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает патологический процесс, характеризующийся реакцией ткани на повреждение.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes a pathological process characterized by tissue reaction to damage.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_classification_forms
+=> nrel_main_idtf:
+    [классификация форм]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [classification forms]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_classification_forms
+   (*
+   => nrel_main_idtf:
+      [Опр. (классификация форм)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает систематизацию различных форм заболевания.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the systematization of various forms of a disease.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_frequency
+=> nrel_main_idtf:
+    [частота]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [frequency]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_frequency
+   (*
+   => nrel_main_idtf:
+      [Опр. (частота)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает частоту возникновения или повторяемости события.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the frequency of occurrence or recurrence of an event.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_failure
+=> nrel_main_idtf:
+    [недостаточность]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [failure]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_failure
+   (*
+   => nrel_main_idtf:
+      [Опр. (недостаточность)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает состояние, при котором орган или система не выполняет свои функции должным образом.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes a condition where an organ or system does not perform its functions properly.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
+
+nrel_color
+=> nrel_main_idtf:
+    [цвет]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [color]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_nrel_color
+   (*
+   => nrel_main_idtf:
+      [Опр. (цвет)]
+      (* <- lang_ru;; *);;
+   -> [Отношение, которое описывает визуальное восприятие длины волны света, отраженного от поверхности.]
+      (* <- lang_ru;; *);;
+   -> [Relation that describes the visual perception of the wavelength of light reflected from a surface.]
+      (* <- lang_en;; *);;
+   <- nrel_definition;;
+   *);;
+ *);;
