@@ -1,0 +1,37 @@
+subject_domain_of_diseases
+
+=> nrel_main_idtf:
+	[Предметная область болезней]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Subject domain of diseases]
+	(* <- lang_en;; *);
+
+<- subject_domain;
+<- sc_node_struct;
+<- structure;	
+
+=> nrel_private_subject_domain:
+	subject_domain_of_diseases_of_the_gastrointestinal_tract;
+	subject_domain_of_head_diseases;
+	subject_domain_of_inflammatory_diseases_of_muscle_tissues;
+	subject_domain_of_respiratory_diseases;
+
+-> rrel_key_sc_element:
+	section_subject_domain_of_diseases;
+
+-> rrel_maximum_studied_object_class:
+	concept_disease;
+	
+-> rrel_explored_relation:
+    nrel_disease;
+
+-> rrel_not_maximum_studied_object_class:
+	concept_human_organism;
+	concept_cough;
+	concept_pain;
+	concept_hepatitis;
+	concept_diverticulosis;
+	concept_cholelithiasis;
+	concept_cirrhosis_of_the_liver;
+	concept_colitis;;
