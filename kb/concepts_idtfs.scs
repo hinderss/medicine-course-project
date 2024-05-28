@@ -4241,30 +4241,6 @@ concept_pain_in_lumbar_region
 	*);;
  *);;
 
-concept_diseases
-=> nrel_main_idtf:
- [заболевания]
- (* <- lang_ru;; *);
-=> nrel_main_idtf:
- [diseases]
- (* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-	def_diseases
-	(*
-	=> nrel_main_idtf:
-		[Опр. (заболевания)]
-		(* <- lang_ru;; *);;
-	-> [Патологические состояния или нарушения здоровья организма, которые характеризуются нарушением нормальных физиологических функций и процессов, могут иметь различную этиологию, симптоматику, течение и последствия, и классифицируются по различным признакам.]
-		(* <- lang_ru;; *);;
-	-> [Pathological conditions or disruptions of health in the body characterized by the disturbance of normal physiological functions and processes, which may have various etiologies, symptoms, courses, and consequences, and are classified according to various criteria.]
-		(* <- lang_en;; *);;
-	<- definition;;
-	*);;
- *);;
-
 concept_tumescent
 => nrel_main_idtf:
  [опухоль]
@@ -10199,30 +10175,6 @@ concept_calculous
 	*);;
  *);;
 
-concept_allergic_colitis
-=> nrel_main_idtf:
- [аллергический колит]
- (* <- lang_ru;; *);
-=> nrel_main_idtf:
- [allergic colitis]
- (* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-	def_allergic_colitis
-	(*
-	=> nrel_main_idtf:
-		[Опр. (аллергический колит)]
-		(* <- lang_ru;; *);;
-	-> [Воспаление толстого кишечника, вызванное аллергической реакцией, часто связанное с пищевой аллергией.]
-		(* <- lang_ru;; *);;
-	-> [Inflammation of the colon caused by an allergic reaction, often associated with food allergies.]
-		(* <- lang_en;; *);;
-	<- definition;;
-	*);;
- *);;
-
 concept_tumor
 => nrel_main_idtf:
  [опухоль]
@@ -11327,6 +11279,15 @@ concept_dysbacteriosis
 => nrel_main_idtf:
  [dysbacteriosis]
  (* <- lang_en;; *);;
+
+concept_allergic_colitis
+=> nrel_main_idtf:
+	[аллергический колит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[allergic colitis]
+	(* <- lang_en;; *);;
+
 
 concept_esophagitis
 => nrel_main_idtf:
@@ -12670,6 +12631,30 @@ concept_febrile_state
 		(* <- lang_en;; *);;
 	<- definition;;
 	*);;
+ *);;
+
+inflammation_of_mucous_membranes
+=> nrel_main_idtf:
+ [воспаление слизистых оболочек]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [inflammation of mucous membranes]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_inflammation_of_mucous_membranes
+   (*
+   => nrel_main_idtf:
+      [Опр. (воспаление слизистых оболочек)]
+      (* <- lang_ru;; *);;
+   -> [Воспалительный процесс, затрагивающий слизистые оболочки органов, характеризующийся покраснением, отеком и повышенной секрецией слизи, вызванный инфекцией, аллергией или раздражением.]
+      (* <- lang_ru;; *);;
+   -> [An inflammatory process affecting the mucous membranes of organs, characterized by redness, swelling, and increased mucus secretion, caused by infection, allergy, or irritation.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
  *);;
 
 concept_inflammation_mucouse_membrane_small_intestine
