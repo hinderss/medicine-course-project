@@ -1,0 +1,249 @@
+concept_migraine
+=> nrel_main_idtf:
+	[мигрень]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[migraine]
+	(* <- lang_en;; *);;
+
+concept_sensitivity_to_light
+=> nrel_main_idtf:
+	[чувствительность к свету]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[sensitivity to light]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_sensitivity_to_light
+   (*
+   => nrel_main_idtf:
+      [Опр. (чувствительность к свету)]
+      (* <- lang_ru;; *);;
+   -> [Увеличенная реакция организма на свет, часто сопровождающаяся дискомфортом или болями в глазах.]
+      (* <- lang_ru;; *);;
+   -> [An increased sensitivity of the body to light, often accompanied by discomfort or pain in the eyes.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_sensitivity_to_sounds
+=> nrel_main_idtf:
+	[чувствительность к звуку]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[sensitivity to sounds]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_sensitivity_to_sounds
+   (*
+   => nrel_main_idtf:
+      [Опр. (чувствительность к звуку)]
+      (* <- lang_ru;; *);;
+   -> [Увеличенная реакция организма на звуки, часто сопровождающаяся дискомфортом или болями в ушах.]
+      (* <- lang_ru;; *);;
+   -> [An increased sensitivity of the body to sounds, often accompanied by discomfort or pain in the ears.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_vessels_of_the_brain
+=> nrel_main_idtf:
+	[сосуды головного мозга]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[vessels of the brain]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_vessels_of_the_brain
+   (*
+   => nrel_main_idtf:
+      [Опр. (сосуды головного мозга)]
+      (* <- lang_ru;; *);;
+   -> [Сосуды, которые обеспечивают кровью головной мозг, доставляя ему кислород и питательные вещества.]
+      (* <- lang_ru;; *);;
+   -> [The blood vessels that supply the brain with blood, delivering oxygen and nutrients to it.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_temporal_artery
+=> nrel_main_idtf:
+	[височная артерия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[temporal artery]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_temporal_artery
+   (*
+   => nrel_main_idtf:
+      [Опр. (височная артерия)]
+      (* <- lang_ru;; *);;
+   -> [Артерия, проходящая через височные области головы, отвечающая за поставку крови в эти области.]
+      (* <- lang_ru;; *);;
+   -> [An artery that passes through the temporal regions of the head, supplying blood to these areas.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_non_pulsating
+=> nrel_main_idtf:
+	[не пульсирующий]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[non-pulsating]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_non_pulsating
+   (*
+   => nrel_main_idtf:
+      [Опр. (не пульсирующий)]
+      (* <- lang_ru;; *);;
+   -> [Описательное определение для боли, которая не имеет ритмического пульсирующего характера.]
+      (* <- lang_ru;; *);;
+   -> [A descriptive term for pain that does not have a rhythmic pulsating character.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_long_term
+=> nrel_main_idtf:
+	[долгосрочный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[long-term]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_long_term
+   (*
+   => nrel_main_idtf:
+      [Опр. (долгосрочный)]
+      (* <- lang_ru;; *);;
+   -> [Продолжительный во времени или действующий на протяжении длительного периода времени.]
+      (* <- lang_ru;; *);;
+   -> [Lasting or existing for a long period of time.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_short_term
+=> nrel_main_idtf:
+	[краткосрочный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[short-term]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_short_term
+   (*
+   => nrel_main_idtf:
+      [Опр. (краткосрочный)]
+      (* <- lang_ru;; *);;
+   -> [Действующий или происходящий в течение короткого периода времени.]
+      (* <- lang_ru;; *);;
+   -> [Operating or occurring for a short period of time.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_episodic
+=> nrel_main_idtf:
+	[эпизодический]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[concept_episodic]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_episodic
+   (*
+   => nrel_main_idtf:
+      [Опр. (эпизодический)]
+      (* <- lang_ru;; *);;
+   -> [Временами проявляющийся или случающийся периодически, в форме эпизодов.]
+      (* <- lang_ru;; *);;
+   -> [Occurring at intervals or periodically, in the form of episodes.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_easy
+=> nrel_main_idtf:
+	[легкий]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[concept_easy]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_easy
+   (*
+   => nrel_main_idtf:
+      [Опр. (легкий)]
+      (* <- lang_ru;; *);;
+   -> [Не требующий большого усилия или сложности для выполнения.]
+      (* <- lang_ru;; *);;
+   -> [Requiring little effort or difficulty to accomplish.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_spasm
+=> nrel_main_idtf:
+	[спазм]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[spasm]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_spasm
+   (*
+   => nrel_main_idtf:
+      [Опр. (спазм)]
+      (* <- lang_ru;; *);;
+   -> [Внезапное, не контролируемое сокращение мышц, которое может вызывать болевые ощущения.]
+      (* <- lang_ru;; *);;
+   -> [A sudden, involuntary contraction of muscles, which may cause pain.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+

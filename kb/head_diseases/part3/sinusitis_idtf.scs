@@ -1,0 +1,240 @@
+concept_runny_nose
+=> nrel_main_idtf:
+ [насморк]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [runny nose]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_runny_nose
+   (*
+   => nrel_main_idtf:
+      [Опр. (насморк)]
+      (* <- lang_ru;; *);;
+   -> [Выделение слизи из носа в результате воспаления слизистой оболочки.]
+      (* <- lang_ru;; *);;
+   -> [Discharge of mucus from the nose due to inflammation of the mucous membrane.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_allergens
+=> nrel_main_idtf:
+ [аллергены]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [allergens]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_allergens
+   (*
+   => nrel_main_idtf:
+      [Опр. (аллергены)]
+      (* <- lang_ru;; *);;
+   -> [Вещества, вызывающие аллергическую реакцию.]
+      (* <- lang_ru;; *);;
+   -> [Substances that cause an allergic reaction.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+
+concept_pain
+=> nrel_main_idtf:
+ [боль]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [pain]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_pain
+   (*
+   => nrel_main_idtf:
+      [Опр. (боль)]
+      (* <- lang_ru;; *);;
+   -> [Неприятное ощущение, связанное с повреждением тканей.]
+      (* <- lang_ru;; *);;
+   -> [An unpleasant sensation associated with tissue damage.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_paranasal_sinuses
+=> nrel_main_idtf:
+ [придаточные пазухи носа]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [paranasal sinuses]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_paranasal_sinuses
+   (*
+   => nrel_main_idtf:
+      [Опр. (придаточные пазухи носа)]
+      (* <- lang_ru;; *);;
+   -> [Полости в костях черепа, окружающие носовую полость.]
+      (* <- lang_ru;; *);;
+   -> [Cavities in the skull bones surrounding the nasal cavity.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_the_front
+=> nrel_main_idtf:
+ [фронтит]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [the front]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_the_front
+   (*
+   => nrel_main_idtf:
+      [Опр. (фронтит)]
+      (* <- lang_ru;; *);;
+   -> [Воспаление лобной пазухи.]
+      (* <- lang_ru;; *);;
+   -> [Inflammation of the frontal sinus.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_acute_sinusitis
+=> nrel_main_idtf:
+ [острый гайморит]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [acute sinusitis]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_acute_sinusitis
+   (*
+   => nrel_main_idtf:
+      [Опр. (острый гайморит)]
+      (* <- lang_ru;; *);;
+   -> [Внезапное воспаление гайморовой пазухи, сопровождающееся сильной болью и другими интенсивными симптомами.]
+      (* <- lang_ru;; *);;
+   -> [Sudden inflammation of the maxillary sinus, accompanied by severe pain and other intense symptoms.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_ethmoidite
+=> nrel_main_idtf:
+ [этмоидит]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [ethmoidite]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_ethmoidite
+   (*
+   => nrel_main_idtf:
+      [Опр. (этмоидит)]
+      (* <- lang_ru;; *);;
+   -> [Воспаление решетчатой пазухи.]
+      (* <- lang_ru;; *);;
+   -> [Inflammation of the ethmoid sinus.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_sphenoiditis
+=> nrel_main_idtf:
+ [сфеноидит]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [sphenoiditis]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_sphenoiditis
+   (*
+   => nrel_main_idtf:
+      [Опр. (сфеноидит)]
+      (* <- lang_ru;; *);;
+   -> [Воспаление клиновидной пазухи.]
+      (* <- lang_ru;; *);;
+   -> [Inflammation of the sphenoid sinus.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_paranasal_sinuses_of_the_skull
+=> nrel_main_idtf:
+ [околоносовые пазухи черепа]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [paranasal sinuses of the skull]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_paranasal_sinuses_of_the_skull
+   (*
+   => nrel_main_idtf:
+      [Опр. (околоносовые пазухи черепа)]
+      (* <- lang_ru;; *);;
+   -> [Воздушные полости в костях черепа, расположенные вокруг носовой полости.]
+      (* <- lang_ru;; *);;
+   -> [Air-filled cavities in the bones of the skull, located around the nasal cavity.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_inflammation_of_the_paranasal_sinuses
+=> nrel_main_idtf:
+ [воспаление придаточных пазух]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [inflammation of the paranasal sinuses]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_inflammation_of_the_paranasal_sinuses
+   (*
+   => nrel_main_idtf:
+      [Опр. (воспаление придаточных пазух)]
+      (* <- lang_ru;; *);;
+   -> [Воспаление слизистой оболочки околоносовых пазух, часто вызванное инфекцией.]
+      (* <- lang_ru;; *);;
+   -> [Inflammation of the mucous membrane of the paranasal sinuses, often caused by infection.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;

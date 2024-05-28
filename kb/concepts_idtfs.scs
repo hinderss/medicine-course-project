@@ -1763,29 +1763,30 @@ concept_nephropathy
 	<- definition;;
 	*);;
  *);;
+
 concept_subacute
 => nrel_main_idtf:
- [субакутный]
- (* <- lang_ru;; *);
+	[subacute]
+	(* <- lang_en;; *);
 => nrel_main_idtf:
- [subacute]
- (* <- lang_en;; *);
+	[подострый]
+	(* <- lang_ru;; *);
 <- rrel_key_sc_element:
 ...
  (*
  => nrel_sc_text_translation:
-	def_subacute
-	(*
-	=> nrel_main_idtf:
-		[Опр. (субакутный)]
-		(* <- lang_ru;; *);;
-	-> [Характеризующийся более медленным началом и менее выраженной симптоматикой, чем острый процесс, но более интенсивным, чем хронический, обычно продолжается от нескольких дней до нескольких недель.]
-		(* <- lang_ru;; *);;
-	-> [Characterized by a slower onset and less pronounced symptoms than an acute process but more intense than chronic, typically lasting from several days to several weeks.]
-		(* <- lang_en;; *);;
-	<- definition;;
-	*);;
- *);;
+   def_subacute
+   (*
+   => nrel_main_idtf:
+      [Опр. (Подострый)]
+      (* <- lang_ru;; *);;
+   -> [Подострый - это термин, который используется для описания состояний или заболеваний, которые находятся между острым и хроническим, проявляющиеся в течение более длительного времени, чем острые, но менее длительного, чем хронические.]
+      (* <- lang_ru;; *);;
+   -> [Subacute is a term used to describe conditions or diseases that are between acute and chronic, manifesting over a longer period than acute but shorter than chronic.]
+      (* <- lang_en;; *);;
+   <- definition;;
+     *);;
+   *);;
 
 concept_bad_environmental_zone
 => nrel_main_idtf:
@@ -3046,6 +3047,8 @@ concept_psoriasis
 	<- definition;;
 	*);;
  *);;
+
+
 concept_staphylococcus
 => nrel_main_idtf:
  [стафилококк]
@@ -8326,26 +8329,26 @@ concept_frequent
 
 concept_heavy
 => nrel_main_idtf:
- [тяжелый]
- (* <- lang_ru;; *);
+  [heavy]
+  (* <- lang_en;; *);
 => nrel_main_idtf:
- [heavy]
- (* <- lang_en;; *);
+  [тяжелый]
+  (* <- lang_ru;; *);
 <- rrel_key_sc_element:
 ...
  (*
  => nrel_sc_text_translation:
-	def_heavy
-	(*
-	=> nrel_main_idtf:
-		[Опр. (тяжелый)]
-		(* <- lang_ru;; *);;
-	-> [Обладающий большим весом или труднопереносимый.]
-		(* <- lang_ru;; *);;
-	-> [Having great weight or difficult to bear.]
-		(* <- lang_en;; *);;
-	<- definition;;
-	*);;
+   def_heavy
+   (*
+   => nrel_main_idtf:
+      [Опр. (тяжелый)]
+      (* <- lang_ru;; *);;
+   -> [Тяжелый - это описание состояния или болезни, характеризующейся значительной степенью тяжести, что часто требует интенсивного лечения и может представлять серьезную угрозу для здоровья или жизни пациента.]
+      (* <- lang_ru;; *);;
+   -> [Heavy describes a condition or illness characterized by a significant degree of severity, often requiring intensive treatment and posing a serious threat to the patient's health or life.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
  *);;
 
 concept_helicobacter_pylori
@@ -9934,26 +9937,26 @@ concept_intestine
 
 concept_primary
 => nrel_main_idtf:
- [первичный]
- (* <- lang_ru;; *);
+	[первичный]
+	(* <- lang_ru;; *);
 => nrel_main_idtf:
- [primary]
- (* <- lang_en;; *);
+	[primary]
+	(* <- lang_en;; *);
 <- rrel_key_sc_element:
 ...
- (*
+(*
  => nrel_sc_text_translation:
-	def_primary
-	(*
-	=> nrel_main_idtf:
-		[Опр. (первичный)]
-		(* <- lang_ru;; *);;
-	-> [Описывает что-то основное, начальное или не происходящее в результате вторичных изменений.]
-		(* <- lang_ru;; *);;
-	-> [Describes something fundamental, initial, or not occurring as a result of secondary changes.]
-		(* <- lang_en;; *);;
-	<- definition;;
-	*);;
+   def_primary
+   (*
+   => nrel_main_idtf:
+      [Опр. (первичный)]
+      (* <- lang_ru;; *);;
+   -> [Относящийся к основному или первичному лечению или причине заболевания.]
+      (* <- lang_ru;; *);;
+   -> [Relating to the main or initial treatment or cause of a disease.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
  *);;
 
 concept_smell
@@ -11459,29 +11462,7 @@ concept_horniness
 	<- definition;;
 	*);;
  *);;
-concept_sinusitis
-=> nrel_main_idtf:
-	[синусит]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[sinusitis]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-	def_sinusitis
-	(*
-	=> nrel_main_idtf:
-		[Опр. (синусит)]
-		(* <- lang_ru;; *);;
-	-> [Воспаление пазух носа, сопровождающееся заложенностью носа, болью и выделениями.]
-		(* <- lang_ru;; *);;
-	-> [Inflammation of the sinuses, accompanied by nasal congestion, pain, and discharge.]
-		(* <- lang_en;; *);;
-	<- definition;;
-	*);;
- *);;
+
 concept_uremia
 => nrel_main_idtf:
 	[уремия]
@@ -13965,30 +13946,6 @@ concept_organic_substances
 	-> [Химические соединения, содержащие углерод, важные для жизнедеятельности живых организмов.]
 		(* <- lang_ru;; *);;
 	-> [Chemical compounds containing carbon, essential for the life processes of living organisms.]
-		(* <- lang_en;; *);;
-	<- definition;;
-	*);;
- *);;
-
-concept_asymptomatic
-=> nrel_main_idtf:
-	[бессимптомный]
-	(* <- lang_ru;; *);
-=> nrel_main_idtf:
-	[asymptomatic]
-	(* <- lang_en;; *);
-<- rrel_key_sc_element:
-...
- (*
- => nrel_sc_text_translation:
-	def_asymptomatic
-	(*
-	=> nrel_main_idtf:
-		[Опр. (бессимптомный)]
-		(* <- lang_ru;; *);;
-	-> [Состояние или болезнь, протекающая без явных клинических симптомов.]
-		(* <- lang_ru;; *);;
-	-> [A condition or disease that occurs without clear clinical symptoms.]
 		(* <- lang_en;; *);;
 	<- definition;;
 	*);;

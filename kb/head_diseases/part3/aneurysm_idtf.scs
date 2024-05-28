@@ -1,0 +1,312 @@
+concept_visual_impairment
+=> nrel_main_idtf:
+	[нарушение зрения]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[visual impairment]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_visual_impairment
+     (*
+     => nrel_main_idtf:
+        [Опр. (нарушение зрения)]
+        (* <- lang_ru;; *);;
+     -> [Частичная или полная потеря способности видеть, которая может быть временной или постоянной.]
+        (* <- lang_ru;; *);;
+     -> [Partial or complete loss of the ability to see, which can be temporary or permanent.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_injuries
+=> nrel_main_idtf:
+	[травмы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[injuries]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_injuries
+     (*
+     => nrel_main_idtf:
+        [Опр. (травмы)]
+        (* <- lang_ru;; *);;
+     -> [Физическое повреждение тела, вызванное внешним воздействием, таким как удар, падение или другой травмирующий фактор.]
+        (* <- lang_ru;; *);;
+     -> [Physical damage to the body caused by external forces such as a blow, fall, or other traumatic event.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_enmity
+=> nrel_main_idtf:
+	[враждебность]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[enmity]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_enmity
+     (*
+     => nrel_main_idtf:
+        [Опр. (враждебность)]
+        (* <- lang_ru;; *);;
+     -> [Чувство вражды или недоброжелательности по отношению к кому-либо или чему-либо.]
+        (* <- lang_ru;; *);;
+     -> [A feeling of hostility or ill-will towards someone or something.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_arterial_hypertension
+=> nrel_main_idtf:
+	[артериальная гипертензия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[arterial hypertension]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_arterial_hypertension
+     (*
+     => nrel_main_idtf:
+        [Опр. (артериальная гипертензия)]
+        (* <- lang_ru;; *);;
+     -> [Состояние, при котором артериальное давление в артериях постоянно повышено.]
+        (* <- lang_ru;; *);;
+     -> [A condition in which the blood pressure in the arteries is persistently elevated.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_asymptomatic
+=> nrel_main_idtf:
+	[бессимптомный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[asymptomatic]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_asymptomatic
+     (*
+     => nrel_main_idtf:
+        [Опр. (бессимптомный)]
+        (* <- lang_ru;; *);;
+     -> [Состояние, при котором отсутствуют явные симптомы болезни.]
+        (* <- lang_ru;; *);;
+     -> [A condition in which there are no apparent symptoms of a disease.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_gap
+=> nrel_main_idtf:
+	[разрыв]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[gap]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_gap
+     (*
+     => nrel_main_idtf:
+        [Опр. (разрыв)]
+        (* <- lang_ru;; *);;
+     -> [Прерывание или разрыв непрерывности чего-либо, например, ткани или связи.]
+        (* <- lang_ru;; *);;
+     -> [An interruption or break in the continuity of something, such as tissue or connection.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_residual_symptom
+=> nrel_main_idtf:
+	[остаточный симптом]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[residual symptom]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_residual_symptom
+     (*
+     => nrel_main_idtf:
+        [Опр. (остаточный симптом)]
+        (* <- lang_ru;; *);;
+     -> [Симптом, который остается после исчезновения основной болезни.]
+        (* <- lang_ru;; *);;
+     -> [A symptom that remains after the primary illness has subsided.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_small
+=> nrel_main_idtf:
+	[малый]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[small]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_small
+     (*
+     => nrel_main_idtf:
+        [Опр. (малый)]
+        (* <- lang_ru;; *);;
+     -> [Размер или величина, которая меньше обычного или среднего.]
+        (* <- lang_ru;; *);;
+     -> [A size or magnitude that is less than usual or average.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_medium
+=> nrel_main_idtf:
+	[средний]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[medium]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_medium
+     (*
+     => nrel_main_idtf:
+        [Опр. (средний)]
+        (* <- lang_ru;; *);;
+     -> [Размер или величина, которая находится между большим и малым.]
+        (* <- lang_ru;; *);;
+     -> [A size or magnitude that is between large and small.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_large
+=> nrel_main_idtf:
+	[большой]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[large]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_large
+     (*
+     => nrel_main_idtf:
+        [Опр. (большой)]
+        (* <- lang_ru;; *);;
+     -> [Размер или величина, которая больше обычного или среднего.]
+        (* <- lang_ru;; *);;
+     -> [A size or magnitude that is greater than usual or average.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_fusiform
+=> nrel_main_idtf:
+	[веретенообразный]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[fusiform]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_fusiform
+     (*
+     => nrel_main_idtf:
+        [Опр. (веретенообразный)]
+        (* <- lang_ru;; *);;
+     -> [Форма, напоминающая веретено, сужающаяся к обоим концам.]
+        (* <- lang_ru;; *);;
+     -> [A shape that tapers at both ends, resembling a spindle.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_baggy
+=> nrel_main_idtf:
+	[мешотчатый]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[baggy]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_baggy
+     (*
+     => nrel_main_idtf:
+        [Опр. (мешотчатый)]
+        (* <- lang_ru;; *);;
+     -> [Форма, напоминающая мешок или не плотно прилегающая.]
+        (* <- lang_ru;; *);;
+     -> [A shape that resembles a bag or is loosely fitting.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+vasodilation_of_vessels_of_the_brain
+=> nrel_main_idtf:
+  [vasodilation of vessels of the brain]
+  (* <- lang_en;; *);
+=> nrel_main_idtf:
+  [расширение сосудов головного мозга]
+  (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_vasodilation_of_vessels_of_the_brain
+   (*
+   => nrel_main_idtf:
+      [Опр. (Расширение сосудов головного мозга)]
+      (* <- lang_ru;; *);;
+   -> [Расширение сосудов головного мозга - это процесс расширения кровеносных сосудов в головном мозге, который может улучшить кровоток и снизить кровяное давление, но также может быть связан с головными болями и другими симптомами.]
+      (* <- lang_ru;; *);;
+   -> [Vasodilation of vessels of the brain is the process of widening the blood vessels in the brain, which can improve blood flow and reduce blood pressure, but may also be associated with headaches and other symptoms.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+

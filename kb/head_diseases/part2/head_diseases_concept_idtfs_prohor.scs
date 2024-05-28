@@ -1,0 +1,1759 @@
+concept_weather_sensitivity
+=> nrel_main_idtf:
+ [метеочувствительность]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [weather sensitivity]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_weather_sensitivity
+   (*
+   => nrel_main_idtf:
+      [Опр. (метеочувствительность)]
+      (* <- lang_ru;; *);;
+   -> [Чувствительность организма человека к изменениям погодных условий.]
+      (* <- lang_ru;; *);;
+   -> [The sensitivity of the human body to changes in weather conditions.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_impaired_coordination
+=> nrel_main_idtf:
+ [нарушение координации]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [impaired coordination]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_impaired_coordination
+   (*
+   => nrel_main_idtf:
+      [Опр. (нарушение координации)]
+      (* <- lang_ru;; *);;
+   -> [Состояние, при котором у человека возникают трудности в выполнении координированных движений.]
+      (* <- lang_ru;; *);;
+   -> [A condition where a person has difficulty performing coordinated movements.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_dyscirculation
+=> nrel_main_idtf:
+ [дисциркуляция]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [dyscirculation]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_dyscirculation
+   (*
+   => nrel_main_idtf:
+      [Опр. (дисциркуляция)]
+      (* <- lang_ru;; *);;
+   -> [Нарушение кровообращения в органах или тканях.]
+      (* <- lang_ru;; *);;
+   -> [Disruption of blood circulation in organs or tissues.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_drug_intoxication
+=> nrel_main_idtf:
+ [лекарственное отравление]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [drug intoxication]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_drug_intoxication
+   (*
+   => nrel_main_idtf:
+      [Опр. (лекарственное отравление)]
+      (* <- lang_ru;; *);;
+   -> [Состояние, вызванное токсическим воздействием лекарственных препаратов.]
+      (* <- lang_ru;; *);;
+   -> [A condition caused by the toxic effects of medications.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_liver_diseases
+=> nrel_main_idtf:
+ [болезни печени]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [liver diseases]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_liver_diseases
+   (*
+   => nrel_main_idtf:
+      [Опр. (болезни печени)]
+      (* <- lang_ru;; *);;
+   -> [Группа заболеваний, поражающих печень и нарушающих её функции.]
+      (* <- lang_ru;; *);;
+   -> [A group of diseases affecting the liver and disrupting its functions.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_sphenoid_bone
+=> nrel_main_idtf:
+ [клиновидная кость]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [sphenoid bone]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_sphenoid_bone
+   (*
+   => nrel_main_idtf:
+      [Опр. (клиновидная кость)]
+      (* <- lang_ru;; *);;
+   -> [Непарная кость черепа, расположенная в его основании.]
+      (* <- lang_ru;; *);;
+   -> [An unpaired bone of the skull located at its base.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_increased_intracranial_pressure
+=> nrel_main_idtf:
+ [повышенное внутричерепное давление]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [increased intracranial pressure]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_increased_intracranial_pressure
+   (*
+   => nrel_main_idtf:
+      [Опр. (повышенное внутричерепное давление)]
+      (* <- lang_ru;; *);;
+   -> [Повышение давления внутри черепной коробки, обычно вследствие отека мозга или кровоизлияния.]
+      (* <- lang_ru;; *);;
+   -> [An increase in pressure within the skull, usually due to brain swelling or hemorrhage.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_head_noise
+=> nrel_main_idtf:
+ [шум в голове]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [head noise]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_head_noise
+   (*
+   => nrel_main_idtf:
+      [Опр. (шум в голове)]
+      (* <- lang_ru;; *);;
+   -> [Постоянное или временное ощущение шума в голове, не связанное с внешними источниками.]
+      (* <- lang_ru;; *);;
+   -> [A constant or temporary sensation of noise in the head not related to external sources.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_vegeto_vascular_dystonia_of_brain_vessels
+=> nrel_main_idtf:
+ [вегето-сосудистая дистония сосудов головного мозга]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [vegeto-vascular dystonia of brain vessels]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_vegeto_vascular_dystonia_of_brain_vessels
+   (*
+   => nrel_main_idtf:
+      [Опр. (вегето-сосудистая дистония сосудов головного мозга)]
+      (* <- lang_ru;; *);;
+   -> [Расстройство вегетативной нервной системы, влияющее на тонус сосудов мозга.]
+      (* <- lang_ru;; *);;
+   -> [A disorder of the autonomic nervous system affecting the tone of brain vessels.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_chronic_sleep_deprivation
+=> nrel_main_idtf:
+ [хроническое недосыпание]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [chronic sleep deprivation]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_chronic_sleep_deprivation
+   (*
+   => nrel_main_idtf:
+      [Опр. (хроническое недосыпание)]
+      (* <- lang_ru;; *);;
+   -> [Постоянная нехватка сна, приводящая к ухудшению здоровья и работоспособности.]
+      (* <- lang_ru;; *);;
+   -> [A persistent lack of sleep leading to deterioration in health and performance.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_endocrine_disorders
+=> nrel_main_idtf:
+ [эндокринные нарушения]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [endocrine disorders]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_endocrine_disorders
+   (*
+   => nrel_main_idtf:
+      [Опр. (эндокринные нарушения)]
+      (* <- lang_ru;; *);;
+   -> [Нарушения в работе эндокринной системы, влияющие на выработку гормонов.]
+      (* <- lang_ru;; *);;
+   -> [Disorders in the endocrine system affecting hormone production.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_chest_pain
+=> nrel_main_idtf:
+ [боль в груди]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [chest pain]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_chest_pain
+   (*
+   => nrel_main_idtf:
+      [Опр. (боль в груди)]
+      (* <- lang_ru;; *);;
+   -> [Боль или дискомфорт, ощущаемые в грудной клетке.]
+      (* <- lang_ru;; *);;
+   -> [Pain or discomfort felt in the chest area.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+ 
+ concept_cystic_hydatid_disease
+=> nrel_main_idtf:
+ [кистозный эхинококкоз]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [cystic hydatid disease]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_cystic_hydatid_disease
+   (*
+   => nrel_main_idtf:
+      [Опр. (кистозный эхинококкоз)]
+      (* <- lang_ru;; *);;
+   -> [Инфекционное заболевание, вызванное паразитированием личинок ленточных червей рода Echinococcus.]
+      (* <- lang_ru;; *);;
+   -> [An infectious disease caused by the parasitism of larvae of tapeworms of the genus Echinococcus.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_cervical_spine_osteochondrosis
+=> nrel_main_idtf:
+ [шейный остеохондроз]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [cervical spine osteochondrosis]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_cervical_spine_osteochondrosis
+   (*
+   => nrel_main_idtf:
+      [Опр. (шейный остеохондроз)]
+      (* <- lang_ru;; *);;
+   -> [Дегенеративно-дистрофическое заболевание межпозвоночных дисков шейного отдела позвоночника.]
+      (* <- lang_ru;; *);;
+   -> [A degenerative-dystrophic disease of the intervertebral discs of the cervical spine.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_hydrocephalus
+=> nrel_main_idtf:
+ [гидроцефалия]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [hydrocephalus]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_hydrocephalus
+   (*
+   => nrel_main_idtf:
+      [Опр. (гидроцефалия)]
+      (* <- lang_ru;; *);;
+   -> [Накопление избыточного количества спинномозговой жидкости в желудочках мозга.]
+      (* <- lang_ru;; *);;
+   -> [The accumulation of excessive amounts of cerebrospinal fluid in the brain's ventricles.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_intracranial_hypertension
+=> nrel_main_idtf:
+ [внутричерепная гипертензия]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [intracranial hypertension]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_intracranial_hypertension
+   (*
+   => nrel_main_idtf:
+      [Опр. (внутричерепная гипертензия)]
+      (* <- lang_ru;; *);;
+   -> [Повышение давления внутри черепной коробки из-за увеличения объема мозговой жидкости.]
+      (* <- lang_ru;; *);;
+   -> [An increase in pressure inside the skull due to an increase in the volume of brain fluid.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+ 
+ 
+ concept_traumatic_brain_injury
+=> nrel_main_idtf:
+ [черепно-мозговая травма]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [traumatic brain injury]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_traumatic_brain_injury
+   (*
+   => nrel_main_idtf:
+      [Опр. (черепно-мозговая травма)]
+      (* <- lang_ru;; *);;
+   -> [Повреждение головного мозга в результате травмы черепа.]
+      (* <- lang_ru;; *);;
+   -> [Brain damage resulting from a skull injury.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_parasellar
+=> nrel_main_idtf:
+ [параселлярный]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [parasellar]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_parasellar
+   (*
+   => nrel_main_idtf:
+      [Опр. (параселлярный)]
+      (* <- lang_ru;; *);;
+   -> [Расположенный рядом с турецким седлом (sella turcica) черепа.]
+      (* <- lang_ru;; *);;
+   -> [Located near the sella turcica of the skull.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_meningioma
+=> nrel_main_idtf:
+ [менингиома]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [meningioma]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_meningioma
+   (*
+   => nrel_main_idtf:
+      [Опр. (менингиома)]
+      (* <- lang_ru;; *);;
+   -> [Доброкачественная опухоль, развивающаяся из оболочек головного и спинного мозга.]
+      (* <- lang_ru;; *);;
+   -> [A benign tumor developing from the membranes of the brain and spinal cord.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_fusobacterium
+=> nrel_main_idtf:
+ [фузобактерия]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [fusobacterium]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_fusobacterium
+   (*
+   => nrel_main_idtf:
+      [Опр. (фузобактерия)]
+      (* <- lang_ru;; *);;
+   -> [Род анаэробных бактерий, вызывающих различные инфекции у человека.]
+      (* <- lang_ru;; *);;
+   -> [A genus of anaerobic bacteria causing various infections in humans.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_subdural
+=> nrel_main_idtf:
+ [субдуральный]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [subdural]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_subdural
+   (*
+   => nrel_main_idtf:
+      [Опр. (субдуральный)]
+      (* <- lang_ru;; *);;
+   -> [Расположенный под твердой мозговой оболочкой.]
+      (* <- lang_ru;; *);;
+   -> [Located beneath the dura mater of the brain.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_memory_loss
+=> nrel_main_idtf:
+ [потеря памяти]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [memory loss]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_memory_loss
+   (*
+   => nrel_main_idtf:
+      [Опр. (потеря памяти)]
+      (* <- lang_ru;; *);;
+   -> [Состояние, характеризующееся частичной или полной утратой памяти.]
+      (* <- lang_ru;; *);;
+   -> [A condition characterized by partial or total loss of memory.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_increased_irritability
+=> nrel_main_idtf:
+ [повышенная раздражительность]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [increased irritability]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_increased_irritability
+   (*
+   => nrel_main_idtf:
+      [Опр. (повышенная раздражительность)]
+      (* <- lang_ru;; *);;
+   -> [Состояние, при котором человек быстро приходит в состояние раздражения и злости.]
+      (* <- lang_ru;; *);;
+   -> [A condition in which a person quickly becomes irritated and angry.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+
+concept_hypertensive_dyscirculation
+=> nrel_main_idtf:
+ [гипертоническая дисциркуляция]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [hypertensive dyscirculation]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_hypertensive_dyscirculation
+   (*
+   => nrel_main_idtf:
+      [Опр. (гипертоническая дисциркуляция)]
+      (* <- lang_ru;; *);;
+   -> [Нарушение кровообращения, связанное с повышенным артериальным давлением.]
+      (* <- lang_ru;; *);;
+   -> [A circulatory disorder associated with high blood pressure.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_blood_pressure_fluctuation
+=> nrel_main_idtf:
+ [колебание артериального давления]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [blood pressure fluctuation]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_blood_pressure_fluctuation
+   (*
+   => nrel_main_idtf:
+      [Опр. (колебание артериального давления)]
+      (* <- lang_ru;; *);;
+   -> [Изменения уровня артериального давления в течение короткого периода времени.]
+      (* <- lang_ru;; *);;
+   -> [Changes in blood pressure levels over a short period of time.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_vision_impairment
+=> nrel_main_idtf:
+ [нарушение зрения]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [vision impairment]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_vision_impairment
+   (*
+   => nrel_main_idtf:
+      [Опр. (нарушение зрения)]
+      (* <- lang_ru;; *);;
+   -> [Частичная или полная потеря способности видеть.]
+      (* <- lang_ru;; *);;
+   -> [Partial or complete loss of the ability to see.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_increased_anxiety
+=> nrel_main_idtf:
+ [повышенная тревожность]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [increased anxiety]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_increased_anxiety
+   (*
+   => nrel_main_idtf:
+      [Опр. (повышенная тревожность)]
+      (* <- lang_ru;; *);;
+   -> [Состояние, характеризующееся усиленным чувством беспокойства и тревоги.]
+      (* <- lang_ru;; *);;
+   -> [A state characterized by an increased sense of worry and anxiety.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_irritability
+=> nrel_main_idtf:
+ [раздражительность]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [irritability]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_irritability
+   (*
+   => nrel_main_idtf:
+      [Опр. (раздражительность)]
+      (* <- lang_ru;; *);;
+   -> [Состояние, при котором человек быстро реагирует на раздражители гневом или недовольством.]
+      (* <- lang_ru;; *);;
+   -> [A condition in which a person quickly reacts to stimuli with anger or displeasure.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_perinatal_encephalopathy
+=> nrel_main_idtf:
+ [перинатальная энцефалопатия]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [perinatal encephalopathy]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_perinatal_encephalopathy
+   (*
+   => nrel_main_idtf:
+      [Опр. (перинатальная энцефалопатия)]
+      (* <- lang_ru;; *);;
+   -> [Патология головного мозга, развивающаяся в перинатальный период.]
+      (* <- lang_ru;; *);;
+   -> [A pathology of the brain that develops in the perinatal period.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_drug_addiction
+=> nrel_main_idtf:
+ [наркомания]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [drug addiction]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_drug_addiction
+   (*
+   => nrel_main_idtf:
+      [Опр. (наркомания)]
+      (* <- lang_ru;; *);;
+   -> [Хроническое заболевание, характеризующееся зависимостью от наркотических веществ.]
+      (* <- lang_ru;; *);;
+   -> [A chronic disease characterized by dependence on narcotic substances.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_convulsions
+=> nrel_main_idtf:
+ [судороги]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [convulsions]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_convulsions
+   (*
+   => nrel_main_idtf:
+      [Опр. (судороги)]
+      (* <- lang_ru;; *);;
+   -> [Непроизвольные сокращения мышц, сопровождающиеся болевыми ощущениями.]
+      (* <- lang_ru;; *);;
+   -> [Involuntary muscle contractions accompanied by pain.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_mood_swings
+=> nrel_main_idtf:
+ [перепады настроения]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [mood swings]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_mood_swings
+   (*
+   => nrel_main_idtf:
+      [Опр. (перепады настроения)]
+      (* <- lang_ru;; *);;
+   -> [Частые и резкие изменения настроения.]
+      (* <- lang_ru;; *);;
+   -> [Frequent and sharp changes in mood.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_meningeal_cells
+=> nrel_main_idtf:
+ [менингеальные клетки]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [meningeal cells]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_meningeal_cells
+   (*
+   => nrel_main_idtf:
+      [Опр. (менингеальные клетки)]
+      (* <- lang_ru;; *);;
+   -> [Клетки, образующие оболочки головного и спинного мозга.]
+      (* <- lang_ru;; *);;
+   -> [Cells that form the membranes of the brain and spinal cord.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_substance_abuse
+=> nrel_main_idtf:
+ [злоупотребление веществами]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [substance abuse]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_substance_abuse
+   (*
+   => nrel_main_idtf:
+      [Опр. (злоупотребление веществами)]
+      (* <- lang_ru;; *);;
+   -> [Употребление веществ в количествах или способами, вредящими здоровью.]
+      (* <- lang_ru;; *);;
+   -> [The use of substances in amounts or ways that harm health.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_hypertonic_disease
+=> nrel_main_idtf:
+ [гипертоническая болезнь]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [hypertonic disease]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_hypertonic_disease
+   (*
+   => nrel_main_idtf:
+      [Опр. (гипертоническая болезнь)]
+      (* <- lang_ru;; *);;
+   -> [Хроническое заболевание, характеризующееся стойким повышением артериального давления.]
+      (* <- lang_ru;; *);;
+   -> [A chronic disease characterized by persistent high blood pressure.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_tinnitus
+=> nrel_main_idtf:
+ [тиннитус]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [tinnitus]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_tinnitus
+   (*
+   => nrel_main_idtf:
+      [Опр. (тиннитус)]
+      (* <- lang_ru;; *);;
+   -> [Звон или шум в ушах без внешнего источника звука.]
+      (* <- lang_ru;; *);;
+   -> [Ringing or noise in the ears without an external sound source.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_head_injury
+=> nrel_main_idtf:
+ [травма головы]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [head injury]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_head_injury
+   (*
+   => nrel_main_idtf:
+      [Опр. (травма головы)]
+      (* <- lang_ru;; *);;
+   -> [Повреждение головы, вызванное внешним воздействием.]
+      (* <- lang_ru;; *);;
+   -> [Head damage caused by external impact.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_sleep_disturbance
+=> nrel_main_idtf:
+ [нарушение сна]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [sleep disturbance]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_sleep_disturbance
+   (*
+   => nrel_main_idtf:
+      [Опр. (нарушение сна)]
+      (* <- lang_ru;; *);;
+   -> [Состояние, характеризующееся проблемами с засыпанием или поддержанием сна.]
+      (* <- lang_ru;; *);;
+   -> [A condition characterized by problems with falling or staying asleep.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_pneumococco
+=> nrel_main_idtf:
+ [пневмококк]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [pneumococco]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_pneumococco
+   (*
+   => nrel_main_idtf:
+      [Опр. (пневмококк)]
+      (* <- lang_ru;; *);;
+   -> [Вид бактерий, вызывающих пневмонию и другие инфекции.]
+      (* <- lang_ru;; *);;
+   -> [A type of bacteria causing pneumonia and other infections.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_encephalopathy
+=> nrel_main_idtf:
+ [энцефалопатия]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [encephalopathy]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_encephalopathy
+   (*
+   => nrel_main_idtf:
+      [Опр. (энцефалопатия)]
+      (* <- lang_ru;; *);;
+   -> [Патологическое состояние головного мозга, характеризующееся диффузным поражением его тканей.]
+      (* <- lang_ru;; *);;
+   -> [A pathological condition of the brain characterized by diffuse damage to its tissues.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_intoxication
+=> nrel_main_idtf:
+ [интоксикация]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [intoxication]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_intoxication
+   (*
+   => nrel_main_idtf:
+      [Опр. (интоксикация)]
+      (* <- lang_ru;; *);;
+   -> [Отравление организма токсичными веществами.]
+      (* <- lang_ru;; *);;
+   -> [Poisoning of the body with toxic substances.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_hemorrhage
+=> nrel_main_idtf:
+ [кровоизлияние]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [hemorrhage]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_hemorrhage
+   (*
+   => nrel_main_idtf:
+      [Опр. (кровоизлияние)]
+      (* <- lang_ru;; *);;
+   -> [Выход крови из кровеносных сосудов вследствие их повреждения.]
+      (* <- lang_ru;; *);;
+   -> [The exit of blood from blood vessels due to their damage.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_chromosome_22_defect
+=> nrel_main_idtf:
+ [дефект хромосомы 22]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [chromosome 22 defect]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_chromosome_22_defect
+   (*
+   => nrel_main_idtf:
+      [Опр. (дефект хромосомы 22)]
+      (* <- lang_ru;; *);;
+   -> [Генетическое нарушение, связанное с изменениями в структуре хромосомы 22.]
+      (* <- lang_ru;; *);;
+   -> [A genetic disorder associated with changes in the structure of chromosome 22.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_dizziness
+=> nrel_main_idtf:
+ [головокружение]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [dizziness]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_dizziness
+   (*
+   => nrel_main_idtf:
+      [Опр. (головокружение)]
+      (* <- lang_ru;; *);;
+   -> [Состояние, при котором человек ощущает ложное чувство движения или вращения.]
+      (* <- lang_ru;; *);;
+   -> [A condition in which a person feels a false sense of movement or spinning.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_kidney_diseases
+=> nrel_main_idtf:
+ [заболевания почек]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [kidney diseases]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_kidney_diseases
+   (*
+   => nrel_main_idtf:
+      [Опр. (заболевания почек)]
+      (* <- lang_ru;; *);;
+   -> [Различные патологические состояния, влияющие на функцию почек.]
+      (* <- lang_ru;; *);;
+   -> [Various pathological conditions affecting kidney function.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_chronic_cardiovascular_diseases
+=> nrel_main_idtf:
+ [хронические сердечно-сосудистые заболевания]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [chronic cardiovascular diseases]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_chronic_cardiovascular_diseases
+   (*
+   => nrel_main_idtf:
+      [Опр. (хронические сердечно-сосудистые заболевания)]
+      (* <- lang_ru;; *);;
+   -> [Долговременные заболевания, поражающие сердце и кровеносные сосуды.]
+      (* <- lang_ru;; *);;
+   -> [Long-term diseases affecting the heart and blood vessels.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_sleep_disorders
+=> nrel_main_idtf:
+ [расстройства сна]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [sleep disorders]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_sleep_disorders
+   (*
+   => nrel_main_idtf:
+      [Опр. (расстройства сна)]
+      (* <- lang_ru;; *);;
+   -> [Состояния, нарушающие нормальный процесс сна.]
+      (* <- lang_ru;; *);;
+   -> [Conditions that disrupt the normal sleep process.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_chronic_gastrointestinal_diseases
+=> nrel_main_idtf:
+ [хронические заболевания желудочно-кишечного тракта]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [chronic gastrointestinal diseases]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_chronic_gastrointestinal_diseases
+   (*
+   => nrel_main_idtf:
+      [Опр. (хронические заболевания желудочно-кишечного тракта)]
+      (* <- lang_ru;; *);;
+   -> [Длительно текущие заболевания органов пищеварительной системы.]
+      (* <- lang_ru;; *);;
+   -> [Long-lasting diseases of the digestive system organs.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_decreased_concentration
+=> nrel_main_idtf:
+ [снижение концентрации]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [decreased concentration]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_decreased_concentration
+   (*
+   => nrel_main_idtf:
+      [Опр. (снижение концентрации)]
+      (* <- lang_ru;; *);;
+   -> [Состояние, характеризующееся трудностями в поддержании внимания.]
+      (* <- lang_ru;; *);;
+   -> [A condition characterized by difficulties in maintaining attention.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_head_trauma
+=> nrel_main_idtf:
+ [травма головы]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [head trauma]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_head_trauma
+   (*
+   => nrel_main_idtf:
+      [Опр. (травма головы)]
+      (* <- lang_ru;; *);;
+   -> [Повреждение головы вследствие удара или другого воздействия.]
+      (* <- lang_ru;; *);;
+   -> [Head damage due to a blow or other impact.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_vascular_dyscirculation
+=> nrel_main_idtf:
+ [сосудистая дисциркуляция]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [vascular dyscirculation]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_vascular_dyscirculation
+   (*
+   => nrel_main_idtf:
+      [Опр. (сосудистая дисциркуляция)]
+      (* <- lang_ru;; *);;
+   -> [Нарушение кровообращения в сосудах.]
+      (* <- lang_ru;; *);;
+   -> [Circulatory disturbance in the vessels.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_rapid_breathing
+=> nrel_main_idtf:
+ [учащенное дыхание]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [rapid breathing]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_rapid_breathing
+   (*
+   => nrel_main_idtf:
+      [Опр. (учащенное дыхание)]
+      (* <- lang_ru;; *);;
+   -> [Увеличенная частота дыхательных движений.]
+      (* <- lang_ru;; *);;
+   -> [Increased frequency of respiratory movements.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_cranial_cavity_increased_pressure
+=> nrel_main_idtf:
+ [повышенное давление в полости черепа]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [cranial cavity increased pressure]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_cranial_cavity_increased_pressure
+   (*
+   => nrel_main_idtf:
+      [Опр. (повышенное давление в полости черепа)]
+      (* <- lang_ru;; *);;
+   -> [Повышение давления внутри черепной полости, вызывающее различные симптомы.]
+      (* <- lang_ru;; *);;
+   -> [Increased pressure within the cranial cavity causing various symptoms.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_shortness_of_breath
+=> nrel_main_idtf:
+ [одышка]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [shortness of breath]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_shortness_of_breath
+   (*
+   => nrel_main_idtf:
+      [Опр. (одышка)]
+      (* <- lang_ru;; *);;
+   -> [Состояние, при котором человеку трудно дышать или он ощущает нехватку воздуха.]
+      (* <- lang_ru;; *);;
+   -> [A condition in which a person has difficulty breathing or feels a lack of air.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_vision_deterioration
+=> nrel_main_idtf:
+ [ухудшение зрения]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [vision deterioration]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_vision_deterioration
+   (*
+   => nrel_main_idtf:
+      [Опр. (ухудшение зрения)]
+      (* <- lang_ru;; *);;
+   -> [Процесс постепенного снижения остроты зрения.]
+      (* <- lang_ru;; *);;
+   -> [The process of gradual decrease in visual acuity.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_subcortical
+=> nrel_main_idtf:
+ [подкорковый]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [subcortical]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_subcortical
+   (*
+   => nrel_main_idtf:
+      [Опр. (подкорковый)]
+      (* <- lang_ru;; *);;
+   -> [Расположенный под корой головного мозга.]
+      (* <- lang_ru;; *);;
+   -> [Located below the cerebral cortex.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_intrahemispheric
+=> nrel_main_idtf:
+ [внутриполушарный]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [intrahemispheric]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_intrahemispheric
+   (*
+   => nrel_main_idtf:
+      [Опр. (внутриполушарный)]
+      (* <- lang_ru;; *);;
+   -> [Расположенный внутри одного из полушарий головного мозга.]
+      (* <- lang_ru;; *);;
+   -> [Located within one of the cerebral hemispheres.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_chronic_stress
+=> nrel_main_idtf:
+ [хронический стресс]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [chronic stress]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_chronic_stress
+   (*
+   => nrel_main_idtf:
+      [Опр. (хронический стресс)]
+      (* <- lang_ru;; *);;
+   -> [Состояние длительного стресса, негативно влияющее на здоровье.]
+      (* <- lang_ru;; *);;
+   -> [A state of prolonged stress that negatively affects health.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_significant_hormonal_shifts
+=> nrel_main_idtf:
+ [значительные гормональные изменения]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [significant hormonal shifts]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_significant_hormonal_shifts
+   (*
+   => nrel_main_idtf:
+      [Опр. (значительные гормональные изменения)]
+      (* <- lang_ru;; *);;
+   -> [Существенные изменения уровня гормонов в организме.]
+      (* <- lang_ru;; *);;
+   -> [Significant changes in hormone levels in the body.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_coordination_disorders
+=> nrel_main_idtf:
+ [нарушения координации]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [coordination disorders]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_coordination_disorders
+   (*
+   => nrel_main_idtf:
+      [Опр. (нарушения координации)]
+      (* <- lang_ru;; *);;
+   -> [Проблемы с согласованностью движений и балансом.]
+      (* <- lang_ru;; *);;
+   -> [Problems with coordinated movements and balance.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_neurofibromatosis
+=> nrel_main_idtf:
+ [нейрофиброматоз]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [neurofibromatosis]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_neurofibromatosis
+   (*
+   => nrel_main_idtf:
+      [Опр. (нейрофиброматоз)]
+      (* <- lang_ru;; *);;
+   -> [Генетическое заболевание, характеризующееся развитием опухолей по ходу нервов.]
+      (* <- lang_ru;; *);;
+   -> [A genetic disorder characterized by the development of tumors along nerves.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_poison_intoxication
+=> nrel_main_idtf:
+ [отравление ядами]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [poison intoxication]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_poison_intoxication
+   (*
+   => nrel_main_idtf:
+      [Опр. (отравление ядами)]
+      (* <- lang_ru;; *);;
+   -> [Отравление организма токсичными веществами.]
+      (* <- lang_ru;; *);;
+   -> [Poisoning of the body with toxic substances.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+ 
+ concept_brain_abscess
+=> nrel_main_idtf:
+ [абсцесс мозга]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [brain abscess]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_brain_abscess
+   (*
+   => nrel_main_idtf:
+      [Опр. (абсцесс мозга)]
+      (* <- lang_ru;; *);;
+   -> [Локализованное гнойное воспаление в тканях мозга, обычно вызванное бактериальной инфекцией.]
+      (* <- lang_ru;; *);;
+   -> [Localized pus-filled inflammation within the brain tissue, typically caused by bacterial infection.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_alcohol_intoxication
+=> nrel_main_idtf:
+ [алкогольное опьянение]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [alcohol intoxication]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_alcohol_intoxication
+   (*
+   => nrel_main_idtf:
+      [Опр. (алкогольное опьянение)]
+      (* <- lang_ru;; *);;
+   -> [Состояние, вызванное употреблением избыточного количества алкоголя, характеризующееся потерей контроля над собой и изменениями в поведении.]
+      (* <- lang_ru;; *);;
+   -> [A state caused by excessive alcohol consumption, characterized by loss of control and changes in behavior.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_intrathecal
+=> nrel_main_idtf:
+ [интратекальный]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [intrathecal]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_intrathecal
+   (*
+   => nrel_main_idtf:
+      [Опр. (интратекальный)]
+      (* <- lang_ru;; *);;
+   -> [Связанный с пространством под твердой мозговой оболочкой или спинномозговой жидкостью.]
+      (* <- lang_ru;; *);;
+   -> [Related to the space beneath the dura mater or cerebrospinal fluid.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_heavy_metal_intoxication
+=> nrel_main_idtf:
+ [интоксикация тяжелыми металлами]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [heavy metal intoxication]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_heavy_metal_intoxication
+   (*
+   => nrel_main_idtf:
+      [Опр. (интоксикация тяжелыми металлами)]
+      (* <- lang_ru;; *);;
+   -> [Отравление организма тяжелыми металлами, такими как свинец, ртуть, кадмий или алюминий.]
+      (* <- lang_ru;; *);;
+   -> [Poisoning of the body by heavy metals such as lead, mercury, cadmium, or aluminum.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_mental_disorders
+=> nrel_main_idtf:
+ [психические расстройства]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [mental disorders]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_mental_disorders
+   (*
+   => nrel_main_idtf:
+      [Опр. (психические расстройства)]
+      (* <- lang_ru;; *);;
+   -> [Широкий спектр патологических состояний, затрагивающих мышление, настроение или поведение человека.]
+      (* <- lang_ru;; *);;
+   -> [A broad range of pathological conditions affecting a person's thinking, mood, or behavior.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_apathy
+=> nrel_main_idtf:
+ [апатия]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [apathy]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_apathy
+   (*
+   => nrel_main_idtf:
+      [Опр. (апатия)]
+      (* <- lang_ru;; *);;
+   -> [Состояние безразличия, равнодушия или отсутствия интереса к окружающему миру.]
+      (* <- lang_ru;; *);;
+   -> [A state of indifference, indifference, or lack of interest in the surrounding world.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+
+
+
+
+
+
+brain_purulent_focal_formation
+=> nrel_main_idtf:
+ [гнойное очаговое образование мозга]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [brain purulent focal formation]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_brain_purulent_focal_formation
+   (*
+   => nrel_main_idtf:
+      [Опр. (гнойное очаговое образование мозга)]
+      (* <- lang_ru;; *);;
+   -> [Патологический процесс в мозге, характеризующийся образованием гнойного очага в его тканях.]
+      (* <- lang_ru;; *);;
+   -> [A pathological process in the brain characterized by the formation of a purulent focus in its tissues.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+brain_tumor
+=> nrel_main_idtf:
+ [опухоль мозга]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [brain tumor]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_brain_tumor
+   (*
+   => nrel_main_idtf:
+      [Опр. (опухоль мозга)]
+      (* <- lang_ru;; *);;
+   -> [Неопластическое образование в тканях мозга, характеризующееся неправильным ростом клеток.]
+      (* <- lang_ru;; *);;
+   -> [A neoplastic growth in brain tissue characterized by abnormal cell growth.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+diffuse_brain_damage
+=> nrel_main_idtf:
+ [диффузное поражение мозга]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [diffuse brain damage]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_diffuse_brain_damage
+   (*
+   => nrel_main_idtf:
+      [Опр. (диффузное поражение мозга)]
+      (* <- lang_ru;; *);;
+   -> [Поражение тканей мозга, затрагивающее несколько областей и не имеющее четко определенного очага.]
+      (* <- lang_ru;; *);;
+   -> [Damage to brain tissue affecting multiple areas and not having a clearly defined focus.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+cerebral_vascular_neurosis
+=> nrel_main_idtf:
+ [церебральный сосудистый невроз]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [cerebral vascular neurosis]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_cerebral_vascular_neurosis
+   (*
+   => nrel_main_idtf:
+      [Опр. (церебральный сосудистый невроз)]
+      (* <- lang_ru;; *);;
+   -> [Невротические расстройства, связанные с нарушениями кровообращения в мозге.]
+      (* <- lang_ru;; *);;
+   -> [Neurotic disorders associated with cerebral circulation disturbances.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+cocnept_immunodeficiency_state
+=> nrel_main_idtf:
+ [состояние иммунодефицита]
+ (* <- lang_ru;; *);
+=> nrel_main_idtf:
+ [immunodeficiency state]
+ (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+ (*
+ => nrel_sc_text_translation:
+   def_immunodeficiency_state
+   (*
+   => nrel_main_idtf:
+      [Опр. (состояние иммунодефицита)]
+      (* <- lang_ru;; *);;
+   -> [Снижение функции иммунной системы организма, что приводит к повышенной восприимчивости к инфекциям и болезням.]
+      (* <- lang_ru;; *);;
+   -> [Impairment of the body's immune system function, resulting in increased susceptibility to infections and diseases.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;

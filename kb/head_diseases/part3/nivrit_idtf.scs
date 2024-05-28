@@ -1,0 +1,273 @@
+concept_nivrit
+=> nrel_main_idtf:
+	[ниврит]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[nivrit]
+	(* <- lang_en;; *);;
+
+concept_weakening_of_muscle_movement
+=> nrel_main_idtf:
+	[ослабление мышечных движений]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[weakening of muscle movement]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_weakening_of_muscle_movement
+   (*
+   => nrel_main_idtf:
+      [Опр. (ослабление мышечных движений)]
+      (* <- lang_ru;; *);;
+   -> [Состояние, при котором силы мышц ослаблены, что приводит к нарушению их функции.]
+      (* <- lang_ru;; *);;
+   -> [A condition where muscle strength is diminished, leading to impaired function.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_the_inability_to_close_the_eye
+=> nrel_main_idtf:
+	[невозможность закрыть глаз]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[the inability to close the eye]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_the_inability_to_close_the_eye
+   (*
+   => nrel_main_idtf:
+      [Опр. (невозможность закрыть глаз)]
+      (* <- lang_ru;; *);;
+   -> [Состояние, когда глаз не может быть закрыт нормальным образом.]
+      (* <- lang_ru;; *);;
+   -> [A condition in which the eye cannot be closed properly.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_asymmetry_of_smile
+=> nrel_main_idtf:
+	[асимметрия улыбки]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[asymmetry of smile]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_asymmetry_of_smile
+   (*
+   => nrel_main_idtf:
+      [Опр. (асимметрия улыбки)]
+      (* <- lang_ru;; *);;
+   -> [Несимметричность движения губ при улыбке.]
+      (* <- lang_ru;; *);;
+   -> [Lack of symmetry in the movement of the lips when smiling.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_lacrimation
+=> nrel_main_idtf:
+	[слезотечение]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[lacrimation]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_lacrimation
+   (*
+   => nrel_main_idtf:
+      [Опр. (слезотечение)]
+      (* <- lang_ru;; *);;
+   -> [Избыточное выделение слез, часто связанное с раздражением или воспалением глаз.]
+      (* <- lang_ru;; *);;
+   -> [Excessive production of tears, often associated with eye irritation or inflammation.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_infectious_disease
+=> nrel_main_idtf:
+	[инфекционное заболевание]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[infectious disease]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_infectious_disease
+   (*
+   => nrel_main_idtf:
+      [Опр. (инфекционное заболевание)]
+      (* <- lang_ru;; *);;
+   -> [Заболевание, вызванное патогенным микроорганизмом, таким как бактерия, вирус, или грибок, и передаваемое от человека к человеку.]
+      (* <- lang_ru;; *);;
+   -> [A disease caused by a pathogenic microorganism, such as bacteria, virus, or fungus, and transmitted from person to person.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_hypothermia
+=> nrel_main_idtf:
+	[переохлаждение]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[hypothermia]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_hypothermia
+   (*
+   => nrel_main_idtf:
+      [Опр. (переохлаждение)]
+      (* <- lang_ru;; *);;
+   -> [Состояние, при котором температура тела снижается ниже нормальной, что может привести к опасным последствиям для здоровья.]
+      (* <- lang_ru;; *);;
+   -> [A condition in which the body temperature drops below normal, which can lead to dangerous health consequences.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_facial_nerve
+=> nrel_main_idtf:
+	[лицевой нерв]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[facial nerve]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_facial_nerve
+   (*
+   => nrel_main_idtf:
+      [Опр. (лицевой нерв)]
+      (* <- lang_ru;; *);;
+   -> [Нерв, контролирующий движения мышц лица и передающий чувствительность на кожу лица.]
+      (* <- lang_ru;; *);;
+   -> [The nerve that controls movements of the facial muscles and transmits sensation to the skin of the face.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_medical_treatment
+=> nrel_main_idtf:
+	[медикоментозное лечение]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[medical treatment]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_medical_treatment
+   (*
+   => nrel_main_idtf:
+      [Опр. (медикоментозное лечение)]
+      (* <- lang_ru;; *);;
+   -> [Лечение, основанное на применении лекарственных препаратов или других медицинских вмешательств.]
+      (* <- lang_ru;; *);;
+   -> [Treatment based on the use of medications or other medical interventions.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_surgical
+=> nrel_main_idtf:
+	[хирургический]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[surgical]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_surgical
+   (*
+   => nrel_main_idtf:
+      [Опр. (хирургический)]
+      (* <- lang_ru;; *);;
+   -> [Относящийся к хирургии или хирургическому лечению.]
+      (* <- lang_ru;; *);;
+   -> [Relating to surgery or surgical treatment.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_cranial_nerves
+=> nrel_main_idtf:
+	[черепные нервы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[cranial nerves]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_cranial_nerves
+   (*
+   => nrel_main_idtf:
+      [Опр. (черепные нервы)]
+      (* <- lang_ru;; *);;
+   -> [Нервы, выходящие из головного мозга и контролирующие различные функции головы и шеи.]
+      (* <- lang_ru;; *);;
+   -> [Nerves that emerge from the brain and control various functions of the head and neck.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+concept_inflammation_of_the_facial_nerve
+=> nrel_main_idtf:
+	[воспаление лицевого нерва]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[inflammation of the facial nerve]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+(*
+ => nrel_sc_text_translation:
+   def_inflammation_of_the_facial_nerve
+   (*
+   => nrel_main_idtf:
+      [Опр. (воспаление лицевого нерва)]
+      (* <- lang_ru;; *);;
+   -> [Воспалительное состояние, которое может привести к дискомфорту, параличу или искажению движений лица.]
+      (* <- lang_ru;; *);;
+   -> [An inflammatory condition that can lead to discomfort, paralysis, or distortion of facial movements.]
+      (* <- lang_en;; *);;
+   <- definition;;
+   *);;
+ *);;
+
+

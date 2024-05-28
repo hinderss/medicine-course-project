@@ -1,0 +1,344 @@
+concept_cluster_headaches
+=> nrel_main_idtf:
+	[кластерные головные боли]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[cluster headaches]
+	(* <- lang_en;; *);;
+
+concept_alcohol_consumption
+=> nrel_main_idtf:
+    [употребление алкоголя]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [alcohol consumption]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_alcohol_consumption
+     (*
+     => nrel_main_idtf:
+        [Опр. (употребление алкоголя)]
+        (* <- lang_ru;; *);;
+     -> [Употребление алкоголя — это процесс употребления напитков, содержащих этанол, который может повлиять на физическое и психическое состояние человека.]
+        (* <- lang_ru;; *);;
+     -> [Alcohol consumption is the process of drinking beverages containing ethanol, which can affect a person's physical and mental state.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_eye_area
+=> nrel_main_idtf:
+    [область вокруг глаз]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [eye area]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_eye_area
+     (*
+     => nrel_main_idtf:
+        [Опр. (область вокруг глаз)]
+        (* <- lang_ru;; *);;
+     -> [Область вокруг глаз — это зона лица, которая включает кожу и структуры вокруг глаз, такие как веки и орбиты.]
+        (* <- lang_ru;; *);;
+     -> [The eye area is the part of the face that includes the skin and structures around the eyes, such as the eyelids and orbits.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_temple_area
+=> nrel_main_idtf:
+    [височная зона]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [temple area]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_temple_area
+     (*
+     => nrel_main_idtf:
+        [Опр. (височная зона)]
+        (* <- lang_ru;; *);;
+     -> [Височная зона — это область на боковой стороне головы, расположенная между лбом и ухом.]
+        (* <- lang_ru;; *);;
+     -> [The temple area is the region on the side of the head located between the forehead and the ear.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_loss_of_balance
+=> nrel_main_idtf:
+    [потеря равновесия]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [loss of balance]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_loss_of_balance
+     (*
+     => nrel_main_idtf:
+        [Опр. (потеря равновесия)]
+        (* <- lang_ru;; *);;
+     -> [Потеря равновесия — это состояние, при котором человек испытывает затруднения в поддержании устойчивого положения тела.]
+        (* <- lang_ru;; *);;
+     -> [Loss of balance is a condition where a person experiences difficulty in maintaining a stable body position.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_increased_sensitivity_to_light
+=> nrel_main_idtf:
+    [повышенная чувствительность к свету]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [increased sensitivity to light]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_increased_sensitivity_to_light
+     (*
+     => nrel_main_idtf:
+        [Опр. (повышенная чувствительность к свету)]
+        (* <- lang_ru;; *);;
+     -> [Повышенная чувствительность к свету — это состояние, при котором глаза становятся необычно чувствительными к свету, вызывая дискомфорт или боль.]
+        (* <- lang_ru;; *);;
+     -> [Increased sensitivity to light is a condition where the eyes become unusually sensitive to light, causing discomfort or pain.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_increased_sensitivity_to_sound
+=> nrel_main_idtf:
+    [повышенная чувствительность к звуку]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [increased sensitivity to sound]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_increased_sensitivity_to_sound
+     (*
+     => nrel_main_idtf:
+        [Опр. (повышенная чувствительность к звуку)]
+        (* <- lang_ru;; *);;
+     -> [Повышенная чувствительность к звуку — это состояние, при котором человек испытывает дискомфорт или боль от обычных звуков, которые в норме не вызывают таких ощущений.]
+        (* <- lang_ru;; *);;
+     -> [Increased sensitivity to sound is a condition where a person experiences discomfort or pain from everyday sounds that are normally not bothersome.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_nasal_congestion
+=> nrel_main_idtf:
+    [заложенность носа]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [nasal congestion]
+    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_nasal_congestion
+     (*
+     => nrel_main_idtf:
+        [Опр. (заложенность носа)]
+        (* <- lang_ru;; *);;
+     -> [Заложенность носа — это состояние, при котором носовые проходы блокируются из-за воспаления или скопления слизи, что затрудняет дыхание.]
+        (* <- lang_ru;; *);;
+     -> [Nasal congestion is a condition where the nasal passages become blocked due to inflammation or mucus buildup, making breathing difficult.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_hypothalamus
+=> nrel_main_idtf:
+	[гипоталамус]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[hypothalamus]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_hypothalamus
+     (*
+     => nrel_main_idtf:
+        [Опр. (гипоталамус)]
+        (* <- lang_ru;; *);;
+     -> [Гипоталамус — это часть мозга, которая контролирует множество функций организма, включая температуру, жажду, голод и циркадные ритмы.]
+        (* <- lang_ru;; *);;
+     -> [The hypothalamus is a part of the brain that controls many body functions, including temperature, thirst, hunger, and circadian rhythms.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_neural_pathways
+=> nrel_main_idtf:
+	[нейронные пути]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[neural pathways]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_neural_pathways
+     (*
+     => nrel_main_idtf:
+        [Опр. (нейронные пути)]
+        (* <- lang_ru;; *);;
+     -> [Нейронные пути — это сети нейронов, которые передают сигналы между различными частями мозга и другими частями нервной системы.]
+        (* <- lang_ru;; *);;
+     -> [Neural pathways are networks of neurons that transmit signals between different parts of the brain and other parts of the nervous system.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_redness_of_the_eye
+=> nrel_main_idtf:
+	[покраснение глаз]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[redness of the eye]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_redness_of_the_eye
+     (*
+     => nrel_main_idtf:
+        [Опр. (покраснение глаз)]
+        (* <- lang_ru;; *);;
+     -> [Покраснение глаз — это состояние, при котором белок глаза становится красным из-за расширения кровеносных сосудов.]
+        (* <- lang_ru;; *);;
+     -> [Redness of the eye is a condition where the white part of the eye becomes red due to the dilation of blood vessels.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_watery_eyes
+=> nrel_main_idtf:
+	[слезотечение глаз]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[watery eyes]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_watery_eyes
+     (*
+     => nrel_main_idtf:
+        [Опр. (слезотечение глаз)]
+        (* <- lang_ru;; *);;
+     -> [Слезотечение глаз — это состояние, при котором глаза производят избыточное количество слез, часто из-за раздражения или воспаления.]
+        (* <- lang_ru;; *);;
+     -> [Watery eyes is a condition where the eyes produce an excessive amount of tears, often due to irritation or inflammation.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_cranial_region
+=> nrel_main_idtf:
+	[область черепа]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[cranial region]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_cranial_region
+     (*
+     => nrel_main_idtf:
+        [Опр. (область черепа)]
+        (* <- lang_ru;; *);;
+     -> [Область черепа — это часть головы, содержащая мозг, череп и другие важные структуры.]
+        (* <- lang_ru;; *);;
+     -> [The cranial region is the part of the head that contains the brain, skull, and other important structures.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_average
+=> nrel_main_idtf:
+	[средний]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[average]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_average
+     (*
+     => nrel_main_idtf:
+        [Опр. (средний)]
+        (* <- lang_ru;; *);;
+     -> [Средний — это показатель, представляющий собой сумму значений, деленную на их количество.]
+        (* <- lang_ru;; *);;
+     -> [Average is a measure that represents the sum of values divided by their number.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
+concept_hypothalamus_arousal
+=> nrel_main_idtf:
+	[возбуждение гипоталамуса]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[hypothalamus arousal]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+...
+  (*
+  => nrel_sc_text_translation:
+     def_hypothalamus_arousal
+     (*
+     => nrel_main_idtf:
+        [Опр. (возбуждение гипоталамуса)]
+        (* <- lang_ru;; *);;
+     -> [Возбуждение гипоталамуса — это активация гипоталамуса, части мозга, которая регулирует многие функции организма, включая эмоции и поведение.]
+        (* <- lang_ru;; *);;
+     -> [Hypothalamus arousal is the activation of the hypothalamus, a part of the brain that regulates many body functions, including emotions and behavior.]
+        (* <- lang_en;; *);;
+     <- definition;;
+     *);;
+  *);;
+
