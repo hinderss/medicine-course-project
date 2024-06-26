@@ -1,32 +1,26 @@
-import os
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree
 from collections import defaultdict
 
 
 class DiseaseDefiner:
-    @staticmethod
-    def parse_diseases():
-        xml_file_path = os.path.join(os.path.dirname(__file__), 'static/diseases.xml')
-        tree = ET.parse(xml_file_path)
+    def __init__(self, xml_file_path):
+        self.diseases = []
+        tree = xml.etree.ElementTree.parse(xml_file_path)
         root = tree.getroot()
-        diseases = []
         for disease in root.findall('disease'):
             name = disease.find('name').text
             symptoms = [symptom.text for symptom in disease.find('symptoms').findall('symptom')]
             doctor = disease.find('doctor').text
-            diseases.append({
+            self.diseases.append({
                 'name': name,
                 'symptoms': symptoms,
                 'doctor': doctor
             })
-        return diseases
 
-    @staticmethod
-    def get_possible_disease(symptoms):
-        diseases = DiseaseDefiner.parse_diseases()
+    def get_possible_disease(self, symptoms):
         possible_diseases = []
 
-        for disease in diseases:
+        for disease in self.diseases:
             if all(symptom in symptoms for symptom in disease['symptoms']):
                 possible_diseases.append({
                     'name': disease['name'],
@@ -36,14 +30,12 @@ class DiseaseDefiner:
         if possible_diseases:
             return possible_diseases
         else:
-            return DiseaseDefiner.get_most_matching_disease(symptoms)
+            return self.get_most_matching_disease(symptoms)
 
-    @staticmethod
-    def get_most_matching_disease(symptoms):
-        diseases = DiseaseDefiner.parse_diseases()
+    def get_most_matching_disease(self, symptoms):
         matching_counts = defaultdict(list)
 
-        for disease in diseases:
+        for disease in self.diseases:
             matching_symptoms = set(symptoms) & set(disease['symptoms'])
             matching_counts[len(matching_symptoms)].append({
                 'name': disease['name'],
@@ -57,10 +49,8 @@ class DiseaseDefiner:
         else:
             return []
 
-    @staticmethod
-    def get_unique_symptoms():
-        diseases = DiseaseDefiner.parse_diseases()
+    def get_unique_symptoms(self):
         symptoms = set()
-        for disease in diseases:
+        for disease in self.diseases:
             symptoms.update(disease['symptoms'])
         return sorted(symptoms)
