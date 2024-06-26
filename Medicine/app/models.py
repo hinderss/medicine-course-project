@@ -49,7 +49,6 @@ class Doctor(db.Model):
     rating = db.Column(db.Integer, default=5, nullable=False)
 
     user = db.relationship('User', backref=db.backref('doctor', uselist=False))
-    # Добавляем ссылку на расписание (schedule)
     schedules = db.relationship('Schedule', backref='doctor', lazy=True)
 
     def to_dict(self):
@@ -81,8 +80,6 @@ class Schedule(db.Model):
     end_time = db.Column(db.Time, nullable=False)
     duration_minutes = db.Column(db.Integer, nullable=False)
 
-    # doctor = db.relationship('Doctor', backref=db.backref('schedules', lazy='dynamic'))
-
     def __str__(self):
         return (f"Schedule for Doctor {self.doctor_id}, Day: {self.weekday}, ID: {self.id}, "
                 f"{self.start_time} - {self.end_time}, {self.duration_minutes} min")
@@ -96,7 +93,7 @@ class Patient(db.Model):
     dob = db.Column(db.Date)
     region = db.Column(db.String(2))
     phone = db.Column(db.String(15))
-    photo_path = db.Column(db.String(255))  # Added field for storing photo filename
+    photo_path = db.Column(db.String(255))
 
     user = db.relationship('User', backref=db.backref('patient', uselist=False))
 

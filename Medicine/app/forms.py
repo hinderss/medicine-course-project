@@ -5,7 +5,7 @@ from wtforms.fields.choices import SelectField, RadioField
 from wtforms.fields.datetime import DateField, TimeField
 from wtforms.fields.numeric import IntegerField
 from wtforms.fields.simple import FileField, TextAreaField, BooleanField
-from wtforms.validators import DataRequired, Length, Email, InputRequired, Optional, ValidationError, StopValidation
+from wtforms.validators import DataRequired, Length, Email, InputRequired, Optional, ValidationError
 from app.validators import Phone, FutureDateValidator, FutureTimeValidator, PastDateValidator
 
 
@@ -81,7 +81,8 @@ class MedicalCardForm(FlaskForm):
     gender = RadioField('Пол', choices=[('male', 'Мужской'), ('female', 'Женский')])
     dob = DateField('Дата рождения: дд.мм.гггг', validators=[
         DataRequired(),
-        PastDateValidator(message="Дата рождения должна быть в прошлом.")])
+        PastDateValidator(message="Дата рождения должна быть в прошлом.")
+    ])
     passport = StringField('Личный Номер паспорта')
     family = StringField('Семейное положение')
     document_type = StringField('Документ')
@@ -96,8 +97,9 @@ class MedicalCardForm(FlaskForm):
     building = StringField('Корпус')
     entrance = StringField('Подъезд')
     apartment = StringField('Квартира')
-    home_phone = StringField('Домашний телефон' ''', validators=[
-        Phone(message="Неправильный формат номера телефона.")]''')
+    home_phone = StringField('Домашний телефон' 
+                             ''', validators=[Phone(message="Неправильный формат номера телефона.")]'''
+                             )
     registration_region = StringField('Область регистрации')
     registration_city = StringField('Населенный пункт регистрации')
     registration_street = StringField('Улица/Переулок/Проезд регистрации')
@@ -196,11 +198,3 @@ class DoctorScheduleForm(FlaskForm):
     sunday_duration = IntegerField('продолжительность(мин)', validators=[Optional()])
 
     submit = SubmitField('Сохранить')
-
-    # def __init__(self, *args, **kwargs):
-    #     super(DoctorScheduleForm, self).__init__(*args, **kwargs)
-    #     self.monday_start_time.validators = [ScheduleTimeValidator(self.monday_check)]
-
-
-
-

@@ -55,7 +55,3 @@ class FutureTimeValidator:
 
         if selected_datetime <= datetime.now():
             raise ValidationError(self.message)
-
-
-
-
