@@ -475,7 +475,7 @@
                 var specialtySelection = document.getElementById("specialtySelectionSelector");
 
                 // Перебираем каждую специальность и создаем кнопку для нее
-                specialties.practice_profiles.forEach(function(specialty) {
+                specialties.forEach(function(specialty) {
                     var button = document.createElement("button");
                     button.classList.add("button");
                     button.setAttribute("type", "button");
@@ -623,8 +623,8 @@
                     // form.appendChild(doctorId);
                     
                     // Извлекаем из данных время назначения и добавляем в <select>
-                    appointmentsData.appointments.forEach(function(appointment) {
-                        var appointmentDateTime = new Date(appointment.appointment_date_time);
+                    appointmentsData.forEach(function(appointment) {
+                        var appointmentDateTime = new Date(appointment);
                         var appointmentTime = appointmentDateTime.getUTCHours().toString().padStart(2, '0') + ':' + appointmentDateTime.getUTCMinutes().toString().padStart(2, '0');
                         selectElement.disabled = false;
                         // Создаем новый элемент <option>

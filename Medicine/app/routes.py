@@ -1,15 +1,21 @@
 from datetime import datetime, timedelta
-from typing import Dict, List
 
 from sqlalchemy import func
 
-from app import disease_definer
+from app import disease_definer, PER_PAGE, MAX_DURATION, WEEKDAYS
+from app.decorators import doctor_required, patient_required, transaction_atomic
+from app.exceptions import *
 from app.helpers import save_file
-from flask import render_template, redirect, url_for, flash, request, send_from_directory, jsonify
+from flask import redirect, url_for, request, send_from_directory
 from flask_login import login_user, login_required, logout_user, current_user
-from app import app, db, login_manager, TODAY
+from app import app, login_manager
 from app.forms import LoginForm, DoctorForm, PatientForm, MedicalCardForm, AppointmentForm, DoctorScheduleForm
 from app.models import User, Doctor, Patient, MedicalCard, Appointment, Schedule
+from app.serializers import doctors_schema
+from app import services
+from app.shortcuts import *
+from app.success import HttpSuccess
+from app import selectors
 
 
 @app.route('/')
@@ -20,21 +26,21 @@ def index():
     symptoms = disease_definer.get_unique_symptoms()
     random_doctors = Doctor.query.order_by(func.random()).limit(10).all()
 
-    if current_user.is_authenticated:
-        if current_user.patient:
-            user = current_user.patient
-        else:
-            user = current_user.doctor
-        name = user.firstname
-        surname = user.surname
-        return render_template(template,
-                               name=name,
-                               surname=surname,
-                               form=form,
-                               symptoms=symptoms,
-                               doctors_slider=random_doctors)
+    if not current_user.is_authenticated:
+        return render_template(template, form=form, symptoms=symptoms, doctors_slider=random_doctors)
 
-    return render_template(template, form=form, symptoms=symptoms, doctors_slider=random_doctors)
+    if current_user.patient:
+        user = current_user.patient
+    else:
+        user = current_user.doctor
+    return render_template(
+        template,
+        name=user.firstname,
+        surname=user.surname,
+        form=form,
+        symptoms=symptoms,
+        doctors_slider=random_doctors,
+    )
 
 
 @app.route('/welcome')
@@ -45,165 +51,96 @@ def welcome():
 
 @app.route('/doctor_appointments')
 @login_required
+@doctor_required
 def doctor_appointments():
     template = 'doctorAppointments.html'
     form: DoctorScheduleForm = DoctorScheduleForm()
-    if current_user.doctor:
-        user: Doctor = current_user.doctor
 
-        current_date = TODAY
+    appointments_by_day, appointments_times, days = services.get_appointments()
 
-        appointments_by_day: Dict[str, List[Appointment]] = {}
-        appointments_times = {}
-        days = {}
-
-        for i in range(0, 5):
-            target_date = current_date + timedelta(days=i)
-            print(target_date)
-            appointments_by_day[f'day{i}'] = (Appointment.query
-                                              .filter_by(doctor_id=user.id)
-                                              .filter(func.date(Appointment.appointment_date_time) == target_date)
-                                              .order_by(Appointment.appointment_date_time)
-                                              .all())
-            appointments_times[f'day{i}'] = [appointment.appointment_date_time.strftime('%H:%M') for appointment in
-                                             appointments_by_day[f'day{i}']]
-            days[f'day{i}'] = target_date.strftime('%d.%m.%Y')
-
-        print(appointments_by_day)
-        print(appointments_times)
-        print(datetime.now().date())
-
-        return render_template(template,
-                               form=form,
-                               appointments_by_day=appointments_by_day,
-                               appointments_times=appointments_times,
-                               days=days,
-                               monday=Schedule.query.filter_by(doctor_id=current_user.doctor.id, weekday=0).first(),
-                               tuesday=Schedule.query.filter_by(doctor_id=current_user.doctor.id, weekday=1).first(),
-                               wednesday=Schedule.query.filter_by(doctor_id=current_user.doctor.id, weekday=2).first(),
-                               thursday=Schedule.query.filter_by(doctor_id=current_user.doctor.id, weekday=3).first(),
-                               friday=Schedule.query.filter_by(doctor_id=current_user.doctor.id, weekday=4).first(),
-                               saturday=Schedule.query.filter_by(doctor_id=current_user.doctor.id, weekday=5).first(),
-                               sunday=Schedule.query.filter_by(doctor_id=current_user.doctor.id, weekday=6).first(),
-                               )
-    else:
-        return "You are not authorized as doctor to access this page.", 403
+    return render_template(
+        template,
+        form=form,
+        appointments_by_day=appointments_by_day,
+        appointments_times=appointments_times,
+        days=days,
+        **services.get_weekly_schedule(),
+    )
 
 
 @app.route('/patient-appointments')
-def patient_appointments():
+@patient_required
+def get_patient_appointments():
     template = 'patientAppointments.html'
-    if current_user.patient:
-        user = current_user.patient
-        patient_appointments_l = (Appointment.query
-                                  .filter_by(patient_id=user.id)
-                                  .order_by(Appointment.appointment_date_time)
-                                  .all()
-                                  )
-        return render_template(template, patient_appointments=patient_appointments_l)
-    else:
-        return "You are not authorized as doctor to access this page.", 403
+    patient_appointments = selectors.select_appointment_by_patient(current_user.patient)
+    return render_template(template, patient_appointments=patient_appointments)
 
 
 @app.route('/doctor_list', methods=['GET', 'POST'])
 def doctor_list():
     template = 'doctorListPage.html'
-    count = Doctor.query.count()
     page = request.args.get('page', 1, type=int)
 
     specialty = request.args.get('specialty')
-    experience = request.args.get('experience')
+    experience = request.args.get('experience', type=int)
     price = request.args.get('price')
     rating = request.args.get('rating')
 
-    query = Doctor.query
+    query = services.filter_doctors(
+        Doctor.query,
+        specialty=specialty,
+        experience=experience,
+        price=price,
+        rating=rating,
+    )
 
-    if specialty:
-        query = query.filter(Doctor.practice_profile == specialty)
+    paginated_doctors = query.paginate(page=page, per_page=PER_PAGE)
 
-    if experience:
-        years = int(experience)
-        query = query.filter(Doctor.experience_years >= years)
-
-    if price:
-        if price == 'below30':
-            query = query.filter(Doctor.consultation_price < 30)
-        elif price == '30_50':
-            query = query.filter(Doctor.consultation_price.between(30, 50))
-        elif price == '50_80':
-            query = query.filter(Doctor.consultation_price.between(50, 80))
-        elif price == 'above100':
-            query = query.filter(Doctor.consultation_price >= 100)
-
-    if rating:
-        min_rating = int(rating[0])
-        query = query.filter(Doctor.rating == min_rating)
-
-    sort_by = request.args.get('sort_by', 'rating')
-    order = request.args.get('order', 'desc')
-
-    sort_field = None
-    if sort_by == 'rating':
-        sort_field = Doctor.rating
-    elif sort_by == 'experience_years':
-        sort_field = Doctor.experience_years
-    elif sort_by == 'consultation_price':
-        sort_field = Doctor.consultation_price
-
-    if sort_field:
-        if order == 'asc':
-            query = query.order_by(sort_field.asc())
-        else:
-            query = query.order_by(sort_field.desc())
-
-    per_page = 4
-    doctors = query.paginate(page=page, per_page=per_page)
-
-    practice_profiles = Doctor.query.with_entities(Doctor.practice_profile).distinct().all()
-    practice_profiles = [profile[0] for profile in practice_profiles]
-    print(practice_profiles)
-
-    return render_template(template,
-                           doctors=doctors,
-                           count=count,
-                           practice_profiles=practice_profiles)
+    return render_template(
+        template,
+        doctors=paginated_doctors,
+        count=Doctor.query.count(),
+        practice_profiles=selectors.select_practice_profiles(),
+    )
 
 
 @app.route('/medical-card', methods=['GET', 'POST'])
 @login_required
+@patient_required
+@transaction_atomic
 def medical_card():
     template = 'medicalCard.html'
     form: MedicalCardForm
-    if not current_user.is_authenticated:
-        return redirect(url_for('login'))
 
     patient = current_user.patient
-    if not patient:
-        return "You are not authorized as patient to access this page."
 
-    existing_med_card = MedicalCard.query.filter_by(patient_id=patient.id).first()
-    if existing_med_card:
-        form = MedicalCardForm(obj=existing_med_card)
+    medical_card = MedicalCard.query.filter_by(patient_id=patient.id).first()
+
+    if medical_card:
+        form = MedicalCardForm(obj=medical_card)
+        form.populate_obj(medical_card)
     else:
-        form = MedicalCardForm(surname=patient.surname,
-                               firstname=patient.firstname,
-                               dob=patient.dob)
-    if form.validate_on_submit():
-        if existing_med_card:
-            form.populate_obj(existing_med_card)
-        else:
-            new_med_card = MedicalCard(patient_id=current_user.patient.id)
-            form.populate_obj(new_med_card)
-            db.session.add(new_med_card)
+        form = MedicalCardForm(
+            surname=patient.surname,
+            firstname=patient.firstname,
+            dob=patient.dob,
+        )
+        new_med_card = MedicalCard(patient_id=current_user.patient.id)
+        form.populate_obj(new_med_card)
+        db.session.add(new_med_card)
 
-        current_user.patient.surname = form.surname.data
-        current_user.patient.firstname = form.firstname.data
-        current_user.patient.dob = form.dob.data
+    if not form.validate_on_submit():
+        return render_form_template(form, template)
 
-        db.session.commit()
+    update_model_instance(
+        patient,
+        commit=False,
+        surname=form.surname.data,
+        firstname=form.firstname.data,
+        dob=form.dob.data,
+    )
 
-        return redirect(url_for('index'))
-    return render_template(template, form=form)
+    return redirect(url_for('index'))
 
 
 @app.route('/uploads/<filename>')
@@ -216,11 +153,11 @@ def get_doctors_by_specialty():
     specialty = request.args.get('specialty')
 
     if not specialty:
-        return jsonify({'error': 'Specialty not specified'}), 400
+        raise HttpJson400('Specialty not specified')
 
     doctors = Doctor.query.filter_by(practice_profile=specialty).all()
 
-    return jsonify([doctor.to_dict() for doctor in doctors])
+    return doctors_schema.jsonify(doctors)
 
 
 @app.route('/practice-profiles', methods=['GET'])
@@ -228,78 +165,74 @@ def get_practice_profiles():
     practice_profiles = Doctor.query.with_entities(Doctor.practice_profile).distinct().all()
     practice_profiles = [profile[0] for profile in practice_profiles]
 
-    return jsonify({'practice_profiles': practice_profiles})
+    return jsonify(practice_profiles)
 
 
 @app.route('/appointments/available-doctor-time')
 def get_available_doctor_time():
     doctor_id = request.args.get('doctor_id')
     date_str = request.args.get('date')
-    if doctor_id and date_str:
-        doctor = Doctor.query.get(doctor_id)
-        if doctor:
-            date = datetime.strptime(date_str, '%Y-%m-%d')
-            weekday = date.weekday()
 
-            appointment = []
-            schedule: Schedule = Schedule.query.filter_by(doctor_id=doctor_id, weekday=weekday).first()
-            assigned = (Appointment.query
-                        .filter_by(doctor_id=doctor_id)
-                        .filter(db.func.date(Appointment.appointment_date_time) == date.date())
-                        .all())
-            assigned_times = [assign.appointment_date_time for assign in assigned]
-            if schedule:
-                start_time = datetime.combine(date, schedule.start_time)
-                end_time = datetime.combine(date, schedule.end_time)
-                step = timedelta(minutes=schedule.duration_minutes)
-                current_time = start_time
-                while current_time <= end_time:
-                    appointment.append(current_time)
-                    current_time += step
-            appointment = sorted(list(
-                set(appointment) - set(assigned_times)
-            ))
-            appointments_dict = [
-                {'appointment_date_time': appointment}
-                for appointment in appointment
-            ]
-            return jsonify({'appointments': appointments_dict})
-        else:
-            return jsonify({'error': 'Doctor not found'}), 404
-    else:
-        return jsonify({'error': 'Doctor ID and date are required'}), 400
+    if not doctor_id or not date_str:
+        raise HttpJson400("Doctor ID and date are required")
+
+    doctor = get_object_or_404(Doctor, error_message="Doctor not found", id=doctor_id)
+
+    date = datetime.strptime(date_str, '%Y-%m-%d')
+    weekday = date.weekday()
+
+    schedule = Schedule.query.filter_by(doctor_id=doctor.id, weekday=weekday).first()
+    if not schedule:
+        return jsonify([])
+
+    assigned = selectors.select_appointment_by_doctor_and_date(doctor=doctor, date=date)
+    assigned_times = [assign.appointment_date_time for assign in assigned]
+
+    start_time = datetime.combine(date, schedule.start_time)
+    end_time = datetime.combine(date, schedule.end_time)
+    step = timedelta(minutes=schedule.duration_minutes)
+
+    appointments = []
+    current_time = start_time
+    while current_time <= end_time:
+        appointments.append(current_time)
+        current_time += step
+
+    appointments = sorted(list(set(appointments) - set(assigned_times)))
+
+    return jsonify(appointments)
 
 
 @app.route('/assign-appointment', methods=['GET', 'POST'])
 def assign_appointment():
     form: AppointmentForm = AppointmentForm()
-    if not current_user.is_authenticated:
-        return jsonify({'error': 'Sign in as user to continue.'}), 403
-    if form.validate_on_submit():
-        print("Doctor id", form.doctor_id.data)
-        date = datetime.strptime(form.date.data, '%Y-%m-%d')
-        time = datetime.strptime(form.time.data, '%H:%M:%S').time()
 
-        date_time = datetime.combine(date, time).replace(microsecond=0)
-        appointment = Appointment.query.filter_by(appointment_date_time=date_time,
-                                                  doctor_id=form.doctor_id.data).first()
-        if appointment:
-            return jsonify({'message': 'Appointment already created!'}), 409
-        if current_user.patient:
-            new_appointment: Appointment = Appointment(
-                doctor_id=form.doctor_id.data,
-                patient_id=current_user.patient.id,
-                appointment_date_time=date_time,
-                appointment_details=form.appointment_details.data
-            )
-            db.session.add(new_appointment)
-            db.session.commit()
-            return jsonify({'message': 'Appointment successfully created!'}), 200
-        else:
-            return jsonify({'error': 'User not authorized as patient to update this appointment.'}), 403
-    else:
-        errors = {field: error for field, error in form.errors.items()}
-        return jsonify(errors), 400
+    if not current_user.is_authenticated:
+        raise HttpJson403('Sign in as user to continue.')
+
+    if not form.validate_on_submit():
+        return render_form_template(form)
+
+    date = datetime.strptime(form.date.data, '%Y-%m-%d')
+    time = datetime.strptime(form.time.data, '%H:%M:%S').time()
+
+    date_time = datetime.combine(date, time).replace(microsecond=0)
+    appointment = Appointment.query.filter_by(
+        appointment_date_time=date_time,
+        doctor_id=form.doctor_id.data,
+    ).first()
+    if appointment:
+        raise HttpJson409('Appointment already created!')
+    if not current_user.patient:
+        raise HttpJson403('User not authorized as patient to update this appointment.')
+    create_model_instance(
+        Appointment,
+        doctor_id=form.doctor_id.data,
+        patient_id=current_user.patient.id,
+        appointment_date_time=date_time,
+        appointment_details=form.appointment_details.data,
+    )
+    return HttpSuccess('Appointment successfully created!')
 
 
 @app.route('/menu')
@@ -311,118 +244,114 @@ def menu():
 
 @app.route('/appointments')
 @login_required
+@patient_required
 def appointments():
     template = 'appointments.html'
-    if current_user.patient:
-        user = current_user.patient
-        appoint = Appointment.query.filter_by(patient_id=user.id).all()
-        return render_template(template, appointments=appoint)
-    else:
-        return "You are not authorized as patient to access this page.", 403
+    user = current_user.patient
+    appoint = Appointment.query.filter_by(patient_id=user.id).all()
+    return render_template(template, appointments=appoint)
 
 
 @app.route('/cancel-appointment', methods=['PUT'])
 @login_required
+@patient_required
 def cancel_appointment():
-    if current_user.patient:
-        appointment_id = request.form.get('appointment_id')
-        appointment: Appointment = Appointment.query.filter_by(id=appointment_id).first()
+    appointment_id = request.form.get('appointment_id')
+    appointment = get_object_or_404(
+        Appointment,
+        error_message="Appointment not found",
+        id=appointment_id,
+    )
 
-        if appointment:
-            if appointment.patient == current_user.patient:
-                appointment.patient_id = None
-                appointment.appointment_details = None
-                db.session.commit()
-                return jsonify({'message': 'Appointment successfully canceled!'}), 200
-            else:
-                return jsonify({'error': 'You are not allowed to cancel this appointment.'}), 403
-        else:
-            return jsonify({'error': 'Appointment not found.'}), 404
-    else:
-        return jsonify({'error': 'User not authorized as patient to update this appointment.'}), 403
+    if appointment.patient != current_user.patient:
+        raise HttpJson403('You are not allowed to delete this appointment.')
+
+    update_model_instance(appointment, patient_id=None, appointment_details=None)
+    return HttpSuccess('Appointment successfully canceled!')
 
 
 @app.route('/create-appointment', methods=['POST'])
 @login_required
+@doctor_required
+@transaction_atomic
 def create_appointment():
     form: DoctorScheduleForm = DoctorScheduleForm()
-    if current_user.doctor:
-        doctor_id = current_user.doctor.id
-        weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
-        for i, day in enumerate(weekdays):
-            if not getattr(form, f"{day}_check").data:
-                existing_schedule = Schedule.query.filter_by(doctor_id=doctor_id, weekday=i).first()
-                if existing_schedule:
-                    db.session.delete(existing_schedule)
-                    db.session.commit()
+    doctor_id = current_user.doctor.id
+    for i, day in enumerate(WEEKDAYS):
+        existing_schedule = Schedule.query.filter_by(doctor_id=doctor_id, weekday=i).first()
+        if not getattr(form, f"{day}_check").data:
+            if existing_schedule:
+                delete_model_instance(existing_schedule, commit=False)
+        else:
+            try:
+                start_time = datetime.strptime(request.form[f'{day}_start_time'], '%H:%M:%S').time()
+            except ValueError:
+                start_time = datetime.strptime(request.form[f'{day}_start_time'], '%H:%M').time()
+            try:
+                end_time = datetime.strptime(request.form[f'{day}_end_time'], '%H:%M:%S').time()
+            except ValueError:
+                end_time = datetime.strptime(request.form[f'{day}_end_time'], '%H:%M').time()
+
+            duration = int(request.form[f'{day}_duration'])
+            if duration > MAX_DURATION:
+                raise HttpJson400('Too long appointment.')
+
+            schedule_data = {
+                "start_time": start_time,
+                "end_time": end_time,
+                "duration_minutes": duration,
+            }
+            if existing_schedule:
+                update_model_instance(
+                    existing_schedule,
+                    commit=False,
+                    **schedule_data,
+                )
             else:
-                try:
-                    start_time = datetime.strptime(request.form[f'{day}_start_time'], '%H:%M:%S').time()
-                except ValueError:
-                    start_time = datetime.strptime(request.form[f'{day}_start_time'], '%H:%M').time()
-                try:
-                    end_time = datetime.strptime(request.form[f'{day}_end_time'], '%H:%M:%S').time()
-                except ValueError:
-                    end_time = datetime.strptime(request.form[f'{day}_end_time'], '%H:%M').time()
-
-                if int(request.form[f'{day}_duration']) > 1440:
-                    return jsonify({'error': 'Too long appointment.'}), 400
-
-                existing_schedule = Schedule.query.filter_by(doctor_id=doctor_id, weekday=i).first()
-                if existing_schedule:
-                    existing_schedule.start_time = start_time
-                    existing_schedule.end_time = end_time
-                    existing_schedule.duration_minutes = int(request.form[f'{day}_duration'])
-                    db.session.commit()
-                else:
-                    new_schedule = Schedule(
-                        doctor_id=doctor_id,
-                        weekday=i,
-                        start_time=start_time,
-                        end_time=end_time,
-                        duration_minutes=int(request.form[f'{day}_duration'])
-                    )
-                    db.session.add(new_schedule)
-                    db.session.commit()
-            return jsonify({'message': 'Appointment successfully created!'}), 200
-    else:
-        return jsonify({'message': 'You are not authorized as doctor to access this page.'}), 403
+                create_model_instance(
+                    Schedule,
+                    commit=False,
+                    doctor_id=doctor_id,
+                    weekday=i,
+                    **schedule_data,
+                )
+    return HttpSuccess('Appointment successfully created!')
 
 
 @app.route('/delete-appointment', methods=['DELETE'])
 @login_required
+@doctor_required
 def delete_appointment():
-    if current_user.doctor:
-        appointment_id = request.form.get('appointment_id')
-        appointment: Appointment = Appointment.query.filter_by(id=appointment_id).first()
+    appointment_id = request.form.get('appointment_id')
+    appointment = get_object_or_404(
+        Appointment,
+        error_message="Appointment not found",
+        id=appointment_id,
+    )
 
-        if appointment:
-            if appointment.doctor == current_user.doctor:
-                db.session.delete(appointment)
-                db.session.commit()
-                return jsonify({'message': 'Appointment successfully deleted!'}), 200
-            else:
-                return jsonify({'error': 'You are not allowed to delete this appointment.'}), 403
-        else:
-            return jsonify({'error': 'Appointment not found.'}), 404
-    else:
-        return jsonify({'error': 'User not authorized as doctor to delete this appointment.'}), 403
+    if appointment.doctor != current_user.doctor:
+        raise HttpJson403('You are not allowed to delete this appointment.')
+
+    delete_model_instance(appointment)
+    return HttpSuccess('Appointment successfully deleted!')
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     template = 'login.html'
     form: LoginForm = LoginForm()
-    if form.validate_on_submit():
-        email = form.username.data
-        password = form.password.data
-        user: User = User.query.filter_by(username=email).first()
-        if user and user.verify_password(password):
-            login_user(user)
-            return redirect(url_for('index'))
-        else:
-            flash('Invalid username or password. Please try again.', 'error')
-    return render_template(template, form=form)
+    if not form.validate_on_submit():
+        return render_form_template(form, template)
+
+    email = form.username.data
+    password = form.password.data
+    user = User.query.filter_by(username=email).first()
+
+    if (not user) or (not user.verify_password(password)):
+        return render_form_flash_template(form, template, message='Invalid username or password. Please try again.')
+
+    login_user(user)
+    return redirect(url_for('index'))
 
 
 @app.route('/logout')
@@ -439,77 +368,82 @@ def register():
 
 
 @app.route('/signup-doctor', methods=['GET', 'POST'])
+@transaction_atomic
 def signup_doctor():
     template = 'signupDoctor.html'
     form: DoctorForm = DoctorForm()
-    if form.validate_on_submit():
-        user = User.query.filter_by(username=form.email.data).first()
-        if user:
-            flash('User with this email address already exists.', 'error')
-            return render_template(template, form=form)
+    if not form.validate_on_submit():
+        return render_form_template(form, template)
 
-        filename = save_file(form.photo.data)
+    user = User.query.filter_by(username=form.email.data).first()
+    if user:
+        return render_form_flash_template(form, template, message='User with this email address already exists.')
 
-        new_user = User(
-            form.email.data,
-            form.password.data
-        )
+    filename = save_file(form.photo.data)
 
-        new_doctor = Doctor(
-            surname=form.surname.data,
-            firstname=form.firstname.data,
-            patronymic=form.patronymic.data,
-            dob=form.dob.data,
-            education=form.education.data,
-            workplace=form.workplace.data,
-            practice_profile=form.practice_profile.data,
-            phone=form.phone.data,
-            photo_path=filename,
-            user=new_user
-        )
-        db.session.add(new_user)
-        db.session.add(new_doctor)
-        db.session.commit()
-        return redirect(url_for('login'))
-    return render_template(template, form=form)
+    new_user = create_model_instance(
+        user,
+        commit=False,
+        email=form.email.data,
+        password=form.password.data,
+    )
+
+    create_model_instance(
+        Doctor,
+        commit=False,
+        surname=form.surname.data,
+        firstname=form.firstname.data,
+        patronymic=form.patronymic.data,
+        dob=form.dob.data,
+        education=form.education.data,
+        workplace=form.workplace.data,
+        practice_profile=form.practice_profile.data,
+        phone=form.phone.data,
+        photo_path=filename,
+        user=new_user,
+    )
+    return redirect(url_for('login'))
 
 
 @app.route('/signup-patient', methods=['GET', 'POST'])
+@transaction_atomic
 def signup_patient():
     template = 'signupPatient.html'
     form: PatientForm = PatientForm()
-    if form.validate_on_submit():
-        user = User.query.filter_by(username=form.email.data).first()
-        if user:
-            flash('User with this email address already exists.', 'error')
-            return render_template(template, form=form)
 
-        filename = save_file(form.photo.data)
+    if not form.validate_on_submit():
+        return render_form_template(form, template)
+    user = User.query.filter_by(username=form.email.data).first()
+    if user:
+        return render_form_flash_template(form, template, message='User with this email address already exists.')
 
-        new_user = User(
-            form.email.data,
-            form.password.data
-        )
+    filename = save_file(form.photo.data)
 
-        new_patient = Patient(
-            surname=form.surname.data,
-            firstname=form.firstname.data,
-            dob=form.dob.data,
-            region=form.region.data,
-            phone=form.phone.data,
-            photo_path=filename,
-            user=new_user
-        )
-        db.session.add(new_user)
-        db.session.add(new_patient)
-        db.session.commit()
-        return redirect(url_for('login'))
-    return render_template(template, form=form)
+    new_user = create_model_instance(
+        user,
+        commit=False,
+        email=form.email.data,
+        password=form.password.data,
+    )
+
+    create_model_instance(
+        Patient,
+        commit=False,
+        surname=form.surname.data,
+        firstname=form.firstname.data,
+        dob=form.dob.data,
+        region=form.region.data,
+        phone=form.phone.data,
+        photo_path=filename,
+        user=new_user
+    )
+    return redirect(url_for('login'))
 
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
+    user_id = int(user_id)
+    return User.query.get(user_id)
 
 
 @app.route('/diagnose', methods=['POST'])

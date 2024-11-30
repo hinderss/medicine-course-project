@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Something Went Wrong</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 10%;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #ff6347;
+        }
+        p {
+            font-size: 1.2em;
+            color: #666;
+        }
+        code {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            background: #eee;
+            border-radius: 5px;
+            color: #444;
+            font-size: 1em;
+            white-space: pre-wrap;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Oops! Something went wrong</h1>
+        <p>An unexpected error occurred. Please try again later.</p>
+        {% if error %}
+        <code>{{ error }}</code>
+        {% endif %}
+        <a href="/">Go Back to Home</a>
+    </div>
+</body>
+</html>
