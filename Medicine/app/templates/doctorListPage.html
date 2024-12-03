@@ -7,24 +7,29 @@
     <script src="{{ url_for('static', filename='/scripts/dropdownTrigger.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/menuTrigger.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/sidebarTrigger.js') }}"></script>
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/profileMenu.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/header2.css') }}">
+    <!-- <script src="{{ url_for('static', filename='/scripts/menuTrigger.js') }}"></script> -->
     <title>Doctor List</title>
 </head>
-<header class="doctorListHeader">
+<header class="header2">
     <div class="header container row centerH padding100pxW spacebtw">
-        <div class="container row small centerH" id="doctorListHeaderDropdownContainer">
+        <div class="container row small centerH" id="header2DropdownContainer">
             <!-- <img src="static/images/dropdown.svg" id="dropdown" class="marginW10px"> -->
-            <h4 class="thin" id="titleBlack">Все специалисты</h4>
+            <h4 class="thin">Все специалисты</h4>
         </div>
         <div class="container row small center">
             <a href="/index">
                 <img src="static/images/logo.svg" width="40px" class="marginW30px">
             </a>
         </div>
-        <div class="container row small" id="doctorListHeaderProfile">
+        <div class="container row small" id="header2Profile">
+            <a href="/menu">
+                <img src="static/images/profileLogo.svg" width="40px" class="marginW10px">
+            </a>
             <img src="static/images/menu.png" width="40px" id="menuIcon">
         </div>
-    </div>  
+    </div>
 </header>
 <body class="container marginTop120px">
     <div class="sidebar">
@@ -33,20 +38,32 @@
             <img src="static/images/closeBtn.svg" width="38px" height="38px" id="closeSidebarBtn">
         </div>
 
-        <form>
+        <form action="sosibupidorastija">
             <div class="doctorsSpecialty marginTop20px">
                 <div class="container row spacebtw">
                     <h5>специализация</h5>
                     <img src="static/images/dropdown.svg" id="doctorsSpecialtyDropdownImg" class="marginW10px">
                 </div>
                 <div id="doctorsSpecialtyDropdownList"  style="display: block;">
-                    {% for profile in practice_profiles %}
                     <div class="container row">
-                        <input type="radio" class="radioBtn" name="specialty" value="{{ profile }}" onclick="console.log(this.checked);this.checked = !this.checked;console.log(this.checked);"/>
-                        <label for="{{ profile }}">{{ profile }}</label>
-
+                        <input type="radio" class="radioBtn" name="specialty" value="narcology"/>
+                        <label for="narcology">нарколог</label>
                     </div>
-                    {% endfor %}
+
+                    <div class="container row">
+                        <input type="radio" class="radioBtn" name="specialty" value="urolog"/>
+                        <label for="urolog">уролог</label>
+                    </div>
+
+                    <div class="container row">
+                        <input type="radio" class="radioBtn" name="specialty" value="momolog"/>
+                        <label for="momolog">момолог</label>
+                    </div>
+
+                    <div class="container row">
+                        <input type="radio" class="radioBtn" name="specialty" value="ginekolog"/>
+                        <label for="ginekolog">гинеколог</label>
+                    </div>
                 </div>
             </div>
             <div class="experience marginTop20px">
@@ -56,23 +73,23 @@
                 </div>
                 <div id="experienceDropdownList"  style="display: block;">
                     <div class="container row">
-                        <input type="radio" class="radioBtn" name="experience" value="1"/>
-                        <label for="2days">от 1 года</label>
+                        <input type="checkbox" class="radioBtn" name="2days" value="2days"/>
+                        <label for="2days">от 2 дней</label>
                     </div>
 
                     <div class="container row">
-                        <input type="radio" class="radioBtn" name="experience" value="5"/>
-                        <label for="1week">от 5 лет</label>
+                        <input type="checkbox" class="radioBtn" name="1week" value="1week"/>
+                        <label for="1week">от 1 недели</label>
                     </div>
 
                     <div class="container row">
-                        <input type="radio" class="radioBtn" name="experience" value="7"/>
-                        <label for="1month">от 7 лет</label>
+                        <input type="checkbox" class="radioBtn" name="1month" value="1month"/>
+                        <label for="1month">от 1 месяца</label>
                     </div>
 
                     <div class="container row">
-                        <input type="radio" class="radioBtn" name="experience" value="10"/>
-                        <label for="1year">от 10 лет</label>
+                        <input type="checkbox" class="radioBtn" name="1year" value="1year"/>
+                        <label for="1year">от 1 года</label>
                     </div>
                 </div>
             </div>
@@ -83,23 +100,23 @@
                 </div>
                 <div id="pricesDropdownList"  style="display: block;">
                     <div class="container row">
-                        <input type="radio" class="radioBtn" name="price" value="below30"/>
-                        <label for="below30">до 30 BYN</label>
+                        <input type="checkbox" class="radioBtn" name="narcology" value="narcology"/>
+                        <label for="narcology">до 30 BYN</label>
                     </div>
 
                     <div class="container row">
-                        <input type="radio" class="radioBtn" name="price" value="30_50"/>
-                        <label for="30_50">30 - 50 BYN</label>
+                        <input type="checkbox" class="radioBtn" name="urolog" value="urolog"/>
+                        <label for="urolog">30 - 50 BYN</label>
                     </div>
 
                     <div class="container row">
-                        <input type="radio" class="radioBtn" name="price" value="50_80"/>
-                        <label for="50_80">50 - 80 BYN</label>
+                        <input type="checkbox" class="radioBtn" name="momolog" value="momolog"/>
+                        <label for="momolog">50 - 80 BYN</label>
                     </div>
 
                     <div class="container row">
-                        <input type="radio" class="radioBtn" name="price" value="above100"/>
-                        <label for="above100">от 100 BYN</label>
+                        <input type="checkbox" class="radioBtn" name="ginekolog" value="ginekolog"/>
+                        <label for="ginekolog">от 100 BYN</label>
                     </div>
                 </div>
             </div>
@@ -136,14 +153,15 @@
                 </div>
             </div>
 
-            <button id="sidebarSearchBtn">Показать врачей</button>
+            <button type="submit" id="sidebarSearchBtn">Показать 0 врачей</button>
         </form>
 
     </div>
 
+    <!-- profile menu -->
     {% if current_user.patient or current_user.doctor %}
     <div class="menu">
-        <div class="container row" id="menuProfileDiv">
+        <div id="menuProfileDiv">
             {% if current_user.patient %}
                 {% if current_user.patient.photo_path %}
                     <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}" width="40px">
@@ -169,7 +187,7 @@
         </div>
         <div class="menuItem active">
             <img src="static/images/doctorsList.svg" width="40px">
-            <h5>Наши специалисты</h5>
+            <a>Наши специалисты</a>
         </div>
         <div class="menuItem">
             <img src="static/images/appointments.svg" width="40px">
@@ -179,19 +197,25 @@
                 <a href="doctor_appointments">Записи</a>
             {% endif %}
         </div>
+        <div class="menuItem">
+            <img src="static/images/navigation.png" width="40px">
+            <a href="navigation">Навигация по БЗ</a>
+        </div>
+        <div class="menuItem">
+            <img src="static/images/blood_test.png" width="40px">
+            <a href="blood_test">Анализ крови</a>
+        </div>
         {% if current_user.patient %}
         <div class="menuItem">
             <img src="static/images/medicalCard.png" width="40px">
-            <a href="medicalCard">Медицинская карта</a>
-        </div>
-        {% endif %}
-        <div class="menuItem">
-            <img src="static/images/exit.svg" width="40px">
-            <a href="/logout">Выйти</a>
-        </div>
-
+            <a href="medical-card">Медицинская карта</a>
+        </div>     
+        {% endif %} 
+        
     </div>
     {% endif %}
+
+    
     <div class="header container row padding100pxW spacebtw">
         <div class="container row centerH" id="doctorListFilterContainer">
             <div class="container row small centerH"  id="doctorListFilterSubContainer">
@@ -279,7 +303,7 @@
         <div class="container row center" id="doctorsCount"><h5>{{ count }} врачей</h5></div>
         <div class="search-container">
             <form action="/search.pidor">
-<!--              <input type="text" placeholder="Search..." name="search">-->
+              <input type="text" placeholder="Search..." name="search">
               <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
             </form>
           </div>
@@ -315,79 +339,6 @@
     </div>    
 </body>
 
-<script>
-    // Функция для сбора данных из формы и отправки запроса
-    function submitForm() {
-        // Собираем значения из формы
-        var specialty = document.querySelector('input[name="specialty"]:checked').value;
-        var experience = [];
-        document.querySelectorAll('input[name^="experience"]:checked').forEach(function(checkbox) {
-            experience.push(checkbox.value);
-        });
-        var prices = [];
-        document.querySelectorAll('input[name^="price"]:checked').forEach(function(checkbox) {
-            prices.push(checkbox.value);
-        });
-        var rating = document.querySelector('input[name="rating"]:checked').value;
-
-        // Формируем URL-запрос
-        var url = "/doctor_list?specialty=" + specialty +
-                  '&experience=' + experience.join(',') +
-                  '&prices=' + prices.join(',') +
-                  '&rating=' + rating;
-
-        // Отправляем запрос
-        window.location.href = url;
-    }
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-    // Функция для извлечения параметров из URL
-    function getParameterByName(name, url) {
-        if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, '\\$&');
-        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, ' '));
-    }
-
-    // Извлекаем параметры из URL
-    var specialty = getParameterByName('specialty');
-    var experience = getParameterByName('experience');
-    var price = getParameterByName('price');
-    var rating = getParameterByName('rating');
-
-    // Устанавливаем флажки для специализации
-    if (specialty) {
-        document.querySelector('input[name="specialty"][value="' + specialty + '"]').checked = true;
-    }
-
-    // Устанавливаем флажки для опыта
-    if (experience) {
-        document.querySelector('input[name="experience"][value="' + experience + '"]').checked = true;
-    }
-
-    // Устанавливаем флажки для цен
-    if (price) {
-        document.querySelector('input[name="price"][value="' + price + '"]').checked = true;
-    }
-
-    // Устанавливаем флажки для рейтинга
-    if (rating) {
-        document.querySelector('input[name="rating"][value="' + rating + '"]').checked = true;
-    }
-
-    document.querySelectorAll('.radioBtn').forEach(function(n) {
-    n.addEventListener('click', this);
-    }, function({ target: t }) {
-    t.checked = !!(this[0] = this[0] === t ? null : t);
-    }.bind([]));
-});
-
-</script>
 <!-- <script>
     document.addEventListener("DOMContentLoaded", function() {
         const dropdownBtn = document.getElementById("doctorListSortContainer");

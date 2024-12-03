@@ -49,6 +49,15 @@ def welcome():
     return render_template('welcome.html')
 
 
+@app.route('/navigation')
+def navigate():
+    return render_template('navigation.html')
+
+@app.route('/blood_test')
+def blood_test():
+    return render_template('bloodTest.html')
+
+
 @app.route('/doctor_appointments')
 @login_required
 @doctor_required

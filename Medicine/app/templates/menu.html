@@ -1,54 +1,57 @@
-{% extends "base.html" %}
-{% block title %}Меню{% endblock %}
-{% block content %}
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% if current_user.patient %}
-  <title>{{ current_user.patient.name }} {{ current_user.patient.surname }}</title>
-  {% else %}
-  <title>{{ current_user.doctor.name }} {{ current_user.doctor.surname }}</title>
-  {% endif %}
-</head>
-<body>
-  {% if current_user.patient %}
-    {% if current_user.patient.photo_path %}
-    <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}" class="medicalCardProfilePhoto">
-    {% else %}
-    <img src="static/images/logo.svg" >
-    {% endif %}
-  {% else %}
-    {% if current_user.doctor.photo_path %}
-    <img src="{{ url_for('uploaded_file', filename=current_user.doctor.photo_path) }}" class="medicalCardProfilePhoto">
-    {% else %}
-    <img src="static/images/logo.svg" >
-    {% endif %}
-  {% endif %}
-  <main>
-    <section class="profile">
-      {% if current_user.patient %}
-      <h2>{{ current_user.patient.surname }} {{ current_user.patient.firstname }}</h2>
-      {% else %}
-      <h2>{{ current_user.doctor.surname }} {{ current_user.doctor.firstname }}</h2>
-      {% endif %}
-    </section>
-      <a href="mailto:{{ current_user.username }}">{{ current_user.username }}</a>
-    <section class="services">
-      {% if current_user.patient %}
-      <a href="/doctor_list">Наши специалисты</a><br>
-      <a href="#">Календарь</a><br>
-      <a href="/patient-appointments">Записи</a><br>
-      <a href="/medical-card">Медицинская карта</a><br>
-      <a href="#">Методы оплаты</a><br>
-      {% else %}
-      <br><br><br>
-      <a href="/doctor_appointments">Записи</a><br>
-      {% endif %}
-      <a href="#">Поддержка</a><br>
-      <a href="/logout">Выйти</a><br>
-    </section>
-  </main>
-</body>
-</html>
-{% endblock %}
+
+        <!-- profile menu -->
+        {% if current_user.patient or current_user.doctor %}
+        <div class="menu">
+            <div id="menuProfileDiv">
+                {% if current_user.patient %}
+                    {% if current_user.patient.photo_path %}
+                        <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}" width="40px">
+                    {% else %}
+                        <img src="static/images/profileLogo.svg" width="40px">
+                    {% endif %}
+                {% else %}
+                    {% if current_user.doctor.photo_path %}
+                        <img src="{{ url_for('uploaded_file', filename=current_user.doctor.photo_path) }}" width="40px">
+                    {% else %}
+                        <img src="static/images/profileLogo.svg" width="40px">
+                    {% endif %}
+                {% endif %}
+                <div>
+                    <h4 id="name">
+                        {% if current_user.patient %}
+                        <span>{{ current_user.patient.firstname }} {{ current_user.patient.surname }}</span>
+                        {% else %}
+                        <span>{{ current_user.doctor.firstname }} {{ current_user.doctor.surname }}</span>
+                        {% endif %}
+                    <h5 id="email">{{ current_user.username }}</h5>
+                </div>
+            </div>
+            <div class="menuItem">
+                <img src="static/images/doctorsList.svg" width="40px"  style="filter: invert(1);">
+                <a href="doctor_list">Наши специалисты</a>
+            </div>
+            <div class="menuItem">
+                <img src="static/images/appointments.svg" width="40px">
+                {% if current_user.patient %}
+                    <a href="patient-appointments">Записи</a>
+                {% else %}
+                    <a href="doctor_appointments">Записи</a>
+                {% endif %}
+            </div>
+            <div class="menuItem">
+                <img src="static/images/navigation.png" width="40px">
+                <a href="navigation">Навигация по БЗ</a>
+            </div>
+            <div class="menuItem active">
+                <img src="static/images/blood_test.png" width="40px">
+                <a href="blood_test">Анализ крови</a>
+            </div>
+            {% if current_user.patient %}
+            <div class="menuItem">
+                <img src="static/images/medicalCard.png" width="40px">
+                <a href="medical-card">Медицинская карта</a>
+            </div>
+            {% endif %}
+    
+        </div>
+        {% endif %}

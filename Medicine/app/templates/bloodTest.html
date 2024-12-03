@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анализ крови</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/profileMenu.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/agentResult.css') }}">
+    <script src="{{ url_for('static', filename='/scripts/menuTrigger.js') }}"></script>
+</head>
+<body>
+{% block content %}
+
+<header style="border-bottom: 1px black solid;">
+    <div class="header container d-flex justify-content-between align-items-center py-3">
+        <div class="d-flex align-items-center" style="width:200px;">
+            <h4 class="thin m-0" id="titleBlack">Анализ крови</h4>
+        </div>
+        <a href="/index">
+            <img src="static/images/logo.svg" width="40" alt="Logo">
+        </a>
+        <div class="d-flex align-items-center"  style="width:200px; display:flex; justify-content:flex-end;">
+            <a href="/menu">
+                <img src="static/images/profileLogo.svg" width="40" class="me-3" alt="Profile">
+            </a>
+            <img src="static/images/menu.png" width="40" id="menuIcon" alt="Menu">
+        </div>
+    </div>
+</header>
+    <main class="container my-5">
+        <form id="bloodAnalysisForm" class="row g-3" action="/blood_test">
+            <div class="col-md-4">
+                <label for="platelets" class="form-label">Тромбоциты</label>
+                <input type="number" class="form-control" id="platelets" placeholder="Введите значение"  name="platelets" required>
+            </div>
+            <div class="col-md-4">
+                <label for="erythrocytes" class="form-label">Эритроциты</label>
+                <input type="number" class="form-control" id="erythrocytes" placeholder="Введите значение"  name="erythrocytes" required>
+            </div>
+            <div class="col-md-4">
+                <label for="leukocytes" class="form-label">Лейкоциты</label>
+                <input type="number" class="form-control" id="leukocytes" placeholder="Введите значение"  name="leukocytes" required>
+            </div>
+            <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Получить результат</button>
+            </div>
+        </form>
+
+        <div id="resultSection" class="mt-5">
+            <h3>Возможные диагнозы:</h3>
+                <pre id="bloodTestResult">
+            Lorem Ipsum
+    "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+    "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed urna eget elit euismod porttitor. Curabitur porta vulputate dictum. Nullam vel ullamcorper massa. Nullam ac mi dui. Sed a interdum odio. Vivamus ultricies justo ac tellus semper, in pretium tellus pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec ac turpis tortor. Aliquam ut tortor a mauris vehicula efficitur id non felis. Phasellus dapibus tellus nulla, non pellentesque lacus consequat in.
+
+    Cras quis volutpat urna. Vestibulum at tortor a nibh ultrices tincidunt. In at mi vitae libero consectetur porttitor vel et nulla. Quisque id enim a dolor eleifend congue. Aenean tristique velit sit amet sem pulvinar imperdiet sit amet id tellus. Praesent congue aliquam velit ut ultricies. Nam ultrices, diam ut dapibus bibendum, lacus augue posuere magna, a vestibulum arcu urna ut felis. Nulla facilisi. Ut tellus est, lacinia sed purus in, tristique feugiat odio. Maecenas rutrum sollicitudin mauris eget accumsan. Suspendisse cursus, nibh sed placerat blandit, est elit imperdiet arcu, vulputate fringilla massa enim commodo augue. Cras nec orci vel tellus iaculis cursus nec eget tellus. Proin faucibus mauris euismod, dictum mi ac, fermentum erat. Integer sit amet quam eu lacus posuere faucibus. Mauris id justo pretium, molestie ligula ut, dignissim quam.
+
+    Mauris sed massa semper, accumsan arcu ac, pretium lorem. Fusce mollis tincidunt egestas. Proin ut lectus a enim porta molestie non sed lacus. Proin facilisis tellus ac tortor tempor vestibulum non auctor risus. Ut dapibus ornare lorem et facilisis. Nunc fermentum sagittis leo. Quisque et diam volutpat, dictum lacus vel, consectetur arcu. Cras metus metus, aliquam in metus non, ultricies placerat nisl. Pellentesque sit amet ultrices nisl. Sed dolor nisl, lacinia vitae posuere at, malesuada sit amet felis. Cras nec purus ac magna vehicula vulputate vitae id nisl. Integer vulputate vestibulum arcu, nec lobortis tellus lacinia in. Suspendisse dignissim dignissim arcu, in porttitor nisl vulputate id.
+
+    Nunc non fermentum eros. Praesent vel pharetra ex, ac viverra ex. Curabitur maximus risus suscipit vestibulum commodo. Aliquam faucibus metus lorem, non luctus est sodales sit amet. Etiam interdum nec augue vel gravida. Suspendisse sed libero vehicula augue egestas volutpat. Duis condimentum magna tellus, eget vulputate purus ornare nec. Nulla finibus ornare sem, ut suscipit lectus convallis tempor.
+
+                    Aliquam tellus nisl, sodales aliquam eleifend interdum, rutrum ut lectus. Ut condimentum eros eget mi fringilla pulvinar. Duis varius ex lectus, ornare viverra odio laoreet et. Maecenas mattis venenatis massa, tincidunt sagittis lorem laoreet sed. Etiam consectetur libero a tortor elementum, eget mollis tellus semper. Cras porttitor sollicitudin ex, id cursus quam elementum ut. Aliquam non interdum tortor. Nunc fermentum eu libero non accumsan. Nulla quis mattis ipsum.
+                </pre>
+        </div>
+    </div>
+    </main>
+
+        <!-- profile menu -->
+    {% if current_user.patient or current_user.doctor %}
+    <div class="menu">
+        <div id="menuProfileDiv">
+            {% if current_user.patient %}
+                {% if current_user.patient.photo_path %}
+                    <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}" width="40px">
+                {% else %}
+                    <img src="static/images/profileLogo.svg" width="40px">
+                {% endif %}
+            {% else %}
+                {% if current_user.doctor.photo_path %}
+                    <img src="{{ url_for('uploaded_file', filename=current_user.doctor.photo_path) }}" width="40px">
+                {% else %}
+                    <img src="static/images/profileLogo.svg" width="40px">
+                {% endif %}
+            {% endif %}
+            <div>
+                <h4 id="name">
+                    {% if current_user.patient %}
+                    <span>{{ current_user.patient.firstname }} {{ current_user.patient.surname }}</span>
+                    {% else %}
+                    <span>{{ current_user.doctor.firstname }} {{ current_user.doctor.surname }}</span>
+                    {% endif %}
+                <h5 id="email">{{ current_user.username }}</h5>
+            </div>
+        </div>
+        <div class="menuItem">
+            <img src="static/images/doctorsList.svg" width="40px"  style="filter: invert(1);">
+            <a href="doctor_list">Наши специалисты</a>
+        </div>
+        <div class="menuItem">
+            <img src="static/images/appointments.svg" width="40px">
+            {% if current_user.patient %}
+                <a href="patient-appointments">Записи</a>
+            {% else %}
+                <a href="doctor_appointments">Записи</a>
+            {% endif %}
+        </div>
+        <div class="menuItem">
+            <img src="static/images/navigation.png" width="40px">
+            <a href="navigation">Навигация по БЗ</a>
+        </div>
+        <div class="menuItem active">
+            <img src="static/images/blood_test.png" width="40px">
+            <a href="blood_test">Анализ крови</a>
+        </div>
+        {% if current_user.patient %}
+        <div class="menuItem">
+            <img src="static/images/medicalCard.png" width="40px">
+            <a href="medical-card">Медицинская карта</a>
+        </div>
+        {% endif %}
+
+    </div>
+    {% endif %}
+{% endblock %}
+
+</body>
+</html>

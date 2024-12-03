@@ -585,13 +585,6 @@ input, select, textarea {
   text-transform: uppercase;
 }
 
-#doctorListHeaderDropdownContainer{
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 33%;
-}
-
 
 #doctorListPageDoctors{
   display: grid;
@@ -669,11 +662,6 @@ input, select, textarea {
   width: 45%;
 }
 
-#doctorListHeaderDropdownContainer{
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
 
 #doctorListBodyFilterContainer{
   display: flex;
@@ -704,58 +692,6 @@ input, select, textarea {
 #dropdownImg{
   width: 20px;
   height: auto;
-}
-
-.menu{
-  display: none;
-  position: fixed;
-  top: 80px;
-  right: 1%;
-  background-color: white;
-  width: 300px;
-  height: 700px;
-  z-index: 999;
-  padding: 20px;
-
-  border-radius: 20px;
-}
-
-#menuProfileDiv{
-    margin: 10px 0;
-  padding: 10px;
-  line-height: 1;
-}
-
-#menuProfileDiv img{
-  margin-right: 15px;
-
-}
-
-.menuItem{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 70px;
-  border-radius: 11px;
-
-
-  margin: 10px 0;
-  padding: 10px;
-  background-color: white;
-}
-
-.menuItem img{
-  margin-right: 15px;
-}
-
-
-.menuItem a{
-  color: #000;
-}
-
-.menuItem.active{
-  background-color: #6941C6;
-  color: white;
 }
 
 .sidebar {
@@ -813,18 +749,6 @@ input, select, textarea {
   height: 60px;
   display: flex;
   margin-top: 10px;
-}
-
-.doctorListHeader{
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 70px;
-  background-color: white;
-  background-size: cover;
-
-  border-bottom: 1px black solid;
-  z-index: 999;
 }
 
 .link{
@@ -1039,6 +963,10 @@ input, select, textarea {
 
 #diagnosticsButtonDiv{
   height: 80vh !important;
+}
+
+#patient_appointments_doctor_photo{
+    border-radius: 50%;
 }
 
 #diagnosticsButton{
@@ -1651,7 +1579,8 @@ Bounce
 }
 
 .search-container input{
-  border:   #7C59CD solid 1px;
+  width: 300px;
+  border:   #3e3e3e solid 1px;
 }
 
 .search-container button {
@@ -1764,36 +1693,31 @@ Bounce
   }
 
   
-.create-line:before{
-  content: " ";
-  background: gray;
-  width: 45vw;
-  height: 1px;
-  /* располагаем линию сверху от текста */
-  bottom: 10px;
-  right: 1px;
-  /* включаем абсолютное позиционирование относительно блока с relative */
-  position: absolute;
+  .create-line:before{
+    content: " ";
+    background: gray;
+    width: 45vw;
+    height: 1px;
+    /* располагаем линию сверху от текста */
+    bottom: 10px;
+    right: 1px;
+    /* включаем абсолютное позиционирование относительно блока с relative */
+    position: absolute;
+  }
+
+  .create-line:after{ 
+    content: " ";
+    background: gray;
+    width: 45vw;
+    height: 1px;
+    left: -1px;
+    /* размещаем линию снизу и справа*/
+    bottom: 10px;
+    /* включаем абсолютное позиционирование относительно блока с relative */
+    position: absolute;
+  }
 }
 
-.create-line:after{ 
-  content: " ";
-  background: gray;
-  width: 45vw;
-  height: 1px;
-  left: -1px;
-  /* размещаем линию снизу и справа*/
-  bottom: 10px;
-  /* включаем абсолютное позиционирование относительно блока с relative */
-  position: absolute;
-}
-}
-
-
-#doctorListHeaderProfile{
-  display: flex;
-  justify-content: flex-end;
-}
 
 @media screen and (max-width: 1100px) {
   #loginDiv{
@@ -2020,14 +1944,4 @@ Bounce
   .medicalCardProfilePhoto{
     display: none;
   }
-}
-
-#patient_appointments_doctor_photo {
-    border-radius: 50%;
-    min-width: 250px !important;
-  min-height: 250px !important;
-  width: 250px !important;
-  height: 250px !important;
-  border-radius: 50%;
-  object-fit: cover;
 }

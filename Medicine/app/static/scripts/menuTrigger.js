@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const menuBtn = document.querySelector("#menuIcon"); // Получаем изображение меню
     const menu = document.querySelector(".menu"); // Получаем само меню
 
+    
     // Показываем или скрываем меню при нажатии на изображение меню
     menuBtn.addEventListener("click", function() {
         if (menu.style.display === "block") {

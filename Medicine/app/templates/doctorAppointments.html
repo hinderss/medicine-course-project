@@ -5,64 +5,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/doctor_appointments_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/header2.css') }}">
     <script src="{{ url_for('static', filename='scripts/doctorAppointmentsBehaviour.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/profileMenu.css') }}">
 
     <title>Записи</title>
 </head>
-<header class="doctorListHeader">
+<header class="header2">
     <div class="header container row centerH padding100pxW spacebtw">
-        <div class="container row small centerH" id="doctorListHeaderDropdownContainer">
+        <div class="container row small centerH" id="header2DropdownContainer">
             <!-- <img src="static/images/dropdown.svg" id="dropdown" class="marginW10px"> -->
-            <h4 class="thin" id="titleBlack">Записи</h4>
+            <h4 class="regular">Записи</h4>
         </div>
         <div class="container row small center">
             <a href="/index">
                 <img src="static/images/logo.svg" width="40px" class="marginW30px">
             </a>
         </div>
-        <div class="container row small" id="doctorListHeaderProfile">
+        <div class="container row small" id="header2Profile">
+            <a href="/menu">
+                <img src="static/images/profileLogo.svg" width="40px" class="marginW10px">
+            </a>
             <img src="static/images/menu.png" width="40px" id="menuIcon">
         </div>
     </div>
 </header>
 <body class="container marginTop120px">
+    <!-- profile menu -->
+    {% if current_user.patient or current_user.doctor %}
     <div class="menu">
-        <div class="container row" id="menuProfileDiv">
-            {% if current_user.doctor.photo_path %}
-                <img src="{{ url_for('uploaded_file', filename=current_user.doctor.photo_path) }}" width="40px">
+        <div id="menuProfileDiv">
+            {% if current_user.patient %}
+                {% if current_user.patient.photo_path %}
+                    <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}" width="40px">
+                {% else %}
+                    <img src="static/images/profileLogo.svg" width="40px">
+                {% endif %}
             {% else %}
-                <img src="static/images/profileLogo.svg" width="40px">
+                {% if current_user.doctor.photo_path %}
+                    <img src="{{ url_for('uploaded_file', filename=current_user.doctor.photo_path) }}" width="40px">
+                {% else %}
+                    <img src="static/images/profileLogo.svg" width="40px">
+                {% endif %}
             {% endif %}
             <div>
                 <h4 id="name">
-                {% if current_user.patient %}
-                <span>{{ current_user.patient.firstname }} {{ current_user.patient.surname }}</span>
-                {% else %}
-                <span>{{ current_user.doctor.firstname }} {{ current_user.doctor.surname }}</span>
-                {% endif %}
+                    {% if current_user.patient %}
+                    <span>{{ current_user.patient.firstname }} {{ current_user.patient.surname }}</span>
+                    {% else %}
+                    <span>{{ current_user.doctor.firstname }} {{ current_user.doctor.surname }}</span>
+                    {% endif %}
                 <h5 id="email">{{ current_user.username }}</h5>
             </div>
         </div>
         <div class="menuItem">
-            <img src="static/images/doctorsList.svg" width="40px" style="filter: invert(1);">
+            <img src="static/images/doctorsList.svg" width="40px"  style="filter: invert(1);">
             <a href="doctor_list">Наши специалисты</a>
         </div>
-        <div class="menuItem active">
-            <img src="static/images/appointments.svg" width="40px" style="filter: invert(1);">
-            <a href="doctor_appointments">Записи</a>
+        <div class="menuItem  active">
+            <img src="static/images/appointments.svg" width="40px">
+            {% if current_user.patient %}
+                <a href="patient-appointments">Записи</a>
+            {% else %}
+                <a href="doctor_appointments">Записи</a>
+            {% endif %}
         </div>
         <div class="menuItem">
-            <img src="static/images/exit.svg" width="40px">
-            <a href="/logout">Выйти</a>
+            <img src="static/images/navigation.png" width="40px">
+            <a href="navigation">Навигация по БЗ</a>
         </div>
-        <!-- <div class="menuItem">
+        <div class="menuItem">
+            <img src="static/images/blood_test.png" width="40px">
+            <a href="blood_test">Анализ крови</a>
+        </div>
+        {% if current_user.patient %}
+        <div class="menuItem">
             <img src="static/images/medicalCard.png" width="40px">
-            <a href="medicalCard">Медицинская карта</a>
-        </div> -->
+            <a href="medical-card">Медицинская карта</a>
+        </div>     
+        {% endif %} 
+           
     </div>
+    {% endif %}
+
+
     <div class="container center">
         <div id="appointmentsTitle">
-            <h2>Записи</h2>
             <h3>{{ current_user.doctor.surname }} {{ current_user.doctor.firstname }} {{ current_user.doctor.patronymic }} ({{ current_user.doctor.practice_profile }})</h3>
         </div>
     </div>
