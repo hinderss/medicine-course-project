@@ -47,9 +47,25 @@ def welcome():
 def navigate():
     return render_template('navigation.html')
 
+
+@app.route('/common_blood_test')
+def common_blood_test():
+    return render_template('commonBloodTest.html')
+
+
+@app.route('/hormone_blood_test')
+def hormone_blood_test():
+    return render_template('hormoneBloodTest.html')
+
+
 @app.route('/blood_test')
 def blood_test():
     return render_template('bloodTest.html')
+
+
+@app.route('/recommendation')
+def recommendation():
+    return render_template('recommendation.html')
 
 
 @app.route('/doctor_appointments')
