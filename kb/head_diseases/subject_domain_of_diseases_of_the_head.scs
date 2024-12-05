@@ -11,6 +11,9 @@ subject_domain_of_head_diseases
 <- sc_node_struct;
 <- structure;
 
+<= nrel_private_subject_domain:
+	subject_domain_of_diseases;
+
 -> rrel_maximum_studied_object_class:
 	concept_head_disease;
 
@@ -29,7 +32,7 @@ subject_domain_of_head_diseases
 	concept_stroke;
 	concept_encephalopathy;
 	concept_hydrocephalus;
-  concept_vegeto_vascular_dystonia_of_brain_vessels;
+  	concept_vegeto_vascular_dystonia_of_brain_vessels;
 	concept_parkinsons_disease;
 	concept_aneurysm;
 	concept_nivrit;

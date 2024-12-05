@@ -12,7 +12,7 @@ subject_domain_of_respiratory_diseases
 <- structure;
 
 <= nrel_private_subject_domain:
-	section_subject_domain_of_respiratory_diseases;
+	subject_domain_of_diseases;
 
 -> rrel_maximum_studied_object_class:
 	concept_disease_of_respiratory_system;
@@ -27,8 +27,4 @@ subject_domain_of_respiratory_diseases
     concept_lung_cancer;
     concept_pharyngitis;
     concept_pneumonia;
-    concept_allergic_rhinitis;
-
--> rrel_explored_relation:
-	nrel_symptoms;
-	nrel_causes_of_occurrence;;
+    concept_allergic_rhinitis;;

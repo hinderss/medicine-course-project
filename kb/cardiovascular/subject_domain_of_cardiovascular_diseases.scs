@@ -1,0 +1,24 @@
+subject_domain_of_cardiovascular_diseases
+
+=> nrel_main_idtf:
+	[Предметная область сердечно-сосудистых болезней]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Subject domain of cardiovascular diseases]
+	(* <- lang_en;; *);
+
+<- subject_domain;
+<- sc_node_struct;
+<- structure;
+
+<= nrel_private_subject_domain:
+	subject_domain_of_diseases;
+
+-> rrel_maximum_studied_object_class:
+	concept_cardiovascular_diseases;
+
+-> rrel_not_maximum_studied_object_class:
+	concept_arrhythmia;
+	concept_hypertension;
+	concept_coronary_artery_disease;
+	concept_atherosclerosis;;

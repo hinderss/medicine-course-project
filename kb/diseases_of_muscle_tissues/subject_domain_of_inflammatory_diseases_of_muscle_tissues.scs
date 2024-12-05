@@ -12,7 +12,7 @@ subject_domain_of_inflammatory_diseases_of_muscle_tissues
 <- structure;
 
 <= nrel_private_subject_domain:
-	section_subject_domain_of_inflammatory_diseases_of_muscle_tissues;
+	subject_domain_of_diseases;
 
 -> rrel_maximum_studied_object_class:
 	concept_inflammatory_disease_of_muscle_tissues;
@@ -25,8 +25,4 @@ subject_domain_of_inflammatory_diseases_of_muscle_tissues
     concept_miozit;
     concept_polymyalgia_rheumatica;
     concept_neuralgic_amyotrophy;
-    concept_rheumatoid_arthritis;
-
--> rrel_explored_relation:
-	nrel_symptom;
-	nrel_causes_of_occurrence;;
+    concept_rheumatoid_arthritis;;

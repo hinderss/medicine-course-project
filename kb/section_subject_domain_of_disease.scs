@@ -17,9 +17,10 @@ section_subject_domain_of_diseases
 <= nrel_section_decomposition:
 	{
 		section_subject_domain_of_diseases_of_the_gastrointestinal_tract;
-		section_subject_domain_of_headaches;
+		section_subject_domain_of_head_diseases;
 		section_subject_domain_of_inflammatory_diseases_of_muscle_tissues;
-		section_subject_domain_of_respiratory_diseases
+		section_subject_domain_of_respiratory_diseases;
+		section_subject_domain_of_cardiovascular_diseases
 	};
 
 <- non_atomic_section;;
@@ -29,5 +30,5 @@ section_subject_domain_of_diseases
 -> rrel_key_sc_element:
 	subject_domain_of_diseases;
 	concept_disease;
-	nrel_symptoms;
+	nrel_symptom;
 	nrel_causes_of_occurrence;;

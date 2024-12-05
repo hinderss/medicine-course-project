@@ -13,11 +13,10 @@ section_subject_domain_of_head_diseases
 	[A section of the IMS knowledge base describing head diseases, their symptoms and causes]
 	(* <- lang_en;; *);	
 
-<- atomic_section;
-<- sc_model_of_knowledge_base;;
+<- atomic_section;;
 
 
 section_subject_domain_of_head_diseases
 -> rrel_key_sc_element:
-  subject_domain_of_head_diseases;
+  	subject_domain_of_head_diseases;
 	concept_head_disease;;
