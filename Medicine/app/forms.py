@@ -3,7 +3,7 @@ from flask_wtf.file import FileRequired, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.fields.choices import SelectField, RadioField
 from wtforms.fields.datetime import DateField, TimeField
-from wtforms.fields.numeric import IntegerField
+from wtforms.fields.numeric import IntegerField, FloatField
 from wtforms.fields.simple import FileField, TextAreaField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, InputRequired, Optional, ValidationError
 from app.validators import Phone, FutureDateValidator, FutureTimeValidator, PastDateValidator
@@ -198,3 +198,54 @@ class DoctorScheduleForm(FlaskForm):
     sunday_duration = IntegerField('продолжительность(мин)', validators=[Optional()])
 
     submit = SubmitField('Сохранить')
+
+
+class QueryForm(FlaskForm):
+    query = StringField("Поиск", validators=[DataRequired(message="Введите поисковой запрос")])
+
+    submit = SubmitField('Поиск')
+
+
+RecommendationForm = QueryForm
+
+
+class NavigationForm(QueryForm):
+    LANGUAGES = [('rus', 'Русский'), ('eng', 'Английский')]
+    language = SelectField('Язык', choices=LANGUAGES, validators=[Optional()])
+
+
+class CommonBloodForm(FlaskForm):
+    erythrocytes = FloatField("Эритроциты", validators=[DataRequired(message="Введите эритроциты")])
+    leukocytes = FloatField("Лейкоциты", validators=[DataRequired(message="Введите лейкоциты")])
+    platelets = FloatField("Тромбоциты", validators=[DataRequired(message="Введите тромбоциты")])
+
+    submit = SubmitField('Получить результат')
+
+
+class MicronutrientsBloodForm(FlaskForm):
+    calcium = FloatField("Кальций", validators=[DataRequired(message="Введите кальций")])
+    magnium = FloatField("Магний", validators=[DataRequired(message="Введите магний")])
+    ferrum = FloatField("Железо", validators=[DataRequired(message="Введите железо")])
+
+    submit = SubmitField('Получить результат')
+
+
+class VitaminBloodForm(FlaskForm):
+    vitamin_e = FloatField("Витамин E", validators=[DataRequired(message="Введите значение витамина E")])
+    vitamin_d = FloatField("Витамин D", validators=[DataRequired(message="Введите значение витамина D")])
+    vitamin_k = FloatField("Витамин K", validators=[DataRequired(message="Введите значение витамина K")])
+    vitamin_c = FloatField("Витамин C", validators=[DataRequired(message="Введите значение витамина C")])
+    vitamin_b1 = FloatField("Витамин B1", validators=[DataRequired(message="Введите значение витамина B1")])
+    vitamin_b2 = FloatField("Витамин B2", validators=[DataRequired(message="Введите значение витамина B2")])
+    vitamin_b9 = FloatField("Витамин B9", validators=[DataRequired(message="Введите значение витамина B9")])
+    vitamin_b12 = FloatField("Витамин B12", validators=[DataRequired(message="Введите значение витамина B12")])
+    vitamin_a = FloatField("Витамин A", validators=[DataRequired(message="Введите значение витамина A")])
+    vitamin_b6 = FloatField("Витамин B6", validators=[DataRequired(message="Введите значение витамина B6")])
+    submit = SubmitField('Получить результат')
+
+
+class HormonesBloodForm(FlaskForm):
+    tsh = FloatField("Тиреотропный гормон", validators=[DataRequired(message="Введите значение")])
+    fsh = FloatField("Фолликулостимулирующий гормон", validators=[DataRequired(message="Введите значение")])
+    lh = FloatField("Лютеинизирующий гормон", validators=[DataRequired(message="Введите значение")])
+    submit = SubmitField('Получить результат')

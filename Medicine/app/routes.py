@@ -1,17 +1,19 @@
+import json
 from datetime import datetime, timedelta
 
 from sqlalchemy import func
 
-from app import disease_definer, PER_PAGE, MAX_DURATION, WEEKDAYS
+from app import disease_definer, PER_PAGE, MAX_DURATION, WEEKDAYS, ag, diseases_json, endocrine_system_json
 from app.decorators import doctor_required, patient_required, transaction_atomic
 from app.exceptions import *
 from app.helpers import save_file
 from flask import redirect, url_for, request, send_from_directory
 from flask_login import login_user, login_required, logout_user, current_user
 from app import app, login_manager
-from app.forms import LoginForm, DoctorForm, PatientForm, MedicalCardForm, AppointmentForm, DoctorScheduleForm
+from app.forms import LoginForm, DoctorForm, PatientForm, MedicalCardForm, AppointmentForm, DoctorScheduleForm, \
+    NavigationForm, RecommendationForm, CommonBloodForm, MicronutrientsBloodForm, VitaminBloodForm, HormonesBloodForm
 from app.models import User, Doctor, Patient, MedicalCard, Appointment, Schedule
-from app.serializers import doctors_schema
+from app.serializers import doctors_schema, LoginSerializer, RegisterSerializer, ApiSerializer, BloodSerializer
 from app import services
 from app.shortcuts import *
 from app.success import HttpSuccess
@@ -43,19 +45,159 @@ def index():
     )
 
 
-@app.route('/welcome')
-@login_required
-def welcome():
-    return render_template('welcome.html')
-
-
-@app.route('/navigation')
+@app.route('/navigation', methods=['GET', 'POST'])
 def navigate():
-    return render_template('navigation.html')
+    template = 'navigation.html'
+    form: NavigationForm = NavigationForm()
+    if not form.validate_on_submit():
+        return render_form_template(form, template)
+
+    agent_output = ag.nav(form.query.data, form.language.data)
+    if not ag.success():
+        return render_form_flash_template(form, template, message='Agent error')
+    result = ApiSerializer().load(agent_output)
+
+    if result.get("message") == "Not Found":
+        return render_form_flash_template(form, template, message='Agent says: Not Found.')
+
+    # return render_form_template(form, template)
+    return render_template(
+        template,
+        form=form,
+        answer=result.get("message"),
+    )
+
+
+@app.route('/common_blood_test', methods=['GET', 'POST'])
+def common_blood_test():
+    template = 'commonBloodTest.html'
+    form: CommonBloodForm = CommonBloodForm()
+    if not form.validate_on_submit():
+        return render_form_template(form, template)
+
+    agent_output = ag.blood(wbc=form.leukocytes.data, rbc=form.erythrocytes.data, platelets=form.platelets.data)
+    if not ag.success():
+        return render_form_flash_template(form, template, message='Agent error')
+    result = BloodSerializer().load(agent_output)
+
+    if not result.get("message"):
+        return render_template(template, form=form, good=True)
+
+    if result.get("message") == "Not Found":
+        return render_form_flash_template(form, template, message='Agent says: Not Found.')
+
+    answers = [diseases_json[disease] for disease in result.get("message")]
+
+    return render_template(template, form=form, answers=answers)
+
+
+@app.route('/micronutrients_blood_test', methods=['GET', 'POST'])
+def micronutrients_blood_test():
+    template = 'micronutrientsBloodTest.html'
+    form: MicronutrientsBloodForm = MicronutrientsBloodForm()
+    if not form.validate_on_submit():
+        return render_form_template(form, template)
+
+    agent_output = ag.micronutrients_blood(ca=form.calcium.data, mg=form.magnium.data, fe=form.ferrum.data)
+    if not ag.success():
+        return render_form_flash_template(form, template, message='Agent error')
+    result = BloodSerializer().load(agent_output)
+
+    if not result.get("message"):
+        return render_template(template, form=form, good=True)
+
+    if result.get("message") == "Not Found":
+        return render_form_flash_template(form, template, message='Agent says: Not Found.')
+
+    return render_template(template, form=form, answers=result.get("message"))
+
+
+@app.route('/vitamin_blood_test', methods=['GET', 'POST'])
+def vitamin_blood_test():
+    template = 'vitaminBloodTest.html'
+    form: VitaminBloodForm = VitaminBloodForm()
+    if not form.validate_on_submit():
+        return render_form_template(form, template)
+
+    agent_output = ag.vitamin_blood(
+        vitamin_e=form.vitamin_e.data,
+        vitamin_d=form.vitamin_d.data,
+        vitamin_k=form.vitamin_k.data,
+        vitamin_c=form.vitamin_c.data,
+        vitamin_b1=form.vitamin_b1.data,
+        vitamin_b2=form.vitamin_b2.data,
+        vitamin_b9=form.vitamin_b9.data,
+        vitamin_b12=form.vitamin_b12.data,
+        vitamin_a=form.vitamin_a.data,
+        vitamin_b6=form.vitamin_b6.data,
+    )
+    if not ag.success():
+        return render_form_flash_template(form, template, message='Agent error')
+    result = BloodSerializer().load(agent_output)
+
+    if not result.get("message"):
+        return render_template(template, form=form, good=True)
+
+    if result.get("message") == "Not Found":
+        return render_form_flash_template(form, template, message='Agent says: Not Found.')
+
+    return render_template(template, form=form, answers=result.get("message"))
+
+
+@app.route('/hormone_blood_test', methods=['GET', 'POST'])
+def hormone_blood_test():
+    template = 'hormoneBloodTest.html'
+    form: HormonesBloodForm = HormonesBloodForm()
+    if not form.validate_on_submit():
+        return render_form_template(form, template)
+
+    agent_output = ag.hormones_blood(tsh=form.tsh.data, fsh=form.fsh.data, lh=form.lh.data)
+    if not ag.success():
+        return render_form_flash_template(form, template, message='Agent error')
+    result = BloodSerializer().load(agent_output)
+
+    if not result.get("message"):
+        return render_template(template, form=form, good=True)
+
+    if result.get("message") == "Not Found":
+        return render_form_flash_template(form, template, message='Agent says: Not Found.')
+
+    answers = [endocrine_system_json[disease] for disease in result.get("message")]
+
+    return render_template(template, form=form, answers=answers)
+
 
 @app.route('/blood_test')
 def blood_test():
     return render_template('bloodTest.html')
+
+
+@app.route('/recommendation', methods=['GET', 'POST'])
+def recommendation():
+    template = 'recommendation.html'
+    form: RecommendationForm = RecommendationForm()
+    if not form.validate_on_submit():
+        return render_form_template(form, template)
+
+    agent_output = ag.rec(form.query.data)
+    if not ag.success():
+        return render_form_flash_template(form, template, message='Agent error')
+    result = ApiSerializer().load(agent_output)
+
+    if result.get("message") == "Not Found":
+        return render_form_flash_template(form, template, message='Agent says: Not Found.')
+
+    return render_template(
+        template,
+        form=form,
+        answer=result.get("message"),
+    )
+
+
+@app.route('/welcome')
+@login_required
+def welcome():
+    return render_template('welcome.html')
 
 
 @app.route('/doctor_appointments')
@@ -359,6 +501,14 @@ def login():
     if (not user) or (not user.verify_password(password)):
         return render_form_flash_template(form, template, message='Invalid username or password. Please try again.')
 
+    agent_output = ag.auth(form.username.data, form.password.data)
+    if not ag.success():
+        return render_form_flash_template(form, template, message='Agent error')
+    result = LoginSerializer().load(agent_output)
+
+    if result.get("status") != "valid":
+        return render_form_flash_template(form, template, message='Agent says: Invalid username or password.')
+
     login_user(user)
     return redirect(url_for('index'))
 
@@ -391,9 +541,9 @@ def signup_doctor():
     filename = save_file(form.photo.data)
 
     new_user = create_model_instance(
-        user,
+        User,
         commit=False,
-        email=form.email.data,
+        username=form.email.data,
         password=form.password.data,
     )
 
@@ -411,7 +561,18 @@ def signup_doctor():
         photo_path=filename,
         user=new_user,
     )
-    return redirect(url_for('login'))
+
+    agent_output = ag.reg(form.email.data, form.password.data)
+    if not ag.success():
+        return render_form_flash_template(form, template, message='Agent error')
+    result = RegisterSerializer().load(agent_output)
+    print(result)
+
+    if result.get("status") == "exists":
+        return render_form_flash_template(form, template, message='Agent says: User exists.')
+    if result.get("status") == "created":
+        return redirect(url_for('login'))
+    return render_form_flash_template(form, template, message='Agent error')
 
 
 @app.route('/signup-patient', methods=['GET', 'POST'])
@@ -429,9 +590,9 @@ def signup_patient():
     filename = save_file(form.photo.data)
 
     new_user = create_model_instance(
-        user,
+        User,
         commit=False,
-        email=form.email.data,
+        username=form.email.data,
         password=form.password.data,
     )
 
@@ -446,7 +607,18 @@ def signup_patient():
         photo_path=filename,
         user=new_user
     )
-    return redirect(url_for('login'))
+
+    agent_output = ag.reg(form.email.data, form.password.data)
+    if not ag.success():
+        return render_form_flash_template(form, template, message='Agent error')
+    result = RegisterSerializer().load(agent_output)
+    print(result)
+
+    if result.get("status") == "exists":
+        return render_form_flash_template(form, template, message='Agent says: User exists.')
+    if result.get("status") == "created":
+        return redirect(url_for('login'))
+    return render_form_flash_template(form, template, message='Agent error')
 
 
 @login_manager.user_loader

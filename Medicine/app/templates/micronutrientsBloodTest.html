@@ -1,0 +1,33 @@
+{% extends "bloodBase.html" %}
+{% block title %}Микроэлементы{% endblock %}
+{% block header_block %}Анализ крови на микроэлементы{% endblock %}
+{% block form_block %}
+    <form id="bloodAnalysisForm" class="row g-3" action="/micronutrients_blood_test" method="POST">
+        {{ form.csrf_token }}
+        <div class="col-md-4">
+            {{ form.calcium.label }}
+            {{ form.calcium(class="form-control", placeholder="Введите значение", value=form.calcium.data or '') }}
+        </div>
+        <div class="col-md-4">
+            {{ form.magnium.label }}
+            {{ form.magnium(class="form-control", placeholder="Введите значение", value=form.magnium.data or '') }}
+        </div>
+        <div class="col-md-4">
+            {{ form.ferrum.label }}
+            {{ form.ferrum(class="form-control", placeholder="Введите значение", value=form.ferrum.data or '') }}
+        </div>
+        <div class="col-md-12 text-center">
+            {{ form.submit(class="btn btn-primary", id="submitBtn") }}
+        </div>
+    </form>
+{% endblock %}
+
+{% block answer_block %}
+<ul>
+    {% for answer in answers %}
+    <li>
+      {{ answer }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

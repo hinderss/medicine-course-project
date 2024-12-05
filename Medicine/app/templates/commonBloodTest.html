@@ -1,0 +1,33 @@
+{% extends "bloodBase.html" %}
+{% block title %}ОАК{% endblock %}
+{% block header_block %}Общий анализ крови{% endblock %}
+{% block form_block %}
+    <form id="bloodAnalysisForm" class="row g-3" action="/common_blood_test" method="POST">
+        {{ form.csrf_token }}
+        <div class="col-md-4">
+            {{ form.platelets.label }}
+            {{ form.platelets(class="form-control", placeholder="Введите значение", value=form.platelets.data or '') }}
+        </div>
+        <div class="col-md-4">
+            {{ form.erythrocytes.label }}
+            {{ form.erythrocytes(class="form-control", placeholder="Введите значение", value=form.erythrocytes.data or '') }}
+        </div>
+        <div class="col-md-4">
+            {{ form.leukocytes.label }}
+            {{ form.leukocytes(class="form-control", placeholder="Введите значение", value=form.leukocytes.data or '') }}
+        </div>
+        <div class="col-md-12 text-center">
+            {{ form.submit(class="btn btn-primary", id="submitBtn") }}
+        </div>
+    </form>
+{% endblock %}
+
+{% block answer_block %}
+<ul>
+    {% for answer in answers %}
+    <li>
+      {{ answer }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

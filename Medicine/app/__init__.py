@@ -1,3 +1,4 @@
+import json
 import os
 import datetime
 
@@ -6,6 +7,8 @@ from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from dotenv import load_dotenv
+
+from app.agent import AgentsClient
 from disease_definer import DiseaseDefiner
 
 load_dotenv()
@@ -17,10 +20,15 @@ app.config['UPLOAD_FOLDER'] = os.getenv('UPLOAD_FOLDER')
 
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
+ag = AgentsClient(os.getenv('AGENTS_URL'))
 
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 disease_definer = DiseaseDefiner(os.getenv('DISEASES_XML'))
+with open('diseases.json', 'r', encoding='utf-8') as file:
+    diseases_json = json.load(file)
+with open('endocrine_system.json', 'r', encoding='utf-8') as file:
+    endocrine_system_json = json.load(file)
 TODAY = datetime.date.today()
 MAX_DURATION = 1440
 PER_PAGE = 4

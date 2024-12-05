@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Анализы крови</title>
+    <title>{% block title %}{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='style/profileMenu.css') }}">
@@ -11,11 +11,12 @@
     <script src="{{ url_for('static', filename='/scripts/menuTrigger.js') }}"></script>
 </head>
 <body>
+{% block content %}
 
 <header style="border-bottom: 1px black solid;">
     <div class="header container d-flex justify-content-between align-items-center py-3">
         <div class="d-flex align-items-center" style="width:500px;">
-            <h4 class="thin m-0" id="titleBlack">Анализ крови</h4>
+            <h4 class="thin m-0" id="titleBlack">{% block header_block %}{% endblock %}</h4>
         </div>
         <a href="/index">
             <img src="static/images/logo.svg" width="40" alt="Logo">
@@ -28,25 +29,42 @@
         </div>
     </div>
 </header>
-<main class="container text-center">
-    <h2 class="mb-4">Выберите тип анализа</h2>
-    <div class="row justify-content-center">
-        <div class="col-md-4 mb-3">
-            <a href="/common_blood_test" class="btn btn-primary w-100">Общий анализ крови</a>
-        </div>
-        <div class="col-md-4 mb-3">
-            <a href="/hormone_blood_test" class="btn btn-secondary w-100">Анализ половых гормонов</a>
-        </div>
-        <div class="col-md-4 mb-3">
-            <a href="/micronutrients_blood_test" class="btn btn-secondary w-100">Анализ крови на микроэлементы</a>
-        </div>
-        <div class="col-md-4 mb-3">
-            <a href="/vitamin_blood_test" class="btn btn-secondary w-100">Анализ крови на витамины</a>
+    <main class="container my-5">
+        {% block form_block %}
+        {% endblock %}
+        <br>
+        <!-- flash() errors -->
+        {% for message in get_flashed_messages() %}
+            <div class="alert alert-danger">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        <!-- forms errors -->
+        {% for field, errors in form.errors.items() %}
+            {% for error in errors %}
+                <div class="alert alert-danger">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        <div id="resultSection" class="mt-5">
+        {% if answers %}
+        <h3>Возможные диагнозы:</h3>
+        {% block answer_block %}{% endblock %}
+        {% endif %}
+        {% if good %}
+            <h3>Возможные диагнозы:</h3>
+            <ul>
+                <li>Вы здоровы!</li>
+            </ul>
+        {% endif %}
         </div>
     </div>
-</main>
+    </main>
 
-    <!-- profile menu -->
+        <!-- profile menu -->
     {% if current_user.patient or current_user.doctor %}
     <div class="menu">
         <div id="menuProfileDiv">
@@ -74,8 +92,8 @@
             </div>
         </div>
         <div class="menuItem">
-            <img src="static/images/doctorsList.svg" width="40px" style="filter: invert(1);">
-            <a>Наши специалисты</a>
+            <img src="static/images/doctorsList.svg" width="40px"  style="filter: invert(1);">
+            <a href="doctor_list">Наши специалисты</a>
         </div>
         <div class="menuItem">
             <img src="static/images/appointments.svg" width="40px">
@@ -106,6 +124,7 @@
 
     </div>
     {% endif %}
+{% endblock %}
 
 </body>
 </html>

@@ -1,0 +1,61 @@
+{% extends "bloodBase.html" %}
+{% block title %}Витаминыы{% endblock %}
+{% block header_block %}Анализ крови на витамины{% endblock %}
+{% block form_block %}
+    <form id="bloodAnalysisForm" class="row g-3" action="/vitamin_blood_test" method="POST">
+        {{ form.csrf_token }}
+        <div class="col-md-4">
+            {{ form.vitamin_e.label }}
+            {{ form.vitamin_e(class="form-control", placeholder="Введите значение", value=form.vitamin_e.data or '') }}
+        </div>
+        <div class="col-md-4">
+            {{ form.vitamin_d.label }}
+            {{ form.vitamin_d(class="form-control", placeholder="Введите значение", value=form.vitamin_d.data or '') }}
+        </div>
+        <div class="col-md-4">
+            {{ form.vitamin_k.label }}
+            {{ form.vitamin_k(class="form-control", placeholder="Введите значение", value=form.vitamin_k.data or '') }}
+        </div>
+        <div class="col-md-4">
+            {{ form.vitamin_c.label }}
+            {{ form.vitamin_c(class="form-control", placeholder="Введите значение", value=form.vitamin_c.data or '') }}
+        </div>
+        <div class="col-md-4">
+            {{ form.vitamin_b1.label }}
+            {{ form.vitamin_b1(class="form-control", placeholder="Введите значение", value=form.vitamin_b1.data or '') }}
+        </div>
+        <div class="col-md-4">
+            {{ form.vitamin_b2.label }}
+            {{ form.vitamin_b2(class="form-control", placeholder="Введите значение", value=form.vitamin_b2.data or '') }}
+        </div>
+        <div class="col-md-4">
+            {{ form.vitamin_b9.label }}
+            {{ form.vitamin_b9(class="form-control", placeholder="Введите значение", value=form.vitamin_b9.data or '') }}
+        </div>
+        <div class="col-md-4">
+            {{ form.vitamin_b12.label }}
+            {{ form.vitamin_b12(class="form-control", placeholder="Введите значение", value=form.vitamin_b12.data or '') }}
+        </div>
+        <div class="col-md-4">
+            {{ form.vitamin_a.label }}
+            {{ form.vitamin_a(class="form-control", placeholder="Введите значение", value=form.vitamin_a.data or '') }}
+        </div>
+        <div class="col-md-4">
+            {{ form.vitamin_b6.label }}
+            {{ form.vitamin_b6(class="form-control", placeholder="Введите значение", value=form.vitamin_b6.data or '') }}
+        </div>
+        <div class="col-md-12 text-center">
+            {{ form.submit(class="btn btn-primary", id="submitBtn") }}
+        </div>
+    </form>
+{% endblock %}
+
+{% block answer_block %}
+<ul>
+    {% for answer in answers %}
+    <li>
+      {{ answer }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

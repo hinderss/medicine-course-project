@@ -1,0 +1,33 @@
+{% extends "bloodBase.html" %}
+{% block title %}Гормоны{% endblock %}
+{% block header_block %}Анализ крови на гормоны{% endblock %}
+{% block form_block %}
+    <form id="hormoneAnalysisForm" class="row g-3" action="/hormone_blood_test" method="POST">
+        {{ form.csrf_token }}
+        <div class="col-md-4">
+            {{ form.tsh.label }}
+            {{ form.tsh(class="form-control", placeholder="Введите значение", value=form.tsh.data or '') }}
+        </div>
+        <div class="col-md-4">
+            {{ form.fsh.label }}
+            {{ form.fsh(class="form-control", placeholder="Введите значение", value=form.fsh.data or '') }}
+        </div>
+        <div class="col-md-4">
+            {{ form.lh.label }}
+            {{ form.lh(class="form-control", placeholder="Введите значение", value=form.lh.data or '') }}
+        </div>
+        <div class="col-md-12 text-center">
+            {{ form.submit(class="btn btn-primary", id="submitBtn") }}
+        </div>
+    </form>
+{% endblock %}
+
+{% block answer_block %}
+<ul>
+    {% for answer in answers %}
+    <li>
+      {{ answer }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
