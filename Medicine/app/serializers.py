@@ -5,6 +5,11 @@ from app.models import Doctor
 
 
 class DoctorSchema(ma.SQLAlchemyAutoSchema):
+    address = fields.Method("get_address")
+
+    def get_address(self, obj):
+        return obj.address
+
     class Meta:
         model = Doctor
         include_fk = True
@@ -26,6 +31,10 @@ class ApiSerializer(Schema):
 
 class BloodSerializer(Schema):
     message = fields.List(fields.Str, required=False, allow_none=True)
+
+
+class BloodListOfDictsSerializer(Schema):
+    message = fields.List(fields.Dict, required=False, allow_none=True)
 
 
 class LoginSerializer(ApiSerializer):

@@ -1,12 +1,13 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileRequired, FileAllowed
+from geopy.exc import GeocoderUnavailable
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.fields.choices import SelectField, RadioField
 from wtforms.fields.datetime import DateField, TimeField
 from wtforms.fields.numeric import IntegerField, FloatField
-from wtforms.fields.simple import FileField, TextAreaField, BooleanField
+from wtforms.fields.simple import FileField, TextAreaField, BooleanField, HiddenField
 from wtforms.validators import DataRequired, Length, Email, InputRequired, Optional, ValidationError
-from app.validators import Phone, FutureDateValidator, FutureTimeValidator, PastDateValidator
+from app.validators import Phone, FutureDateValidator, FutureTimeValidator, PastDateValidator, get_coordinates
 
 
 class LoginForm(FlaskForm):
@@ -29,6 +30,12 @@ class DoctorForm(FlaskForm):
         DataRequired(message="Введите ваше образование")])
     workplace = StringField('Место работы', validators=[
         DataRequired(message="Введите ваше место работы")])
+    city = StringField('Город места работы', validators=[
+        DataRequired(message="Введите город, где находится ваше место работы")])
+    street = StringField('Улица места работы', validators=[
+        DataRequired(message="Введите улицу, где находится ваше место работы")])
+    building = StringField('Номер дома места работы', validators=[
+        DataRequired(message="Введите номер дома, где находится ваше место работы")])
     practice_profile = StringField('Профиль врачебной практики', validators=[
         DataRequired(message="Введите ваш профиль врачебной практики")])
     phone = StringField('Номер телефона', validators=[
@@ -43,7 +50,27 @@ class DoctorForm(FlaskForm):
     photo = FileField('Фотография', validators=[
         FileRequired(message="Загрузите вашу фотографию"),
         FileAllowed(['jpg', 'jpeg', 'png'], message="Разрешены только файлы с расширениями .jpg, .jpeg, .png")])
+
+    latitude = HiddenField()
+    longitude = HiddenField()
+
     submit = SubmitField('Зарегистрироваться')
+
+    def validate(self, extra_validators=None):
+        rv = super().validate()
+        if not rv:
+            return False
+
+        try:
+            lat, lon = get_coordinates(self.city.data, self.street.data, self.building.data)
+            self.latitude.data = str(lat)
+            self.longitude.data = str(lon)
+            return True
+        except ValueError:
+            self.city.errors.append("Адрес не распознан. Уточните город, улицу и номер дома.")
+        except GeocoderUnavailable:
+            self.city.errors.append("Сервис геолокации недоступен. Попробуйте позже.")
+        return False
 
 
 class PatientForm(FlaskForm):
@@ -215,37 +242,111 @@ class NavigationForm(QueryForm):
 
 
 class CommonBloodForm(FlaskForm):
-    erythrocytes = FloatField("Эритроциты", validators=[DataRequired(message="Введите эритроциты")])
-    leukocytes = FloatField("Лейкоциты", validators=[DataRequired(message="Введите лейкоциты")])
-    platelets = FloatField("Тромбоциты", validators=[DataRequired(message="Введите тромбоциты")])
-
-    submit = SubmitField('Получить результат')
+    erythrocytes = FloatField(
+        "Эритроциты",
+        validators=[DataRequired(message="Введите эритроциты")],
+        render_kw={"type": "number", "step": 0.01},
+    )
+    leukocytes = FloatField(
+        "Лейкоциты",
+        validators=[DataRequired(message="Введите лейкоциты")],
+        render_kw={"type": "number", "step": 0.01},
+    )
+    platelets = FloatField(
+        "Тромбоциты",
+        validators=[DataRequired(message="Введите тромбоциты")],
+        render_kw={"type": "number", "step": 0.01},
+    )
+    submit = SubmitField('Анализ')
 
 
 class MicronutrientsBloodForm(FlaskForm):
-    calcium = FloatField("Кальций", validators=[DataRequired(message="Введите кальций")])
-    magnium = FloatField("Магний", validators=[DataRequired(message="Введите магний")])
-    ferrum = FloatField("Железо", validators=[DataRequired(message="Введите железо")])
-
-    submit = SubmitField('Получить результат')
+    calcium = FloatField(
+        "Кальций",
+        validators=[DataRequired(message="Введите кальций")],
+        render_kw={"type": "number", "step": 0.01},
+    )
+    magnium = FloatField(
+        "Магний",
+        validators=[DataRequired(message="Введите магний")],
+        render_kw={"type": "number", "step": 0.01},
+    )
+    ferrum = FloatField(
+        "Железо",
+        validators=[DataRequired(message="Введите железо")],
+        render_kw={"type": "number", "step": 0.01},
+    )
+    submit = SubmitField('Анализ')
 
 
 class VitaminBloodForm(FlaskForm):
-    vitamin_e = FloatField("Витамин E", validators=[DataRequired(message="Введите значение витамина E")])
-    vitamin_d = FloatField("Витамин D", validators=[DataRequired(message="Введите значение витамина D")])
-    vitamin_k = FloatField("Витамин K", validators=[DataRequired(message="Введите значение витамина K")])
-    vitamin_c = FloatField("Витамин C", validators=[DataRequired(message="Введите значение витамина C")])
-    vitamin_b1 = FloatField("Витамин B1", validators=[DataRequired(message="Введите значение витамина B1")])
-    vitamin_b2 = FloatField("Витамин B2", validators=[DataRequired(message="Введите значение витамина B2")])
-    vitamin_b9 = FloatField("Витамин B9", validators=[DataRequired(message="Введите значение витамина B9")])
-    vitamin_b12 = FloatField("Витамин B12", validators=[DataRequired(message="Введите значение витамина B12")])
-    vitamin_a = FloatField("Витамин A", validators=[DataRequired(message="Введите значение витамина A")])
-    vitamin_b6 = FloatField("Витамин B6", validators=[DataRequired(message="Введите значение витамина B6")])
-    submit = SubmitField('Получить результат')
+    vitamin_e = FloatField(
+        "Витамин E",
+        validators=[DataRequired(message="Введите значение витамина E")],
+        render_kw={"type": "number", "step": 0.01},
+    )
+    vitamin_d = FloatField(
+        "Витамин D",
+        validators=[DataRequired(message="Введите значение витамина D")],
+        render_kw={"type": "number", "step": 0.01},
+    )
+    vitamin_k = FloatField(
+        "Витамин K",
+        validators=[DataRequired(message="Введите значение витамина K")],
+        render_kw={"type": "number", "step": 0.01},
+    )
+    vitamin_c = FloatField(
+        "Витамин C",
+        validators=[DataRequired(message="Введите значение витамина C")],
+        render_kw={"type": "number", "step": 0.01},
+    )
+    vitamin_b1 = FloatField(
+        "Витамин B1",
+        validators=[DataRequired(message="Введите значение витамина B1")],
+        render_kw={"type": "number", "step": 0.01},
+    )
+    vitamin_b2 = FloatField(
+        "Витамин B2",
+        validators=[DataRequired(message="Введите значение витамина B2")],
+        render_kw={"type": "number", "step": 0.01},
+    )
+    vitamin_b9 = FloatField(
+        "Витамин B9",
+        validators=[DataRequired(message="Введите значение витамина B9")],
+        render_kw={"type": "number", "step": 0.01},
+    )
+    vitamin_b12 = FloatField(
+        "Витамин B12",
+        validators=[DataRequired(message="Введите значение витамина B12")],
+        render_kw={"type": "number", "step": 0.01},
+    )
+    vitamin_a = FloatField(
+        "Витамин A",
+        validators=[DataRequired(message="Введите значение витамина A")],
+        render_kw={"type": "number", "step": 0.01},
+    )
+    vitamin_b6 = FloatField(
+        "Витамин B6",
+        validators=[DataRequired(message="Введите значение витамина B6")],
+        render_kw={"type": "number", "step": 0.01},
+    )
+    submit = SubmitField('Анализ')
 
 
 class HormonesBloodForm(FlaskForm):
-    tsh = FloatField("Тиреотропный гормон", validators=[DataRequired(message="Введите значение")])
-    fsh = FloatField("Фолликулостимулирующий гормон", validators=[DataRequired(message="Введите значение")])
-    lh = FloatField("Лютеинизирующий гормон", validators=[DataRequired(message="Введите значение")])
-    submit = SubmitField('Получить результат')
+    tsh = FloatField(
+        "Тиреотропный гормон", 
+        validators=[DataRequired(message="Введите значение")],
+        render_kw={"type": "number", "step": 0.01},
+    )
+    fsh = FloatField(
+        "Фолликулостимулирующий гормон", 
+        validators=[DataRequired(message="Введите значение")],
+        render_kw={"type": "number", "step": 0.01},
+    )
+    lh = FloatField(
+        "Лютеинизирующий гормон", 
+         validators=[DataRequired(message="Введите значение")],
+         render_kw={"type": "number", "step": 0.01},
+    )
+    submit = SubmitField('Анализ')

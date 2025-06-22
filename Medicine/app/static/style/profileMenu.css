@@ -1,5 +1,13 @@
+@charset "UTF-8";
 .menu {
-  display: none;
+  opacity: 0;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
+  pointer-events: none;
   position: fixed;
   top: 80px;
   right: 1%;
@@ -11,6 +19,19 @@
   border-radius: 20px;
 }
 
+/* Класс для отображения меню */
+.menu.show {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  pointer-events: auto;
+}
+
+#menuProfileDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 #menuProfileDiv #name {
   font-weight: 500 !important;
 }
@@ -21,6 +42,12 @@
      object-fit: cover;
   margin-right: 15px;
   border-radius: 50%;
+}
+
+#menuIcon {
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .menuItem {
@@ -35,8 +62,7 @@
       -ms-flex-align: center;
           align-items: center;
   border-radius: 11px;
-  margin: 10px 0;
-  padding: 10px;
+  padding: 10px 7px;
   background-color: white;
 }
 .menuItem img {

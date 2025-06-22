@@ -1,3 +1,4 @@
+
 {% extends "base.html" %}
 {% block title %}Главная{% endblock %}
 {% block content %}
@@ -7,19 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="static/calendar/vanilla-calendar.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.0.9/dist/css/splide.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/modal.css') }}">
 
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.0.9/dist/js/splide.min.js"></script>
     <script src="static/calendar/vanilla-calendar.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="{{ url_for('static', filename='scripts/changeChatIconOnScroll.js') }}"></script>
-    <script src="{{ url_for('static', filename='scripts/menuTrigger.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/calendarInit.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/getCalendarValue.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/sliderSettings.js') }}"></script>
-    <script src="{{ url_for('static', filename='scripts/chat.js') }}"></script>
-    <script src="{{ url_for('static', filename='scripts/define_disease.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/header2.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/profileMenu.css') }}">
+<!--    <script src="{{ url_for('static', filename='scripts/define_disease.js') }}"></script>-->
+    <script src="{{ url_for('static', filename='scripts/modals.js') }}"></script>
+
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='style/header2.css') }}">-->
     <script>
         window.addEventListener('scroll', function () {
             var gptIcon = document.getElementById('gptIcon');
@@ -62,159 +63,34 @@
             });
         });
     </script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-      new Splide('#splide-container', {
-        type       : 'carousel',
-        perPage    : 1,
-        pagination : false,
-        focus      : 'center',
-        breakpoints: {
-          600: {
-            perPage: 1,
-          },
-          800: {
-            perPage: 1,
-          },
-        },
-        drag: false,
-      }).mount();
-    });
-  </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          new Splide('#splide-container', {
+            type       : 'carousel',
+            perPage    : 1,
+            pagination : false,
+            focus      : 'center',
+            breakpoints: {
+              600: {
+                perPage: 1,
+              },
+              800: {
+                perPage: 1,
+              },
+            },
+            drag: false,
+          }).mount();
+        });
+      </script>
 
 
 
     <title>Index</title>
 </head>
 <body class="container">
-
-        <!-- profile menu -->
-        {% if current_user.patient or current_user.doctor %}
-        <div class="menu">
-            <div id="menuProfileDiv">
-                {% if current_user.patient %}
-                    {% if current_user.patient.photo_path %}
-                        <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}" width="40px">
-                    {% else %}
-                        <img src="static/images/profileLogo.svg" width="40px">
-                    {% endif %}
-                {% else %}
-                    {% if current_user.doctor.photo_path %}
-                        <img src="{{ url_for('uploaded_file', filename=current_user.doctor.photo_path) }}" width="40px">
-                    {% else %}
-                        <img src="static/images/profileLogo.svg" width="40px">
-                    {% endif %}
-                {% endif %}
-                <div>
-                    <h4 id="name">
-                        {% if current_user.patient %}
-                        <span>{{ current_user.patient.firstname }} {{ current_user.patient.surname }}</span>
-                        {% else %}
-                        <span>{{ current_user.doctor.firstname }} {{ current_user.doctor.surname }}</span>
-                        {% endif %}
-                    <h5 id="email">{{ current_user.username }}</h5>
-                </div>
-            </div>
-            <div class="menuItem">
-                <img src="static/images/doctorsList.svg" width="40px"  style="filter: invert(1);">
-                <a href="doctor_list">Наши специалисты</a>
-            </div>
-            <div class="menuItem">
-                <img src="static/images/appointments.svg" width="40px">
-                {% if current_user.patient %}
-                    <a href="patient-appointments">Записи</a>
-                {% else %}
-                    <a href="doctor_appointments">Записи</a>
-                {% endif %}
-            </div>
-            <div class="menuItem">
-                <img src="static/images/navigation.png" width="40px">
-                <a href="navigation">Навигация по БЗ</a>
-            </div>
-            <div class="menuItem">
-                <img src="static/images/recommendation.png" width="40px">
-                <a href="recommendation">Рекомендации по здоровью</a>
-            </div>
-            <div class="menuItem">
-                <img src="static/images/blood_test.png" width="40px">
-                <a href="blood_test">Анализ крови</a>
-            </div>
-            {% if current_user.patient %}
-            <div class="menuItem">
-                <img src="static/images/medicalCard.png" width="40px">
-                <a href="medical-card">Медицинская карта</a>
-            </div>
-            {% endif %}
-    
-        </div>
-        {% endif %}
-
-
-    
     <div class="container padding100pxW" id="indexPage">
-        <div class="container row spacebtw marginTop20px" id="indexPageHeader">
-            <div class="container row small" id="headerLogo">
-                <img src="static/images/logo.svg" width="40px" class="marginW30px">
-                <a href="/index"  class="link"><h4 class="thin">Медицинская система</h4></a>
-            </div>
-
-            {% if current_user.is_authenticated %}
-                {% if current_user.patient %}
-                    <a href="/medical-card" class="link"><h4 class="thin">Медицинская карта</h4></a>
-                    <a href="patient-appointments" class="link"><h4 class="thin">Записи</h4></a>
-                {% else %}
-                    <a href="doctor_appointments" class="link"><h4 class="thin">Записи</h4></a>
-                {% endif %}
-            {% endif %}
-
-            <a href="/doctor_list" class="link"><h4 class="thin">Специалисты</h4></a>
-            
-            {% if current_user.is_authenticated %}
-                {% if name and surname %}
-                    <a>
-                        <div class="profile">
-                            <div class="profileName">
-                                <h5>{{ name }}</h5>
-                                <h5>{{ surname }}</h5>
-                            </div>
-                                <!-- {% if current_user.patient.photo_path%}
-                                    <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}">
-                                {% else %}
-                                    <img src="static/images/profileLogo.svg" width="40px" class="logo white">
-                                {% endif %}
-
-                                {% if current_user.doctor.photo_path%}
-                                    <img src="{{ url_for('uploaded_file', filename=current_user.doctor.photo_path) }}">
-                                {% else %}
-                                    <img src="static/images/profileLogo.svg" width="40px" class="logo white">
-                                {% endif %} -->
-                                <img  id="menuIcon"  src="static/images/profileLogo.svg" width="40px" class="logo white">
-                                <!-- <img src="static/images/menu.png" width="40px" id="menuIcon" style="filter: invert(1); padding-left: 5px;"> -->
-                        </div>
-                    </a>
-                {% endif %}
-                
-            {% else %}
-            <a href="/login" class="link"><h4 class="thin">Войти</h4></a>
-            
-            {% endif %}
-
-</div>
-        <div id="popUp" class="pop_up_diagnostic">
-        <div class="pop_up_diagnostic-content">
-            <span class="closeDiagnosticPopUp">&times;</span>
-
-            <form id="symptoms-form">
-                 {% for symptom in symptoms %}
-                    <label class="symptom_checkbox"><input type="checkbox" name="symptom" value="{{ symptom }}"> {{ symptom }}</label><br>
-                 {% endfor %}
-             </form>
-            <button class="button"  type="button" onclick="submitSymptoms()">Диагностировать</button>
-            <div id="results"></div>
-        </div>
-    </div>
         <div class="container fullHeight centerH flex-end padding100pxW" id="diagnosticsButtonDiv">
-            <a id="diagnosticsButton">Диагностика</a>
+            <a id="diagnosticsButton" onclick="showModal(1)">Диагностика</a>
         </div>
     </div>
     <div class="container padding100pxW indexDoctors">
@@ -299,16 +175,22 @@
             </div>
         </div>
 
-        <div class="container center" id="allDoctorsDiv">
+        <div class="container center" style="padding-bottom:30px;">
             <a href="/doctor_list" class="button" id="allDoctorsBtn">Все врачи</a>
         </div>
     </div>
 
 
 
-    <div class="container big calendarDiv marginTop40px">
+    <div class="container big calendarDiv">
         <div id="calendar"></div>
-        <div id="createAppointmenDiv" action="/assign-appointment" method="POST" class="container small">
+        <div id="createAppointmenDiv" action="/assign-appointment" method="POST" class="container small" style="
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius:10px;
+    width:700px;
+    background-color: rgba(255, 255, 255, 0.3); /* Полупрозрачный черный фон */
+">
             <div class="container row" id="apointementHeader">
                 <img src="../static/images/backBtn.png" class="logo white hidden" onclick="goBack()" id="goBackBtn">
                 <h2 class="container center white">Записаться</h2>
@@ -368,108 +250,172 @@
         </div>
     </div>
 
+    <div id="modal1" class="modal">
+  <div class="modal-header">
+    <h2 class="modal-title">Выберите симптомы</h2>
+    <span class="close" onclick="hideModal(1)">&times;</span>
+  </div>
+  <div class="modal-body">
+    <div class="general-symptoms-title">Общие симптомы</div>
 
-
-    <div class="chat-container">
-        <button class="fixedButton"><img src="static/images/chat.png" id="gptIcon" class="gptIcon logo white" height="40px"></button>
-        <div class="chat">
-            <div class="chat-title">
-                <figure class="avatar">
-                    <img src="static/images/chatAvatar.jpg" />
-                </figure>
-                <div>
-                    <h1>Medical Assistant</h1>
-                    <h2>AI chat</h2>
-                </div>
-                <button class="fixedButton" id="closeChatBtn" class="closeChatBtnImg"><img src="static/images/close.svg" class="logo white"></button>
-            </div>
-            <div class="messages">
-                <div class="messages-content"></div>
-            </div>
-            <div class="message-box">
-                <textarea type="text" name="chat_input" class="message-input" placeholder="Type message..." style="overflow: hidden;"></textarea>
-                <button type="submit" name="chat_send" class="message-submit"><img src="static/images/chatSendMessagePhoto.png"></button>
-            </div>
-        </div>
+    <!-- Блок 1 с симптомами -->
+    <div class="symptoms-block symptoms-block-1">
+      <div class="symptom-item">
+        <input type="checkbox" id="concept_fatigue">
+        <label for="concept_fatigue">Усталость</label>
+      </div>
+      <div class="symptom-item">
+        <input type="checkbox" id="concept_sleep_disorders">
+        <label for="concept_sleep_disorders">Сонливость</label>
+      </div>
+      <div class="symptom-item">
+        <input type="checkbox" id="concept_fever">
+        <label for="concept_fever">Повышенная температура</label>
+      </div>
+      <div class="symptom-item">
+        <input type="checkbox" id="concept_lack_of_appetite">
+        <label for="concept_lack_of_appetite">Отсутствие аппетита</label>
+      </div>
     </div>
 
-    <script>
-            $(document).ready(function() {
-                $('#gptIcon').on('click', function() {
-                    $('.chat').css('display', 'flex');
-                    $('#gptIcon').css('display', 'none');
-                });
+    <!-- Блок 2 с симптомами -->
+    <div class="symptoms-block symptoms-block-2">
+      <div class="symptom-item">
+        <input type="checkbox" id="concept_thirst">
+        <label for="concept_thirst">Жажда</label>
+      </div>
+      <div class="symptom-item">
+        <input type="checkbox" id="concept_head_noise">
+        <label for="concept_head_noise">Шум в голове</label>
+      </div>
+      <!-- <div class="symptom-item">
+        <input type="checkbox" id="symptom7">
+        <label for="symptom7">Сухость кожи</label>
+      </div> -->
+      <div class="symptom-item">
+        <input type="checkbox" id="concept_lymph_node_enlargement">
+        <label for="concept_lymph_node_enlargement">Увеличенные лимфоузлы</label>
+      </div>
+    </div>
 
-                $('#closeChatBtn').on('click', function() {
-                    $('.chat').css('display', 'none');
-                    $('#gptIcon').css('display', 'block');
-                });
-            });
+    <!-- Блок 3 с симптомами -->
+    <div class="symptoms-block symptoms-block-3">
+      <div class="symptom-item">
+        <input type="checkbox" id="concept_cough">
+        <label for="concept_cough">Кашель</label>
+      </div>
+      <div class="symptom-item">
+        <input type="checkbox" id="concept_nausea">
+        <label for="concept_nausea">Тошнота</label>
+      </div>
+      <div class="symptom-item">
+        <input type="checkbox" id="concept_photophobia">
+        <label for="concept_photophobia">Чувствительность к свету</label>
+      </div>
+      <div class="symptom-item">
+        <input type="checkbox" id="concept_hoarseness">
+        <label for="concept_hoarseness">Осиплость</label>
+      </div>
+    </div>
+    <!-- Локальные симптомы -->
+    <div class="local-symptoms-title">Локальные симптомы</div>
 
-        var $messages = $('.messages-content'),
-            i = 0;
+    <!-- Блок 1 локальных симптомов -->
+    <div class="local-symptoms-block local-symptoms-block-1">
+      <div class="local-symptom-item">
+        <input type="checkbox" id="concept_lacrimal_gland_pain">
+        <label for="concept_lacrimal_gland_pain">Боль в глазу</label>
+      </div>
+      <div class="local-symptom-item">
+        <input type="checkbox" id="concept_sore_throat">
+        <label for="concept_sore_throat">Боль в горле</label>
+      </div>
+      <div class="local-symptom-item">
+        <input type="checkbox" id="concept_chest_pain">
+        <label for="concept_chest_pain">Боль в груди</label>
+      </div>
+      <div class="local-symptom-item">
+        <input type="checkbox" id="local-symptom4">
+        <label for="local-symptom4">Боль в спине</label>
+      </div>
+    </div>
+    <!-- Блок 2 локальных симптомов -->
+    <div class="local-symptoms-block local-symptoms-block-2">
+      <div class="local-symptom-item">
+        <input type="checkbox" id="concept_navel_pain">
+        <label for="concept_navel_pain">Боль внизу живота</label>
+      </div>
+      <div class="local-symptom-item">
+        <input type="checkbox" id="concept_abdominal_discomfort">
+        <label for="concept_abdominal_discomfort">Дискомфорт в животе</label>
+      </div>
+      <div class="local-symptom-item">
+        <input type="checkbox" id="local-symptom7">
+        <label for="local-symptom7">Боль в колене</label>
+      </div>
+      <div class="local-symptom-item">
+        <input type="checkbox" id="local-symptom8">
+        <label for="local-symptom8">Боль в ступне</label>
+      </div>
+    </div>
 
-        function setDate() {
-            var d = new Date();
-            $('<div class="timestamp">' + d.getHours() + ':' + d.getMinutes() + '</div>').appendTo($('.message:last'));
-        }
+    <!-- Блок 3 локальных симптомов -->
+    <div class="local-symptoms-block local-symptoms-block-3">
+      <div class="local-symptom-item">
+        <input type="checkbox" id="concept_itching">
+        <label for="concept_itching">Зуд кожи головы</label>
+      </div>
+      <div class="local-symptom-item">
+        <input type="checkbox" id="local-symptom10">
+        <label for="local-symptom10">Онемение пальцев</label>
+      </div>
+      <div class="local-symptom-item">
+        <input type="checkbox" id="concept_cramping">
+        <label for="concept_cramping">Судороги икр</label>
+      </div>
+      <div class="local-symptom-item">
+        <input type="checkbox" id="local-symptom12">
+        <label for="local-symptom12">Покалывание в руках</label>
+      </div>
+    </div>
 
-        function insertMessage(msg) {
-            if ($.trim(msg) == '') {
-                return false;
-            }
-            $('<div class="message message-personal">' + msg + '</div>').appendTo($messages).addClass('new');
-            setDate();
-            $('.message-input').val(null);
-            scrollChat(); // Прокручиваем при каждом сообщении
-            setTimeout(function() {
-                fakeMessage();
-            }, 1000 + (Math.random() * 20) * 20);
-        }
+    <div class="save-checkbox">
+      <input type="checkbox" id="dont-save">
+      <label for="dont-save">Не сохранять результат диагностики в личный профиль</label>
+    </div>
 
-        $('.message-submit').click(function() {
-            insertMessage($('.message-input').val());
-        });
+    <button class="main-button" onclick="submitSymptoms()">Провести диагностику</button>
+  </div>
+</div>
 
-        $(window).on('keydown', function(e) {
-            if (e.which == 13) {
-                insertMessage($('.message-input').val());
-                return false;
-            }
-        });
+<div id="modal2" class="modal">
+  <div class="modal-header">
+    <h2 class="modal-title">Результат диагностики</h2>
+    <span class="close" onclick="hideModal(2)">&times;</span>
+  </div>
+  <div class="modal-body">
+    <div class="diagnostic-result">
+      По результатам проведенной у Вас диагностики Медицинский ассистент определил возможные предполагаемые заболевания и их вероятность:
+    </div>
 
-        var Fake = [
-            'Hi there, I\'m AI Chat and you?',
-            'Nice to meet you',
-            'How are you?',
-            'It\'s an example of an answer. I can\'t understand you',
-            'Still can\'t',
-            ':)'
-        ];
+    <div class="disclaimer">
+      Результаты данной диагностики не являются достоверным медицинским заключением, для этого необходимо обратиться к врачу в медицинском учреждении.
+    </div>
 
-        function fakeMessage() {
-            if ($('.message-input').val() !== '') {
-                return false;
-            }
-            $('<div class="message new">' + Fake[i] + '</div>').appendTo($messages).addClass('new');
-            setDate();
-            i++;
-            scrollChat(); // Прокручиваем при каждом сообщении
-        }
+    <ul class="diseases-list">
 
-        function scrollChat() {
-            var height = $messages[0].scrollHeight;
-            $messages.stop().animate({ scrollTop: height }, 'slow');
-        }
+    </ul>
 
-        // Initial fake message
-        $(window).on('load', function() {
-            setTimeout(function() {
-                fakeMessage();
-                scrollChat();
-            }, 100);
-        });
-    </script>
+    <!-- <button id="appointment" class="book-appointment" onclick="alert('Запись к врачу'); hideModal(2)">
+      Записаться к врачу
+    </button> -->
+  </div>
+    <div id="overlay" class="overlay" onclick="hideAllModals()"></div>
+</div>
+
+
+
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -571,7 +517,7 @@
             document.getElementById("doctorFirstnameAppointement").textContent = doctor.firstname;
             document.getElementById("doctorSurnameAppointement").textContent = doctor.surname;
             console.log(doctor.photo_path);
-            
+
             // Создаем элемент изображения
             var img = document.createElement("img");
             img.src = "/uploads/" + doctor.photo_path;
@@ -579,7 +525,7 @@
 
             // Очищаем содержимое контейнера перед добавлением нового изображения
             document.getElementById("appointementDoctorPhotoApp").innerHTML = '';
-            
+
             // Добавляем изображение в контейнер
             document.getElementById("appointementDoctorPhotoApp").appendChild(img);
 
@@ -600,6 +546,70 @@
             console.log(dateInput.value);
             console.log(doctor);
             console.log(doctor.id);
+
+            // Создаем основной контейнер для карты и адреса
+            var mapAndAddressContainer = document.createElement("div");
+            mapAndAddressContainer.style.display = "flex";
+            mapAndAddressContainer.style.flexDirection = "row";
+            mapAndAddressContainer.style.alignItems = "flex-start";
+            mapAndAddressContainer.style.gap = "20px";
+            mapAndAddressContainer.style.width = "100%";
+            mapAndAddressContainer.style.marginTop = "15px";
+
+            // Контейнер для карты
+            var mapContainer = document.createElement("div");
+            mapContainer.style.position = "relative";
+            mapContainer.style.overflow = "hidden";
+            mapContainer.style.flexShrink = "0"; // Чтобы карта не сжималась
+
+            // Создаем iframe с картой
+            var iframe = document.createElement("iframe");
+            iframe.src = `https://yandex.by/map-widget/v1/?ll=${doctor.longitude}%2C${doctor.latitude}&pt=${doctor.longitude}%2C${doctor.latitude}~v1~om%3A1&z=16`;
+            iframe.width = "300px";
+            iframe.height = "300px";
+            iframe.allowFullscreen = "true";
+            iframe.style.border = "none";
+            iframe.style.borderRadius = "20px";
+
+            mapContainer.appendChild(iframe);
+
+            // Контейнер для адреса и дополнительной информации
+            var addressContainer = document.createElement("div");
+            addressContainer.style.flex = "1";
+            addressContainer.style.color = "white";
+
+            // Заголовок
+            var addressTitle = document.createElement("h4");
+            addressTitle.textContent = "Адрес клиники:";
+            addressTitle.style.marginBottom = "10px";
+            addressTitle.style.fontWeight = "bold";
+
+            // Сам адрес
+            var addressElement = document.createElement("p");
+            addressElement.textContent = doctor.address;
+            addressElement.style.marginBottom = "15px";
+
+            // Дополнительная информация (если нужно)
+            var workHours = document.createElement("p");
+            workHours.textContent = "Часы работы: пн-пт 8:00-22:00, сб-вс 9:00-20:00";
+            workHours.style.marginBottom = "15px";
+
+            var phone = document.createElement("p");
+            phone.textContent = `Телефон: ${doctor.phone}`;
+
+            // Собираем контейнер адреса
+            addressContainer.appendChild(addressTitle);
+            addressContainer.appendChild(addressElement);
+            // addressContainer.appendChild(workHours);
+            addressContainer.appendChild(phone);
+
+            // Собираем основной контейнер
+            mapAndAddressContainer.appendChild(mapContainer);
+            mapAndAddressContainer.appendChild(addressContainer);
+
+            // Вставляем карту и адрес после поля "Детали записи"
+            var detailsField = document.getElementById("appointementTextArea");
+            detailsField.parentNode.insertBefore(mapAndAddressContainer, detailsField.nextSibling);
 
             // Делаем запрос для получения списка занятого времени
             fetch('/appointments/available-doctor-time?doctor_id=' + doctor.id + '&date=' + dateInput.value)
@@ -628,16 +638,10 @@
 
                     // Получаем данные о назначениях
                     var appointmentsData = data;
-                    
+
                     var doctorIdField = document.getElementById('appointementDoctorId');
                     doctorIdField.value = doctor.id;
-                    // var doctorId = document.createElement('input');
-                    // doctorId.classList.add("hidden");
-                    // doctorId.name = 'doctor_id'
-                    // doctorId.value = doctor.id;
-                    // console.log(doctor.id);
-                    // form.appendChild(doctorId);
-                    
+
                     // Извлекаем из данных время назначения и добавляем в <select>
                     appointmentsData.forEach(function(appointment) {
                         var appointmentDateTime = new Date(appointment);
@@ -648,11 +652,9 @@
                         optionElement.value = appointmentTime + ':00';
                         console.log(optionElement.value);
                         optionElement.textContent = appointmentTime;
-                        // optionElement.disabled = true; // Предполагается, что это время уже занято
                         // Добавляем новый элемент <option> в <select>
                         selectElement.appendChild(optionElement);
                     });
-                    // Возможно, здесь вы захотите что-то сделать с полученным списком времени
                 })
                 .catch(error => {
                     console.error('There has been a problem with your fetch operation:', error);
@@ -660,8 +662,13 @@
         }
 
         function goBack() {
-            // Здесь вы можете добавить код для возврата к выбору врача или специальности
-            // В данном примере просто скрываем подробные детали врача
+            // Remove the map container if it exists
+            var mapContainer = document.querySelector('div[style*="flex-direction: row"]');
+            if (mapContainer) {
+                mapContainer.remove();
+            }
+
+            // Hide all appointment-related elements
             $("#specialtySelection").removeClass("hidden");
             $("#doctorDetails").addClass("hidden");
             $("#doctorList").addClass("hidden");
@@ -675,7 +682,7 @@
     <script>
         document.getElementById("assignAppointment").addEventListener("submit", function(event){
             event.preventDefault(); // Предотвращаем отправку формы
-                
+
             // Отправляем запрос на сервер
             var formData = new FormData(this);
             // Итерируем по парам ключ-значение FormData и выводим их в консоль
@@ -705,17 +712,84 @@
                 console.error('Произошла ошибка:', error);
             });
         });
+
+        function submitSymptoms() {
+            // Collect checked symptoms
+            const generalSymptoms = [];
+            const localSymptoms = [];
+            
+            // Get general symptoms
+            document.querySelectorAll('.symptoms-block input[type="checkbox"]:checked').forEach(checkbox => {
+                generalSymptoms.push(checkbox.id);
+            });
+            
+            // Get local symptoms
+            document.querySelectorAll('.local-symptoms-block input[type="checkbox"]:checked').forEach(checkbox => {
+                localSymptoms.push(checkbox.id);
+            });
+            
+            // Get "don't save" preference
+            const dontSave = document.getElementById('dont-save').checked;
+            
+            // Make API request
+            fetch('/diagnose_symptoms', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    general_symptoms: generalSymptoms,
+                    local_symptoms: localSymptoms,
+                    dont_save: dontSave
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    // Clear previous results
+                    const diseasesList = document.querySelector('.diseases-list');
+                    diseasesList.innerHTML = '';
+                    
+                    // Add new results dynamically
+                    data.results.forEach((result, index) => {
+                        const diseaseItem = document.createElement('li');
+                        diseaseItem.className = 'disease-item';
+                        
+                        diseaseItem.innerHTML = `
+                            <span class="disease-name">Возможное заболевание -</span>
+                            <span class="disease-value" id="disease${index+1}">${result.disease}</span><br>
+                            <span class="disease-name">Вероятность -</span>
+                            <span class="disease-value" id="probability${index+1}">${result.probability}</span><br>
+                            <span class="disease-name">Рекомендуемый специалист -</span>
+                            <span class="disease-value" id="specialist${index+1}">${result.specialist}</span>
+                        `;
+                        
+                        diseasesList.appendChild(diseaseItem);
+                    });
+                    
+                    // Show the results modal
+                    hideModal(1);
+                    showModal(2);
+                } else {
+                    alert('Ошибка при диагностике: ' + (data.message || 'Неизвестная ошибка'));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Произошла ошибка при отправке симптомов');
+            });
+        }
     </script>
 
 
-            
+
      <!-- <script>
         // Пример массива с занятыми временными интервалами
         var busyTimes = ["09:15", "10:30", "14:45"];
-    
+
         // Получаем элемент select
         var select = document.getElementById('appt');
-    
+
         // Устанавливаем обработчик события change
         select.addEventListener('change', function () {
             // Проверяем, выбрано ли занятое время
@@ -803,4 +877,3 @@
     </div>
 </footer>
 {% endblock %}
-    

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Рекомендации по здоровью{% endblock %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/agentsPage.css') }}">
+    <title>Рекомендации по здоровью</title>
+</head>
+<body class="container">
+    <div class="agentsContainer">
+        <div class="leftDiv">
+            <form method="POST" action="{{ url_for('recommendation') }}">
+                {{ form.hidden_tag() }}
+                <h3>Выполните запрос</h3>
+                <div class="container flex row big">
+                    {{ form.query(id="search-input", placeholder="Введите заболевание") }}
+                    <button id="search-button" type="submit">Поиск</button>
+                </div>
+            </form>
+        </div>
+        <div class="rightDiv">
+            <h3>Рекомендация при заболевания:</h3>
+            <div id="health-recommendation">
+                <pre>{{ answer }}</pre>
+            </div>
+            <div class="navigation">
+                <a href="/navigation">Навигация по БЗ</a>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

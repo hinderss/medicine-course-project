@@ -4,12 +4,6 @@ class HttpException(Exception):
         self.message = message or "An HTTP error occurred"
         super().__init__(self.message)
 
-    # def to_dict(self):
-    #     """
-    #     Преобразует исключение в словарь, удобный для сериализации.
-    #     """
-    #     return {"status_code": self.status_code, "message": self.message}
-
 
 class Http400(HttpException):
     def __init__(self, status_code=None, message=None):

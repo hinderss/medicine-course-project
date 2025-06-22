@@ -1,0 +1,222 @@
+.agentsContainer{
+    color: white;
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+    width: 100vw;
+    justify-content: space-between;
+    
+
+    h3{
+        padding-bottom: 20px;
+    }
+}
+
+
+.leftDiv{
+    padding-top: 70px;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #07534a;
+}
+
+.save-option{
+    label{
+        color: white;
+    }
+}
+
+#dont-save{width: 20px;}
+
+.rightDiv{
+    padding: 70px 70px ;
+    width: 70vw;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #6f9b96;
+}
+
+#navigationAgentResult{
+    width: calc(70vw - 20vh);
+    color: white;
+    font-weight: 500;
+    font-size: large;
+}
+
+/* Стили для input с id="search-input" */
+#search-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    font-size: 16px;
+    outline: none;
+    background-color: white;
+    transition: border-color 0.3s ease;
+}
+
+#search-input:focus {
+    border-color: #4285f4;
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+#search-input::placeholder {
+    color: #999;
+}
+
+/* Стили для button с id="search-button" */
+#search-button {
+    padding: 10px 20px;
+    background-color: #339989;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: #3367d6;
+}
+
+#search-button:active {
+    background-color: #2a56c0;
+}
+
+#search-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.4);
+}
+
+/* Стили для языкового селектора */
+.language-selector {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.language-selector label {
+    width: 65%;
+    font-size: 18pt;
+    font-weight: 600;
+    color: #e0e0e0;
+}
+
+#language-select {
+    width: 45%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#language-select:focus {
+    outline: none;
+    border-color: #4285f4;
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+/* Обновленные стили для контейнера поиска */
+.container.flex.row.big {
+    display: flex;
+    width: 100%;
+    max-width: 300px;
+}
+
+.analysis-inputs-div{
+    display: flex;
+    flex-direction: column;
+    width: 70% !important;
+}
+
+.input-section{
+    label{
+        color: white;
+    }    
+}
+
+.vitamins-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.submit-btn {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.analysis-form-input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.analysis-btn {
+    padding: 10px 20px;
+}
+
+.analysis-btn {
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    background-color: #278275;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+}
+
+
+.analysis-btn:hover {
+    background-color: #08534a;
+}
+.analysis-btn.active {
+    background-color: #93c1ba;
+    color: white;
+}
+.input-section {
+    display: none;
+    color: white;
+}
+.input-section.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.analysis-form-input{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 6vh;
+}
+
+pre {
+    white-space: pre-wrap; /* Allow text to wrap */
+    word-wrap: break-word; /* Break long words */
+    word-break: break-word; /* Ensure long words are broken correctly */
+}

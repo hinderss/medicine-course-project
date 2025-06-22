@@ -1,5 +1,7 @@
 import re
 from datetime import datetime
+
+from geopy import Nominatim
 from wtforms.validators import ValidationError
 
 RE_PHONE = (r"^((8|\+374|\+994|\+995|\+375|\+7|\+380|\+38|\+996|\+998|\+993)[\- ]?)?\(?\d{3,5}\)?[\- ]?\d{1}[\- ]"
@@ -55,3 +57,13 @@ class FutureTimeValidator:
 
         if selected_datetime <= datetime.now():
             raise ValidationError(self.message)
+
+
+def get_coordinates(city, street, building):
+    geolocator = Nominatim(user_agent="doctor_registration_app")
+    address = f"{city}, {street}, {building}"
+    location = geolocator.geocode(address)
+    if location:
+        return location.latitude, location.longitude
+    else:
+        raise ValueError("Координаты не найдены по введённому адресу.")

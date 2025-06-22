@@ -5,400 +5,509 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/doctor_appointments_style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/header2.css') }}">
-    <script src="{{ url_for('static', filename='scripts/doctorAppointmentsBehaviour.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/profileMenu.css') }}">
 
     <title>Записи</title>
 </head>
-<header class="header2">
-    <div class="header container row centerH padding100pxW spacebtw">
-        <div class="container row small centerH" id="header2DropdownContainer">
-            <!-- <img src="static/images/dropdown.svg" id="dropdown" class="marginW10px"> -->
-            <h4 class="regular">Записи</h4>
-        </div>
-        <div class="container row small center">
-            <a href="/index">
-                <img src="static/images/logo.svg" width="40px" class="marginW30px">
-            </a>
-        </div>
-        <div class="container row small" id="header2Profile">
-            <a>
-                <img src="static/images/profileLogo.svg" width="40px" class="marginW10px">
-            </a>
-            <img src="static/images/menu.png" width="40px" id="menuIcon">
-        </div>
-    </div>
-</header>
-<body class="container marginTop120px">
-    <!-- profile menu -->
-    {% if current_user.patient or current_user.doctor %}
+<body class="container marginTop40px">
     <div class="menu">
-        <div id="menuProfileDiv">
-            {% if current_user.patient %}
-                {% if current_user.patient.photo_path %}
-                    <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}" width="40px">
-                {% else %}
-                    <img src="static/images/profileLogo.svg" width="40px">
-                {% endif %}
-            {% else %}
-                {% if current_user.doctor.photo_path %}
-                    <img src="{{ url_for('uploaded_file', filename=current_user.doctor.photo_path) }}" width="40px">
-                {% else %}
-                    <img src="static/images/profileLogo.svg" width="40px">
-                {% endif %}
-            {% endif %}
+        <div class="container row" id="menuProfileDiv">
+            <img src="static/images/profileLogo.svg" width="40px">
             <div>
-                <h4 id="name">
-                    {% if current_user.patient %}
-                    <span>{{ current_user.patient.firstname }} {{ current_user.patient.surname }}</span>
-                    {% else %}
-                    <span>{{ current_user.doctor.firstname }} {{ current_user.doctor.surname }}</span>
-                    {% endif %}
-                <h5 id="email">{{ current_user.username }}</h5>
+                <h4 id="name">Загеев Ален</h4>
+                <h5 id="email">gaj@gmail.com</h5>
             </div>
         </div>
-        <div class="menuItem">
-            <img src="static/images/doctorsList.svg" width="40px"  style="filter: invert(1);">
-            <a href="doctor_list">Наши специалисты</a>
+        <div class="menuItem active">
+            <img src="static/images/doctorsList.svg" width="40px">
+            <h5>Наши специалисты</h5>
         </div>
-        <div class="menuItem  active">
+        <div class="menuItem">
             <img src="static/images/appointments.svg" width="40px">
-            {% if current_user.patient %}
-                <a href="patient-appointments">Записи</a>
-            {% else %}
-                <a href="doctor_appointments">Записи</a>
-            {% endif %}
+            <a href="appointments">Записи</a>
         </div>
-        <div class="menuItem">
-            <img src="static/images/navigation.png" width="40px">
-            <a href="navigation">Навигация по БЗ</a>
-        </div>
-        <div class="menuItem">
-            <img src="static/images/recommendation.png" width="40px">
-            <a href="recommendation">Рекомендации по здоровью</a>
-        </div>
-        <div class="menuItem">
-            <img src="static/images/blood_test.png" width="40px">
-            <a href="blood_test">Анализ крови</a>
-        </div>
-        {% if current_user.patient %}
         <div class="menuItem">
             <img src="static/images/medicalCard.png" width="40px">
-            <a href="medical-card">Медицинская карта</a>
-        </div>     
-        {% endif %} 
-           
+            <a href="medicalCard">Медицинская карта</a>
+        </div>
     </div>
-    {% endif %}
-
-
     <div class="container center">
         <div id="appointmentsTitle">
-            <h3>{{ current_user.doctor.surname }} {{ current_user.doctor.firstname }} {{ current_user.doctor.patronymic }} ({{ current_user.doctor.practice_profile }})</h3>
+            <h2>Записи</h2>
+            <h3>Поносов Казимир Владимирович (проктолог)</h3>
         </div>
     </div>
 
     <div id="appointmentsTable">
         <div class="appointmentRow">
             <h5></h5>
-            {% for time in appointments_times['day0'] %}
-                <h5>{{ time }}</h5>
-            {% endfor %}
+            <h5>07:00</h5>
+            <h5>08:00</h5>
+            <h5>09:00</h5>
+            <h5>10:00</h5>
+            <h5>11:00</h5>
+            <h5>12:00</h5>
+            <h5>13:00</h5>
+            <h5>14:00</h5>
+            <h5>15:00</h5>
+            <h5>16:00</h5>
+            <h5>17:00</h5>
+
         </div>
-    
         <div class="appointmentRow">
-            <h4>Сегодня</h4>
-            {% if appointments_by_day['day0'] %}
-                {% for app in appointments_by_day['day0'] %}
-                    <div class="appointmentsTableItem consultation">
-                        <h6>Консультация</h6>
-                        <div id="apointementsProfile">
-                            <img src="{{ url_for('uploaded_file', filename=app.patient.photo_path) }}" width="30px">
-                            <div>
-                                <h6>{{app.patient.surname}}</h6>
-                                <h6>Н. И.</h6>
-                            </div>
-                        </div>
+            <h4>Today</h4>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
                     </div>
-                {% endfor %}
-            {% else %}
-                <h4>---</h4>
-            {% endif %}
-        </div>
-    
-        <div class="appointmentRow">
-            <h5></h5>
-            {% for time in appointments_times['day1'] %}
-                <h5>{{ time }}</h5>
-            {% endfor %}
-        </div>
-    
-        <div class="appointmentRow">
-            <h4>{{days['day1']}}</h4>
-            {% if appointments_by_day['day1'] %}
-                {% for app in appointments_by_day['day1'] %}
-                    <div class="appointmentsTableItem consultation">
-                        <h6>Консультация</h6>
-                        <div id="apointementsProfile">
-                            <img src="{{ url_for('uploaded_file', filename=app.patient.photo_path) }}" width="30px">
-                            <div>
-                                <h6>{{app.patient.surname}}</h6>
-                                <h6>Н. И.</h6>
-                            </div>
-                        </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem">
+                <h6 id="appointmentType">Осмотр</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
                     </div>
-                {% endfor %}
-            {% else %}
-                <h4>---</h4>
-            {% endif %}
-        </div>
-    
-        <div class="appointmentRow">
-            <h5></h5>
-            {% for time in appointments_times['day2'] %}
-                <h5>{{ time }}</h5>
-            {% endfor %}
-        </div>
-    
-        <div class="appointmentRow">
-            <h4>{{days['day2']}}</h4>
-            {% if appointments_by_day['day2'] %}
-                {% for app in appointments_by_day['day2'] %}
-                    <div class="appointmentsTableItem consultation">
-                        <h6>Консультация</h6>
-                        <div id="apointementsProfile">
-                            <img src="{{ url_for('uploaded_file', filename=app.patient.photo_path) }}" width="30px">
-                            <div>
-                                <h6>{{app.patient.surname}}</h6>
-                                <h6>Н. И.</h6>
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
                     </div>
-                {% endfor %}
-            {% else %}
-                <h4>---</h4>
-            {% endif %}
-        </div>
-    
-        <div class="appointmentRow">
-            <h5></h5>
-            {% for time in appointments_times['day3'] %}
-                <h5>{{ time }}</h5>
-            {% endfor %}
-        </div>
-    
-        <div class="appointmentRow">
-            <h4>{{days['day3']}}</h4>
-            {% if appointments_by_day['day3'] %}
-                {% for app in appointments_by_day['day3'] %}
-                    <div class="appointmentsTableItem consultation">
-                        <h6>Консультация</h6>
-                        <div id="apointementsProfile">
-                            <img src="{{ url_for('uploaded_file', filename=app.patient.photo_path) }}" width="30px">
-                            <div>
-                                <h6>{{app.patient.surname}}</h6>
-                                <h6>Н. И.</h6>
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
                     </div>
-                {% endfor %}
-            {% else %}
-                <h4>---</h4>
-            {% endif %}
-        </div>
-    
-        <div class="appointmentRow">
-            <h5></h5>
-            {% for time in appointments_times['day4'] %}
-                <h5>{{ time }}</h5>
-            {% endfor %}
-        </div>
-    
-        <div class="appointmentRow">
-            <h4>{{days['day4']}}</h4>
-            {% if appointments_by_day['day4'] %}
-                {% for app in appointments_by_day['day4'] %}
-                    <div class="appointmentsTableItem consultation">
-                        <h6>Консультация</h6>
-                        <div id="apointementsProfile">
-                            <img src="{{ url_for('uploaded_file', filename=app.patient.photo_path) }}" width="30px">
-                            <div>
-                                <h6>{{app.patient.surname}}</h6>
-                                <h6>Н. И.</h6>
-                            </div>
-                        </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
                     </div>
-                {% endfor %}
-            {% else %}
-                <h4>---</h4>
-            {% endif %}
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
         </div>
-    
-    </div>
-
-    <div style="border: 1px solid black; margin-bottom: 50px; margin-top: 100px;">
-        <h3>Режим работы:</h3>
-        <form id="createAppointmentForm" action="/create-appointment" method="POST" enctype="multipart/form-data">
-            {{ form.csrf_token }}
-
-            <div class="container row">
-                <h4>Пн</h4>
-                {% if monday %}
-                    {{ form.monday_check(checked=True) }}
-                    <h4>C</h4>
-                    {{ form.monday_start_time(value=monday.start_time)}}
-                    <h4>До</h4>
-                    {{ form.monday_end_time(value=monday.end_time)}}
-                    <h4>прод.(мин)</h4>
-                    {{ form.monday_duration(value=monday.duration_minutes)}}
-                {% else %}
-                    {{ form.monday_check(checked=False) }}
-                    <h4>C</h4>
-                    {{ form.monday_start_time }}
-                    <h4>До</h4>
-                    {{ form.monday_end_time }}
-                    <h4>прод.(мин)</h4>
-                    {{ form.monday_duration }}
-                {% endif %}
+        <div class="appointmentRow">
+            <h4>Date 2</h4>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
             </div>
 
-            <!-- Продолжение для вторника -->
-            <div class="container row">
-                <h4>Вт</h4>
-                {% if tuesday %}
-                    {{ form.tuesday_check(checked=True) }}
-                    <h4>C</h4>
-                    {{ form.tuesday_start_time(value=tuesday.start_time)}}
-                    <h4>До</h4>
-                    {{ form.tuesday_end_time(value=tuesday.end_time)}}
-                    <h4>прод.(мин)</h4>
-                    {{ form.tuesday_duration(value=tuesday.duration_minutes)}}
-                {% else %}
-                    {{ form.tuesday_check(checked=False) }}
-                    <h4>C</h4>
-                    {{ form.tuesday_start_time }}
-                    <h4>До</h4>
-                    {{ form.tuesday_end_time }}
-                    <h4>прод.(мин)</h4>
-                    {{ form.tuesday_duration }}
-                {% endif %}
+            <div class="appointmentsTableItem">
+                <h6 id="appointmentType">Осмотр</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
             </div>
 
-            <!-- Продолжение для среды -->
-            <div class="container row">
-                <h4>Ср</h4>
-                {% if wednesday %}
-                    {{ form.wednesday_check(checked=True) }}
-                    <h4>C</h4>
-                    {{ form.wednesday_start_time(value=wednesday.start_time)}}
-                    <h4>До</h4>
-                    {{ form.wednesday_end_time(value=wednesday.end_time)}}
-                    <h4>прод.(мин)</h4>
-                    {{ form.wednesday_duration(value=wednesday.duration_minutes)}}
-                {% else %}
-                    {{ form.wednesday_check(checked=False) }}
-                    <h4>C</h4>
-                    {{ form.wednesday_start_time }}
-                    <h4>До</h4>
-                    {{ form.wednesday_end_time }}
-                    <h4>прод.(мин)</h4>
-                    {{ form.wednesday_duration }}
-                {% endif %}
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
             </div>
 
-            <!-- Продолжение для четверга -->
-            <div class="container row">
-                <h4>Чт</h4>
-                {% if thursday %}
-                    {{ form.thursday_check(checked=True) }}
-                    <h4>C</h4>
-                    {{ form.thursday_start_time(value=thursday.start_time)}}
-                    <h4>До</h4>
-                    {{ form.thursday_end_time(value=thursday.end_time)}}
-                    <h4>прод.(мин)</h4>
-                    {{ form.thursday_duration(value=thursday.duration_minutes)}}
-                {% else %}
-                    {{ form.thursday_check(checked=False) }}
-                    <h4>C</h4>
-                    {{ form.thursday_start_time }}
-                    <h4>До</h4>
-                    {{ form.thursday_end_time }}
-                    <h4>прод.(мин)</h4>
-                    {{ form.thursday_duration }}
-                {% endif %}
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
             </div>
 
-            <!-- Продолжение для пятницы -->
-            <div class="container row">
-                <h4>Пт</h4>
-                {% if friday %}
-                    {{ form.friday_check(checked=True) }}
-                    <h4>C</h4>
-                    {{ form.friday_start_time(value=friday.start_time)}}
-                    <h4>До</h4>
-                    {{ form.friday_end_time(value=friday.end_time)}}
-                    <h4>прод.(мин)</h4>
-                    {{ form.friday_duration(value=friday.duration_minutes)}}
-                {% else %}
-                    {{ form.friday_check(checked=False) }}
-                    <h4>C</h4>
-                    {{ form.friday_start_time }}
-                    <h4>До</h4>
-                    {{ form.friday_end_time }}
-                    <h4>прод.(мин)</h4>
-                    {{ form.friday_duration }}
-                {% endif %}
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+        </div>
+
+        <div class="appointmentRow">
+            <h4>Date 3</h4>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
             </div>
 
-            <!-- Продолжение для субботы -->
-            <div class="container row">
-                <h4>Сб</h4>
-                {% if saturday %}
-                    {{ form.saturday_check(checked=True) }}
-                    <h4>C</h4>
-                    {{ form.saturday_start_time(value=saturday.start_time)}}
-                    <h4>До</h4>
-                    {{ form.saturday_end_time(value=saturday.end_time)}}
-                    <h4>прод.(мин)</h4>
-                    {{ form.saturday_duration(value=saturday.duration_minutes)}}
-                {% else %}
-                    {{ form.saturday_check(checked=False) }}
-                    <h4>C</h4>
-                    {{ form.saturday_start_time }}
-                    <h4>До</h4>
-                    {{ form.saturday_end_time }}
-                    <h4>прод.(мин)</h4>
-                    {{ form.saturday_duration }}
-                {% endif %}
+            <div class="appointmentsTableItem">
+                <h6 id="appointmentType">Осмотр</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
             </div>
 
-            <!-- Продолжение для воскресенья -->
-            <div class="container row">
-                <h4>Вс</h4>
-                {% if sunday %}
-                    {{ form.sunday_check(checked=True) }}
-                    <h4>C</h4>
-                    {{ form.sunday_start_time(value=sunday.start_time)}}
-                    <h4>До</h4>
-                    {{ form.sunday_end_time(value=sunday.end_time)}}
-                    <h4>прод.(мин)</h4>
-                    {{ form.sunday_duration(value=sunday.duration_minutes)}}
-                {% else %}
-                    {{ form.sunday_check(checked=False) }}
-                    <h4>C</h4>
-                    {{ form.sunday_start_time }}
-                    <h4>До</h4>
-                    {{ form.sunday_end_time }}
-                    <h4>прод.(мин)</h4>
-                    {{ form.sunday_duration }}
-                {% endif %}
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
             </div>
 
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
 
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+        </div>
 
-            {{ form.submit(class="button", id="submitBtn") }}
-        </form>
+        <div class="appointmentRow">
+            <h4>Date 4</h4>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem">
+                <h6 id="appointmentType">Осмотр</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+        </div>
+
+        <div class="appointmentRow">
+            <h4>Date 5</h4>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem">
+                <h6 id="appointmentType">Осмотр</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem operation">
+                <h6>Операция (жаль чела)</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+            <div class="appointmentsTableItem consultation">
+                <h6>Консультация</h6>
+                <div id="apointementsProfile">
+                    <img src="static/images/logo.svg" width="30px">
+                    <div>
+                        <h6>Загеев</h6>
+                        <h6>Н. И.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointmentsTableItem empty">
+                <!-- пусто -->
+            </div>
+        </div>
     </div>
 </body>
 {% endblock %}

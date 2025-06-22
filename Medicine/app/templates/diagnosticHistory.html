@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+{% block title %}История диагностик{% endblock %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/diagnosticHistory.css') }}">
+    <title>Diagnostic History</title>
+</head>
+<body class="container">
+<div class="diagnosticPageTitleDiv">
+    <p id="diagnosticPageTitle">История проводимых диагностик в медицинской системе</p>
+</div>
+
+{% if diagnostics %}
+    <table class="diagnosis-table">
+        <tbody>
+            {% for diagnostic in diagnostics %}
+            <tr>
+                <td>
+                    <h4 id="tableTitle">Диагностика №{{ loop.index }}</h4>
+                    <p>Тип диагностики: {{ diagnostic.type }}</p>
+                    <p>Дата проведения: {{ diagnostic.date.strftime('%H:%M %d.%m.%Y') }}</p>
+                    
+                    {% if diagnostic.selected %}
+                        <p>Выбранные:</p>
+                        <ul class="indicators-list">
+                            {% for key, value in diagnostic.selected.items() %}
+                                <li>{{ key }} - {{ value }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </td>
+                <td>
+                    <h4 id="tableTitle">Результат диагностики:</h4><br>
+                    {% if diagnostic.result %}
+                        <ul class="results-list">
+                            {% for key, value in diagnostic.result.items() %}
+                                <li class="result-item">{{ key }} - {{ value }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>Результаты отсутствуют</p>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>У вас пока нет сохраненных диагностик</p>
+{% endif %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    loadChatHistory();
+
+    // Обработчик для открытия чата
+    $('#gptIcon').on('click', function () {
+        $('.chat').css('display', 'flex');
+        $('#gptIcon').css('display', 'none');
+        loadChatHistory();  // Перезагружаем историю при открытии чата
+    });
+
+    // Обработчик для закрытия чата
+    $('#closeChatBtn').on('click', function () {
+        $('.chat').css('display', 'none');
+        $('#gptIcon').css('display', 'block');
+    });
+
+    // Обработчик для очистки истории чата
+    $('#clearChatButton').on('click', function () {
+        if (!confirm("Вы уверены, что хотите очистить историю чата?")) return;
+
+        fetch('/chat/clear', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.response);
+            loadChatHistory(); // Перезагружаем историю чата после очистки
+        })
+        .catch(error => {
+            alert('Ошибка при очистке истории: ' + error);
+        });
+    });
+
+    var $messages = $('.messages-content');
+
+    function setDate() {
+        var d = new Date();
+        $('<div class="timestamp">' + d.getHours() + ':' + ('0' + d.getMinutes()).slice(-2) + '</div>')
+            .appendTo($('.message:last'));
+    }
+
+    function renderMessage(msg, isUser = true) {
+        if ($.trim(msg) === '') return;
+
+        const msgClass = isUser ? 'message-personal' : 'new';
+        const html = marked.parse(msg);  // конвертируем Markdown в HTML
+        $('<div class="message ' + msgClass + '">' + html + '</div>')
+            .appendTo($messages)
+            .addClass('new');
+
+        setDate();
+        scrollChat();
+    }
+
+    function insertMessage(msg) {
+        if ($.trim(msg) === '') return;
+
+        renderMessage(msg, true); // показать сообщение пользователя
+        $('.message-input').val(null); // очистить поле ввода
+        sendMessageToServer(msg); // отправить на сервер
+    }
+
+    function loadChatHistory() {
+        fetch('/chat/history')
+            .then(response => response.json())
+            .then(data => {
+                $messages.empty(); // очистить текущие сообщения
+
+                if (data.messages.length > 0) {
+                    data.messages.forEach(msg => {
+                        renderMessage(msg.text, msg.is_user);
+                    });
+                } else {
+                    renderMessage("Здравствуйте! Я ваш медицинский ассистент. Чем могу помочь?", false);
+                }
+
+                scrollChat();
+            })
+            .catch(error => {
+                console.error('Ошибка загрузки истории:', error);
+                renderMessage("Здравствуйте! Я ваш медицинский ассистент. Чем могу помочь?", false);
+            });
+    }
+
+    function sendMessageToServer(msg) {
+        // Получаем текущий URL страницы
+        const currentPath = window.location.pathname;
+        
+        fetch('/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 
+                message: msg,
+                endpoint: currentPath // Добавляем относительный адрес эндпоинта
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.response) {
+                renderMessage(data.response, false);
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка при отправке сообщения:', error);
+            renderMessage("Извините, произошла ошибка при обработке вашего сообщения", false);
+        });
+    }
+
+    $('.message-submit').click(function () {
+        const msg = $('.message-input').val();
+        if (msg.trim() !== '') {
+            insertMessage(msg);
+        }
+    });
+
+    $(window).on('keydown', function (e) {
+        if (e.which === 13) {
+            const msg = $('.message-input').val();
+            if (msg.trim() !== '') {
+                insertMessage(msg);
+            }
+            return false;
+        }
+    });
+
+    function scrollChat() {
+        var height = $messages[0].scrollHeight;
+        $messages.stop().animate({ scrollTop: height }, 'slow');
+    }
+});
+
+$(document).on('click', function (event) {
+    const $chat = $('.chat');
+    const $icon = $('#gptIcon');
+
+    if ($chat.css('display') === 'flex' &&
+        !$chat.is(event.target) && $chat.has(event.target).length === 0 &&
+        !$icon.is(event.target) && $icon.has(event.target).length === 0) {
+        $chat.css('display', 'none');
+        $icon.css('display', 'block');
+    }
+});
+
+    
+</script>
+</body>
+{% endblock %}

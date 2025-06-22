@@ -8,7 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='style/profileMenu.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/agentResult.css') }}">
-    <script src="{{ url_for('static', filename='/scripts/menuTrigger.js') }}"></script>
 </head>
 <body>
 
@@ -46,66 +45,66 @@
     </div>
 </main>
 
-    <!-- profile menu -->
-    {% if current_user.patient or current_user.doctor %}
-    <div class="menu">
-        <div id="menuProfileDiv">
-            {% if current_user.patient %}
-                {% if current_user.patient.photo_path %}
-                    <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}" width="40px">
-                {% else %}
-                    <img src="static/images/profileLogo.svg" width="40px">
-                {% endif %}
-            {% else %}
-                {% if current_user.doctor.photo_path %}
-                    <img src="{{ url_for('uploaded_file', filename=current_user.doctor.photo_path) }}" width="40px">
-                {% else %}
-                    <img src="static/images/profileLogo.svg" width="40px">
-                {% endif %}
-            {% endif %}
-            <div>
-                <h4 id="name">
-                    {% if current_user.patient %}
-                    <span>{{ current_user.patient.firstname }} {{ current_user.patient.surname }}</span>
-                    {% else %}
-                    <span>{{ current_user.doctor.firstname }} {{ current_user.doctor.surname }}</span>
-                    {% endif %}
-                <h5 id="email">{{ current_user.username }}</h5>
-            </div>
-        </div>
-        <div class="menuItem">
-            <img src="static/images/doctorsList.svg" width="40px" style="filter: invert(1);">
-            <a>Наши специалисты</a>
-        </div>
-        <div class="menuItem">
-            <img src="static/images/appointments.svg" width="40px">
-            {% if current_user.patient %}
-                <a href="patient-appointments">Записи</a>
-            {% else %}
-                <a href="doctor_appointments">Записи</a>
-            {% endif %}
-        </div>
-        <div class="menuItem">
-            <img src="static/images/navigation.png" width="40px">
-            <a href="navigation">Навигация по БЗ</a>
-        </div>
-        <div class="menuItem">
-            <img src="static/images/recommendation.png" width="40px">
-            <a href="recommendation">Рекомендации по здоровью</a>
-        </div>
-        <div class="menuItem active">
-            <img src="static/images/blood_test.png" width="40px">
-            <a href="blood_test">Анализ крови</a>
-        </div>
-        {% if current_user.patient %}
-        <div class="menuItem">
-            <img src="static/images/medicalCard.png" width="40px">
-            <a href="medical-card">Медицинская карта</a>
-        </div>
-        {% endif %}
+<!--    &lt;!&ndash; profile menu &ndash;&gt;-->
+<!--    {% if current_user.patient or current_user.doctor %}-->
+<!--    <div class="menu">-->
+<!--        <div id="menuProfileDiv">-->
+<!--            {% if current_user.patient %}-->
+<!--                {% if current_user.patient.photo_path %}-->
+<!--                    <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}" width="40px">-->
+<!--                {% else %}-->
+<!--                    <img src="static/images/profileLogo.svg" width="40px">-->
+<!--                {% endif %}-->
+<!--            {% else %}-->
+<!--                {% if current_user.doctor.photo_path %}-->
+<!--                    <img src="{{ url_for('uploaded_file', filename=current_user.doctor.photo_path) }}" width="40px">-->
+<!--                {% else %}-->
+<!--                    <img src="static/images/profileLogo.svg" width="40px">-->
+<!--                {% endif %}-->
+<!--            {% endif %}-->
+<!--            <div>-->
+<!--                <h4 id="name">-->
+<!--                    {% if current_user.patient %}-->
+<!--                    <span>{{ current_user.patient.firstname }} {{ current_user.patient.surname }}</span>-->
+<!--                    {% else %}-->
+<!--                    <span>{{ current_user.doctor.firstname }} {{ current_user.doctor.surname }}</span>-->
+<!--                    {% endif %}-->
+<!--                <h5 id="email">{{ current_user.username }}</h5>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="menuItem">-->
+<!--            <img src="static/images/doctorsList.svg" width="40px" style="filter: invert(1);">-->
+<!--            <a>Наши специалисты</a>-->
+<!--        </div>-->
+<!--        <div class="menuItem">-->
+<!--            <img src="static/images/appointments.svg" width="40px">-->
+<!--            {% if current_user.patient %}-->
+<!--                <a href="patient-appointments">Записи</a>-->
+<!--            {% else %}-->
+<!--                <a href="doctor_appointments">Записи</a>-->
+<!--            {% endif %}-->
+<!--        </div>-->
+<!--        <div class="menuItem">-->
+<!--            <img src="static/images/navigation.png" width="40px">-->
+<!--            <a href="navigation">Навигация по БЗ</a>-->
+<!--        </div>-->
+<!--        <div class="menuItem">-->
+<!--            <img src="static/images/recommendation.png" width="40px">-->
+<!--            <a href="recommendation">Рекомендации по здоровью</a>-->
+<!--        </div>-->
+<!--        <div class="menuItem active">-->
+<!--            <img src="static/images/blood_test.png" width="40px">-->
+<!--            <a href="blood_test">Анализ крови</a>-->
+<!--        </div>-->
+<!--        {% if current_user.patient %}-->
+<!--        <div class="menuItem">-->
+<!--            <img src="static/images/medicalCard.png" width="40px">-->
+<!--            <a href="medical-card">Медицинская карта</a>-->
+<!--        </div>-->
+<!--        {% endif %}-->
 
-    </div>
-    {% endif %}
+<!--    </div>-->
+<!--    {% endif %}-->
 
 </body>
 </html>

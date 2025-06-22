@@ -8,3 +8,18 @@ window.addEventListener('scroll', function () {
         gptIcon.classList.add('white');
     }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    var gptIcon = document.getElementById('gptIcon');
+    gptIcon.classList.add('white');
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    var gptIcon = document.getElementById('gptIcon');
+    gptIcon.classList.add('white');
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    var gptIcon = document.getElementById('gptIcon');
+    gptIcon.classList.add('white');
+});

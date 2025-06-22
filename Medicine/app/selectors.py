@@ -1,19 +1,8 @@
-from datetime import datetime, timedelta
-from typing import Dict, List
-
+from flask_login import current_user
 from sqlalchemy import func
 
-from app import disease_definer
-from app.decorators import doctor_required, patient_required
-from app.exceptions import *
-from app.helpers import save_file
-from flask import render_template, redirect, url_for, flash, request, send_from_directory, jsonify
-from flask_login import login_user, login_required, logout_user, current_user
-from app import app, db, login_manager, TODAY
-from app.forms import LoginForm, DoctorForm, PatientForm, MedicalCardForm, AppointmentForm, DoctorScheduleForm
-from app.models import User, Doctor, Patient, MedicalCard, Appointment, Schedule
-from app.serializers import doctors_schema
-from app.success import HttpSuccess
+from app import db
+from app.models import User, Doctor, Appointment, Diagnostic
 
 
 def select_practice_profiles():
@@ -47,3 +36,11 @@ def select_appointment_by_doctor_and_date(doctor: Doctor, date):
         .all()
     )
 
+
+def select_diagnostics_by_user_id(user: User):
+    return (
+        Diagnostic.query
+        .filter_by(user_id=user.id)
+        .order_by(Diagnostic.date.desc())
+        .all()
+    )

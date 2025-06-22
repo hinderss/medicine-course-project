@@ -43,6 +43,7 @@ class AgentsClient:
         payload = {"query": query}
         response = requests.post(url, json=payload)
         self.last_response = response
+        print(response.text)
         return response.json()
 
     def blood(self, wbc, rbc, platelets):
@@ -94,5 +95,17 @@ class AgentsClient:
         }
         response = requests.post(url, json=payload)
         self.last_response = response
+        return response.json()
+
+    def diagnosis(
+            self,
+            symptoms,
+    ):
+        url = f"{self.base_url}/diagnosis"
+        payload = {"symptoms": symptoms}
+        response = requests.post(url, json=payload)
+        print(response.request.body)
+        self.last_response = response
+        print(response)
         return response.json()
 

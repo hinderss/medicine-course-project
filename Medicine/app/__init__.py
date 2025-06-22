@@ -27,11 +27,17 @@ login_manager.login_view = 'login'
 disease_definer = DiseaseDefiner(os.getenv('DISEASES_XML'))
 with open('diseases.json', 'r', encoding='utf-8') as file:
     diseases_json = json.load(file)
+with open('symptoms.json', 'r', encoding='utf-8') as file:
+    symptoms_json = json.load(file)
 with open('endocrine_system.json', 'r', encoding='utf-8') as file:
     endocrine_system_json = json.load(file)
+with open('vitamin_system_json.json', 'r', encoding='utf-8') as file:
+    vitamin_system_json = json.load(file)
+with open('micronutrients_data.json', 'r', encoding='utf-8') as file:
+    micronutrients_data = json.load(file)
 TODAY = datetime.date.today()
 MAX_DURATION = 1440
-PER_PAGE = 4
+PER_PAGE = 8
 WEEKDAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 
 from app import routes

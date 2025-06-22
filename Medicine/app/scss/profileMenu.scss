@@ -1,19 +1,30 @@
-.menu{
-    display: none;
+.menu {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
     position: fixed;
     top: 80px;
     right: 1%;
     background-color: white;
     width: 300px;
-    // height: 500px;
     z-index: 999;
     padding: 20px;
-  
-      border: 1px solid gray;
+    border: 1px solid gray;
     border-radius: 20px;
 }
+
+/* Класс для отображения меню */
+.menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
   
 #menuProfileDiv{
+
+    display: flex;
     
 
     #name{
@@ -29,6 +40,11 @@
     }
 }
 
+#menuIcon{
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 .menuItem{
     display: flex;
     flex-direction: row;
@@ -36,8 +52,8 @@
     border-radius: 11px;
 
 
-    margin: 10px 0;
-    padding: 10px;
+    // margin: 10px 0;
+    padding: 10px 7px;
     background-color: white;
 
     img{

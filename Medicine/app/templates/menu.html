@@ -56,6 +56,18 @@
                 <a href="medical-card">Медицинская карта</a>
             </div>
             {% endif %}
+            {% if current_user %}
+            <div class="menuItem">
+                <img src="static/images/history.png" width="40px">
+                <a href="diagnostic_history">История диагностик</a>
+            </div>
+            {% endif %}
+            {% if current_user %}
+            <div class="menuItem">
+                <img src="static/images/logout.png" width="40px">
+                <a href="logout">Выход</a>
+            </div>
+            {% endif %}
     
         </div>
         {% endif %}

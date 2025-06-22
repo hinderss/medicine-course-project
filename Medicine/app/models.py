@@ -5,6 +5,9 @@ from sqlalchemy import Enum
 from app import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from geopy.geocoders import Nominatim
+
+geolocator = Nominatim(user_agent="geoapi")
 
 
 class User(UserMixin, db.Model):
@@ -43,6 +46,11 @@ class Doctor(db.Model):
     workplace = db.Column(db.String(100))
     practice_profile = db.Column(db.String(100))
     phone = db.Column(db.String(15))
+    city = db.Column(db.String(255))
+    street = db.Column(db.String(255))
+    building = db.Column(db.String(255))
+    latitude = db.Column(db.Float(precision=10))
+    longitude = db.Column(db.Float(precision=10))
     photo_path = db.Column(db.String(255))
     experience_years = db.Column(db.Integer)
     consultation_price = db.Column(db.Float(precision=2))
@@ -51,22 +59,17 @@ class Doctor(db.Model):
     user = db.relationship('User', backref=db.backref('doctor', uselist=False))
     schedules = db.relationship('Schedule', backref='doctor', lazy=True)
 
-    def to_dict(self):
+    @property
+    def coords(self):
+        location = geolocator.geocode("Минск, Платонова, 39")
         return {
-            'id': self.id,
-            'surname': self.surname,
-            'firstname': self.firstname,
-            'patronymic': self.patronymic,
-            'dob': self.dob.isoformat() if self.dob else None,
-            'education': self.education,
-            'workplace': self.workplace,
-            'practice_profile': self.practice_profile,
-            'phone': self.phone,
-            'photo_path': self.photo_path,
-            'experience_years': self.experience_years,
-            'consultation_price': self.consultation_price,
-            'rating': self.rating
-        }
+            "latitude": location.latitude,
+            "longitude": location.longitude,
+        } if location else None
+
+    @property
+    def address(self):
+        return f"г. {self.city}, ул. {self.street}, {self.building}"
 
     def __str__(self):
         return f"Doctor: {self.surname} {self.firstname} {self.patronymic}, ID: {self.id}"
@@ -174,3 +177,28 @@ class MedicalCard(db.Model):
 
     def __str__(self):
         return f"{self.surname} {self.firstname} {self.patronymic}"
+
+
+class Diagnostic(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    type = db.Column(db.String(100), nullable=False)
+    date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    selected = db.Column(db.JSON)  # или db.Column(db.Text) для более старых версий SQLite
+    result = db.Column(db.JSON)    # или db.Column(db.Text) для более старых версий SQLite
+
+    def __repr__(self):
+        return f'<Diagnostic {self.id} {self.type}>'
+
+
+class ChatMessage(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    message = db.Column(db.Text, nullable=False)
+    is_user = db.Column(db.Boolean, nullable=False)  # True - от пользователя, False - от бота
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+
+    user = db.relationship('User', backref=db.backref('chat_messages', lazy=True))
+
+    def __repr__(self):
+        return f'<ChatMessage {self.id} {self.user_id}>'

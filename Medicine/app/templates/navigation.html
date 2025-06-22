@@ -1,14 +1,28 @@
-{% extends "queryBase.html" %}
+{% extends "base.html" %}
 {% block title %}Навигация{% endblock %}
-{% block header_block %}Навигация по БЗ{% endblock %}
-{% block action %}/navigation{% endblock %}
-{% block form_block %}
-    {{ form.query(class="form-control", placeholder="Введите запрос", value=form.query.data or '') }}
-    {{ form.language(class="form-select", placeholder="Введите запрос", value=form.language.data or '') }}
-    {{ form.submit(class="btn btn-primary", id="submitBtn") }}
-{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/agentsPage.css') }}">
 
-{% block answer_block %}
-    <pre id="navigationResult">{{ answer }}</pre>
+<body class="container">
+    <div class="agentsContainer">
+        <div class="leftDiv">
+            <form method="POST" action="{{ url_for('navigate') }}">
+                {{ form.hidden_tag() }}
+                <h3>Выполните запрос</h3>
+                <div class="language-selector">
+                    <label for="language-select">Выбор языка:</label>
+                    {{ form.language(id="language-select", placeholder="Язык") }}
+                </div>
+                <div class="container flex row big">
+                    {{ form.query(id="search-input", placeholder="Введите заболевание") }}
+                    <button id="search-button" type="submit">Поиск</button>
+                </div>
+            </form>
+        </div>
+        <div class="rightDiv">
+            <h3>Результат поиска</h3>
+            <pre id="navigationAgentResult">{{ answer }}</pre>
+        </div>
+    </div>
+</body>
 {% endblock %}
-{% block navigation_active %} active{% endblock %}

@@ -3,7 +3,341 @@
 <head>
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/profileMenu.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts/menuTrigger.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
+    <!-- <script src="{{ url_for('static', filename='scripts/chat.js') }}"></script> -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Получаем текущий URL
+            const currentUrl = window.location.pathname;
+
+            // Находим все ссылки в меню
+            const menuLinks = document.querySelectorAll('.menuItem a');
+
+            // Перебираем все ссылки
+            menuLinks.forEach(link => {
+                // Если путь ссылки совпадает с текущим URL
+                if (link.getAttribute('href') === currentUrl) {
+                    // Добавляем класс active к родительскому элементу (div.menuItem)
+                    link.parentElement.classList.add('active');
+                }
+            });
+
+            // Также проверяем основные ссылки в хедере
+            const headerLinks = document.querySelectorAll('#header a.link');
+            headerLinks.forEach(link => {
+                const linkPath = link.getAttribute('href');
+                if (linkPath && currentUrl.startsWith(linkPath)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </head>
-{% block content %}
-{% endblock %}
+<body>
+    <div class="chat-container">
+        <button class="fixedButton"><img src="static/images/chat.png" id="gptIcon" class="gptIcon logo" height="40px"></button>
+        <div class="chat">
+            <div class="chat-title">
+                <figure class="avatar">
+                    <img src="static/images/chatAvatar.jpg" />
+                </figure>
+                <div>
+                    <h1>Medical Assistant</h1>
+                    <h2>AI chat</h2>
+                </div>
+                <button class="fixedButton" id="closeChatBtn" class="closeChatBtnImg"><img src="static/images/close.svg" class="logo white"></button>
+            </div>
+            <div class="messages">
+                <div class="messages-content"></div>
+            </div>
+            <div style="text-align: right; padding-right: 15px;">
+                <a href="#" style="position: relative; display: inline-block;">
+                    Очистить чат
+                    <button id="clearChatButton" 
+                            style="position: absolute; 
+                                   top: 0; 
+                                   left: 0; 
+                                   width: 100%; 
+                                   height: 100%; 
+                                   opacity: 0; 
+                                   cursor: pointer; 
+                                   border: none; 
+                                   background: transparent;">
+                    </button>
+                </a>
+            </div>
+            <div class="message-box">
+                <textarea type="text" name="chat_input" class="message-input" placeholder="Type message..." style="overflow: hidden;"></textarea>
+                <button type="submit" name="chat_send" class="message-submit"><img src="static/images/chatSendMessagePhoto.png"></button>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container padding100pxW row spacebtw marginTop20px" id="header">
+        <div class="container row small" id="headerLogo">
+            <a href="/index"><img src="static/images/logo.png" width="40px" class="marginW30px"></a>
+            <a href="/index" class="link" style="color:#3F6666;"><h4 style="font-weight: 600" class="thin">Медицинский ассистент</h4></a>
+        </div>
+
+        {% if current_user.is_authenticated %}
+            {% if current_user.patient %}
+                <!-- <a style="color:#3F6666;" href="/medical-card" class="link"><h4 class="thin">Медицинская карта</h4></a> -->
+                <!-- <a style="color:#3F6666;" href="/patient-appointments" class="link"><h4 class="thin">Записи</h4></a> -->
+            {% else %}
+                <!-- <a style="color:#3F6666;" href="/doctor_appointments" class="link"><h4 class="thin">Записи</h4></a> -->
+            {% endif %}
+        {% endif %}
+
+        <!-- <a style="color:#3F6666;" href="/doctor_list" class="link"><h4 class="thin">Специалисты</h4></a> -->
+
+        {% if current_user.is_authenticated %}
+            {% if name and surname %}
+                <a style="color:#3F6666;">
+                    <div class="profile">
+                        <div class="profileName">
+                            <h5>{{ name }}</h5>
+                            <h5>{{ surname }}</h5>
+                        </div>
+                        <img id="menuIcon" src="static/images/profileLogo.svg" width="40px" class="logo white">
+                    </div>
+                </a>
+            {% endif %}
+        {% else %}
+            <a style="color:#3F6666;" href="/login" class="link"><h4 class="thin">Войти</h4></a>
+        {% endif %}
+
+        <!-- profile menu -->
+        {% if current_user.patient or current_user.doctor %}
+        <div class="menu">
+            <div id="menuProfileDiv">
+                {% if current_user.patient %}
+                    {% if current_user.patient.photo_path %}
+                        <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}" width="40px">
+                    {% else %}
+                        <img src="static/images/profileLogo.svg" width="40px">
+                    {% endif %}
+                {% else %}
+                    {% if current_user.doctor.photo_path %}
+                        <img src="{{ url_for('uploaded_file', filename=current_user.doctor.photo_path) }}" width="40px">
+                    {% else %}
+                        <img src="static/images/profileLogo.svg" width="40px">
+                    {% endif %}
+                {% endif %}
+                <div>
+                    <h4 id="name">
+                        {% if current_user.patient %}
+                        <span>{{ current_user.patient.firstname }} {{ current_user.patient.surname }}</span>
+                        {% else %}
+                        <span>{{ current_user.doctor.firstname }} {{ current_user.doctor.surname }}</span>
+                        {% endif %}
+                    <h5 id="email">{{ current_user.username }}</h5>
+                </div>
+            </div>
+            <div class="menuItem">
+                <img src="static/images/doctorsList.svg" width="40px" style="filter: invert(1);">
+                <a href="/doctor_list">Наши специалисты</a>
+            </div>
+            <div class="menuItem">
+                <img src="static/images/appointments.svg" width="40px">
+                {% if current_user.patient %}
+                    <a href="/patient-appointments">Записи</a>
+                {% else %}
+                    <a href="/doctor_appointments">Записи</a>
+                {% endif %}
+            </div>
+            <div class="menuItem">
+                <img src="static/images/navigation.png" width="40px">
+                <a href="/navigation">Навигация по БЗ</a>
+            </div>
+            <div class="menuItem">
+                <img src="static/images/recommendation.png" width="40px">
+                <a href="/recommendation">Рекомендации по здоровью</a>
+            </div>
+            <div class="menuItem">
+                <img src="static/images/blood_test.png" width="40px">
+                <a href="/blood_test">Анализ крови</a>
+            </div>
+            {% if current_user.patient %}
+            <div class="menuItem">
+                <img src="static/images/medicalCard.png" width="40px">
+                <a href="/medical-card">Медицинская карта</a>
+            </div>
+            {% endif %}
+            {% if current_user %}
+            <div class="menuItem">
+                <img src="static/images/history.png" width="40px">
+                <a href="/diagnostic_history">История диагностик</a>
+            </div>
+            {% endif %}
+            {% if current_user %}
+            <div class="menuItem">
+                <img src="static/images/logout.svg" width="40px">
+                <a href="/logout">Выход</a>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    loadChatHistory();
+
+    // Обработчик для открытия чата
+    $('#gptIcon').on('click', function () {
+        $('.chat').css('display', 'flex');
+        $('#gptIcon').css('display', 'none');
+        loadChatHistory();  // Перезагружаем историю при открытии чата
+    });
+
+    // Обработчик для закрытия чата
+    $('#closeChatBtn').on('click', function () {
+        $('.chat').css('display', 'none');
+        $('#gptIcon').css('display', 'block');
+    });
+
+    // Обработчик для очистки истории чата
+    $('#clearChatButton').on('click', function () {
+        if (!confirm("Вы уверены, что хотите очистить историю чата?")) return;
+
+        fetch('/chat/clear', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.response);
+            loadChatHistory(); // Перезагружаем историю чата после очистки
+        })
+        .catch(error => {
+            alert('Ошибка при очистке истории: ' + error);
+        });
+    });
+
+    var $messages = $('.messages-content');
+
+    function setDate() {
+        var d = new Date();
+        $('<div class="timestamp">' + d.getHours() + ':' + ('0' + d.getMinutes()).slice(-2) + '</div>')
+            .appendTo($('.message:last'));
+    }
+
+    function renderMessage(msg, isUser = true) {
+        if ($.trim(msg) === '') return;
+
+        const msgClass = isUser ? 'message-personal' : 'new';
+        const html = marked.parse(msg);  // конвертируем Markdown в HTML
+        $('<div class="message ' + msgClass + '">' + html + '</div>')
+            .appendTo($messages)
+            .addClass('new');
+
+        setDate();
+        scrollChat();
+    }
+
+    function insertMessage(msg) {
+        if ($.trim(msg) === '') return;
+
+        renderMessage(msg, true); // показать сообщение пользователя
+        $('.message-input').val(null); // очистить поле ввода
+        sendMessageToServer(msg); // отправить на сервер
+    }
+
+    function loadChatHistory() {
+        fetch('/chat/history')
+            .then(response => response.json())
+            .then(data => {
+                $messages.empty(); // очистить текущие сообщения
+
+                if (data.messages.length > 0) {
+                    data.messages.forEach(msg => {
+                        renderMessage(msg.text, msg.is_user);
+                    });
+                } else {
+                    renderMessage("Здравствуйте! Я ваш медицинский ассистент. Чем могу помочь?", false);
+                }
+
+                scrollChat();
+            })
+            .catch(error => {
+                console.error('Ошибка загрузки истории:', error);
+                renderMessage("Здравствуйте! Я ваш медицинский ассистент. Чем могу помочь?", false);
+            });
+    }
+
+    function sendMessageToServer(msg) {
+        // Получаем текущий URL страницы
+        const currentPath = window.location.pathname;
+        
+        fetch('/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 
+                message: msg,
+                endpoint: currentPath // Добавляем относительный адрес эндпоинта
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.response) {
+                renderMessage(data.response, false);
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка при отправке сообщения:', error);
+            renderMessage("Извините, произошла ошибка при обработке вашего сообщения", false);
+        });
+    }
+
+    $('.message-submit').click(function () {
+        const msg = $('.message-input').val();
+        if (msg.trim() !== '') {
+            insertMessage(msg);
+        }
+    });
+
+    $(window).on('keydown', function (e) {
+        if (e.which === 13) {
+            const msg = $('.message-input').val();
+            if (msg.trim() !== '') {
+                insertMessage(msg);
+            }
+            return false;
+        }
+    });
+
+    function scrollChat() {
+        var height = $messages[0].scrollHeight;
+        $messages.stop().animate({ scrollTop: height }, 'slow');
+    }
+});
+
+$(document).on('click', function (event) {
+    const $chat = $('.chat');
+    const $icon = $('#gptIcon');
+
+    if ($chat.css('display') === 'flex' &&
+        !$chat.is(event.target) && $chat.has(event.target).length === 0 &&
+        !$icon.is(event.target) && $icon.has(event.target).length === 0) {
+        $chat.css('display', 'none');
+        $icon.css('display', 'block');
+    }
+});
+
+    
+</script>
+
 </html>

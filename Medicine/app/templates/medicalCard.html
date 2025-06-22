@@ -6,14 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/static/js/date-fields.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="{{ url_for('static', filename='scripts/chat.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/medicalCardToggleRegistrationAddress.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/medicalCardHighlightActive.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/scrollToTop.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/toggleSubmitForm.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/profileMenu.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/header2.css') }}">
-    <script src="{{ url_for('static', filename='scripts/menuTrigger.js') }}"></script>
 
     <!-- <script>
             sidebarItems.forEach(item => {
@@ -45,77 +42,41 @@
         });
     </script> -->
 </head>
-<header class="header2">
-    <div class="header container row centerH padding100pxW spacebtw">
-        <div class="container row small centerH" id="header2DropdownContainer">
-            <!-- <img src="static/images/dropdown.svg" id="dropdown" class="marginW10px"> -->
-            <h4 class="thin">Медицинская карта</h4>
-        </div>
-        <div class="container row small center">
-            <a href="/index">
-                <img src="static/images/logo.svg" width="40px" class="marginW30px">
-            </a>
-        </div>
-        <div class="container row small" id="header2Profile">
-            <a>
-                <img src="static/images/profileLogo.svg" width="40px" class="marginW10px">
-            </a>
-            <img src="static/images/menu.png" width="40px" id="menuIcon">
-        </div>
-    </div>
-</header>
 <body class="container">
-    <div class="container centerW row medium marginTop120px">
-        <a href="#">
-
-        {% if current_user.patient.photo_path %}
-            <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}" class="medicalCardProfilePhoto">
-        {% else %}
-        <img src="static/images/logo.svg" class="medicalCardProfilePhoto">
-        {% endif %}
-
-        </a>
-
-        <div class="medicalCardSidebar">
-            <a class="black" onclick="scrollToTop()"><h5 class="active">Персональные данные</h5></a>
-            <a href="/medical-card#passportDataLink" class="black"><h5>Удостоверение личности</h5></a>
-            <a href="/medical-card#livingAddressDataLink" class="black"><h5>Адрес проживания</h5></a>
-            <a href="/medical-card#registrationAddressDataLink" class="black"><h5>Адрес регистрации</h5></a>
-            <a href="/medical-card#benefitsAndInsuranceDataLink" class="black"><h5>Льготы и страхования</h5></a>
-            <a href="/medical-card#medicalIdinticationsDataLink" class="black"><h5>Медицинские показания</h5></a>
-        </div>
-        <form id="signupForm" action="/medical-card" method="POST" class="container fullWidth">
+    <div class="container">
+        <form id="signupForm" action="/medical-card" method="POST" class="medicalCardContainer">
             <div class="container big centerItemsW mainSection">
                 <div class="container big centerItemsW">
-                    <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
-                    <div id="personalDataLink"></div>
-                        <div class="container" id="formDiv">
-                            <h3 class="regular formTitle">Персональные данные</h3>
-                                {{ form.csrf_token }}
-                                {{ form.surname(placeholder="Фамилия", value=form.surname.data or '') }}
-                                {{ form.firstname(placeholder="Имя", value=form.firstname.data or '') }}
-                                {{ form.patronymic(placeholder="Отчество", value=form.patronymic.data or '') }}
+                    <div class="container fullWidth marginTop20px" id="formDiv">
+                        <div id="personalDataLink">
+                            <div class="container">
+                                <h3 class="regular formTitle">Персональные данные</h3>
+                                    {{ form.csrf_token }}
+                                    {{ form.surname(placeholder="Фамилия", value=form.surname.data or '') }}
+                                    {{ form.firstname(placeholder="Имя", value=form.firstname.data or '') }}
+                                    {{ form.patronymic(placeholder="Отчество", value=form.patronymic.data or '') }}
 
-                                <div class="container row">
                                     <div class="container row">
-                                        <input type="radio" name="gender" id="male" class="hide" value="male" {% if form.data.gender == 'male' %} checked {% endif %}>
-                                        <label for="male" class="button white medium white">Мужской</label>    
-                                        <input type="radio" name="gender" id="female" class="hide" value="female" {% if form.data.gender == 'female' %} checked {% endif %}>
-                                        <label for="female" class="button white medium white">Женский</label>    
+                                        <div class="container row">
+                                            <input type="radio" name="gender" id="male" class="hide" value="male" {% if form.data.gender == 'male' %} checked {% endif %}>
+                                            <label for="male" class="button white medium white">Мужской</label>
+                                            <input type="radio" name="gender" id="female" class="hide" value="female" {% if form.data.gender == 'female' %} checked {% endif %}>
+                                            <label for="female" class="button white medium white">Женский</label>
+                                        </div>
                                     </div>
-                                </div>
 
-                                {{ form.dob(class="date-field", placeholder="Дата рождения: дд.мм.гггг", value=form.dob.data or '') }}
-                                {{ form.passport(placeholder="Личный Номер паспорта", value=form.passport.data or '') }}
-                                {{ form.family(id="passportDataLink", placeholder="Семейное положение", value=form.family.data or '') }}
+                                    {{ form.dob(class="date-field", placeholder="Дата рождения: дд.мм.гггг", value=form.dob.data or '') }}
+                                    {{ form.passport(placeholder="Личный Номер паспорта", value=form.passport.data or '') }}
+                                    {{ form.family(id="passportDataLink", placeholder="Семейное положение", value=form.family.data or '') }}
+                            </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="container big centerItemsW">
                     <div class="container centerItemsW">
-                        <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
-                            <div class="container" id="formDiv">
+                        <div class="container fullWidth marginTop20px   " id="formDiv">
+                            <div class="container">
                                 <h3 class="regular formTitle">Удостоверение личности</h3>
                                 {{ form.document_type(placeholder="Документ", value=form.document_type.data or '') }}
                                 <div class="container row twoInputs">
@@ -132,8 +93,8 @@
 
                 <div class="container big centerItemsW">
                     <div class="container centerItemsW">
-                        <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
-                            <div class="container" id="formDiv">
+                        <div class="container fullWidth marginTop20px   " id="formDiv">
+                            <div class="container">
                                 <h3 class="regular formTitle">Адрес проживания</h3>
                                 <div class="container row">
                                     {{ form.region(class="small marginRight15px", placeholder="Область", value=form.region.data or '') }}
@@ -156,8 +117,8 @@
 
                 <div class="container big centerItemsW">
                     <div class="container centerItemsW">
-                        <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
-                            <div class="container" id="formDiv">
+                        <div class="container fullWidth marginTop20px   " id="formDiv">
+                            <div class="container">
                                 <h3 class="regular formTitle" id="registrationAddressDataLink">Адрес регистрации</h3>
                                 <div class="container row registrationAddressSection" style="display: flex;">
                                     {{ form.registration_region(class="small marginRight15px", placeholder="Область", value=form.registration_region.data or '') }}
@@ -183,9 +144,9 @@
 
                 <div class="container big centerItemsW">
                     <div class="container centerItemsW">
-                        <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
-                            <div class="container" id="formDiv">
-                                <h3 class="regular formTitle">Льготы и страхования</h3>
+                        <div class="container fullWidth marginTop20px   " id="formDiv">
+                            <div class="container">
+                                <h3 class="regular formTitle" id="benefitsAndInsuranceDataLink">Льготы и страхования</h3>
                                 <h5 class="inputPreLabel thin">Страховой полис</h5>
                                 <div class="container row twoInputs inputTopNoRound">
                                     {{ form.insurance_serial(class="small inputTopNoRound", placeholder="Серия", value=form.insurance_serial.data or '') }}
@@ -201,12 +162,12 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="container big centerItemsW">
                     <div class="container centerItemsW">
-                        <div class="container fullWidth marginTop20px lightBlueBG rounded faded" id="formDiv">
-                            <div class="container" id="formDiv">
-                                <h3 class="regular formTitle">Медицинские показания</h3>
+                        <div class="container fullWidth marginTop20px   " id="formDiv">
+                            <div class="container">
+                                <h3 class="regular formTitle" id="medicalIdinticationsDataLink">Медицинские показания</h3>
                                 {{ form.allergic_history(placeholder="Аллергический анамнез", value=form.allergic_history.data or '') }}
                                 {{ form.medication_intolerance(placeholder="Лекарственная непереносимость", value=form.medication_intolerance.data or '') }}
                                 <div class="container row">
@@ -244,6 +205,14 @@
                 </div>
             </div>
         </form>
+        <div class="medicalCardSidebar">
+            <a class="black" onclick="scrollToTop()"><h5 class="active">Персональные данные</h5></a>
+            <a href="/medical-card#passportDataLink" class="black"><h5>Удостоверение личности</h5></a>
+            <a href="/medical-card#livingAddressDataLink" class="black"><h5>Адрес проживания</h5></a>
+            <a href="/medical-card#registrationAddressDataLink" class="black"><h5>Адрес регистрации</h5></a>
+            <a href="/medical-card#benefitsAndInsuranceDataLink" class="black"><h5>Льготы и страхования</h5></a>
+            <a href="/medical-card#medicalIdinticationsDataLink" class="black"><h5>Медицинские показания</h5></a>
+        </div>
     </div>
 
     <div class="chat-container">
@@ -269,66 +238,66 @@
         </div>
         </div>
 
-            <!-- profile menu -->
-    {% if current_user.patient or current_user.doctor %}
-    <div class="menu">
-        <div id="menuProfileDiv">
-            {% if current_user.patient %}
-                {% if current_user.patient.photo_path %}
-                    <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}" width="40px">
-                {% else %}
-                    <img src="static/images/profileLogo.svg" width="40px">
-                {% endif %}
-            {% else %}
-                {% if current_user.doctor.photo_path %}
-                    <img src="{{ url_for('uploaded_file', filename=current_user.doctor.photo_path) }}" width="40px">
-                {% else %}
-                    <img src="static/images/profileLogo.svg" width="40px">
-                {% endif %}
-            {% endif %}
-            <div>
-                <h4 id="name">
-                    {% if current_user.patient %}
-                    <span>{{ current_user.patient.firstname }} {{ current_user.patient.surname }}</span>
-                    {% else %}
-                    <span>{{ current_user.doctor.firstname }} {{ current_user.doctor.surname }}</span>
-                    {% endif %}
-                <h5 id="email">{{ current_user.username }}</h5>
-            </div>
-        </div>
-        <div class="menuItem">
-            <img src="static/images/doctorsList.svg" width="40px"  style="filter: invert(1);">
-            <a href="doctor_list">Наши специалисты</a>
-        </div>
-        <div class="menuItem">
-            <img src="static/images/appointments.svg" width="40px">
-            {% if current_user.patient %}
-                <a href="patient-appointments">Записи</a>
-            {% else %}
-                <a href="doctor_appointments">Записи</a>
-            {% endif %}
-        </div>
-        <div class="menuItem">
-            <img src="static/images/navigation.png" width="40px">
-            <a href="navigation">Навигация по БЗ</a>
-        </div>
-        <div class="menuItem">
-            <img src="static/images/recommendation.png" width="40px">
-            <a href="recommendation">Рекомендации по здоровью</a>
-        </div>
-        <div class="menuItem">
-            <img src="static/images/blood_test.png" width="40px">
-            <a href="blood_test">Анализ крови</a>
-        </div>
-        {% if current_user.patient %}
-        <div class="menuItem active">
-            <img src="static/images/medicalCard.png" width="40px">
-            <a href="medical-card">Медицинская карта</a>
-        </div>     
-        {% endif %} 
-           
-    </div>
-    {% endif %}
+<!--            &lt;!&ndash; profile menu &ndash;&gt;-->
+<!--    {% if current_user.patient or current_user.doctor %}-->
+<!--    <div class="menu">-->
+<!--        <div id="menuProfileDiv">-->
+<!--            {% if current_user.patient %}-->
+<!--                {% if current_user.patient.photo_path %}-->
+<!--                    <img src="{{ url_for('uploaded_file', filename=current_user.patient.photo_path) }}" width="40px">-->
+<!--                {% else %}-->
+<!--                    <img src="static/images/profileLogo.svg" width="40px">-->
+<!--                {% endif %}-->
+<!--            {% else %}-->
+<!--                {% if current_user.doctor.photo_path %}-->
+<!--                    <img src="{{ url_for('uploaded_file', filename=current_user.doctor.photo_path) }}" width="40px">-->
+<!--                {% else %}-->
+<!--                    <img src="static/images/profileLogo.svg" width="40px">-->
+<!--                {% endif %}-->
+<!--            {% endif %}-->
+<!--            <div>-->
+<!--                <h4 id="name">-->
+<!--                    {% if current_user.patient %}-->
+<!--                    <span>{{ current_user.patient.firstname }} {{ current_user.patient.surname }}</span>-->
+<!--                    {% else %}-->
+<!--                    <span>{{ current_user.doctor.firstname }} {{ current_user.doctor.surname }}</span>-->
+<!--                    {% endif %}-->
+<!--                <h5 id="email">{{ current_user.username }}</h5>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="menuItem">-->
+<!--            <img src="static/images/doctorsList.svg" width="40px"  style="filter: invert(1);">-->
+<!--            <a href="doctor_list">Наши специалисты</a>-->
+<!--        </div>-->
+<!--        <div class="menuItem">-->
+<!--            <img src="static/images/appointments.svg" width="40px">-->
+<!--            {% if current_user.patient %}-->
+<!--                <a href="patient-appointments">Записи</a>-->
+<!--            {% else %}-->
+<!--                <a href="doctor_appointments">Записи</a>-->
+<!--            {% endif %}-->
+<!--        </div>-->
+<!--        <div class="menuItem">-->
+<!--            <img src="static/images/navigation.png" width="40px">-->
+<!--            <a href="navigation">Навигация по БЗ</a>-->
+<!--        </div>-->
+<!--        <div class="menuItem">-->
+<!--            <img src="static/images/recommendation.png" width="40px">-->
+<!--            <a href="recommendation">Рекомендации по здоровью</a>-->
+<!--        </div>-->
+<!--        <div class="menuItem">-->
+<!--            <img src="static/images/blood_test.png" width="40px">-->
+<!--            <a href="blood_test">Анализ крови</a>-->
+<!--        </div>-->
+<!--        {% if current_user.patient %}-->
+<!--        <div class="menuItem active">-->
+<!--            <img src="static/images/medicalCard.png" width="40px">-->
+<!--            <a href="medical-card">Медицинская карта</a>-->
+<!--        </div>     -->
+<!--        {% endif %} -->
+<!--           -->
+<!--    </div>-->
+<!--    {% endif %}-->
 
     <!-- <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -408,6 +377,58 @@ function scrollToTop() {
             document.getElementById('signupForm').submit();
         });
 </script> -->
+<script>
+$(document).ready(function() {
+    function updateActiveTab(targetLink) {
+        $('.medicalCardSidebar a h5').removeClass('active');
+        targetLink.find('h5').addClass('active');
+    }
+
+    // Плавный скролл
+    $('.medicalCardSidebar a').click(function(e) {
+        const href = $(this).attr('href');
+
+        if (href && href.includes('#')) {
+            e.preventDefault();
+            const target = href.split('#')[1];
+            const targetElement = $(`#${target}`);
+
+            if (targetElement.length) {
+                $('html, body').animate({
+                    scrollTop: targetElement.offset().top - 100
+                }, 200);
+
+                updateActiveTab($(this));
+            }
+        }
+    });
+
+    // Подсветка активной вкладки при скролле
+    $(window).scroll(function() {
+        const scrollPosition = $(window).scrollTop() + 150;
+
+        $('.medicalCardSidebar a').each(function() {
+            const href = $(this).attr('href');
+
+            if (href && href.includes('#')) {
+                const target = href.split('#')[1];
+                const targetElement = $(`#${target}`);
+
+                if (targetElement.length &&
+                    targetElement.offset().top <= scrollPosition &&
+                    targetElement.offset().top + targetElement.outerHeight() > scrollPosition) {
+
+                    updateActiveTab($(this));
+                }
+            }
+        });
+    });
+
+    $(window).trigger('scroll');
+});
+
+
+</script>
 </body>
 {% endblock %}
     

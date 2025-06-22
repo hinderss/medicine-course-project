@@ -1,58 +1,652 @@
 {
-    "blood_test_for_appendicitis": "аппендицит",
-    "blood_test_for_celiac_disease": "целиакия",
-    "blood_test_for_cholangitis": "холангит",
-    "blood_test_for_cholecystitis": "холецистит",
-    "blood_test_for_cholelithiasis": "желчнокаменная болезнь",
-    "blood_test_for_chronic_diarrhea": "хроническая диарея",
-    "blood_test_for_chronic_pancreatitis": "хронический панкреатит",
-    "blood_test_for_cirrhosis_of_the_liver": "цирроз печени",
-    "blood_test_for_crohns_disease": "болезнь Крона",
-    "blood_test_for_diabetes": "диабет",
-    "blood_test_for_diverticulosis": "дивертикулёз",
-    "blood_test_for_duodenitis": "дуоденит",
-    "blood_test_for_dysbacteriosis": "дисбактериоз",
-    "blood_test_for_esophagitis": "эзофагит",
-    "blood_test_for_gastriris": "гастрит",
-    "blood_test_for_gastroesophageal_reflux_disease": "гастроэзофагеальная рефлюксная болезнь",
-    "blood_test_for_hepatitis": "гепатит",
-    "blood_test_for_intestinal_atony": "атония кишечника",
-    "blood_test_for_lactose_intolerance": "непереносимость лактозы",
-    "blood_test_for_peptic_ulcer_of_stomach": "язвенная болезнь желудка",
-    "blood_test_for_pneumatosis": "пневматоз",
-    "blood_test_for_irritable_bowel_syndrome": "синдром раздражённого кишечника",
-    "blood_test_for_stomach_cancer": "рак желудка",
-    "blood_test_for_brain_tumor": "опухоль мозга",
-    "blood_test_for_encephalitis": "энцефалит",
-    "blood_test_for_epilepsy": "эпилепсия",
-    "blood_test_for_meningitis": "менингит",
-    "blood_test_for_parkinsons_disease": "болезнь Паркинсона",
-    "blood_test_for_stroke": "инсульт",
-    "blood_test_for_brain_abscess": "абсцесс головного мозга",
-    "blood_test_for_encephalopathy": "энцефалопатия",
-    "blood_test_for_intracranial_hypertension": "внутричерепная гипертензия",
-    "blood_test_for_meningioma": "менингома",
-    "blood_test_for_vegeto_vascular_dystonia_of_brain_vessels": "вегето-сосудистая дистония сосудов головного мозга",
-    "blood_test_for_aneurysm": "аневризма",
-    "blood_test_for_dacryoadenitis": "дакриоаденит",
-    "blood_test_for_nivrit": "ниврит",
-    "blood_test_for_sinusitis": "синусит",
-    "blood_test_for_acute_tonsillitis": "ангина",
-    "blood_test_for_allergic_rhinitis": "аллергический ринит",
-    "blood_test_for_bronchial_asthma": "бронхиальная астма",
-    "blood_test_for_bronchitis": "бронхит",
-    "blood_test_for_chronic_obstructive_pulmonary_disease": "хроническая обструктивная болезнь легких (ХОБЛ)",
-    "blood_test_for_flu": "грипп",
-    "blood_test_for_laryngitis" : "ларингит",
-    "blood_test_for_lung_cancer": "рак легких",
-    "blood_test_for_pharyngitis": "фарингит",
-    "blood_test_for_pneumonia": "пневмония",
-    "blood_test_for_neuralgic_amyotrophy": "невралгическая амиотрофия",
-    "blood_test_for_duchenne_muscular_dystrophy": "мышечная дистрофия Дюшенна",
-    "blood_test_for_lambert_eaton_syndrome": "синдром Ламберта-Итона",
-    "blood_test_for_miozit": "миозит",
-    "blood_test_for_myasthenia_gravis": "миастения Гравис",
-    "blood_test_for_rheumatoid_arthritis": "ревматоидный артрит",
-    "blood_test_for_rhabdomyolysis": "рабдомиолиз",
-    "blood_test_for_polymyalgia_rheumatica": "ревматическая полимиалгия"
+    "blood_test_for_appendicitis": {
+        "result": "Аппендицит",
+        "recommendation": "Экстренная хирургическая консультация. Аппендэктомия. До осмотра: голод, холод на живот, запрет анальгетиков.",
+        "specialist": "Хирург"
+    },
+    "blood_test_for_celiac_disease": {
+        "result": "Целиакия",
+        "recommendation": "Строгая безглютеновая диета. Контроль антител к тканевой трансглутаминазе. Витаминотерапия.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "blood_test_for_cholangitis": {
+        "result": "Холангит",
+        "recommendation": "Срочная госпитализация. Антибиотикотерапия (цефтриаксон+метронидазол). ЭРХПГ для дренирования.",
+        "specialist": "Гастроэнтеролог, хирург"
+    },
+    "blood_test_for_cholecystitis": {
+        "result": "Холецистит",
+        "recommendation": "Голод, спазмолитики, антибиотики. Плановая холецистэктомия при калькулезной форме.",
+        "specialist": "Хирург, гастроэнтеролог"
+    },
+    "blood_test_for_cholelithiasis": {
+        "result": "Желчнокаменная болезнь",
+        "recommendation": "УЗИ контроль. При колике - спазмолитики. Показания к холецистэктомии.",
+        "specialist": "Гастроэнтеролог, хирург"
+    },
+    "blood_test_for_chronic_diarrhea": {
+        "result": "Хроническая диарея",
+        "recommendation": "Копрограмма, колоноскопия. Коррекция водно-электролитного баланса. Этиотропное лечение.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "blood_test_for_chronic_pancreatitis": {
+        "result": "Хронический панкреатит",
+        "recommendation": "Диета №5п. Панкреатин. Исключение алкоголя. Контроль глюкозы.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "blood_test_for_cirrhosis_of_the_liver": {
+        "result": "Цирроз печени",
+        "recommendation": "Гепатопротекторы. Диета с ограничением белка. Мониторинг осложнений.",
+        "specialist": "Гепатолог, гастроэнтеролог"
+    },
+    "blood_test_for_crohns_disease": {
+        "result": "Болезнь Крона",
+        "recommendation": "Месалазин, глюкокортикоиды. Регулярная колоноскопия. Диета.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "blood_test_for_diabetes": {
+        "result": "Сахарный диабет",
+        "recommendation": "Диета №9. Контроль гликемии. Инсулин или пероральные сахароснижающие препараты.",
+        "specialist": "Эндокринолог"
+    },
+    "blood_test_for_diverticulosis": {
+        "result": "Дивертикулёз",
+        "recommendation": "Диета с высоким содержанием клетчатки. При воспалении - антибиотики.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "blood_test_for_duodenitis": {
+        "result": "Дуоденит",
+        "recommendation": "Диета №1. Ингибиторы протонной помпы. Эрадикация H.pylori при обнаружении.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "blood_test_for_dysbacteriosis": {
+        "result": "Дисбактериоз",
+        "recommendation": "Пробиотики. Коррекция диеты. Лечение основного заболевания.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "blood_test_for_esophagitis": {
+        "result": "Эзофагит",
+        "recommendation": "Ингибиторы протонной помпы. Щадящая диета. Эндоскопический контроль.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "blood_test_for_gastriris": {
+        "result": "Гастрит",
+        "recommendation": "Диета №1. Эрадикация H.pylori. Антациды при необходимости.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "blood_test_for_gastroesophageal_reflux_disease": {
+        "result": "ГЭРБ",
+        "recommendation": "Ингибиторы протонной помпы. Диета. Сон с приподнятым головным концом.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "blood_test_for_hepatitis": {
+        "result": "Гепатит",
+        "recommendation": "Определение этиологии. Гепатопротекторы. При вирусных - специфическая терапия.",
+        "specialist": "Гепатолог, инфекционист"
+    },
+    "blood_test_for_intestinal_atony": {
+        "result": "Атония кишечника",
+        "recommendation": "Прокинетики. Диета с клетчаткой. ЛФК. Лечение основного заболевания.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "blood_test_for_lactose_intolerance": {
+        "result": "Непереносимость лактозы",
+        "recommendation": "Безлактозная диета. Фермент лактаза при необходимости.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "blood_test_for_peptic_ulcer_of_stomach": {
+        "result": "Язва желудка",
+        "recommendation": "Эрадикация H.pylori. Ингибиторы протонной помпы. Диета №1.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "blood_test_for_pneumatosis": {
+        "result": "Пневматоз",
+        "recommendation": "Лечение основного заболевания. Диета. При осложнениях - хирургическое лечение.",
+        "specialist": "Гастроэнтеролог, хирург"
+    },
+    "blood_test_for_irritable_bowel_syndrome": {
+        "result": "СРК",
+        "recommendation": "Коррекция диеты. Спазмолитики. Психотерапия при необходимости.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "blood_test_for_stomach_cancer": {
+        "result": "Рак желудка",
+        "recommendation": "ЭГДС с биопсией. КТ. Консультация онколога. Хирургическое лечение.",
+        "specialist": "Онколог, хирург"
+    },
+    "blood_test_for_brain_tumor": {
+        "result": "Опухоль мозга",
+        "recommendation": "МРТ с контрастом. Консультация нейрохирурга. Биопсия. Тактика зависит от типа опухоли.",
+        "specialist": "Нейрохирург, онколог"
+    },
+    "blood_test_for_encephalitis": {
+        "result": "Энцефалит",
+        "recommendation": "Экстренная госпитализация. Этиотропная терапия. Мониторинг неврологического статуса.",
+        "specialist": "Невролог, инфекционист"
+    },
+    "blood_test_for_epilepsy": {
+        "result": "Эпилепсия",
+        "recommendation": "ЭЭГ. МРТ. Противоэпилептические препараты. Регулярный неврологический контроль.",
+        "specialist": "Невролог"
+    },
+    "blood_test_for_meningitis": {
+        "result": "Менингит",
+        "recommendation": "Люмбальная пункция. Антибиотики. Дексаметазон. Интенсивная терапия.",
+        "specialist": "Невролог, инфекционист"
+    },
+    "blood_test_for_parkinsons_disease": {
+        "result": "Болезнь Паркинсона",
+        "recommendation": "Леводопа. Агонисты дофаминовых рецепторов. ЛФК. Нейропротективная терапия.",
+        "specialist": "Невролог"
+    },
+    "blood_test_for_stroke": {
+        "result": "Инсульт",
+        "recommendation": "Экстренная госпитализация. КТ. В первые 4,5 часа - тромболизис. Реабилитация.",
+        "specialist": "Невролог"
+    },
+    "blood_test_for_brain_abscess": {
+        "result": "Абсцесс мозга",
+        "recommendation": "Антибиотики. Хирургическое дренирование. Контроль МРТ.",
+        "specialist": "Нейрохирург"
+    },
+    "blood_test_for_encephalopathy": {
+        "result": "Энцефалопатия",
+        "recommendation": "Лечение основного заболевания. Нейропротекторы. Симптоматическая терапия.",
+        "specialist": "Невролог"
+    },
+    "blood_test_for_intracranial_hypertension": {
+        "result": "ВЧГ",
+        "recommendation": "Мочегонные. Контроль ликворного давления. Лечение причины.",
+        "specialist": "Невролог"
+    },
+    "blood_test_for_meningioma": {
+        "result": "Менингиома",
+        "recommendation": "Наблюдение или хирургическое лечение в зависимости от размера и локализации.",
+        "specialist": "Нейрохирург"
+    },
+    "blood_test_for_vegeto_vascular_dystonia_of_brain_vessels": {
+        "result": "ВСД",
+        "recommendation": "Коррекция образа жизни. Седативные. Вегетотропные препараты. ЛФК.",
+        "specialist": "Невролог"
+    },
+    "blood_test_for_aneurysm": {
+        "result": "Аневризма",
+        "recommendation": "Ангиография. Консультация сосудистого хирурга. При риске разрыва - оперативное лечение.",
+        "specialist": "Сосудистый хирург"
+    },
+    "blood_test_for_dacryoadenitis": {
+        "result": "Дакриоаденит",
+        "recommendation": "Антибиотикотерапия. Физиотерапия. При абсцедировании - дренирование.",
+        "specialist": "Офтальмолог"
+    },
+    "blood_test_for_nivrit": {
+        "result": "Неврит",
+        "recommendation": "Противовоспалительная терапия. Витамины группы B. Физиотерапия.",
+        "specialist": "Невролог"
+    },
+    "blood_test_for_sinusitis": {
+        "result": "Синусит",
+        "recommendation": "Антибиотики. Сосудосуживающие. Пункция пазух при необходимости.",
+        "specialist": "ЛОР"
+    },
+    "blood_test_for_acute_tonsillitis": {
+        "result": "Ангина",
+        "recommendation": "Антибиотики пенициллинового ряда. Местные антисептики. Постельный режим.",
+        "specialist": "ЛОР"
+    },
+    "blood_test_for_allergic_rhinitis": {
+        "result": "Аллергический ринит",
+        "recommendation": "Антигистаминные. Назальные кортикостероиды. Аллерген-специфическая иммунотерапия.",
+        "specialist": "Аллерголог"
+    },
+    "blood_test_for_bronchial_asthma": {
+        "result": "Бронхиальная астма",
+        "recommendation": "ИГКС+ДДБА. Купирование бронхоспазма. Аллергологическое обследование.",
+        "specialist": "Пульмонолог, аллерголог"
+    },
+    "blood_test_for_bronchitis": {
+        "result": "Бронхит",
+        "recommendation": "Противовирусные или антибиотики. Муколитики. Ингаляции.",
+        "specialist": "Пульмонолог"
+    },
+    "blood_test_for_chronic_obstructive_pulmonary_disease": {
+        "result": "ХОБЛ",
+        "recommendation": "Бронходилататоры. ИГКС. Кислородотерапия при необходимости.",
+        "specialist": "Пульмонолог"
+    },
+    "blood_test_for_flu": {
+        "result": "Грипп",
+        "recommendation": "Противовирусные (осельтамивир). Симптоматическое лечение. Постельный режим.",
+        "specialist": "Терапевт, инфекционист"
+    },
+    "blood_test_for_laryngitis": {
+        "result": "Ларингит",
+        "recommendation": "Голосовой покой. Ингаляции. Антигистаминные при отеке.",
+        "specialist": "ЛОР"
+    },
+    "blood_test_for_lung_cancer": {
+        "result": "Рак легкого",
+        "recommendation": "КТ с контрастом. Биопсия. Определение стадии. Химиолучевая терапия.",
+        "specialist": "Онколог, пульмонолог"
+    },
+    "blood_test_for_pharyngitis": {
+        "result": "Фарингит",
+        "recommendation": "Местные антисептики. Противовоспалительные. Щадящая диета.",
+        "specialist": "ЛОР"
+    },
+    "blood_test_for_pneumonia": {
+        "result": "Пневмония",
+        "recommendation": "Антибиотики. Рентген-контроль. Дыхательная гимнастика.",
+        "specialist": "Пульмонолог"
+    },
+    "blood_test_for_neuralgic_amyotrophy": {
+        "result": "Невралгическая амиотрофия",
+        "recommendation": "Кортикостероиды. Витамины группы B. Физиотерапия.",
+        "specialist": "Невролог"
+    },
+    "blood_test_for_duchenne_muscular_dystrophy": {
+        "result": "Мышечная дистрофия Дюшенна",
+        "recommendation": "Глюкокортикоиды. ЛФК. Респираторная поддержка. Генетическое консультирование.",
+        "specialist": "Невролог, генетик"
+    },
+    "blood_test_for_lambert_eaton_syndrome": {
+        "result": "Синдром Ламберта-Итона",
+        "recommendation": "Иммуносупрессанты. Ацетилхолинэстеразные ингибиторы. Лечение опухоли при паранеопластической форме.",
+        "specialist": "Невролог"
+    },
+    "blood_test_for_miozit": {
+        "result": "Миозит",
+        "recommendation": "НПВС. Физиотерапия. При инфекционной этиологии - антибиотики.",
+        "specialist": "Ревматолог, невролог"
+    },
+    "blood_test_for_myasthenia_gravis": {
+        "result": "Миастения Гравис",
+        "recommendation": "Антихолинэстеразные препараты. Иммуносупрессивная терапия. Тимэктомия при наличии тимомы.",
+        "specialist": "Невролог"
+    },
+    "blood_test_for_rheumatoid_arthritis": {
+        "result": "Ревматоидный артрит",
+        "recommendation": "Метотрексат. НПВС. ГИБП. ЛФК. Регулярный контроль суставного статуса.",
+        "specialist": "Ревматолог"
+    },
+    "blood_test_for_rhabdomyolysis": {
+        "result": "Рабдомиолиз",
+        "recommendation": "Инфузионная терапия. Коррекция электролитов. Гемодиализ при ОПН.",
+        "specialist": "Нефролог"
+    },
+    "blood_test_for_polymyalgia_rheumatica": {
+        "result": "Ревматическая полимиалгия",
+        "recommendation": "Глюкокортикоиды. Постепенная отмена. Контроль воспалительных маркеров.",
+        "specialist": "Ревматолог"
+    },
+    "concept_allergic_rhinitis": {
+        "result": "Аллергический ринит",
+        "recommendation": "Антигистаминные. Назальные кортикостероиды. Аллерген-специфическая иммунотерапия.",
+        "specialist": "Аллерголог"
+    },
+    "concept_lung_cancer": {
+        "result": "Рак легкого",
+        "recommendation": "КТ с контрастом. Биопсия. Определение стадии. Химиолучевая терапия.",
+        "specialist": "Онколог, пульмонолог"
+    },
+    "concept_acute_tonsillitis": {
+        "result": "Ангина",
+        "recommendation": "Антибиотики пенициллинового ряда. Местные антисептики. Постельный режим.",
+        "specialist": "ЛОР"
+    },
+    "concept_polymyalgia_rheumatica": {
+        "result": "Ревматическая полимиалгия",
+        "recommendation": "Глюкокортикоиды. Постепенная отмена. Контроль воспалительных маркеров.",
+        "specialist": "Ревматолог"
+    },
+    "concept_crohns_disease": {
+        "result": "Болезнь Крона",
+        "recommendation": "Месалазин, глюкокортикоиды. Регулярная колоноскопия. Диета.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "concept_pharyngitis": {
+        "result": "Фарингит",
+        "recommendation": "Местные антисептики. Противовоспалительные. Щадящая диета.",
+        "specialist": "ЛОР"
+    },
+    "concept_esophagitis": {
+        "result": "Эзофагит",
+        "recommendation": "Ингибиторы протонной помпы. Щадящая диета. Эндоскопический контроль.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "concept_bronchitis": {
+        "result": "Бронхит",
+        "recommendation": "Противовирусные или антибиотики. Муколитики. Ингаляции.",
+        "specialist": "Пульмонолог"
+    },
+    "concept_dacryoadenitis": {
+        "result": "Дакриоаденит",
+        "recommendation": "Антибиотикотерапия. Физиотерапия. При абсцедировании - дренирование.",
+        "specialist": "Офтальмолог"
+    },
+    "concept_encephalopathy": {
+        "result": "Энцефалопатия",
+        "recommendation": "Лечение основного заболевания. Нейропротекторы. Симптоматическая терапия.",
+        "specialist": "Невролог"
+    },
+    "concept_parasitic_colitis": {
+        "result": "Паразитарный колит",
+        "recommendation": "Антипаразитарные препараты. Восстановление микрофлоры. Диета.",
+        "specialist": "Гастроэнтеролог, инфекционист"
+    },
+    "concept_encephalitis": {
+        "result": "Энцефалит",
+        "recommendation": "Экстренная госпитализация. Этиотропная терапия. Мониторинг неврологического статуса.",
+        "specialist": "Невролог, инфекционист"
+    },
+    "concept_rheumatoid_arthritis": {
+        "result": "Ревматоидный артрит",
+        "recommendation": "Метотрексат. НПВС. ГИБП. ЛФК. Регулярный контроль суставного статуса.",
+        "specialist": "Ревматолог"
+    },
+    "concept_gastritis": {
+        "result": "Гастрит",
+        "recommendation": "Диета №1. Эрадикация H.pylori. Антациды при необходимости.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "concept_lactose_intolerance": {
+        "result": "Непереносимость лактозы",
+        "recommendation": "Безлактозная диета. Фермент лактаза при необходимости.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "concept_pneumatosis": {
+        "result": "Пневматоз",
+        "recommendation": "Лечение основного заболевания. Диета. При осложнениях - хирургическое лечение.",
+        "specialist": "Гастроэнтеролог, хирург"
+    },
+    "concept_irritable_bowel_syndrome": {
+        "result": "СРК",
+        "recommendation": "Коррекция диеты. Спазмолитики. Психотерапия при необходимости.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "concept_hypogonadism": {
+        "result": "Гипогонадизм",
+        "recommendation": "Заместительная гормональная терапия. Устранение причины. Контроль уровня гормонов.",
+        "specialist": "Эндокринолог"
+    },
+    "concept_lymphocytic_colitis": {
+        "result": "Лимфоцитарный колит",
+        "recommendation": "Будесонид. Диета. Исключение провоцирующих лекарств.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "concept_intracranial_hypertension": {
+        "result": "ВЧГ",
+        "recommendation": "Мочегонные. Контроль ликворного давления. Лечение причины.",
+        "specialist": "Невролог"
+    },
+    "concept_meningioma": {
+        "result": "Менингиома",
+        "recommendation": "Наблюдение или хирургическое лечение в зависимости от размера и локализации.",
+        "specialist": "Нейрохирург"
+    },
+    "concept_mechanical_colitis": {
+        "result": "Механический колит",
+        "recommendation": "Устранение причины непроходимости. Хирургическое лечение при необходимости.",
+        "specialist": "Хирург"
+    },
+    "concept_hyperthyroidism": {
+        "result": "Гипертиреоз",
+        "recommendation": "Тиреостатики. Бета-блокаторы. Радиойодтерапия или хирургическое лечение.",
+        "specialist": "Эндокринолог"
+    },
+    "concept_aneurysm": {
+        "result": "Аневризма",
+        "recommendation": "Ангиография. Консультация сосудистого хирурга. При риске разрыва - оперативное лечение.",
+        "specialist": "Сосудистый хирург"
+    },
+    "concept_bronchial_asthma": {
+        "result": "Бронхиальная астма",
+        "recommendation": "ИГКС+ДДБА. Купирование бронхоспазма. Аллергологическое обследование.",
+        "specialist": "Пульмонолог, аллерголог"
+    },
+    "concept_laryngitis": {
+        "result": "Ларингит",
+        "recommendation": "Голосовой покой. Ингаляции. Антигистаминные при отеке.",
+        "specialist": "ЛОР"
+    },
+    "concept_pneumonia": {
+        "result": "Пневмония",
+        "recommendation": "Антибиотики. Рентген-контроль. Дыхательная гимнастика.",
+        "specialist": "Пульмонолог"
+    },
+    "concept_hashimotos_thyroiditis": {
+        "result": "Тиреоидит Хашимото",
+        "recommendation": "Заместительная гормональная терапия. Контроль ТТГ. Динамическое наблюдение.",
+        "specialist": "Эндокринолог"
+    },
+    "concept_intestinal_atony": {
+        "result": "Атония кишечника",
+        "recommendation": "Прокинетики. Диета с клетчаткой. ЛФК. Лечение основного заболевания.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "concept_neuralgic_amyotrophy": {
+        "result": "Невралгическая амиотрофия",
+        "recommendation": "Кортикостероиды. Витамины группы B. Физиотерапия.",
+        "specialist": "Невролог"
+    },
+    "concept_vegeto_vascular_dystonia_of_brain_vessels": {
+        "result": "ВСД",
+        "recommendation": "Коррекция образа жизни. Седативные. Вегетотропные препараты. ЛФК.",
+        "specialist": "Невролог"
+    },
+    "concept_brain_abscess": {
+        "result": "Абсцесс мозга",
+        "recommendation": "Антибиотики. Хирургическое дренирование. Контроль МРТ.",
+        "specialist": "Нейрохирург"
+    },
+    "concept_intestinal_polyps": {
+        "result": "Полипы кишечника",
+        "recommendation": "Колоноскопия с полипэктомией. Гистологическое исследование. Регулярный контроль.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "concept_nivrit": {
+        "result": "Неврит",
+        "recommendation": "Противовоспалительная терапия. Витамины группы B. Физиотерапия.",
+        "specialist": "Невролог"
+    },
+    "concept_chronic_obstructive_pulmonary_disease": {
+        "result": "ХОБЛ",
+        "recommendation": "Бронходилататоры. ИГКС. Кислородотерапия при необходимости.",
+        "specialist": "Пульмонолог"
+    },
+    "concept_cholangitis": {
+        "result": "Холангит",
+        "recommendation": "Срочная госпитализация. Антибиотикотерапия (цефтриаксон+метронидазол). ЭРХПГ для дренирования.",
+        "specialist": "Гастроэнтеролог, хирург"
+    },
+    "concept_hepatitis": {
+        "result": "Гепатит",
+        "recommendation": "Определение этиологии. Гепатопротекторы. При вирусных - специфическая терапия.",
+        "specialist": "Гепатолог, инфекционист"
+    },
+    "concept_peptic_ulcer_of_stomach": {
+        "result": "Язва желудка",
+        "recommendation": "Эрадикация H.pylori. Ингибиторы протонной помпы. Диета №1.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "concept_stomach_cancer": {
+        "result": "Рак желудка",
+        "recommendation": "ЭГДС с биопсией. КТ. Консультация онколога. Хирургическое лечение.",
+        "specialist": "Онколог, хирург"
+    },
+    "concept_diabetes": {
+        "result": "Сахарный диабет",
+        "recommendation": "Диета №9. Контроль гликемии. Инсулин или пероральные сахароснижающие препараты.",
+        "specialist": "Эндокринолог"
+    },
+    "concept_allergic_colitis": {
+        "result": "Аллергический колит",
+        "recommendation": "Элиминационная диета. Антигистаминные. Кортикостероиды при тяжелом течении.",
+        "specialist": "Гастроэнтеролог, аллерголог"
+    },
+    "concept_infectious_colitis": {
+        "result": "Инфекционный колит",
+        "recommendation": "Антибиотики. Регидратация. Пробиотики. Диета.",
+        "specialist": "Гастроэнтеролог, инфекционист"
+    },
+    "concept_genyantritis": {
+        "result": "Гайморит",
+        "recommendation": "Антибиотики. Сосудосуживающие. Пункция пазух при необходимости.",
+        "specialist": "ЛОР"
+    },
+    "concept_toxic_colitis": {
+        "result": "Токсический колит",
+        "recommendation": "Отмена токсического агента. Дезинтоксикация. Симптоматическая терапия.",
+        "specialist": "Гастроэнтеролог, токсиколог"
+    },
+    "concept_colitis": {
+        "result": "Колит",
+        "recommendation": "Определение типа колита. Этиотропное лечение. Диета. Восстановление микрофлоры.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "concept_chronic_diarrhea": {
+        "result": "Хроническая диарея",
+        "recommendation": "Копрограмма, колоноскопия. Коррекция водно-электролитного баланса. Этиотропное лечение.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "concept_flu": {
+        "result": "Грипп",
+        "recommendation": "Противовирусные (осельтамивир). Симптоматическое лечение. Постельный режим.",
+        "specialist": "Терапевт, инфекционист"
+    },
+    "concept_chronic_pancreatitis": {
+        "result": "Хронический панкреатит",
+        "recommendation": "Диета №5п. Панкреатин. Исключение алкоголя. Контроль глюкозы.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "concept_cholecystitis": {
+        "result": "Холецистит",
+        "recommendation": "Голод, спазмолитики, антибиотики. Плановая холецистэктомия при калькулезной форме.",
+        "specialist": "Хирург, гастроэнтеролог"
+    },
+    "concept_cirrhosis_of_the_liver": {
+        "result": "Цирроз печени",
+        "recommendation": "Гепатопротекторы. Диета с ограничением белка. Мониторинг осложнений.",
+        "specialist": "Гепатолог, гастроэнтеролог"
+    },
+    "concept_gastroesophageal_reflux_disease": {
+        "result": "ГЭРБ",
+        "recommendation": "Ингибиторы протонной помпы. Диета. Сон с приподнятым головным концом.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "concept_hypopituitarism": {
+        "result": "Гипопитуитаризм",
+        "recommendation": "Заместительная гормональная терапия. Лечение причины. Регулярный контроль гормонов.",
+        "specialist": "Эндокринолог"
+    },
+    "concept_miozit": {
+        "result": "Миозит",
+        "recommendation": "НПВС. Физиотерапия. При инфекционной этиологии - антибиотики.",
+        "specialist": "Ревматолог, невролог"
+    },
+    "concept_duodenitis": {
+        "result": "Дуоденит",
+        "recommendation": "Диета №1. Ингибиторы протонной помпы. Эрадикация H.pylori при обнаружении.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "concept_cholelithiasis": {
+        "result": "Желчнокаменная болезнь",
+        "recommendation": "УЗИ контроль. При колике - спазмолитики. Показания к холецистэктомии.",
+        "specialist": "Гастроэнтеролог, хирург"
+    },
+    "concept_appendicitis": {
+        "result": "Аппендицит",
+        "recommendation": "Экстренная хирургическая консультация. Аппендэктомия. До осмотра: голод, холод на живот, запрет анальгетиков.",
+        "specialist": "Хирург"
+    },
+    "concept_celiac_disease": {
+        "result": "Целиакия",
+        "recommendation": "Строгая безглютеновая диета. Контроль антител к тканевой трансглутаминазе. Витаминотерапия.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "concept_hypogonadotropic_hypogonadism": {
+        "result": "Гипогонадотропный гипогонадизм",
+        "recommendation": "Заместительная гормональная терапия. Стимуляция гонадотропинами при планировании беременности.",
+        "specialist": "Эндокринолог"
+    },
+    "concept_klinefelter_syndrome": {
+        "result": "Синдром Клайнфельтера",
+        "recommendation": "Заместительная терапия тестостероном. Логопедическая и психологическая поддержка.",
+        "specialist": "Эндокринолог, генетик"
+    },
+    "concept_epilepsy": {
+        "result": "Эпилепсия",
+        "recommendation": "ЭЭГ. МРТ. Противоэпилептические препараты. Регулярный неврологический контроль.",
+        "specialist": "Невролог"
+    },
+    "concept_parkinsons_disease": {
+        "result": "Болезнь Паркинсона",
+        "recommendation": "Леводопа. Агонисты дофаминовых рецепторов. ЛФК. Нейропротективная терапия.",
+        "specialist": "Невролог"
+    },
+    "concept_meningitis": {
+        "result": "Менингит",
+        "recommendation": "Люмбальная пункция. Антибиотики. Дексаметазон. Интенсивная терапия.",
+        "specialist": "Невролог, инфекционист"
+    },
+    "concept_hypothyroidism": {
+        "result": "Гипотиреоз",
+        "recommendation": "Заместительная терапия левотироксином. Контроль ТТГ. Динамическое наблюдение.",
+        "specialist": "Эндокринолог"
+    },
+    "concept_cluster_headaches": {
+        "result": "Кластерная головная боль",
+        "recommendation": "Ингаляции кислорода. Триптаны. Профилактическая терапия (верапамил).",
+        "specialist": "Невролог"
+    },
+    "concept_radiation_colitis": {
+        "result": "Радиационный колит",
+        "recommendation": "Противовоспалительные препараты. Диета. Симптоматическая терапия.",
+        "specialist": "Гастроэнтеролог, онколог"
+    },
+    "concept_stroke": {
+        "result": "Инсульт",
+        "recommendation": "Экстренная госпитализация. КТ. В первые 4,5 часа - тромболизис. Реабилитация.",
+        "specialist": "Невролог"
+    },
+    "concept_sinusitis": {
+        "result": "Синусит",
+        "recommendation": "Антибиотики. Сосудосуживающие. Пункция пазух при необходимости.",
+        "specialist": "ЛОР"
+    },
+    "concept_diverticulosis": {
+        "result": "Дивертикулёз",
+        "recommendation": "Диета с высоким содержанием клетчатки. При воспалении - антибиотики.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "concept_dysbacteriosis": {
+        "result": "Дисбактериоз",
+        "recommendation": "Пробиотики. Коррекция диеты. Лечение основного заболевания.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "concept_dyspeptic": {
+        "result": "Диспепсия",
+        "recommendation": "Коррекция питания (дробные приемы пищи, исключение жирного/острого). При необходимости - ингибиторы протонной помпы, прокинетики. Исключение H.pylori.",
+        "specialist": "Гастроэнтеролог"
+    },
+    "concept_lambert_eaton_syndrome": {
+        "result": "Синдром Ламберта-Итона",
+        "recommendation": "1. Иммуносупрессивная терапия (преднизолон, азатиоприн)\n2. Симптоматическое лечение (амиридин 20-60 мг/сут)\n3. При паранеопластической форме - лечение основного онкологического заболевания\n4. Плазмаферез при тяжелом течении\n5. Избегать препаратов, ухудшающих нервно-мышечную передачу",
+        "specialist": "Невролог, онколог (при паранеопластической форме)"
+    },
+    "concept_myasthenia_gravis": {
+        "result": "Миастения Гравис",
+        "recommendation": "1. Антихолинэстеразные препараты (пиридостигмин 30-120 мг каждые 3-6 часов)\n2. Иммуносупрессивная терапия (преднизолон, азатиоприн)\n3. При наличии тимомы - тимэктомия\n4. Плазмаферез/внутривенный иммуноглобулин при кризах\n5. Мониторинг дыхательной функции при обострениях",
+        "specialist": "Невролог, торакальный хирург (при тимоме)"
+    },
+    "concept_with_clinical_manifestations": {
+        "result": "Клинически проявляющееся состояние",
+        "recommendation": "1. Тщательный сбор анамнеза и физикальное обследование\n2. Лабораторная и инструментальная диагностика по показаниям\n3. Симптоматическая терапия в зависимости от проявлений\n4. Этиотропное лечение при установлении диагноза\n5. Динамическое наблюдение за состоянием пациента",
+        "specialist": "Терапевт (первичное обращение), профильный специалист после диагностики"
+    },
+    "concept_rhabdomyolysis": {
+        "result": "Рабдомиолиз",
+        "recommendation": "Срочная госпитализация! Инфузионная терапия физраствором, контроль электролитов, при ОПН - гемодиализ",
+        "specialist": "Реаниматолог, нефролог"
+    }
 }
